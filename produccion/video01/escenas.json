@@ -319,14 +319,42 @@
      "t": "¿Y sabes cuál fue la partida más grande? El alquiler: más de diez mil cuatrocientos millones de dólares.",
      "card": {
       "tipo": "barras",
-      "hl": 0
+      "titulo": "Ingresos de McDonald's por sus franquiciados (2025)",
+      "barras": [
+       {
+        "label": "Alquileres",
+        "texto": "10.442 M$",
+        "valor": 10442
+       },
+       {
+        "label": "Royalties",
+        "texto": "6.018 M$",
+        "valor": 6018
+       }
+      ],
+      "hl": 0,
+      "fuente": "Fuente: McDonald's, informe anual (10-K) 2025 · Cuotas iniciales: 88 M$"
      }
     },
     {
      "t": "Más que todos los royalties juntos.",
      "card": {
       "tipo": "barras",
-      "hl": 1
+      "titulo": "Ingresos de McDonald's por sus franquiciados (2025)",
+      "barras": [
+       {
+        "label": "Alquileres",
+        "texto": "10.442 M$",
+        "valor": 10442
+       },
+       {
+        "label": "Royalties",
+        "texto": "6.018 M$",
+        "valor": 6018
+       }
+      ],
+      "hl": 1,
+      "fuente": "Fuente: McDonald's, informe anual (10-K) 2025 · Cuotas iniciales: 88 M$"
      }
     }
    ]

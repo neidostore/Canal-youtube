@@ -18,7 +18,7 @@ html,body{margin:0;background:#0E0F13}
 .item.done{opacity:.6}
 .lista{position:absolute;left:260px;top:50%;transform:translateY(-50%)}
 .anio{font-size:300px;font-weight:900;letter-spacing:-12px;color:#FFC400;line-height:1}
-.bar{height:120px;border-radius:16px;display:flex;align-items:center;padding-left:36px;font-size:54px;font-weight:900;color:#0E0F13;margin:20px 0}
+.bar{white-space:nowrap;height:120px;border-radius:16px;display:flex;align-items:center;padding-left:36px;font-size:54px;font-weight:900;color:#0E0F13;margin:20px 0}
 .blabel{font-size:46px;font-weight:800;margin-top:40px}
 .btn{margin-top:50px;background:#E5322D;color:#fff;font-size:64px;font-weight:900;padding:26px 64px;border-radius:999px}
 </style></head><body><div class="c" id="c"></div>
@@ -32,9 +32,7 @@ if(t==='titulo') h+=`<div class="center">${tag(220)}<div class="titulo" style="m
 if(t==='cifra') h+=`<div class="center"><div class="cifra">${P.cifra}</div><div class="ctexto">${P.texto}</div></div><div class="fuente">${P.fuente||''}</div>`;
 if(t==='anio') h+=`<div class="center"><div class="anio">${P.anio}</div><div class="ctexto">${P.texto}</div></div>`;
 if(t==='lista'){h+=`<div class="lista"><div class="ltitulo">${P.titulo}</div>`+P.items.map((it,i)=>`<div class="item ${P.hl===0?'on':(i+1===P.hl?'on':(i+1<P.hl?'done':''))}"><div class="n">${i+1}</div>${it}</div>`).join('')+`</div>`;}
-if(t==='barras'){const a=10442,r=6018,max=1300;h+=`<div style="position:absolute;left:220px;right:220px;top:220px"><div class="ltitulo">Ingresos de McDonald's por sus franquiciados (2025)</div>
-<div class="blabel">Alquileres</div><div class="bar" style="width:${max}px;background:#FFC400">10.442 M$</div>
-<div class="blabel" style="opacity:${P.hl?1:.5}">Royalties</div><div class="bar" style="width:${Math.round(max*r/a)}px;background:${P.hl?'#C9CBD3':'#5A5E6A'}">6.018 M$</div></div><div class="fuente">Fuente: McDonald's, informe anual (10-K) 2025 · Cuotas iniciales: 88 M$</div>`;}
+if(t==='barras'){const max=Math.max(...P.barras.map(b=>b.valor)),W=1300;h+=`<div style="position:absolute;left:220px;right:220px;top:230px"><div class="ltitulo">${P.titulo}</div>`+P.barras.map((b,i)=>{const on=(P.hl===undefined||P.hl>=i);return `<div class="blabel" style="opacity:${on?1:.45}">${b.label}</div><div class="bar" style="width:${Math.max(360,Math.round(W*b.valor/max))}px;background:${i===0?'#FFC400':(on?'#C9CBD3':'#5A5E6A')}">${b.texto}</div>`}).join('')+`</div><div class="fuente">${P.fuente||''}</div>`;}
 if(t==='suscribete') h+=`<div class="center">${tag(240)}<div class="titulo" style="font-size:96px;margin-top:20px">Detrás del <span class="y">Precio</span></div><div class="autor" style="margin-top:20px">Cada martes, una empresa nueva</div><div class="btn">Suscríbete</div></div>`;
 if(t==='final') h+=`<div style="position:absolute;left:0;right:0;top:110px;text-align:center"><div style="display:inline-flex;align-items:center;gap:28px">${tag(130)}<span class="titulo" style="font-size:84px">Detrás del <span class="y">Precio</span></span></div><div class="autor" style="margin-top:14px">Todo lo que pagas tiene una historia</div></div>
 <div style="position:absolute;left:150px;top:420px;width:800px;height:450px;border:4px dashed rgba(255,255,255,.18);border-radius:24px"></div>

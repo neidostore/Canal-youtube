@@ -1,0 +1,570 @@
+{
+ "titulo": "Por qué las impresoras son baratas y la tinta carísima",
+ "voz": {
+  "idioma": "es-US",
+  "nombre": "es-US-Chirp3-HD-Orus",
+  "velocidad": 1.1
+ },
+ "fotos": {
+  "perfume": 36779953,
+  "perfume2": 16239693,
+  "printer_home": 7014413,
+  "printer_home2": 7014409,
+  "cartridges": 17536002,
+  "cartridge_hp": 7639358,
+  "money1": 4038853,
+  "money2": 6266666,
+  "money3": 4386469,
+  "chip": 1448561,
+  "chip2": 7174676,
+  "gavel": 6077326,
+  "judge": 34817075,
+  "ink": 6402531,
+  "razor": 15088735,
+  "razor_blades": 7320327,
+  "capsules": 11882642,
+  "console": 12718627,
+  "controller": 10492317,
+  "laptop_chart": 6770609,
+  "phone_pay": 7534796,
+  "phone_pay2": 6969933,
+  "shelves": 14201321,
+  "copier": 9301897,
+  "champagne": 239466
+ },
+ "difuminar": {},
+ "bloques": [
+  {
+   "nombre": "Gancho",
+   "frases": [
+    {
+     "t": "Si haces la cuenta por litro, la tinta de muchas impresoras sale más cara que un perfume de lujo.",
+     "img": "perfume"
+    },
+    {
+     "t": "No es una exageración: la organización de consumidores británica Which? comparó precios en 2021.",
+     "img": "champagne",
+     "voz": "No es una exageración: la organización de consumidores británica, Uich, comparó precios en 2021."
+    },
+    {
+     "t": "Y la tinta original de algunas impresoras costaba más por mililitro que el champán Dom Pérignon.",
+     "card": {
+      "tipo": "barras",
+      "titulo": "Precio por mililitro (Which?, Reino Unido, 2021)",
+      "barras": [
+       {
+        "label": "Tinta original (cartuchos XXL)",
+        "texto": "1,85 £/ml",
+        "valor": 1.85
+       },
+       {
+        "label": "Champán Dom Pérignon 2013",
+        "texto": "0,27 £/ml",
+        "valor": 0.27
+       }
+      ],
+      "fuente": "Fuente: Which?, julio de 2021"
+     },
+     "voz": "Y la tinta original de algunas impresoras costaba más por mililitro que el champán Dom Perignón."
+    },
+    {
+     "t": "Y aun así, te venden la impresora casi regalada.",
+     "img": "printer_home"
+    },
+    {
+     "t": "Tanto, que el consejero delegado de uno de los mayores fabricantes del mundo reconoció en televisión que pierden dinero con cada impresora que venden.",
+     "card": {
+      "tipo": "cita",
+      "texto": "HP <span class=y>pierde dinero</span> con cada impresora que vende",
+      "autor": "Enrique Lores, consejero delegado de HP · CNBC, enero de 2024"
+     }
+    },
+    {
+     "t": "Entonces, ¿de dónde sale el dinero?",
+     "img": "money1"
+    },
+    {
+     "t": "En los próximos minutos vas a entender uno de los modelos de negocio más rentables, y más polémicos, que existen.",
+     "img": "cartridges"
+    },
+    {
+     "t": "Vas a ver por qué tu impresora a veces no reconoce un cartucho perfectamente bueno,",
+     "img": "chip"
+    },
+    {
+     "t": "por qué una autoridad europea multó a una marca con diez millones de euros,",
+     "img": "gavel"
+    },
+    {
+     "t": "y cuál es la forma de salir de la trampa.",
+     "img": "ink"
+    }
+   ]
+  },
+  {
+   "nombre": "Título",
+   "silencio": 2.6,
+   "card": {
+    "tipo": "titulo",
+    "texto": "Por qué la tinta es tan <span class=y>cara</span>"
+   }
+  },
+  {
+   "nombre": "La trampa",
+   "frases": [
+    {
+     "t": "Entras en una tienda y ves una impresora multifunción, que imprime, escanea y copia, por cincuenta o sesenta euros.",
+     "img": "printer_home2"
+    },
+    {
+     "t": "Piensas: qué barato.",
+     "img": "shelves"
+    },
+    {
+     "t": "Y en parte tienes razón: por ese precio, es casi un regalo.",
+     "img": "printer_home2"
+    },
+    {
+     "t": "Llegas a casa, imprimes unos cuantos trabajos, algunas entradas, alguna foto...",
+     "img": "printer_home"
+    },
+    {
+     "t": "y un día aparece el aviso: nivel de tinta bajo.",
+     "img": "cartridge_hp"
+    },
+    {
+     "t": "Vas a comprar los cartuchos, y descubres que un juego de recambio cuesta casi lo mismo que la impresora entera. A veces, más.",
+     "img": "cartridges"
+    },
+    {
+     "t": "Un año después, has gastado en tinta dos o tres veces lo que te costó la máquina.",
+     "img": "money3"
+    },
+    {
+     "t": "Para entender por qué, hay que hablar de... cuchillas de afeitar.",
+     "img": "razor"
+    }
+   ]
+  },
+  {
+   "nombre": "Maquinilla y cuchilla",
+   "frases": [
+    {
+     "t": "A principios del siglo veinte se popularizó una idea que hoy se estudia en todas las escuelas de negocio:",
+     "img": "razor_blades"
+    },
+    {
+     "t": "vender la maquinilla barata, y ganar dinero con las cuchillas de recambio.",
+     "img": "razor"
+    },
+    {
+     "t": "Se conoce como el modelo de la maquinilla y la cuchilla. Se suele asociar a Gillette, aunque algunos historiadores matizan que no lo aplicó exactamente así desde el principio.",
+     "card": {
+      "tipo": "lista",
+      "titulo": "El modelo maquinilla y cuchilla",
+      "items": [
+       "Producto principal: barato",
+       "Recambio: caro y repetido",
+       "Una vez lo tienes, estás dentro"
+      ],
+      "hl": 0
+     },
+     "voz": "Se conoce como el modelo de la maquinilla y la cuchilla. Se suele asociar a Yilét, aunque algunos historiadores matizan que no lo aplicó exactamente así desde el principio."
+    },
+    {
+     "t": "La lógica es simple. El producto principal se vende barato, o incluso perdiendo dinero, para que lo compre mucha gente.",
+     "card": {
+      "tipo": "lista",
+      "titulo": "El modelo maquinilla y cuchilla",
+      "items": [
+       "Producto principal: barato",
+       "Recambio: caro y repetido",
+       "Una vez lo tienes, estás dentro"
+      ],
+      "hl": 1
+     }
+    },
+    {
+     "t": "El recambio, el consumible, se vende caro, y se repite durante años.",
+     "card": {
+      "tipo": "lista",
+      "titulo": "El modelo maquinilla y cuchilla",
+      "items": [
+       "Producto principal: barato",
+       "Recambio: caro y repetido",
+       "Una vez lo tienes, estás dentro"
+      ],
+      "hl": 2
+     }
+    },
+    {
+     "t": "Y una vez tienes la máquina, ya estás dentro: no vas a comprar otra impresora para ahorrarte un cartucho.",
+     "card": {
+      "tipo": "lista",
+      "titulo": "El modelo maquinilla y cuchilla",
+      "items": [
+       "Producto principal: barato",
+       "Recambio: caro y repetido",
+       "Una vez lo tienes, estás dentro"
+      ],
+      "hl": 3
+     }
+    },
+    {
+     "t": "Las impresoras llevaron esta idea al extremo.",
+     "img": "cartridges"
+    },
+    {
+     "t": "En una entrevista en la cadena CNBC, en enero de 2024, Enrique Lores, el consejero delegado de HP, confirmó que la empresa pierde dinero con cada impresora, y que gana dinero con la tinta y las suscripciones.",
+     "img": "laptop_chart",
+     "voz": "En una entrevista en la cadena C N B C, en enero de 2024, Enrique Lores, el consejero delegado de Hache Pe, confirmó que la empresa pierde dinero con cada impresora, y que gana dinero con la tinta y las suscripciones."
+    },
+    {
+     "t": "Y no son solo las impresoras: las cápsulas de café,",
+     "img": "capsules"
+    },
+    {
+     "t": "los cepillos eléctricos, los filtros de agua, o las consolas de videojuegos siguen el mismo esquema.",
+     "img": "console"
+    },
+    {
+     "t": "El aparato es la puerta. El recambio es el negocio.",
+     "img": "controller"
+    },
+    {
+     "t": "Y una vez que lo ves, lo empiezas a encontrar en todas partes.",
+     "img": "capsules"
+    }
+   ]
+  },
+  {
+   "nombre": "Suscríbete",
+   "frases": [
+    {
+     "t": "Si te gusta descubrir cómo ganan dinero las empresas con cosas que usas cada día, suscríbete.",
+     "card": {
+      "tipo": "suscribete"
+     }
+    },
+    {
+     "t": "Cada martes analizamos un modelo de negocio nuevo.",
+     "card": {
+      "tipo": "suscribete"
+     }
+    }
+   ]
+  },
+  {
+   "nombre": "Por qué la tinta es tan cara",
+   "frases": [
+    {
+     "t": "Los fabricantes defienden el precio de la tinta con argumentos que, en parte, son ciertos.",
+     "img": "cartridges"
+    },
+    {
+     "t": "La tinta de impresora no es tinta de bolígrafo.",
+     "img": "ink"
+    },
+    {
+     "t": "Tiene que salir por agujeros más finos que un pelo, secarse en el papel en un instante, pero no secarse nunca dentro del cartucho.",
+     "img": "cartridge_hp"
+    },
+    {
+     "t": "Además, muchos cartuchos llevan integrado el cabezal de impresión: una pieza con cientos de inyectores microscópicos.",
+     "img": "chip"
+    },
+    {
+     "t": "Cada vez que cambias el cartucho, estás cambiando también esa pieza.",
+     "img": "cartridges"
+    },
+    {
+     "t": "Todo eso es verdad. Pero no explica la diferencia de precio. Y hay una prueba muy sencilla.",
+     "img": "money2"
+    },
+    {
+     "t": "Desde hace años existen impresoras con depósitos recargables: en lugar de cartuchos, la tinta se vende en botellas, y tú rellenas los depósitos.",
+     "img": "ink"
+    },
+    {
+     "t": "Con esas impresoras, el coste por página baja muchísimo. Y las fabrican las mismas marcas.",
+     "img": "printer_home2"
+    },
+    {
+     "t": "¿Cuál es la trampa? Que esas impresoras cuestan bastante más al comprarlas.",
+     "img": "money3"
+    },
+    {
+     "t": "Es decir, el modelo se da la vuelta: impresora cara y tinta barata, o impresora barata y tinta cara.",
+     "card": {
+      "tipo": "lista",
+      "titulo": "Dos formas de pagar lo mismo",
+      "items": [
+       "Impresora barata + tinta cara",
+       "Impresora cara + tinta barata"
+      ],
+      "hl": 0
+     }
+    },
+    {
+     "t": "El dinero lo vas a pagar igual. La pregunta es cuándo, y cuánto.",
+     "img": "money1"
+    },
+    {
+     "t": "Un detalle: fíjate en los cartuchos que vienen con una impresora nueva.",
+     "img": "printer_home"
+    },
+    {
+     "t": "Muchas veces son cartuchos de inicio, con menos capacidad que los que compras después. Compáralo en la caja.",
+     "img": "cartridge_hp"
+    }
+   ]
+  },
+  {
+   "nombre": "El truco psicológico",
+   "frases": [
+    {
+     "t": "Te estarás preguntando: si al final pagamos lo mismo, ¿por qué no venden todas las impresoras más caras, y la tinta más barata?",
+     "img": "shelves"
+    },
+    {
+     "t": "Por cómo funciona nuestro cerebro.",
+     "img": "printer_home2"
+    },
+    {
+     "t": "En la tienda, lo que ves es el precio de la impresora, en grande. El precio de la tinta no aparece en la etiqueta.",
+     "img": "shelves"
+    },
+    {
+     "t": "Además, le damos mucho más peso a lo que pagamos hoy que a lo que pagaremos dentro de un año.",
+     "card": {
+      "tipo": "cita",
+      "texto": "<span class=y>Sesgo del presente</span>: lo que pagas hoy pesa más que lo que pagarás mañana",
+      "autor": "Economía del comportamiento"
+     }
+    },
+    {
+     "t": "Los economistas lo llaman sesgo del presente.",
+     "card": {
+      "tipo": "cita",
+      "texto": "<span class=y>Sesgo del presente</span>: lo que pagas hoy pesa más que lo que pagarás mañana",
+      "autor": "Economía del comportamiento"
+     }
+    },
+    {
+     "t": "Así que, entre una impresora de cincuenta euros y otra de doscientos cincuenta, la mayoría elige la de cincuenta, aunque a la larga salga más cara.",
+     "img": "printer_home"
+    },
+    {
+     "t": "Es el mismo truco que el del móvil a cero euros con permanencia, o el del gimnasio con la matrícula gratis.",
+     "img": "phone_pay"
+    },
+    {
+     "t": "Las marcas lo saben. El precio que compite en la tienda es el de la máquina. Y el que paga las facturas, es el de la tinta.",
+     "img": "money2"
+    }
+   ]
+  },
+  {
+   "nombre": "El chip y la multa",
+   "frases": [
+    {
+     "t": "Este modelo tiene un punto débil.",
+     "img": "chip"
+    },
+    {
+     "t": "Si puedes comprar tinta compatible, de otra marca, mucho más barata, el plan se viene abajo.",
+     "img": "ink"
+    },
+    {
+     "t": "Por eso muchos cartuchos llevan un chip. La impresora lo lee y, en algunos modelos, si el cartucho no es original, aparece un error, o directamente no imprime.",
+     "img": "chip2"
+    },
+    {
+     "t": "Y aquí viene lo polémico.",
+     "img": "gavel"
+    },
+    {
+     "t": "En diciembre de 2020, la autoridad italiana de la competencia multó a HP con diez millones de euros por prácticas comerciales incorrectas.",
+     "card": {
+      "tipo": "cifra",
+      "cifra": "10 M€",
+      "texto": "multa de la autoridad italiana (AGCM) a HP",
+      "fuente": "Diciembre de 2020 · Confirmada después por un tribunal italiano"
+     },
+     "voz": "En diciembre de 2020, la autoridad italiana de la competencia multó a Hache Pe con diez millones de euros por prácticas comerciales incorrectas."
+    },
+    {
+     "t": "Según la autoridad, las impresoras incluían un sistema en su software que hacía que rechazaran cartuchos que no eran de la marca.",
+     "img": "chip2"
+    },
+    {
+     "t": "Esas limitaciones se habían ido ampliando con actualizaciones, sin explicar bien sus consecuencias, y no se informaba adecuadamente de ello al comprar.",
+     "img": "phone_pay2"
+    },
+    {
+     "t": "La autoridad también señaló que la empresa recogía datos sobre el uso de los cartuchos sin informar a los usuarios.",
+     "img": "chip"
+    },
+    {
+     "t": "HP recurrió, pero un tribunal administrativo italiano confirmó la sanción.",
+     "img": "judge",
+     "voz": "Hache Pe recurrió, pero un tribunal administrativo italiano confirmó la sanción."
+    },
+    {
+     "t": "¿Y qué dice la empresa? Que bloquear cartuchos que violan su propiedad intelectual es legítimo, y que los cartuchos de terceros pueden suponer un riesgo de seguridad informática.",
+     "img": "laptop_chart"
+    },
+    {
+     "t": "Pero en aquella entrevista de 2024, Lores dejó una frase que dio la vuelta al mundo:",
+     "img": "cartridges"
+    },
+    {
+     "t": "que si un cliente no imprime lo suficiente, o no usa sus consumibles, es una mala inversión para la empresa.",
+     "card": {
+      "tipo": "cita",
+      "texto": "«Si un cliente no imprime lo suficiente o no usa nuestros consumibles, es una <span class=y>mala inversión</span>»",
+      "autor": "Enrique Lores (HP) · CNBC, enero de 2024 · traducción"
+     }
+    },
+    {
+     "t": "Esa frase resume el modelo mejor que cualquier explicación.",
+     "img": "money1"
+    }
+   ]
+  },
+  {
+   "nombre": "Las suscripciones",
+   "frases": [
+    {
+     "t": "El último paso es la suscripción.",
+     "img": "phone_pay2"
+    },
+    {
+     "t": "Pagas una cuota mensual según las páginas que imprimes, y los cartuchos te llegan a casa antes de que se acaben.",
+     "img": "phone_pay"
+    },
+    {
+     "t": "Para quien imprime de forma regular, puede salir más barato.",
+     "img": "printer_home"
+    },
+    {
+     "t": "Pero fíjate en lo que cambia para el fabricante: pasa de venderte cartuchos de vez en cuando, a cobrarte todos los meses, imprimas o no.",
+     "img": "money3"
+    },
+    {
+     "t": "Y en algunos servicios, si cancelas, los cartuchos dejan de funcionar aunque les quede tinta. Lee bien las condiciones.",
+     "img": "cartridge_hp"
+    },
+    {
+     "t": "De la cuchilla de afeitar a la suscripción mensual: la misma idea de hace cien años, cada vez más perfeccionada.",
+     "img": "razor"
+    }
+   ]
+  },
+  {
+   "nombre": "Cómo no caer en la trampa",
+   "frases": [
+    {
+     "t": "Entonces, ¿qué haces si necesitas imprimir?",
+     "card": {
+      "tipo": "lista",
+      "titulo": "Cómo no caer en la trampa",
+      "items": [
+       "Mira el coste por página",
+       "Si imprimes mucho: depósito",
+       "Si imprimes poco: copistería"
+      ],
+      "hl": 0
+     }
+    },
+    {
+     "t": "Primero: mira el coste por página, no el precio de la impresora. Divide el precio del cartucho entre las páginas que promete.",
+     "card": {
+      "tipo": "lista",
+      "titulo": "Cómo no caer en la trampa",
+      "items": [
+       "Mira el coste por página",
+       "Si imprimes mucho: depósito",
+       "Si imprimes poco: copistería"
+      ],
+      "hl": 1
+     }
+    },
+    {
+     "t": "Segundo: si imprimes a menudo, una impresora de depósito suele compensar con el tiempo.",
+     "card": {
+      "tipo": "lista",
+      "titulo": "Cómo no caer en la trampa",
+      "items": [
+       "Mira el coste por página",
+       "Si imprimes mucho: depósito",
+       "Si imprimes poco: copistería"
+      ],
+      "hl": 2
+     }
+    },
+    {
+     "t": "Tercero: si imprimes muy poco, quizá te salga más a cuenta imprimir en una copistería o en la biblioteca. La tinta, además, se seca si no la usas.",
+     "card": {
+      "tipo": "lista",
+      "titulo": "Cómo no caer en la trampa",
+      "items": [
+       "Mira el coste por página",
+       "Si imprimes mucho: depósito",
+       "Si imprimes poco: copistería"
+      ],
+      "hl": 3
+     }
+    },
+    {
+     "t": "Y si ya tienes impresora, prueba cartuchos compatibles de buena calidad: suelen costar bastante menos que los originales.",
+     "card": {
+      "tipo": "lista",
+      "titulo": "Cómo no caer en la trampa",
+      "items": [
+       "Mira el coste por página",
+       "Si imprimes mucho: depósito",
+       "Si imprimes poco: copistería"
+      ],
+      "hl": 3
+     }
+    },
+    {
+     "t": "Y antes de actualizar el software de tu impresora, lee qué cambia. Ya sabes por qué.",
+     "img": "chip2"
+    }
+   ]
+  },
+  {
+   "nombre": "Cierre",
+   "final": 8,
+   "frases": [
+    {
+     "t": "La próxima vez que algo te parezca sospechosamente barato, pregúntate dónde está la tinta. Casi siempre hay una.",
+     "card": {
+      "tipo": "final"
+     }
+    },
+    {
+     "t": "¿Qué otro producto crees que funciona igual? Te leo en los comentarios.",
+     "card": {
+      "tipo": "final"
+     }
+    },
+    {
+     "t": "Y el próximo martes: por qué Shein puede vender una camiseta por tres euros, y quién paga la diferencia.",
+     "card": {
+      "tipo": "final"
+     },
+     "voz": "Y el próximo martes: por qué Shein puede vender una camiseta por tres euros, y quién paga la diferencia."
+    },
+    {
+     "t": "Suscríbete para no perdértelo. Nos vemos detrás del precio.",
+     "card": {
+      "tipo": "final"
+     }
+    }
+   ]
+  }
+ ]
+}

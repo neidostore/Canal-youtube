@@ -141,7 +141,7 @@ def main(carpeta):
             continue
         fr = b["frases"]
         for i, f in enumerate(fr):
-            e = {"texto": f["t"], "pausa": PAUSA_BLOQUE if i == len(fr) - 1 else PAUSA}
+            e = {"texto": f["t"], "voz_texto": f.get("voz", f["t"]), "pausa": PAUSA_BLOQUE if i == len(fr) - 1 else PAUSA}
             if i == len(fr) - 1 and b.get("final"):
                 e["pausa"] += b["final"]
             if "card" in f:
@@ -163,9 +163,9 @@ def main(carpeta):
     def hacer_tts(e):
         if not e["texto"]:
             return
-        h = hashlib.md5((voz["nombre"] + str(voz.get("velocidad", 1.0)) + e["texto"]).encode()).hexdigest()[:12]
+        h = hashlib.md5((voz["nombre"] + str(voz.get("velocidad", 1.0)) + e["voz_texto"]).encode()).hexdigest()[:12]
         e["wav"] = trabajo / "tts" / f"{h}.wav"
-        tts(e["texto"], voz, e["wav"], key)
+        tts(e["voz_texto"], voz, e["wav"], key)
         e["voz_dur"] = duracion(e["wav"])
     with cf.ThreadPoolExecutor(4) as ex:
         list(ex.map(hacer_tts, escenas))
