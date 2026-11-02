@@ -23,6 +23,8 @@ Una idea pasa si cumple **al menos 3 de estas 4 condiciones**:
 - Sin MAYÚSCULAS de grito.
 
 ## 3. Conceptos de miniatura
+> **Decisión de estilo:** las miniaturas se hacen **con fotos reales** (de Pexels o Unsplash) desde el primer vídeo, con el texto, la etiqueta amarilla y los colores del canal por encima. Plantilla: `miniaturas/plantilla-fotos.html`. Fotos necesarias: `miniaturas/fotos/LISTA-DE-FOTOS.md`.
+
 - **Un solo elemento central** grande: el producto o el logo, mostrado de forma genérica (sin infringir la marca).
 - **Una etiqueta de precio amarilla** (`#FFC400`) como elemento fijo del canal.
 - **Contraste:** una flecha, un símbolo de tachado o un "vs".

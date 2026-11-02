@@ -1,5 +1,7 @@
 # Miniaturas · Vídeo #1 "Cómo gana dinero McDonald's"
 
+> ⚠️ **Provisionales (dibujos).** Las definitivas se harán con fotos reales en cuanto lleguen las fotos de `miniaturas/fotos/LISTA-DE-FOTOS.md`.
+
 | Archivo | Concepto | Texto |
 |---|---|---|
 | `miniatura-A.png` | Hamburguesa tachada → local con etiqueta de precio | NO ES LA COMIDA |

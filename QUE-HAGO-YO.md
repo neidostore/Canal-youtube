@@ -29,6 +29,9 @@ Lo que queda es lo que solo puedes hacer tú: crear las cuentas, producir los v�
 2. En YouTube Studio → **Personalización**, sube el logo y el banner y pega esta descripción:
    > Cada martes descubrimos la economía oculta detrás de algo que usas cada día: cómo gana dinero McDonald's, por qué la tinta de impresora es tan cara o por qué los vuelos cambian de precio. Datos verificados, sin tecnicismos y sin venderte nada.
 
+### Paso 3b · Fotos para las miniaturas (15 min)
+Descarga de pexels.com las fotos de `miniaturas/fotos/LISTA-DE-FOTOS.md` (empieza por la 1 y la 2) y súbelas al chat. Con ellas te hago las miniaturas definitivas.
+
 ### Paso 4 · Elegir la voz IA (1 h)
 1. Crea una cuenta en **ElevenLabs** (u otra herramienta de voz). Para uso comercial necesitas un plan de pago; el más barato suele bastar al principio.
 2. Escucha voces de la biblioteca en **español neutro**. Elige una clara, pausada y con algo de personalidad.
