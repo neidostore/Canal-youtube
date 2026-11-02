@@ -1,7 +1,7 @@
 # Vídeo #3 · Por qué Shein es tan barato (y quién paga la diferencia)
 
 - **Pilar:** 🏢 Cómo gana dinero
-- **Duración objetivo:** unos 11 min (alrededor de 1.600 palabras)
+- **Duración estimada:** unos 5-6 min de narración (~800 palabras a 150 palabras/min). Para pasar de 8 min y poder poner anuncios a mitad de vídeo hay que ampliarlo (ver nota al final).
 - **Publicación:** semana 3, martes a las 18:00 (hora de España)
 
 > ⚠️ Es un tema sensible con una empresa real. **Atribuye siempre las acusaciones a su fuente** ("según una investigación de…") y recoge la respuesta de la empresa cuando exista. Nunca afirmes como hecho algo que no está probado. Comprueba todos los **[VERIFICAR]**.
@@ -118,3 +118,7 @@ Y si quieres ver otra empresa que vende barato para ganar en otro sitio, en este
    - 0-3 s: "Durante años, un paquete pequeño desde China podía entrar en EE. UU. sin pagar aranceles." [VERIFICAR]
    - 3-30 s: Qué era la norma "de minimis", por qué ayudó a las tiendas online chinas y qué ha cambiado.
    - 30-40 s: "¿Debería pasar lo mismo en Europa? Comenta."
+
+---
+
+> **Nota sobre la duración:** las marcas de tiempo del guion y los capítulos de la descripción son orientativos. Ajústalos después de montar el vídeo. Para llegar a 8 minutos o más, añade en cada revelación un ejemplo concreto con cifras verificadas y amplía el bloque "Qué significa para ti". No metas relleno: si baja la retención, YouTube recomienda menos el vídeo.

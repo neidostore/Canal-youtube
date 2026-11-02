@@ -1,7 +1,7 @@
 # Vídeo #2 · Por qué las impresoras son baratas y la tinta carísima
 
 - **Pilar:** 🏷️ Por qué cuesta tanto
-- **Duración objetivo:** unos 10 min (alrededor de 1.450 palabras)
+- **Duración estimada:** unos 5-6 min de narración (~800 palabras a 150 palabras/min). Para pasar de 8 min y poder poner anuncios a mitad de vídeo hay que ampliarlo (ver nota al final).
 - **Publicación:** semana 2, martes a las 18:00 (hora de España)
 
 > ⚠️ Comprueba cada **[VERIFICAR]** antes de grabar la voz y añade la fuente a la descripción.
@@ -118,3 +118,7 @@ Y si quieres ver otra empresa que gana dinero donde nadie mira, en este vídeo t
    - 0-3 s: "El café en cápsulas puede costar varias veces más por kilo que el café molido." [VERIFICAR: cálculo con precios reales]
    - 3-25 s: La cafetera barata, la cápsula cara: el mismo truco que con las impresoras.
    - 25-35 s: "¿Cápsulas o cafetera de toda la vida? Comenta."
+
+---
+
+> **Nota sobre la duración:** las marcas de tiempo del guion y los capítulos de la descripción son orientativos. Ajústalos después de montar el vídeo. Para llegar a 8 minutos o más, añade en cada revelación un ejemplo concreto con cifras verificadas y amplía el bloque "Qué significa para ti". No metas relleno: si baja la retención, YouTube recomienda menos el vídeo.

@@ -1,7 +1,7 @@
 # Vídeo #4 · Por qué el precio de los vuelos cambia cada vez que lo miras
 
 - **Pilar:** 🧠 Trucos que usan contigo / 🏷️ Por qué cuesta tanto
-- **Duración objetivo:** unos 10 min (alrededor de 1.500 palabras)
+- **Duración estimada:** unos 6-7 min de narración (~950 palabras a 150 palabras/min). Para pasar de 8 min y poder poner anuncios a mitad de vídeo hay que ampliarlo (ver nota al final).
 - **Publicación:** semana 4, martes a las 18:00 (hora de España)
 
 > ⚠️ Comprueba todos los **[VERIFICAR]**. Ojo con el mito de las cookies: cuéntalo como lo que es (una creencia sin pruebas sólidas), no como un hecho.
@@ -121,3 +121,7 @@ Y si quieres ver otra empresa experta en cobrarte de más, en este vídeo te cue
    - 0-3 s: "Tu avión probablemente tiene más billetes vendidos que asientos."
    - 3-30 s: La estadística de la gente que no se presenta y por qué les compensa el riesgo.
    - 30-40 s: "¿Te ha pasado alguna vez? Comenta."
+
+---
+
+> **Nota sobre la duración:** las marcas de tiempo del guion y los capítulos de la descripción son orientativos. Ajústalos después de montar el vídeo. Para llegar a 8 minutos o más, añade en cada revelación un ejemplo concreto con cifras verificadas y amplía el bloque "Qué significa para ti". No metas relleno: si baja la retención, YouTube recomienda menos el vídeo.
