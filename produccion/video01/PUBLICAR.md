@@ -1,6 +1,6 @@
 # 📤 Publicar el vídeo 1 · paso a paso (unos 5 minutos)
 
-**Archivos:** `video.mp4` (1080p, 5:16), `subtitulos.srt` y las miniaturas `miniaturas/01-mcdonalds/foto-A.png`, `foto-B.png` y `foto-C.png`.
+**Archivos:** `video.mp4` (1080p, 5:04), `subtitulos.srt` y las miniaturas `miniaturas/01-mcdonalds/foto-A.png`, `foto-B.png` y `foto-C.png`.
 
 ## 1. Subir
 YouTube Studio → **Crear** (arriba a la derecha) → **Subir vídeos** → elige `video.mp4`.
@@ -16,11 +16,11 @@ Cómo gana dinero McDonald's (pista: no es con hamburguesas)
 
 00:00 El dato que lo cambia todo
 00:34 McDonald's no es dueño de casi ningún restaurante
-01:03 Lo que paga un franquiciado
-02:06 El giro inmobiliario de Harry Sonneborn
-03:23 Por qué este modelo es tan potente
-04:13 Por qué nadie lo puede copiar
-04:36 Qué significa para ti
+01:01 Lo que paga un franquiciado
+01:59 El giro inmobiliario de Harry Sonneborn
+03:12 Por qué este modelo es tan potente
+04:02 Por qué nadie lo puede copiar
+04:24 Qué significa para ti
 
 📚 Fuentes:
 - McDonald's Corporation, informe anual (Form 10-K) 2025: https://www.sec.gov/Archives/edgar/data/63908/000006390826000035/mcd-20251231.htm
