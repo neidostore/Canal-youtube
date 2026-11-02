@@ -1,6 +1,10 @@
-# Voz IA gratuita · Kokoro
+# Voz IA · Google Cloud Text-to-Speech (Chirp 3 HD)
 
-- **Modelo:** Kokoro-82M (código abierto, licencia Apache 2.0, permite uso comercial). Funciona aquí mismo, sin cuentas ni pagos.
-- **Voces en español:** `em_alex` (hombre), `ef_dora` (mujer), `em_santa` (hombre, más grave).
-- **Muestras:** `muestras/` (gancho del vídeo #1).
+- Voces naturales en español; uso comercial permitido; el límite gratuito mensual cubre de sobra el canal.
+- **Muestras:** `muestras-google/` (gancho del vídeo #1).
+  - Latinoamérica (es-US): Charon, Fenrir y Orus (hombre); Kore y Aoede (mujer)
+  - España (es-ES): Charon (hombre)
 - **Voz elegida:** _(pendiente)_
+- La clave de API **no** se guarda en el repositorio.
+
+(Kokoro, la opción gratuita local, se descartó porque sonaba robótica.)
