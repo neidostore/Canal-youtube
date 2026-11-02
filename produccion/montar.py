@@ -295,28 +295,43 @@ def main(carpeta):
     if dinamico:
         import numpy as np, wave
         SR = 48000; total_n = int((t + 1) * SR); fx_buf = np.zeros(total_n, dtype=np.float32)
-        rng = np.random.default_rng(3)
-        def whoosh():
-            n = int(0.32 * SR); r = rng.standard_normal(n).astype(np.float32)
-            b = np.cumsum(r); b -= np.convolve(b, np.ones(64) / 64, mode="same")   # ruido filtrado
-            env = np.sin(np.linspace(0, np.pi, n)) ** 2
-            return (b / (np.abs(b).max() + 1e-9) * env * 0.10).astype(np.float32)
-        def pop():
-            n = int(0.09 * SR); tt = np.arange(n) / SR
-            f = 900 * np.exp(-tt * 18) + 250
-            return (np.sin(2 * np.pi * np.cumsum(f) / SR) * np.exp(-tt * 38) * 0.22).astype(np.float32)
-        W_, P_ = whoosh(), pop()
-        def poner(sonido, t_seg):
-            i0 = int(max(0, t_seg) * SR); i1 = min(total_n, i0 + len(sonido))
-            fx_buf[i0:i1] += sonido[: i1 - i0]
+        EF = RAIZ / "efectos"
+        def cargar(nombre):
+            with wave.open(str(EF / f"{nombre}.wav")) as w:
+                return np.frombuffer(w.readframes(w.getnframes()), dtype=np.int16).astype(np.float32) / 32767
+        lib = {n: cargar(n) for n in ["whoosh1", "whoosh2", "whoosh3", "whoosh4", "swipe", "pop1", "pop2", "pop3",
+                                      "click", "ding", "caja", "subida", "tictac"]}
+        VOL = {"whoosh": 0.11, "swipe": 0.10, "pop": 0.22, "click": 0.25, "ding": 0.22, "caja": 0.24,
+               "subida": 0.13, "tictac": 0.22}
+        ultimo = {"v": None}
+        def elegir(opciones):  # nunca el mismo sonido dos veces seguidas
+            o = [x for x in opciones if x != ultimo["v"]] or opciones
+            ultimo["v"] = random.choice(o); return ultimo["v"]
+        def poner(nombre, t_seg):
+            snd = lib[nombre] * VOL[nombre.rstrip("0123456789")]
+            i0 = int(max(0, t_seg) * SR); i1 = min(total_n, i0 + len(snd))
+            fx_buf[i0:i1] += snd[: i1 - i0]
         for p in planos[1:]:
             if p["tipo"] != "intro":
-                poner(W_, p["ini"] - 0.12)
+                poner(elegir(["whoosh1", "whoosh2", "whoosh3", "whoosh4", "swipe"]), p["ini"] - 0.12)
         for a, _, _ in kw_ev:
-            poner(P_, a)
+            poner(elegir(["pop1", "pop2", "pop3", "click"]), a)
         for e in escenas:
-            if e["tipo"] == "card" and e.get("texto"):
-                poner(P_, e["ini"])
+            if e["tipo"] != "card" or not e.get("texto"):
+                continue
+            c = tarjetas[e["card"]]; tipo = c.get("tipo")
+            if tipo == "cifra":
+                poner("caja" if any(m in c.get("cifra", "") for m in "$€£") else "ding", e["ini"])
+            elif tipo == "barras":
+                poner("caja", e["ini"])
+            elif tipo == "anio":
+                poner("tictac", e["ini"])
+            elif tipo == "cita":
+                poner("subida", e["ini"] - 0.55)
+            elif tipo == "lista":
+                poner("click", e["ini"])
+            else:
+                poner(elegir(["pop1", "pop2", "pop3"]), e["ini"])
         with wave.open(str(trabajo / "efectos.wav"), "wb") as w:
             w.setnchannels(1); w.setsampwidth(2); w.setframerate(SR)
             w.writeframes((np.clip(fx_buf, -1, 1) * 32767).astype(np.int16).tobytes())
