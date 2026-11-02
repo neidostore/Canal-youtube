@@ -20,7 +20,7 @@ Cómo gana dinero McDonald's (pista: no es con hamburguesas)
 02:09 El giro inmobiliario de Harry Sonneborn
 03:26 Por qué este modelo es tan potente
 04:20 Por qué nadie lo puede copiar
-04:44 Qué significa para ti
+04:45 Qué significa para ti
 
 📚 Fuentes:
 - McDonald's Corporation, informe anual (Form 10-K) 2025: https://www.sec.gov/Archives/edgar/data/63908/000006390826000035/mcd-20251231.htm
