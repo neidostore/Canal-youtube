@@ -251,13 +251,18 @@ def main(carpeta):
     estilo = spec.get("estilo", {})
     dinamico, plano = estilo.get("dinamico", False), estilo.get("plano", 2.0)
     planos = []
+    inicios = spec.get("videos_inicio", {})   # segundo del clip donde empieza lo importante (p. ej. una reacción)
     for e in escenas:
         if dinamico and e["tipo"] in ("foto", "video") and e["dur"] > plano * 1.4:
             k = max(2, round(e["dur"] / plano)); d = e["dur"] / k
             for j in range(k):
                 p = dict(e, ini=e["ini"] + j * d, dur=d, toma=j)
                 if e["tipo"] == "video":
-                    p["offset"] = round((j * 2.7 + random.uniform(0, 3)) % max(0.5, dur_clip[e["vid"]] - d - 0.2), 2)
+                    lim = max(0.5, dur_clip[e["vid"]] - d - 0.2)
+                    if e["vid"] in inicios:
+                        p["offset"] = round(min(inicios[e["vid"]] + j * d, lim), 2); p.pop("punch", None)
+                    else:
+                        p["offset"] = round((j * 2.7 + random.uniform(0, 3)) % lim, 2)
                 if j > 0:
                     p["punch"] = (round(random.uniform(1.25, 1.45), 2), round(random.uniform(0.15, 0.85), 2),
                                   round(random.uniform(0.2, 0.8), 2))
@@ -265,7 +270,8 @@ def main(carpeta):
                 planos.append(p)
         else:
             if e["tipo"] == "video":
-                e["offset"] = round(random.uniform(0, max(0.0, dur_clip[e["vid"]] - e["dur"] - 0.2)), 2)
+                lim = max(0.0, dur_clip[e["vid"]] - e["dur"] - 0.2)
+                e["offset"] = round(min(inicios[e["vid"]], lim) if e["vid"] in inicios else random.uniform(0, lim), 2)
             planos.append(e)
     for i, e in enumerate(planos):
         h = hashlib.md5(f"{e['img']}|{e['dur']:.3f}|{e.get('movimiento')}|{e.get('punch')}|{e.get('corte')}|{e.get('offset')}".encode()).hexdigest()[:10]
