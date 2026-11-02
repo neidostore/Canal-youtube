@@ -21,6 +21,12 @@ Canal de divulgación sobre **la economía oculta detrás de lo que compras cada
 7. [Estadísticas y revisiones](docs/07-estadisticas.md) (prompt 7)
 - [Plantilla de seguimiento de vídeos (CSV)](plantillas/seguimiento-videos.csv)
 
+## Guiones
+- Vídeo #1 · Cómo gana dinero McDonald's: dentro del [doc 03](docs/03-guiones-ganchos-miniaturas.md)
+- [Vídeo #2 · Por qué las impresoras son baratas y la tinta carísima](guiones/02-impresoras-tinta.md)
+- [Vídeo #3 · Por qué Shein es tan barato](guiones/03-shein.md)
+- [Vídeo #4 · Por qué el precio de los vuelos cambia cada vez que lo miras](guiones/04-precio-vuelos.md)
+
 ## Próximos pasos (esta semana)
 - [ ] Validar el nicho y el nombre (doc 01, punto 2)
 - [ ] Crear el canal y verificarlo (doc 02, semana 0)
