@@ -2,7 +2,8 @@
  "titulo": "Cómo gana dinero McDonald's (pista: no es con hamburguesas)",
  "voz": {
   "idioma": "es-US",
-  "nombre": "es-US-Chirp3-HD-Orus"
+  "nombre": "es-US-Chirp3-HD-Orus",
+  "velocidad": 1.1
  },
  "fotos": {
   "burger1": 12034622,

@@ -12,7 +12,7 @@ from pathlib import Path
 from PIL import Image, ImageFilter
 
 W, H, FPS = 1920, 1080, 30
-PAUSA, PAUSA_BLOQUE = 0.30, 0.75
+PAUSA, PAUSA_BLOQUE = 0.15, 0.45
 RAIZ = Path(__file__).resolve().parent
 
 
@@ -39,7 +39,8 @@ def tts(texto, voz, destino, key):
     if destino.exists():
         return
     body = {"input": {"text": texto}, "voice": {"languageCode": voz["idioma"], "name": voz["nombre"]},
-            "audioConfig": {"audioEncoding": "LINEAR16", "sampleRateHertz": 48000}}
+            "audioConfig": {"audioEncoding": "LINEAR16", "sampleRateHertz": 48000,
+                            "speakingRate": voz.get("velocidad", 1.0)}}
     req = urllib.request.Request("https://texttospeech.googleapis.com/v1/text:synthesize",
                                  data=json.dumps(body).encode(),
                                  headers={"Content-Type": "application/json", "X-Goog-Api-Key": key})
@@ -162,7 +163,7 @@ def main(carpeta):
     def hacer_tts(e):
         if not e["texto"]:
             return
-        h = hashlib.md5((voz["nombre"] + e["texto"]).encode()).hexdigest()[:12]
+        h = hashlib.md5((voz["nombre"] + str(voz.get("velocidad", 1.0)) + e["texto"]).encode()).hexdigest()[:12]
         e["wav"] = trabajo / "tts" / f"{h}.wav"
         tts(e["texto"], voz, e["wav"], key)
         e["voz_dur"] = duracion(e["wav"])
