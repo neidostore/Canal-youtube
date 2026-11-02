@@ -1,5 +1,5 @@
 {
- "titulo": "DEMO estilo dinámico (primer minuto del vídeo 1)",
+ "titulo": "DEMO estilo dinámico",
  "voz": {
   "idioma": "es-US",
   "nombre": "es-US-Chirp3-HD-Achird",
@@ -151,6 +151,6 @@
  ],
  "estilo": {
   "dinamico": true,
-  "plano": 2.0
+  "plano": 1.8
  }
 }

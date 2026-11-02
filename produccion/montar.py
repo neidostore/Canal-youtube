@@ -98,8 +98,15 @@ def clip(escena, destino):
         return
     if escena["tipo"] == "foto" and escena.get("punch"):
         zb, fx, fy = escena["punch"]
-        vf = (f"zoompan=z='{zb}+0.07*on/{n}':x='(iw-iw/zoom)*{fx}':y='(ih-ih/zoom)*{fy}'"
-              f":d={n}:s={W}x{H}:fps={FPS},format=yuv420p")
+        corte = escena.get("corte", "zoom")
+        if corte == "desliza":   # barrido lateral rápido
+            x = f"(iw-iw/zoom)*{'on' if fx < 0.5 else f'({n}-on)'}/{n}"
+            vf = f"zoompan=z='{zb}':x='{x}':y='(ih-ih/zoom)*{fy}':d={n}:s={W}x{H}:fps={FPS}"
+        else:                    # zoom rápido hacia un detalle
+            vf = f"zoompan=z='{zb}+0.07*on/{n}':x='(iw-iw/zoom)*{fx}':y='(ih-ih/zoom)*{fy}':d={n}:s={W}x{H}:fps={FPS}"
+        if corte == "destello":  # destello blanco muy corto al entrar
+            vf += ",fade=t=in:st=0:d=0.12:color=white"
+        vf += ",format=yuv420p"
         sh("ffmpeg", "-y", "-loop", "1", "-framerate", str(FPS), "-i", escena["img"], "-vf", vf, "-frames:v", str(n),
            "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "-r", str(FPS), str(destino))
         return
@@ -228,11 +235,12 @@ def main(carpeta):
                 if j > 0:
                     p["punch"] = (round(random.uniform(1.25, 1.45), 2), round(random.uniform(0.15, 0.85), 2),
                                   round(random.uniform(0.2, 0.8), 2))
+                    p["corte"] = random.choices(["zoom", "desliza", "destello"], weights=[5, 3, 1])[0]
                 planos.append(p)
         else:
             planos.append(e)
     for i, e in enumerate(planos):
-        h = hashlib.md5(f"{e['img']}|{e['dur']:.3f}|{e.get('movimiento')}|{e.get('punch')}".encode()).hexdigest()[:10]
+        h = hashlib.md5(f"{e['img']}|{e['dur']:.3f}|{e.get('movimiento')}|{e.get('punch')}|{e.get('corte')}".encode()).hexdigest()[:10]
         e["clip"] = trabajo / "clips" / f"{i:03d}_{h}.mp4"
     with cf.ThreadPoolExecutor(4) as ex:
         list(ex.map(lambda e: clip(e, e["clip"]), planos))
@@ -261,6 +269,8 @@ def main(carpeta):
            "Style: Sub,Inter Display Black,74,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,0,0,0,0,100,100,0,0,1,6,3,2,"
            "120,120,90,1\n"
            "Style: KW,Inter Display Black,150,&H0000C4FF,&H0000C4FF,&H00000000,&H96000000,0,0,0,0,100,100,-2,0,1,9,5,5,"
+           "100,100,0,1\n"
+           "Style: KWB,Inter Display Black,120,&H00130F0E,&H00130F0E,&H0000C4FF,&H0000C4FF,0,0,0,0,100,100,-1,0,3,22,0,5,"
            "100,100,0,1\n\n[Events]\nFormat: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text\n")
     kw_ev = []
     for e in escenas:
@@ -270,10 +280,15 @@ def main(carpeta):
             t0 = e["ini"] + (e["voz_dur"] * pos / len(e["texto"]) if pos > 0 else 0.1)
             t1 = min(t0 + 1.5, e["ini"] + e["dur"] - 0.05)
             kw_ev.append((t0, t1, e["kw"].upper()))
-    anim = r"{\pos(960,470)\fscx40\fscy40\t(0,110,\fscx118\fscy118)\t(110,200,\fscx100\fscy100)\fad(0,120)}"
+    def anim(i):  # alterna estilo (texto amarillo / caja amarilla) y altura
+        y = (470, 330, 430)[i % 3]
+        rot = ("", r"\frz-3", r"\frz2")[i % 3]
+        return (f"{{\\pos(960,{y}){rot}\\fscx40\\fscy40\\t(0,110,\\fscx118\\fscy118)"
+                f"\\t(110,200,\\fscx100\\fscy100)\\fad(0,120)}}")
     (trabajo / "subs.ass").write_text(cab + "".join(
         f"Dialogue: 0,{ts(a, '.')},{ts(b, '.')},Sub,,0,0,0,,{txt}\n" for a, b, txt in ass_ev) + "".join(
-        f"Dialogue: 1,{ts(a, '.')},{ts(b, '.')},KW,,0,0,0,,{anim}{txt}\n" for a, b, txt in kw_ev), encoding="utf-8")
+        f"Dialogue: 1,{ts(a, '.')},{ts(b, '.')},{'KWB' if i % 2 else 'KW'},,0,0,0,,{anim(i)}{txt}\n"
+        for i, (a, b, txt) in enumerate(kw_ev)), encoding="utf-8")
 
     # 6b) efectos de sonido: "whoosh" en cada corte y "pop" en palabras clave y tarjetas
     pistas_extra = []

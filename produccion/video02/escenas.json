@@ -39,12 +39,14 @@
    "frases": [
     {
      "t": "¿Sabías que, si haces la cuenta por litro, la tinta de muchas impresoras sale más cara que un perfume de lujo?",
-     "img": "perfume"
+     "img": "perfume",
+     "kw": "más cara que un perfume"
     },
     {
      "t": "No es una exageración: la organización de consumidores británica Which? comparó precios en 2021.",
      "img": "champagne",
-     "voz": "No es una exageración: la organización de consumidores británica, Uich, comparó precios en 2021."
+     "voz": "No es una exageración: la organización de consumidores británica, Uich, comparó precios en 2021.",
+     "kw": "Which? 2021"
     },
     {
      "t": "Y la tinta original de algunas impresoras costaba más por mililitro que el champán Dom Pérignon.",
@@ -69,7 +71,8 @@
     },
     {
      "t": "Y aun así... ¡te venden la impresora casi regalada!",
-     "img": "printer_home"
+     "img": "printer_home",
+     "kw": "casi regalada"
     },
     {
      "t": "Tanto, que el consejero delegado de uno de los mayores fabricantes del mundo reconoció en televisión que pierden dinero con cada impresora que venden.",
@@ -81,23 +84,28 @@
     },
     {
      "t": "Entonces, ¿de dónde sale el dinero?",
-     "img": "money1"
+     "img": "money1",
+     "kw": "¿de dónde sale el dinero?"
     },
     {
      "t": "En los próximos minutos vas a entender uno de los modelos de negocio más rentables, y más polémicos, que existen.",
-     "img": "cartridges"
+     "img": "cartridges",
+     "kw": "rentable y polémico"
     },
     {
      "t": "Vas a ver por qué tu impresora a veces no reconoce un cartucho perfectamente bueno,",
-     "img": "chip"
+     "img": "chip",
+     "kw": "no reconoce"
     },
     {
      "t": "por qué una autoridad europea multó a una marca con diez millones de euros,",
-     "img": "gavel"
+     "img": "gavel",
+     "kw": "10 millones de euros"
     },
     {
      "t": "y cuál es la forma de salir de la trampa.",
-     "img": "ink"
+     "img": "ink",
+     "kw": "la trampa"
     }
    ]
   },
@@ -110,15 +118,18 @@
    "frases": [
     {
      "t": "Entras en una tienda y ves una impresora multifunción, que imprime, escanea y copia, por cincuenta o sesenta euros.",
-     "img": "printer_home2"
+     "img": "printer_home2",
+     "kw": "50 o 60 €"
     },
     {
      "t": "Piensas: ¡qué barato!",
-     "img": "shelves"
+     "img": "shelves",
+     "kw": "¡qué barato!"
     },
     {
      "t": "Y en parte tienes razón: por ese precio, es casi un regalo.",
-     "img": "printer_home2"
+     "img": "printer_home2",
+     "kw": "casi un regalo"
     },
     {
      "t": "Llegas a casa, imprimes unos cuantos trabajos, algunas entradas, alguna foto...",
@@ -126,19 +137,23 @@
     },
     {
      "t": "y un día aparece el aviso: nivel de tinta bajo.",
-     "img": "cartridge_hp"
+     "img": "cartridge_hp",
+     "kw": "nivel de tinta bajo"
     },
     {
      "t": "Vas a comprar los cartuchos, y descubres que un juego de recambio cuesta casi lo mismo que la impresora entera. A veces, más.",
-     "img": "cartridges"
+     "img": "cartridges",
+     "kw": "casi lo mismo"
     },
     {
      "t": "Un año después, has gastado en tinta dos o tres veces lo que te costó la máquina.",
-     "img": "money3"
+     "img": "money3",
+     "kw": "dos o tres veces"
     },
     {
      "t": "Para entender por qué, hay que hablar de... ¡cuchillas de afeitar!",
-     "img": "razor"
+     "img": "razor",
+     "kw": "cuchillas de afeitar"
     }
    ]
   },
@@ -147,11 +162,13 @@
    "frases": [
     {
      "t": "A principios del siglo veinte se popularizó una idea que hoy se estudia en todas las escuelas de negocio:",
-     "img": "razor_blades"
+     "img": "razor_blades",
+     "kw": "escuelas de negocio"
     },
     {
      "t": "vender la maquinilla barata, y ganar dinero con las cuchillas de recambio.",
-     "img": "razor"
+     "img": "razor",
+     "kw": "maquinilla barata"
     },
     {
      "t": "Se conoce como el modelo de la maquinilla y la cuchilla. Se suele asociar a Gillette, aunque algunos historiadores matizan que no lo aplicó exactamente así desde el principio.",
@@ -208,28 +225,34 @@
     },
     {
      "t": "Las impresoras llevaron esta idea al extremo.",
-     "img": "cartridges"
+     "img": "cartridges",
+     "kw": "al extremo"
     },
     {
      "t": "En una entrevista en la cadena CNBC, en enero de 2024, Enrique Lores, el consejero delegado de HP, confirmó que la empresa pierde dinero con cada impresora, y que gana dinero con la tinta y las suscripciones.",
      "img": "laptop_chart",
-     "voz": "En una entrevista en la cadena C N B C, en enero de 2024, Enrique Lores, el consejero delegado de Hache Pe, confirmó que la empresa pierde dinero con cada impresora, y que gana dinero con la tinta y las suscripciones."
+     "voz": "En una entrevista en la cadena C N B C, en enero de 2024, Enrique Lores, el consejero delegado de Hache Pe, confirmó que la empresa pierde dinero con cada impresora, y que gana dinero con la tinta y las suscripciones.",
+     "kw": "pierde dinero"
     },
     {
      "t": "Y no son solo las impresoras: las cápsulas de café,",
-     "img": "capsules"
+     "img": "capsules",
+     "kw": "cápsulas de café"
     },
     {
      "t": "los cepillos eléctricos, los filtros de agua, o las consolas de videojuegos siguen el mismo esquema.",
-     "img": "console"
+     "img": "console",
+     "kw": "el mismo esquema"
     },
     {
      "t": "El aparato es la puerta. ¡El recambio es el negocio!",
-     "img": "controller"
+     "img": "controller",
+     "kw": "el recambio es el negocio"
     },
     {
      "t": "Y una vez que lo ves, lo empiezas a encontrar en todas partes.",
-     "img": "capsules"
+     "img": "capsules",
+     "kw": "en todas partes"
     }
    ]
   },
@@ -255,39 +278,48 @@
    "frases": [
     {
      "t": "Los fabricantes defienden el precio de la tinta con argumentos que, en parte, son ciertos.",
-     "img": "cartridges"
+     "img": "cartridges",
+     "kw": "en parte, ciertos"
     },
     {
      "t": "La tinta de impresora no es tinta de bolígrafo.",
-     "img": "ink"
+     "img": "ink",
+     "kw": "no es de bolígrafo"
     },
     {
      "t": "Tiene que salir por agujeros más finos que un pelo, secarse en el papel en un instante, pero no secarse nunca dentro del cartucho.",
-     "img": "cartridge_hp"
+     "img": "cartridge_hp",
+     "kw": "más fino que un pelo"
     },
     {
      "t": "Además, muchos cartuchos llevan integrado el cabezal de impresión: una pieza con cientos de inyectores microscópicos.",
-     "img": "chip"
+     "img": "chip",
+     "kw": "cabezal de impresión"
     },
     {
      "t": "Cada vez que cambias el cartucho, estás cambiando también esa pieza.",
-     "img": "cartridges"
+     "img": "cartridges",
+     "kw": "esa pieza"
     },
     {
      "t": "Todo eso es verdad. Pero no explica la diferencia de precio. Y hay una prueba muy sencilla.",
-     "img": "money2"
+     "img": "money2",
+     "kw": "una prueba sencilla"
     },
     {
      "t": "Desde hace años existen impresoras con depósitos recargables: en lugar de cartuchos, la tinta se vende en botellas, y tú rellenas los depósitos.",
-     "img": "ink"
+     "img": "ink",
+     "kw": "depósitos recargables"
     },
     {
      "t": "Con esas impresoras, el coste por página baja muchísimo. Y las fabrican las mismas marcas.",
-     "img": "printer_home2"
+     "img": "printer_home2",
+     "kw": "baja muchísimo"
     },
     {
      "t": "¿Cuál es la trampa? Que esas impresoras cuestan bastante más al comprarlas.",
-     "img": "money3"
+     "img": "money3",
+     "kw": "¿la trampa?"
     },
     {
      "t": "Es decir, el modelo se da la vuelta: impresora cara y tinta barata, o impresora barata y tinta cara.",
@@ -303,15 +335,18 @@
     },
     {
      "t": "El dinero lo vas a pagar igual. La pregunta es cuándo, y cuánto.",
-     "img": "money1"
+     "img": "money1",
+     "kw": "cuándo y cuánto"
     },
     {
      "t": "Un detalle: fíjate en los cartuchos que vienen con una impresora nueva.",
-     "img": "printer_home"
+     "img": "printer_home",
+     "kw": "cartuchos de inicio"
     },
     {
      "t": "Muchas veces son cartuchos de inicio, con menos capacidad que los que compras después. Compáralo en la caja.",
-     "img": "cartridge_hp"
+     "img": "cartridge_hp",
+     "kw": "menos capacidad"
     }
    ]
   },
@@ -320,15 +355,18 @@
    "frases": [
     {
      "t": "Te estarás preguntando: si al final pagamos lo mismo, ¿por qué no venden todas las impresoras más caras, y la tinta más barata?",
-     "img": "shelves"
+     "img": "shelves",
+     "kw": "¿por qué no?"
     },
     {
      "t": "Por cómo funciona nuestro cerebro.",
-     "img": "printer_home2"
+     "img": "printer_home2",
+     "kw": "nuestro cerebro"
     },
     {
      "t": "En la tienda, lo que ves es el precio de la impresora, en grande. El precio de la tinta no aparece en la etiqueta.",
-     "img": "shelves"
+     "img": "shelves",
+     "kw": "en grande"
     },
     {
      "t": "Además, le damos mucho más peso a lo que pagamos hoy que a lo que pagaremos dentro de un año.",
@@ -348,15 +386,18 @@
     },
     {
      "t": "Así que, entre una impresora de cincuenta euros y otra de doscientos cincuenta, la mayoría elige la de cincuenta, aunque a la larga salga más cara.",
-     "img": "printer_home"
+     "img": "printer_home",
+     "kw": "50 € vs 250 €"
     },
     {
      "t": "Es el mismo truco que el del móvil a cero euros con permanencia, o el del gimnasio con la matrícula gratis.",
-     "img": "phone_pay"
+     "img": "phone_pay",
+     "kw": "móvil a 0 €"
     },
     {
      "t": "Las marcas lo saben. El precio que compite en la tienda es el de la máquina. Y el que paga las facturas, es el de la tinta.",
-     "img": "money2"
+     "img": "money2",
+     "kw": "las marcas lo saben"
     }
    ]
   },
@@ -365,19 +406,23 @@
    "frases": [
     {
      "t": "Este modelo tiene un punto débil.",
-     "img": "chip"
+     "img": "chip",
+     "kw": "punto débil"
     },
     {
      "t": "Si puedes comprar tinta compatible, de otra marca, mucho más barata, el plan se viene abajo.",
-     "img": "ink"
+     "img": "ink",
+     "kw": "tinta compatible"
     },
     {
      "t": "Por eso muchos cartuchos llevan un chip. La impresora lo lee y, en algunos modelos, si el cartucho no es original, aparece un error, o directamente no imprime.",
-     "img": "chip2"
+     "img": "chip2",
+     "kw": "un chip"
     },
     {
      "t": "Y aquí viene lo más polémico de todo.",
-     "img": "gavel"
+     "img": "gavel",
+     "kw": "lo más polémico"
     },
     {
      "t": "En diciembre de 2020, la autoridad italiana de la competencia multó a HP con diez millones de euros por prácticas comerciales incorrectas.",
@@ -391,28 +436,34 @@
     },
     {
      "t": "Según la autoridad, las impresoras incluían un sistema en su software que hacía que rechazaran cartuchos que no eran de la marca.",
-     "img": "chip2"
+     "img": "chip2",
+     "kw": "rechazaban cartuchos"
     },
     {
      "t": "Esas limitaciones se habían ido ampliando con actualizaciones, sin explicar bien sus consecuencias, y no se informaba adecuadamente de ello al comprar.",
-     "img": "phone_pay2"
+     "img": "phone_pay2",
+     "kw": "actualizaciones"
     },
     {
      "t": "La autoridad también señaló que la empresa recogía datos sobre el uso de los cartuchos sin informar a los usuarios.",
-     "img": "chip"
+     "img": "chip",
+     "kw": "datos"
     },
     {
      "t": "HP recurrió, pero un tribunal administrativo italiano confirmó la sanción.",
      "img": "judge",
-     "voz": "Hache Pe recurrió, pero un tribunal administrativo italiano confirmó la sanción."
+     "voz": "Hache Pe recurrió, pero un tribunal administrativo italiano confirmó la sanción.",
+     "kw": "sanción confirmada"
     },
     {
      "t": "¿Y qué dice la empresa? Que bloquear cartuchos que violan su propiedad intelectual es legítimo, y que los cartuchos de terceros pueden suponer un riesgo de seguridad informática.",
-     "img": "laptop_chart"
+     "img": "laptop_chart",
+     "kw": "propiedad intelectual"
     },
     {
      "t": "Pero en aquella entrevista de 2024, Lores dejó una frase que dio la vuelta al mundo:",
-     "img": "cartridges"
+     "img": "cartridges",
+     "kw": "una frase"
     },
     {
      "t": "que si un cliente no imprime lo suficiente, o no usa sus consumibles, es una mala inversión para la empresa.",
@@ -424,7 +475,8 @@
     },
     {
      "t": "¡Esa frase resume el modelo mejor que cualquier explicación!",
-     "img": "money1"
+     "img": "money1",
+     "kw": "resume el modelo"
     }
    ]
   },
@@ -433,27 +485,33 @@
    "frases": [
     {
      "t": "El último paso es la suscripción.",
-     "img": "phone_pay2"
+     "img": "phone_pay2",
+     "kw": "la suscripción"
     },
     {
      "t": "Pagas una cuota mensual según las páginas que imprimes, y los cartuchos te llegan a casa antes de que se acaben.",
-     "img": "phone_pay"
+     "img": "phone_pay",
+     "kw": "cuota mensual"
     },
     {
      "t": "Para quien imprime de forma regular, puede salir más barato.",
-     "img": "printer_home"
+     "img": "printer_home",
+     "kw": "más barato"
     },
     {
      "t": "Pero fíjate en lo que cambia para el fabricante: pasa de venderte cartuchos de vez en cuando, a cobrarte todos los meses, imprimas o no.",
-     "img": "money3"
+     "img": "money3",
+     "kw": "todos los meses"
     },
     {
      "t": "Y en algunos servicios, si cancelas, los cartuchos dejan de funcionar aunque les quede tinta. Lee bien las condiciones.",
-     "img": "cartridge_hp"
+     "img": "cartridge_hp",
+     "kw": "dejan de funcionar"
     },
     {
      "t": "De la cuchilla de afeitar a la suscripción mensual: la misma idea de hace cien años, cada vez más perfeccionada.",
-     "img": "razor"
+     "img": "razor",
+     "kw": "cien años"
     }
    ]
   },
@@ -527,7 +585,8 @@
     },
     {
      "t": "Y antes de actualizar el software de tu impresora, lee qué cambia. Ya sabes por qué.",
-     "img": "chip2"
+     "img": "chip2",
+     "kw": "lee qué cambia"
     }
    ]
   },
@@ -562,5 +621,9 @@
     }
    ]
   }
- ]
+ ],
+ "estilo": {
+  "dinamico": true,
+  "plano": 1.8
+ }
 }

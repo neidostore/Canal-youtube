@@ -62,19 +62,23 @@
    "frases": [
     {
      "t": "¡Cada día, McDonald's vende millones de hamburguesas en todo el mundo!",
-     "img": "burgerfries"
+     "img": "burgerfries",
+     "kw": "millones de hamburguesas"
     },
     {
      "t": "Y aun así... si miras sus cuentas, descubres algo rarísimo:",
-     "img": "money1"
+     "img": "money1",
+     "kw": "algo rarísimo"
     },
     {
      "t": "¡las hamburguesas no son lo que más dinero le deja!",
-     "img": "burger1"
+     "img": "burger1",
+     "kw": "no es la comida"
     },
     {
      "t": "Uno de sus primeros directivos lo resumió en una frase que se ha hecho famosa:",
-     "img": "diner"
+     "img": "diner",
+     "kw": "una frase famosa"
     },
     {
      "t": "No estamos en el negocio de la comida. Estamos en el negocio inmobiliario.",
@@ -86,15 +90,18 @@
     },
     {
      "t": "En los próximos minutos vas a entender qué quería decir,",
-     "img": "corner"
+     "img": "corner",
+     "kw": "¿qué quería decir?"
     },
     {
      "t": "por qué este modelo es casi imposible de copiar,",
-     "img": "inter_aerial"
+     "img": "inter_aerial",
+     "kw": "imposible de copiar"
     },
     {
      "t": "y cuál es el detalle que hace que McDonald's gane dinero aunque un restaurante venda poco.",
-     "img": "fryer"
+     "img": "fryer",
+     "kw": "aunque venda poco"
     }
    ]
   },
@@ -107,19 +114,23 @@
    "frases": [
     {
      "t": "Lo normal es pensar que McDonald's es una cadena de restaurantes:",
-     "img": "eating"
+     "img": "eating",
+     "kw": "cadena de restaurantes"
     },
     {
      "t": "compra pan, carne y patatas, las vende más caras, y se queda la diferencia.",
-     "img": "fries_hands"
+     "img": "fries_hands",
+     "kw": "compra y vende"
     },
     {
      "t": "Pero ojo: ¡la mayoría de los McDonald's que ves no son de McDonald's!",
-     "img": "crowd_inter"
+     "img": "crowd_inter",
+     "kw": "no son suyos"
     },
     {
      "t": "Son de franquiciados: empresarios que pagan por usar la marca.",
-     "img": "handshake"
+     "img": "handshake",
+     "kw": "franquiciados"
     },
     {
      "t": "En concreto, alrededor del noventa y cinco por ciento de sus restaurantes en todo el mundo, según su informe anual de 2025.",
@@ -132,7 +143,8 @@
     },
     {
      "t": "Y lo interesante viene ahora: cómo les cobra.",
-     "img": "money2"
+     "img": "money2",
+     "kw": "cómo les cobra"
     }
    ]
   },
@@ -193,31 +205,38 @@
     },
     {
      "t": "Con las dos primeras, McDonald's ya ingresa dinero... ¡sin freír una sola patata!",
-     "img": "fryer"
+     "img": "fryer",
+     "kw": "sin freír una patata"
     },
     {
      "t": "Si el restaurante vende más, McDonald's gana más.",
-     "img": "eating2"
+     "img": "eating2",
+     "kw": "vende más = gana más"
     },
     {
      "t": "Si hay que contratar personal o arreglar la freidora, lo paga el franquiciado.",
-     "img": "fries"
+     "img": "fries",
+     "kw": "lo paga el franquiciado"
     },
     {
      "t": "Y abrir un McDonald's no es barato: en Estados Unidos, la inversión inicial supera con facilidad el millón de dólares.",
-     "img": "money3"
+     "img": "money3",
+     "kw": "más de 1 millón $"
     },
     {
      "t": "Una buena parte, además, tiene que salir del bolsillo del propio franquiciado, no de un préstamo.",
-     "img": "handshake2"
+     "img": "handshake2",
+     "kw": "su propio dinero"
     },
     {
      "t": "Es decir, McDonald's consigue miles de restaurantes nuevos con el dinero y el esfuerzo de otros.",
-     "img": "aerial_mall"
+     "img": "aerial_mall",
+     "kw": "el dinero de otros"
     },
     {
      "t": "Por eso le interesa tanto que vuelvas: su ingreso crece con cada menú que se vende, pero los costes son del franquiciado.",
-     "img": "burgerfries"
+     "img": "burgerfries",
+     "kw": "que vuelvas"
     }
    ]
   },
@@ -251,35 +270,43 @@
     },
     {
      "t": "Un vendedor de batidoras llamado Ray Kroc conoció un restaurante de hamburguesas de dos hermanos, Richard y Maurice McDonald, en California.",
-     "img": "shake"
+     "img": "shake",
+     "kw": "Ray Kroc"
     },
     {
      "t": "Le impresionó lo rápido que servían, y se ofreció a abrir franquicias por todo el país.",
-     "img": "diner"
+     "img": "diner",
+     "kw": "franquicias"
     },
     {
      "t": "El problema es que cobraba un porcentaje tan pequeño de las ventas que, después de pagar a los hermanos, apenas le quedaba nada.",
-     "img": "fries"
+     "img": "fries",
+     "kw": "apenas le quedaba nada"
     },
     {
      "t": "Entonces, un experto financiero que trabajaba con él, Harry Sonneborn, tuvo una idea.",
-     "img": "handshake2"
+     "img": "handshake2",
+     "kw": "Harry Sonneborn"
     },
     {
      "t": "McDonald's compraría, o alquilaría a largo plazo, el terreno y el local donde iba cada restaurante.",
-     "img": "parking_inter"
+     "img": "parking_inter",
+     "kw": "el terreno y el local"
     },
     {
      "t": "Y luego se lo alquilaría al franquiciado, más caro.",
-     "img": "corner"
+     "img": "corner",
+     "kw": "más caro"
     },
     {
      "t": "Así, el franquiciado no solo paga por la marca: también le paga un alquiler a McDonald's.",
-     "img": "money1"
+     "img": "money1",
+     "kw": "un alquiler"
     },
     {
      "t": "Un alquiler con un mínimo fijo, y que además va ligado a lo que vende el restaurante.",
-     "img": "eating"
+     "img": "eating",
+     "kw": "mínimo fijo"
     },
     {
      "t": "La idea funcionó tan bien que, en 1961, Kroc pudo comprarles la empresa a los hermanos.",
@@ -291,7 +318,8 @@
     },
     {
      "t": "¿Y cuánto dinero es esto hoy? Agárrate.",
-     "img": "board"
+     "img": "board",
+     "kw": "agárrate"
     },
     {
      "t": "En 2025, McDonald's ingresó unos veintiséis mil novecientos millones de dólares.",
@@ -360,7 +388,8 @@
    "frases": [
     {
      "t": "Aquí se cierra el círculo. ¿Por qué este modelo es tan potente?",
-     "img": "crowd_inter"
+     "img": "crowd_inter",
+     "kw": "¿por qué es tan potente?"
     },
     {
      "t": "Primero, porque los terrenos se revalorizan.",
@@ -377,15 +406,18 @@
     },
     {
      "t": "McDonald's elige las mejores esquinas: cruces, salidas de autopista, centros comerciales.",
-     "img": "highway"
+     "img": "highway",
+     "kw": "las mejores esquinas"
     },
     {
      "t": "Tiene equipos que estudian cuánto tráfico pasa, cuántas casas hay cerca, y hacia dónde va a crecer la ciudad.",
-     "img": "interchange"
+     "img": "interchange",
+     "kw": "tráfico"
     },
     {
      "t": "Con los años, ese suelo vale cada vez más.",
-     "img": "aerial_mall"
+     "img": "aerial_mall",
+     "kw": "vale cada vez más"
     },
     {
      "t": "Segundo, porque el riesgo lo asume otro.",
@@ -402,7 +434,8 @@
     },
     {
      "t": "Si un restaurante vende poco, el franquiciado tiene que seguir pagando, como mínimo, el alquiler.",
-     "img": "corner"
+     "img": "corner",
+     "kw": "seguir pagando"
     },
     {
      "t": "Y tercero, por la estabilidad.",
@@ -419,15 +452,18 @@
     },
     {
      "t": "A los inversores les encantan los ingresos previsibles, y el alquiler es de lo más previsible que existe.",
-     "img": "laptop_chart"
+     "img": "laptop_chart",
+     "kw": "ingresos previsibles"
     },
     {
      "t": "Este es el detalle del principio: McDonald's sigue cobrando aunque un restaurante concreto venda poco.",
-     "img": "money3"
+     "img": "money3",
+     "kw": "sigue cobrando"
     },
     {
      "t": "La hamburguesa es el motivo para que el local exista. Pero el negocio... ¡es el local!",
-     "img": "burger2"
+     "img": "burger2",
+     "kw": "¡es el local!"
     }
    ]
   },
@@ -436,23 +472,28 @@
    "frases": [
     {
      "t": "¿Y por qué no lo copian todas las cadenas?",
-     "img": "eating2"
+     "img": "eating2",
+     "kw": "¿por qué no lo copian?"
     },
     {
      "t": "Porque hace falta muchísimo dinero para comprar terrenos, y décadas para que se revaloricen.",
-     "img": "money2"
+     "img": "money2",
+     "kw": "muchísimo dinero"
     },
     {
      "t": "McDonald's empezó en los años cincuenta, cuando muchas de las mejores esquinas aún estaban libres y eran baratas.",
-     "img": "diner"
+     "img": "diner",
+     "kw": "años cincuenta"
     },
     {
      "t": "Hoy, una cadena nueva tendría que pagarlas a precio de oro.",
-     "img": "crowd_inter"
+     "img": "crowd_inter",
+     "kw": "precio de oro"
     },
     {
      "t": "No basta con una buena hamburguesa: ¡necesitas setenta años de ventaja!",
-     "img": "burger1"
+     "img": "burger1",
+     "kw": "70 años de ventaja"
     }
    ]
   },
@@ -461,19 +502,23 @@
    "frases": [
     {
      "t": "La próxima vez que veas un McDonald's en la mejor esquina de tu ciudad, ya sabes que no es casualidad.",
-     "img": "corner"
+     "img": "corner",
+     "kw": "no es casualidad"
     },
     {
      "t": "Muchas empresas que parecen vender una cosa ganan dinero con otra.",
-     "img": "chart2"
+     "img": "chart2",
+     "kw": "ganan con otra cosa"
     },
     {
      "t": "¿Las impresoras? Pierden dinero con la máquina para ganarlo con la tinta.",
-     "img": "printer"
+     "img": "printer",
+     "kw": "impresoras"
     },
     {
      "t": "¿Las gasolineras? Muchas ganan más con la tienda que con la gasolina.",
-     "img": "gas"
+     "img": "gas",
+     "kw": "gasolineras"
     }
    ]
   },
@@ -501,5 +546,9 @@
     }
    ]
   }
- ]
+ ],
+ "estilo": {
+  "dinamico": true,
+  "plano": 1.8
+ }
 }
