@@ -1,6 +1,6 @@
 # 📤 Publicar el vídeo 1 · paso a paso (unos 5 minutos)
 
-**Archivos:** `video.mp4` (1080p, 5:33), `subtitulos.srt` y las miniaturas `miniaturas/01-mcdonalds/foto-A.png`, `foto-B.png` y `foto-C.png`.
+**Archivos:** `video.mp4` (1080p, 5:27), `subtitulos.srt` y las miniaturas `miniaturas/01-mcdonalds/foto-A.png`, `foto-B.png` y `foto-C.png`.
 
 ## 1. Subir
 YouTube Studio → **Crear** (arriba a la derecha) → **Subir vídeos** → elige `video.mp4`.
