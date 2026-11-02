@@ -5,7 +5,7 @@
 | `logo.png` | Foto de perfil de YouTube, TikTok e Instagram (principal) | 800×800 |
 | `logo-interrogacion.png` | Variante del logo (opcional) | 800×800 |
 | `banner.png` | Banner del canal de YouTube | 2560×1440 |
-| `banner-vista-movil.png` | Vista previa de la zona que se ve en el móvil | 1546×423 |
+| `banner-vista-movil.png` | Zona que se ve en todos los dispositivos (zona segura de YouTube) | 1235×338 |
 
 - **Colores:** fondo `#0E0F13` · amarillo `#FFC400` · gris del texto `#C9CBD3`
 - **Tipografía:** Inter Display (Black para los títulos y Medium para el texto). Es gratis y está en Google Fonts como "Inter".
