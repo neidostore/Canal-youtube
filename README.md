@@ -10,6 +10,8 @@ Canal de divulgación sobre **la economía oculta detrás de lo que compras cada
 | Idioma | Español neutro para todo el mundo hispano |
 | Tiempo | 5-10 h/semana: 1 vídeo largo + 3 Shorts |
 
+## 👉 [Qué tengo que hacer yo, paso a paso](QUE-HAGO-YO.md)
+
 ## Documentos (uno por prompt del vídeo)
 0. [Prompts originales](docs/00-prompts-originales.md)
 1. [Nicho rentable + 100 ideas](docs/01-nicho.md) (prompt 2)
@@ -27,8 +29,5 @@ Canal de divulgación sobre **la economía oculta detrás de lo que compras cada
 - [Vídeo #3 · Por qué Shein es tan barato](guiones/03-shein.md)
 - [Vídeo #4 · Por qué el precio de los vuelos cambia cada vez que lo miras](guiones/04-precio-vuelos.md)
 
-## Próximos pasos (esta semana)
-- [ ] Validar el nicho y el nombre (doc 01, punto 2)
-- [ ] Crear el canal y verificarlo (doc 02, semana 0)
-- [ ] Elegir la voz IA y hacer las plantillas visuales (doc 05)
-- [ ] Verificar los datos del guion #1 y producir el primer vídeo (doc 03)
+## Próximos pasos
+Están todos en [QUE-HAGO-YO.md](QUE-HAGO-YO.md).

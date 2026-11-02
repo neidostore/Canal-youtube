@@ -71,7 +71,7 @@ En los próximos minutos vas a entender qué quería decir, por qué este modelo
 
 **[0:30 · CONTEXTO]**
 Lo normal es pensar que McDonald's es una cadena de restaurantes: compra pan, carne y patatas, las vende más caras y se queda la diferencia.
-Pero la mayoría de los McDonald's que ves no son de McDonald's. Son de franquiciados, empresarios que pagan por usar la marca. [VERIFICAR: porcentaje de restaurantes franquiciados, en torno al 95 %].
+Pero la mayoría de los McDonald's que ves no son de McDonald's. Son de franquiciados, empresarios que pagan por usar la marca. En concreto, alrededor del 95 % de sus restaurantes en todo el mundo, según su informe anual de 2025.
 Y lo interesante es cómo les cobra.
 
 **[1:30 · REVELACIÓN 1: la franquicia]**
@@ -90,7 +90,7 @@ Si te está gustando entender la economía detrás de lo que compras, suscríbet
 En los años 50, McDonald's tenía un problema: cobraba poco a los franquiciados y casi no ganaba dinero. Entonces un directivo financiero, Harry Sonneborn, tuvo una idea.
 McDonald's compraría o alquilaría a largo plazo el terreno y el local donde iba cada restaurante, y luego se lo alquilaría al franquiciado más caro.
 Así, el franquiciado no solo paga por la marca: también paga alquiler a McDonald's. Un alquiler que suele subir con los años o ir ligado a las ventas. [VERIFICAR: cómo describe el informe anual los alquileres a franquiciados].
-*(Mini-premio)* Según sus cuentas, los ingresos por alquiler son una de las partidas más grandes que cobra de los franquiciados. [VERIFICAR: cifra y año del último informe].
+*(Mini-premio)* En 2025, McDonald's ingresó unos 26.900 millones de dólares, y unos 16.500 millones, más de la mitad, vinieron de los restaurantes franquiciados: alquileres, royalties y cuotas. No de vender hamburguesas en sus propios locales. [VERIFICAR: qué parte de esos 16.500 millones es alquiler; está en la nota de ingresos del informe 10-K].
 
 **[7:00 · REVELACIÓN 3: por qué es casi imposible de copiar]**
 Aquí se cierra el círculo. ¿Por qué este modelo es tan potente?
@@ -117,7 +117,7 @@ Cuéntame en los comentarios qué empresa quieres que analicemos ahora. Y si qui
 09:30 Qué significa para ti
 
 📚 Fuentes:
-- McDonald's Corporation, Informe anual (Form 10-K) [año]
+- McDonald's Corporation, Informe anual (Form 10-K) 2025: https://www.sec.gov/Archives/edgar/data/63908/000006390826000035/mcd-20251231.htm
 - [otras fuentes consultadas]
 
 📩 Newsletter gratuita: [enlace]
