@@ -71,8 +71,8 @@
     },
     {
      "t": "Y aun así... ¡te venden la impresora casi regalada!",
-     "img": "printer_home",
-     "kw": "casi regalada"
+     "kw": "casi regalada",
+     "vid": "v_printer_head"
     },
     {
      "t": "Tanto, que el consejero delegado de uno de los mayores fabricantes del mundo reconoció en televisión que pierden dinero con cada impresora que venden.",
@@ -84,13 +84,13 @@
     },
     {
      "t": "Entonces, ¿de dónde sale el dinero?",
-     "img": "money1",
-     "kw": "¿de dónde sale el dinero?"
+     "kw": "¿de dónde sale el dinero?",
+     "vid": "v_counting"
     },
     {
      "t": "En los próximos minutos vas a entender uno de los modelos de negocio más rentables, y más polémicos, que existen.",
-     "img": "cartridges",
-     "kw": "rentable y polémico"
+     "kw": "rentable y polémico",
+     "vid": "v_ink_orange"
     },
     {
      "t": "Vas a ver por qué tu impresora a veces no reconoce un cartucho perfectamente bueno,",
@@ -104,8 +104,8 @@
     },
     {
      "t": "y cuál es la forma de salir de la trampa.",
-     "img": "ink",
-     "kw": "la trampa"
+     "kw": "la trampa",
+     "vid": "v_ink_smoke"
     }
    ]
   },
@@ -142,13 +142,13 @@
     },
     {
      "t": "Vas a comprar los cartuchos, y descubres que un juego de recambio cuesta casi lo mismo que la impresora entera. A veces, más.",
-     "img": "cartridges",
-     "kw": "casi lo mismo"
+     "kw": "casi lo mismo",
+     "vid": "r_man_tv"
     },
     {
      "t": "Un año después, has gastado en tinta dos o tres veces lo que te costó la máquina.",
-     "img": "money3",
-     "kw": "dos o tres veces"
+     "kw": "dos o tres veces",
+     "vid": "v_businessman_money"
     },
     {
      "t": "Para entender por qué, hay que hablar de... ¡cuchillas de afeitar!",
@@ -162,13 +162,13 @@
    "frases": [
     {
      "t": "A principios del siglo veinte se popularizó una idea que hoy se estudia en todas las escuelas de negocio:",
-     "img": "razor_blades",
-     "kw": "escuelas de negocio"
+     "kw": "escuelas de negocio",
+     "vid": "v_shaving"
     },
     {
      "t": "vender la maquinilla barata, y ganar dinero con las cuchillas de recambio.",
-     "img": "razor",
-     "kw": "maquinilla barata"
+     "kw": "maquinilla barata",
+     "vid": "v_shaving"
     },
     {
      "t": "Se conoce como el modelo de la maquinilla y la cuchilla. Se suele asociar a Gillette, aunque algunos historiadores matizan que no lo aplicó exactamente así desde el principio.",
@@ -225,14 +225,14 @@
     },
     {
      "t": "Las impresoras llevaron esta idea al extremo.",
-     "img": "cartridges",
-     "kw": "al extremo"
+     "kw": "al extremo",
+     "vid": "v_industrial_print"
     },
     {
      "t": "En una entrevista en la cadena CNBC, en enero de 2024, Enrique Lores, el consejero delegado de HP, confirmó que la empresa pierde dinero con cada impresora, y que gana dinero con la tinta y las suscripciones.",
-     "img": "laptop_chart",
      "voz": "En una entrevista en la cadena C N B C, en enero de 2024, Enrique Lores, el consejero delegado de Hache Pe, confirmó que la empresa pierde dinero con cada impresora, y que gana dinero con la tinta y las suscripciones.",
-     "kw": "pierde dinero"
+     "kw": "pierde dinero",
+     "vid": "v_market"
     },
     {
      "t": "Y no son solo las impresoras: las cápsulas de café,",
@@ -278,13 +278,13 @@
    "frases": [
     {
      "t": "Los fabricantes defienden el precio de la tinta con argumentos que, en parte, son ciertos.",
-     "img": "cartridges",
-     "kw": "en parte, ciertos"
+     "kw": "en parte, ciertos",
+     "vid": "v_printer_head"
     },
     {
      "t": "La tinta de impresora no es tinta de bolígrafo.",
-     "img": "ink",
-     "kw": "no es de bolígrafo"
+     "kw": "no es de bolígrafo",
+     "vid": "v_ink_glass"
     },
     {
      "t": "Tiene que salir por agujeros más finos que un pelo, secarse en el papel en un instante, pero no secarse nunca dentro del cartucho.",
@@ -303,13 +303,13 @@
     },
     {
      "t": "Todo eso es verdad. Pero no explica la diferencia de precio. Y hay una prueba muy sencilla.",
-     "img": "money2",
-     "kw": "una prueba sencilla"
+     "kw": "una prueba sencilla",
+     "vid": "v_money_machine"
     },
     {
      "t": "Desde hace años existen impresoras con depósitos recargables: en lugar de cartuchos, la tinta se vende en botellas, y tú rellenas los depósitos.",
-     "img": "ink",
-     "kw": "depósitos recargables"
+     "kw": "depósitos recargables",
+     "vid": "v_ink_water"
     },
     {
      "t": "Con esas impresoras, el coste por página baja muchísimo. Y las fabrican las mismas marcas.",
@@ -335,8 +335,8 @@
     },
     {
      "t": "El dinero lo vas a pagar igual. La pregunta es cuándo, y cuánto.",
-     "img": "money1",
-     "kw": "cuándo y cuánto"
+     "kw": "cuándo y cuánto",
+     "vid": "v_counting"
     },
     {
      "t": "Un detalle: fíjate en los cartuchos que vienen con una impresora nueva.",
@@ -355,8 +355,8 @@
    "frases": [
     {
      "t": "Te estarás preguntando: si al final pagamos lo mismo, ¿por qué no venden todas las impresoras más caras, y la tinta más barata?",
-     "img": "shelves",
-     "kw": "¿por qué no?"
+     "kw": "¿por qué no?",
+     "vid": "r_man_phone"
     },
     {
      "t": "Por cómo funciona nuestro cerebro.",
@@ -391,13 +391,13 @@
     },
     {
      "t": "Es el mismo truco que el del móvil a cero euros con permanencia, o el del gimnasio con la matrícula gratis.",
-     "img": "phone_pay",
-     "kw": "móvil a 0 €"
+     "kw": "móvil a 0 €",
+     "vid": "v_pay_phone"
     },
     {
      "t": "Las marcas lo saben. El precio que compite en la tienda es el de la máquina. Y el que paga las facturas, es el de la tinta.",
-     "img": "money2",
-     "kw": "las marcas lo saben"
+     "kw": "las marcas lo saben",
+     "vid": "v_businessman_money"
     }
    ]
   },
@@ -411,8 +411,8 @@
     },
     {
      "t": "Si puedes comprar tinta compatible, de otra marca, mucho más barata, el plan se viene abajo.",
-     "img": "ink",
-     "kw": "tinta compatible"
+     "kw": "tinta compatible",
+     "vid": "v_ink_orange"
     },
     {
      "t": "Por eso muchos cartuchos llevan un chip. La impresora lo lee y, en algunos modelos, si el cartucho no es original, aparece un error, o directamente no imprime.",
@@ -457,8 +457,8 @@
     },
     {
      "t": "¿Y qué dice la empresa? Que bloquear cartuchos que violan su propiedad intelectual es legítimo, y que los cartuchos de terceros pueden suponer un riesgo de seguridad informática.",
-     "img": "laptop_chart",
-     "kw": "propiedad intelectual"
+     "kw": "propiedad intelectual",
+     "vid": "v_market"
     },
     {
      "t": "Pero en aquella entrevista de 2024, Lores dejó una frase que dio la vuelta al mundo:",
@@ -475,8 +475,8 @@
     },
     {
      "t": "¡Esa frase resume el modelo mejor que cualquier explicación!",
-     "img": "money1",
-     "kw": "resume el modelo"
+     "kw": "resume el modelo",
+     "vid": "r_shocked_woman"
     }
    ]
   },
@@ -485,13 +485,13 @@
    "frases": [
     {
      "t": "El último paso es la suscripción.",
-     "img": "phone_pay2",
-     "kw": "la suscripción"
+     "kw": "la suscripción",
+     "vid": "v_shop_online"
     },
     {
      "t": "Pagas una cuota mensual según las páginas que imprimes, y los cartuchos te llegan a casa antes de que se acaben.",
-     "img": "phone_pay",
-     "kw": "cuota mensual"
+     "kw": "cuota mensual",
+     "vid": "v_pay_bills"
     },
     {
      "t": "Para quien imprime de forma regular, puede salir más barato.",
@@ -500,8 +500,8 @@
     },
     {
      "t": "Pero fíjate en lo que cambia para el fabricante: pasa de venderte cartuchos de vez en cuando, a cobrarte todos los meses, imprimas o no.",
-     "img": "money3",
-     "kw": "todos los meses"
+     "kw": "todos los meses",
+     "vid": "v_money_machine"
     },
     {
      "t": "Y en algunos servicios, si cancelas, los cartuchos dejan de funcionar aunque les quede tinta. Lee bien las condiciones.",
@@ -630,5 +630,35 @@
   "archivo": "musica/wallpaper.mp3",
   "volumen": 0.1,
   "credito": "\"Wallpaper\" de Kevin MacLeod (incompetech.com)"
+ },
+ "videos": {
+  "v_burger_meal": 5986794,
+  "v_grill": 8477267,
+  "v_fries_fry": 8880960,
+  "v_fries_oil": 2922562,
+  "v_night_inter": 3063475,
+  "v_night_traffic": 3048225,
+  "v_day_inter": 3121459,
+  "v_signing": 8440326,
+  "v_handshake": 8725948,
+  "v_market": 7579577,
+  "v_counting": 6700653,
+  "v_money_machine": 6266288,
+  "v_businessman_money": 5743045,
+  "v_teens_burgers": 7236486,
+  "r_shocked_woman": 8626657,
+  "r_man_tv": 9883681,
+  "r_man_phone": 7534960,
+  "v_printer_head": 5393028,
+  "v_industrial_print": 855469,
+  "v_ink_smoke": 7075988,
+  "v_ink_water": 7565969,
+  "v_ink_orange": 1722882,
+  "v_ink_glass": 5282334,
+  "v_shaving": 7314495,
+  "v_shop_online": 6771533,
+  "v_shop_phone": 7568745,
+  "v_pay_bills": 7821646,
+  "v_pay_phone": 6898014
  }
 }

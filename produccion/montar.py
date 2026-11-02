@@ -16,6 +16,7 @@ PAUSA, PAUSA_BLOQUE = 0.15, 0.45
 RAIZ = Path(__file__).resolve().parent
 INTRO_VIDEO = RAIZ.parent / "marca" / "intro" / "intro.mp4"
 INTRO_AUDIO = RAIZ.parent / "marca" / "intro" / "intro_audio.wav"
+CLIPS = RAIZ / "clips"
 
 
 def sh(*args):
@@ -95,6 +96,19 @@ def clip(escena, destino):
     if escena["tipo"] == "intro":
         sh("ffmpeg", "-y", "-i", escena["img"], "-an", "-vf", f"fps={FPS},scale={W}:{H},format=yuv420p",
            "-frames:v", str(n), "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", str(destino))
+        return
+    if escena["tipo"] == "video":
+        off = escena.get("offset", 0.0)
+        vf = f"scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H}"
+        if escena.get("punch"):   # en tomas siguientes, encuadre más cerrado
+            zb, fx, fy = escena["punch"]; zw, zh = int(W * zb), int(H * zb)
+            vf = (f"scale={zw}:{zh}:force_original_aspect_ratio=increase,"
+                  f"crop={W}:{H}:(iw-{W})*{fx}:(ih-{H})*{fy}")
+        if escena.get("corte") == "destello":
+            vf += ",fade=t=in:st=0:d=0.12:color=white"
+        sh("ffmpeg", "-y", "-stream_loop", "-1", "-ss", f"{off:.2f}", "-i", escena["img"], "-an",
+           "-vf", f"{vf},fps={FPS},format=yuv420p", "-frames:v", str(n), "-c:v", "libx264", "-preset", "veryfast",
+           "-crf", "18", str(destino))
         return
     if escena["tipo"] == "foto" and escena.get("punch"):
         zb, fx, fy = escena["punch"]
@@ -177,6 +191,8 @@ def main(carpeta):
             if "card" in f:
                 k = hashlib.md5(json.dumps(f["card"], sort_keys=True).encode()).hexdigest()[:10]
                 tarjetas[k] = f["card"]; e.update(tipo="card", card=k)
+            elif "vid" in f:
+                e.update(tipo="video", vid=f["vid"], movimiento=random.randint(0, 3))
             else:
                 e.update(tipo="foto", foto=f["img"], movimiento=random.randint(0, 3))
             escenas.append(e)
@@ -188,6 +204,11 @@ def main(carpeta):
         rutas = dict(zip(usadas, ex.map(lambda n: preparar_foto(n, spec["fotos"][n], fotos_dir, trabajo,
                                                                 spec.get("difuminar", {})), usadas)))
     render_tarjetas(tarjetas, trabajo)
+    vids = {e["vid"] for e in escenas if e["tipo"] == "video"}
+    faltan = [str(spec["videos"][v]) for v in vids if not (CLIPS / f"{spec['videos'][v]}.mp4").exists()]
+    if faltan:
+        subprocess.run(["bash", str(CLIPS / "descargar.sh"), *faltan], cwd=CLIPS, check=True)
+    dur_clip = {v: duracion(CLIPS / f"{spec['videos'][v]}.mp4") for v in vids}
 
     # 3) voz
     def hacer_tts(e):
@@ -217,7 +238,10 @@ def main(carpeta):
             if not sil.exists():
                 sh("ffmpeg", "-y", "-f", "lavfi", "-i", "anullsrc=r=48000:cl=mono", "-t", str(e["pausa"]), str(sil))
             lista_audio.append(sil)
-        e["img"] = str(rutas[e["foto"]] if e["tipo"] == "foto" else trabajo / f"card_{e['card']}.png")
+        if e["tipo"] == "video":
+            e["img"] = str(CLIPS / f"{spec['videos'][e['vid']]}.mp4")
+        else:
+            e["img"] = str(rutas[e["foto"]] if e["tipo"] == "foto" else trabajo / f"card_{e['card']}.png")
         t += e["dur"]
     (trabajo / "audio.txt").write_text("".join(f"file '{p}'\n" for p in lista_audio))
     sh("ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", str(trabajo / "audio.txt"), "-c:a", "pcm_s16le",
@@ -228,19 +252,23 @@ def main(carpeta):
     dinamico, plano = estilo.get("dinamico", False), estilo.get("plano", 2.0)
     planos = []
     for e in escenas:
-        if dinamico and e["tipo"] == "foto" and e["dur"] > plano * 1.4:
+        if dinamico and e["tipo"] in ("foto", "video") and e["dur"] > plano * 1.4:
             k = max(2, round(e["dur"] / plano)); d = e["dur"] / k
             for j in range(k):
                 p = dict(e, ini=e["ini"] + j * d, dur=d, toma=j)
+                if e["tipo"] == "video":
+                    p["offset"] = round((j * 2.7 + random.uniform(0, 3)) % max(0.5, dur_clip[e["vid"]] - d - 0.2), 2)
                 if j > 0:
                     p["punch"] = (round(random.uniform(1.25, 1.45), 2), round(random.uniform(0.15, 0.85), 2),
                                   round(random.uniform(0.2, 0.8), 2))
                     p["corte"] = random.choices(["zoom", "desliza", "destello"], weights=[5, 3, 1])[0]
                 planos.append(p)
         else:
+            if e["tipo"] == "video":
+                e["offset"] = round(random.uniform(0, max(0.0, dur_clip[e["vid"]] - e["dur"] - 0.2)), 2)
             planos.append(e)
     for i, e in enumerate(planos):
-        h = hashlib.md5(f"{e['img']}|{e['dur']:.3f}|{e.get('movimiento')}|{e.get('punch')}|{e.get('corte')}".encode()).hexdigest()[:10]
+        h = hashlib.md5(f"{e['img']}|{e['dur']:.3f}|{e.get('movimiento')}|{e.get('punch')}|{e.get('corte')}|{e.get('offset')}".encode()).hexdigest()[:10]
         e["clip"] = trabajo / "clips" / f"{i:03d}_{h}.mp4"
     with cf.ThreadPoolExecutor(4) as ex:
         list(ex.map(lambda e: clip(e, e["clip"]), planos))
@@ -257,7 +285,7 @@ def main(carpeta):
         for p in partes:
             d = e["voz_dur"] * len(p) / total
             srt.append((t0, t0 + d, p))
-            if e["tipo"] == "foto":
+            if e["tipo"] in ("foto", "video"):
                 ass_ev.append((t0, t0 + d, p))
             t0 += d
     (salida / "subtitulos.srt").write_text(

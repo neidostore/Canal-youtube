@@ -62,13 +62,13 @@
    "frases": [
     {
      "t": "¡Cada día, McDonald's vende millones de hamburguesas en todo el mundo!",
-     "img": "burgerfries",
-     "kw": "millones de hamburguesas"
+     "kw": "millones de hamburguesas",
+     "vid": "v_burger_meal"
     },
     {
      "t": "Y aun así... si miras sus cuentas, descubres algo rarísimo:",
-     "img": "money1",
-     "kw": "algo rarísimo"
+     "kw": "algo rarísimo",
+     "vid": "r_man_tv"
     },
     {
      "t": "¡las hamburguesas no son lo que más dinero le deja!",
@@ -95,13 +95,13 @@
     },
     {
      "t": "por qué este modelo es casi imposible de copiar,",
-     "img": "inter_aerial",
-     "kw": "imposible de copiar"
+     "kw": "imposible de copiar",
+     "vid": "v_night_inter"
     },
     {
      "t": "y cuál es el detalle que hace que McDonald's gane dinero aunque un restaurante venda poco.",
-     "img": "fryer",
-     "kw": "aunque venda poco"
+     "kw": "aunque venda poco",
+     "vid": "v_fries_fry"
     }
    ]
   },
@@ -114,8 +114,8 @@
    "frases": [
     {
      "t": "Lo normal es pensar que McDonald's es una cadena de restaurantes:",
-     "img": "eating",
-     "kw": "cadena de restaurantes"
+     "kw": "cadena de restaurantes",
+     "vid": "v_teens_burgers"
     },
     {
      "t": "compra pan, carne y patatas, las vende más caras, y se queda la diferencia.",
@@ -124,13 +124,13 @@
     },
     {
      "t": "Pero ojo: ¡la mayoría de los McDonald's que ves no son de McDonald's!",
-     "img": "crowd_inter",
-     "kw": "no son suyos"
+     "kw": "no son suyos",
+     "vid": "v_day_inter"
     },
     {
      "t": "Son de franquiciados: empresarios que pagan por usar la marca.",
-     "img": "handshake",
-     "kw": "franquiciados"
+     "kw": "franquiciados",
+     "vid": "v_handshake"
     },
     {
      "t": "En concreto, alrededor del noventa y cinco por ciento de sus restaurantes en todo el mundo, según su informe anual de 2025.",
@@ -143,8 +143,8 @@
     },
     {
      "t": "Y lo interesante viene ahora: cómo les cobra.",
-     "img": "money2",
-     "kw": "cómo les cobra"
+     "kw": "cómo les cobra",
+     "vid": "v_money_machine"
     }
    ]
   },
@@ -205,13 +205,13 @@
     },
     {
      "t": "Con las dos primeras, McDonald's ya ingresa dinero... ¡sin freír una sola patata!",
-     "img": "fryer",
-     "kw": "sin freír una patata"
+     "kw": "sin freír una patata",
+     "vid": "v_fries_oil"
     },
     {
      "t": "Si el restaurante vende más, McDonald's gana más.",
-     "img": "eating2",
-     "kw": "vende más = gana más"
+     "kw": "vende más = gana más",
+     "vid": "v_teens_burgers"
     },
     {
      "t": "Si hay que contratar personal o arreglar la freidora, lo paga el franquiciado.",
@@ -220,13 +220,13 @@
     },
     {
      "t": "Y abrir un McDonald's no es barato: en Estados Unidos, la inversión inicial supera con facilidad el millón de dólares.",
-     "img": "money3",
-     "kw": "más de 1 millón $"
+     "kw": "más de 1 millón $",
+     "vid": "v_businessman_money"
     },
     {
      "t": "Una buena parte, además, tiene que salir del bolsillo del propio franquiciado, no de un préstamo.",
-     "img": "handshake2",
-     "kw": "su propio dinero"
+     "kw": "su propio dinero",
+     "vid": "v_signing"
     },
     {
      "t": "Es decir, McDonald's consigue miles de restaurantes nuevos con el dinero y el esfuerzo de otros.",
@@ -235,8 +235,8 @@
     },
     {
      "t": "Por eso le interesa tanto que vuelvas: su ingreso crece con cada menú que se vende, pero los costes son del franquiciado.",
-     "img": "burgerfries",
-     "kw": "que vuelvas"
+     "kw": "que vuelvas",
+     "vid": "v_grill"
     }
    ]
   },
@@ -280,8 +280,8 @@
     },
     {
      "t": "El problema es que cobraba un porcentaje tan pequeño de las ventas que, después de pagar a los hermanos, apenas le quedaba nada.",
-     "img": "fries",
-     "kw": "apenas le quedaba nada"
+     "kw": "apenas le quedaba nada",
+     "vid": "v_fries_oil"
     },
     {
      "t": "Entonces, un experto financiero que trabajaba con él, Harry Sonneborn, tuvo una idea.",
@@ -300,8 +300,8 @@
     },
     {
      "t": "Así, el franquiciado no solo paga por la marca: también le paga un alquiler a McDonald's.",
-     "img": "money1",
-     "kw": "un alquiler"
+     "kw": "un alquiler",
+     "vid": "v_counting"
     },
     {
      "t": "Un alquiler con un mínimo fijo, y que además va ligado a lo que vende el restaurante.",
@@ -318,8 +318,8 @@
     },
     {
      "t": "¿Y cuánto dinero es esto hoy? Agárrate.",
-     "img": "board",
-     "kw": "agárrate"
+     "kw": "agárrate",
+     "vid": "r_shocked_woman"
     },
     {
      "t": "En 2025, McDonald's ingresó unos veintiséis mil novecientos millones de dólares.",
@@ -388,8 +388,8 @@
    "frases": [
     {
      "t": "Aquí se cierra el círculo. ¿Por qué este modelo es tan potente?",
-     "img": "crowd_inter",
-     "kw": "¿por qué es tan potente?"
+     "kw": "¿por qué es tan potente?",
+     "vid": "v_night_traffic"
     },
     {
      "t": "Primero, porque los terrenos se revalorizan.",
@@ -452,13 +452,13 @@
     },
     {
      "t": "A los inversores les encantan los ingresos previsibles, y el alquiler es de lo más previsible que existe.",
-     "img": "laptop_chart",
-     "kw": "ingresos previsibles"
+     "kw": "ingresos previsibles",
+     "vid": "v_market"
     },
     {
      "t": "Este es el detalle del principio: McDonald's sigue cobrando aunque un restaurante concreto venda poco.",
-     "img": "money3",
-     "kw": "sigue cobrando"
+     "kw": "sigue cobrando",
+     "vid": "v_money_machine"
     },
     {
      "t": "La hamburguesa es el motivo para que el local exista. Pero el negocio... ¡es el local!",
@@ -472,13 +472,13 @@
    "frases": [
     {
      "t": "¿Y por qué no lo copian todas las cadenas?",
-     "img": "eating2",
-     "kw": "¿por qué no lo copian?"
+     "kw": "¿por qué no lo copian?",
+     "vid": "v_teens_burgers"
     },
     {
      "t": "Porque hace falta muchísimo dinero para comprar terrenos, y décadas para que se revaloricen.",
-     "img": "money2",
-     "kw": "muchísimo dinero"
+     "kw": "muchísimo dinero",
+     "vid": "v_businessman_money"
     },
     {
      "t": "McDonald's empezó en los años cincuenta, cuando muchas de las mejores esquinas aún estaban libres y eran baratas.",
@@ -487,8 +487,8 @@
     },
     {
      "t": "Hoy, una cadena nueva tendría que pagarlas a precio de oro.",
-     "img": "crowd_inter",
-     "kw": "precio de oro"
+     "kw": "precio de oro",
+     "vid": "v_day_inter"
     },
     {
      "t": "No basta con una buena hamburguesa: ¡necesitas setenta años de ventaja!",
@@ -507,13 +507,13 @@
     },
     {
      "t": "Muchas empresas que parecen vender una cosa ganan dinero con otra.",
-     "img": "chart2",
-     "kw": "ganan con otra cosa"
+     "kw": "ganan con otra cosa",
+     "vid": "v_market"
     },
     {
      "t": "¿Las impresoras? Pierden dinero con la máquina para ganarlo con la tinta.",
-     "img": "printer",
-     "kw": "impresoras"
+     "kw": "impresoras",
+     "vid": "v_printer_head"
     },
     {
      "t": "¿Las gasolineras? Muchas ganan más con la tienda que con la gasolina.",
@@ -555,5 +555,35 @@
   "archivo": "musica/wallpaper.mp3",
   "volumen": 0.1,
   "credito": "\"Wallpaper\" de Kevin MacLeod (incompetech.com)"
+ },
+ "videos": {
+  "v_burger_meal": 5986794,
+  "v_grill": 8477267,
+  "v_fries_fry": 8880960,
+  "v_fries_oil": 2922562,
+  "v_night_inter": 3063475,
+  "v_night_traffic": 3048225,
+  "v_day_inter": 3121459,
+  "v_signing": 8440326,
+  "v_handshake": 8725948,
+  "v_market": 7579577,
+  "v_counting": 6700653,
+  "v_money_machine": 6266288,
+  "v_businessman_money": 5743045,
+  "v_teens_burgers": 7236486,
+  "r_shocked_woman": 8626657,
+  "r_man_tv": 9883681,
+  "r_man_phone": 7534960,
+  "v_printer_head": 5393028,
+  "v_industrial_print": 855469,
+  "v_ink_smoke": 7075988,
+  "v_ink_water": 7565969,
+  "v_ink_orange": 1722882,
+  "v_ink_glass": 5282334,
+  "v_shaving": 7314495,
+  "v_shop_online": 6771533,
+  "v_shop_phone": 7568745,
+  "v_pay_bills": 7821646,
+  "v_pay_phone": 6898014
  }
 }
