@@ -1,0 +1,91 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+html,body{margin:0;background:#000}
+.t{width:1280px;height:720px;position:relative;overflow:hidden;background:#0E0F13;font-family:'Inter Display',Inter,sans-serif}
+.t .glow{position:absolute;inset:0;background:radial-gradient(circle at 70% 50%,rgba(255,196,0,.18),rgba(255,196,0,0) 55%)}
+.txt{position:absolute;color:#fff;font-weight:900;letter-spacing:-3px;line-height:.92;text-transform:uppercase;text-shadow:0 6px 0 rgba(0,0,0,.45)}
+.y{color:#FFC400}
+.badge{position:absolute;right:26px;bottom:22px}
+</style></head><body>
+
+<svg width="0" height="0" style="position:absolute">
+ <defs>
+  <g id="burger">
+   <path d="M20 120 Q20 20 160 20 Q300 20 300 120 Z" fill="#E9A23B"/>
+   <ellipse cx="110" cy="70" rx="9" ry="5" fill="#FFE2A8"/><ellipse cx="170" cy="55" rx="9" ry="5" fill="#FFE2A8"/><ellipse cx="220" cy="85" rx="9" ry="5" fill="#FFE2A8"/><ellipse cx="140" cy="100" rx="9" ry="5" fill="#FFE2A8"/>
+   <path d="M10 128 Q40 150 70 128 Q100 150 130 128 Q160 150 190 128 Q220 150 250 128 Q280 150 310 128 L310 142 L10 142 Z" fill="#5DBB46"/>
+   <path d="M18 140 L302 140 L280 172 L250 150 L40 150 Z" fill="#FFD23F"/>
+   <rect x="14" y="148" width="292" height="44" rx="22" fill="#6B3A1E"/>
+   <path d="M20 200 L300 200 Q300 250 250 250 L70 250 Q20 250 20 200 Z" fill="#E9A23B"/>
+  </g>
+  <g id="tag">
+   <path d="M150 190 L400 190 L520 310 L400 430 L150 430 Q120 430 120 400 L120 220 Q120 190 150 190 Z" fill="#FFC400"/>
+   <circle cx="430" cy="310" r="24" fill="#0E0F13"/>
+  </g>
+  <g id="logo">
+   <g transform="rotate(-18 310 310)">
+    <path d="M430 310 C 520 300, 560 250, 590 200" stroke="#FFC400" stroke-width="10" fill="none" stroke-linecap="round"/>
+    <use href="#tag"/>
+    <text x="268" y="352" text-anchor="middle" font-family="Inter Display" font-weight="900" font-size="128" fill="#0E0F13" letter-spacing="-4">DP</text>
+   </g>
+  </g>
+  <g id="shop">
+   <rect x="0" y="120" width="360" height="230" fill="#E6E8EE"/>
+   <path d="M-20 130 L380 130 L340 60 L20 60 Z" fill="#C8302E"/>
+   <rect x="-20" y="118" width="400" height="18" fill="#9E1F1D"/>
+   <rect x="30" y="170" width="120" height="100" fill="#7FB3D5"/><rect x="210" y="170" width="120" height="100" fill="#7FB3D5"/>
+   <rect x="155" y="230" width="50" height="120" fill="#4A4E5A"/>
+   <rect x="-40" y="350" width="440" height="20" fill="#3A3D47"/>
+  </g>
+ </defs>
+</svg>
+
+<!-- A: NO ES LA COMIDA -->
+<div class="t" id="A"><div class="glow"></div>
+ <svg width="1280" height="720" style="position:absolute;inset:0">
+  <g transform="translate(70,300) scale(1.05)"><use href="#burger"/></g>
+  <line x1="70" y1="290" x2="410" y2="600" stroke="#FF3B30" stroke-width="30" stroke-linecap="round"/>
+  <line x1="410" y1="290" x2="70" y2="600" stroke="#FF3B30" stroke-width="30" stroke-linecap="round"/>
+  <path d="M470 450 L600 450" stroke="#fff" stroke-width="24" stroke-linecap="round"/>
+  <path d="M570 405 L625 450 L570 495" stroke="#fff" stroke-width="24" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <g transform="translate(700,250) scale(1.15)"><use href="#shop"/></g>
+  <g transform="translate(980,170) scale(.5) rotate(15 310 310)"><use href="#tag"/><text x="270" y="355" text-anchor="middle" font-family="Inter Display" font-weight="900" font-size="150" fill="#0E0F13">$</text></g>
+ </svg>
+ <div class="txt" style="left:56px;top:40px;font-size:118px">No es la <span class="y">comida</span></div>
+ <svg class="badge" width="90" height="90" viewBox="40 40 560 560"><use href="#logo"/></svg>
+</div>
+
+<!-- B: ES UNA INMOBILIARIA -->
+<div class="t" id="B"><div class="glow" style="background:radial-gradient(circle at 65% 60%,rgba(255,196,0,.2),rgba(255,196,0,0) 55%)"></div>
+ <svg width="1280" height="720" style="position:absolute;inset:0">
+  <g transform="translate(560,300) scale(1.3)"><use href="#shop"/></g>
+  <!-- cartel SE ALQUILA -->
+  <rect x="1080" y="300" width="14" height="380" fill="#8A8F9C"/>
+  <g transform="rotate(-6 1060 330)">
+   <rect x="900" y="250" width="330" height="190" rx="14" fill="#FFC400" stroke="#0E0F13" stroke-width="8"/>
+   <text x="1065" y="335" text-anchor="middle" font-family="Inter Display" font-weight="900" font-size="64" fill="#0E0F13">SE</text>
+   <text x="1065" y="405" text-anchor="middle" font-family="Inter Display" font-weight="900" font-size="64" fill="#0E0F13">ALQUILA</text>
+  </g>
+  <g transform="translate(70,450) scale(.6)"><use href="#burger"/></g>
+  <text x="260" y="470" font-family="Inter Display" font-weight="900" font-size="110" fill="#C9CBD3" transform="rotate(12 260 470)">?</text>
+ </svg>
+ <div class="txt" style="left:56px;top:40px;font-size:112px">Es una<br><span class="y">inmobiliaria</span></div>
+ <svg class="badge" width="90" height="90" viewBox="40 40 560 560"><use href="#logo"/></svg>
+</div>
+
+<!-- C: LO QUE CREES / LO QUE ES -->
+<div class="t" id="C">
+ <div style="position:absolute;left:0;top:0;width:640px;height:720px;background:#1A1C23"></div>
+ <div style="position:absolute;left:640px;top:0;width:640px;height:720px;background:#FFC400"></div>
+ <svg width="1280" height="720" style="position:absolute;inset:0">
+  <g transform="translate(150,235) scale(1.05)"><use href="#burger"/></g>
+  <g transform="translate(780,215) scale(1)"><use href="#shop"/></g>
+  <g transform="translate(1060,190) scale(.36) rotate(15 310 310)"><path d="M150 190 L400 190 L520 310 L400 430 L150 430 Q120 430 120 400 L120 220 Q120 190 150 190 Z" fill="#0E0F13"/><circle cx="430" cy="310" r="24" fill="#FFC400"/><text x="270" y="355" text-anchor="middle" font-family="Inter Display" font-weight="900" font-size="150" fill="#FFC400">$</text></g>
+  <circle cx="640" cy="390" r="62" fill="#0E0F13" stroke="#fff" stroke-width="8"/>
+  <text x="640" y="415" text-anchor="middle" font-family="Inter Display" font-weight="900" font-size="64" fill="#fff">VS</text>
+ </svg>
+ <div class="txt" style="left:50px;top:50px;font-size:84px;color:#C9CBD3">Lo que<br>crees</div>
+ <div class="txt" style="left:700px;top:50px;font-size:84px;color:#0E0F13;text-shadow:none">Lo que<br>es</div>
+ <div style="position:absolute;left:0;bottom:0;width:1280px;height:120px;background:#0E0F13"></div>
+ <div class="txt" style="left:0;width:1280px;text-align:center;bottom:30px;font-size:62px;letter-spacing:-1px">El negocio real de <span class="y">McDonald's</span></div>
+</div>
+</body></html>
