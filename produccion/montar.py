@@ -14,6 +14,8 @@ from PIL import Image, ImageFilter
 W, H, FPS = 1920, 1080, 30
 PAUSA, PAUSA_BLOQUE = 0.15, 0.45
 RAIZ = Path(__file__).resolve().parent
+INTRO_VIDEO = RAIZ.parent / "marca" / "intro" / "intro.mp4"
+INTRO_AUDIO = RAIZ.parent / "marca" / "intro" / "intro_audio.wav"
 
 
 def sh(*args):
@@ -83,6 +85,10 @@ def clip(escena, destino):
         return
     d = escena["dur"]
     n = max(1, round(d * FPS))
+    if escena["tipo"] == "intro":
+        sh("ffmpeg", "-y", "-i", escena["img"], "-an", "-vf", f"fps={FPS},scale={W}:{H},format=yuv420p",
+           "-frames:v", str(n), "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", str(destino))
+        return
     if escena["tipo"] == "foto":
         modo = escena["movimiento"]
         z = {0: f"1+0.12*on/{n}", 1: f"1.12-0.12*on/{n}"}.get(modo, "1.10")
@@ -134,6 +140,9 @@ def main(carpeta):
     escenas, tarjetas = [], {}
     for b in spec["bloques"]:
         inicio_bloque = len(escenas)
+        if b.get("intro"):
+            escenas.append({"tipo": "intro", "texto": None, "pausa": 0.0, "bloque": b["nombre"]})
+            continue
         if "silencio" in b:
             k = hashlib.md5(json.dumps(b["card"], sort_keys=True).encode()).hexdigest()[:10]
             tarjetas[k] = b["card"]
@@ -173,14 +182,20 @@ def main(carpeta):
     # 4) línea de tiempo y pista de audio
     t, lista_audio = 0.0, []
     for i, e in enumerate(escenas):
+        if e["tipo"] == "intro":
+            e["ini"], e["dur"], e["img"] = t, duracion(INTRO_AUDIO), str(INTRO_VIDEO)
+            lista_audio.append(INTRO_AUDIO)
+            t += e["dur"]
+            continue
         vd = e.get("voz_dur", 0.0)
         e["ini"], e["dur"] = t, vd + e["pausa"]
-        sil = trabajo / "tts" / f"sil_{int(e['pausa']*1000)}.wav"
-        if not sil.exists():
-            sh("ffmpeg", "-y", "-f", "lavfi", "-i", "anullsrc=r=48000:cl=mono", "-t", str(e["pausa"]), str(sil))
         if "wav" in e:
             lista_audio.append(e["wav"])
-        lista_audio.append(sil)
+        if e["pausa"] > 0:
+            sil = trabajo / "tts" / f"sil_{int(e['pausa']*1000)}.wav"
+            if not sil.exists():
+                sh("ffmpeg", "-y", "-f", "lavfi", "-i", "anullsrc=r=48000:cl=mono", "-t", str(e["pausa"]), str(sil))
+            lista_audio.append(sil)
         e["img"] = str(rutas[e["foto"]] if e["tipo"] == "foto" else trabajo / f"card_{e['card']}.png")
         t += e["dur"]
     (trabajo / "audio.txt").write_text("".join(f"file '{p}'\n" for p in lista_audio))

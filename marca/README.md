@@ -12,3 +12,8 @@
 - **Para editar:** cambia el `.html` correspondiente y vuelve a generar los PNG (o pídeselo a Claude).
 
 **Cómo subirlos:** YouTube Studio → Personalización → Imagen de marca → "Imagen" (logo) y "Imagen del banner" (banner).
+
+## Intro animada
+- `intro/intro.mp4`: 3 s, 1080p, con sonido (un "whoosh" y un "ding"). La etiqueta "DP" cae balanceándose, después aparece "Detrás del Precio", la línea amarilla y el lema.
+- Va **después del gancho** de cada vídeo, no al principio, para no perder espectadores en los primeros segundos.
+- Para editarla, cambia `intro/intro.html`. El sonido está en `intro/intro_audio.wav`.

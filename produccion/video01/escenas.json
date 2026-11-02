@@ -99,12 +99,8 @@
    ]
   },
   {
-   "nombre": "Título",
-   "silencio": 2.6,
-   "card": {
-    "tipo": "titulo",
-    "texto": "Cómo gana dinero <span class=y>McDonald's</span>"
-   }
+   "nombre": "Intro",
+   "intro": true
   },
   {
    "nombre": "Contexto",

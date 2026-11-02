@@ -102,12 +102,8 @@
    ]
   },
   {
-   "nombre": "Título",
-   "silencio": 2.6,
-   "card": {
-    "tipo": "titulo",
-    "texto": "Por qué la tinta es tan <span class=y>cara</span>"
-   }
+   "nombre": "Intro",
+   "intro": true
   },
   {
    "nombre": "La trampa",

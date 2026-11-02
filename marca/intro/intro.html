@@ -1,0 +1,24 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+html,body{margin:0;background:#0E0F13}
+.c{width:1920px;height:1080px;position:relative;overflow:hidden;background:#0E0F13;font-family:'Inter Display',Inter,sans-serif}
+.grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:80px 80px;animation:grid 3s linear forwards}
+@keyframes grid{from{transform:translateY(0)}to{transform:translateY(80px)}}
+.glow{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(255,196,0,.22),rgba(255,196,0,0) 55%);opacity:0;animation:glow 3s ease forwards}
+@keyframes glow{0%{opacity:0}25%{opacity:1}100%{opacity:.8}}
+.wrap{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:50px;animation:out 3s ease forwards}
+@keyframes out{0%,88%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(1.04)}}
+.tag{width:300px;height:300px;transform-origin:50% 20%;animation:tag 3s cubic-bezier(.2,.9,.3,1.2) forwards}
+@keyframes tag{0%{transform:translateY(-700px) rotate(-60deg)}20%{transform:translateY(0) rotate(14deg)}28%{transform:rotate(-8deg)}36%{transform:rotate(4deg)}44%,100%{transform:rotate(0)}}
+.txt{overflow:hidden}
+.t1{font-size:150px;font-weight:900;letter-spacing:-5px;color:#fff;line-height:1;clip-path:inset(0 100% 0 0);animation:rev 3s ease forwards}
+@keyframes rev{0%,18%{clip-path:inset(0 100% 0 0)}42%,100%{clip-path:inset(0 0 0 0)}}
+.t1 span{color:#FFC400}
+.t2{font-size:50px;font-weight:500;color:#C9CBD3;margin-top:22px;opacity:0;transform:translateY(20px);animation:t2 3s ease forwards}
+@keyframes t2{0%,40%{opacity:0;transform:translateY(20px)}55%,100%{opacity:1;transform:translateY(0)}}
+.line{height:8px;background:#FFC400;border-radius:4px;margin-top:26px;width:0;animation:line 3s ease forwards}
+@keyframes line{0%,45%{width:0}62%,100%{width:420px}}
+</style></head><body><div class="c" id="c"><div class="grid"></div><div class="glow"></div>
+<div class="wrap">
+ <svg class="tag" viewBox="40 40 560 560"><g transform="rotate(-18 310 310)"><path d="M430 310 C 520 300, 560 250, 590 200" stroke="#FFC400" stroke-width="10" fill="none" stroke-linecap="round"/><path d="M150 190 L400 190 L520 310 L400 430 L150 430 Q120 430 120 400 L120 220 Q120 190 150 190 Z" fill="#FFC400"/><circle cx="430" cy="310" r="24" fill="#0E0F13"/><text x="268" y="352" text-anchor="middle" font-family="Inter Display" font-weight="900" font-size="128" fill="#0E0F13" letter-spacing="-4">DP</text></g></svg>
+ <div class="txt"><div class="t1">Detrás del <span>Precio</span></div><div class="line"></div><div class="t2">Todo lo que pagas tiene una historia</div></div>
+</div></div></body></html>
