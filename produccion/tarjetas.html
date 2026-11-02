@@ -1,0 +1,43 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+html,body{margin:0;background:#0E0F13}
+.c{width:1920px;height:1080px;position:relative;overflow:hidden;background:#0E0F13;font-family:'Inter Display',Inter,sans-serif;color:#fff}
+.grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:80px 80px}
+.glow{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(255,196,0,.14),rgba(255,196,0,0) 60%)}
+.y{color:#FFC400}
+.center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 160px}
+.cita{font-size:92px;font-weight:900;line-height:1.08;letter-spacing:-2px}
+.autor{margin-top:44px;font-size:38px;color:#C9CBD3;font-weight:500}
+.titulo{font-size:120px;font-weight:900;letter-spacing:-4px;line-height:1}
+.cifra{font-size:260px;font-weight:900;letter-spacing:-10px;color:#FFC400;line-height:1}
+.ctexto{font-size:64px;font-weight:800;margin-top:24px;letter-spacing:-1px}
+.fuente{position:absolute;left:0;right:0;bottom:56px;text-align:center;font-size:28px;color:#8A8F9C}
+.ltitulo{font-size:58px;font-weight:800;color:#C9CBD3;margin-bottom:50px}
+.item{display:flex;align-items:center;gap:36px;font-size:76px;font-weight:900;letter-spacing:-1.5px;margin:18px 0;opacity:.28;transition:none}
+.item .n{width:110px;height:110px;border-radius:24px;background:#2A2D36;display:flex;align-items:center;justify-content:center;font-size:64px}
+.item.on{opacity:1}.item.on .n{background:#FFC400;color:#0E0F13}
+.item.done{opacity:.6}
+.lista{position:absolute;left:260px;top:50%;transform:translateY(-50%)}
+.anio{font-size:300px;font-weight:900;letter-spacing:-12px;color:#FFC400;line-height:1}
+.bar{height:120px;border-radius:16px;display:flex;align-items:center;padding-left:36px;font-size:54px;font-weight:900;color:#0E0F13;margin:20px 0}
+.blabel{font-size:46px;font-weight:800;margin-top:40px}
+.btn{margin-top:50px;background:#E5322D;color:#fff;font-size:64px;font-weight:900;padding:26px 64px;border-radius:999px}
+</style></head><body><div class="c" id="c"></div>
+<script>
+const P=JSON.parse(decodeURIComponent(location.hash.slice(1)));
+const tag=(s)=>`<svg width="${s}" height="${s}" viewBox="40 40 560 560"><g transform="rotate(-18 310 310)"><path d="M430 310 C 520 300, 560 250, 590 200" stroke="#FFC400" stroke-width="10" fill="none" stroke-linecap="round"/><path d="M150 190 L400 190 L520 310 L400 430 L150 430 Q120 430 120 400 L120 220 Q120 190 150 190 Z" fill="#FFC400"/><circle cx="430" cy="310" r="24" fill="#0E0F13"/><text x="268" y="352" text-anchor="middle" font-family="Inter Display" font-weight="900" font-size="128" fill="#0E0F13" letter-spacing="-4">DP</text></g></svg>`;
+let h='<div class="grid"></div><div class="glow"></div>';
+const t=P.tipo;
+if(t==='cita') h+=`<div class="center"><div class="cita">${P.texto}</div><div class="autor">${P.autor||''}</div></div>`;
+if(t==='titulo') h+=`<div class="center">${tag(220)}<div class="titulo" style="margin-top:30px">${P.texto}</div></div>`;
+if(t==='cifra') h+=`<div class="center"><div class="cifra">${P.cifra}</div><div class="ctexto">${P.texto}</div></div><div class="fuente">${P.fuente||''}</div>`;
+if(t==='anio') h+=`<div class="center"><div class="anio">${P.anio}</div><div class="ctexto">${P.texto}</div></div>`;
+if(t==='lista'){h+=`<div class="lista"><div class="ltitulo">${P.titulo}</div>`+P.items.map((it,i)=>`<div class="item ${P.hl===0?'on':(i+1===P.hl?'on':(i+1<P.hl?'done':''))}"><div class="n">${i+1}</div>${it}</div>`).join('')+`</div>`;}
+if(t==='barras'){const a=10442,r=6018,max=1300;h+=`<div style="position:absolute;left:220px;right:220px;top:220px"><div class="ltitulo">Ingresos de McDonald's por sus franquiciados (2025)</div>
+<div class="blabel">Alquileres</div><div class="bar" style="width:${max}px;background:#FFC400">10.442 M$</div>
+<div class="blabel" style="opacity:${P.hl?1:.5}">Royalties</div><div class="bar" style="width:${Math.round(max*r/a)}px;background:${P.hl?'#C9CBD3':'#5A5E6A'}">6.018 M$</div></div><div class="fuente">Fuente: McDonald's, informe anual (10-K) 2025 · Cuotas iniciales: 88 M$</div>`;}
+if(t==='suscribete') h+=`<div class="center">${tag(240)}<div class="titulo" style="font-size:96px;margin-top:20px">Detrás del <span class="y">Precio</span></div><div class="autor" style="margin-top:20px">Cada martes, una empresa nueva</div><div class="btn">Suscríbete</div></div>`;
+if(t==='final') h+=`<div style="position:absolute;left:0;right:0;top:110px;text-align:center"><div style="display:inline-flex;align-items:center;gap:28px">${tag(130)}<span class="titulo" style="font-size:84px">Detrás del <span class="y">Precio</span></span></div><div class="autor" style="margin-top:14px">Todo lo que pagas tiene una historia</div></div>
+<div style="position:absolute;left:150px;top:420px;width:800px;height:450px;border:4px dashed rgba(255,255,255,.18);border-radius:24px"></div>
+<div style="position:absolute;right:250px;top:470px;width:360px;height:360px;border:4px dashed rgba(255,255,255,.18);border-radius:50%"></div>`;
+document.getElementById('c').innerHTML=h;
+</script></body></html>
