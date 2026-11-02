@@ -231,7 +231,7 @@ def main(carpeta):
         if dinamico and e["tipo"] == "foto" and e["dur"] > plano * 1.4:
             k = max(2, round(e["dur"] / plano)); d = e["dur"] / k
             for j in range(k):
-                p = dict(e, ini=e["ini"] + j * d, dur=d)
+                p = dict(e, ini=e["ini"] + j * d, dur=d, toma=j)
                 if j > 0:
                     p["punch"] = (round(random.uniform(1.25, 1.45), 2), round(random.uniform(0.15, 0.85), 2),
                                   round(random.uniform(0.2, 0.8), 2))
@@ -301,7 +301,7 @@ def main(carpeta):
                 return np.frombuffer(w.readframes(w.getnframes()), dtype=np.int16).astype(np.float32) / 32767
         lib = {n: cargar(n) for n in ["whoosh1", "whoosh2", "whoosh3", "whoosh4", "swipe", "pop1", "pop2", "pop3",
                                       "click", "ding", "caja", "subida", "tictac"]}
-        VOL = {"whoosh": 0.11, "swipe": 0.10, "pop": 0.22, "click": 0.25, "ding": 0.22, "caja": 0.24,
+        VOL = {"whoosh": 0.08, "swipe": 0.08, "pop": 0.22, "click": 0.25, "ding": 0.22, "caja": 0.24,
                "subida": 0.13, "tictac": 0.22}
         ultimo = {"v": None}
         def elegir(opciones):  # nunca el mismo sonido dos veces seguidas
@@ -311,9 +311,15 @@ def main(carpeta):
             snd = lib[nombre] * VOL[nombre.rstrip("0123456789")]
             i0 = int(max(0, t_seg) * SR); i1 = min(total_n, i0 + len(snd))
             fx_buf[i0:i1] += snd[: i1 - i0]
+        # "whoosh" solo en momentos clave: inicio de sección siempre; cambio de frase a veces (≥6 s de separación)
+        ultimo_w = -99.0
         for p in planos[1:]:
-            if p["tipo"] != "intro":
+            if p["tipo"] == "intro" or p.get("toma", 0) > 0:
+                continue
+            seccion = bool(p.get("bloque"))
+            if seccion or (p["ini"] - ultimo_w >= 6 and random.random() < 0.35):
                 poner(elegir(["whoosh1", "whoosh2", "whoosh3", "whoosh4", "swipe"]), p["ini"] - 0.12)
+                ultimo_w = p["ini"]
         for a, _, _ in kw_ev:
             poner(elegir(["pop1", "pop2", "pop3", "click"]), a)
         for e in escenas:
