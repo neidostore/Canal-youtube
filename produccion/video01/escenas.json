@@ -2,7 +2,7 @@
  "titulo": "Cómo gana dinero McDonald's (pista: no es con hamburguesas)",
  "voz": {
   "idioma": "es-US",
-  "nombre": "es-US-Chirp3-HD-Orus",
+  "nombre": "es-US-Chirp3-HD-Achird",
   "velocidad": 1.1
  },
  "fotos": {
@@ -61,15 +61,15 @@
    "nombre": "Gancho",
    "frases": [
     {
-     "t": "Cada día, McDonald's vende millones de hamburguesas en todo el mundo.",
+     "t": "¡Cada día, McDonald's vende millones de hamburguesas en todo el mundo!",
      "img": "burgerfries"
     },
     {
-     "t": "Y aun así, si miras sus cuentas, descubres algo raro:",
+     "t": "Y aun así... si miras sus cuentas, descubres algo rarísimo:",
      "img": "money1"
     },
     {
-     "t": "las hamburguesas no son lo que más dinero le deja.",
+     "t": "¡las hamburguesas no son lo que más dinero le deja!",
      "img": "burger1"
     },
     {
@@ -114,7 +114,7 @@
      "img": "fries_hands"
     },
     {
-     "t": "Pero la mayoría de los McDonald's que ves no son de McDonald's.",
+     "t": "Pero ojo: ¡la mayoría de los McDonald's que ves no son de McDonald's!",
      "img": "crowd_inter"
     },
     {
@@ -131,7 +131,7 @@
      }
     },
     {
-     "t": "Y lo interesante es cómo les cobra.",
+     "t": "Y lo interesante viene ahora: cómo les cobra.",
      "img": "money2"
     }
    ]
@@ -179,7 +179,7 @@
      }
     },
     {
-     "t": "Y tercero, la importante: el alquiler.",
+     "t": "Y tercero, la más importante de todas: ¡el alquiler!",
      "card": {
       "tipo": "lista",
       "titulo": "Lo que paga un franquiciado",
@@ -192,7 +192,7 @@
      }
     },
     {
-     "t": "Con las dos primeras, McDonald's ya ingresa dinero sin freír una sola patata.",
+     "t": "Con las dos primeras, McDonald's ya ingresa dinero... ¡sin freír una sola patata!",
      "img": "fryer"
     },
     {
@@ -290,7 +290,7 @@
      }
     },
     {
-     "t": "Y aquí van los números de hoy.",
+     "t": "¿Y cuánto dinero es esto hoy? Agárrate.",
      "img": "board"
     },
     {
@@ -312,7 +312,7 @@
      }
     },
     {
-     "t": "¿Y sabes cuál fue la partida más grande? El alquiler: más de diez mil cuatrocientos millones de dólares.",
+     "t": "¿Y sabes cuál fue la partida más grande? El alquiler: ¡más de diez mil cuatrocientos millones de dólares!",
      "card": {
       "tipo": "barras",
       "titulo": "Ingresos de McDonald's por sus franquiciados (2025)",
@@ -333,7 +333,7 @@
      }
     },
     {
-     "t": "Más que todos los royalties juntos.",
+     "t": "¡Más que todos los royalties juntos!",
      "card": {
       "tipo": "barras",
       "titulo": "Ingresos de McDonald's por sus franquiciados (2025)",
@@ -426,7 +426,7 @@
      "img": "money3"
     },
     {
-     "t": "La hamburguesa es el motivo para que el local exista. Pero el negocio, es el local.",
+     "t": "La hamburguesa es el motivo para que el local exista. Pero el negocio... ¡es el local!",
      "img": "burger2"
     }
    ]
@@ -451,7 +451,7 @@
      "img": "crowd_inter"
     },
     {
-     "t": "No basta con una buena hamburguesa: necesitas setenta años de ventaja.",
+     "t": "No basta con una buena hamburguesa: ¡necesitas setenta años de ventaja!",
      "img": "burger1"
     }
    ]
@@ -494,7 +494,7 @@
      }
     },
     {
-     "t": "Suscríbete para no perdértelo. Nos vemos detrás del precio.",
+     "t": "¡Suscríbete para no perdértelo! Nos vemos detrás del precio.",
      "card": {
       "tipo": "final"
      }

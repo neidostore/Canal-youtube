@@ -4,7 +4,7 @@
 - **Muestras:** `muestras-google/` (gancho del vídeo #1).
   - Latinoamérica (es-US): Charon, Fenrir y Orus (hombre); Kore y Aoede (mujer)
   - España (es-ES): Charon (hombre)
-- **Voz elegida:** _(pendiente)_
+- **Voz elegida:** Achird (es-US-Chirp3-HD-Achird), velocidad 1,1x. Antes se usó Orus, que sonaba poco entusiasta.
 - La clave de API **no** se guarda en el repositorio.
 
 (Kokoro, la opción gratuita local, se descartó porque sonaba robótica.)

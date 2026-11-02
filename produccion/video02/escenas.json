@@ -2,7 +2,7 @@
  "titulo": "Por qué las impresoras son baratas y la tinta carísima",
  "voz": {
   "idioma": "es-US",
-  "nombre": "es-US-Chirp3-HD-Orus",
+  "nombre": "es-US-Chirp3-HD-Achird",
   "velocidad": 1.1
  },
  "fotos": {
@@ -38,7 +38,7 @@
    "nombre": "Gancho",
    "frases": [
     {
-     "t": "Si haces la cuenta por litro, la tinta de muchas impresoras sale más cara que un perfume de lujo.",
+     "t": "¿Sabías que, si haces la cuenta por litro, la tinta de muchas impresoras sale más cara que un perfume de lujo?",
      "img": "perfume"
     },
     {
@@ -68,7 +68,7 @@
      "voz": "Y la tinta original de algunas impresoras costaba más por mililitro que el champán Dom Perignón."
     },
     {
-     "t": "Y aun así, te venden la impresora casi regalada.",
+     "t": "Y aun así... ¡te venden la impresora casi regalada!",
      "img": "printer_home"
     },
     {
@@ -113,7 +113,7 @@
      "img": "printer_home2"
     },
     {
-     "t": "Piensas: qué barato.",
+     "t": "Piensas: ¡qué barato!",
      "img": "shelves"
     },
     {
@@ -137,7 +137,7 @@
      "img": "money3"
     },
     {
-     "t": "Para entender por qué, hay que hablar de... cuchillas de afeitar.",
+     "t": "Para entender por qué, hay que hablar de... ¡cuchillas de afeitar!",
      "img": "razor"
     }
    ]
@@ -224,7 +224,7 @@
      "img": "console"
     },
     {
-     "t": "El aparato es la puerta. El recambio es el negocio.",
+     "t": "El aparato es la puerta. ¡El recambio es el negocio!",
      "img": "controller"
     },
     {
@@ -376,7 +376,7 @@
      "img": "chip2"
     },
     {
-     "t": "Y aquí viene lo polémico.",
+     "t": "Y aquí viene lo más polémico de todo.",
      "img": "gavel"
     },
     {
@@ -423,7 +423,7 @@
      }
     },
     {
-     "t": "Esa frase resume el modelo mejor que cualquier explicación.",
+     "t": "¡Esa frase resume el modelo mejor que cualquier explicación!",
      "img": "money1"
     }
    ]
@@ -555,7 +555,7 @@
      "voz": "Y el próximo martes: por qué Shein puede vender una camiseta por tres euros, y quién paga la diferencia."
     },
     {
-     "t": "Suscríbete para no perdértelo. Nos vemos detrás del precio.",
+     "t": "¡Suscríbete para no perdértelo! Nos vemos detrás del precio.",
      "card": {
       "tipo": "final"
      }
