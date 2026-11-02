@@ -1,14 +1,13 @@
 # Miniaturas · Vídeo #1 "Cómo gana dinero McDonald's"
 
-> ⚠️ **Provisionales (dibujos).** Las definitivas se harán con fotos reales en cuanto lleguen las fotos de `miniaturas/fotos/LISTA-DE-FOTOS.md`.
-
+## ✅ Definitivas (fotos reales)
 | Archivo | Concepto | Texto |
 |---|---|---|
-| `miniatura-A.png` | Hamburguesa tachada → local con etiqueta de precio | NO ES LA COMIDA |
-| `miniatura-B.png` | Local con cartel "SE ALQUILA" | ES UNA INMOBILIARIA |
-| `miniatura-C.png` | Comparación "lo que crees" frente a "lo que es" | EL NEGOCIO REAL DE MCDONALD'S |
+| `foto-A.png` | Hamburguesa tachada → esquina de ciudad con etiqueta de precio | NO ES LA COMIDA |
+| `foto-B.png` | Esquina de ciudad con cartel "SE ALQUILA" | ES UNA INMOBILIARIA |
+| `foto-C.png` | Hamburguesa en primer plano | SU NEGOCIO NO ES ESTE |
 
-Las tres son de 1280×720 y usan ilustraciones genéricas, sin el logo de McDonald's (para no infringir la marca).
 Súbelas las tres en **Probar y comparar** (YouTube Studio → vídeo → Miniatura → Probar y comparar).
 
-Para editarlas, cambia `miniaturas.html` y vuelve a generar los PNG (o pídeselo a Claude).
+## Antiguas (dibujos; ya no se usan)
+`miniatura-A/B/C.png` y `miniaturas.html`.

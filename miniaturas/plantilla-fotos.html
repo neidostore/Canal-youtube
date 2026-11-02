@@ -20,14 +20,15 @@ const m=document.getElementById('mini');
 const tag=(txt,fill='#FFC400',ink='#0E0F13')=>`<svg viewBox="100 170 440 280" width="100%" height="100%"><path d="M150 190 L400 190 L520 310 L400 430 L150 430 Q120 430 120 400 L120 220 Q120 190 150 190 Z" fill="${fill}" stroke="#0E0F13" stroke-width="10"/><circle cx="430" cy="310" r="24" fill="${ink}"/><text x="265" y="352" text-anchor="middle" font-family="Inter Display" font-weight="900" font-size="${txt.length>3?90:130}" fill="${ink}">${txt}</text></svg>`;
 let h='';
 if(g('modo')==='dividida'){
-  h+=`<div class="foto" style="left:0;top:0;width:640px;height:720px;background-image:url('${g('izq')}');filter:grayscale(.35) brightness(.8)"></div>`;
-  h+=`<div class="foto" style="left:640px;top:0;width:640px;height:720px;background-image:url('${g('der')}')"></div>`;
+  h+=`<div class="foto" style="left:0;top:0;width:640px;height:720px;background-image:url('${g('izq')}');background-position:${g('pizq')||'center'};filter:grayscale(.35) brightness(.8)"></div>`;
+  h+=`<div class="foto" style="left:640px;top:0;width:640px;height:720px;background-image:url('${g('der')}');background-position:${g('pder')||'center'}"></div>`;
   h+=`<div style="position:absolute;left:634px;top:0;width:12px;height:720px;background:#FFC400"></div>`;
   if(g('tachar'))h+=`<svg class="tache" style="left:150px;top:250px" width="340" height="340"><line x1="20" y1="20" x2="320" y2="320" stroke="#FF3B30" stroke-width="32" stroke-linecap="round"/><line x1="320" y1="20" x2="20" y2="320" stroke="#FF3B30" stroke-width="32" stroke-linecap="round"/></svg>`;
   h+=`<svg class="flecha" style="left:575px;top:400px" width="130" height="110"><path d="M10 55 L100 55" stroke="#fff" stroke-width="22" stroke-linecap="round"/><path d="M70 15 L112 55 L70 95" stroke="#fff" stroke-width="22" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
 } else {
-  h+=`<div class="foto" style="inset:0;background-image:url('${g('fondo')}')"></div>`;
+  h+=`<div class="foto" style="inset:0;background-image:url('${g('fondo')}');background-position:${g('pfondo')||'center'}"></div>`;
 }
+(g('difuminar')||'').split(';').filter(Boolean).forEach(r=>{const [x,y,w,hh]=r.split(',');h+=`<div style="position:absolute;left:${x}px;top:${y}px;width:${w}px;height:${hh}px;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)"></div>`;});
 h+=`<div class="oscurecer"></div>`;
 if(g('etiqueta'))h+=`<div class="etiqueta" style="right:60px;top:230px;width:300px;height:190px;transform:rotate(14deg);filter:drop-shadow(0 12px 24px rgba(0,0,0,.6))">${tag(g('etiqueta'))}</div>`;
 if(g('cartel'))h+=`<div class="cartel" style="right:70px;top:250px">${g('cartel').replace('|','<br>')}</div>`;
