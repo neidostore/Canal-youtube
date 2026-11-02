@@ -1,6 +1,6 @@
 # 📤 Publicar el vídeo 2 · paso a paso (unos 5 minutos)
 
-**Archivos:** `video.mp4` (1080p, 7:52), `subtitulos.srt` y las miniaturas `miniaturas/02-impresoras/foto-A.png`, `foto-B.png` y `foto-C.png`.
+**Archivos:** `video.mp4` (1080p, 7:35), `subtitulos.srt` y las miniaturas `miniaturas/02-impresoras/foto-A.png`, `foto-B.png` y `foto-C.png`.
 **Cuándo:** el martes siguiente al vídeo 1, a las 18:00 (hora de España).
 
 ## 1. Subir
@@ -16,13 +16,13 @@ Por qué las impresoras son baratas y la tinta carísima
 ¿Por qué una impresora cuesta 50 € y la tinta, más por mililitro que un champán de lujo? Es el modelo "maquinilla y cuchilla" llevado al extremo, con chips, multas y suscripciones.
 
 00:00 Más cara que un perfume
-00:58 La trampa de la impresora barata
-01:36 El modelo de la maquinilla y la cuchilla
-02:56 Por qué la tinta cuesta tanto
-04:08 El truco psicológico
-04:55 El chip y la multa de 10 millones
-06:15 El giro: las suscripciones
-06:48 Cómo no caer en la trampa
+00:53 La trampa de la impresora barata
+01:31 El modelo de la maquinilla y la cuchilla
+02:48 Por qué la tinta cuesta tanto
+03:58 El truco psicológico
+04:43 El chip y la multa de 10 millones
+05:59 El giro: las suscripciones
+06:32 Cómo no caer en la trampa
 
 📚 Fuentes:
 - Which? (julio de 2021), tinta frente a champán y perfume: https://www.techradar.com/news/heres-why-you-should-probably-never-buy-official-printer-ink-again
