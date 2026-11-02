@@ -17,7 +17,7 @@ Lo que queda es lo que solo puedes hacer tú: crear las cuentas, producir los v�
 1. Crea una **cuenta de Google nueva** solo para el canal.
 2. Activa la **verificación en dos pasos**. Es obligatoria para monetizar.
 3. Entra en YouTube → foto de perfil → **Crear un canal**, con el nombre elegido.
-4. Elige el @identificador, por ejemplo `@detrasdelprecio`.
+4. ✅ Identificador elegido: `@detrasdelprecio_tv` (youtube.com/@detrasdelprecio_tv).
 5. Verifica el canal con tu teléfono en **youtube.com/verify**. Así desbloqueas las miniaturas personalizadas y los vídeos de más de 15 minutos.
 6. Reserva el mismo nombre en **TikTok** e **Instagram**.
 

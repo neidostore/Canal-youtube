@@ -9,6 +9,7 @@ Canal de divulgación sobre **la economía oculta detrás de lo que compras cada
 | Formato | Sin cara, con voz IA y gráficos propios |
 | Idioma | Español neutro para todo el mundo hispano |
 | Tiempo | 5-10 h/semana: 1 vídeo largo + 3 Shorts |
+| Canal | **Detrás del Precio** · [@detrasdelprecio_tv](https://www.youtube.com/@detrasdelprecio_tv) |
 
 ## 👉 [Qué tengo que hacer yo, paso a paso](QUE-HAGO-YO.md)
 

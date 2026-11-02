@@ -31,7 +31,7 @@ Por qué las impresoras son baratas y la tinta carísima
 - Entrevista de Enrique Lores en CNBC (enero de 2024), según TechSpot: https://www.techspot.com/news/101593-hp-ceo-customers-who-dont-use-companies-supplies.html
 - Fotos: Pexels (pexels.com)
 
-📩 Cada martes, una empresa nueva. La próxima: por qué Shein es tan barato y quién paga la diferencia.
+📩 Cada martes, una empresa nueva en @detrasdelprecio_tv. La próxima: por qué Shein es tan barato y quién paga la diferencia.
 
 #economía #impresoras #negocios
 ```
