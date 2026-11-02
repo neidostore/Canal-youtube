@@ -1,0 +1,156 @@
+{
+ "titulo": "DEMO estilo dinámico (primer minuto del vídeo 1)",
+ "voz": {
+  "idioma": "es-US",
+  "nombre": "es-US-Chirp3-HD-Achird",
+  "velocidad": 1.1
+ },
+ "fotos": {
+  "burger1": 12034622,
+  "burger2": 18713424,
+  "burgerfries": 19247568,
+  "corner": 19927934,
+  "fries_hands": 8879364,
+  "fries": 8831740,
+  "diner": 8942180,
+  "handshake": 8112180,
+  "handshake2": 9870144,
+  "crowd_inter": 186537,
+  "inter_aerial": 9500156,
+  "parking_inter": 5231178,
+  "aerial_mall": 32401786,
+  "money1": 4038853,
+  "money2": 6266666,
+  "money3": 4386469,
+  "board": 210607,
+  "laptop_chart": 6770609,
+  "fryer": 8879639,
+  "highway": 681335,
+  "interchange": 15450239,
+  "printer": 17536002,
+  "gas": 14969818,
+  "shake": 5093841,
+  "eating": 31650381,
+  "eating2": 11519283,
+  "chart2": 4960438
+ },
+ "difuminar": {
+  "corner": [
+   [
+    0.09,
+    0.555,
+    0.13,
+    0.05
+   ],
+   [
+    0.25,
+    0.55,
+    0.06,
+    0.05
+   ],
+   [
+    0.75,
+    0.55,
+    0.1,
+    0.05
+   ]
+  ]
+ },
+ "bloques": [
+  {
+   "nombre": "Gancho",
+   "frases": [
+    {
+     "t": "¡Cada día, McDonald's vende millones de hamburguesas en todo el mundo!",
+     "img": "burgerfries",
+     "kw": "millones de hamburguesas"
+    },
+    {
+     "t": "Y aun así... si miras sus cuentas, descubres algo rarísimo:",
+     "img": "money1",
+     "kw": "algo rarísimo"
+    },
+    {
+     "t": "¡las hamburguesas no son lo que más dinero le deja!",
+     "img": "burger1",
+     "kw": "no es la comida"
+    },
+    {
+     "t": "Uno de sus primeros directivos lo resumió en una frase que se ha hecho famosa:",
+     "img": "diner",
+     "kw": "una frase famosa"
+    },
+    {
+     "t": "No estamos en el negocio de la comida. Estamos en el negocio inmobiliario.",
+     "card": {
+      "tipo": "cita",
+      "texto": "«No estamos en el negocio de la comida. Estamos en el negocio <span class=y>inmobiliario</span>.»",
+      "autor": "Frase atribuida a Harry Sonneborn, años 50"
+     }
+    },
+    {
+     "t": "En los próximos minutos vas a entender qué quería decir,",
+     "img": "corner",
+     "kw": "¿qué quería decir?"
+    },
+    {
+     "t": "por qué este modelo es casi imposible de copiar,",
+     "img": "inter_aerial",
+     "kw": "imposible de copiar"
+    },
+    {
+     "t": "y cuál es el detalle que hace que McDonald's gane dinero aunque un restaurante venda poco.",
+     "img": "fryer",
+     "kw": "aunque venda poco"
+    }
+   ]
+  },
+  {
+   "nombre": "Intro",
+   "intro": true
+  },
+  {
+   "nombre": "Contexto",
+   "frases": [
+    {
+     "t": "Lo normal es pensar que McDonald's es una cadena de restaurantes:",
+     "img": "eating",
+     "kw": "cadena de restaurantes"
+    },
+    {
+     "t": "compra pan, carne y patatas, las vende más caras, y se queda la diferencia.",
+     "img": "fries_hands",
+     "kw": "compra y vende"
+    },
+    {
+     "t": "Pero ojo: ¡la mayoría de los McDonald's que ves no son de McDonald's!",
+     "img": "crowd_inter",
+     "kw": "no son suyos"
+    },
+    {
+     "t": "Son de franquiciados: empresarios que pagan por usar la marca.",
+     "img": "handshake",
+     "kw": "franquiciados"
+    },
+    {
+     "t": "En concreto, alrededor del noventa y cinco por ciento de sus restaurantes en todo el mundo, según su informe anual de 2025.",
+     "card": {
+      "tipo": "cifra",
+      "cifra": "95 %",
+      "texto": "de los restaurantes McDonald's son franquicias",
+      "fuente": "Fuente: McDonald's, informe anual (10-K) 2025"
+     }
+    },
+    {
+     "t": "Y lo interesante viene ahora: cómo les cobra.",
+     "img": "money2",
+     "kw": "cómo les cobra"
+    }
+   ]
+  }
+ ],
+ "estilo": {
+  "dinamico": true,
+  "plano": 2.0
+ }
+}

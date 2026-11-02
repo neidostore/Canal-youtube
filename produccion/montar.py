@@ -46,7 +46,14 @@ def tts(texto, voz, destino, key):
     req = urllib.request.Request("https://texttospeech.googleapis.com/v1/text:synthesize",
                                  data=json.dumps(body).encode(),
                                  headers={"Content-Type": "application/json", "X-Goog-Api-Key": key})
-    r = json.load(urllib.request.urlopen(req, timeout=120))
+    import time
+    for intento in range(5):  # reintentos si Google da un error temporal (429/5xx)
+        try:
+            r = json.load(urllib.request.urlopen(req, timeout=120)); break
+        except urllib.error.HTTPError as err:
+            if err.code not in (429, 500, 502, 503, 504) or intento == 4:
+                raise
+            time.sleep(2 ** (intento + 1))
     destino.write_bytes(base64.b64decode(r["audioContent"]))
 
 
@@ -88,6 +95,13 @@ def clip(escena, destino):
     if escena["tipo"] == "intro":
         sh("ffmpeg", "-y", "-i", escena["img"], "-an", "-vf", f"fps={FPS},scale={W}:{H},format=yuv420p",
            "-frames:v", str(n), "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", str(destino))
+        return
+    if escena["tipo"] == "foto" and escena.get("punch"):
+        zb, fx, fy = escena["punch"]
+        vf = (f"zoompan=z='{zb}+0.07*on/{n}':x='(iw-iw/zoom)*{fx}':y='(ih-ih/zoom)*{fy}'"
+              f":d={n}:s={W}x{H}:fps={FPS},format=yuv420p")
+        sh("ffmpeg", "-y", "-loop", "1", "-framerate", str(FPS), "-i", escena["img"], "-vf", vf, "-frames:v", str(n),
+           "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "-r", str(FPS), str(destino))
         return
     if escena["tipo"] == "foto":
         modo = escena["movimiento"]
@@ -150,7 +164,7 @@ def main(carpeta):
             continue
         fr = b["frases"]
         for i, f in enumerate(fr):
-            e = {"texto": f["t"], "voz_texto": f.get("voz", f["t"]), "pausa": PAUSA_BLOQUE if i == len(fr) - 1 else PAUSA}
+            e = {"texto": f["t"], "kw": f.get("kw"), "voz_texto": f.get("voz", f["t"]), "pausa": PAUSA_BLOQUE if i == len(fr) - 1 else PAUSA}
             if i == len(fr) - 1 and b.get("final"):
                 e["pausa"] += b["final"]
             if "card" in f:
@@ -202,13 +216,27 @@ def main(carpeta):
     sh("ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", str(trabajo / "audio.txt"), "-c:a", "pcm_s16le",
        str(trabajo / "narracion.wav"))
 
-    # 5) clips de vídeo (en paralelo)
-    for i, e in enumerate(escenas):
-        h = hashlib.md5(f"{e['img']}|{e['dur']:.3f}|{e.get('movimiento')}".encode()).hexdigest()[:10]
+    # 5) clips de vídeo (en paralelo). En modo dinámico, cada frase con foto se parte en tomas de ~2 s
+    estilo = spec.get("estilo", {})
+    dinamico, plano = estilo.get("dinamico", False), estilo.get("plano", 2.0)
+    planos = []
+    for e in escenas:
+        if dinamico and e["tipo"] == "foto" and e["dur"] > plano * 1.4:
+            k = max(2, round(e["dur"] / plano)); d = e["dur"] / k
+            for j in range(k):
+                p = dict(e, ini=e["ini"] + j * d, dur=d)
+                if j > 0:
+                    p["punch"] = (round(random.uniform(1.25, 1.45), 2), round(random.uniform(0.15, 0.85), 2),
+                                  round(random.uniform(0.2, 0.8), 2))
+                planos.append(p)
+        else:
+            planos.append(e)
+    for i, e in enumerate(planos):
+        h = hashlib.md5(f"{e['img']}|{e['dur']:.3f}|{e.get('movimiento')}|{e.get('punch')}".encode()).hexdigest()[:10]
         e["clip"] = trabajo / "clips" / f"{i:03d}_{h}.mp4"
     with cf.ThreadPoolExecutor(4) as ex:
-        list(ex.map(lambda e: clip(e, e["clip"]), escenas))
-    (trabajo / "clips.txt").write_text("".join(f"file '{e['clip']}'\n" for e in escenas))
+        list(ex.map(lambda e: clip(e, e["clip"]), planos))
+    (trabajo / "clips.txt").write_text("".join(f"file '{e['clip']}'\n" for e in planos))
     sh("ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", str(trabajo / "clips.txt"), "-c", "copy",
        str(trabajo / "video_mudo.mp4"))
 
@@ -231,13 +259,69 @@ def main(carpeta):
            "Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, "
            "MarginR, MarginV, Encoding\n"
            "Style: Sub,Inter Display Black,74,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,0,0,0,0,100,100,0,0,1,6,3,2,"
-           "120,120,90,1\n\n[Events]\nFormat: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text\n")
+           "120,120,90,1\n"
+           "Style: KW,Inter Display Black,150,&H0000C4FF,&H0000C4FF,&H00000000,&H96000000,0,0,0,0,100,100,-2,0,1,9,5,5,"
+           "100,100,0,1\n\n[Events]\nFormat: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text\n")
+    kw_ev = []
+    for e in escenas:
+        if e.get("kw") and e["texto"]:
+            primera = e["kw"].split()[0].lower().strip("¿?¡!.,")
+            pos = e["texto"].lower().find(primera)
+            t0 = e["ini"] + (e["voz_dur"] * pos / len(e["texto"]) if pos > 0 else 0.1)
+            t1 = min(t0 + 1.5, e["ini"] + e["dur"] - 0.05)
+            kw_ev.append((t0, t1, e["kw"].upper()))
+    anim = r"{\pos(960,470)\fscx40\fscy40\t(0,110,\fscx118\fscy118)\t(110,200,\fscx100\fscy100)\fad(0,120)}"
     (trabajo / "subs.ass").write_text(cab + "".join(
-        f"Dialogue: 0,{ts(a, '.')},{ts(b, '.')},Sub,,0,0,0,,{txt}\n" for a, b, txt in ass_ev), encoding="utf-8")
+        f"Dialogue: 0,{ts(a, '.')},{ts(b, '.')},Sub,,0,0,0,,{txt}\n" for a, b, txt in ass_ev) + "".join(
+        f"Dialogue: 1,{ts(a, '.')},{ts(b, '.')},KW,,0,0,0,,{anim}{txt}\n" for a, b, txt in kw_ev), encoding="utf-8")
+
+    # 6b) efectos de sonido: "whoosh" en cada corte y "pop" en palabras clave y tarjetas
+    pistas_extra = []
+    if dinamico:
+        import numpy as np, wave
+        SR = 48000; total_n = int((t + 1) * SR); fx_buf = np.zeros(total_n, dtype=np.float32)
+        rng = np.random.default_rng(3)
+        def whoosh():
+            n = int(0.32 * SR); r = rng.standard_normal(n).astype(np.float32)
+            b = np.cumsum(r); b -= np.convolve(b, np.ones(64) / 64, mode="same")   # ruido filtrado
+            env = np.sin(np.linspace(0, np.pi, n)) ** 2
+            return (b / (np.abs(b).max() + 1e-9) * env * 0.10).astype(np.float32)
+        def pop():
+            n = int(0.09 * SR); tt = np.arange(n) / SR
+            f = 900 * np.exp(-tt * 18) + 250
+            return (np.sin(2 * np.pi * np.cumsum(f) / SR) * np.exp(-tt * 38) * 0.22).astype(np.float32)
+        W_, P_ = whoosh(), pop()
+        def poner(sonido, t_seg):
+            i0 = int(max(0, t_seg) * SR); i1 = min(total_n, i0 + len(sonido))
+            fx_buf[i0:i1] += sonido[: i1 - i0]
+        for p in planos[1:]:
+            if p["tipo"] != "intro":
+                poner(W_, p["ini"] - 0.12)
+        for a, _, _ in kw_ev:
+            poner(P_, a)
+        for e in escenas:
+            if e["tipo"] == "card" and e.get("texto"):
+                poner(P_, e["ini"])
+        with wave.open(str(trabajo / "efectos.wav"), "wb") as w:
+            w.setnchannels(1); w.setsampwidth(2); w.setframerate(SR)
+            w.writeframes((np.clip(fx_buf, -1, 1) * 32767).astype(np.int16).tobytes())
+        pistas_extra.append((trabajo / "efectos.wav", 1.0))
+    if spec.get("musica"):
+        m = spec["musica"]
+        pistas_extra.append((RAIZ / m["archivo"], m.get("volumen", 0.10)))
 
     # 7) montaje final: vídeo + subtítulos + voz (normalizada)
-    sh("ffmpeg", "-y", "-i", str(trabajo / "video_mudo.mp4"), "-i", str(trabajo / "narracion.wav"),
-       "-vf", f"ass={trabajo / 'subs.ass'}", "-af", "loudnorm=I=-14:TP=-1.5:LRA=11",
+    entradas, mezcla = ["-i", str(trabajo / "video_mudo.mp4"), "-i", str(trabajo / "narracion.wav")], "[1:a]aformat=sample_rates=48000:channel_layouts=stereo[v0];"
+    etiquetas = ["[v0]"]
+    for k, (f, vol) in enumerate(pistas_extra, start=2):
+        bucle = ["-stream_loop", "-1"] if "musica" in str(f) else []
+        entradas += [*bucle, "-i", str(f)]
+        fade = f",afade=t=in:d=2,afade=t=out:st={max(0, t-3):.2f}:d=3" if bucle else ""
+        mezcla += f"[{k}:a]aformat=sample_rates=48000:channel_layouts=stereo,volume={vol},atrim=0:{t:.2f}{fade}[x{k}];"
+        etiquetas.append(f"[x{k}]")
+    mezcla += "".join(etiquetas) + f"amix=inputs={len(etiquetas)}:normalize=0:duration=first,loudnorm=I=-14:TP=-1.5:LRA=11[a]"
+    sh("ffmpeg", "-y", *entradas,
+       "-filter_complex", f"[0:v]ass={trabajo / 'subs.ass'}[vv];{mezcla}", "-map", "[vv]", "-map", "[a]",
        "-c:v", "libx264", "-preset", "medium", "-crf", "21", "-pix_fmt", "yuv420p", "-movflags", "+faststart",
        "-c:a", "aac", "-b:a", "192k", "-shortest", str(salida / "video.mp4"))
     caps = [(e["ini"], e["bloque"]) for e in escenas if e.get("bloque")]
