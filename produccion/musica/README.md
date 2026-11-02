@@ -8,4 +8,8 @@ Licencia: Creative Commons BY 4.0 — http://creativecommons.org/licenses/by/4.0
 ```
 
 `muestras/`: 25 s de cada tema, con la voz del vídeo 1 encima (Investigations, Wallpaper, Inspired, Backbay Lounge, Thinking Music).
-Tema elegido: _(pendiente)_
+Tema elegido: **Wallpaper** (`wallpaper.mp3`), volumen 0,10, en bucle y con fundidos al principio y al final.
+Crédito obligatorio en la descripción de cada vídeo:
+```
+Música: "Wallpaper" de Kevin MacLeod (incompetech.com). Licencia Creative Commons BY 4.0: http://creativecommons.org/licenses/by/4.0/
+```

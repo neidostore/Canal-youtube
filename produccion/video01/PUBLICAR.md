@@ -25,6 +25,7 @@ Cómo gana dinero McDonald's (pista: no es con hamburguesas)
 📚 Fuentes:
 - McDonald's Corporation, informe anual (Form 10-K) 2025: https://www.sec.gov/Archives/edgar/data/63908/000006390826000035/mcd-20251231.htm
 - Fotos: Pexels (pexels.com)
+- Música: "Wallpaper" de Kevin MacLeod (incompetech.com). Licencia Creative Commons BY 4.0: http://creativecommons.org/licenses/by/4.0/
 
 📩 Cada martes, una empresa nueva en @detrasdelprecio_tv. Suscríbete para no perderte la próxima: por qué las impresoras son baratas y la tinta, carísima.
 

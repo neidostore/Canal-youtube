@@ -625,5 +625,10 @@
  "estilo": {
   "dinamico": true,
   "plano": 1.8
+ },
+ "musica": {
+  "archivo": "musica/wallpaper.mp3",
+  "volumen": 0.1,
+  "credito": "\"Wallpaper\" de Kevin MacLeod (incompetech.com)"
  }
 }
