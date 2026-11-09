@@ -29,7 +29,7 @@ Por qué las impresoras son baratas y la tinta carísima
 - Multa de la AGCM a HP (2020): https://www.corrierecomunicazioni.it/digital-economy/hp-ostacola-luso-di-cartucce-non-originali-multa-antitrust-da-10-milioni/
 - Recurso de HP rechazado: https://therecycler.com/posts/hp-appeal-denied-faces-major-transparency-setback/
 - Entrevista de Enrique Lores en CNBC (enero de 2024), según TechSpot: https://www.techspot.com/news/101593-hp-ceo-customers-who-dont-use-companies-supplies.html
-- Fotos: Pexels (pexels.com)
+- Fotos y vídeos: Pexels (pexels.com)
 - Música: "Wallpaper" de Kevin MacLeod (incompetech.com). Licencia Creative Commons BY 4.0: http://creativecommons.org/licenses/by/4.0/
 
 📩 Cada martes, una empresa nueva en @detrasdelprecio_tv. La próxima: por qué Shein es tan barato y quién paga la diferencia.
