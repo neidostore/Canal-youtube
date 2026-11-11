@@ -12,6 +12,8 @@ from pathlib import Path
 from PIL import Image, ImageFilter
 
 W, H, FPS = 1920, 1080, 30
+MARCO = None      # plantilla "marco" (barras, cuenta atrás, transiciones…): ver marco.py
+ENCAJE = set()    # fotos que no llenan la pantalla: van sobre fondo animado
 PAUSA, PAUSA_BLOQUE = 0.15, 0.45
 RAIZ = Path(__file__).resolve().parent
 INTRO_VIDEO = RAIZ.parent / "marca" / "intro" / "intro.mp4"
@@ -66,6 +68,10 @@ def preparar_foto(nombre, pid, fotos_dir, trabajo, difuminar):
         src.write_bytes(urllib.request.urlopen(req, timeout=120).read())
     out = trabajo / f"foto_{nombre}_{W}x{H}.jpg"
     if out.exists():
+        if MARCO:
+            with Image.open(out) as _i:
+                if _i.width < 2000:
+                    ENCAJE.add(nombre)
         return out
     im = Image.open(src).convert("RGB")
     for (x, y, w, h) in difuminar.get(nombre, []):
@@ -79,8 +85,15 @@ def preparar_foto(nombre, pid, fotos_dir, trabajo, difuminar):
         bg.paste(fg, (0, (2880 - fg.height) // 2 - 90))
         bg.save(out, quality=92)
         return out
-    # recorte 16:9 tipo "cover" a 2880x1620 (margen para el zoom)
-    tw, th = (2880, 1620) if W > H else (1620, 2880)
+    if MARCO and (im.width < 1500 or im.width / im.height < 1.45):
+        ENCAJE.add(nombre)          # pequeña o poco apaisada: entera, con borde, sobre fondo animado
+        k = min(H * 0.84 / im.height, W * 0.72 / im.width)
+        im = im.resize((round(im.width * k / 2) * 2, round(im.height * k / 2) * 2), Image.LANCZOS)
+        marco_b = Image.new("RGB", (im.width + 24, im.height + 24), "white"); marco_b.paste(im, (12, 12))
+        marco_b.save(out, quality=93)
+        return out
+    # recorte tipo "cover" con margen para el zoom (2880x1620 en 16:9)
+    tw, th = (2880, round(2880 * H / W / 2) * 2) if W > H else (1620, 2880)
     s = max(tw / im.width, th / im.height)
     im = im.resize((round(im.width * s), round(im.height * s)), Image.LANCZOS)
     l, t = (im.width - tw) // 2, (im.height - th) // 2
@@ -132,6 +145,16 @@ def clip(escena, destino):
            "-vf", f"{vf},fps={FPS},format=yuv420p", "-frames:v", str(n), "-c:v", "libx264", "-preset", "veryfast",
            "-crf", "18", str(destino))
         return
+    if escena["tipo"] == "foto" and escena.get("foto") in ENCAJE:
+        # foto entera sobre fondo de color animado con confeti; entra con un pequeño rebote y zoom suave
+        z0 = 0.9 if escena.get("toma", 0) % 2 == 0 else 1.0
+        fc = (f"[0:v]fps={FPS},scale={W}:{H}[bg];"
+              f"[1:v]scale=w='iw*({z0}+0.1*min(1,n/{n}))':h=-2:eval=frame[fg];"
+              f"[bg][fg]overlay=(W-w)/2:(H-h)/2+max(0\\,1-n/5)*70:shortest=0,format=yuv420p[v]")
+        sh("ffmpeg", "-y", "-stream_loop", "-1", "-i", escena["fondo"], "-loop", "1", "-framerate", str(FPS),
+           "-i", escena["img"], "-filter_complex", fc, "-map", "[v]", "-frames:v", str(n), "-c:v", "libx264",
+           "-preset", "veryfast", "-crf", "18", "-r", str(FPS), str(destino))
+        return
     if escena["tipo"] == "foto" and escena.get("punch"):
         zb, fx, fy = escena["punch"]
         corte = escena.get("corte", "zoom")
@@ -158,7 +181,7 @@ def clip(escena, destino):
         vf = f"zoompan=z='{z}':x='{x}':y='{y}':d={n}:s={W}x{H}:fps={FPS},format=yuv420p"
         entrada = ["-loop", "1", "-framerate", str(FPS), "-i", escena["img"]]
     else:
-        vf = (f"scale={int(W*1.5)}:{int(H*1.5)},zoompan=z='1+0.03*on/{n}':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2'"
+        vf = (f"scale={int(W*1.5)}:{int(H*1.5)}:force_original_aspect_ratio=increase,crop={int(W*1.5)}:{int(H*1.5)},zoompan=z='1+0.03*on/{n}':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2'"
               f":d={n}:s={W}x{H}:fps={FPS},format=yuv420p")
         entrada = ["-loop", "1", "-framerate", str(FPS), "-i", escena["img"]]
     sh("ffmpeg", "-y", *entrada, "-vf", vf, "-frames:v", str(n), "-c:v", "libx264", "-preset", "veryfast",
@@ -190,6 +213,10 @@ def main(carpeta):
     if spec.get("formato") == "vertical":   # Shorts: 1080x1920
         W, H = 1080, 1920
     vertical = H > W
+    global MARCO
+    if spec.get("marco") and not vertical:
+        import marco as MK
+        MARCO = spec["marco"]; H = MK.HC      # el vídeo va entre las dos barras
     fotos_dir = carpeta / "fotos"; fotos_dir.mkdir(exist_ok=True)
     trabajo = carpeta / "trabajo"; trabajo.mkdir(exist_ok=True)
     (trabajo / "tts").mkdir(exist_ok=True); (trabajo / "clips").mkdir(exist_ok=True)
@@ -199,7 +226,7 @@ def main(carpeta):
 
     # 1) escenas planas
     escenas, tarjetas = [], {}
-    for b in spec["bloques"]:
+    for nb, b in enumerate(spec["bloques"]):
         inicio_bloque = len(escenas)
         if b.get("intro"):
             escenas.append({"tipo": "intro", "texto": None, "pausa": 0.0, "bloque": b["nombre"]})
@@ -214,8 +241,10 @@ def main(carpeta):
             e = {"texto": f["t"], "kw": f.get("kw"), "voz_texto": f.get("voz", f["t"]), "pausa": PAUSA_BLOQUE if i == len(fr) - 1 else PAUSA}
             if i == len(fr) - 1 and b.get("final"):
                 e["pausa"] += b["final"]
-            if f.get("sfx"):
-                e["sfx"] = f["sfx"]
+            e["nb"] = nb
+            for extra in ("sfx", "rotulo", "recuadro"):
+                if f.get(extra):
+                    e[extra] = f[extra]
             if "card" in f:
                 k = hashlib.md5(json.dumps(f["card"], sort_keys=True).encode()).hexdigest()[:10]
                 tarjetas[k] = f["card"]; e.update(tipo="card", card=k)
@@ -314,8 +343,17 @@ def main(carpeta):
                 lim = max(0.0, dur_clip[e["vid"]] - e["dur"] - 0.2)
                 e["offset"] = round(min(inicios[e["vid"]], lim) if e["vid"] in inicios else random.uniform(0, lim), 2)
             planos.append(e)
+    if MARCO:
+        (trabajo / "marco").mkdir(exist_ok=True)
+        colores = MARCO.get("colores", MK.COLORES)
+        for e in planos:
+            if e["tipo"] == "foto" and e["foto"] in ENCAJE:
+                e["img"] = str(rutas[e["foto"]])
+                col = colores[e.get("nb", 0) % len(colores)]
+                e["fondo"] = str(trabajo / "marco" / f"fondo_{col.lstrip('#')}.mp4")
+                MK.fondo_animado(Path(e["fondo"]), col)
     for i, e in enumerate(planos):
-        h = hashlib.md5(f"{e['img']}|{e['dur']:.3f}|{e.get('movimiento')}|{e.get('punch')}|{e.get('corte')}|{e.get('offset')}".encode()).hexdigest()[:10]
+        h = hashlib.md5(f"{W}x{H}|{e.get('fondo')}|{e.get('toma')}|{e['img']}|{e['dur']:.3f}|{e.get('movimiento')}|{e.get('punch')}|{e.get('corte')}|{e.get('offset')}".encode()).hexdigest()[:10]
         e["clip"] = trabajo / "clips" / f"{i:03d}_{h}.mp4"
     with cf.ThreadPoolExecutor(4) as ex:
         list(ex.map(lambda e: clip(e, e["clip"]), planos))
@@ -347,9 +385,11 @@ def main(carpeta):
            f"{sub_m},1\n"
            f"Style: KW,Inter Display Black,{kw1},&H0000C4FF,&H0000C4FF,&H00000000,&H96000000,0,0,0,0,100,100,-2,0,1,9,5,5,"
            "100,100,0,1\n"
-           "Style: Cred,Inter Display,30,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,0,0,0,0,100,100,0,0,1,2,1,9,40,40,36,1\n"
+           f"Style: Cred,Inter Display,30,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,0,0,0,0,100,100,0,0,1,2,1,{7 if MARCO else 9},40,40,{24 if MARCO else 36},1\n"
            f"Style: KWB,Inter Display Black,{kw2},{kwb_txt},{kwb_txt},{kwb_box},{kwb_box},0,0,0,0,100,100,-1,0,3,22,0,5,"
-           "100,100,0,1\n\n[Events]\nFormat: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text\n")
+           "100,100,0,1\n"
+           "Style: Rot,Inter Display Black,84,&H00130F0E,&H00130F0E,&H0000C4FF,&H0000C4FF,0,0,0,0,100,100,0,0,3,18,0,1,0,0,0,1\n"
+           "Style: RotA,Inter Display Black,40,&H00FFFFFF,&H00FFFFFF,&H00FF8C1E,&H00FF8C1E,0,0,0,0,100,100,1,0,3,12,0,1,0,0,0,1\n\n[Events]\nFormat: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text\n")
     cred_ev = [(e["ini"], e["ini"] + e["dur"], spec["credito_fotos"][e["foto"]]) for e in planos
                if e["tipo"] == "foto" and e["foto"] in spec.get("credito_fotos", {})]
     cred_ev += [(e["ini"], e["ini"] + e["dur"], spec["credito_videos"][e["vid"]]) for e in planos
@@ -362,8 +402,19 @@ def main(carpeta):
             t0 = e["ini"] + (e["voz_dur"] * pos / len(e["texto"]) if pos > 0 else 0.1)
             t1 = min(t0 + 1.5, e["ini"] + e["dur"] - 0.05)
             kw_ev.append((t0, t1, e["kw"].upper()))
+    rot_ev = []   # rótulos tipo tele (abajo a la izquierda): etiqueta pequeña + cifra o nombre en grande
+    for e in escenas:
+        if e.get("rotulo") and e.get("texto"):
+            r = e["rotulo"] if isinstance(e["rotulo"], dict) else {"texto": e["rotulo"]}
+            a = e["ini"] + r.get("en", 0.35); b = e["ini"] + e["dur"] - 0.1; yb = H - 190
+            mv = lambda y: f"{{\\an1\\move(-900,{y},70,{y},0,260)\\fad(0,150)}}"
+            rot_ev.append((a, b, "Rot", mv(yb) + r["texto"]))
+            if r.get("arriba"):
+                rot_ev.append((a + 0.12, b, "RotA", mv(yb - 112) + r["arriba"].upper()))
     def anim(i):  # alterna estilo (texto amarillo / caja amarilla) y altura
         y = ((760, 600, 700) if vertical else (470, 330, 430))[i % 3]
+        if MARCO:
+            y = int(y * H / 1080)
         rot = ("", r"\frz-3", r"\frz2")[i % 3]
         return (f"{{\\pos({W // 2},{y}){rot}\\fscx40\\fscy40\\t(0,110,\\fscx118\\fscy118)"
                 f"\\t(110,200,\\fscx100\\fscy100)\\fad(0,120)}}")
@@ -371,7 +422,8 @@ def main(carpeta):
         f"Dialogue: 0,{ts(a, '.')},{ts(b, '.')},Sub,,0,0,0,,{txt}\n" for a, b, txt in ass_ev) + "".join(
         f"Dialogue: 1,{ts(a, '.')},{ts(b, '.')},{'KWB' if i % 2 else 'KW'},,0,0,0,,{anim(i)}{txt}\n"
         for i, (a, b, txt) in enumerate(kw_ev)) + "".join(
-        f"Dialogue: 2,{ts(a, '.')},{ts(b, '.')},Cred,,0,0,0,,{txt}\n" for a, b, txt in cred_ev), encoding="utf-8")
+        f"Dialogue: 2,{ts(a, '.')},{ts(b, '.')},Cred,,0,0,0,,{txt}\n" for a, b, txt in cred_ev) + "".join(
+        f"Dialogue: 3,{ts(a, '.')},{ts(b, '.')},{st},,0,0,0,,{txt}\n" for a, b, st, txt in rot_ev), encoding="utf-8")
 
     # 6b) efectos de sonido: "whoosh" en cada corte y "pop" en palabras clave y tarjetas
     pistas_extra = []
@@ -405,6 +457,12 @@ def main(carpeta):
                 ultimo_w = p["ini"]
         for a, _, _ in kw_ev:
             poner(elegir(["pop1", "pop2", "pop3", "click"]), a)
+        for a, _, st, _ in rot_ev:
+            if st == "Rot":
+                poner("ding", a)
+        for e in escenas:
+            if e.get("recuadro"):
+                poner(elegir(["pop1", "pop2", "pop3"]), e["ini"] + e["recuadro"].get("en", 0.5))
         for e in escenas:   # sonidos reales por frase (p. ej. un cuervo graznando), sincronizados con el clip
             if e.get("sfx"):
                 fx = e["sfx"]; snd = cargar(fx["nombre"]) * fx.get("vol", 0.5)
@@ -444,8 +502,41 @@ def main(carpeta):
         mezcla += f"[{k}:a]aformat=sample_rates=48000:channel_layouts=stereo,volume={vol},atrim=0:{t:.2f}{fade}[x{k}];"
         etiquetas.append(f"[x{k}]")
     mezcla += "".join(etiquetas) + f"amix=inputs={len(etiquetas)}:normalize=0:duration=first,loudnorm=I=-14:TP=-1.5:LRA=11[a]"
+    video_fc = f"[0:v]ass={trabajo / 'subs.ass'}[vv]"
+    if MARCO:
+        mdir = trabajo / "marco"; n_in = len(entradas) // 2 + sum(1 for x in entradas if x == "-stream_loop") * 0
+        n_in = sum(1 for x in entradas if x == "-i")
+        def render_html(html, png, w, h):
+            subprocess.run(["node", str(RAIZ / "render_html.js"), str(html), str(png), str(w), str(h)], check=True)
+        if not (mdir / "marco.png").exists():
+            MK.marco_png(mdir / "marco.png", MARCO, RAIZ.parent, render_html)
+        B = MK.BARRA; capas = []          # (entrada extra, inicio, expresión de overlay)
+        entradas += ["-i", str(mdir / "marco.png")]; i_marco = n_in; n_in += 1
+        for k, e in enumerate(x for x in escenas if x.get("recuadro")):
+            r = e["recuadro"]; png = mdir / f"recuadro_{k}.png"
+            MK.recuadro(png, fotos_dir / f"{r.get('img', e.get('foto'))}.jpg", r)
+            ini = e["ini"] + r.get("en", 0.5); d = e["ini"] + e["dur"] - ini - 0.05
+            entradas += ["-loop", "1", "-framerate", str(FPS), "-t", f"{d:.2f}", "-i", str(png)]
+            capas.append((n_in, ini, f"format=rgba,fade=t=in:st=0:d=0.18:alpha=1,fade=t=out:st={d - 0.15:.2f}:d=0.15:alpha=1")); n_in += 1
+        cortes = [e["ini"] for e in escenas[1:] if e.get("bloque")]
+        for k, tc in enumerate(cortes):   # transición con logo en cada cambio de dato
+            col = colores[k % len(colores)]; col2 = colores[(k + 2) % len(colores)]
+            tdir = mdir / f"trans_{col.lstrip('#')}"
+            MK.transicion(tdir, col, col2, RAIZ.parent / MARCO["logo"])
+            entradas += ["-framerate", str(FPS), "-i", str(tdir / "%02d.png")]
+            capas.append((n_in, max(0, tc - MK.MEDIO / FPS), "format=rgba")); n_in += 1
+        fuente = MK.F_BLACK
+        cuenta = (f"drawtext=fontfile={fuente}:fontsize=58:fontcolor=0x130F0E:x=1920-28-95-tw/2:y={B + 18 + 39}-th/2:"
+                  f"text='%{{eif\\:max(0\\,trunc(({t:.2f}-t)/60))\\:d}}\\:%{{eif\\:max(0\\,mod(trunc({t:.2f}-t)\\,60))\\:d\\:2}}'")
+        video_fc += f";[vv]pad={W}:1080:0:{B}:color=black[c0]"
+        ult = "c0"
+        for j, (idx, ini, pre) in enumerate(capas):
+            video_fc += (f";[{idx}:v]{pre},setpts=PTS-STARTPTS+{ini:.3f}/TB[k{j}];"
+                         f"[{ult}][k{j}]overlay=0:{B}:eof_action=pass[c{j + 1}]")
+            ult = f"c{j + 1}"
+        video_fc += f";[{ult}][{i_marco}:v]overlay=0:0,{cuenta}[vfin]"
     sh("ffmpeg", "-y", *entradas,
-       "-filter_complex", f"[0:v]ass={trabajo / 'subs.ass'}[vv];{mezcla}", "-map", "[vv]", "-map", "[a]",
+       "-filter_complex", f"{video_fc};{mezcla}", "-map", "[vfin]" if MARCO else "[vv]", "-map", "[a]",
        "-c:v", "libx264", "-preset", "medium", "-crf", "21", "-pix_fmt", "yuv420p", "-movflags", "+faststart",
        "-c:a", "aac", "-b:a", "192k", "-shortest", str(salida / "video.mp4"))
     caps = [(e["ini"], e["bloque"]) for e in escenas if e.get("bloque")]
