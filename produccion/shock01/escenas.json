@@ -26,7 +26,8 @@
   "tesla_desierto": 0,
   "tesla_noche": 0,
   "tesla_perfil": 0,
-  "tesla_puertas": 0
+  "tesla_puertas": 0,
+  "tesla_comparacion": 0
  },
  "difuminar": {},
  "videos": {
@@ -483,6 +484,11 @@
      "img": "tesla_frontal"
     },
     {
+     "t": "Y si te lo imaginabas rojo, es normal: así era el prototipo de 2017. El nuevo no se parece en nada.",
+     "img": "tesla_comparacion",
+     "kw": "2017 vs 2026"
+    },
+    {
      "t": "Y el coche… despegó. Con propulsores derivados de los cohetes de SpaceX, se elevó, giró y saltó por encima de otros coches.",
      "kw": "¡despegó!",
      "img": "tesla_propulsores"
@@ -540,6 +546,7 @@
   "tesla_desierto": "Imagen: Tesla",
   "tesla_noche": "Imagen: Tesla",
   "tesla_perfil": "Imagen: Tesla",
-  "tesla_puertas": "Imagen: Tesla"
+  "tesla_puertas": "Imagen: Tesla",
+  "tesla_comparacion": "Imagen: Tesla"
  }
 }
