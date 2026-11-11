@@ -214,11 +214,14 @@ def main(carpeta):
             e = {"texto": f["t"], "kw": f.get("kw"), "voz_texto": f.get("voz", f["t"]), "pausa": PAUSA_BLOQUE if i == len(fr) - 1 else PAUSA}
             if i == len(fr) - 1 and b.get("final"):
                 e["pausa"] += b["final"]
+            if f.get("sfx"):
+                e["sfx"] = f["sfx"]
             if "card" in f:
                 k = hashlib.md5(json.dumps(f["card"], sort_keys=True).encode()).hexdigest()[:10]
                 tarjetas[k] = f["card"]; e.update(tipo="card", card=k)
             elif "vid" in f:
-                e.update(tipo="video", vid=f["vid"], movimiento=random.randint(0, 3))
+                lv = f["vid"] if isinstance(f["vid"], list) else [f["vid"]]
+                e.update(tipo="video", vid=lv[0], vids=lv, movimiento=random.randint(0, 3))
             else:
                 lst = f["img"] if isinstance(f["img"], list) else [f["img"]]
                 e.update(tipo="foto", foto=lst[0], fotos=lst, movimiento=random.randint(0, 3))
@@ -234,7 +237,7 @@ def main(carpeta):
     global INTRO_VIDEO, INTRO_AUDIO
     if spec.get("intro"):
         INTRO_VIDEO, INTRO_AUDIO = RAIZ.parent / spec["intro"]["video"], RAIZ.parent / spec["intro"]["audio"]
-    vids = {e["vid"] for e in escenas if e["tipo"] == "video"}
+    vids = {v for e in escenas if e["tipo"] == "video" for v in e["vids"]}
     faltan = [str(spec["videos"][v]) for v in vids if not (CLIPS / f"{spec['videos'][v]}.mp4").exists()]
     if faltan:
         subprocess.run(["bash", str(CLIPS / "descargar.sh"), *faltan], cwd=CLIPS, check=True)
@@ -287,16 +290,21 @@ def main(carpeta):
             k = max(2, round(e["dur"] / plano)); d = e["dur"] / k
             for j in range(k):
                 p = dict(e, ini=e["ini"] + j * d, dur=d, toma=j)
+                if e["tipo"] == "video" and len(e["vids"]) > 1:   # varios clips: uno por toma
+                    p["vid"] = e["vids"][j % len(e["vids"])]
+                    p["img"] = str(CLIPS / f"{spec['videos'][p['vid']]}.mp4")
                 if e["tipo"] == "foto" and len(e["fotos"]) > 1:   # varias fotos reales: una por toma
                     p["foto"] = e["fotos"][j % len(e["fotos"])]; p["img"] = str(rutas[p["foto"]])
                     p["movimiento"] = random.randint(0, 3)
                 if e["tipo"] == "video":
-                    lim = max(0.5, dur_clip[e["vid"]] - d - 0.2)
-                    if e["vid"] in inicios:
-                        p["offset"] = round(min(inicios[e["vid"]] + j * d, lim), 2); p.pop("punch", None)
+                    lim = max(0.5, dur_clip[p["vid"]] - d - 0.2)
+                    if p["vid"] in inicios:
+                        k_mismo = sum(1 for jj in range(j) if e["vids"][jj % len(e["vids"])] == p["vid"])
+                        p["offset"] = round(min(inicios[p["vid"]] + k_mismo * d, lim), 2); p.pop("punch", None)
                     else:
                         p["offset"] = round((j * 2.7 + random.uniform(0, 3)) % lim, 2)
-                if j > 0 and not (e["tipo"] == "foto" and len(e["fotos"]) > 1 and j < len(e["fotos"])):
+                varios = len(e["fotos"] if e["tipo"] == "foto" else e["vids"])
+                if j > 0 and not (varios > 1 and j < varios) and not (e["tipo"] == "video" and p["vid"] in inicios):
                     p["punch"] = (round(random.uniform(1.25, 1.45), 2), round(random.uniform(0.15, 0.85), 2),
                                   round(random.uniform(0.2, 0.8), 2))
                     p["corte"] = random.choices(["zoom", "desliza", "destello"], weights=[5, 3, 1])[0]
@@ -397,6 +405,11 @@ def main(carpeta):
                 ultimo_w = p["ini"]
         for a, _, _ in kw_ev:
             poner(elegir(["pop1", "pop2", "pop3", "click"]), a)
+        for e in escenas:   # sonidos reales por frase (p. ej. un cuervo graznando), sincronizados con el clip
+            if e.get("sfx"):
+                fx = e["sfx"]; snd = cargar(fx["nombre"]) * fx.get("vol", 0.5)
+                i0 = int((e["ini"] + fx.get("en", 0)) * SR); i1 = min(total_n, i0 + len(snd))
+                fx_buf[i0:i1] += snd[: i1 - i0]
         for e in escenas:
             if e["tipo"] != "card" or not e.get("texto"):
                 continue

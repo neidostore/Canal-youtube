@@ -1,0 +1,133 @@
+{
+ "tema": "shock",
+ "voz": {
+  "idioma": "es-ES",
+  "nombre": "es-ES-Chirp3-HD-Achird",
+  "velocidad": 1.12
+ },
+ "musica": {
+  "archivo": "musica/wallpaper.mp3",
+  "volumen": 0.09,
+  "credito": "\"Wallpaper\" de Kevin MacLeod (incompetech.com)"
+ },
+ "estilo": {
+  "dinamico": true,
+  "plano": 1.6
+ },
+ "tarjetas": "tarjetas-shock.html",
+ "titulo": "Demo: Los cuervos no olvidan (solo vídeo)",
+ "videos": {
+  "c_rama": 6137742,
+  "c_come": 6956527,
+  "enmascarado": 6650121,
+  "c_suelo": 854284,
+  "mascara": 2948308,
+  "c_grita": "wc_cuervo_grita",
+  "c_alas": 4979115,
+  "bandada": 6351356,
+  "c_cables": 9633847,
+  "c_cementerio": 6840980,
+  "c_pino": 17580089,
+  "c_tejado": 7895680
+ },
+ "videos_inicio": {
+  "c_grita": 46.3,
+  "c_alas": 2.0
+ },
+ "credito_videos": {
+  "c_grita": "Vídeo: The Nature Box · CC BY 4.0"
+ },
+ "fotos": {},
+ "bloques": [
+  {
+   "nombre": "Gancho",
+   "frases": [
+    {
+     "t": "Si alguna vez le haces algo a un cuervo… ten cuidado. Porque nunca lo va a olvidar.",
+     "vid": [
+      "c_rama",
+      "c_come"
+     ],
+     "kw": "nunca olvida"
+    }
+   ]
+  },
+  {
+   "nombre": "10 · Los cuervos no olvidan",
+   "frases": [
+    {
+     "t": "Número diez.",
+     "card": {
+      "tipo": "numero",
+      "n": 10,
+      "tema": "Animales"
+     }
+    },
+    {
+     "t": "Los cuervos recuerdan tu cara.",
+     "vid": [
+      "c_come"
+     ],
+     "kw": "recuerdan tu cara"
+    },
+    {
+     "t": "En un experimento de la Universidad de Washington, unos investigadores con una máscara capturaron cuervos para estudiarlos.",
+     "vid": [
+      "enmascarado",
+      "c_suelo",
+      "mascara"
+     ],
+     "kw": "una máscara"
+    },
+    {
+     "t": "Años después, cuando alguien se ponía esa misma máscara, los cuervos le chillaban…",
+     "vid": [
+      "c_grita"
+     ],
+     "kw": "le chillaban",
+     "sfx": {
+      "nombre": "cuervo2",
+      "vol": 0.55
+     }
+    },
+    {
+     "t": "y le perseguían.",
+     "vid": [
+      "c_alas",
+      "bandada"
+     ],
+     "kw": "le perseguían"
+    },
+    {
+     "t": "Y lo más inquietante: cuervos que nunca habían sido capturados también lo hacían.",
+     "vid": [
+      "c_cables",
+      "c_cementerio"
+     ],
+     "kw": "nunca capturados"
+    },
+    {
+     "t": "Lo habían aprendido… de los demás.",
+     "vid": [
+      "bandada"
+     ],
+     "kw": "lo aprendieron",
+     "sfx": {
+      "nombre": "cuervo1",
+      "vol": 0.45,
+      "en": 0.3
+     }
+    },
+    {
+     "t": "Así que ya sabes: con los cuervos, mejor llevarse bien.",
+     "vid": [
+      "c_pino",
+      "c_tejado"
+     ],
+     "kw": "llevarse bien"
+    }
+   ],
+   "final": 0.8
+  }
+ ]
+}
