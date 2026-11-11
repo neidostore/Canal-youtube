@@ -4,7 +4,7 @@
 - **Nombre:** SHOCK MENTAL. El logo lleva "?" como adorno; el nombre del canal, no.
 - **Eslogan:** Tu dosis de asombro.
 - **Formato:** serie **"Dosis de Asombro"** numerada. En cada vídeo, 10-12 curiosidades **sin relación entre sí**, de unos 25 s cada una, con un número grande y una transición que crea intriga. La más impactante va al final y se adelanta en el gancho.
-- **Idioma:** español de España. **Voz:** Google Chirp 3 HD *Achird* (es-ES), a 1,12x.
+- **Idioma:** español. **Voz:** Google Chirp 3 HD *Achird* latina (es-US), a 1,15x.
 - **Colores:** azul eléctrico `#1E8CFF`, naranja `#FF7A14`, amarillo `#FFD21E` y fondo casi negro `#04050A`.
 - **Tipografía:** Inter Display Black, con efecto metálico (blanco y plateado) o degradado amarillo.
 - **Música:** "Wallpaper" (Kevin MacLeod, CC BY 4.0), con crédito en cada descripción.
@@ -13,7 +13,7 @@
 ## Archivos
 | Archivo | Uso |
 |---|---|
-| `marca/shockmental/perfil-chatgpt.png` | Foto de perfil (temporal, hasta tener la versión sin eslogan en alta resolución) |
+| `marca/shockmental/perfil-sin-eslogan.png` | Foto de perfil (el mismo logo redondo que sale en los vídeos) |
 | `marca/shockmental/banner.png` | Banner 2560×1440, con el texto dentro de la zona segura |
 | `marca/shockmental/logo.png` | Logo grande, para la intro y las tarjetas |
 | `marca/shockmental/intro/intro.mp4` | Intro animada |
