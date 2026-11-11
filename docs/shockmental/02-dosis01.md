@@ -41,6 +41,7 @@ Elon Musk acaba de enseñar un coche que despega del suelo… pero ¿vuela de ve
 03:06 Los cuervos no olvidan
 03:30 La señal Wow!
 03:54 El coche que vuela
+04:37 Despedida
 
 📚 Fuentes:
 - Camarón pistola: Nature (2001) https://www.nature.com/nature/journal/v413/n6855/full/413477a0.html
