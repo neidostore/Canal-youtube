@@ -1,0 +1,32 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Sub,Inter Display Black,74,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,0,0,0,0,100,100,0,0,1,6,3,2,70,70,560,1
+Style: KW,Inter Display Black,118,&H0000C4FF,&H0000C4FF,&H00000000,&H96000000,0,0,0,0,100,100,-2,0,1,9,5,5,100,100,0,1
+Style: Cred,Inter Display,30,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,0,0,0,0,100,100,0,0,1,2,1,9,40,40,36,1
+Style: KWB,Inter Display Black,96,&H00FFFFFF,&H00FFFFFF,&H00FF8C1E,&H00FF8C1E,0,0,0,0,100,100,-1,0,3,22,0,5,100,100,0,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:01.44,Sub,,0,0,0,,El colibrí es el único
+Dialogue: 0,0:00:01.44,0:00:02.81,Sub,,0,0,0,,pájaro capaz de volar
+Dialogue: 0,0:00:02.81,0:00:03.59,Sub,,0,0,0,,hacia atrás.
+Dialogue: 0,0:00:03.74,0:00:05.25,Sub,,0,0,0,,Algunas especies baten
+Dialogue: 0,0:00:05.25,0:00:06.76,Sub,,0,0,0,,las alas hasta ochenta
+Dialogue: 0,0:00:06.76,0:00:08.06,Sub,,0,0,0,,veces… por segundo.
+Dialogue: 0,0:00:08.21,0:00:09.20,Sub,,0,0,0,,Y su corazón puede
+Dialogue: 0,0:00:09.20,0:00:10.02,Sub,,0,0,0,,superar los mil
+Dialogue: 0,0:00:10.02,0:00:11.23,Sub,,0,0,0,,doscientos latidos por
+Dialogue: 0,0:00:11.23,0:00:11.62,Sub,,0,0,0,,minuto.
+Dialogue: 0,0:00:11.77,0:00:12.34,Sub,,0,0,0,,Tienes once
+Dialogue: 0,0:00:12.34,0:00:13.49,Sub,,0,0,0,,curiosidades más en la
+Dialogue: 0,0:00:13.49,0:00:14.37,Sub,,0,0,0,,dosis completa de
+Dialogue: 0,0:00:14.37,0:00:15.05,Sub,,0,0,0,,Shock Mental.
+Dialogue: 1,0:00:02.83,0:00:03.69,KW,,0,0,0,,{\pos(540,760)\fscx40\fscy40\t(0,110,\fscx118\fscy118)\t(110,200,\fscx100\fscy100)\fad(0,120)}HACIA ATRÁS
+Dialogue: 1,0:00:03.84,0:00:05.34,KWB,,0,0,0,,{\pos(540,600)\frz-3\fscx40\fscy40\t(0,110,\fscx118\fscy118)\t(110,200,\fscx100\fscy100)\fad(0,120)}80 POR SEGUNDO
+Dialogue: 1,0:00:08.31,0:00:09.81,KW,,0,0,0,,{\pos(540,700)\frz2\fscx40\fscy40\t(0,110,\fscx118\fscy118)\t(110,200,\fscx100\fscy100)\fad(0,120)}1.200 LATIDOS
+Dialogue: 1,0:00:13.51,0:00:15.01,KWB,,0,0,0,,{\pos(540,760)\fscx40\fscy40\t(0,110,\fscx118\fscy118)\t(110,200,\fscx100\fscy100)\fad(0,120)}DOSIS COMPLETA EN EL CANAL

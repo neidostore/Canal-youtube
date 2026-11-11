@@ -1,0 +1,8 @@
+file '/home/user/Canal-youtube/produccion/shorts-shock/s04-planeta-cristal/trabajo/tts/182efb3eccb2.wav'
+file '/home/user/Canal-youtube/produccion/shorts-shock/s04-planeta-cristal/trabajo/tts/sil_150.wav'
+file '/home/user/Canal-youtube/produccion/shorts-shock/s04-planeta-cristal/trabajo/tts/9db5ab8e1eb9.wav'
+file '/home/user/Canal-youtube/produccion/shorts-shock/s04-planeta-cristal/trabajo/tts/sil_150.wav'
+file '/home/user/Canal-youtube/produccion/shorts-shock/s04-planeta-cristal/trabajo/tts/8a616ff8be5a.wav'
+file '/home/user/Canal-youtube/produccion/shorts-shock/s04-planeta-cristal/trabajo/tts/sil_150.wav'
+file '/home/user/Canal-youtube/produccion/shorts-shock/s04-planeta-cristal/trabajo/tts/dcccfa218f35.wav'
+file '/home/user/Canal-youtube/produccion/shorts-shock/s04-planeta-cristal/trabajo/tts/sil_850.wav'

@@ -1,0 +1,37 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Sub,Inter Display Black,74,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,0,0,0,0,100,100,0,0,1,6,3,2,70,70,560,1
+Style: KW,Inter Display Black,118,&H0000C4FF,&H0000C4FF,&H00000000,&H96000000,0,0,0,0,100,100,-2,0,1,9,5,5,100,100,0,1
+Style: Cred,Inter Display,30,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,0,0,0,0,100,100,0,0,1,2,1,9,40,40,36,1
+Style: KWB,Inter Display Black,96,&H00FFFFFF,&H00FFFFFF,&H00FF8C1E,&H00FF8C1E,0,0,0,0,100,100,-1,0,3,22,0,5,100,100,0,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:01.31,Sub,,0,0,0,,La luz está formada
+Dialogue: 0,0:00:01.31,0:00:02.28,Sub,,0,0,0,,por partículas
+Dialogue: 0,0:00:02.28,0:00:03.52,Sub,,0,0,0,,diminutas llamadas
+Dialogue: 0,0:00:03.52,0:00:04.08,Sub,,0,0,0,,fotones.
+Dialogue: 0,0:00:04.23,0:00:05.07,Sub,,0,0,0,,Y en 2016, un
+Dialogue: 0,0:00:05.07,0:00:06.04,Sub,,0,0,0,,experimento con
+Dialogue: 0,0:00:06.04,0:00:07.33,Sub,,0,0,0,,voluntarios encontró
+Dialogue: 0,0:00:07.33,0:00:08.63,Sub,,0,0,0,,que el ojo humano es
+Dialogue: 0,0:00:08.63,0:00:09.79,Sub,,0,0,0,,capaz de notar… un
+Dialogue: 0,0:00:09.79,0:00:10.50,Sub,,0,0,0,,solo fotón.
+Dialogue: 0,0:00:10.65,0:00:12.26,Sub,,0,0,0,,La cantidad de luz más
+Dialogue: 0,0:00:12.26,0:00:13.80,Sub,,0,0,0,,pequeña que existe. Y
+Dialogue: 0,0:00:13.80,0:00:14.90,Sub,,0,0,0,,tus ojos, en la
+Dialogue: 0,0:00:14.90,0:00:16.14,Sub,,0,0,0,,oscuridad, pueden
+Dialogue: 0,0:00:16.14,0:00:16.80,Sub,,0,0,0,,sentirla.
+Dialogue: 0,0:00:16.95,0:00:17.53,Sub,,0,0,0,,Tienes once
+Dialogue: 0,0:00:17.53,0:00:18.67,Sub,,0,0,0,,curiosidades más en la
+Dialogue: 0,0:00:18.67,0:00:19.56,Sub,,0,0,0,,dosis completa de
+Dialogue: 0,0:00:19.56,0:00:20.24,Sub,,0,0,0,,Shock Mental.
+Dialogue: 1,0:00:03.55,0:00:04.18,KW,,0,0,0,,{\pos(540,760)\fscx40\fscy40\t(0,110,\fscx118\fscy118)\t(110,200,\fscx100\fscy100)\fad(0,120)}FOTONES
+Dialogue: 1,0:00:04.66,0:00:06.16,KWB,,0,0,0,,{\pos(540,600)\frz-3\fscx40\fscy40\t(0,110,\fscx118\fscy118)\t(110,200,\fscx100\fscy100)\fad(0,120)}1 FOTÓN
+Dialogue: 1,0:00:10.75,0:00:12.25,KW,,0,0,0,,{\pos(540,700)\frz2\fscx40\fscy40\t(0,110,\fscx118\fscy118)\t(110,200,\fscx100\fscy100)\fad(0,120)}LA LUZ MÁS PEQUEÑA
+Dialogue: 1,0:00:18.69,0:00:20.19,KWB,,0,0,0,,{\pos(540,760)\fscx40\fscy40\t(0,110,\fscx118\fscy118)\t(110,200,\fscx100\fscy100)\fad(0,120)}DOSIS COMPLETA EN EL CANAL

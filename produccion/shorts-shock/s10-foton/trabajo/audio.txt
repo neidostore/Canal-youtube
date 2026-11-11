@@ -1,0 +1,8 @@
+file '/home/user/Canal-youtube/produccion/shorts-shock/s10-foton/trabajo/tts/b008c0484fba.wav'
+file '/home/user/Canal-youtube/produccion/shorts-shock/s10-foton/trabajo/tts/sil_150.wav'
+file '/home/user/Canal-youtube/produccion/shorts-shock/s10-foton/trabajo/tts/c5ef8cbd73bb.wav'
+file '/home/user/Canal-youtube/produccion/shorts-shock/s10-foton/trabajo/tts/sil_150.wav'
+file '/home/user/Canal-youtube/produccion/shorts-shock/s10-foton/trabajo/tts/bd392b8f809e.wav'
+file '/home/user/Canal-youtube/produccion/shorts-shock/s10-foton/trabajo/tts/sil_150.wav'
+file '/home/user/Canal-youtube/produccion/shorts-shock/s10-foton/trabajo/tts/dcccfa218f35.wav'
+file '/home/user/Canal-youtube/produccion/shorts-shock/s10-foton/trabajo/tts/sil_850.wav'

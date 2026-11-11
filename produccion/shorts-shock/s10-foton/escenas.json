@@ -1,0 +1,140 @@
+{
+ "tema": "shock",
+ "voz": {
+  "idioma": "es-US",
+  "nombre": "es-US-Chirp3-HD-Achird",
+  "velocidad": 1.15
+ },
+ "musica": {
+  "archivo": "musica/wallpaper.mp3",
+  "volumen": 0.09,
+  "credito": "\"Wallpaper\" de Kevin MacLeod (incompetech.com)"
+ },
+ "videos": {
+  "r_shocked_woman": 8626657,
+  "r_man_tv": 9883681,
+  "rocket": 854261,
+  "rayo1": 6190836,
+  "rayo2": 3879471,
+  "rayo3": 6065794,
+  "rayo4": 2657691,
+  "sol": 855946,
+  "cafe1": 853761,
+  "cafe2": 2849955,
+  "cafe3": 856212,
+  "pc1": 8888818,
+  "pc2": 12405666,
+  "crt": 8879937,
+  "pl_estrella": "wc_planeta_estrella",
+  "planet": 854301,
+  "cristal": 8106399,
+  "col1": 2402369,
+  "col2": 6239509,
+  "col3": 6471944,
+  "col4": 10164928,
+  "col5": 7961706,
+  "eif1": 856056,
+  "eif2": 4272751,
+  "eif3": 3521348,
+  "eif4": 6355353,
+  "pul1": 1312397,
+  "pul2": 6430081,
+  "pul3": 1472082,
+  "bam1": "wc_bambu",
+  "bam2": 7958680,
+  "bam3": 7720369,
+  "bam4": 1510138,
+  "emu1": 7781710,
+  "emu2": 8827406,
+  "emu3": "wc_emus_corren",
+  "emu4": 3842258,
+  "trigo1": 1620050,
+  "trigo2": 1509175,
+  "ametr": 8605246,
+  "ojo1": 856002,
+  "ojo2": 7297815,
+  "est1": 857136,
+  "est2": 852369,
+  "est3": 856077,
+  "c_rama": 6137742,
+  "c_come": 6956527,
+  "enmascarado": 6650121,
+  "c_suelo": 854284,
+  "mascara": 2948308,
+  "c_grita": "wc_cuervo_grita",
+  "c_alas": 4979115,
+  "bandada": 6351356,
+  "c_cables": 9633847,
+  "c_cementerio": 6840980,
+  "tel1": 2954003,
+  "tel2": 2954006,
+  "tel3": 6420488,
+  "tel4": 2954000
+ },
+ "videos_inicio": {
+  "c_grita": 46.3,
+  "c_alas": 2.0,
+  "r_man_tv": 3.5,
+  "r_shocked_woman": 0.3,
+  "rayo4": 0.3,
+  "sol": 0.0,
+  "est2": 4.0,
+  "rayo1": 0.0,
+  "rayo2": 0.0
+ },
+ "credito_videos": {
+  "c_grita": "Vídeo: The Nature Box · CC BY 4.0",
+  "pl_estrella": "Recreación: ESA/Hubble (M. Kornmesser) · CC BY 4.0",
+  "emu3": "Vídeo: Rob Bixby · CC BY 2.0",
+  "bam1": "Vídeo: The Nature Box · CC BY-SA 4.0"
+ },
+ "difuminar": {},
+ "titulo": "Tu ojo puede notar un solo fotón 👁️",
+ "formato": "vertical",
+ "estilo": {
+  "dinamico": true,
+  "plano": 1.4
+ },
+ "fotos": {},
+ "credito_fotos": {},
+ "bloques": [
+  {
+   "nombre": "9 · Un solo fotón",
+   "frases": [
+    {
+     "t": "La luz está formada por partículas diminutas llamadas fotones.",
+     "vid": [
+      "est1",
+      "est3"
+     ],
+     "kw": "fotones"
+    },
+    {
+     "t": "Y en 2016, un experimento con voluntarios encontró que el ojo humano es capaz de notar… un solo fotón.",
+     "vid": [
+      "ojo2",
+      "ojo1"
+     ],
+     "kw": "1 fotón"
+    },
+    {
+     "t": "La cantidad de luz más pequeña que existe. Y tus ojos, en la oscuridad, pueden sentirla.",
+     "vid": [
+      "est2",
+      "ojo2"
+     ],
+     "kw": "la luz más pequeña"
+    },
+    {
+     "t": "Tienes once curiosidades más en la dosis completa de Shock Mental.",
+     "kw": "dosis completa en el canal",
+     "vid": [
+      "est1",
+      "est3"
+     ]
+    }
+   ],
+   "final": 0.4
+  }
+ ]
+}

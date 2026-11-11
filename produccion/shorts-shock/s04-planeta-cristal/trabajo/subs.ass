@@ -1,0 +1,47 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Sub,Inter Display Black,74,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,0,0,0,0,100,100,0,0,1,6,3,2,70,70,560,1
+Style: KW,Inter Display Black,118,&H0000C4FF,&H0000C4FF,&H00000000,&H96000000,0,0,0,0,100,100,-2,0,1,9,5,5,100,100,0,1
+Style: Cred,Inter Display,30,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,0,0,0,0,100,100,0,0,1,2,1,9,40,40,36,1
+Style: KWB,Inter Display Black,96,&H00FFFFFF,&H00FFFFFF,&H00FF8C1E,&H00FF8C1E,0,0,0,0,100,100,-1,0,3,22,0,5,100,100,0,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:01.35,Sub,,0,0,0,,A unos sesenta y tres
+Dialogue: 0,0:00:01.35,0:00:02.63,Sub,,0,0,0,,años luz de aquí hay
+Dialogue: 0,0:00:02.63,0:00:03.98,Sub,,0,0,0,,un planeta azul, como
+Dialogue: 0,0:00:03.98,0:00:04.63,Sub,,0,0,0,,la Tierra.
+Dialogue: 0,0:00:04.78,0:00:05.45,Sub,,0,0,0,,Pero no te lo
+Dialogue: 0,0:00:05.45,0:00:06.45,Sub,,0,0,0,,recomiendo para las
+Dialogue: 0,0:00:06.45,0:00:07.18,Sub,,0,0,0,,vacaciones: su
+Dialogue: 0,0:00:07.18,0:00:08.22,Sub,,0,0,0,,atmósfera supera los
+Dialogue: 0,0:00:08.22,0:00:08.79,Sub,,0,0,0,,mil grados.
+Dialogue: 0,0:00:08.94,0:00:09.87,Sub,,0,0,0,,Y según la NASA,
+Dialogue: 0,0:00:09.87,0:00:10.92,Sub,,0,0,0,,probablemente allí
+Dialogue: 0,0:00:10.92,0:00:11.96,Sub,,0,0,0,,llueve cristal… de
+Dialogue: 0,0:00:11.96,0:00:13.12,Sub,,0,0,0,,lado, con vientos de
+Dialogue: 0,0:00:13.12,0:00:13.93,Sub,,0,0,0,,unos siete mil
+Dialogue: 0,0:00:13.93,0:00:15.10,Sub,,0,0,0,,kilómetros por hora.
+Dialogue: 0,0:00:15.25,0:00:15.86,Sub,,0,0,0,,Tienes once
+Dialogue: 0,0:00:15.86,0:00:17.09,Sub,,0,0,0,,curiosidades más en la
+Dialogue: 0,0:00:17.09,0:00:18.05,Sub,,0,0,0,,dosis completa de
+Dialogue: 0,0:00:18.05,0:00:18.77,Sub,,0,0,0,,Shock Mental.
+Dialogue: 1,0:00:00.10,0:00:01.60,KW,,0,0,0,,{\pos(540,760)\fscx40\fscy40\t(0,110,\fscx118\fscy118)\t(110,200,\fscx100\fscy100)\fad(0,120)}63 AÑOS LUZ
+Dialogue: 1,0:00:04.88,0:00:06.38,KWB,,0,0,0,,{\pos(540,600)\frz-3\fscx40\fscy40\t(0,110,\fscx118\fscy118)\t(110,200,\fscx100\fscy100)\fad(0,120)}+1.000 °C
+Dialogue: 1,0:00:09.04,0:00:10.54,KW,,0,0,0,,{\pos(540,700)\frz2\fscx40\fscy40\t(0,110,\fscx118\fscy118)\t(110,200,\fscx100\fscy100)\fad(0,120)}7.000 KM/H
+Dialogue: 1,0:00:17.12,0:00:18.62,KWB,,0,0,0,,{\pos(540,760)\fscx40\fscy40\t(0,110,\fscx118\fscy118)\t(110,200,\fscx100\fscy100)\fad(0,120)}DOSIS COMPLETA EN EL CANAL
+Dialogue: 2,0:00:00.00,0:00:01.59,Cred,,0,0,0,,Recreación artística: NASA, ESA, M. Kornmesser · CC BY 4.0
+Dialogue: 2,0:00:01.59,0:00:03.18,Cred,,0,0,0,,Recreación artística: NASA, ESA, M. Kornmesser · CC BY 4.0
+Dialogue: 2,0:00:03.18,0:00:04.78,Cred,,0,0,0,,Recreación artística: NASA, ESA, M. Kornmesser · CC BY 4.0
+Dialogue: 2,0:00:15.25,0:00:16.70,Cred,,0,0,0,,Recreación artística: NASA, ESA, M. Kornmesser · CC BY 4.0
+Dialogue: 2,0:00:16.70,0:00:18.16,Cred,,0,0,0,,Recreación artística: NASA, ESA, M. Kornmesser · CC BY 4.0
+Dialogue: 2,0:00:18.16,0:00:19.62,Cred,,0,0,0,,Recreación artística: NASA, ESA, M. Kornmesser · CC BY 4.0
+Dialogue: 2,0:00:04.78,0:00:06.17,Cred,,0,0,0,,Recreación: ESA/Hubble (M. Kornmesser) · CC BY 4.0
+Dialogue: 2,0:00:06.17,0:00:07.55,Cred,,0,0,0,,Recreación: ESA/Hubble (M. Kornmesser) · CC BY 4.0
+Dialogue: 2,0:00:07.55,0:00:08.94,Cred,,0,0,0,,Recreación: ESA/Hubble (M. Kornmesser) · CC BY 4.0
+Dialogue: 2,0:00:11.46,0:00:12.72,Cred,,0,0,0,,Recreación: ESA/Hubble (M. Kornmesser) · CC BY 4.0

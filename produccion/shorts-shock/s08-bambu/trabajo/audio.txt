@@ -1,0 +1,8 @@
+file '/home/user/Canal-youtube/produccion/shorts-shock/s08-bambu/trabajo/tts/1a599cbfc2c0.wav'
+file '/home/user/Canal-youtube/produccion/shorts-shock/s08-bambu/trabajo/tts/sil_150.wav'
+file '/home/user/Canal-youtube/produccion/shorts-shock/s08-bambu/trabajo/tts/640ed16c5b90.wav'
+file '/home/user/Canal-youtube/produccion/shorts-shock/s08-bambu/trabajo/tts/sil_150.wav'
+file '/home/user/Canal-youtube/produccion/shorts-shock/s08-bambu/trabajo/tts/0c5f124db2f0.wav'
+file '/home/user/Canal-youtube/produccion/shorts-shock/s08-bambu/trabajo/tts/sil_150.wav'
+file '/home/user/Canal-youtube/produccion/shorts-shock/s08-bambu/trabajo/tts/dcccfa218f35.wav'
+file '/home/user/Canal-youtube/produccion/shorts-shock/s08-bambu/trabajo/tts/sil_850.wav'

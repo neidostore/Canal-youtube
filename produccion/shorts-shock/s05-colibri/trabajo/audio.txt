@@ -1,0 +1,8 @@
+file '/home/user/Canal-youtube/produccion/shorts-shock/s05-colibri/trabajo/tts/2140e2794134.wav'
+file '/home/user/Canal-youtube/produccion/shorts-shock/s05-colibri/trabajo/tts/sil_150.wav'
+file '/home/user/Canal-youtube/produccion/shorts-shock/s05-colibri/trabajo/tts/95e0daf74e61.wav'
+file '/home/user/Canal-youtube/produccion/shorts-shock/s05-colibri/trabajo/tts/sil_150.wav'
+file '/home/user/Canal-youtube/produccion/shorts-shock/s05-colibri/trabajo/tts/e081b6be1966.wav'
+file '/home/user/Canal-youtube/produccion/shorts-shock/s05-colibri/trabajo/tts/sil_150.wav'
+file '/home/user/Canal-youtube/produccion/shorts-shock/s05-colibri/trabajo/tts/dcccfa218f35.wav'
+file '/home/user/Canal-youtube/produccion/shorts-shock/s05-colibri/trabajo/tts/sil_850.wav'
