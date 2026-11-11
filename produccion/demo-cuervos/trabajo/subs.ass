@@ -12,33 +12,33 @@ Style: KWB,Inter Display Black,120,&H00FFFFFF,&H00FFFFFF,&H00FF8C1E,&H00FF8C1E,0
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
-Dialogue: 0,0:00:00.00,0:00:01.81,Sub,,0,0,0,,Si alguna vez le haces algo a un
-Dialogue: 0,0:00:01.81,0:00:03.68,Sub,,0,0,0,,cuervo… ten cuidado. Porque nunca
-Dialogue: 0,0:00:03.68,0:00:04.59,Sub,,0,0,0,,lo va a olvidar.
-Dialogue: 0,0:00:06.63,0:00:09.14,Sub,,0,0,0,,Los cuervos recuerdan tu cara.
-Dialogue: 0,0:00:09.29,0:00:10.53,Sub,,0,0,0,,En un experimento de la
-Dialogue: 0,0:00:10.53,0:00:12.20,Sub,,0,0,0,,Universidad de Washington, unos
-Dialogue: 0,0:00:12.20,0:00:13.82,Sub,,0,0,0,,investigadores con una máscara
-Dialogue: 0,0:00:13.82,0:00:15.06,Sub,,0,0,0,,capturaron cuervos para
-Dialogue: 0,0:00:15.06,0:00:15.71,Sub,,0,0,0,,estudiarlos.
-Dialogue: 0,0:00:15.86,0:00:17.54,Sub,,0,0,0,,Años después, cuando alguien se
-Dialogue: 0,0:00:17.54,0:00:19.06,Sub,,0,0,0,,ponía esa misma máscara, los
-Dialogue: 0,0:00:19.06,0:00:20.19,Sub,,0,0,0,,cuervos le chillaban…
-Dialogue: 0,0:00:20.34,0:00:21.60,Sub,,0,0,0,,y le perseguían.
-Dialogue: 0,0:00:21.75,0:00:23.61,Sub,,0,0,0,,Y lo más inquietante: cuervos que
-Dialogue: 0,0:00:23.61,0:00:25.19,Sub,,0,0,0,,nunca habían sido capturados
-Dialogue: 0,0:00:25.19,0:00:26.21,Sub,,0,0,0,,también lo hacían.
-Dialogue: 0,0:00:26.36,0:00:28.93,Sub,,0,0,0,,Lo habían aprendido… de los demás.
-Dialogue: 0,0:00:29.08,0:00:31.54,Sub,,0,0,0,,Así que ya sabes: con los cuervos,
-Dialogue: 0,0:00:31.54,0:00:32.98,Sub,,0,0,0,,mejor llevarse bien.
-Dialogue: 1,0:00:03.37,0:00:04.87,KW,,0,0,0,,{\pos(960,470)\fscx40\fscy40\t(0,110,\fscx118\fscy118)\t(110,200,\fscx100\fscy100)\fad(0,120)}NUNCA OLVIDA
-Dialogue: 1,0:00:07.63,0:00:09.13,KWB,,0,0,0,,{\pos(960,330)\frz-3\fscx40\fscy40\t(0,110,\fscx118\fscy118)\t(110,200,\fscx100\fscy100)\fad(0,120)}RECUERDAN TU CARA
-Dialogue: 1,0:00:13.20,0:00:14.70,KW,,0,0,0,,{\pos(960,430)\frz2\fscx40\fscy40\t(0,110,\fscx118\fscy118)\t(110,200,\fscx100\fscy100)\fad(0,120)}UNA MÁSCARA
-Dialogue: 1,0:00:19.51,0:00:20.29,KWB,,0,0,0,,{\pos(960,470)\fscx40\fscy40\t(0,110,\fscx118\fscy118)\t(110,200,\fscx100\fscy100)\fad(0,120)}LE CHILLABAN
-Dialogue: 1,0:00:20.50,0:00:21.70,KW,,0,0,0,,{\pos(960,330)\frz-3\fscx40\fscy40\t(0,110,\fscx118\fscy118)\t(110,200,\fscx100\fscy100)\fad(0,120)}LE PERSEGUÍAN
-Dialogue: 1,0:00:23.62,0:00:25.12,KWB,,0,0,0,,{\pos(960,430)\frz2\fscx40\fscy40\t(0,110,\fscx118\fscy118)\t(110,200,\fscx100\fscy100)\fad(0,120)}NUNCA CAPTURADOS
-Dialogue: 1,0:00:26.46,0:00:27.96,KW,,0,0,0,,{\pos(960,470)\fscx40\fscy40\t(0,110,\fscx118\fscy118)\t(110,200,\fscx100\fscy100)\fad(0,120)}LO APRENDIERON
-Dialogue: 1,0:00:31.99,0:00:33.49,KWB,,0,0,0,,{\pos(960,330)\frz-3\fscx40\fscy40\t(0,110,\fscx118\fscy118)\t(110,200,\fscx100\fscy100)\fad(0,120)}LLEVARSE BIEN
-Dialogue: 2,0:00:15.86,0:00:17.35,Cred,,0,0,0,,Vídeo: The Nature Box · CC BY 4.0
-Dialogue: 2,0:00:17.35,0:00:18.85,Cred,,0,0,0,,Vídeo: The Nature Box · CC BY 4.0
-Dialogue: 2,0:00:18.85,0:00:20.34,Cred,,0,0,0,,Vídeo: The Nature Box · CC BY 4.0
+Dialogue: 0,0:00:00.00,0:00:01.68,Sub,,0,0,0,,Si alguna vez le haces algo a un
+Dialogue: 0,0:00:01.68,0:00:03.42,Sub,,0,0,0,,cuervo… ten cuidado. Porque nunca
+Dialogue: 0,0:00:03.42,0:00:04.26,Sub,,0,0,0,,lo va a olvidar.
+Dialogue: 0,0:00:06.38,0:00:08.26,Sub,,0,0,0,,Los cuervos recuerdan tu cara.
+Dialogue: 0,0:00:08.41,0:00:09.68,Sub,,0,0,0,,En un experimento de la
+Dialogue: 0,0:00:09.68,0:00:11.39,Sub,,0,0,0,,Universidad de Washington, unos
+Dialogue: 0,0:00:11.39,0:00:13.05,Sub,,0,0,0,,investigadores con una máscara
+Dialogue: 0,0:00:13.05,0:00:14.32,Sub,,0,0,0,,capturaron cuervos para
+Dialogue: 0,0:00:14.32,0:00:14.99,Sub,,0,0,0,,estudiarlos.
+Dialogue: 0,0:00:15.14,0:00:16.93,Sub,,0,0,0,,Años después, cuando alguien se
+Dialogue: 0,0:00:16.93,0:00:18.55,Sub,,0,0,0,,ponía esa misma máscara, los
+Dialogue: 0,0:00:18.55,0:00:19.76,Sub,,0,0,0,,cuervos le chillaban…
+Dialogue: 0,0:00:19.91,0:00:21.49,Sub,,0,0,0,,y le perseguían.
+Dialogue: 0,0:00:21.64,0:00:23.73,Sub,,0,0,0,,Y lo más inquietante: cuervos que
+Dialogue: 0,0:00:23.73,0:00:25.50,Sub,,0,0,0,,nunca habían sido capturados
+Dialogue: 0,0:00:25.50,0:00:26.63,Sub,,0,0,0,,también lo hacían.
+Dialogue: 0,0:00:26.78,0:00:28.79,Sub,,0,0,0,,Lo habían aprendido… de los demás.
+Dialogue: 0,0:00:28.94,0:00:31.77,Sub,,0,0,0,,Así que ya sabes: con los cuervos,
+Dialogue: 0,0:00:31.77,0:00:33.44,Sub,,0,0,0,,mejor llevarse bien.
+Dialogue: 1,0:00:03.13,0:00:04.63,KW,,0,0,0,,{\pos(960,470)\fscx40\fscy40\t(0,110,\fscx118\fscy118)\t(110,200,\fscx100\fscy100)\fad(0,120)}NUNCA OLVIDA
+Dialogue: 1,0:00:07.13,0:00:08.36,KWB,,0,0,0,,{\pos(960,330)\frz-3\fscx40\fscy40\t(0,110,\fscx118\fscy118)\t(110,200,\fscx100\fscy100)\fad(0,120)}RECUERDAN TU CARA
+Dialogue: 1,0:00:12.42,0:00:13.92,KW,,0,0,0,,{\pos(960,430)\frz2\fscx40\fscy40\t(0,110,\fscx118\fscy118)\t(110,200,\fscx100\fscy100)\fad(0,120)}UNA MÁSCARA
+Dialogue: 1,0:00:19.03,0:00:19.86,KWB,,0,0,0,,{\pos(960,470)\fscx40\fscy40\t(0,110,\fscx118\fscy118)\t(110,200,\fscx100\fscy100)\fad(0,120)}LE CHILLABAN
+Dialogue: 1,0:00:20.11,0:00:21.59,KW,,0,0,0,,{\pos(960,330)\frz-3\fscx40\fscy40\t(0,110,\fscx118\fscy118)\t(110,200,\fscx100\fscy100)\fad(0,120)}LE PERSEGUÍAN
+Dialogue: 1,0:00:23.74,0:00:25.24,KWB,,0,0,0,,{\pos(960,430)\frz2\fscx40\fscy40\t(0,110,\fscx118\fscy118)\t(110,200,\fscx100\fscy100)\fad(0,120)}NUNCA CAPTURADOS
+Dialogue: 1,0:00:26.88,0:00:28.38,KW,,0,0,0,,{\pos(960,470)\fscx40\fscy40\t(0,110,\fscx118\fscy118)\t(110,200,\fscx100\fscy100)\fad(0,120)}LO APRENDIERON
+Dialogue: 1,0:00:32.29,0:00:33.79,KWB,,0,0,0,,{\pos(960,330)\frz-3\fscx40\fscy40\t(0,110,\fscx118\fscy118)\t(110,200,\fscx100\fscy100)\fad(0,120)}LLEVARSE BIEN
+Dialogue: 2,0:00:15.14,0:00:16.73,Cred,,0,0,0,,Vídeo: The Nature Box · CC BY 4.0
+Dialogue: 2,0:00:16.73,0:00:18.32,Cred,,0,0,0,,Vídeo: The Nature Box · CC BY 4.0
+Dialogue: 2,0:00:18.32,0:00:19.91,Cred,,0,0,0,,Vídeo: The Nature Box · CC BY 4.0

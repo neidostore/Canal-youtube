@@ -1,9 +1,9 @@
 {
  "tema": "shock",
  "voz": {
-  "idioma": "es-ES",
-  "nombre": "es-ES-Chirp3-HD-Achird",
-  "velocidad": 1.12
+  "idioma": "es-US",
+  "nombre": "es-US-Chirp3-HD-Achird",
+  "velocidad": 1.15
  },
  "musica": {
   "archivo": "musica/wallpaper.mp3",
