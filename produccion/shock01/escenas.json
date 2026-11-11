@@ -6,19 +6,98 @@
   "video": "marca/shockmental/intro/intro.mp4",
   "audio": "marca/shockmental/intro/intro_audio.wav"
  },
- "voz": {
-  "idioma": "es-ES",
-  "nombre": "es-ES-Chirp3-HD-Achird",
-  "velocidad": 1.12
+ "musica": {
+  "archivo": "musica/wallpaper.mp3",
+  "volumen": 0.09,
+  "credito": "\"Wallpaper\" de Kevin MacLeod (incompetech.com)"
  },
  "estilo": {
   "dinamico": true,
   "plano": 1.6
  },
- "musica": {
-  "archivo": "musica/wallpaper.mp3",
-  "volumen": 0.09,
-  "credito": "\"Wallpaper\" de Kevin MacLeod (incompetech.com)"
+ "difuminar": {},
+ "voz": {
+  "idioma": "es-US",
+  "nombre": "es-US-Chirp3-HD-Achird",
+  "velocidad": 1.15
+ },
+ "videos": {
+  "r_shocked_woman": 8626657,
+  "r_man_tv": 9883681,
+  "rocket": 854261,
+  "rayo1": 6190836,
+  "rayo2": 3879471,
+  "rayo3": 6065794,
+  "rayo4": 2657691,
+  "sol": 855946,
+  "cafe1": 853761,
+  "cafe2": 2849955,
+  "cafe3": 856212,
+  "pc1": 8888818,
+  "pc2": 12405666,
+  "crt": 8879937,
+  "pl_estrella": "wc_planeta_estrella",
+  "planet": 854301,
+  "cristal": 8106399,
+  "col1": 2402369,
+  "col2": 6239509,
+  "col3": 6471944,
+  "col4": 10164928,
+  "col5": 7961706,
+  "eif1": 856056,
+  "eif2": 4272751,
+  "eif3": 3521348,
+  "eif4": 6355353,
+  "pul1": 1312397,
+  "pul2": 6430081,
+  "pul3": 1472082,
+  "bam1": "wc_bambu",
+  "bam2": 7958680,
+  "bam3": 7720369,
+  "bam4": 1510138,
+  "emu1": 7781710,
+  "emu2": 8827406,
+  "emu3": "wc_emus_corren",
+  "emu4": 3842258,
+  "trigo1": 1620050,
+  "trigo2": 1509175,
+  "ametr": 8605246,
+  "ojo1": 856002,
+  "ojo2": 7297815,
+  "est1": 857136,
+  "est2": 852369,
+  "est3": 856077,
+  "c_rama": 6137742,
+  "c_come": 6956527,
+  "enmascarado": 6650121,
+  "c_suelo": 854284,
+  "mascara": 2948308,
+  "c_grita": "wc_cuervo_grita",
+  "c_alas": 4979115,
+  "bandada": 6351356,
+  "c_cables": 9633847,
+  "c_cementerio": 6840980,
+  "tel1": 2954003,
+  "tel2": 2954006,
+  "tel3": 6420488,
+  "tel4": 2954000
+ },
+ "videos_inicio": {
+  "c_grita": 46.3,
+  "c_alas": 2.0,
+  "r_man_tv": 3.5,
+  "r_shocked_woman": 0.3,
+  "rayo4": 0.3,
+  "sol": 0.0,
+  "est2": 4.0,
+  "rayo1": 0.0,
+  "rayo2": 0.0
+ },
+ "credito_videos": {
+  "c_grita": "Vídeo: The Nature Box · CC BY 4.0",
+  "pl_estrella": "Recreación: ESA/Hubble (M. Kornmesser) · CC BY 4.0",
+  "emu3": "Vídeo: Rob Bixby · CC BY 2.0",
+  "bam1": "Vídeo: The Nature Box · CC BY-SA 4.0"
  },
  "fotos": {
   "tesla_propulsores": 0,
@@ -28,63 +107,23 @@
   "tesla_perfil": 0,
   "tesla_puertas": 0,
   "tesla_comparacion": 0,
-  "camaron_rojo": 0,
-  "camaron_tigre": 0,
-  "camaron_lado": 0,
-  "camaron_pinza": 0,
   "cafetera_xcoffee": 0,
   "planeta_azul": 0,
-  "planeta_estrella": 0,
-  "planeta_sistema": 0,
-  "cuerpo_oscuro": 0,
-  "cuerpo_brilla": 0,
-  "cuerpo_brilla2": 0,
-  "isla_1": 0,
-  "isla_2": 0,
-  "isla_monumento": 0,
-  "tiburon_g1": 0,
-  "tiburon_g2": 0,
-  "tiburon_g3": 0,
-  "emu_bebiendo": 0,
   "emu_ametralladora": 0,
-  "emu_soldados": 0,
-  "emu_granjero": 0,
   "wow_hoja": 0
  },
- "difuminar": {},
- "videos": {
-  "car_red": 10710642,
-  "car_red2": 10710642,
-  "rocket": 854261,
-  "rocket2": 854261,
-  "r_shocked_woman": 8626657,
-  "r_man_tv": 9883681,
-  "r_man_phone": 7534960,
-  "sea": 7565969,
-  "ink_glass": 5282334,
-  "coffee_pot": 856212,
-  "coffee_drip": 2853788,
-  "crt": 8879937,
-  "planet": 854301,
-  "silhouette": 13375816,
-  "river": 3122141,
-  "river2": 2248630,
-  "ice": 6255490,
-  "shark1": 7997336,
-  "shark2": 5548359,
-  "bamboo": 7720369,
-  "bamboo2": 1510138,
-  "wheat": 4830195,
-  "emu": 3842258,
-  "eye": 7297815,
-  "crow1": 854284,
-  "crow2": 17580089,
-  "telescope": 2954002
- },
- "videos_inicio": {
-  "r_man_tv": 3.5,
-  "r_shocked_woman": 0.3,
-  "r_man_phone": 2.5
+ "credito_fotos": {
+  "tesla_propulsores": "Imagen: Tesla",
+  "tesla_frontal": "Imagen: Tesla",
+  "tesla_desierto": "Imagen: Tesla",
+  "tesla_noche": "Imagen: Tesla",
+  "tesla_perfil": "Imagen: Tesla",
+  "tesla_puertas": "Imagen: Tesla",
+  "tesla_comparacion": "Imagen: Tesla",
+  "cafetera_xcoffee": "Imagen original de 1991: Quentin Stafford-Fraser · CC BY-SA 3.0",
+  "planeta_azul": "Recreación artística: NASA, ESA, M. Kornmesser · CC BY 4.0",
+  "emu_ametralladora": "Foto de 1932 · dominio público",
+  "wow_hoja": "Big Ear Radio Observatory / NAAPO"
  },
  "bloques": [
   {
@@ -93,7 +132,11 @@
     {
      "t": "Elon Musk acaba de enseñar un coche que despega del suelo.",
      "kw": "¿un coche que vuela?",
-     "img": "tesla_propulsores"
+     "img": [
+      "tesla_propulsores",
+      "tesla_frontal",
+      "tesla_perfil"
+     ]
     },
     {
      "t": "Pero antes de contarte si vuela de verdad, prepárate: hoy vienen once cosas que parecen imposibles… y son reales.",
@@ -107,44 +150,47 @@
    "intro": true
   },
   {
-   "nombre": "1 · El camarón pistola",
+   "nombre": "1 · Un rayo, más caliente que el Sol",
    "frases": [
     {
      "t": "Número uno.",
      "card": {
       "tipo": "numero",
       "n": 1,
-      "tema": "Animales"
+      "tema": "Naturaleza"
      }
     },
     {
-     "t": "En el fondo del mar vive un animal del tamaño de un dedo que dispara… con una pinza.",
-     "kw": "dispara",
-     "img": [
-      "camaron_rojo",
-      "camaron_tigre"
-     ]
-    },
-    {
-     "t": "El camarón pistola cierra su pinza tan rápido que lanza un chorro de agua y forma una burbuja.",
-     "kw": "camarón pistola",
-     "img": [
-      "camaron_pinza",
-      "camaron_lado"
-     ]
-    },
-    {
-     "t": "Y cuando esa burbuja revienta, suelta un destello de luz y alcanza, durante un instante, unos cinco mil grados.",
-     "img": [
-      "camaron_lado",
-      "camaron_rojo"
+     "t": "Un rayo calienta el aire a su alrededor hasta unos treinta mil grados.",
+     "vid": [
+      "rayo1",
+      "rayo4"
      ],
-     "kw": "5.000 °C"
+     "kw": "30.000 °C"
     },
     {
-     "t": "Casi la temperatura de la superficie del Sol. Un disparo… sin pólvora.",
-     "vid": "sea",
-     "kw": "sin pólvora"
+     "t": "Eso es cinco veces más que la superficie del Sol.",
+     "vid": [
+      "sol"
+     ],
+     "kw": "5 veces el Sol"
+    },
+    {
+     "t": "Ese calor hace que el aire se expanda de golpe… y esa explosión es el trueno.",
+     "vid": [
+      "rayo2",
+      "rayo1",
+      "rayo3"
+     ],
+     "kw": "el trueno"
+    },
+    {
+     "t": "Y no es algo raro: en la Tierra caen unos cuarenta y cuatro rayos… cada segundo.",
+     "vid": [
+      "rayo3",
+      "rayo2"
+     ],
+     "kw": "44 por segundo"
     }
    ]
   },
@@ -161,18 +207,23 @@
     },
     {
      "t": "En 1991, en la Universidad de Cambridge, unos informáticos estaban hartos de ir a por café… y encontrarse la cafetera vacía.",
-     "vid": "coffee_pot",
+     "vid": [
+      "pc1",
+      "cafe2",
+      "pc2"
+     ],
      "kw": "cafetera vacía"
     },
     {
      "t": "Así que apuntaron una cámara a la cafetera y conectaron la imagen a sus ordenadores.",
-     "kw": "una cámara",
-     "img": [
-      "cafetera_xcoffee"
-     ]
+     "vid": [
+      "cafe1",
+      "crt"
+     ],
+     "kw": "una cámara"
     },
     {
-     "t": "Acababan de crear lo que hoy se considera la primera webcam de la historia.",
+     "t": "Esta es la imagen real. Acababan de crear lo que hoy se considera la primera webcam de la historia.",
      "img": [
       "cafetera_xcoffee"
      ],
@@ -180,7 +231,11 @@
     },
     {
      "t": "Años después la conectaron a internet, y gente de todo el mundo entraba para ver… una cafetera.",
-     "vid": "coffee_drip",
+     "vid": [
+      "pc2",
+      "cafe3",
+      "cafe1"
+     ],
      "kw": "todo el mundo"
     }
    ]
@@ -198,108 +253,105 @@
     },
     {
      "t": "A unos sesenta y tres años luz de aquí hay un planeta azul, como la Tierra.",
-     "kw": "63 años luz",
      "img": [
-      "planeta_azul",
-      "planeta_sistema"
-     ]
+      "planeta_azul"
+     ],
+     "kw": "63 años luz"
     },
     {
      "t": "Pero no te lo recomiendo para las vacaciones: su atmósfera supera los mil grados.",
-     "kw": "+1.000 °C",
-     "img": [
-      "planeta_estrella",
-      "planeta_azul"
-     ]
+     "vid": [
+      "pl_estrella"
+     ],
+     "kw": "+1.000 °C"
     },
     {
      "t": "Y según la NASA, probablemente allí llueve cristal… de lado, con vientos de unos siete mil kilómetros por hora.",
-     "img": [
-      "planeta_azul",
-      "planeta_estrella"
+     "vid": [
+      "cristal",
+      "planet",
+      "pl_estrella"
      ],
      "kw": "7.000 km/h"
     }
    ]
   },
   {
-   "nombre": "4 · Tu cuerpo brilla",
+   "nombre": "4 · El pájaro que vuela hacia atrás",
    "frases": [
     {
      "t": "Número cuatro.",
      "card": {
       "tipo": "numero",
       "n": 4,
-      "tema": "Cuerpo humano"
+      "tema": "Animales"
      }
     },
     {
-     "t": "Tu cuerpo brilla.",
-     "vid": "silhouette",
-     "kw": "tu cuerpo brilla"
-    },
-    {
-     "t": "No es una metáfora: en 2009, unos científicos japoneses fotografiaron a personas en total oscuridad con una cámara ultrasensible.",
-     "kw": "oscuridad total",
-     "img": [
-      "cuerpo_oscuro"
-     ]
-    },
-    {
-     "t": "Y descubrieron que emitimos luz visible. Muy poca: unas mil veces menos de lo que el ojo puede ver.",
-     "img": [
-      "cuerpo_brilla",
-      "cuerpo_brilla2"
+     "t": "El colibrí es el único pájaro capaz de volar hacia atrás.",
+     "vid": [
+      "col1",
+      "col3"
      ],
-     "kw": "luz visible"
+     "kw": "hacia atrás"
+    },
+    {
+     "t": "Algunas especies baten las alas hasta ochenta veces… por segundo.",
+     "vid": [
+      "col4",
+      "col1"
+     ],
+     "kw": "80 por segundo"
+    },
+    {
+     "t": "Y su corazón puede superar los mil doscientos latidos por minuto.",
+     "vid": [
+      "col5",
+      "col2"
+     ],
+     "kw": "1.200 latidos"
     }
    ]
   },
   {
-   "nombre": "5 · La isla que cambia de país",
+   "nombre": "5 · La Torre Eiffel crece en verano",
    "frases": [
     {
      "t": "Número cinco.",
      "card": {
       "tipo": "numero",
       "n": 5,
-      "tema": "Historia"
+      "tema": "Lugares"
      }
     },
     {
-     "t": "En el río Bidasoa, entre Irún y Hendaya, hay una pequeña isla: la Isla de los Faisanes.",
-     "kw": "Isla de los Faisanes",
-     "img": [
-      "isla_1",
-      "isla_2"
-     ]
-    },
-    {
-     "t": "De febrero a julio es española. Y de agosto a enero… francesa.",
-     "img": [
-      "isla_2",
-      "isla_1"
+     "t": "La Torre Eiffel es más alta en verano.",
+     "vid": [
+      "eif2"
      ],
-     "kw": "España ⇄ Francia"
+     "kw": "más alta"
     },
     {
-     "t": "España y Francia se la turnan cada seis meses desde hace más de un siglo.",
-     "kw": "cada 6 meses",
-     "img": [
-      "isla_1"
-     ]
+     "t": "Está hecha de hierro, y el hierro se dilata con el calor.",
+     "vid": [
+      "eif4",
+      "eif1"
+     ],
+     "kw": "hierro"
     },
     {
-     "t": "Y en esa isla diminuta se firmó, en 1659, la Paz de los Pirineos.",
-     "kw": "1659",
-     "img": [
-      "isla_monumento"
-     ]
+     "t": "En los días más calurosos puede crecer hasta unos quince centímetros. Y en invierno… encoge.",
+     "vid": [
+      "eif1",
+      "eif3",
+      "eif2"
+     ],
+     "kw": "+15 cm"
     }
    ]
   },
   {
-   "nombre": "6 · El tiburón de 400 años",
+   "nombre": "6 · Tres corazones y sangre azul",
    "frases": [
     {
      "t": "Número seis.",
@@ -310,35 +362,34 @@
      }
     },
     {
-     "t": "En las aguas heladas del Ártico nada el tiburón de Groenlandia.",
-     "kw": "Ártico",
-     "img": [
-      "tiburon_g1",
-      "tiburon_g2"
-     ]
-    },
-    {
-     "t": "En 2016, unos científicos calcularon su edad analizando el cristalino de sus ojos.",
-     "kw": "sus ojos",
-     "img": [
-      "tiburon_g3"
-     ]
-    },
-    {
-     "t": "El más grande que estudiaron tenía, probablemente, unos cuatrocientos años.",
-     "img": [
-      "tiburon_g2",
-      "tiburon_g1"
+     "t": "El pulpo tiene tres corazones.",
+     "vid": [
+      "pul1"
      ],
-     "kw": "~400 años"
+     "kw": "3 corazones"
     },
     {
-     "t": "Es decir, puede que ya nadara cuando reinaba Felipe IV. Y no es adulto hasta los ciento cincuenta.",
-     "kw": "adulto a los 150",
-     "img": [
-      "tiburon_g3",
-      "tiburon_g1"
+     "t": "Dos bombean la sangre hacia las branquias, y el tercero, al resto del cuerpo.",
+     "vid": [
+      "pul2",
+      "pul1"
      ]
+    },
+    {
+     "t": "Y su sangre es azul, porque transporta el oxígeno con cobre en lugar de hierro.",
+     "vid": [
+      "pul1",
+      "pul3"
+     ],
+     "kw": "sangre azul"
+    },
+    {
+     "t": "Por si fuera poco, la mayoría de sus neuronas no están en la cabeza: están en sus brazos.",
+     "vid": [
+      "pul2",
+      "pul1"
+     ],
+     "kw": "neuronas en los brazos"
     }
    ]
   },
@@ -355,17 +406,26 @@
     },
     {
      "t": "Algunas especies de bambú pueden crecer hasta noventa y un centímetros… en un solo día.",
-     "vid": "bamboo2",
+     "vid": [
+      "bam1",
+      "bam3"
+     ],
      "kw": "91 cm en un día"
     },
     {
      "t": "Casi cuatro centímetros por hora. Con paciencia, casi podrías verlo crecer.",
-     "vid": "bamboo",
+     "vid": [
+      "bam2",
+      "bam4"
+     ],
      "kw": "4 cm por hora"
     },
     {
      "t": "Según el Libro Guinness, es la planta que crece más rápido del mundo.",
-     "vid": "bamboo2",
+     "vid": [
+      "bam3",
+      "bam1"
+     ],
      "kw": "la más rápida"
     }
    ]
@@ -383,30 +443,36 @@
     },
     {
      "t": "En 1932, los granjeros del oeste de Australia tenían un problema: miles de emús se estaban comiendo su trigo.",
-     "kw": "miles de emús",
-     "img": [
-      "emu_bebiendo"
-     ]
+     "vid": [
+      "trigo1",
+      "emu1",
+      "trigo2",
+      "emu2"
+     ],
+     "kw": "miles de emús"
     },
     {
      "t": "Y el gobierno envió soldados… con ametralladoras.",
-     "kw": "ametralladoras",
      "img": [
-      "emu_ametralladora",
-      "emu_soldados"
-     ]
+      "emu_ametralladora"
+     ],
+     "kw": "ametralladoras"
     },
     {
      "t": "Pero los emús se dispersaban, corrían muchísimo y eran muy difíciles de abatir.",
-     "kw": "imparables",
-     "img": [
-      "emu_soldados",
-      "emu_granjero"
-     ]
+     "vid": [
+      "emu3",
+      "ametr",
+      "emu4"
+     ],
+     "kw": "imparables"
     },
     {
      "t": "Tras semanas de operación, la prensa lo tuvo claro: la Guerra de los Emús… la ganaron los emús.",
-     "vid": "r_man_tv",
+     "vid": [
+      "emu2",
+      "r_man_tv"
+     ],
      "kw": "ganaron los emús"
     }
    ]
@@ -424,17 +490,26 @@
     },
     {
      "t": "La luz está formada por partículas diminutas llamadas fotones.",
-     "vid": "eye",
+     "vid": [
+      "est1",
+      "est3"
+     ],
      "kw": "fotones"
     },
     {
      "t": "Y en 2016, un experimento con voluntarios encontró que el ojo humano es capaz de notar… un solo fotón.",
-     "vid": "eye",
+     "vid": [
+      "ojo2",
+      "ojo1"
+     ],
      "kw": "1 fotón"
     },
     {
      "t": "La cantidad de luz más pequeña que existe. Y tus ojos, en la oscuridad, pueden sentirla.",
-     "vid": "eye",
+     "vid": [
+      "est2",
+      "ojo2"
+     ],
      "kw": "la luz más pequeña"
     }
    ]
@@ -452,23 +527,58 @@
     },
     {
      "t": "Los cuervos recuerdan tu cara.",
-     "vid": "crow1",
+     "vid": [
+      "c_come"
+     ],
      "kw": "recuerdan tu cara"
     },
     {
      "t": "En un experimento de la Universidad de Washington, unos investigadores con una máscara capturaron cuervos para estudiarlos.",
-     "vid": "crow2",
+     "vid": [
+      "enmascarado",
+      "c_suelo",
+      "mascara"
+     ],
      "kw": "una máscara"
     },
     {
-     "t": "Años después, cuando alguien se ponía esa misma máscara, los cuervos le chillaban y le perseguían.",
-     "vid": "crow1",
-     "kw": "años después"
+     "t": "Años después, cuando alguien se ponía esa misma máscara, los cuervos le chillaban…",
+     "vid": [
+      "c_grita"
+     ],
+     "kw": "le chillaban",
+     "sfx": {
+      "nombre": "cuervo2",
+      "vol": 0.55
+     }
     },
     {
-     "t": "Y lo más inquietante: cuervos que nunca habían sido capturados también lo hacían. Lo habían aprendido de los demás.",
-     "vid": "r_man_phone",
-     "kw": "lo aprendieron"
+     "t": "y le perseguían.",
+     "vid": [
+      "c_alas",
+      "bandada"
+     ],
+     "kw": "le perseguían"
+    },
+    {
+     "t": "Y lo más inquietante: cuervos que nunca habían sido capturados también lo hacían.",
+     "vid": [
+      "c_cables",
+      "c_cementerio"
+     ],
+     "kw": "nunca capturados"
+    },
+    {
+     "t": "Lo habían aprendido… de los demás.",
+     "vid": [
+      "bandada"
+     ],
+     "kw": "lo aprendieron",
+     "sfx": {
+      "nombre": "cuervo1",
+      "vol": 0.45,
+      "en": 0.3
+     }
     }
    ]
   },
@@ -484,31 +594,46 @@
      }
     },
     {
-     "t": "En 1977, un radiotelescopio de Estados Unidos captó una señal del espacio tan fuerte que el astrónomo escribió al margen: «Wow!».",
-     "kw": "Wow!",
-     "voz": "En 1977, un radiotelescopio de Estados Unidos captó una señal del espacio tan fuerte que el astrónomo escribió al margen: ¡guau!",
+     "t": "En 1977, un radiotelescopio de Estados Unidos captó una señal del espacio tan fuerte…",
+     "vid": [
+      "tel1",
+      "tel3"
+     ],
+     "kw": "1977",
+     "voz": "En 1977, un radiotelescopio de Estados Unidos captó una señal del espacio tan fuerte…"
+    },
+    {
+     "t": "que el astrónomo escribió al margen: «Wow!».",
      "img": [
       "wow_hoja"
-     ]
+     ],
+     "kw": "Wow!",
+     "voz": "que el astrónomo escribió al margen: ¡guau!"
     },
     {
      "t": "Duró setenta y dos segundos… y nunca se ha vuelto a captar.",
-     "img": [
-      "wow_hoja"
+     "vid": [
+      "est1",
+      "tel2"
      ],
      "kw": "72 segundos"
     },
     {
      "t": "En 2024, un equipo propuso una explicación natural: una nube de hidrógeno iluminada de golpe por una estrella.",
-     "vid": "planet",
+     "vid": [
+      "est2",
+      "planet",
+      "est3"
+     ],
      "kw": "¿hidrógeno?"
     },
     {
      "t": "Pero no está confirmado. El misterio sigue abierto.",
-     "kw": "sin resolver",
-     "img": [
-      "wow_hoja"
-     ]
+     "vid": [
+      "tel4",
+      "tel3"
+     ],
+     "kw": "sin resolver"
     }
    ]
   },
@@ -526,7 +651,11 @@
     {
      "t": "Y ahora sí, lo que te prometí. En octubre de 2026, Elon Musk presentó el nuevo Tesla Roadster en unas instalaciones de SpaceX, en Texas.",
      "kw": "octubre 2026",
-     "img": "tesla_frontal"
+     "img": [
+      "tesla_frontal",
+      "tesla_perfil",
+      "tesla_puertas"
+     ]
     },
     {
      "t": "Y si te lo imaginabas rojo, es normal: así era el prototipo de 2017. El nuevo no se parece en nada.",
@@ -536,7 +665,10 @@
     {
      "t": "Y el coche… despegó. Con propulsores derivados de los cohetes de SpaceX, se elevó, giró y saltó por encima de otros coches.",
      "kw": "¡despegó!",
-     "img": "tesla_propulsores"
+     "img": [
+      "tesla_propulsores",
+      "tesla_noche"
+     ]
     },
     {
      "t": "Según Musk, algunas versiones aceleran de cero a casi cien kilómetros por hora en menos de un segundo.",
@@ -549,7 +681,11 @@
     {
      "t": "Pero ojo: no iba nadie dentro, fue un vuelo muy corto, y la versión con propulsores no está aprobada para circular.",
      "kw": "ojo",
-     "img": "tesla_desierto"
+     "img": [
+      "tesla_desierto",
+      "tesla_puertas",
+      "tesla_frontal"
+     ]
     },
     {
      "t": "Así que… ¿coche volador? De momento, más bien un coche que salta. Pero vaya salto.",
@@ -583,36 +719,5 @@
     }
    ]
   }
- ],
- "credito_fotos": {
-  "tesla_propulsores": "Imagen: Tesla",
-  "tesla_frontal": "Imagen: Tesla",
-  "tesla_desierto": "Imagen: Tesla",
-  "tesla_noche": "Imagen: Tesla",
-  "tesla_perfil": "Imagen: Tesla",
-  "tesla_puertas": "Imagen: Tesla",
-  "tesla_comparacion": "Imagen: Tesla",
-  "camaron_rojo": "Foto: q phia · CC BY 2.0",
-  "camaron_tigre": "Foto: Dan Schofield · CC BY 4.0",
-  "camaron_lado": "Foto: Michael Marmach · CC BY 4.0",
-  "camaron_pinza": "Foto: FWC Fish and Wildlife Research Institute · CC BY 2.0",
-  "cafetera_xcoffee": "Imagen original de 1991: Quentin Stafford-Fraser · CC BY-SA 3.0",
-  "planeta_azul": "Recreación artística: NASA, ESA, M. Kornmesser · CC BY 4.0",
-  "planeta_estrella": "Recreación artística: NASA",
-  "planeta_sistema": "Recreación artística: NASA",
-  "cuerpo_oscuro": "Imagen: Kobayashi et al., PLoS ONE 2009 · CC BY",
-  "cuerpo_brilla": "Imagen: Kobayashi et al., PLoS ONE 2009 · CC BY",
-  "cuerpo_brilla2": "Imagen: Kobayashi et al., PLoS ONE 2009 · CC BY",
-  "isla_1": "Foto: Zarateman · CC0",
-  "isla_2": "Foto: Iñaki LL · CC BY-SA 4.0",
-  "isla_monumento": "Foto: Tangopaso · dominio público",
-  "tiburon_g1": "Foto: NOAA",
-  "tiburon_g2": "Foto: NOAA",
-  "tiburon_g3": "Foto: Hemming1952 · CC BY-SA 4.0",
-  "emu_bebiendo": "Foto de 1932 · dominio público",
-  "emu_ametralladora": "Foto de 1932 · dominio público",
-  "emu_soldados": "Foto de 1932 · dominio público",
-  "emu_granjero": "Foto de 1932 · dominio público",
-  "wow_hoja": "Big Ear Radio Observatory / NAAPO"
- }
+ ]
 }

@@ -26,30 +26,30 @@
 
 ## Descripción (para pegar)
 ```
-Elon Musk acaba de enseñar un coche que despega del suelo… pero ¿vuela de verdad? Antes de responder, 11 cosas reales que parecen imposibles: un camarón que dispara burbujas a 5.000 °C, la primera webcam (que vigilaba una cafetera), un planeta donde llueve cristal, la isla que cambia de país cada 6 meses y mucho más.
+Elon Musk acaba de enseñar un coche que despega del suelo… pero ¿vuela de verdad? Antes de responder, 11 cosas reales que parecen imposibles: un rayo más caliente que el Sol, la primera webcam (que vigilaba una cafetera), un planeta donde llueve cristal, el pájaro que vuela hacia atrás, un animal con tres corazones y mucho más.
 
 00:00 Un coche que despega
-00:13 El camarón pistola
-00:36 La primera webcam
-00:58 El planeta de cristal
-01:15 Tu cuerpo brilla
-01:31 La isla que cambia de país
-01:51 El tiburón de 400 años
-02:12 La planta más rápida
-02:27 La guerra de los emús
-02:49 Un solo fotón
-03:06 Los cuervos no olvidan
-03:30 La señal Wow!
-03:54 El coche que vuela
-04:37 Despedida
+00:13 Un rayo, más caliente que el Sol
+00:31 La primera webcam
+00:56 El planeta de cristal
+01:13 El pájaro que vuela hacia atrás
+01:26 La Torre Eiffel crece en verano
+01:39 Tres corazones y sangre azul
+01:56 La planta más rápida
+02:12 La guerra de los emús
+02:35 Un solo fotón
+02:53 Los cuervos no olvidan
+03:16 La señal Wow!
+03:39 El coche que vuela
+04:25 Despedida
 
 📚 Fuentes:
-- Camarón pistola: Nature (2001) https://www.nature.com/nature/journal/v413/n6855/full/413477a0.html
+- Rayos: Servicio Meteorológico de EE. UU. (NWS/NOAA) https://www.weather.gov/safety/lightning-temperature · frecuencia global: NASA
+- Colibríes: Smithsonian's National Zoo · Audubon
+- Torre Eiffel: web oficial de la Torre Eiffel (toureiffel.paris)
+- Pulpos: Smithsonian Ocean
 - Primera webcam: Guinness World Records https://www.guinnessworldrecords.com/world-records/114885-first-webcam
 - HD 189733b: NASA https://exoplanets.nasa.gov/news/107/blue-and-bizarre
-- Bioluminiscencia humana: PLoS ONE (2009) https://pmc.ncbi.nlm.nih.gov/articles/PMC2707605/
-- Isla de los Faisanes: El Orden Mundial https://elordenmundial.com/como-se-gestiona-la-isla-de-los-faisanes-compartida-entre-espana-y-francia/
-- Tiburón de Groenlandia: Science (2016), vía Nature News https://www.nature.com/articles/nature.2016.20406
 - Bambú: Guinness World Records https://guinnessworldrecords.es/world-records/fastest-growing-plant
 - Guerra de los Emús: National Geographic https://www.nationalgeographic.com/history/article/australian-emu-war-history
 - Un solo fotón: Nature Communications (2016), vía Rockefeller University https://www.rockefeller.edu/news/11808-study-suggests-humans-can-detect-even-the-smallest-units-of-light/
@@ -57,7 +57,9 @@ Elon Musk acaba de enseñar un coche que despega del suelo… pero ¿vuela de ve
 - Señal Wow!: Scientific American https://scientificamerican.com/article/the-wow-signal-seti-mystery-might-at-last-be-solved
 - Tesla Roadster: TechCrunch https://techcrunch.com/2026/10/15/tesla-reveals-spacex-powered-roadster-that-flies-and-falls-with-style/
 - Imágenes: camarón pistola (q phia, CC BY 2.0; Dan Schofield, CC BY 4.0; Michael Marmach, CC BY 4.0; FWC Fish and Wildlife Research Institute, CC BY 2.0) · cafetera de Cambridge, imagen original de 1991 (Quentin Stafford-Fraser, CC BY-SA 3.0) · HD 189733b, recreaciones artísticas (NASA; NASA, ESA, M. Kornmesser, CC BY 4.0) · emisión de luz humana (Kobayashi et al., PLoS ONE 2009, CC BY) · Isla de los Faisanes (Zarateman, CC0; Iñaki LL, CC BY-SA 4.0; Tangopaso, dominio público) · tiburón de Groenlandia (NOAA; Hemming1952, CC BY-SA 4.0) · Guerra de los Emús, fotos de 1932 (dominio público) · señal Wow! (Big Ear Radio Observatory / NAAPO) · Tesla Roadster (Tesla). Todas vía Wikimedia Commons salvo Tesla y PLoS ONE.
-- Vídeos: Pexels (pexels.com). Música: "Wallpaper" de Kevin MacLeod (incompetech.com), Licencia CC BY 4.0 http://creativecommons.org/licenses/by/4.0/
+- Imágenes: cafetera de Cambridge, imagen original de 1991 (Quentin Stafford-Fraser, CC BY-SA 3.0) · HD 189733b, recreaciones artísticas (NASA, ESA, M. Kornmesser, CC BY 4.0) · Guerra de los Emús, foto de 1932 (dominio público) · señal Wow! (Big Ear Radio Observatory / NAAPO) · Tesla Roadster (Tesla).
+- Vídeos: Pexels (pexels.com) · cuervo graznando y bambú: The Nature Box (CC BY 4.0 / CC BY-SA 4.0) · emús corriendo: Rob Bixby (CC BY 2.0) · planeta: ESA/Hubble, M. Kornmesser (CC BY 4.0), vía Wikimedia Commons.
+- Música: "Wallpaper" de Kevin MacLeod (incompetech.com), Licencia CC BY 4.0 http://creativecommons.org/licenses/by/4.0/
 
 🧠⚡ SHOCK MENTAL · Tu dosis de asombro. Suscríbete para la próxima dosis.
 #curiosidades #datoscuriosos #shockmental
