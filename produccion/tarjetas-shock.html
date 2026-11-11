@@ -1,0 +1,36 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+/* Tarjetas con la identidad de SHOCK MENTAL: fondo oscuro, azul eléctrico, naranja y amarillo */
+html,body{margin:0;background:#04050a}
+.c{width:1920px;height:1080px;position:relative;overflow:hidden;font-family:'Inter Display',Inter,sans-serif;color:#fff;
+   background:radial-gradient(ellipse at 15% 50%,rgba(30,140,255,.35),rgba(30,140,255,0) 55%),radial-gradient(ellipse at 85% 50%,rgba(255,120,20,.35),rgba(255,120,20,0) 55%),#04050a}
+.stars{position:absolute;inset:0;background-image:radial-gradient(1.5px 1.5px at 10% 20%,#fff8,transparent),radial-gradient(1.5px 1.5px at 30% 80%,#fff6,transparent),radial-gradient(1px 1px at 55% 35%,#fff9,transparent),radial-gradient(1.5px 1.5px at 75% 70%,#fff7,transparent),radial-gradient(1px 1px at 90% 15%,#fff8,transparent),radial-gradient(1px 1px at 45% 90%,#fff6,transparent),radial-gradient(1.5px 1.5px at 65% 10%,#fff7,transparent),radial-gradient(1px 1px at 20% 55%,#fff8,transparent)}
+.y{background:linear-gradient(180deg,#FFE45C,#FFB800);-webkit-background-clip:text;background-clip:text;color:transparent}
+.metal{background:linear-gradient(180deg,#ffffff 0%,#d9dee8 45%,#8f97a8 55%,#e9edf3 100%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 6px 0 #0008)}
+.center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 160px}
+.num{font-size:330px;font-weight:900;letter-spacing:-12px;line-height:.9;filter:drop-shadow(0 0 40px rgba(30,140,255,.7)) drop-shadow(0 0 80px rgba(255,120,20,.4))}
+.tema{margin-top:24px;font-size:56px;font-weight:900;letter-spacing:8px;padding:12px 40px;border-radius:14px;background:linear-gradient(90deg,#1E8CFF,#FF7A14);color:#fff;text-transform:uppercase}
+.cifra{font-size:250px;font-weight:900;letter-spacing:-9px;line-height:1;filter:drop-shadow(0 0 50px rgba(255,180,0,.45))}
+.ctexto{font-size:62px;font-weight:800;margin-top:26px;letter-spacing:-1px;max-width:1500px}
+.fuente{position:absolute;left:0;right:0;bottom:50px;text-align:center;font-size:28px;color:#9aa3b5}
+.cita{font-size:88px;font-weight:900;line-height:1.08;letter-spacing:-2px}
+.autor{margin-top:40px;font-size:38px;color:#b9c2d3;font-weight:500}
+.dos{display:flex;gap:60px;margin-top:20px}
+.caja{width:620px;padding:46px 30px;border-radius:28px;font-size:56px;font-weight:900;line-height:1.15}
+.caja small{display:block;font-size:40px;font-weight:600;opacity:.85;margin-top:14px}
+.az{background:linear-gradient(160deg,#1E8CFF,#0B3D91);box-shadow:0 0 60px rgba(30,140,255,.5)}
+.na{background:linear-gradient(160deg,#FF8A1E,#9A3A00);box-shadow:0 0 60px rgba(255,120,20,.5)}
+.titulo{font-size:64px;font-weight:900;color:#cfd6e4;margin-bottom:10px}
+.btn{margin-top:40px;background:#E5322D;color:#fff;font-size:64px;font-weight:900;padding:24px 64px;border-radius:999px;box-shadow:0 0 40px rgba(229,50,45,.6)}
+.logo{width:980px}
+</style></head><body><div class="c" id="c"></div>
+<script>
+const P=JSON.parse(decodeURIComponent(location.hash.slice(1)));
+const LOGO='../marca/shockmental/logo.png';
+let h='<div class="stars"></div>'; const t=P.tipo;
+if(t==='numero') h+=`<div class="center"><div class="num metal">#${P.n}</div><div class="tema">${P.tema}</div></div>`;
+if(t==='cifra') h+=`<div class="center"><div class="cifra y">${P.cifra}</div><div class="ctexto">${P.texto}</div></div><div class="fuente">${P.fuente||''}</div>`;
+if(t==='cita') h+=`<div class="center"><div class="cita">${P.texto}</div><div class="autor">${P.autor||''}</div></div><div class="fuente">${P.fuente||''}</div>`;
+if(t==='dos') h+=`<div class="center"><div class="titulo">${P.titulo||''}</div><div class="dos"><div class="caja az">${P.a}<small>${P.a2||''}</small></div><div class="caja na">${P.b}<small>${P.b2||''}</small></div></div></div><div class="fuente">${P.fuente||''}</div>`;
+if(t==='suscribete'||t==='final') h+=`<div class="center"><img class="logo" src="${LOGO}" style="width:${t==='final'?820:980}px;border-radius:24px;mask-image:radial-gradient(ellipse 70% 70% at 50% 50%,#000 60%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 70% 70% at 50% 50%,#000 60%,transparent 100%)"><div class="btn">Suscríbete</div></div>`;
+document.getElementById('c').innerHTML=h;
+</script></body></html>

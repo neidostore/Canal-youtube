@@ -1,0 +1,530 @@
+{
+ "titulo": "Dosis de Asombro #1",
+ "tema": "shock",
+ "tarjetas": "tarjetas-shock.html",
+ "intro": {
+  "video": "marca/shockmental/intro/intro.mp4",
+  "audio": "marca/shockmental/intro/intro_audio.wav"
+ },
+ "voz": {
+  "idioma": "es-ES",
+  "nombre": "es-ES-Chirp3-HD-Achird",
+  "velocidad": 1.12
+ },
+ "estilo": {
+  "dinamico": true,
+  "plano": 1.6
+ },
+ "musica": {
+  "archivo": "musica/wallpaper.mp3",
+  "volumen": 0.09,
+  "credito": "\"Wallpaper\" de Kevin MacLeod (incompetech.com)"
+ },
+ "fotos": {},
+ "difuminar": {},
+ "videos": {
+  "car_red": 5309351,
+  "car_red2": 10710642,
+  "rocket": 854261,
+  "rocket2": 854261,
+  "r_shocked_woman": 8626657,
+  "r_man_tv": 9883681,
+  "r_man_phone": 7534960,
+  "sea": 7565969,
+  "ink_glass": 5282334,
+  "coffee_pot": 856212,
+  "coffee_drip": 2853788,
+  "crt": 8879937,
+  "planet": 854301,
+  "silhouette": 13375816,
+  "river": 3122141,
+  "river2": 2248630,
+  "ice": 6255490,
+  "shark1": 7997336,
+  "shark2": 5548359,
+  "bamboo": 7720369,
+  "bamboo2": 1510138,
+  "wheat": 4830195,
+  "emu": 3842258,
+  "eye": 7297815,
+  "crow1": 854284,
+  "crow2": 17580089,
+  "telescope": 2954002
+ },
+ "videos_inicio": {
+  "r_man_tv": 3.5,
+  "r_shocked_woman": 0.3,
+  "r_man_phone": 2.5
+ },
+ "bloques": [
+  {
+   "nombre": "Gancho",
+   "frases": [
+    {
+     "t": "Elon Musk acaba de enseñar un coche que despega del suelo.",
+     "vid": "car_red",
+     "kw": "¿un coche que vuela?"
+    },
+    {
+     "t": "Pero antes de contarte si vuela de verdad, prepárate: hoy vienen once cosas que parecen imposibles… y son reales.",
+     "vid": "r_shocked_woman",
+     "kw": "11 cosas imposibles"
+    }
+   ]
+  },
+  {
+   "nombre": "Intro",
+   "intro": true
+  },
+  {
+   "nombre": "1 · El camarón pistola",
+   "frases": [
+    {
+     "t": "Número uno.",
+     "card": {
+      "tipo": "numero",
+      "n": 1,
+      "tema": "Animales"
+     }
+    },
+    {
+     "t": "En el fondo del mar vive un animal del tamaño de un dedo que dispara… con una pinza.",
+     "vid": "sea",
+     "kw": "dispara"
+    },
+    {
+     "t": "El camarón pistola cierra su pinza tan rápido que lanza un chorro de agua y forma una burbuja.",
+     "vid": "ink_glass",
+     "kw": "camarón pistola"
+    },
+    {
+     "t": "Y cuando esa burbuja revienta, suelta un destello de luz y alcanza, durante un instante, unos cinco mil grados.",
+     "card": {
+      "tipo": "cifra",
+      "cifra": "5.000 °C",
+      "texto": "dentro de la burbuja, durante un instante",
+      "fuente": "Fuente: revista Nature, 2001"
+     }
+    },
+    {
+     "t": "Casi la temperatura de la superficie del Sol. Un disparo… sin pólvora.",
+     "vid": "rocket2",
+     "kw": "sin pólvora"
+    }
+   ]
+  },
+  {
+   "nombre": "2 · La primera webcam",
+   "frases": [
+    {
+     "t": "Número dos.",
+     "card": {
+      "tipo": "numero",
+      "n": 2,
+      "tema": "Inventos"
+     }
+    },
+    {
+     "t": "En 1991, en la Universidad de Cambridge, unos informáticos estaban hartos de ir a por café… y encontrarse la cafetera vacía.",
+     "vid": "coffee_pot",
+     "kw": "cafetera vacía"
+    },
+    {
+     "t": "Así que apuntaron una cámara a la cafetera y conectaron la imagen a sus ordenadores.",
+     "vid": "crt",
+     "kw": "una cámara"
+    },
+    {
+     "t": "Acababan de crear lo que hoy se considera la primera webcam de la historia.",
+     "card": {
+      "tipo": "cifra",
+      "cifra": "1991",
+      "texto": "la primera webcam vigilaba… una cafetera",
+      "fuente": "Fuente: Guinness World Records"
+     }
+    },
+    {
+     "t": "Años después la conectaron a internet, y gente de todo el mundo entraba para ver… una cafetera.",
+     "vid": "coffee_drip",
+     "kw": "todo el mundo"
+    }
+   ]
+  },
+  {
+   "nombre": "3 · El planeta de cristal",
+   "frases": [
+    {
+     "t": "Número tres.",
+     "card": {
+      "tipo": "numero",
+      "n": 3,
+      "tema": "Espacio"
+     }
+    },
+    {
+     "t": "A unos sesenta y tres años luz de aquí hay un planeta azul, como la Tierra.",
+     "vid": "planet",
+     "kw": "63 años luz"
+    },
+    {
+     "t": "Pero no te lo recomiendo para las vacaciones: su atmósfera supera los mil grados.",
+     "vid": "planet",
+     "kw": "+1.000 °C"
+    },
+    {
+     "t": "Y según la NASA, probablemente allí llueve cristal… de lado, con vientos de unos siete mil kilómetros por hora.",
+     "card": {
+      "tipo": "cifra",
+      "cifra": "7.000 km/h",
+      "texto": "vientos que arrastran lluvia de cristal",
+      "fuente": "Fuente: NASA"
+     }
+    }
+   ]
+  },
+  {
+   "nombre": "4 · Tu cuerpo brilla",
+   "frases": [
+    {
+     "t": "Número cuatro.",
+     "card": {
+      "tipo": "numero",
+      "n": 4,
+      "tema": "Cuerpo humano"
+     }
+    },
+    {
+     "t": "Tu cuerpo brilla.",
+     "vid": "silhouette",
+     "kw": "tu cuerpo brilla"
+    },
+    {
+     "t": "No es una metáfora: en 2009, unos científicos japoneses fotografiaron a personas en total oscuridad con una cámara ultrasensible.",
+     "vid": "silhouette",
+     "kw": "oscuridad total"
+    },
+    {
+     "t": "Y descubrieron que emitimos luz visible. Muy poca: unas mil veces menos de lo que el ojo puede ver.",
+     "card": {
+      "tipo": "cifra",
+      "cifra": "1.000 veces",
+      "texto": "más débil de lo que el ojo puede ver",
+      "fuente": "Fuente: PLoS ONE, 2009"
+     }
+    }
+   ]
+  },
+  {
+   "nombre": "5 · La isla que cambia de país",
+   "frases": [
+    {
+     "t": "Número cinco.",
+     "card": {
+      "tipo": "numero",
+      "n": 5,
+      "tema": "Historia"
+     }
+    },
+    {
+     "t": "En el río Bidasoa, entre Irún y Hendaya, hay una pequeña isla: la Isla de los Faisanes.",
+     "vid": "river",
+     "kw": "Isla de los Faisanes"
+    },
+    {
+     "t": "De febrero a julio es española. Y de agosto a enero… francesa.",
+     "card": {
+      "tipo": "dos",
+      "titulo": "Isla de los Faisanes",
+      "a": "España",
+      "a2": "febrero → julio",
+      "b": "Francia",
+      "b2": "agosto → enero",
+      "fuente": "Un condominio entre España y Francia"
+     }
+    },
+    {
+     "t": "España y Francia se la turnan cada seis meses desde hace más de un siglo.",
+     "vid": "river2",
+     "kw": "cada 6 meses"
+    },
+    {
+     "t": "Y en esa isla diminuta se firmó, en 1659, la Paz de los Pirineos.",
+     "vid": "river",
+     "kw": "1659"
+    }
+   ]
+  },
+  {
+   "nombre": "6 · El tiburón de 400 años",
+   "frases": [
+    {
+     "t": "Número seis.",
+     "card": {
+      "tipo": "numero",
+      "n": 6,
+      "tema": "Animales"
+     }
+    },
+    {
+     "t": "En las aguas heladas del Ártico nada el tiburón de Groenlandia.",
+     "vid": "ice",
+     "kw": "Ártico"
+    },
+    {
+     "t": "En 2016, unos científicos calcularon su edad analizando el cristalino de sus ojos.",
+     "vid": "shark1",
+     "kw": "sus ojos"
+    },
+    {
+     "t": "El más grande que estudiaron tenía, probablemente, unos cuatrocientos años.",
+     "card": {
+      "tipo": "cifra",
+      "cifra": "~400 años",
+      "texto": "la edad estimada del tiburón más grande estudiado",
+      "fuente": "Fuente: revista Science, 2016"
+     }
+    },
+    {
+     "t": "Es decir, puede que ya nadara cuando reinaba Felipe IV. Y no es adulto hasta los ciento cincuenta.",
+     "vid": "shark2",
+     "kw": "adulto a los 150"
+    }
+   ]
+  },
+  {
+   "nombre": "7 · La planta más rápida",
+   "frases": [
+    {
+     "t": "Número siete.",
+     "card": {
+      "tipo": "numero",
+      "n": 7,
+      "tema": "Naturaleza"
+     }
+    },
+    {
+     "t": "Algunas especies de bambú pueden crecer hasta noventa y un centímetros… en un solo día.",
+     "card": {
+      "tipo": "cifra",
+      "cifra": "91 cm",
+      "texto": "en un solo día",
+      "fuente": "Fuente: Guinness World Records"
+     }
+    },
+    {
+     "t": "Casi cuatro centímetros por hora. Con paciencia, casi podrías verlo crecer.",
+     "vid": "bamboo",
+     "kw": "4 cm por hora"
+    },
+    {
+     "t": "Según el Libro Guinness, es la planta que crece más rápido del mundo.",
+     "vid": "bamboo2",
+     "kw": "la más rápida"
+    }
+   ]
+  },
+  {
+   "nombre": "8 · La guerra de los emús",
+   "frases": [
+    {
+     "t": "Número ocho.",
+     "card": {
+      "tipo": "numero",
+      "n": 8,
+      "tema": "Historia"
+     }
+    },
+    {
+     "t": "En 1932, los granjeros del oeste de Australia tenían un problema: miles de emús se estaban comiendo su trigo.",
+     "vid": "wheat",
+     "kw": "miles de emús"
+    },
+    {
+     "t": "Y el gobierno envió soldados… con ametralladoras.",
+     "vid": "emu",
+     "kw": "ametralladoras"
+    },
+    {
+     "t": "Pero los emús se dispersaban, corrían muchísimo y eran muy difíciles de abatir.",
+     "vid": "emu",
+     "kw": "imparables"
+    },
+    {
+     "t": "Tras semanas de operación, la prensa lo tuvo claro: la Guerra de los Emús… la ganaron los emús.",
+     "vid": "r_man_tv",
+     "kw": "ganaron los emús"
+    }
+   ]
+  },
+  {
+   "nombre": "9 · Un solo fotón",
+   "frases": [
+    {
+     "t": "Número nueve.",
+     "card": {
+      "tipo": "numero",
+      "n": 9,
+      "tema": "Cuerpo humano"
+     }
+    },
+    {
+     "t": "La luz está formada por partículas diminutas llamadas fotones.",
+     "vid": "eye",
+     "kw": "fotones"
+    },
+    {
+     "t": "Y en 2016, un experimento con voluntarios encontró que el ojo humano es capaz de notar… un solo fotón.",
+     "card": {
+      "tipo": "cifra",
+      "cifra": "1 fotón",
+      "texto": "lo mínimo que tu ojo puede notar",
+      "fuente": "Fuente: Nature Communications, 2016"
+     }
+    },
+    {
+     "t": "La cantidad de luz más pequeña que existe. Y tus ojos, en la oscuridad, pueden sentirla.",
+     "vid": "eye",
+     "kw": "la luz más pequeña"
+    }
+   ]
+  },
+  {
+   "nombre": "10 · Los cuervos no olvidan",
+   "frases": [
+    {
+     "t": "Número diez.",
+     "card": {
+      "tipo": "numero",
+      "n": 10,
+      "tema": "Animales"
+     }
+    },
+    {
+     "t": "Los cuervos recuerdan tu cara.",
+     "vid": "crow1",
+     "kw": "recuerdan tu cara"
+    },
+    {
+     "t": "En un experimento de la Universidad de Washington, unos investigadores con una máscara capturaron cuervos para estudiarlos.",
+     "vid": "crow2",
+     "kw": "una máscara"
+    },
+    {
+     "t": "Años después, cuando alguien se ponía esa misma máscara, los cuervos le chillaban y le perseguían.",
+     "vid": "crow1",
+     "kw": "años después"
+    },
+    {
+     "t": "Y lo más inquietante: cuervos que nunca habían sido capturados también lo hacían. Lo habían aprendido de los demás.",
+     "vid": "r_man_phone",
+     "kw": "lo aprendieron"
+    }
+   ]
+  },
+  {
+   "nombre": "11 · La señal Wow!",
+   "frases": [
+    {
+     "t": "Número once.",
+     "card": {
+      "tipo": "numero",
+      "n": 11,
+      "tema": "Misterios"
+     }
+    },
+    {
+     "t": "En 1977, un radiotelescopio de Estados Unidos captó una señal del espacio tan fuerte que el astrónomo escribió al margen: «Wow!».",
+     "vid": "telescope",
+     "kw": "Wow!",
+     "voz": "En 1977, un radiotelescopio de Estados Unidos captó una señal del espacio tan fuerte que el astrónomo escribió al margen: ¡guau!"
+    },
+    {
+     "t": "Duró setenta y dos segundos… y nunca se ha vuelto a captar.",
+     "card": {
+      "tipo": "cifra",
+      "cifra": "72 segundos",
+      "texto": "y nunca se ha repetido",
+      "fuente": "Fuente: Scientific American"
+     }
+    },
+    {
+     "t": "En 2024, un equipo propuso una explicación natural: una nube de hidrógeno iluminada de golpe por una estrella.",
+     "vid": "planet",
+     "kw": "¿hidrógeno?"
+    },
+    {
+     "t": "Pero no está confirmado. El misterio sigue abierto.",
+     "vid": "telescope",
+     "kw": "sin resolver"
+    }
+   ]
+  },
+  {
+   "nombre": "12 · El coche que vuela",
+   "frases": [
+    {
+     "t": "Número doce.",
+     "card": {
+      "tipo": "numero",
+      "n": 12,
+      "tema": "Tecnología"
+     }
+    },
+    {
+     "t": "Y ahora sí, lo que te prometí. En octubre de 2026, Elon Musk presentó el nuevo Tesla Roadster en unas instalaciones de SpaceX, en Texas.",
+     "vid": "car_red2",
+     "kw": "octubre 2026"
+    },
+    {
+     "t": "Y el coche… despegó. Con propulsores derivados de los cohetes de SpaceX, se elevó, giró y saltó por encima de otros coches.",
+     "vid": "rocket",
+     "kw": "¡despegó!"
+    },
+    {
+     "t": "Según Musk, algunas versiones aceleran de cero a casi cien kilómetros por hora en menos de un segundo.",
+     "card": {
+      "tipo": "cifra",
+      "cifra": "< 1 s",
+      "texto": "de 0 a casi 100 km/h, según Musk",
+      "fuente": "Fuente: TechCrunch, NBC News"
+     }
+    },
+    {
+     "t": "Pero ojo: no iba nadie dentro, fue un vuelo muy corto, y la versión con propulsores no está aprobada para circular.",
+     "vid": "car_red",
+     "kw": "ojo"
+    },
+    {
+     "t": "Así que… ¿coche volador? De momento, más bien un coche que salta. Pero vaya salto.",
+     "vid": "r_shocked_woman",
+     "kw": "¿o salta?"
+    }
+   ]
+  },
+  {
+   "nombre": "Cierre",
+   "final": 6,
+   "frases": [
+    {
+     "t": "Y esta ha sido tu dosis de asombro de hoy.",
+     "card": {
+      "tipo": "final"
+     }
+    },
+    {
+     "t": "¿Cuál te ha dejado con la boca abierta? Te leo en los comentarios.",
+     "card": {
+      "tipo": "final"
+     }
+    },
+    {
+     "t": "Suscríbete a Shock Mental: cada semana, una nueva dosis. ¡Nos vemos en la próxima!",
+     "voz": "Suscríbete a Shock Mental: cada semana, una nueva dosis. ¡Nos vemos en la próxima!",
+     "card": {
+      "tipo": "final"
+     }
+    }
+   ]
+  }
+ ]
+}

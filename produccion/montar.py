@@ -80,12 +80,13 @@ def preparar_foto(nombre, pid, fotos_dir, trabajo, difuminar):
     return out
 
 
-def render_tarjetas(tarjetas, trabajo):
+def render_tarjetas(tarjetas, trabajo, plantilla="tarjetas.html"):
     pend = {k: v for k, v in tarjetas.items() if not (trabajo / f"card_{k}.png").exists()}
     if not pend:
         return
     (trabajo / "tarjetas.json").write_text(json.dumps(pend, ensure_ascii=False))
-    subprocess.run(["node", str(RAIZ / "render_tarjetas.js"), str(trabajo / "tarjetas.json"), str(trabajo)], check=True)
+    subprocess.run(["node", str(RAIZ / "render_tarjetas.js"), str(trabajo / "tarjetas.json"), str(trabajo), plantilla],
+                   check=True)
 
 
 def clip(escena, destino):
@@ -220,7 +221,10 @@ def main(carpeta):
     with cf.ThreadPoolExecutor(6) as ex:
         rutas = dict(zip(usadas, ex.map(lambda n: preparar_foto(n, spec["fotos"][n], fotos_dir, trabajo,
                                                                 spec.get("difuminar", {})), usadas)))
-    render_tarjetas(tarjetas, trabajo)
+    render_tarjetas(tarjetas, trabajo, spec.get("tarjetas", "tarjetas.html"))
+    global INTRO_VIDEO, INTRO_AUDIO
+    if spec.get("intro"):
+        INTRO_VIDEO, INTRO_AUDIO = RAIZ.parent / spec["intro"]["video"], RAIZ.parent / spec["intro"]["audio"]
     vids = {e["vid"] for e in escenas if e["tipo"] == "video"}
     faltan = [str(spec["videos"][v]) for v in vids if not (CLIPS / f"{spec['videos'][v]}.mp4").exists()]
     if faltan:
@@ -313,6 +317,7 @@ def main(carpeta):
             t0 += d
     (salida / "subtitulos.srt").write_text(
         "\n".join(f"{i}\n{ts(a)} --> {ts(b)}\n{txt}\n" for i, (a, b, txt) in enumerate(srt, 1)), encoding="utf-8")
+    kwb_txt, kwb_box = ("&H00FFFFFF", "&H00FF8C1E") if spec.get("tema") == "shock" else ("&H00130F0E", "&H0000C4FF")
     sub_m, kw1, kw2 = ("70,70,560", 118, 96) if vertical else ("120,120,90", 150, 120)
     cab = (f"[Script Info]\nScriptType: v4.00+\nPlayResX: {W}\nPlayResY: {H}\n\n[V4+ Styles]\n"
            "Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, "
@@ -322,7 +327,7 @@ def main(carpeta):
            f"{sub_m},1\n"
            f"Style: KW,Inter Display Black,{kw1},&H0000C4FF,&H0000C4FF,&H00000000,&H96000000,0,0,0,0,100,100,-2,0,1,9,5,5,"
            "100,100,0,1\n"
-           f"Style: KWB,Inter Display Black,{kw2},&H00130F0E,&H00130F0E,&H0000C4FF,&H0000C4FF,0,0,0,0,100,100,-1,0,3,22,0,5,"
+           f"Style: KWB,Inter Display Black,{kw2},{kwb_txt},{kwb_txt},{kwb_box},{kwb_box},0,0,0,0,100,100,-1,0,3,22,0,5,"
            "100,100,0,1\n\n[Events]\nFormat: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text\n")
     kw_ev = []
     for e in escenas:
