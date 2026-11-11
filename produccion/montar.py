@@ -344,6 +344,8 @@ def main(carpeta):
            "100,100,0,1\n\n[Events]\nFormat: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text\n")
     cred_ev = [(e["ini"], e["ini"] + e["dur"], spec["credito_fotos"][e["foto"]]) for e in planos
                if e["tipo"] == "foto" and e["foto"] in spec.get("credito_fotos", {})]
+    cred_ev += [(e["ini"], e["ini"] + e["dur"], spec["credito_videos"][e["vid"]]) for e in planos
+                if e["tipo"] == "video" and e["vid"] in spec.get("credito_videos", {})]
     kw_ev = []
     for e in escenas:
         if e.get("kw") and e["texto"]:
