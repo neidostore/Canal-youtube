@@ -31,7 +31,7 @@ Cada vídeo es una "Dosis de Asombro": una docena de datos sorprendentes, rápid
 
 ## Pasos en YouTube (los tiene que hacer el dueño de la cuenta)
 1. **Vídeos antiguos a privado:** Tú → Tus vídeos → ⋮ → Editar → Visibilidad → **Privado** (McDonald's, impresoras y los Shorts). El de impresoras estaba programado: **quitarle la programación**.
-2. **Nombre:** `SHOCK MENTAL`. **Identificador:** `@shockmental`, o si está cogido `@shockmental_tv` / `@shockmentaltv`. Ojo: solo se puede cambiar 2 veces cada 14 días.
+2. **Nombre:** `SHOCK MENTAL`. **Identificador:** `@shockmental_tv` (ya puesto). Ojo: solo se puede cambiar 2 veces cada 14 días.
 3. **Foto de perfil y banner:** los archivos de la tabla.
 4. **Descripción:** la de arriba.
 5. **Palabras clave del canal** (YouTube Studio en el ordenador → Configuración → Canal): `curiosidades, datos curiosos, sabías que, ciencia, historia, animales, espacio, misterios, shock mental, dosis de asombro`

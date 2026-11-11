@@ -44,10 +44,10 @@ Elon Musk acaba de enseñar un coche que despega del suelo… pero ¿vuela de ve
 04:25 Despedida
 
 📚 Fuentes:
-- Rayos: Servicio Meteorológico de EE. UU. (NWS/NOAA) https://www.weather.gov/safety/lightning-temperature · frecuencia global: NASA
-- Colibríes: Smithsonian's National Zoo · Audubon
-- Torre Eiffel: web oficial de la Torre Eiffel (toureiffel.paris)
-- Pulpos: Smithsonian Ocean
+- Rayos: Servicio Meteorológico de EE. UU. (NWS) https://www.weather.gov/safety/lightning-temperature · 44 rayos por segundo: NASA https://svs.gsfc.nasa.gov/hyperwall/index/data/events/2012/2012-ams/lightning.txt.html
+- Colibríes: BBC Discover Wildlife https://www.discoverwildlife.com/animal-facts/facts-about-hummingbirds · CGTN https://news.cgtn.com/news/2020-01-11/Hummingbird-The-only-bird-that-can-fly-backwards-NalY1w17aw/index.html
+- Torre Eiffel (diferencia entre invierno y verano): The Conversation, vía Phys.org https://phys.org/news/2025-08-eiffel-tower-bigger-summer.html
+- Pulpos: Smithsonian Magazine https://www.smithsonianmag.com/science-nature/ten-wild-facts-about-octopuses-they-have-three-hearts-big-brains-and-blue-blood-7625828/ · PBS Nature https://www.pbs.org/wnet/nature/group/octopus/
 - Primera webcam: Guinness World Records https://www.guinnessworldrecords.com/world-records/114885-first-webcam
 - HD 189733b: NASA https://exoplanets.nasa.gov/news/107/blue-and-bizarre
 - Bambú: Guinness World Records https://guinnessworldrecords.es/world-records/fastest-growing-plant
