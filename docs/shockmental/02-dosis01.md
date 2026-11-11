@@ -56,6 +56,7 @@ Elon Musk acaba de enseñar un coche que despega del suelo… pero ¿vuela de ve
 - Cuervos: Universidad de Washington (Marzluff) https://www.hcn.org/blogs/goat/the-crow-knows-your-nose/
 - Señal Wow!: Scientific American https://scientificamerican.com/article/the-wow-signal-seti-mystery-might-at-last-be-solved
 - Tesla Roadster: TechCrunch https://techcrunch.com/2026/10/15/tesla-reveals-spacex-powered-roadster-that-flies-and-falls-with-style/
+- Imágenes: camarón pistola (q phia, CC BY 2.0; Dan Schofield, CC BY 4.0; Michael Marmach, CC BY 4.0; FWC Fish and Wildlife Research Institute, CC BY 2.0) · cafetera de Cambridge, imagen original de 1991 (Quentin Stafford-Fraser, CC BY-SA 3.0) · HD 189733b, recreaciones artísticas (NASA; NASA, ESA, M. Kornmesser, CC BY 4.0) · emisión de luz humana (Kobayashi et al., PLoS ONE 2009, CC BY) · Isla de los Faisanes (Zarateman, CC0; Iñaki LL, CC BY-SA 4.0; Tangopaso, dominio público) · tiburón de Groenlandia (NOAA; Hemming1952, CC BY-SA 4.0) · Guerra de los Emús, fotos de 1932 (dominio público) · señal Wow! (Big Ear Radio Observatory / NAAPO) · Tesla Roadster (Tesla). Todas vía Wikimedia Commons salvo Tesla y PLoS ONE.
 - Vídeos: Pexels (pexels.com). Música: "Wallpaper" de Kevin MacLeod (incompetech.com), Licencia CC BY 4.0 http://creativecommons.org/licenses/by/4.0/
 
 🧠⚡ SHOCK MENTAL · Tu dosis de asombro. Suscríbete para la próxima dosis.

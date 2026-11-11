@@ -1,0 +1,58 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Sub,Inter Display Black,74,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,0,0,0,0,100,100,0,0,1,6,3,2,70,70,560,1
+Style: KW,Inter Display Black,118,&H0000C4FF,&H0000C4FF,&H00000000,&H96000000,0,0,0,0,100,100,-2,0,1,9,5,5,100,100,0,1
+Style: Cred,Inter Display,30,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,0,0,0,0,100,100,0,0,1,2,1,9,40,40,36,1
+Style: KWB,Inter Display Black,96,&H00FFFFFF,&H00FFFFFF,&H00FF8C1E,&H00FF8C1E,0,0,0,0,100,100,-1,0,3,22,0,5,100,100,0,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:00.96,Sub,,0,0,0,,En el fondo del mar
+Dialogue: 0,0:00:00.96,0:00:01.86,Sub,,0,0,0,,vive un animal del
+Dialogue: 0,0:00:01.86,0:00:02.92,Sub,,0,0,0,,tamaño de un dedo que
+Dialogue: 0,0:00:02.92,0:00:03.72,Sub,,0,0,0,,dispara… con una
+Dialogue: 0,0:00:03.72,0:00:04.02,Sub,,0,0,0,,pinza.
+Dialogue: 0,0:00:04.17,0:00:05.19,Sub,,0,0,0,,El camarón pistola
+Dialogue: 0,0:00:05.19,0:00:06.27,Sub,,0,0,0,,cierra su pinza tan
+Dialogue: 0,0:00:06.27,0:00:07.34,Sub,,0,0,0,,rápido que lanza un
+Dialogue: 0,0:00:07.34,0:00:08.59,Sub,,0,0,0,,chorro de agua y forma
+Dialogue: 0,0:00:08.59,0:00:09.27,Sub,,0,0,0,,una burbuja.
+Dialogue: 0,0:00:09.42,0:00:10.66,Sub,,0,0,0,,Y cuando esa burbuja
+Dialogue: 0,0:00:10.66,0:00:11.85,Sub,,0,0,0,,revienta, suelta un
+Dialogue: 0,0:00:11.85,0:00:12.91,Sub,,0,0,0,,destello de luz y
+Dialogue: 0,0:00:12.91,0:00:14.09,Sub,,0,0,0,,alcanza, durante un
+Dialogue: 0,0:00:14.09,0:00:15.34,Sub,,0,0,0,,instante, unos cinco
+Dialogue: 0,0:00:15.34,0:00:16.02,Sub,,0,0,0,,mil grados.
+Dialogue: 0,0:00:16.17,0:00:17.55,Sub,,0,0,0,,Casi la temperatura de
+Dialogue: 0,0:00:17.55,0:00:18.94,Sub,,0,0,0,,la superficie del Sol.
+Dialogue: 0,0:00:18.94,0:00:19.88,Sub,,0,0,0,,Un disparo… sin
+Dialogue: 0,0:00:19.88,0:00:20.38,Sub,,0,0,0,,pólvora.
+Dialogue: 0,0:00:20.53,0:00:21.13,Sub,,0,0,0,,Tienes once
+Dialogue: 0,0:00:21.13,0:00:22.31,Sub,,0,0,0,,curiosidades más en la
+Dialogue: 0,0:00:22.31,0:00:23.23,Sub,,0,0,0,,dosis completa de
+Dialogue: 0,0:00:23.23,0:00:23.93,Sub,,0,0,0,,Shock Mental.
+Dialogue: 1,0:00:02.92,0:00:04.12,KW,,0,0,0,,{\pos(540,760)\fscx40\fscy40\t(0,110,\fscx118\fscy118)\t(110,200,\fscx100\fscy100)\fad(0,120)}DISPARA
+Dialogue: 1,0:00:04.34,0:00:05.84,KWB,,0,0,0,,{\pos(540,600)\frz-3\fscx40\fscy40\t(0,110,\fscx118\fscy118)\t(110,200,\fscx100\fscy100)\fad(0,120)}CAMARÓN PISTOLA
+Dialogue: 1,0:00:09.52,0:00:11.02,KW,,0,0,0,,{\pos(540,700)\frz2\fscx40\fscy40\t(0,110,\fscx118\fscy118)\t(110,200,\fscx100\fscy100)\fad(0,120)}5.000 °C
+Dialogue: 1,0:00:19.66,0:00:20.48,KWB,,0,0,0,,{\pos(540,760)\fscx40\fscy40\t(0,110,\fscx118\fscy118)\t(110,200,\fscx100\fscy100)\fad(0,120)}SIN PÓLVORA
+Dialogue: 1,0:00:22.33,0:00:23.83,KW,,0,0,0,,{\pos(540,600)\frz-3\fscx40\fscy40\t(0,110,\fscx118\fscy118)\t(110,200,\fscx100\fscy100)\fad(0,120)}DOSIS COMPLETA EN EL CANAL
+Dialogue: 2,0:00:00.00,0:00:01.39,Cred,,0,0,0,,Foto: q phia · CC BY 2.0
+Dialogue: 2,0:00:01.39,0:00:02.78,Cred,,0,0,0,,Foto: Dan Schofield · CC BY 4.0
+Dialogue: 2,0:00:02.78,0:00:04.17,Cred,,0,0,0,,Foto: q phia · CC BY 2.0
+Dialogue: 2,0:00:04.17,0:00:05.48,Cred,,0,0,0,,Foto: FWC Fish and Wildlife Research Institute · CC BY 2.0
+Dialogue: 2,0:00:05.48,0:00:06.79,Cred,,0,0,0,,Foto: Michael Marmach · CC BY 4.0
+Dialogue: 2,0:00:06.79,0:00:08.11,Cred,,0,0,0,,Foto: FWC Fish and Wildlife Research Institute · CC BY 2.0
+Dialogue: 2,0:00:08.11,0:00:09.42,Cred,,0,0,0,,Foto: Michael Marmach · CC BY 4.0
+Dialogue: 2,0:00:09.42,0:00:10.77,Cred,,0,0,0,,Foto: Michael Marmach · CC BY 4.0
+Dialogue: 2,0:00:10.77,0:00:12.12,Cred,,0,0,0,,Foto: q phia · CC BY 2.0
+Dialogue: 2,0:00:12.12,0:00:13.47,Cred,,0,0,0,,Foto: Michael Marmach · CC BY 4.0
+Dialogue: 2,0:00:13.47,0:00:14.82,Cred,,0,0,0,,Foto: q phia · CC BY 2.0
+Dialogue: 2,0:00:14.82,0:00:16.17,Cred,,0,0,0,,Foto: Michael Marmach · CC BY 4.0
+Dialogue: 2,0:00:20.53,0:00:21.81,Cred,,0,0,0,,Foto: Dan Schofield · CC BY 4.0
+Dialogue: 2,0:00:21.81,0:00:23.10,Cred,,0,0,0,,Foto: Dan Schofield · CC BY 4.0
+Dialogue: 2,0:00:23.10,0:00:24.38,Cred,,0,0,0,,Foto: Dan Schofield · CC BY 4.0

@@ -44,7 +44,11 @@
   "r_shocked_woman": 0.3,
   "r_man_phone": 2.5
  },
- "fotos": {},
+ "fotos": {
+  "isla_1": 0,
+  "isla_2": 0,
+  "isla_monumento": 0
+ },
  "difuminar": {},
  "titulo": "La isla que es española 6 meses y francesa otros 6 🇪🇸🇫🇷",
  "formato": "vertical",
@@ -59,30 +63,45 @@
    "frases": [
     {
      "t": "En el río Bidasoa, entre Irún y Hendaya, hay una pequeña isla: la Isla de los Faisanes.",
-     "vid": "river",
-     "kw": "Isla de los Faisanes"
+     "kw": "Isla de los Faisanes",
+     "img": [
+      "isla_1",
+      "isla_2"
+     ]
     },
     {
      "t": "De febrero a julio es española. Y de agosto a enero… francesa.",
-     "vid": "river2",
-     "kw": "ESPAÑA / FRANCIA"
+     "kw": "ESPAÑA / FRANCIA",
+     "img": [
+      "isla_2",
+      "isla_1"
+     ]
     },
     {
      "t": "España y Francia se la turnan cada seis meses desde hace más de un siglo.",
-     "vid": "river2",
-     "kw": "cada 6 meses"
+     "kw": "cada 6 meses",
+     "img": [
+      "isla_1"
+     ]
     },
     {
      "t": "Y en esa isla diminuta se firmó, en 1659, la Paz de los Pirineos.",
-     "vid": "river",
-     "kw": "1659"
+     "kw": "1659",
+     "img": [
+      "isla_monumento"
+     ]
     },
     {
-     "t": "Tienes doce curiosidades más en la dosis completa de Shock Mental.",
+     "t": "Tienes once curiosidades más en la dosis completa de Shock Mental.",
      "vid": "river",
      "kw": "dosis completa en el canal"
     }
    ]
   }
- ]
+ ],
+ "credito_fotos": {
+  "isla_1": "Foto: Zarateman · CC0",
+  "isla_2": "Foto: Iñaki LL · CC BY-SA 4.0",
+  "isla_monumento": "Foto: Tangopaso · dominio público"
+ }
 }

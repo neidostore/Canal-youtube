@@ -27,7 +27,29 @@
   "tesla_noche": 0,
   "tesla_perfil": 0,
   "tesla_puertas": 0,
-  "tesla_comparacion": 0
+  "tesla_comparacion": 0,
+  "camaron_rojo": 0,
+  "camaron_tigre": 0,
+  "camaron_lado": 0,
+  "camaron_pinza": 0,
+  "cafetera_xcoffee": 0,
+  "planeta_azul": 0,
+  "planeta_estrella": 0,
+  "planeta_sistema": 0,
+  "cuerpo_oscuro": 0,
+  "cuerpo_brilla": 0,
+  "cuerpo_brilla2": 0,
+  "isla_1": 0,
+  "isla_2": 0,
+  "isla_monumento": 0,
+  "tiburon_g1": 0,
+  "tiburon_g2": 0,
+  "tiburon_g3": 0,
+  "emu_bebiendo": 0,
+  "emu_ametralladora": 0,
+  "emu_soldados": 0,
+  "emu_granjero": 0,
+  "wow_hoja": 0
  },
  "difuminar": {},
  "videos": {
@@ -97,26 +119,31 @@
     },
     {
      "t": "En el fondo del mar vive un animal del tamaño de un dedo que dispara… con una pinza.",
-     "vid": "sea",
-     "kw": "dispara"
+     "kw": "dispara",
+     "img": [
+      "camaron_rojo",
+      "camaron_tigre"
+     ]
     },
     {
      "t": "El camarón pistola cierra su pinza tan rápido que lanza un chorro de agua y forma una burbuja.",
-     "vid": "ink_glass",
-     "kw": "camarón pistola"
+     "kw": "camarón pistola",
+     "img": [
+      "camaron_pinza",
+      "camaron_lado"
+     ]
     },
     {
      "t": "Y cuando esa burbuja revienta, suelta un destello de luz y alcanza, durante un instante, unos cinco mil grados.",
-     "card": {
-      "tipo": "cifra",
-      "cifra": "5.000 °C",
-      "texto": "dentro de la burbuja, durante un instante",
-      "fuente": "Fuente: revista Nature, 2001"
-     }
+     "img": [
+      "camaron_lado",
+      "camaron_rojo"
+     ],
+     "kw": "5.000 °C"
     },
     {
      "t": "Casi la temperatura de la superficie del Sol. Un disparo… sin pólvora.",
-     "vid": "rocket2",
+     "vid": "sea",
      "kw": "sin pólvora"
     }
    ]
@@ -139,17 +166,17 @@
     },
     {
      "t": "Así que apuntaron una cámara a la cafetera y conectaron la imagen a sus ordenadores.",
-     "vid": "crt",
-     "kw": "una cámara"
+     "kw": "una cámara",
+     "img": [
+      "cafetera_xcoffee"
+     ]
     },
     {
      "t": "Acababan de crear lo que hoy se considera la primera webcam de la historia.",
-     "card": {
-      "tipo": "cifra",
-      "cifra": "1991",
-      "texto": "la primera webcam vigilaba… una cafetera",
-      "fuente": "Fuente: Guinness World Records"
-     }
+     "img": [
+      "cafetera_xcoffee"
+     ],
+     "kw": "la primera webcam"
     },
     {
      "t": "Años después la conectaron a internet, y gente de todo el mundo entraba para ver… una cafetera.",
@@ -171,22 +198,27 @@
     },
     {
      "t": "A unos sesenta y tres años luz de aquí hay un planeta azul, como la Tierra.",
-     "vid": "planet",
-     "kw": "63 años luz"
+     "kw": "63 años luz",
+     "img": [
+      "planeta_azul",
+      "planeta_sistema"
+     ]
     },
     {
      "t": "Pero no te lo recomiendo para las vacaciones: su atmósfera supera los mil grados.",
-     "vid": "planet",
-     "kw": "+1.000 °C"
+     "kw": "+1.000 °C",
+     "img": [
+      "planeta_estrella",
+      "planeta_azul"
+     ]
     },
     {
      "t": "Y según la NASA, probablemente allí llueve cristal… de lado, con vientos de unos siete mil kilómetros por hora.",
-     "card": {
-      "tipo": "cifra",
-      "cifra": "7.000 km/h",
-      "texto": "vientos que arrastran lluvia de cristal",
-      "fuente": "Fuente: NASA"
-     }
+     "img": [
+      "planeta_azul",
+      "planeta_estrella"
+     ],
+     "kw": "7.000 km/h"
     }
    ]
   },
@@ -208,17 +240,18 @@
     },
     {
      "t": "No es una metáfora: en 2009, unos científicos japoneses fotografiaron a personas en total oscuridad con una cámara ultrasensible.",
-     "vid": "silhouette",
-     "kw": "oscuridad total"
+     "kw": "oscuridad total",
+     "img": [
+      "cuerpo_oscuro"
+     ]
     },
     {
      "t": "Y descubrieron que emitimos luz visible. Muy poca: unas mil veces menos de lo que el ojo puede ver.",
-     "card": {
-      "tipo": "cifra",
-      "cifra": "1.000 veces",
-      "texto": "más débil de lo que el ojo puede ver",
-      "fuente": "Fuente: PLoS ONE, 2009"
-     }
+     "img": [
+      "cuerpo_brilla",
+      "cuerpo_brilla2"
+     ],
+     "kw": "luz visible"
     }
    ]
   },
@@ -235,30 +268,33 @@
     },
     {
      "t": "En el río Bidasoa, entre Irún y Hendaya, hay una pequeña isla: la Isla de los Faisanes.",
-     "vid": "river",
-     "kw": "Isla de los Faisanes"
+     "kw": "Isla de los Faisanes",
+     "img": [
+      "isla_1",
+      "isla_2"
+     ]
     },
     {
      "t": "De febrero a julio es española. Y de agosto a enero… francesa.",
-     "card": {
-      "tipo": "dos",
-      "titulo": "Isla de los Faisanes",
-      "a": "España",
-      "a2": "febrero → julio",
-      "b": "Francia",
-      "b2": "agosto → enero",
-      "fuente": "Un condominio entre España y Francia"
-     }
+     "img": [
+      "isla_2",
+      "isla_1"
+     ],
+     "kw": "España ⇄ Francia"
     },
     {
      "t": "España y Francia se la turnan cada seis meses desde hace más de un siglo.",
-     "vid": "river2",
-     "kw": "cada 6 meses"
+     "kw": "cada 6 meses",
+     "img": [
+      "isla_1"
+     ]
     },
     {
      "t": "Y en esa isla diminuta se firmó, en 1659, la Paz de los Pirineos.",
-     "vid": "river",
-     "kw": "1659"
+     "kw": "1659",
+     "img": [
+      "isla_monumento"
+     ]
     }
    ]
   },
@@ -275,27 +311,34 @@
     },
     {
      "t": "En las aguas heladas del Ártico nada el tiburón de Groenlandia.",
-     "vid": "ice",
-     "kw": "Ártico"
+     "kw": "Ártico",
+     "img": [
+      "tiburon_g1",
+      "tiburon_g2"
+     ]
     },
     {
      "t": "En 2016, unos científicos calcularon su edad analizando el cristalino de sus ojos.",
-     "vid": "shark1",
-     "kw": "sus ojos"
+     "kw": "sus ojos",
+     "img": [
+      "tiburon_g3"
+     ]
     },
     {
      "t": "El más grande que estudiaron tenía, probablemente, unos cuatrocientos años.",
-     "card": {
-      "tipo": "cifra",
-      "cifra": "~400 años",
-      "texto": "la edad estimada del tiburón más grande estudiado",
-      "fuente": "Fuente: revista Science, 2016"
-     }
+     "img": [
+      "tiburon_g2",
+      "tiburon_g1"
+     ],
+     "kw": "~400 años"
     },
     {
      "t": "Es decir, puede que ya nadara cuando reinaba Felipe IV. Y no es adulto hasta los ciento cincuenta.",
-     "vid": "shark2",
-     "kw": "adulto a los 150"
+     "kw": "adulto a los 150",
+     "img": [
+      "tiburon_g3",
+      "tiburon_g1"
+     ]
     }
    ]
   },
@@ -312,12 +355,8 @@
     },
     {
      "t": "Algunas especies de bambú pueden crecer hasta noventa y un centímetros… en un solo día.",
-     "card": {
-      "tipo": "cifra",
-      "cifra": "91 cm",
-      "texto": "en un solo día",
-      "fuente": "Fuente: Guinness World Records"
-     }
+     "vid": "bamboo2",
+     "kw": "91 cm en un día"
     },
     {
      "t": "Casi cuatro centímetros por hora. Con paciencia, casi podrías verlo crecer.",
@@ -344,18 +383,26 @@
     },
     {
      "t": "En 1932, los granjeros del oeste de Australia tenían un problema: miles de emús se estaban comiendo su trigo.",
-     "vid": "wheat",
-     "kw": "miles de emús"
+     "kw": "miles de emús",
+     "img": [
+      "emu_bebiendo"
+     ]
     },
     {
      "t": "Y el gobierno envió soldados… con ametralladoras.",
-     "vid": "emu",
-     "kw": "ametralladoras"
+     "kw": "ametralladoras",
+     "img": [
+      "emu_ametralladora",
+      "emu_soldados"
+     ]
     },
     {
      "t": "Pero los emús se dispersaban, corrían muchísimo y eran muy difíciles de abatir.",
-     "vid": "emu",
-     "kw": "imparables"
+     "kw": "imparables",
+     "img": [
+      "emu_soldados",
+      "emu_granjero"
+     ]
     },
     {
      "t": "Tras semanas de operación, la prensa lo tuvo claro: la Guerra de los Emús… la ganaron los emús.",
@@ -382,12 +429,8 @@
     },
     {
      "t": "Y en 2016, un experimento con voluntarios encontró que el ojo humano es capaz de notar… un solo fotón.",
-     "card": {
-      "tipo": "cifra",
-      "cifra": "1 fotón",
-      "texto": "lo mínimo que tu ojo puede notar",
-      "fuente": "Fuente: Nature Communications, 2016"
-     }
+     "vid": "eye",
+     "kw": "1 fotón"
     },
     {
      "t": "La cantidad de luz más pequeña que existe. Y tus ojos, en la oscuridad, pueden sentirla.",
@@ -442,18 +485,18 @@
     },
     {
      "t": "En 1977, un radiotelescopio de Estados Unidos captó una señal del espacio tan fuerte que el astrónomo escribió al margen: «Wow!».",
-     "vid": "telescope",
      "kw": "Wow!",
-     "voz": "En 1977, un radiotelescopio de Estados Unidos captó una señal del espacio tan fuerte que el astrónomo escribió al margen: ¡guau!"
+     "voz": "En 1977, un radiotelescopio de Estados Unidos captó una señal del espacio tan fuerte que el astrónomo escribió al margen: ¡guau!",
+     "img": [
+      "wow_hoja"
+     ]
     },
     {
      "t": "Duró setenta y dos segundos… y nunca se ha vuelto a captar.",
-     "card": {
-      "tipo": "cifra",
-      "cifra": "72 segundos",
-      "texto": "y nunca se ha repetido",
-      "fuente": "Fuente: Scientific American"
-     }
+     "img": [
+      "wow_hoja"
+     ],
+     "kw": "72 segundos"
     },
     {
      "t": "En 2024, un equipo propuso una explicación natural: una nube de hidrógeno iluminada de golpe por una estrella.",
@@ -462,8 +505,10 @@
     },
     {
      "t": "Pero no está confirmado. El misterio sigue abierto.",
-     "vid": "telescope",
-     "kw": "sin resolver"
+     "kw": "sin resolver",
+     "img": [
+      "wow_hoja"
+     ]
     }
    ]
   },
@@ -495,12 +540,11 @@
     },
     {
      "t": "Según Musk, algunas versiones aceleran de cero a casi cien kilómetros por hora en menos de un segundo.",
-     "card": {
-      "tipo": "cifra",
-      "cifra": "< 1 s",
-      "texto": "de 0 a casi 100 km/h, según Musk",
-      "fuente": "Fuente: TechCrunch, NBC News"
-     }
+     "img": [
+      "tesla_perfil",
+      "tesla_noche"
+     ],
+     "kw": "0-100 en < 1 s"
     },
     {
      "t": "Pero ojo: no iba nadie dentro, fue un vuelo muy corto, y la versión con propulsores no está aprobada para circular.",
@@ -547,6 +591,28 @@
   "tesla_noche": "Imagen: Tesla",
   "tesla_perfil": "Imagen: Tesla",
   "tesla_puertas": "Imagen: Tesla",
-  "tesla_comparacion": "Imagen: Tesla"
+  "tesla_comparacion": "Imagen: Tesla",
+  "camaron_rojo": "Foto: q phia · CC BY 2.0",
+  "camaron_tigre": "Foto: Dan Schofield · CC BY 4.0",
+  "camaron_lado": "Foto: Michael Marmach · CC BY 4.0",
+  "camaron_pinza": "Foto: FWC Fish and Wildlife Research Institute · CC BY 2.0",
+  "cafetera_xcoffee": "Imagen original de 1991: Quentin Stafford-Fraser · CC BY-SA 3.0",
+  "planeta_azul": "Recreación artística: NASA, ESA, M. Kornmesser · CC BY 4.0",
+  "planeta_estrella": "Recreación artística: NASA",
+  "planeta_sistema": "Recreación artística: NASA",
+  "cuerpo_oscuro": "Imagen: Kobayashi et al., PLoS ONE 2009 · CC BY",
+  "cuerpo_brilla": "Imagen: Kobayashi et al., PLoS ONE 2009 · CC BY",
+  "cuerpo_brilla2": "Imagen: Kobayashi et al., PLoS ONE 2009 · CC BY",
+  "isla_1": "Foto: Zarateman · CC0",
+  "isla_2": "Foto: Iñaki LL · CC BY-SA 4.0",
+  "isla_monumento": "Foto: Tangopaso · dominio público",
+  "tiburon_g1": "Foto: NOAA",
+  "tiburon_g2": "Foto: NOAA",
+  "tiburon_g3": "Foto: Hemming1952 · CC BY-SA 4.0",
+  "emu_bebiendo": "Foto de 1932 · dominio público",
+  "emu_ametralladora": "Foto de 1932 · dominio público",
+  "emu_soldados": "Foto de 1932 · dominio público",
+  "emu_granjero": "Foto de 1932 · dominio público",
+  "wow_hoja": "Big Ear Radio Observatory / NAAPO"
  }
 }

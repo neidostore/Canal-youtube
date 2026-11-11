@@ -44,7 +44,11 @@
   "r_shocked_woman": 0.3,
   "r_man_phone": 2.5
  },
- "fotos": {},
+ "fotos": {
+  "planeta_azul": 0,
+  "planeta_sistema": 0,
+  "planeta_estrella": 0
+ },
  "difuminar": {},
  "titulo": "El planeta donde llueve cristal… de lado 🪐",
  "formato": "vertical",
@@ -59,25 +63,39 @@
    "frases": [
     {
      "t": "A unos sesenta y tres años luz de aquí hay un planeta azul, como la Tierra.",
-     "vid": "planet",
-     "kw": "63 años luz"
+     "kw": "63 años luz",
+     "img": [
+      "planeta_azul",
+      "planeta_sistema"
+     ]
     },
     {
      "t": "Pero no te lo recomiendo para las vacaciones: su atmósfera supera los mil grados.",
-     "vid": "planet",
-     "kw": "+1.000 °C"
+     "kw": "+1.000 °C",
+     "img": [
+      "planeta_estrella",
+      "planeta_azul"
+     ]
     },
     {
      "t": "Y según la NASA, probablemente allí llueve cristal… de lado, con vientos de unos siete mil kilómetros por hora.",
-     "vid": "planet",
-     "kw": "7.000 km/h"
+     "kw": "7.000 km/h",
+     "img": [
+      "planeta_azul",
+      "planeta_estrella"
+     ]
     },
     {
-     "t": "Tienes doce curiosidades más en la dosis completa de Shock Mental.",
+     "t": "Tienes once curiosidades más en la dosis completa de Shock Mental.",
      "vid": "planet",
      "kw": "dosis completa en el canal"
     }
    ]
   }
- ]
+ ],
+ "credito_fotos": {
+  "planeta_azul": "Recreación artística: NASA, ESA, M. Kornmesser · CC BY 4.0",
+  "planeta_sistema": "Recreación artística: NASA",
+  "planeta_estrella": "Recreación artística: NASA"
+ }
 }

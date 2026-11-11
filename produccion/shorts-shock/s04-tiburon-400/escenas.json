@@ -44,7 +44,11 @@
   "r_shocked_woman": 0.3,
   "r_man_phone": 2.5
  },
- "fotos": {},
+ "fotos": {
+  "tiburon_g1": 0,
+  "tiburon_g2": 0,
+  "tiburon_g3": 0
+ },
  "difuminar": {},
  "titulo": "Este tiburón puede tener 400 años 🦈",
  "formato": "vertical",
@@ -59,30 +63,46 @@
    "frases": [
     {
      "t": "En las aguas heladas del Ártico nada el tiburón de Groenlandia.",
-     "vid": "ice",
-     "kw": "Ártico"
+     "kw": "Ártico",
+     "img": [
+      "tiburon_g1",
+      "tiburon_g2"
+     ]
     },
     {
      "t": "En 2016, unos científicos calcularon su edad analizando el cristalino de sus ojos.",
-     "vid": "shark1",
-     "kw": "sus ojos"
+     "kw": "sus ojos",
+     "img": [
+      "tiburon_g3"
+     ]
     },
     {
      "t": "El más grande que estudiaron tenía, probablemente, unos cuatrocientos años.",
-     "vid": "shark2",
-     "kw": "~400 años"
+     "kw": "~400 años",
+     "img": [
+      "tiburon_g2",
+      "tiburon_g1"
+     ]
     },
     {
      "t": "Es decir, puede que ya nadara cuando reinaba Felipe IV. Y no es adulto hasta los ciento cincuenta.",
-     "vid": "shark2",
-     "kw": "adulto a los 150"
+     "kw": "adulto a los 150",
+     "img": [
+      "tiburon_g3",
+      "tiburon_g1"
+     ]
     },
     {
-     "t": "Tienes doce curiosidades más en la dosis completa de Shock Mental.",
+     "t": "Tienes once curiosidades más en la dosis completa de Shock Mental.",
      "vid": "shark2",
      "kw": "dosis completa en el canal"
     }
    ]
   }
- ]
+ ],
+ "credito_fotos": {
+  "tiburon_g1": "Foto: NOAA",
+  "tiburon_g2": "Foto: NOAA",
+  "tiburon_g3": "Foto: Hemming1952 · CC BY-SA 4.0"
+ }
 }

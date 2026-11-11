@@ -71,6 +71,14 @@ def preparar_foto(nombre, pid, fotos_dir, trabajo, difuminar):
     for (x, y, w, h) in difuminar.get(nombre, []):
         box = tuple(int(v) for v in (x * im.width, y * im.height, (x + w) * im.width, (y + h) * im.height))
         im.paste(im.crop(box).filter(ImageFilter.GaussianBlur(18)), box)
+    if H > W and im.width > im.height:
+        # vertical (Shorts) con foto horizontal: foto entera en el centro sobre una copia desenfocada
+        bg = im.resize((1620, 2880)).filter(ImageFilter.GaussianBlur(60))
+        bg = Image.eval(bg, lambda v: int(v * 0.55))
+        fg = im.resize((1620, round(im.height * 1620 / im.width)), Image.LANCZOS)
+        bg.paste(fg, (0, (2880 - fg.height) // 2 - 90))
+        bg.save(out, quality=92)
+        return out
     # recorte 16:9 tipo "cover" a 2880x1620 (margen para el zoom)
     tw, th = (2880, 1620) if W > H else (1620, 2880)
     s = max(tw / im.width, th / im.height)
@@ -212,12 +220,13 @@ def main(carpeta):
             elif "vid" in f:
                 e.update(tipo="video", vid=f["vid"], movimiento=random.randint(0, 3))
             else:
-                e.update(tipo="foto", foto=f["img"], movimiento=random.randint(0, 3))
+                lst = f["img"] if isinstance(f["img"], list) else [f["img"]]
+                e.update(tipo="foto", foto=lst[0], fotos=lst, movimiento=random.randint(0, 3))
             escenas.append(e)
         escenas[inicio_bloque]["bloque"] = b["nombre"]
 
     # 2) fotos y tarjetas
-    usadas = {e["foto"] for e in escenas if e["tipo"] == "foto"}
+    usadas = {n for e in escenas if e["tipo"] == "foto" for n in e["fotos"]}
     with cf.ThreadPoolExecutor(6) as ex:
         rutas = dict(zip(usadas, ex.map(lambda n: preparar_foto(n, spec["fotos"][n], fotos_dir, trabajo,
                                                                 spec.get("difuminar", {})), usadas)))
@@ -278,13 +287,16 @@ def main(carpeta):
             k = max(2, round(e["dur"] / plano)); d = e["dur"] / k
             for j in range(k):
                 p = dict(e, ini=e["ini"] + j * d, dur=d, toma=j)
+                if e["tipo"] == "foto" and len(e["fotos"]) > 1:   # varias fotos reales: una por toma
+                    p["foto"] = e["fotos"][j % len(e["fotos"])]; p["img"] = str(rutas[p["foto"]])
+                    p["movimiento"] = random.randint(0, 3)
                 if e["tipo"] == "video":
                     lim = max(0.5, dur_clip[e["vid"]] - d - 0.2)
                     if e["vid"] in inicios:
                         p["offset"] = round(min(inicios[e["vid"]] + j * d, lim), 2); p.pop("punch", None)
                     else:
                         p["offset"] = round((j * 2.7 + random.uniform(0, 3)) % lim, 2)
-                if j > 0:
+                if j > 0 and not (e["tipo"] == "foto" and len(e["fotos"]) > 1 and j < len(e["fotos"])):
                     p["punch"] = (round(random.uniform(1.25, 1.45), 2), round(random.uniform(0.15, 0.85), 2),
                                   round(random.uniform(0.2, 0.8), 2))
                     p["corte"] = random.choices(["zoom", "desliza", "destello"], weights=[5, 3, 1])[0]
@@ -330,7 +342,7 @@ def main(carpeta):
            "Style: Cred,Inter Display,30,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,0,0,0,0,100,100,0,0,1,2,1,9,40,40,36,1\n"
            f"Style: KWB,Inter Display Black,{kw2},{kwb_txt},{kwb_txt},{kwb_box},{kwb_box},0,0,0,0,100,100,-1,0,3,22,0,5,"
            "100,100,0,1\n\n[Events]\nFormat: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text\n")
-    cred_ev = [(e["ini"], e["ini"] + e["dur"], spec["credito_fotos"][e["foto"]]) for e in escenas
+    cred_ev = [(e["ini"], e["ini"] + e["dur"], spec["credito_fotos"][e["foto"]]) for e in planos
                if e["tipo"] == "foto" and e["foto"] in spec.get("credito_fotos", {})]
     kw_ev = []
     for e in escenas:
