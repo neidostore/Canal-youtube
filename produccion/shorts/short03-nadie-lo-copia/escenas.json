@@ -1,0 +1,147 @@
+{
+ "titulo": "Por qué NADIE puede copiar a McDonald's",
+ "formato": "vertical",
+ "voz": {
+  "idioma": "es-US",
+  "nombre": "es-US-Chirp3-HD-Achird",
+  "velocidad": 1.15
+ },
+ "estilo": {
+  "dinamico": true,
+  "plano": 1.5
+ },
+ "fotos": {
+  "burger1": 12034622,
+  "burger2": 18713424,
+  "burgerfries": 19247568,
+  "corner": 19927934,
+  "fries_hands": 8879364,
+  "fries": 8831740,
+  "diner": 8942180,
+  "handshake": 8112180,
+  "handshake2": 9870144,
+  "crowd_inter": 186537,
+  "inter_aerial": 9500156,
+  "parking_inter": 5231178,
+  "aerial_mall": 32401786,
+  "money1": 4038853,
+  "money2": 6266666,
+  "money3": 4386469,
+  "board": 210607,
+  "laptop_chart": 6770609,
+  "fryer": 8879639,
+  "highway": 681335,
+  "interchange": 15450239,
+  "printer": 17536002,
+  "gas": 14969818,
+  "shake": 5093841,
+  "eating": 31650381,
+  "eating2": 11519283,
+  "chart2": 4960438
+ },
+ "difuminar": {
+  "corner": [
+   [
+    0.09,
+    0.555,
+    0.13,
+    0.05
+   ],
+   [
+    0.25,
+    0.55,
+    0.06,
+    0.05
+   ],
+   [
+    0.75,
+    0.55,
+    0.1,
+    0.05
+   ]
+  ]
+ },
+ "videos": {
+  "v_burger_meal": 5986794,
+  "v_grill": 8477267,
+  "v_fries_fry": 8880960,
+  "v_fries_oil": 2922562,
+  "v_night_inter": 3063475,
+  "v_night_traffic": 3048225,
+  "v_day_inter": 3121459,
+  "v_signing": 8440326,
+  "v_handshake": 8725948,
+  "v_market": 7579577,
+  "v_counting": 6700653,
+  "v_money_machine": 6266288,
+  "v_businessman_money": 5743045,
+  "v_teens_burgers": 7236486,
+  "r_shocked_woman": 8626657,
+  "r_man_tv": 9883681,
+  "r_man_phone": 7534960,
+  "v_printer_head": 5393028,
+  "v_industrial_print": 855469,
+  "v_ink_smoke": 7075988,
+  "v_ink_water": 7565969,
+  "v_ink_orange": 1722882,
+  "v_ink_glass": 5282334,
+  "v_shaving": 7314495,
+  "v_shop_online": 6771533,
+  "v_shop_phone": 7568745,
+  "v_pay_bills": 7821646,
+  "v_pay_phone": 6898014
+ },
+ "videos_inicio": {
+  "r_man_tv": 3.5,
+  "r_shocked_woman": 0.3,
+  "r_man_phone": 2.5
+ },
+ "musica": {
+  "archivo": "musica/wallpaper.mp3",
+  "volumen": 0.1,
+  "credito": "\"Wallpaper\" de Kevin MacLeod (incompetech.com)"
+ },
+ "bloques": [
+  {
+   "nombre": "Short",
+   "final": 1.0,
+   "frases": [
+    {
+     "t": "¿Por qué ninguna cadena puede copiar a McDonald's?",
+     "vid": "r_man_phone",
+     "kw": "¿por qué?"
+    },
+    {
+     "t": "Porque su negocio no son las hamburguesas: son las mejores esquinas de cada ciudad.",
+     "img": "corner",
+     "kw": "las mejores esquinas"
+    },
+    {
+     "t": "Las consiguió en los años cincuenta, cuando aún estaban libres y eran baratas.",
+     "img": "diner",
+     "kw": "baratas"
+    },
+    {
+     "t": "Con los años, ese suelo vale cada vez más.",
+     "vid": "v_night_traffic",
+     "kw": "vale más"
+    },
+    {
+     "t": "Y si un restaurante vende poco, el franquiciado sigue pagando el alquiler.",
+     "vid": "v_counting",
+     "kw": "sigue pagando"
+    },
+    {
+     "t": "Hoy, una cadena nueva tendría que pagar esas esquinas a precio de oro.",
+     "vid": "v_businessman_money",
+     "kw": "precio de oro"
+    },
+    {
+     "t": "No basta con una buena hamburguesa: ¡necesitas setenta años de ventaja!",
+     "vid": "v_burger_meal",
+     "kw": "70 años de ventaja"
+    }
+   ]
+  }
+ ]
+}

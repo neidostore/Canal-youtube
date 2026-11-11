@@ -64,7 +64,7 @@ def preparar_foto(nombre, pid, fotos_dir, trabajo, difuminar):
         url = f"https://images.pexels.com/photos/{pid}/pexels-photo-{pid}.jpeg?auto=compress&cs=tinysrgb&w=2400"
         req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
         src.write_bytes(urllib.request.urlopen(req, timeout=120).read())
-    out = trabajo / f"foto_{nombre}.jpg"
+    out = trabajo / f"foto_{nombre}_{W}x{H}.jpg"
     if out.exists():
         return out
     im = Image.open(src).convert("RGB")
@@ -72,7 +72,7 @@ def preparar_foto(nombre, pid, fotos_dir, trabajo, difuminar):
         box = tuple(int(v) for v in (x * im.width, y * im.height, (x + w) * im.width, (y + h) * im.height))
         im.paste(im.crop(box).filter(ImageFilter.GaussianBlur(18)), box)
     # recorte 16:9 tipo "cover" a 2880x1620 (margen para el zoom)
-    tw, th = 2880, 1620
+    tw, th = (2880, 1620) if W > H else (1620, 2880)
     s = max(tw / im.width, th / im.height)
     im = im.resize((round(im.width * s), round(im.height * s)), Image.LANCZOS)
     l, t = (im.width - tw) // 2, (im.height - th) // 2
@@ -96,6 +96,19 @@ def clip(escena, destino):
     if escena["tipo"] == "intro":
         sh("ffmpeg", "-y", "-i", escena["img"], "-an", "-vf", f"fps={FPS},scale={W}:{H},format=yuv420p",
            "-frames:v", str(n), "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", str(destino))
+        return
+    if escena["tipo"] == "video" and H > W:
+        # vertical (Shorts): clip grande en el centro sobre una copia desenfocada que llena la pantalla
+        off = escena.get("offset", 0.0)
+        z = escena["punch"][0] if escena.get("punch") else 1.0
+        fw = int(W * 1.4 * z) // 2 * 2
+        flash = ",fade=t=in:st=0:d=0.12:color=white" if escena.get("corte") == "destello" else ""
+        fc = (f"[0:v]split[a][b];[a]scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},"
+              f"boxblur=24:2,eq=brightness=-0.18[bg];[b]scale={fw}:-2,crop={W}:ih[fg];"
+              f"[bg][fg]overlay=(W-w)/2:(H-h)/2-60{flash},fps={FPS},format=yuv420p[v]")
+        sh("ffmpeg", "-y", "-stream_loop", "-1", "-ss", f"{off:.2f}", "-i", escena["img"], "-an",
+           "-filter_complex", fc, "-map", "[v]", "-frames:v", str(n), "-c:v", "libx264", "-preset", "veryfast",
+           "-crf", "18", str(destino))
         return
     if escena["tipo"] == "video":
         off = escena.get("offset", 0.0)
@@ -164,6 +177,10 @@ def trozos(texto, max_chars=34):
 def main(carpeta):
     carpeta = Path(carpeta).resolve()
     spec = json.loads((carpeta / "escenas.json").read_text())
+    global W, H
+    if spec.get("formato") == "vertical":   # Shorts: 1080x1920
+        W, H = 1080, 1920
+    vertical = H > W
     fotos_dir = carpeta / "fotos"; fotos_dir.mkdir(exist_ok=True)
     trabajo = carpeta / "trabajo"; trabajo.mkdir(exist_ok=True)
     (trabajo / "tts").mkdir(exist_ok=True); (trabajo / "clips").mkdir(exist_ok=True)
@@ -287,7 +304,7 @@ def main(carpeta):
     for e in escenas:
         if not e["texto"]:
             continue
-        partes = trozos(e["texto"]); total = sum(len(p) for p in partes); t0 = e["ini"]
+        partes = trozos(e["texto"], 22 if vertical else 34); total = sum(len(p) for p in partes); t0 = e["ini"]
         for p in partes:
             d = e["voz_dur"] * len(p) / total
             srt.append((t0, t0 + d, p))
@@ -296,15 +313,16 @@ def main(carpeta):
             t0 += d
     (salida / "subtitulos.srt").write_text(
         "\n".join(f"{i}\n{ts(a)} --> {ts(b)}\n{txt}\n" for i, (a, b, txt) in enumerate(srt, 1)), encoding="utf-8")
-    cab = ("[Script Info]\nScriptType: v4.00+\nPlayResX: 1920\nPlayResY: 1080\n\n[V4+ Styles]\n"
+    sub_m, kw1, kw2 = ("70,70,560", 118, 96) if vertical else ("120,120,90", 150, 120)
+    cab = (f"[Script Info]\nScriptType: v4.00+\nPlayResX: {W}\nPlayResY: {H}\n\n[V4+ Styles]\n"
            "Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, "
            "Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, "
            "MarginR, MarginV, Encoding\n"
            "Style: Sub,Inter Display Black,74,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,0,0,0,0,100,100,0,0,1,6,3,2,"
-           "120,120,90,1\n"
-           "Style: KW,Inter Display Black,150,&H0000C4FF,&H0000C4FF,&H00000000,&H96000000,0,0,0,0,100,100,-2,0,1,9,5,5,"
+           f"{sub_m},1\n"
+           f"Style: KW,Inter Display Black,{kw1},&H0000C4FF,&H0000C4FF,&H00000000,&H96000000,0,0,0,0,100,100,-2,0,1,9,5,5,"
            "100,100,0,1\n"
-           "Style: KWB,Inter Display Black,120,&H00130F0E,&H00130F0E,&H0000C4FF,&H0000C4FF,0,0,0,0,100,100,-1,0,3,22,0,5,"
+           f"Style: KWB,Inter Display Black,{kw2},&H00130F0E,&H00130F0E,&H0000C4FF,&H0000C4FF,0,0,0,0,100,100,-1,0,3,22,0,5,"
            "100,100,0,1\n\n[Events]\nFormat: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text\n")
     kw_ev = []
     for e in escenas:
@@ -315,9 +333,9 @@ def main(carpeta):
             t1 = min(t0 + 1.5, e["ini"] + e["dur"] - 0.05)
             kw_ev.append((t0, t1, e["kw"].upper()))
     def anim(i):  # alterna estilo (texto amarillo / caja amarilla) y altura
-        y = (470, 330, 430)[i % 3]
+        y = ((760, 600, 700) if vertical else (470, 330, 430))[i % 3]
         rot = ("", r"\frz-3", r"\frz2")[i % 3]
-        return (f"{{\\pos(960,{y}){rot}\\fscx40\\fscy40\\t(0,110,\\fscx118\\fscy118)"
+        return (f"{{\\pos({W // 2},{y}){rot}\\fscx40\\fscy40\\t(0,110,\\fscx118\\fscy118)"
                 f"\\t(110,200,\\fscx100\\fscy100)\\fad(0,120)}}")
     (trabajo / "subs.ass").write_text(cab + "".join(
         f"Dialogue: 0,{ts(a, '.')},{ts(b, '.')},Sub,,0,0,0,,{txt}\n" for a, b, txt in ass_ev) + "".join(
