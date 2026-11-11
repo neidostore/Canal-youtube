@@ -116,7 +116,7 @@ def clip(escena, destino):
     d = escena["dur"]
     n = max(1, round(d * FPS))
     if escena["tipo"] == "intro":
-        sh("ffmpeg", "-y", "-i", escena["img"], "-an", "-vf", f"fps={FPS},scale={W}:{H},format=yuv420p",
+        sh("ffmpeg", "-y", "-i", escena["img"], "-an", "-vf", f"fps={FPS},scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},format=yuv420p",
            "-frames:v", str(n), "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", str(destino))
         return
     if escena["tipo"] == "video" and H > W:

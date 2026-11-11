@@ -166,7 +166,10 @@
       "rayo1",
       "rayo2"
      ],
-     "kw": "30.000 °C"
+     "rotulo": {
+      "texto": "30.000 °C",
+      "arriba": "Temperatura de un rayo"
+     }
     },
     {
      "t": "Eso es cinco veces más que la superficie del Sol.",
@@ -190,7 +193,10 @@
       "rayo3",
       "rayo2"
      ],
-     "kw": "44 por segundo"
+     "rotulo": {
+      "texto": "44 rayos por segundo",
+      "arriba": "En todo el planeta"
+     }
     }
    ]
   },
@@ -212,7 +218,10 @@
       "cafe2",
       "pc2"
      ],
-     "kw": "cafetera vacía"
+     "rotulo": {
+      "texto": "Universidad de Cambridge",
+      "arriba": "Año 1991"
+     }
     },
     {
      "t": "Así que apuntaron una cámara a la cafetera y conectaron la imagen a sus ordenadores.",
@@ -256,7 +265,10 @@
      "img": [
       "planeta_azul"
      ],
-     "kw": "63 años luz"
+     "rotulo": {
+      "texto": "HD 189733b",
+      "arriba": "A 63 años luz"
+     }
     },
     {
      "t": "Pero no te lo recomiendo para las vacaciones: su atmósfera supera los mil grados.",
@@ -272,7 +284,10 @@
       "planet",
       "pl_estrella"
      ],
-     "kw": "7.000 km/h"
+     "rotulo": {
+      "texto": "7.000 km/h",
+      "arriba": "Vientos de"
+     }
     }
    ]
   },
@@ -301,7 +316,10 @@
       "col4",
       "col1"
      ],
-     "kw": "80 por segundo"
+     "rotulo": {
+      "texto": "80 aleteos por segundo",
+      "arriba": "Colibrí"
+     }
     },
     {
      "t": "Y su corazón puede superar los mil doscientos latidos por minuto.",
@@ -309,7 +327,10 @@
       "col5",
       "col2"
      ],
-     "kw": "1.200 latidos"
+     "rotulo": {
+      "texto": "1.200 latidos por minuto",
+      "arriba": "Su corazón"
+     }
     }
    ]
   },
@@ -346,7 +367,10 @@
       "eif3",
       "eif2"
      ],
-     "kw": "+15 cm"
+     "rotulo": {
+      "texto": "+15 cm",
+      "arriba": "En verano crece hasta"
+     }
     }
    ]
   },
@@ -366,7 +390,10 @@
      "vid": [
       "pul1"
      ],
-     "kw": "3 corazones"
+     "rotulo": {
+      "texto": "3 corazones",
+      "arriba": "El pulpo"
+     }
     },
     {
      "t": "Dos bombean la sangre hacia las branquias, y el tercero, al resto del cuerpo.",
@@ -410,7 +437,10 @@
       "bam1",
       "bam3"
      ],
-     "kw": "91 cm en un día"
+     "rotulo": {
+      "texto": "91 cm en un día",
+      "arriba": "Récord Guinness"
+     }
     },
     {
      "t": "Casi cuatro centímetros por hora. Con paciencia, casi podrías verlo crecer.",
@@ -449,14 +479,34 @@
       "trigo2",
       "emu2"
      ],
-     "kw": "miles de emús"
+     "rotulo": {
+      "texto": "La Guerra de los Emús",
+      "arriba": "Australia, 1932"
+     }
     },
     {
      "t": "Y el gobierno envió soldados… con ametralladoras.",
      "img": [
       "emu_ametralladora"
      ],
-     "kw": "ametralladoras"
+     "recuadro": {
+      "zona": [
+       0.2,
+       0.28,
+       0.62,
+       0.36
+      ],
+      "pos": [
+       0.84,
+       0.42
+      ],
+      "ancho": 400,
+      "apunta": [
+       0.5,
+       0.44
+      ],
+      "titulo": "Ametralladora Lewis"
+     }
     },
     {
      "t": "Pero los emús se dispersaban, corrían muchísimo y eran muy difíciles de abatir.",
@@ -502,7 +552,10 @@
       "ojo2",
       "ojo1"
      ],
-     "kw": "1 fotón"
+     "rotulo": {
+      "texto": "1 solo fotón",
+      "arriba": "El ojo humano detecta"
+     }
     },
     {
      "t": "La cantidad de luz más pequeña que existe. Y tus ojos, en la oscuridad, pueden sentirla.",
@@ -539,7 +592,10 @@
       "c_suelo",
       "mascara"
      ],
-     "kw": "una máscara"
+     "rotulo": {
+      "texto": "Universidad de Washington",
+      "arriba": "Experimento real"
+     }
     },
     {
      "t": "Años después, cuando alguien se ponía esa misma máscara, los cuervos le chillaban…",
@@ -616,7 +672,10 @@
       "est1",
       "tel2"
      ],
-     "kw": "72 segundos"
+     "rotulo": {
+      "texto": "72 segundos",
+      "arriba": "Duró solo"
+     }
     },
     {
      "t": "En 2024, un equipo propuso una explicación natural: una nube de hidrógeno iluminada de golpe por una estrella.",
@@ -676,7 +735,10 @@
       "tesla_perfil",
       "tesla_noche"
      ],
-     "kw": "0-100 en < 1 s"
+     "rotulo": {
+      "texto": "0 a 100 en menos de 1 s",
+      "arriba": "Según Elon Musk"
+     }
     },
     {
      "t": "Pero ojo: no iba nadie dentro, fue un vuelo muy corto, y la versión con propulsores no está aprobada para circular.",
@@ -719,5 +781,10 @@
     }
    ]
   }
- ]
+ ],
+ "marco": {
+  "titulo": "SHOCK&nbsp;<i>MENTAL</i>",
+  "lema": "Tu dosis de asombro 🧠⚡",
+  "logo": "marca/shockmental/perfil-sin-eslogan.png"
+ }
 }
