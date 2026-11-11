@@ -20,7 +20,14 @@
   "volumen": 0.09,
   "credito": "\"Wallpaper\" de Kevin MacLeod (incompetech.com)"
  },
- "fotos": {},
+ "fotos": {
+  "tesla_propulsores": 0,
+  "tesla_frontal": 0,
+  "tesla_desierto": 0,
+  "tesla_noche": 0,
+  "tesla_perfil": 0,
+  "tesla_puertas": 0
+ },
  "difuminar": {},
  "videos": {
   "car_red": 10710642,
@@ -62,8 +69,8 @@
    "frases": [
     {
      "t": "Elon Musk acaba de enseñar un coche que despega del suelo.",
-     "vid": "car_red",
-     "kw": "¿un coche que vuela?"
+     "kw": "¿un coche que vuela?",
+     "img": "tesla_propulsores"
     },
     {
      "t": "Pero antes de contarte si vuela de verdad, prepárate: hoy vienen once cosas que parecen imposibles… y son reales.",
@@ -472,13 +479,13 @@
     },
     {
      "t": "Y ahora sí, lo que te prometí. En octubre de 2026, Elon Musk presentó el nuevo Tesla Roadster en unas instalaciones de SpaceX, en Texas.",
-     "vid": "car_red2",
-     "kw": "octubre 2026"
+     "kw": "octubre 2026",
+     "img": "tesla_frontal"
     },
     {
      "t": "Y el coche… despegó. Con propulsores derivados de los cohetes de SpaceX, se elevó, giró y saltó por encima de otros coches.",
-     "vid": "rocket",
-     "kw": "¡despegó!"
+     "kw": "¡despegó!",
+     "img": "tesla_propulsores"
     },
     {
      "t": "Según Musk, algunas versiones aceleran de cero a casi cien kilómetros por hora en menos de un segundo.",
@@ -491,8 +498,8 @@
     },
     {
      "t": "Pero ojo: no iba nadie dentro, fue un vuelo muy corto, y la versión con propulsores no está aprobada para circular.",
-     "vid": "rocket",
-     "kw": "ojo"
+     "kw": "ojo",
+     "img": "tesla_desierto"
     },
     {
      "t": "Así que… ¿coche volador? De momento, más bien un coche que salta. Pero vaya salto.",
@@ -526,5 +533,13 @@
     }
    ]
   }
- ]
+ ],
+ "credito_fotos": {
+  "tesla_propulsores": "Imagen: Tesla",
+  "tesla_frontal": "Imagen: Tesla",
+  "tesla_desierto": "Imagen: Tesla",
+  "tesla_noche": "Imagen: Tesla",
+  "tesla_perfil": "Imagen: Tesla",
+  "tesla_puertas": "Imagen: Tesla"
+ }
 }

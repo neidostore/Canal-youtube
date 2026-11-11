@@ -10,11 +10,12 @@ html,body{margin:0;background:#000}
      filter:drop-shadow(0 8px 0 #000) drop-shadow(0 0 30px rgba(30,140,255,.8))}
 .y{background:linear-gradient(180deg,#FFE45C,#FFB000);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 8px 0 #000) drop-shadow(0 0 30px rgba(255,140,0,.7))}
 .chip{display:inline-block;margin-top:26px;font-size:46px;font-weight:900;color:#fff;padding:10px 26px;border-radius:12px;background:linear-gradient(90deg,#1E8CFF,#FF7A14);box-shadow:0 6px 0 #000}
+.cred{position:absolute;right:20px;top:14px;font-size:20px;color:#fff;opacity:.8;text-shadow:0 1px 3px #000}
 .marca{position:absolute;right:26px;bottom:22px;width:150px;opacity:.95}
 </style></head><body><div class="t" id="t"></div>
 <script>
 const q=JSON.parse(decodeURIComponent(location.hash.slice(1))), g=k=>q[k]||'';
-let h=`<div class="bg" style="background-image:url('${g('fondo')}');background-position:${g('pos')||'center'}"></div><div class="vig"></div>`;
+let h=`<div class="bg" style="background-image:url('${g('fondo')}');background-position:${g('pos')||'center'};transform:translateX(${g('desplazar')||0}px) scale(${g('zoom')||1});background-color:#04050a;background-repeat:no-repeat"></div><div class="vig"></div>`;
 h+=`<svg class="rayos" viewBox="0 0 1280 720"><g fill="none" stroke-linecap="round" stroke-linejoin="round">
 <polyline points="700,0 660,120 720,170 640,320 700,360 620,520" stroke="rgba(120,190,255,.9)" stroke-width="7"/>
 <polyline points="700,0 660,120 720,170 640,320 700,360 620,520" stroke="#fff" stroke-width="2.5"/>
@@ -22,5 +23,6 @@ h+=`<svg class="rayos" viewBox="0 0 1280 720"><g fill="none" stroke-linecap="rou
 <polyline points="1280,90 1150,140 1190,200 1060,260" stroke="#fff" stroke-width="2"/></g></svg>`;
 h+=`<div class="txt" style="--fs:${g('fs')||'170px'}"><div class="big">${g('l1')}</div><div class="big y">${g('l2')}</div>${g('chip')?`<div class="chip">${g('chip')}</div>`:''}</div>`;
 h+=`<img class="marca" src="../marca/shockmental/perfil-chatgpt.png" style="border-radius:50%">`;
+if(g('credito')) h+=`<div class="cred">${g('credito')}</div>`;
 document.getElementById('t').innerHTML=h;
 </script></body></html>

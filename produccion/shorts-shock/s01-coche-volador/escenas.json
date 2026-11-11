@@ -44,7 +44,14 @@
   "r_shocked_woman": 0.3,
   "r_man_phone": 2.5
  },
- "fotos": {},
+ "fotos": {
+  "tesla_propulsores": 0,
+  "tesla_frontal": 0,
+  "tesla_desierto": 0,
+  "tesla_noche": 0,
+  "tesla_perfil": 0,
+  "tesla_puertas": 0
+ },
  "difuminar": {},
  "titulo": "¿El coche de Elon Musk vuela de verdad? 🚗⚡",
  "formato": "vertical",
@@ -59,23 +66,23 @@
    "frases": [
     {
      "t": "En octubre de 2026, Elon Musk presentó el nuevo Tesla Roadster en unas instalaciones de SpaceX, en Texas.",
-     "vid": "car_red2",
-     "kw": "octubre 2026"
+     "kw": "octubre 2026",
+     "img": "tesla_frontal"
     },
     {
      "t": "Y el coche… despegó. Con propulsores derivados de los cohetes de SpaceX, se elevó, giró y saltó por encima de otros coches.",
-     "vid": "rocket",
-     "kw": "¡despegó!"
+     "kw": "¡despegó!",
+     "img": "tesla_propulsores"
     },
     {
      "t": "Según Musk, algunas versiones aceleran de cero a casi cien kilómetros por hora en menos de un segundo.",
-     "vid": "rocket",
-     "kw": "< 1 s"
+     "kw": "< 1 s",
+     "img": "tesla_perfil"
     },
     {
      "t": "Pero ojo: no iba nadie dentro, fue un vuelo muy corto, y la versión con propulsores no está aprobada para circular.",
-     "vid": "rocket",
-     "kw": "ojo"
+     "kw": "ojo",
+     "img": "tesla_desierto"
     },
     {
      "t": "Así que… ¿coche volador? De momento, más bien un coche que salta. Pero vaya salto.",
@@ -89,5 +96,13 @@
     }
    ]
   }
- ]
+ ],
+ "credito_fotos": {
+  "tesla_propulsores": "Imagen: Tesla",
+  "tesla_frontal": "Imagen: Tesla",
+  "tesla_desierto": "Imagen: Tesla",
+  "tesla_noche": "Imagen: Tesla",
+  "tesla_perfil": "Imagen: Tesla",
+  "tesla_puertas": "Imagen: Tesla"
+ }
 }

@@ -327,8 +327,11 @@ def main(carpeta):
            f"{sub_m},1\n"
            f"Style: KW,Inter Display Black,{kw1},&H0000C4FF,&H0000C4FF,&H00000000,&H96000000,0,0,0,0,100,100,-2,0,1,9,5,5,"
            "100,100,0,1\n"
+           "Style: Cred,Inter Display,30,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,0,0,0,0,100,100,0,0,1,2,1,9,40,40,36,1\n"
            f"Style: KWB,Inter Display Black,{kw2},{kwb_txt},{kwb_txt},{kwb_box},{kwb_box},0,0,0,0,100,100,-1,0,3,22,0,5,"
            "100,100,0,1\n\n[Events]\nFormat: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text\n")
+    cred_ev = [(e["ini"], e["ini"] + e["dur"], spec["credito_fotos"][e["foto"]]) for e in escenas
+               if e["tipo"] == "foto" and e["foto"] in spec.get("credito_fotos", {})]
     kw_ev = []
     for e in escenas:
         if e.get("kw") and e["texto"]:
@@ -345,7 +348,8 @@ def main(carpeta):
     (trabajo / "subs.ass").write_text(cab + "".join(
         f"Dialogue: 0,{ts(a, '.')},{ts(b, '.')},Sub,,0,0,0,,{txt}\n" for a, b, txt in ass_ev) + "".join(
         f"Dialogue: 1,{ts(a, '.')},{ts(b, '.')},{'KWB' if i % 2 else 'KW'},,0,0,0,,{anim(i)}{txt}\n"
-        for i, (a, b, txt) in enumerate(kw_ev)), encoding="utf-8")
+        for i, (a, b, txt) in enumerate(kw_ev)) + "".join(
+        f"Dialogue: 2,{ts(a, '.')},{ts(b, '.')},Cred,,0,0,0,,{txt}\n" for a, b, txt in cred_ev), encoding="utf-8")
 
     # 6b) efectos de sonido: "whoosh" en cada corte y "pop" en palabras clave y tarjetas
     pistas_extra = []
