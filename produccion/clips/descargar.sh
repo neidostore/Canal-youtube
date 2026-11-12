@@ -3,7 +3,7 @@
 for id in "$@"; do
   [ -f "$id.mp4" ] && { echo "ya $id"; continue; }
   ok=""
-  for res in hd_1920_1080 hd_2048_1080 uhd_2560_1440 hd_1280_720; do
+  for res in hd_1920_1080 hd_2048_1080 uhd_2560_1440 hd_1280_720 uhd_3840_2160 uhd_4096_2160 uhd_2732_1440 hd_1366_720 hd_2560_1080; do
     for fps in 25 24 30 50 60; do
       u="https://videos.pexels.com/video-files/$id/$id-${res}_${fps}fps.mp4"
       if [ "$(curl -sS -o /dev/null -I -w '%{http_code}' -A 'Mozilla/5.0' "$u")" = 200 ]; then

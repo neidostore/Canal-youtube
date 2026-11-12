@@ -1,8 +1,0 @@
-file '/home/user/Canal-youtube/produccion/shorts-shock/s06-torre-eiffel/trabajo/tts/fe80ea32cab8.wav'
-file '/home/user/Canal-youtube/produccion/shorts-shock/s06-torre-eiffel/trabajo/tts/sil_150.wav'
-file '/home/user/Canal-youtube/produccion/shorts-shock/s06-torre-eiffel/trabajo/tts/e92a9e132c4a.wav'
-file '/home/user/Canal-youtube/produccion/shorts-shock/s06-torre-eiffel/trabajo/tts/sil_150.wav'
-file '/home/user/Canal-youtube/produccion/shorts-shock/s06-torre-eiffel/trabajo/tts/458228ed3045.wav'
-file '/home/user/Canal-youtube/produccion/shorts-shock/s06-torre-eiffel/trabajo/tts/sil_150.wav'
-file '/home/user/Canal-youtube/produccion/shorts-shock/s06-torre-eiffel/trabajo/tts/dcccfa218f35.wav'
-file '/home/user/Canal-youtube/produccion/shorts-shock/s06-torre-eiffel/trabajo/tts/sil_850.wav'

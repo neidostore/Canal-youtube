@@ -1,0 +1,715 @@
+{
+ "tema": "shock",
+ "tarjetas": "tarjetas-shock.html",
+ "intro": {
+  "video": "marca/shockmental/intro/intro.mp4",
+  "audio": "marca/shockmental/intro/intro_audio.wav"
+ },
+ "musica": {
+  "archivo": "musica/wallpaper.mp3",
+  "volumen": 0.09,
+  "credito": "\"Wallpaper\" de Kevin MacLeod (incompetech.com)"
+ },
+ "estilo": {
+  "dinamico": true,
+  "plano": 1.6
+ },
+ "marco": {
+  "titulo": "SHOCK&nbsp;<i>MENTAL</i>",
+  "lema": "Tu dosis de asombro 🧠⚡",
+  "logo": "marca/shockmental/perfil-sin-eslogan.png"
+ },
+ "voz": {
+  "idioma": "es-US",
+  "nombre": "es-US-Chirp3-HD-Achird",
+  "velocidad": 1.15
+ },
+ "titulo": "¿Apagón mundial el 17 de noviembre? La verdad… y 11 cosas que parecen mentira",
+ "videos": {
+  "r_shocked_woman": 8626657,
+  "r_man_tv": 9883681,
+  "r_man_phone": 7534960,
+  "ciudad1": 8064144,
+  "ciudad2": 4696050,
+  "ciudad3": 3275323,
+  "ciudad4": 2675508,
+  "velas": 3561988,
+  "bombilla": 853772,
+  "torre1": 4609537,
+  "torre2": 6136604,
+  "robot1": 5854603,
+  "robot2": 8084503,
+  "movil1": 854321,
+  "movil2": 6756650,
+  "tierra": 854518,
+  "tierra2": 2695085,
+  "miel1": 2832316,
+  "miel2": 5644957,
+  "miel3": 2959312,
+  "panal": 7174859,
+  "piram1": 4174113,
+  "piram2": 4174112,
+  "fla1": 2968022,
+  "fla2": 5903751,
+  "fla3": 4361883,
+  "fla4": 11025492,
+  "fla5": 11025393,
+  "luna1": 4154903,
+  "luna2": 3579494,
+  "astro": 854255,
+  "plat1": 2235949,
+  "plat2": 1792747,
+  "abeja1": 2048452,
+  "abeja2": 4927494,
+  "colmena1": 857037,
+  "colmena2": 4718267,
+  "ven1": 1112676,
+  "ven2": 5979469,
+  "ven3": 6420236,
+  "ven4": 4175918,
+  "ven5": 9557197,
+  "pin1": 9116112,
+  "pin2": 9116155,
+  "pin3": "px_pinguino_antartida",
+  "pin4": 1674470,
+  "jir1": 5220298,
+  "jir2": 2178545,
+  "jir3": 5214219,
+  "jir4": 5220297,
+  "med1": 2731905,
+  "med2": 2558530,
+  "med3": 5136529,
+  "hor1": 4760881,
+  "hor2": 4187770,
+  "hor3": 4061910,
+  "hor4": 4339888,
+  "duna1": 3057648,
+  "polvo1": 7639728,
+  "polvo2": 4996615,
+  "selva1": 5738616,
+  "selva2": 3239818,
+  "selva3": 7700059,
+  "selva4": 5104122
+ },
+ "videos_inicio": {
+  "r_man_tv": 3.5,
+  "r_shocked_woman": 0.3,
+  "r_man_phone": 2.5
+ },
+ "credito_videos": {},
+ "fotos": {
+  "luna_huella": 0,
+  "luna_aldrin": 0
+ },
+ "credito_fotos": {
+  "luna_huella": "Foto: NASA / Buzz Aldrin (Apolo 11)",
+  "luna_aldrin": "Foto: NASA / Neil Armstrong (Apolo 11)"
+ },
+ "bloques": [
+  {
+   "nombre": "Gancho",
+   "frases": [
+    {
+     "t": "¿Un apagón mundial de tres días… el 17 de noviembre? Medio internet lo está compartiendo.",
+     "vid": [
+      "ciudad1",
+      "bombilla",
+      "movil1",
+      "ciudad2"
+     ],
+     "kw": "¿apagón mundial?"
+    },
+    {
+     "t": "Al final te cuento qué hay de verdad. Pero antes, once cosas reales… que parecen mentira.",
+     "vid": [
+      "r_shocked_woman"
+     ],
+     "kw": "11 cosas reales"
+    }
+   ]
+  },
+  {
+   "nombre": "Intro",
+   "intro": true
+  },
+  {
+   "nombre": "1 · La miel no caduca",
+   "frases": [
+    {
+     "t": "Número uno.",
+     "card": {
+      "tipo": "numero",
+      "n": 1,
+      "tema": "Comida"
+     }
+    },
+    {
+     "t": "La miel, prácticamente, no caduca.",
+     "vid": [
+      "miel1",
+      "miel2"
+     ],
+     "kw": "no caduca"
+    },
+    {
+     "t": "Tiene tan poca agua y es tan ácida que las bacterias no pueden vivir en ella.",
+     "vid": [
+      "panal",
+      "miel3",
+      "miel1"
+     ],
+     "rotulo": {
+      "arriba": "El secreto",
+      "texto": "Casi sin agua"
+     }
+    },
+    {
+     "t": "En tumbas del antiguo Egipto se han encontrado vasijas de miel de hace miles de años… todavía conservada.",
+     "vid": [
+      "piram1",
+      "piram2",
+      "miel2"
+     ],
+     "rotulo": {
+      "arriba": "Antiguo Egipto",
+      "texto": "Miel de hace miles de años"
+     }
+    }
+   ]
+  },
+  {
+   "nombre": "2 · Los flamencos nacen grises",
+   "frases": [
+    {
+     "t": "Número dos.",
+     "card": {
+      "tipo": "numero",
+      "n": 2,
+      "tema": "Animales"
+     }
+    },
+    {
+     "t": "Los flamencos no nacen rosas: nacen grises.",
+     "vid": [
+      "fla1",
+      "fla3"
+     ],
+     "kw": "nacen grises"
+    },
+    {
+     "t": "El color les viene de lo que comen: algas y pequeños crustáceos cargados de pigmentos.",
+     "vid": [
+      "fla4",
+      "fla2",
+      "fla5"
+     ],
+     "rotulo": {
+      "arriba": "El color viene de",
+      "texto": "Lo que comen"
+     }
+    },
+    {
+     "t": "Tardan dos o tres años en volverse rosas. Literalmente, son lo que comen.",
+     "vid": [
+      "fla3",
+      "fla1"
+     ],
+     "kw": "2-3 años"
+    }
+   ]
+  },
+  {
+   "nombre": "3 · Las huellas de la Luna",
+   "frases": [
+    {
+     "t": "Número tres.",
+     "card": {
+      "tipo": "numero",
+      "n": 3,
+      "tema": "Espacio"
+     }
+    },
+    {
+     "t": "Las huellas de los astronautas siguen en la Luna.",
+     "vid": [
+      "luna1",
+      "luna2"
+     ],
+     "kw": "siguen ahí"
+    },
+    {
+     "t": "Allí no hay viento ni lluvia que las borren.",
+     "rotulo": {
+      "arriba": "En la Luna",
+      "texto": "Ni viento ni lluvia"
+     },
+     "img": [
+      "luna_aldrin"
+     ]
+    },
+    {
+     "t": "Esta la dejó Buzz Aldrin en 1969.",
+     "rotulo": {
+      "arriba": "Apolo 11",
+      "texto": "Buzz Aldrin, 1969"
+     },
+     "img": [
+      "luna_huella"
+     ]
+    },
+    {
+     "t": "Y si nada las toca, podrían seguir ahí… durante millones de años.",
+     "vid": [
+      "astro",
+      "tierra",
+      "luna1"
+     ],
+     "kw": "millones de años"
+    }
+   ]
+  },
+  {
+   "nombre": "4 · Los plátanos son radiactivos",
+   "frases": [
+    {
+     "t": "Número cuatro.",
+     "card": {
+      "tipo": "numero",
+      "n": 4,
+      "tema": "Comida"
+     }
+    },
+    {
+     "t": "Los plátanos son radiactivos.",
+     "vid": [
+      "plat1"
+     ],
+     "kw": "radiactivos"
+    },
+    {
+     "t": "Un poquito: tienen mucho potasio, y una parte minúscula de ese potasio es radiactiva.",
+     "vid": [
+      "plat2",
+      "plat1"
+     ],
+     "rotulo": {
+      "arriba": "Potasio-40",
+      "texto": "Radiactividad natural"
+     }
+    },
+    {
+     "t": "Pero tranquilo: tendrías que comerte unos cien para igualar la radiación natural que recibes en un solo día.",
+     "vid": [
+      "r_man_phone",
+      "plat1"
+     ],
+     "rotulo": {
+      "arriba": "Para igualar un día normal",
+      "texto": "100 plátanos"
+     }
+    }
+   ]
+  },
+  {
+   "nombre": "5 · Las abejas hablan bailando",
+   "frases": [
+    {
+     "t": "Número cinco.",
+     "card": {
+      "tipo": "numero",
+      "n": 5,
+      "tema": "Animales"
+     }
+    },
+    {
+     "t": "Las abejas hablan… bailando.",
+     "vid": [
+      "abeja1",
+      "abeja2"
+     ],
+     "kw": "bailando"
+    },
+    {
+     "t": "Cuando una encuentra flores, vuelve a la colmena y hace una danza.",
+     "vid": [
+      "colmena1",
+      "colmena2"
+     ],
+     "kw": "una danza"
+    },
+    {
+     "t": "La dirección del baile indica hacia dónde ir, y su duración, a qué distancia.",
+     "vid": [
+      "panal",
+      "colmena2",
+      "abeja2"
+     ],
+     "rotulo": {
+      "arriba": "La danza indica",
+      "texto": "Dirección y distancia"
+     }
+    },
+    {
+     "t": "Descifrarlo le valió un premio Nobel a Karl von Frisch, en 1973.",
+     "vid": [
+      "abeja1",
+      "colmena1"
+     ],
+     "rotulo": {
+      "arriba": "Premio Nobel, 1973",
+      "texto": "Karl von Frisch"
+     }
+    }
+   ]
+  },
+  {
+   "nombre": "6 · Venecia está sobre un bosque",
+   "frases": [
+    {
+     "t": "Número seis.",
+     "card": {
+      "tipo": "numero",
+      "n": 6,
+      "tema": "Lugares"
+     }
+    },
+    {
+     "t": "Venecia no flota: está de pie sobre un bosque.",
+     "vid": [
+      "ven2",
+      "ven5"
+     ],
+     "kw": "sobre un bosque"
+    },
+    {
+     "t": "Debajo de sus edificios hay millones de troncos de madera, clavados en el barro.",
+     "vid": [
+      "ven1",
+      "ven3",
+      "ven4"
+     ],
+     "rotulo": {
+      "arriba": "Bajo Venecia",
+      "texto": "Millones de troncos"
+     }
+    },
+    {
+     "t": "Y ahí siguen, siglos después: bajo el agua, sin oxígeno, la madera casi no se pudre.",
+     "vid": [
+      "ven5",
+      "ven4",
+      "ven2"
+     ],
+     "kw": "sin oxígeno"
+    }
+   ]
+  },
+  {
+   "nombre": "7 · Pingüinos y piedras",
+   "frases": [
+    {
+     "t": "Número siete.",
+     "card": {
+      "tipo": "numero",
+      "n": 7,
+      "tema": "Animales"
+     }
+    },
+    {
+     "t": "Algunos pingüinos conquistan a su pareja… con piedras.",
+     "vid": [
+      "pin2",
+      "pin1"
+     ],
+     "kw": "con piedras"
+    },
+    {
+     "t": "El macho se las lleva a la hembra para construir el nido.",
+     "vid": [
+      "pin3",
+      "pin2"
+     ],
+     "rotulo": {
+      "arriba": "Regalo de pareja",
+      "texto": "Piedras para el nido"
+     }
+    },
+    {
+     "t": "Y como en la Antártida escasean… se las roban a los vecinos.",
+     "vid": [
+      "pin3",
+      "pin4",
+      "pin1"
+     ],
+     "kw": "las roban"
+    }
+   ]
+  },
+  {
+   "nombre": "8 · El cuello de la jirafa",
+   "frases": [
+    {
+     "t": "Número ocho.",
+     "card": {
+      "tipo": "numero",
+      "n": 8,
+      "tema": "Animales"
+     }
+    },
+    {
+     "t": "El cuello de una jirafa mide casi dos metros.",
+     "vid": [
+      "jir1",
+      "jir3"
+     ],
+     "rotulo": {
+      "arriba": "Cuello de la jirafa",
+      "texto": "Casi 2 metros"
+     }
+    },
+    {
+     "t": "¿Cuántas vértebras crees que tiene?",
+     "vid": [
+      "jir2"
+     ],
+     "kw": "¿cuántas?"
+    },
+    {
+     "t": "Siete. Exactamente las mismas que tú.",
+     "vid": [
+      "jir4",
+      "jir2"
+     ],
+     "rotulo": {
+      "arriba": "Vértebras del cuello",
+      "texto": "7, igual que tú"
+     }
+    },
+    {
+     "t": "Solo que cada una puede medir más de veinticinco centímetros.",
+     "vid": [
+      "jir3",
+      "jir1"
+     ],
+     "kw": "+25 cm cada una"
+    }
+   ]
+  },
+  {
+   "nombre": "9 · Las medusas no tienen cerebro",
+   "frases": [
+    {
+     "t": "Número nueve.",
+     "card": {
+      "tipo": "numero",
+      "n": 9,
+      "tema": "Animales"
+     }
+    },
+    {
+     "t": "Las medusas no tienen cerebro. Ni corazón. Ni sangre. Ni huesos.",
+     "vid": [
+      "med1",
+      "med2",
+      "med3"
+     ],
+     "kw": "sin cerebro"
+    },
+    {
+     "t": "Y aun así, llevan en los océanos al menos quinientos millones de años.",
+     "vid": [
+      "med3",
+      "med1"
+     ],
+     "rotulo": {
+      "arriba": "En los océanos desde hace",
+      "texto": "500 millones de años"
+     }
+    },
+    {
+     "t": "Ya estaban aquí mucho antes que los dinosaurios.",
+     "vid": [
+      "med2",
+      "med1"
+     ],
+     "kw": "antes que los dinosaurios"
+    }
+   ]
+  },
+  {
+   "nombre": "10 · La fuerza de una hormiga",
+   "frases": [
+    {
+     "t": "Número diez.",
+     "card": {
+      "tipo": "numero",
+      "n": 10,
+      "tema": "Animales"
+     }
+    },
+    {
+     "t": "Una hormiga puede cargar muchas veces su propio peso.",
+     "vid": [
+      "hor1",
+      "hor2"
+     ],
+     "kw": "súper fuerza"
+    },
+    {
+     "t": "Las cortadoras de hojas, hasta cincuenta veces.",
+     "vid": [
+      "hor3",
+      "hor4"
+     ],
+     "rotulo": {
+      "arriba": "Hormigas cortadoras",
+      "texto": "50 veces su peso"
+     }
+    },
+    {
+     "t": "Y en un laboratorio de Ohio comprobaron que su cuello aguanta hasta cinco mil veces su peso antes de romperse.",
+     "vid": [
+      "hor2",
+      "hor1",
+      "hor3"
+     ],
+     "rotulo": {
+      "arriba": "Universidad Estatal de Ohio",
+      "texto": "5.000 veces su peso"
+     }
+    }
+   ]
+  },
+  {
+   "nombre": "11 · El Sáhara alimenta al Amazonas",
+   "frases": [
+    {
+     "t": "Número once.",
+     "card": {
+      "tipo": "numero",
+      "n": 11,
+      "tema": "Planeta"
+     }
+    },
+    {
+     "t": "El desierto del Sáhara alimenta a la selva del Amazonas.",
+     "vid": [
+      "duna1",
+      "selva1"
+     ],
+     "kw": "Sáhara → Amazonas"
+    },
+    {
+     "t": "Cada año, el viento levanta millones de toneladas de polvo y lo lleva al otro lado del Atlántico.",
+     "vid": [
+      "polvo1",
+      "polvo2",
+      "tierra"
+     ],
+     "kw": "cruza el Atlántico"
+    },
+    {
+     "t": "Según la NASA, ese polvo deja en la selva unas veintidós mil toneladas de fósforo: abono natural.",
+     "vid": [
+      "selva3",
+      "selva2",
+      "selva4"
+     ],
+     "rotulo": {
+      "arriba": "Datos de la NASA",
+      "texto": "22.000 toneladas de fósforo"
+     }
+    }
+   ]
+  },
+  {
+   "nombre": "12 · El apagón del 17 de noviembre",
+   "frases": [
+    {
+     "t": "Número doce.",
+     "card": {
+      "tipo": "numero",
+      "n": 12,
+      "tema": "Actualidad"
+     }
+    },
+    {
+     "t": "Y ahora sí: el apagón mundial del 17 de noviembre.",
+     "vid": [
+      "ciudad2",
+      "ciudad4"
+     ],
+     "kw": "17 de noviembre"
+    },
+    {
+     "t": "El rumor dice que el planeta se quedará tres días sin luz. Unos culpan a una inteligencia artificial; otros, a una predicción de Los Simpson.",
+     "vid": [
+      "velas",
+      "robot1",
+      "movil2",
+      "robot2",
+      "ciudad3"
+     ],
+     "rotulo": {
+      "arriba": "El rumor viral",
+      "texto": "3 días sin luz"
+     }
+    },
+    {
+     "t": "¿La verdad? Es falso.",
+     "vid": [
+      "r_man_tv"
+     ],
+     "kw": "es falso"
+    },
+    {
+     "t": "Todo empezó con una prueba del sistema de alertas de emergencia de Estados Unidos, que las redes mezclaron con un episodio de Los Simpson.",
+     "vid": [
+      "movil1",
+      "torre1",
+      "movil2",
+      "torre2"
+     ],
+     "rotulo": {
+      "arriba": "El origen",
+      "texto": "Una prueba de alertas"
+     }
+    },
+    {
+     "t": "No hay ningún aviso oficial ni base científica. Así que tranquilo: no hay motivo para esperar un apagón.",
+     "vid": [
+      "ciudad1",
+      "bombilla",
+      "ciudad2"
+     ],
+     "kw": "sin base científica"
+    }
+   ]
+  },
+  {
+   "nombre": "Cierre",
+   "final": 6,
+   "frases": [
+    {
+     "t": "Y esta ha sido tu dosis de asombro de hoy.",
+     "card": {
+      "tipo": "final"
+     }
+    },
+    {
+     "t": "¿Cuál te ha dejado con la boca abierta? Te leo en los comentarios.",
+     "card": {
+      "tipo": "final"
+     }
+    },
+    {
+     "t": "Suscríbete a Shock Mental: cada semana, una nueva dosis. ¡Nos vemos en la próxima!",
+     "voz": "Suscríbete a Shock Mental: cada semana, una nueva dosis. ¡Nos vemos en la próxima!",
+     "card": {
+      "tipo": "final"
+     }
+    }
+   ]
+  }
+ ]
+}
