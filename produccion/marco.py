@@ -156,3 +156,33 @@ def recuadro(destino, foto, cfg):
                  (ex + math.cos(a - 2.2) * L * k * .75, ey + math.sin(a - 2.2) * L * k * .75)]
             d.polygon(p, fill=col)
     lienzo.save(destino)
+
+
+def marca_vertical(destino, logo_ruta, nombre="SHOCK MENTAL"):
+    """Shorts: PNG 1080x1920 transparente con el logo y el nombre del canal arriba (fuera de los botones de YouTube)."""
+    im = Image.new("RGBA", (1080, 1920), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
+    f = ImageFont.truetype(F_BLACK, 54); tw = int(d.textlength(nombre, font=f)); L = 132
+    ancho = L + 26 + tw + 44; x0 = (1080 - ancho) // 2; y0 = 150
+    pill = Image.new("RGBA", (ancho, 104), (0, 0, 0, 0)); g = Image.new("RGBA", (ancho, 104))
+    for x in range(ancho):
+        k = x / ancho; c = tuple(int(a + (b - a) * k) for a, b in zip((30, 140, 255), (255, 122, 26)))
+        ImageDraw.Draw(g).line((x, 0, x, 104), fill=c + (255,))
+    m = Image.new("L", (ancho, 104), 0); ImageDraw.Draw(m).rounded_rectangle((0, 0, ancho - 1, 103), 52, fill=255)
+    pill.paste(g, (0, 0), m); ImageDraw.Draw(pill).rounded_rectangle((0, 0, ancho - 1, 103), 52, outline="#FFFFFF", width=5)
+    im.alpha_composite(pill, (x0, y0 + 14))
+    d.text((x0 + L + 20 + 3, y0 + 14 + 20 + 3), nombre, font=f, fill=(0, 0, 0, 150)); d.text((x0 + L + 20, y0 + 14 + 20), nombre, font=f, fill="#FFFFFF")
+    logo = logo_redondo(logo_ruta, L); aro = Image.new("RGBA", (L + 12, L + 12), (0, 0, 0, 0))
+    ImageDraw.Draw(aro).ellipse((0, 0, L + 11, L + 11), fill="#FFFFFF"); aro.alpha_composite(logo, (6, 6))
+    im.alpha_composite(aro, (x0 - 6, y0 - 6)); im.save(destino)
+
+
+def cierre_vertical(destino, logo_ruta, texto="Suscríbete"):
+    """Shorts: logo grande y botón rojo para la última frase."""
+    im = Image.new("RGBA", (1080, 1920), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
+    L = 520; logo = logo_redondo(logo_ruta, L); aro = Image.new("RGBA", (L + 24, L + 24), (0, 0, 0, 0))
+    ImageDraw.Draw(aro).ellipse((0, 0, L + 23, L + 23), fill="#FFFFFF"); aro.alpha_composite(logo, (12, 12))
+    sombra = Image.new("RGBA", (1080, 1920), (0, 0, 0, 0)); ImageDraw.Draw(sombra).ellipse((270 - 20, 400, 810 + 20, 960 + 40), fill=(0, 0, 0, 170))
+    im = Image.alpha_composite(im, sombra.filter(ImageFilter.GaussianBlur(30))); im.alpha_composite(aro, ((1080 - L - 24) // 2, 420))
+    d = ImageDraw.Draw(im); f = ImageFont.truetype(F_BLACK, 64); tw = d.textlength(texto, font=f)
+    d.rounded_rectangle((540 - tw / 2 - 50, 1010, 540 + tw / 2 + 50, 1124), 57, fill="#E62117", outline="#FFFFFF", width=5)
+    d.text((540 - tw / 2, 1028), texto, font=f, fill="#FFFFFF"); im.save(destino)

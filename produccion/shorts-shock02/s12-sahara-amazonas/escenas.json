@@ -122,7 +122,6 @@
     },
     {
      "t": "Tienes once curiosidades más en la dosis completa de Shock Mental.",
-     "kw": "dosis completa en el canal",
      "vid": [
       "duna1",
       "selva1"
@@ -131,5 +130,9 @@
    ],
    "final": 0.4
   }
- ]
+ ],
+ "marca": {
+  "logo": "marca/shockmental/perfil-sin-eslogan.png",
+  "nombre": "SHOCK MENTAL"
+ }
 }

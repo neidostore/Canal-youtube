@@ -535,8 +535,19 @@ def main(carpeta):
                          f"[{ult}][k{j}]overlay=0:{B}:eof_action=pass[c{j + 1}]")
             ult = f"c{j + 1}"
         video_fc += f";[{ult}][{i_marco}:v]overlay=0:0,{cuenta}[vfin]"
+    marca_v = spec.get("marca") if vertical else None
+    if marca_v:     # Shorts: logo y nombre del canal arriba todo el rato, y logo grande con "Suscríbete" en la última frase
+        import marco as MK
+        mdir = trabajo / "marco"; mdir.mkdir(exist_ok=True); n_in = sum(1 for x in entradas if x == "-i")
+        logo_r = RAIZ.parent / marca_v["logo"]
+        MK.marca_vertical(mdir / "marca.png", logo_r, marca_v.get("nombre", "SHOCK MENTAL"))
+        MK.cierre_vertical(mdir / "cierre.png", logo_r)
+        ult_e = [e for e in escenas if e.get("texto")][-1]; ini = ult_e["ini"] + 0.25; d = t - ini
+        entradas += ["-i", str(mdir / "marca.png"), "-loop", "1", "-framerate", str(FPS), "-t", f"{d:.2f}", "-i", str(mdir / "cierre.png")]
+        video_fc += (f";[{n_in + 1}:v]format=rgba,fade=t=in:st=0:d=0.25:alpha=1,setpts=PTS-STARTPTS+{ini:.3f}/TB[cz];"
+                     f"[vv][cz]overlay=0:0:eof_action=pass[v1];[v1][{n_in}:v]overlay=0:0[vfin]")
     sh("ffmpeg", "-y", *entradas,
-       "-filter_complex", f"{video_fc};{mezcla}", "-map", "[vfin]" if MARCO else "[vv]", "-map", "[a]",
+       "-filter_complex", f"{video_fc};{mezcla}", "-map", "[vfin]" if (MARCO or marca_v) else "[vv]", "-map", "[a]",
        "-c:v", "libx264", "-preset", "medium", "-crf", "21", "-pix_fmt", "yuv420p", "-movflags", "+faststart",
        "-c:a", "aac", "-b:a", "192k", "-shortest", str(salida / "video.mp4"))
     caps = [(e["ini"], e["bloque"]) for e in escenas if e.get("bloque")]
