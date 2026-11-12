@@ -1,0 +1,134 @@
+{
+ "tema": "shock",
+ "voz": {
+  "idioma": "es-US",
+  "nombre": "es-US-Chirp3-HD-Achird",
+  "velocidad": 1.15
+ },
+ "musica": {
+  "archivo": "musica/wallpaper.mp3",
+  "volumen": 0.09,
+  "credito": "\"Wallpaper\" de Kevin MacLeod (incompetech.com)"
+ },
+ "videos": {
+  "r_shocked_woman": 8626657,
+  "r_man_tv": 9883681,
+  "r_man_phone": 7534960,
+  "ciudad1": 8064144,
+  "ciudad2": 4696050,
+  "ciudad3": 3275323,
+  "ciudad4": 2675508,
+  "velas": 3561988,
+  "bombilla": 853772,
+  "torre1": 4609537,
+  "torre2": 6136604,
+  "robot1": 5854603,
+  "robot2": 8084503,
+  "movil1": 854321,
+  "movil2": 6756650,
+  "tierra": 854518,
+  "tierra2": 2695085,
+  "miel1": 2832316,
+  "miel2": 5644957,
+  "miel3": 2959312,
+  "panal": 7174859,
+  "piram1": 4174113,
+  "piram2": 4174112,
+  "fla1": 2968022,
+  "fla2": 5903751,
+  "fla3": 4361883,
+  "fla4": 11025492,
+  "fla5": 11025393,
+  "luna1": 4154903,
+  "luna2": 3579494,
+  "astro": 854255,
+  "plat1": 2235949,
+  "plat2": 1792747,
+  "abeja1": 2048452,
+  "abeja2": 4927494,
+  "colmena1": 857037,
+  "colmena2": 4718267,
+  "ven1": 1112676,
+  "ven2": 5979469,
+  "ven3": 6420236,
+  "ven4": 4175918,
+  "ven5": 9557197,
+  "pin1": 9116112,
+  "pin2": 9116155,
+  "pin3": "px_pinguino_antartida",
+  "pin4": 1674470,
+  "jir1": 5220298,
+  "jir2": 2178545,
+  "jir3": 5214219,
+  "jir4": 5220297,
+  "med1": 2731905,
+  "med2": 2558530,
+  "med3": 5136529,
+  "hor1": 4760881,
+  "hor2": 4187770,
+  "hor3": 4061910,
+  "hor4": 4339888,
+  "duna1": 3057648,
+  "polvo1": 7639728,
+  "polvo2": 4996615,
+  "selva1": 5738616,
+  "selva2": 3239818,
+  "selva3": 7700059,
+  "selva4": 5104122
+ },
+ "videos_inicio": {
+  "r_man_tv": 3.5,
+  "r_shocked_woman": 0.3,
+  "r_man_phone": 2.5
+ },
+ "credito_videos": {},
+ "titulo": "La fuerza imposible de una hormiga 🐜",
+ "formato": "vertical",
+ "estilo": {
+  "dinamico": true,
+  "plano": 1.4
+ },
+ "fotos": {},
+ "credito_fotos": {},
+ "bloques": [
+  {
+   "nombre": "10 · La fuerza de una hormiga",
+   "frases": [
+    {
+     "t": "Una hormiga puede cargar muchas veces su propio peso.",
+     "vid": [
+      "hor1",
+      "hor2"
+     ],
+     "kw": "súper fuerza"
+    },
+    {
+     "t": "Las cortadoras de hojas, hasta cincuenta veces.",
+     "vid": [
+      "hor3",
+      "hor4"
+     ],
+     "kw": "50 veces su peso"
+    },
+    {
+     "t": "Y en un laboratorio de Ohio comprobaron que su cuello aguanta hasta cinco mil veces su peso antes de romperse.",
+     "vid": [
+      "hor2",
+      "hor1",
+      "hor3"
+     ],
+     "kw": "5.000 veces su peso"
+    },
+    {
+     "t": "Tienes once curiosidades más en la dosis completa de Shock Mental.",
+     "kw": "dosis completa en el canal",
+     "vid": [
+      "hor1",
+      "hor2"
+     ]
+    }
+   ],
+   "final": 0.4
+  }
+ ]
+}
