@@ -1,6 +1,6 @@
 # Dosis de Asombro #2 · Publicación
 
-**Vídeo:** `produccion/shock02/salida/video.mp4` (3:40) · **Miniatura:** `miniaturas/shock02/miniatura-A.png` (alternativa: `miniatura-B.png`)
+**Vídeo:** `produccion/shock02/salida/video.mp4` (4:05) · **Miniatura:** `miniaturas/shock02/miniatura-A.png` (alternativa: `miniatura-B.png`)
 
 ⚠️ **Publicar antes del 17 de noviembre** (el gancho es de actualidad).
 
@@ -16,18 +16,18 @@ Alternativas: `3 días sin luz: ¿verdad o bulo? + 11 cosas reales que parecen m
 
 00:00 ¿Apagón mundial?
 00:15 La miel no caduca
-00:30 Los flamencos nacen grises
-00:45 Las huellas de la Luna
-01:00 Los plátanos son radiactivos
-01:16 Las abejas hablan bailando
-01:33 Venecia está sobre un bosque
-01:48 Pingüinos y piedras
-02:00 El cuello de la jirafa
-02:14 Las medusas no tienen cerebro
-02:28 La fuerza de una hormiga
-02:41 El Sáhara alimenta al Amazonas
-02:57 El apagón del 17 de noviembre
-03:24 Despedida
+00:32 Los flamencos nacen grises
+00:48 Las huellas de la Luna
+01:03 Los plátanos son radiactivos
+01:21 Las abejas hablan bailando
+01:40 Venecia está sobre un bosque
+01:57 Pingüinos y piedras
+02:09 El cuello de la jirafa
+02:24 Las medusas no tienen cerebro
+02:42 La fuerza de una hormiga
+02:58 El Sáhara alimenta al Amazonas
+03:17 El apagón del 17 de noviembre
+03:48 Despedida
 
 📚 Fuentes:
 - Apagón del 17 de noviembre (bulo): Canarias7 / Maldita.es https://www.canarias7.es/economia/apagon-mundial-noviembre-volviendo-viral-sustento-real-20261111110647-nt.html · La Nación https://www.nacion.com/viva/planeta-insolito/el-origen-del-falso-apagon-mundial-que-desata/YRUC52V4DBBX7CYLWNZSXPJO3M/story/
