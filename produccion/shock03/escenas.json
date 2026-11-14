@@ -190,13 +190,13 @@
        "en": 1.5
       },
       {
-       "tipo": "emoji",
-       "emoji": "🚢",
+       "tipo": "imagen",
+       "archivo": "iconos/arca.png",
        "pos": [
         0.8,
         0.22
        ],
-       "tam": 170,
+       "tam": 195,
        "en": 2.0
       }
      ]
@@ -1083,13 +1083,13 @@
      "kw": "¿arca o roca?",
      "marcas": [
       {
-       "tipo": "emoji",
-       "emoji": "🚢",
+       "tipo": "imagen",
+       "archivo": "iconos/arca.png",
        "pos": [
         0.8,
         0.45
        ],
-       "tam": 180
+       "tam": 206
       },
       {
        "tipo": "emoji",

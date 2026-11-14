@@ -229,4 +229,8 @@ def marca(destino, m, a_px):
         e = _emoji(m["emoji"], m.get("tam", 190)); x, y = a_px(*m["pos"])
         s = Image.new("RGBA", (W, HC), (0, 0, 0, 0)); s.paste((0, 0, 0, 150), (x - e.width // 2 + 6, y - e.height // 2 + 10), e)
         im = Image.alpha_composite(im, s.filter(ImageFilter.GaussianBlur(8))); im.alpha_composite(e, (x - e.width // 2, y - e.height // 2))
+    if t == "imagen":      # dibujo propio (p. ej. iconos/arca.png)
+        g = Image.open(Path(__file__).parent / m["archivo"]).convert("RGBA"); k = m.get("tam", 200) / g.height
+        g = g.resize((round(g.width * k), m.get("tam", 200)), Image.LANCZOS); x, y = a_px(*m["pos"])
+        im.alpha_composite(g, (max(0, x - g.width // 2), max(0, y - g.height // 2)))
     im.save(destino)
