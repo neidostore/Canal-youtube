@@ -196,7 +196,7 @@
         0.8,
         0.22
        ],
-       "tam": 195,
+       "tam": 250,
        "en": 2.0
       }
      ]
@@ -1049,18 +1049,7 @@
       "lab1",
       "lab2"
      ],
-     "kw": "en el laboratorio",
-     "marcas": [
-      {
-       "tipo": "emoji",
-       "emoji": "🔬",
-       "pos": [
-        0.86,
-        0.5
-       ],
-       "tam": 200
-      }
-     ]
+     "kw": "en el laboratorio"
     },
     {
      "t": "Pero ojo: todavía no hay resultados, y la mayoría de geólogos cree que esa forma es… natural.",
@@ -1089,7 +1078,7 @@
         0.8,
         0.45
        ],
-       "tam": 206
+       "tam": 250
       },
       {
        "tipo": "emoji",
