@@ -1,0 +1,145 @@
+{
+ "tema": "shock",
+ "voz": {
+  "idioma": "es-US",
+  "nombre": "es-US-Chirp3-HD-Achird",
+  "velocidad": 1.15
+ },
+ "musica": {
+  "archivo": "musica/wallpaper.mp3",
+  "volumen": 0.09,
+  "credito": "\"Wallpaper\" de Kevin MacLeod (incompetech.com)"
+ },
+ "videos": {
+  "r_shocked_woman": 8626657,
+  "r_man_tv": 9883681,
+  "r_man_phone": 7534960,
+  "ara1": 5895513,
+  "ara2": 5895507,
+  "ara3": 5895504,
+  "ara4": 11583916,
+  "barco1": 2882405,
+  "barco2": 2882402,
+  "mar1": 1879456,
+  "mar2": 2802271,
+  "lluvia": 5192322,
+  "biblia1": 3987756,
+  "biblia2": 5199729,
+  "lab1": 4121618,
+  "lab2": 4121322,
+  "lab3": 5752729,
+  "fuego": 4362675,
+  "brasas": 854692,
+  "tierra_exc": 3886731,
+  "tib1": 5548408,
+  "tib2": 5548357,
+  "tib3": 5548360,
+  "tib4": 5548358,
+  "tib5": 5712941,
+  "bos1": 1437396,
+  "bos2": 3177845,
+  "bos3": 1168716,
+  "bos4": 856478,
+  "est1": 857136,
+  "est2": 852369,
+  "est3": 856077,
+  "pir1": 4174146,
+  "pir2": 4174152,
+  "pir3": 4174113,
+  "iph1": 2825517,
+  "iph2": 853987,
+  "del1": 5607986,
+  "del2": 5607990,
+  "del3": 4328539,
+  "del4": 5607988,
+  "buho1": 7131413,
+  "buho2": 7426347,
+  "buho3": 7638202,
+  "buho4": 8051173,
+  "mar_1": 1433307,
+  "mar_2": 856990,
+  "mar_3": 3877884,
+  "mar_4": 854286,
+  "bal1": 6625561,
+  "bal2": 4332083,
+  "bal3": 4332085,
+  "bal4": 5608046,
+  "ele1": 855538,
+  "ele2": 2835528,
+  "ele3": 3842814,
+  "ele4": 1171808,
+  "ele5": 3569572,
+  "mur1": 1193306,
+  "mur2": 2881976,
+  "mur3": 2881972,
+  "mur4": 2881966,
+  "tierra": 854518,
+  "tierra2": 2695085,
+  "sat": 854239,
+  "eve1": 1839364,
+  "eve2": 4802890,
+  "eve3": 2895749,
+  "eve4": 3329262,
+  "koa1": 9865138,
+  "koa2": 6200040
+ },
+ "videos_inicio": {
+  "r_man_tv": 3.5,
+  "r_shocked_woman": 0.3,
+  "r_man_phone": 2.5,
+  "est2": 4.0
+ },
+ "credito_videos": {},
+ "titulo": "Su lengua pesa como un elefante 🐋",
+ "formato": "vertical",
+ "estilo": {
+  "dinamico": true,
+  "plano": 1.4
+ },
+ "fotos": {},
+ "credito_fotos": {},
+ "marca": {
+  "logo": "marca/shockmental/perfil-sin-eslogan.png",
+  "nombre": "SHOCK MENTAL"
+ },
+ "bloques": [
+  {
+   "nombre": "7 · La lengua de la ballena azul",
+   "frases": [
+    {
+     "t": "La ballena azul es el animal más grande que ha existido.",
+     "vid": [
+      "bal1",
+      "bal3"
+     ],
+     "kw": "el más grande"
+    },
+    {
+     "t": "Solo su lengua puede pesar tanto como un elefante.",
+     "vid": [
+      "ele1",
+      "bal2",
+      "ele3"
+     ],
+     "kw": "Como un elefante"
+    },
+    {
+     "t": "Y su corazón, tanto como un coche.",
+     "vid": [
+      "bal4",
+      "bal1"
+     ],
+     "kw": "Como un coche"
+    },
+    {
+     "t": "Tienes once curiosidades más en la dosis completa de Shock Mental.",
+     "vid": [
+      "bal1",
+      "bal3"
+     ]
+    }
+   ],
+   "final": 0.4
+  }
+ ]
+}

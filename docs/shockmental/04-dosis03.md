@@ -1,6 +1,6 @@
 # Dosis de Asombro #3 · Publicación
 
-**Vídeo:** `produccion/shock03/salida/video.mp4` (3:47) · **Miniatura:** `miniaturas/shock03/miniatura-A.png`
+**Vídeo:** `produccion/shock03/salida/video.mp4` (3:48) · **Miniatura:** `miniaturas/shock03/miniatura-A.png`
 
 ## Título
 ```
@@ -39,7 +39,7 @@ Alternativas: `El "Arca de Noé" de Turquía: qué han encontrado de verdad (+11
 - Everest: Smithsonian Magazine https://www.smithsonianmag.com/smart-news/geologists-reveal-a-surprising-reason-why-mount-everest-grows-taller-each-year-180985175/
 - Elefantes: Smithsonian Magazine https://www.smithsonianmag.com/smithsonian-institution/ask-smithsonian-can-elephants-jump-180957921/
 - Koalas: Mental Floss https://www.mentalfloss.com/animals/koalas-have-fingerprints-just-humans
-- Imágenes: formación de Durupınar (Rudolf Pohl, CC BY-SA 3.0; Wikkiwooki, CC BY-SA 4.0), vía Wikimedia Commons. Vídeos: Pexels (pexels.com).
+- Imágenes: formación de Durupınar (Rudolf Pohl, CC BY-SA 3.0; Wikkiwooki, CC BY-SA 4.0), vía Wikimedia Commons. Ilustración del arca generada con IA. Vídeos: Pexels (pexels.com).
 - Música: "Wallpaper" de Kevin MacLeod (incompetech.com), Licencia CC BY 4.0 http://creativecommons.org/licenses/by/4.0/
 
 🧠⚡ SHOCK MENTAL · Tu dosis de asombro. Suscríbete para la próxima dosis.
