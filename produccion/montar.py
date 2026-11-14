@@ -114,7 +114,7 @@ def clip(escena, destino):
     if destino.exists():
         return
     d = escena["dur"]
-    n = max(1, round(d * FPS))
+    n = escena.get("nf") or max(1, round(d * FPS))   # "nf": fotogramas exactos para no desincronizar vídeo y audio
     if escena["tipo"] == "intro":
         sh("ffmpeg", "-y", "-i", escena["img"], "-an", "-vf", f"fps={FPS},scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},format=yuv420p",
            "-frames:v", str(n), "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", str(destino))
@@ -151,6 +151,8 @@ def clip(escena, destino):
         fc = (f"[0:v]fps={FPS},scale={W}:{H}[bg];"
               f"[1:v]scale=w='iw*({z0}+0.1*min(1,n/{n}))':h=-2:eval=frame[fg];"
               f"[bg][fg]overlay=(W-w)/2:(H-h)/2+max(0\\,1-n/5)*70:shortest=0,format=yuv420p[v]")
+        if escena.get("marcas"):   # con anotaciones encima, la foto se queda quieta para que coincidan
+            fc = f"[0:v]fps={FPS},scale={W}:{H}[bg];[bg][1:v]overlay=(W-w)/2:(H-h)/2:shortest=0,format=yuv420p[v]"
         sh("ffmpeg", "-y", "-stream_loop", "-1", "-i", escena["fondo"], "-loop", "1", "-framerate", str(FPS),
            "-i", escena["img"], "-filter_complex", fc, "-map", "[v]", "-frames:v", str(n), "-c:v", "libx264",
            "-preset", "veryfast", "-crf", "18", "-r", str(FPS), str(destino))
@@ -242,7 +244,7 @@ def main(carpeta):
             if i == len(fr) - 1 and b.get("final"):
                 e["pausa"] += b["final"]
             e["nb"] = nb
-            for extra in ("sfx", "rotulo", "recuadro"):
+            for extra in ("sfx", "rotulo", "recuadro", "marcas"):
                 if f.get(extra):
                     e[extra] = f[extra]
             if "card" in f:
@@ -352,8 +354,10 @@ def main(carpeta):
                 col = colores[e.get("nb", 0) % len(colores)]
                 e["fondo"] = str(trabajo / "marco" / f"fondo_{col.lstrip('#')}.mp4")
                 MK.fondo_animado(Path(e["fondo"]), col)
+    for e in planos:   # fotogramas de cada toma según su posición en la línea de tiempo (sin errores acumulados)
+        e["nf"] = max(1, round((e["ini"] + e["dur"]) * FPS) - round(e["ini"] * FPS))
     for i, e in enumerate(planos):
-        h = hashlib.md5(f"{W}x{H}|{e.get('fondo')}|{e.get('toma')}|{e['img']}|{e['dur']:.3f}|{e.get('movimiento')}|{e.get('punch')}|{e.get('corte')}|{e.get('offset')}".encode()).hexdigest()[:10]
+        h = hashlib.md5(f"{e['nf']}|{W}x{H}|{os.path.getmtime(e['img']) if e['tipo'] == 'foto' else ''}|{e.get('fondo')}|{bool(e.get('marcas'))}|{e.get('toma')}|{e['img']}|{e['dur']:.3f}|{e.get('movimiento')}|{e.get('punch')}|{e.get('corte')}|{e.get('offset')}".encode()).hexdigest()[:10]
         e["clip"] = trabajo / "clips" / f"{i:03d}_{h}.mp4"
     with cf.ThreadPoolExecutor(4) as ex:
         list(ex.map(lambda e: clip(e, e["clip"]), planos))
@@ -370,7 +374,8 @@ def main(carpeta):
         for p in partes:
             d = e["voz_dur"] * len(p) / total
             srt.append((t0, t0 + d, p))
-            if e["tipo"] in ("foto", "video"):
+            anotada = e["tipo"] == "foto" and e.get("marcas") and e["foto"] in ENCAJE   # foto con anotaciones: sin subtítulo encima
+            if e["tipo"] in ("foto", "video") and not anotada:
                 ass_ev.append((t0, t0 + d, p))
             t0 += d
     (salida / "subtitulos.srt").write_text(
@@ -463,6 +468,8 @@ def main(carpeta):
         for e in escenas:
             if e.get("recuadro"):
                 poner(elegir(["pop1", "pop2", "pop3"]), e["ini"] + e["recuadro"].get("en", 0.5))
+            for j, m in enumerate(e.get("marcas", []) if MARCO else []):
+                poner(elegir(["pop1", "pop2", "pop3", "click"]), e["ini"] + m.get("en", 0.4 + 0.45 * j))
         for e in escenas:   # sonidos reales por frase (p. ej. un cuervo graznando), sincronizados con el clip
             if e.get("sfx"):
                 fx = e["sfx"]; snd = cargar(fx["nombre"]) * fx.get("vol", 0.5)
@@ -518,6 +525,24 @@ def main(carpeta):
             ini = e["ini"] + r.get("en", 0.5); d = e["ini"] + e["dur"] - ini - 0.05
             entradas += ["-loop", "1", "-framerate", str(FPS), "-t", f"{d:.2f}", "-i", str(png)]
             capas.append((n_in, ini, f"format=rgba,fade=t=in:st=0:d=0.18:alpha=1,fade=t=out:st={d - 0.15:.2f}:d=0.15:alpha=1")); n_in += 1
+        nm = 0
+        for e in escenas:      # anotaciones: contornos, círculos, flechas, etiquetas y emojis, una detrás de otra
+            if not e.get("marcas"):
+                continue
+            if e["tipo"] == "foto" and e["foto"] in ENCAJE:   # coordenadas relativas a la foto
+                with Image.open(rutas[e["foto"]]) as _f:
+                    fw, fh = _f.size
+                a_px = lambda x, y, fw=fw, fh=fh: (round((W - fw) / 2 + 12 + x * (fw - 24)), round((H - fh) / 2 + 12 + y * (fh - 24)))
+            else:                                             # relativas a la pantalla
+                a_px = lambda x, y: (round(x * W), round(y * H))
+            for j, m in enumerate(e["marcas"]):
+                png = mdir / f"marca_{nm}.png"; nm += 1
+                MK.marca(png, m, a_px)
+                ini = e["ini"] + m.get("en", 0.4 + 0.45 * j); d = e["ini"] + e["dur"] - ini - 0.05
+                if d < 0.3:
+                    continue
+                entradas += ["-loop", "1", "-framerate", str(FPS), "-t", f"{d:.2f}", "-i", str(png)]
+                capas.append((n_in, ini, f"format=rgba,fade=t=in:st=0:d=0.15:alpha=1,fade=t=out:st={d - 0.12:.2f}:d=0.12:alpha=1")); n_in += 1
         cortes = [e["ini"] for e in escenas[1:] if e.get("bloque")]
         for k, tc in enumerate(cortes):   # transición con logo en cada cambio de dato
             col = colores[k % len(colores)]; col2 = colores[(k + 2) % len(colores)]

@@ -186,3 +186,47 @@ def cierre_vertical(destino, logo_ruta, texto="Suscríbete"):
     d = ImageDraw.Draw(im); f = ImageFont.truetype(F_BLACK, 64); tw = d.textlength(texto, font=f)
     d.rounded_rectangle((540 - tw / 2 - 50, 1010, 540 + tw / 2 + 50, 1124), 57, fill="#E62117", outline="#FFFFFF", width=5)
     d.text((540 - tw / 2, 1028), texto, font=f, fill="#FFFFFF"); im.save(destino)
+
+
+F_EMOJI = "/usr/share/fonts/truetype/noto/NotoColorEmoji.ttf"
+
+
+def _emoji(txt, tam):
+    f = ImageFont.truetype(F_EMOJI, 109)
+    im = Image.new("RGBA", (140 * max(1, len(txt)), 140), (0, 0, 0, 0))
+    ImageDraw.Draw(im).text((0, 0), txt, font=f, embedded_color=True)
+    im = im.crop(im.getbbox()); k = tam / im.height
+    return im.resize((max(1, round(im.width * k)), tam), Image.LANCZOS)
+
+
+def marca(destino, m, a_px):
+    """Una anotación (contorno, círculo, flecha, etiqueta o emoji) en un PNG transparente 1920x912.
+    a_px convierte coordenadas relativas (0-1) en píxeles de la pantalla."""
+    im = Image.new("RGBA", (W, HC), (0, 0, 0, 0)); d = ImageDraw.Draw(im); t = m["tipo"]
+    col = m.get("color", "#FFC400")
+    if t == "contorno":
+        pts = [a_px(*p) for p in m["puntos"]]; pts.append(pts[0])
+        d.line(pts, fill="#000000", width=18, joint="curve"); d.line(pts, fill=col, width=10, joint="curve")
+    elif t == "circulo":
+        cx, cy = a_px(*m["c"]); ex, ey = a_px(m["c"][0] + m["r"][0], m["c"][1] + m["r"][1]); rx, ry = abs(ex - cx), abs(ey - cy)
+        d.ellipse((cx - rx, cy - ry, cx + rx, cy + ry), outline="#000000", width=18)
+        d.ellipse((cx - rx + 4, cy - ry + 4, cx + rx - 4, cy + ry - 4), outline=col, width=10)
+    elif t == "flecha":
+        (sx, sy), (tx, ty) = a_px(*m["de"]), a_px(*m["a"]); a = math.atan2(ty - sy, tx - sx); L = 50
+        ex, ey = tx - math.cos(a) * L * 0.8, ty - math.sin(a) * L * 0.8
+        for ancho_l, c, k in ((28, "#000000", 1.25), (16, col, 1.0)):
+            d.line((sx, sy, ex, ey), fill=c, width=ancho_l)
+            o = 7 if k > 1 else 0
+            d.polygon([(tx + math.cos(a) * o, ty + math.sin(a) * o),
+                       (ex + math.cos(a + 2.2) * L * k * .75, ey + math.sin(a + 2.2) * L * k * .75),
+                       (ex + math.cos(a - 2.2) * L * k * .75, ey + math.sin(a - 2.2) * L * k * .75)], fill=c)
+    elif t == "texto":
+        f = ImageFont.truetype(F_BLACK, m.get("tam", 46)); x, y = a_px(*m["pos"]); tw = d.textlength(m["texto"], font=f); h = m.get("tam", 46)
+        fondo = m.get("fondo", "#1E8CFF")
+        d.rounded_rectangle((x - tw / 2 - 22, y - h / 2 - 14, x + tw / 2 + 22, y + h / 2 + 18), 16, fill=fondo, outline="#FFFFFF", width=4)
+        d.text((x - tw / 2, y - h / 2 - 4), m["texto"], font=f, fill=m.get("tinta", "#FFFFFF"))
+    elif t == "emoji":
+        e = _emoji(m["emoji"], m.get("tam", 190)); x, y = a_px(*m["pos"])
+        s = Image.new("RGBA", (W, HC), (0, 0, 0, 0)); s.paste((0, 0, 0, 150), (x - e.width // 2 + 6, y - e.height // 2 + 10), e)
+        im = Image.alpha_composite(im, s.filter(ImageFilter.GaussianBlur(8))); im.alpha_composite(e, (x - e.width // 2, y - e.height // 2))
+    im.save(destino)

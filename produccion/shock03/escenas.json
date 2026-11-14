@@ -119,10 +119,86 @@
    "frases": [
     {
      "t": "¿Han encontrado el Arca de Noé… en una montaña de Turquía?",
-     "kw": "¿el Arca de Noé?",
      "img": [
-      "durupinar_barco",
-      "durupinar"
+      "durupinar_barco"
+     ],
+     "marcas": [
+      {
+       "tipo": "contorno",
+       "puntos": [
+        [
+         0.63,
+         0.4
+        ],
+        [
+         0.686,
+         0.555
+        ],
+        [
+         0.697,
+         0.672
+        ],
+        [
+         0.549,
+         0.74
+        ],
+        [
+         0.377,
+         0.824
+        ],
+        [
+         0.171,
+         0.94
+        ],
+        [
+         0.023,
+         0.99
+        ],
+        [
+         0.006,
+         0.84
+        ],
+        [
+         0.069,
+         0.74
+        ],
+        [
+         0.194,
+         0.655
+        ],
+        [
+         0.343,
+         0.555
+        ],
+        [
+         0.503,
+         0.48
+        ]
+       ],
+       "en": 0.9
+      },
+      {
+       "tipo": "texto",
+       "pos": [
+        0.36,
+        0.3
+       ],
+       "texto": "¿UN BARCO?",
+       "tam": 64,
+       "fondo": "#FFC400",
+       "tinta": "#130F0E",
+       "en": 1.5
+      },
+      {
+       "tipo": "emoji",
+       "emoji": "🚢",
+       "pos": [
+        0.8,
+        0.22
+       ],
+       "tam": 170,
+       "en": 2.0
+      }
      ]
     },
     {
@@ -164,7 +240,18 @@
       "tib1",
       "tib2"
      ],
-     "kw": "más antiguos"
+     "kw": "más antiguos",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🦈",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
     },
     {
      "t": "Las primeras huellas de tiburones tienen unos cuatrocientos cincuenta millones de años.",
@@ -186,7 +273,18 @@
      "rotulo": {
       "arriba": "Primeros árboles",
       "texto": "380 millones de años"
-     }
+     },
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🌳",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
     },
     {
      "t": "Cuando en la Tierra no había ni un solo bosque… ellos ya nadaban.",
@@ -216,7 +314,28 @@
       "iph1",
       "pir2"
      ],
-     "kw": "¿cómo?"
+     "kw": "¿cómo?",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "👑",
+       "pos": [
+        0.8,
+        0.5
+       ],
+       "tam": 170
+      },
+      {
+       "tipo": "emoji",
+       "emoji": "📱",
+       "pos": [
+        0.92,
+        0.5
+       ],
+       "tam": 170,
+       "en": 1.6
+      }
+     ]
     },
     {
      "t": "La pirámide se levantó unos dos mil quinientos años antes de que ella naciera.",
@@ -267,7 +386,28 @@
       "bos2",
       "est1"
      ],
-     "kw": "más árboles"
+     "kw": "más árboles",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🌳",
+       "pos": [
+        0.8,
+        0.5
+       ],
+       "tam": 170
+      },
+      {
+       "tipo": "emoji",
+       "emoji": "⭐",
+       "pos": [
+        0.92,
+        0.5
+       ],
+       "tam": 170,
+       "en": 1.4
+      }
+     ]
     },
     {
      "t": "Un estudio publicado en la revista Nature calculó unos tres billones de árboles.",
@@ -319,7 +459,18 @@
       "del1",
       "del4"
      ],
-     "kw": "medio cerebro"
+     "kw": "medio cerebro",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "😴",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
     },
     {
      "t": "Apagan una mitad y dejan la otra alerta, con un ojo abierto.",
@@ -371,7 +522,18 @@
       "buho3",
       "buho4"
      ],
-     "kw": "casi una vuelta"
+     "kw": "casi una vuelta",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🔄",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
     },
     {
      "t": "Lo necesita: sus ojos no se mueven. Para mirar a otro sitio, tiene que girar toda la cabeza.",
@@ -401,7 +563,18 @@
       "mar_1",
       "mar_2"
      ],
-     "kw": "con las patas"
+     "kw": "con las patas",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "👣",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
     },
     {
      "t": "Ahí tienen los sensores del gusto: les basta posarse en una planta para saber a qué sabe.",
@@ -454,7 +627,18 @@
      "rotulo": {
       "arriba": "Solo la lengua",
       "texto": "Como un elefante"
-     }
+     },
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🐘",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
     },
     {
      "t": "Y su corazón, tanto como un coche.",
@@ -465,7 +649,18 @@
      "rotulo": {
       "arriba": "Su corazón",
       "texto": "Como un coche"
-     }
+     },
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🚗",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
     }
    ]
   },
@@ -498,7 +693,18 @@
      "rotulo": {
       "arriba": "Según la NASA",
       "texto": "No se ve a simple vista"
-     }
+     },
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "❌",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 230
+      }
+     ]
     },
     {
      "t": "Es larguísima, sí… pero muy estrecha, y del mismo color que el paisaje.",
@@ -528,7 +734,18 @@
       "eve1",
       "eve2"
      ],
-     "kw": "sigue creciendo"
+     "kw": "sigue creciendo",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "📈",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
     },
     {
      "t": "Sube hasta unos dos milímetros cada año, empujado por el choque de dos placas de la Tierra.",
@@ -573,7 +790,18 @@
       "ele2",
       "ele4"
      ],
-     "kw": "no saltan"
+     "kw": "no saltan",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🚫",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 230
+      }
+     ]
     },
     {
      "t": "Pesan demasiado, y los huesos de sus patas no están hechos para impulsarse.",
@@ -614,7 +842,18 @@
       "koa1",
       "koa2"
      ],
-     "kw": "huellas dactilares"
+     "kw": "huellas dactilares",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🔍",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
     },
     {
      "t": "Y son tan parecidas a las humanas que, incluso al microscopio, cuesta distinguirlas.",
@@ -651,21 +890,145 @@
     },
     {
      "t": "Cerca del monte Ararat, en Turquía, hay una formación con forma de barco de unos ciento cincuenta metros: Durupınar.",
-     "rotulo": {
-      "arriba": "Turquía, cerca del Ararat",
-      "texto": "Formación de Durupınar"
-     },
      "img": [
-      "durupinar_barco",
-      "durupinar"
+      "durupinar_barco"
+     ],
+     "marcas": [
+      {
+       "tipo": "contorno",
+       "puntos": [
+        [
+         0.63,
+         0.4
+        ],
+        [
+         0.686,
+         0.555
+        ],
+        [
+         0.697,
+         0.672
+        ],
+        [
+         0.549,
+         0.74
+        ],
+        [
+         0.377,
+         0.824
+        ],
+        [
+         0.171,
+         0.94
+        ],
+        [
+         0.023,
+         0.99
+        ],
+        [
+         0.006,
+         0.84
+        ],
+        [
+         0.069,
+         0.74
+        ],
+        [
+         0.194,
+         0.655
+        ],
+        [
+         0.343,
+         0.555
+        ],
+        [
+         0.503,
+         0.48
+        ]
+       ],
+       "en": 1.2
+      },
+      {
+       "tipo": "flecha",
+       "de": [
+        0.8,
+        0.25
+       ],
+       "a": [
+        0.645,
+        0.39
+       ],
+       "en": 2.2
+      },
+      {
+       "tipo": "texto",
+       "pos": [
+        0.84,
+        0.2
+       ],
+       "texto": "PROA",
+       "en": 2.2
+      },
+      {
+       "tipo": "circulo",
+       "c": [
+        0.51,
+        0.52
+       ],
+       "r": [
+        0.075,
+        0.065
+       ],
+       "color": "#FFFFFF",
+       "en": 3.4
+      },
+      {
+       "tipo": "flecha",
+       "de": [
+        0.3,
+        0.4
+       ],
+       "a": [
+        0.43,
+        0.5
+       ],
+       "color": "#FFFFFF",
+       "en": 3.4
+      },
+      {
+       "tipo": "texto",
+       "pos": [
+        0.22,
+        0.35
+       ],
+       "texto": "PERSONAS",
+       "fondo": "#FFFFFF",
+       "tinta": "#130F0E",
+       "en": 3.4
+      },
+      {
+       "tipo": "texto",
+       "pos": [
+        0.36,
+        0.72
+       ],
+       "texto": "≈ 150 METROS",
+       "tam": 54,
+       "fondo": "#FFC400",
+       "tinta": "#130F0E",
+       "en": 4.8
+      }
      ]
     },
     {
      "t": "Se conoce desde 1959, y hay quien cree que son los restos del arca.",
-     "kw": "desde 1959",
      "img": [
-      "durupinar_barco"
-     ]
+      "durupinar"
+     ],
+     "rotulo": {
+      "arriba": "Turquía, cerca del Ararat",
+      "texto": "Formación de Durupınar"
+     }
     },
     {
      "t": "Este noviembre, un equipo ha presentado trozos de madera carbonizada, sacados de allí a unos nueve metros de profundidad.",
@@ -686,7 +1049,18 @@
       "lab1",
       "lab2"
      ],
-     "kw": "en el laboratorio"
+     "kw": "en el laboratorio",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🔬",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
     },
     {
      "t": "Pero ojo: todavía no hay resultados, y la mayoría de geólogos cree que esa forma es… natural.",
@@ -706,7 +1080,28 @@
       "ara2",
       "barco1"
      ],
-     "kw": "¿arca o roca?"
+     "kw": "¿arca o roca?",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🚢",
+       "pos": [
+        0.8,
+        0.45
+       ],
+       "tam": 180
+      },
+      {
+       "tipo": "emoji",
+       "emoji": "🪨",
+       "pos": [
+        0.92,
+        0.45
+       ],
+       "tam": 180,
+       "en": 0.9
+      }
+     ]
     }
    ]
   },
