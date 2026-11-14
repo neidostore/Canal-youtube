@@ -1,0 +1,845 @@
+{
+ "tema": "shock",
+ "tarjetas": "tarjetas-shock.html",
+ "intro": {
+  "video": "marca/shockmental/intro/intro.mp4",
+  "audio": "marca/shockmental/intro/intro_audio.wav"
+ },
+ "musica": {
+  "archivo": "musica/wallpaper.mp3",
+  "volumen": 0.09,
+  "credito": "\"Wallpaper\" de Kevin MacLeod (incompetech.com)"
+ },
+ "estilo": {
+  "dinamico": true,
+  "plano": 1.6
+ },
+ "marco": {
+  "titulo": "SHOCK&nbsp;<i>MENTAL</i>",
+  "lema": "Tu dosis de asombro 🧠⚡",
+  "logo": "marca/shockmental/perfil-sin-eslogan.png"
+ },
+ "voz": {
+  "idioma": "es-US",
+  "nombre": "es-US-Chirp3-HD-Achird",
+  "velocidad": 1.15
+ },
+ "titulo": "GTA 6 sale el 19 de noviembre: todo lo que se sabe… y 11 curiosidades de videojuegos",
+ "videos": {
+  "r_shocked_woman": 8626657,
+  "r_man_tv": 9883681,
+  "r_man_phone": 7534960,
+  "arc1": 1825255,
+  "arc2": 4842595,
+  "arc3": 4835519,
+  "arc4": 4835516,
+  "gam1": 7914851,
+  "gam2": 5377271,
+  "gam3": 4010132,
+  "gam4": 4010184,
+  "man1": 3946068,
+  "man2": 3946267,
+  "man3": 3946073,
+  "cartas1": 7683854,
+  "cartas2": 6206031,
+  "kioto": 7387627,
+  "pizza1": 3752508,
+  "pizza2": 4008531,
+  "mos1": 3923315,
+  "mos2": 5956456,
+  "basura1": 3186589,
+  "basura2": 5115945,
+  "desierto": 7895948,
+  "excav": 2711291,
+  "bloques": 3676973,
+  "adn1": 3191572,
+  "adn2": 9837842,
+  "mia1": 8524839,
+  "mia2": 11490725,
+  "mia3": 11243172,
+  "mia4": 9431937,
+  "neon1": 2964554,
+  "neon2": 6529560,
+  "neon3": 8058346,
+  "coche1": 5309381,
+  "coche2": 4634388,
+  "poli1": 7714379,
+  "poli2": 6581006,
+  "dolar": 1797247,
+  "palm1": 8214991,
+  "palm2": 4791868,
+  "cai1": 854156,
+  "cai2": 2910037,
+  "cai3": 7722932,
+  "lancha": 2867866,
+  "cod1": 6330779,
+  "cod2": 1992325,
+  "cod3": 5473798,
+  "espera": 854549,
+  "centro": 3243946,
+  "carp": 4480443,
+  "font1": 9890450,
+  "font2": 9890448,
+  "lab2": 4121322,
+  "lab3": 5752729
+ },
+ "videos_inicio": {
+  "r_man_tv": 3.5,
+  "r_shocked_woman": 0.3,
+  "r_man_phone": 2.5
+ },
+ "credito_videos": {},
+ "fotos": {
+  "gta_ciudad": 0,
+  "gta_aerea": 0
+ },
+ "credito_fotos": {
+  "gta_ciudad": "Ilustración generada con IA (no es una imagen del juego)",
+  "gta_aerea": "Ilustración generada con IA (no es una imagen del juego)"
+ },
+ "bloques": [
+  {
+   "nombre": "Gancho",
+   "frases": [
+    {
+     "t": "Faltan días para GTA 6: uno de los videojuegos más esperados de la historia sale este 19 de noviembre.",
+     "kw": "GTA 6",
+     "img": [
+      "gta_ciudad"
+     ]
+    },
+    {
+     "t": "Trece años de espera, dos retrasos y una filtración histórica. Al final te cuento todo lo que se sabe.",
+     "vid": [
+      "gam3",
+      "mia1",
+      "gam2",
+      "neon1"
+     ],
+     "kw": "13 años de espera"
+    },
+    {
+     "t": "Pero antes, once curiosidades de videojuegos… que parecen mentira.",
+     "vid": [
+      "r_shocked_woman"
+     ],
+     "kw": "11 curiosidades"
+    }
+   ]
+  },
+  {
+   "nombre": "Intro",
+   "intro": true
+  },
+  {
+   "nombre": "1 · Mario no era fontanero",
+   "frases": [
+    {
+     "t": "Número uno.",
+     "card": {
+      "tipo": "numero",
+      "n": 1,
+      "tema": "Personajes"
+     }
+    },
+    {
+     "t": "Mario no nació siendo fontanero.",
+     "vid": [
+      "arc1",
+      "arc4"
+     ],
+     "kw": "no era fontanero",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🔧",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    },
+    {
+     "t": "En su primer juego, Donkey Kong, de 1981, era carpintero… y en las instrucciones en inglés se llamaba Jumpman.",
+     "vid": [
+      "carp",
+      "arc3",
+      "arc2"
+     ],
+     "rotulo": {
+      "arriba": "Donkey Kong, 1981",
+      "texto": "Se llamaba Jumpman"
+     },
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🔨",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    },
+    {
+     "t": "Se hizo fontanero dos años después, cuando su siguiente juego lo llevó bajo tierra, entre tuberías.",
+     "vid": [
+      "font1",
+      "font2"
+     ],
+     "kw": "entre tuberías"
+    }
+   ]
+  },
+  {
+   "nombre": "2 · Nintendo es de 1889",
+   "frases": [
+    {
+     "t": "Número dos.",
+     "card": {
+      "tipo": "numero",
+      "n": 2,
+      "tema": "Empresas"
+     }
+    },
+    {
+     "t": "Nintendo se fundó en 1889.",
+     "vid": [
+      "man3",
+      "gam4"
+     ],
+     "rotulo": {
+      "arriba": "Nintendo",
+      "texto": "Fundada en 1889"
+     }
+    },
+    {
+     "t": "No hacía videojuegos, claro: fabricaba a mano cartas japonesas, en Kioto.",
+     "vid": [
+      "cartas1",
+      "kioto",
+      "cartas2"
+     ],
+     "kw": "cartas",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🎴",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    },
+    {
+     "t": "Tardó más de ochenta años en lanzar su primer videojuego.",
+     "vid": [
+      "arc2",
+      "man1"
+     ],
+     "kw": "+80 años"
+    }
+   ]
+  },
+  {
+   "nombre": "3 · Pac-Man y la pizza",
+   "frases": [
+    {
+     "t": "Número tres.",
+     "card": {
+      "tipo": "numero",
+      "n": 3,
+      "tema": "Personajes"
+     }
+    },
+    {
+     "t": "Pac-Man nació… de una pizza.",
+     "vid": [
+      "pizza1",
+      "pizza2"
+     ],
+     "kw": "de una pizza",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🍕",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    },
+    {
+     "t": "Su creador, Toru Iwatani, contó que se inspiró en una pizza a la que le faltaba una porción.",
+     "vid": [
+      "pizza2",
+      "arc1",
+      "pizza1"
+     ],
+     "rotulo": {
+      "arriba": "Creador de Pac-Man",
+      "texto": "Toru Iwatani"
+     }
+    },
+    {
+     "t": "Aunque años después lo matizó: también se basó en el símbolo japonés de la palabra boca.",
+     "vid": [
+      "arc4",
+      "arc3"
+     ],
+     "kw": "y en un símbolo"
+    }
+   ]
+  },
+  {
+   "nombre": "4 · Tetris, hecho en la URSS",
+   "frases": [
+    {
+     "t": "Número cuatro.",
+     "card": {
+      "tipo": "numero",
+      "n": 4,
+      "tema": "Historia"
+     }
+    },
+    {
+     "t": "Tetris se creó en la Unión Soviética, en 1984.",
+     "vid": [
+      "mos1",
+      "mos2"
+     ],
+     "rotulo": {
+      "arriba": "Unión Soviética",
+      "texto": "Tetris, 1984"
+     }
+    },
+    {
+     "t": "Lo programó Alexey Pajitnov, un investigador de la Academia de Ciencias, en Moscú.",
+     "vid": [
+      "cod1",
+      "bloques",
+      "cod2"
+     ],
+     "rotulo": {
+      "arriba": "Su creador",
+      "texto": "Alexey Pajitnov"
+     }
+    },
+    {
+     "t": "Y como trabajaba para el Estado, no cobró ni un céntimo por su juego… hasta 1996.",
+     "vid": [
+      "mos2",
+      "dolar",
+      "mos1"
+     ],
+     "kw": "hasta 1996",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🚫💰",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 170
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "nombre": "5 · La PlayStation nació de una ruptura",
+   "frases": [
+    {
+     "t": "Número cinco.",
+     "card": {
+      "tipo": "numero",
+      "n": 5,
+      "tema": "Consolas"
+     }
+    },
+    {
+     "t": "La PlayStation nació de un acuerdo roto.",
+     "vid": [
+      "man2",
+      "man1"
+     ],
+     "kw": "un acuerdo roto",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "💔",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    },
+    {
+     "t": "Sony y Nintendo iban a crear juntas una consola con CD. Pero en 1991, Nintendo cambió de socio y se fue con Philips.",
+     "vid": [
+      "gam4",
+      "man3",
+      "gam3"
+     ],
+     "rotulo": {
+      "arriba": "Año 1991",
+      "texto": "Sony + Nintendo"
+     }
+    },
+    {
+     "t": "Sony siguió por su cuenta… y acabó lanzando su propia consola: la PlayStation.",
+     "vid": [
+      "man1",
+      "gam1"
+     ],
+     "kw": "por su cuenta"
+    }
+   ]
+  },
+  {
+   "nombre": "6 · Los cartuchos enterrados",
+   "frases": [
+    {
+     "t": "Número seis.",
+     "card": {
+      "tipo": "numero",
+      "n": 6,
+      "tema": "Historia"
+     }
+    },
+    {
+     "t": "En 1983, Atari enterró cientos de miles de cartuchos en un vertedero del desierto de Nuevo México.",
+     "vid": [
+      "desierto",
+      "basura1",
+      "basura2"
+     ],
+     "rotulo": {
+      "arriba": "Alamogordo, Nuevo México",
+      "texto": "700.000 cartuchos"
+     }
+    },
+    {
+     "t": "Entre ellos había copias de E.T., considerado uno de los peores videojuegos de la historia.",
+     "vid": [
+      "arc2",
+      "basura1"
+     ],
+     "kw": "uno de los peores",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "👽",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    },
+    {
+     "t": "Durante años se creyó que era una leyenda… hasta que en 2014 los desenterraron.",
+     "vid": [
+      "excav",
+      "basura2",
+      "desierto"
+     ],
+     "rotulo": {
+      "arriba": "Excavación",
+      "texto": "Año 2014"
+     }
+    }
+   ]
+  },
+  {
+   "nombre": "7 · El huevo de pascua",
+   "frases": [
+    {
+     "t": "Número siete.",
+     "card": {
+      "tipo": "numero",
+      "n": 7,
+      "tema": "Secretos"
+     }
+    },
+    {
+     "t": "En 1980, Atari no dejaba que sus programadores firmaran los juegos.",
+     "vid": [
+      "cod2",
+      "cod3"
+     ],
+     "kw": "sin firma"
+    },
+    {
+     "t": "Así que uno de ellos, Warren Robinett, escondió su nombre en una sala secreta del juego Adventure.",
+     "vid": [
+      "cod1",
+      "arc4",
+      "cod3"
+     ],
+     "rotulo": {
+      "arriba": "Adventure, 1980",
+      "texto": "Una sala secreta"
+     },
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🥚",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    },
+    {
+     "t": "Es el huevo de pascua más famoso de los videojuegos. Hoy, casi todos esconden alguno.",
+     "vid": [
+      "gam1",
+      "arc3"
+     ],
+     "kw": "huevo de pascua"
+    }
+   ]
+  },
+  {
+   "nombre": "8 · El juego más vendido",
+   "frases": [
+    {
+     "t": "Número ocho.",
+     "card": {
+      "tipo": "numero",
+      "n": 8,
+      "tema": "Récords"
+     }
+    },
+    {
+     "t": "El videojuego más vendido de la historia no es Mario, ni Tetris, ni GTA.",
+     "vid": [
+      "gam4",
+      "arc1",
+      "man2"
+     ],
+     "kw": "¿cuál es?",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🤔",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    },
+    {
+     "t": "Es Minecraft: más de cuatrocientos millones de copias.",
+     "vid": [
+      "bloques",
+      "gam3"
+     ],
+     "rotulo": {
+      "arriba": "Minecraft",
+      "texto": "+400 millones de copias"
+     }
+    },
+    {
+     "t": "Un juego de bloques que empezó creando una sola persona.",
+     "vid": [
+      "cod1",
+      "bloques"
+     ],
+     "kw": "una sola persona"
+    }
+   ]
+  },
+  {
+   "nombre": "9 · Jugadores contra la ciencia",
+   "frases": [
+    {
+     "t": "Número nueve.",
+     "card": {
+      "tipo": "numero",
+      "n": 9,
+      "tema": "Ciencia"
+     }
+    },
+    {
+     "t": "En 2011, unos jugadores resolvieron un problema que los científicos llevaban quince años sin resolver.",
+     "vid": [
+      "gam2",
+      "lab2",
+      "gam1"
+     ],
+     "rotulo": {
+      "arriba": "Sin resolver durante",
+      "texto": "15 años"
+     }
+    },
+    {
+     "t": "Con el juego Foldit, descifraron en diez días la forma de una proteína de un virus que causa en los monos una enfermedad parecida al sida.",
+     "vid": [
+      "adn1",
+      "lab3",
+      "adn2",
+      "gam3"
+     ],
+     "rotulo": {
+      "arriba": "Juego Foldit",
+      "texto": "Resuelto en 10 días"
+     },
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🧬",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "nombre": "10 · La partida perfecta",
+   "frases": [
+    {
+     "t": "Número diez.",
+     "card": {
+      "tipo": "numero",
+      "n": 10,
+      "tema": "Récords"
+     }
+    },
+    {
+     "t": "La partida perfecta de Pac-Man existe: tres millones trescientos treinta y tres mil trescientos sesenta puntos.",
+     "vid": [
+      "arc1",
+      "arc4",
+      "arc2"
+     ],
+     "rotulo": {
+      "arriba": "Puntuación perfecta",
+      "texto": "3.333.360 puntos"
+     }
+    },
+    {
+     "t": "Para lograrla hay que comérselo todo durante doscientos cincuenta y cinco niveles… sin perder ni una sola vida.",
+     "vid": [
+      "arc3",
+      "arc4",
+      "arc1"
+     ],
+     "kw": "255 niveles",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🏆",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "nombre": "11 · El récord de GTA V",
+   "frases": [
+    {
+     "t": "Número once.",
+     "card": {
+      "tipo": "numero",
+      "n": 11,
+      "tema": "Récords"
+     }
+    },
+    {
+     "t": "GTA cinco recaudó mil millones de dólares… en solo tres días.",
+     "vid": [
+      "dolar",
+      "gam1"
+     ],
+     "rotulo": {
+      "arriba": "GTA V, 2013",
+      "texto": "1.000 millones en 3 días"
+     },
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "💰",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    },
+    {
+     "t": "Fue el producto de entretenimiento que más rápido se ha vendido de la historia: más que cualquier película.",
+     "vid": [
+      "centro",
+      "gam4",
+      "espera"
+     ],
+     "kw": "récord histórico"
+    },
+    {
+     "t": "Y ya lleva casi doscientos treinta y cinco millones de copias.",
+     "vid": [
+      "man1",
+      "gam3"
+     ],
+     "rotulo": {
+      "arriba": "Copias de GTA V",
+      "texto": "Casi 235 millones"
+     }
+    }
+   ]
+  },
+  {
+   "nombre": "12 · GTA 6",
+   "frases": [
+    {
+     "t": "Número doce.",
+     "card": {
+      "tipo": "numero",
+      "n": 12,
+      "tema": "Actualidad"
+     }
+    },
+    {
+     "t": "Y ahora sí: GTA 6.",
+     "vid": [
+      "neon1",
+      "coche1"
+     ],
+     "kw": "GTA 6"
+    },
+    {
+     "t": "Estará ambientado en Leonida, un estado inventado basado en Florida, con una ciudad, Vice City, inspirada en Miami.",
+     "rotulo": {
+      "arriba": "El mapa",
+      "texto": "Leonida = Florida"
+     },
+     "img": [
+      "gta_aerea"
+     ]
+    },
+    {
+     "t": "Playas, pantanos con caimanes, neones y autopistas: la Florida real, convertida en videojuego.",
+     "vid": [
+      "mia2",
+      "cai1",
+      "neon2",
+      "mia3",
+      "cai3"
+     ],
+     "kw": "la Florida real",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🐊",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    },
+    {
+     "t": "Tendrá dos protagonistas: Jason y Lucía, una pareja de delincuentes.",
+     "vid": [
+      "poli1",
+      "coche2",
+      "poli2"
+     ],
+     "rotulo": {
+      "arriba": "Protagonistas",
+      "texto": "Jason y Lucía"
+     }
+    },
+    {
+     "t": "El camino ha sido largo. En 2022 se filtraron vídeos del juego a medio hacer, y su primer tráiler superó los cien millones de visitas en dos días.",
+     "vid": [
+      "cod3",
+      "gam2",
+      "r_man_phone",
+      "cod1"
+     ],
+     "rotulo": {
+      "arriba": "Primer tráiler",
+      "texto": "100 millones en 2 días"
+     }
+    },
+    {
+     "t": "Después llegaron dos retrasos. Y sobre su coste solo hay rumores: se habla de más de mil millones de dólares, pero Rockstar nunca ha confirmado la cifra.",
+     "vid": [
+      "espera",
+      "dolar",
+      "centro",
+      "mia1"
+     ],
+     "rotulo": {
+      "arriba": "Coste: solo rumores",
+      "texto": "¿+1.000 millones?"
+     }
+    },
+    {
+     "t": "La fecha: 19 de noviembre de 2026. Trece años después de GTA cinco… la espera se acaba.",
+     "rotulo": {
+      "arriba": "Fecha de lanzamiento",
+      "texto": "19 de noviembre de 2026"
+     },
+     "img": [
+      "gta_ciudad"
+     ]
+    }
+   ]
+  },
+  {
+   "nombre": "Cierre",
+   "final": 6,
+   "frases": [
+    {
+     "t": "Y esta ha sido tu dosis de asombro de hoy.",
+     "card": {
+      "tipo": "final"
+     }
+    },
+    {
+     "t": "¿Cuál te ha dejado con la boca abierta? Te leo en los comentarios.",
+     "card": {
+      "tipo": "final"
+     }
+    },
+    {
+     "t": "Suscríbete a Shock Mental: cada semana, una nueva dosis. ¡Nos vemos en la próxima!",
+     "voz": "Suscríbete a Shock Mental: cada semana, una nueva dosis. ¡Nos vemos en la próxima!",
+     "card": {
+      "tipo": "final"
+     }
+    }
+   ]
+  }
+ ]
+}
