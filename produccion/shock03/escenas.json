@@ -1,0 +1,739 @@
+{
+ "tema": "shock",
+ "tarjetas": "tarjetas-shock.html",
+ "intro": {
+  "video": "marca/shockmental/intro/intro.mp4",
+  "audio": "marca/shockmental/intro/intro_audio.wav"
+ },
+ "musica": {
+  "archivo": "musica/wallpaper.mp3",
+  "volumen": 0.09,
+  "credito": "\"Wallpaper\" de Kevin MacLeod (incompetech.com)"
+ },
+ "estilo": {
+  "dinamico": true,
+  "plano": 1.6
+ },
+ "marco": {
+  "titulo": "SHOCK&nbsp;<i>MENTAL</i>",
+  "lema": "Tu dosis de asombro 🧠⚡",
+  "logo": "marca/shockmental/perfil-sin-eslogan.png"
+ },
+ "voz": {
+  "idioma": "es-US",
+  "nombre": "es-US-Chirp3-HD-Achird",
+  "velocidad": 1.15
+ },
+ "titulo": "¿Han encontrado el Arca de Noé? La verdad… y 11 cosas que parecen mentira",
+ "videos": {
+  "r_shocked_woman": 8626657,
+  "r_man_tv": 9883681,
+  "r_man_phone": 7534960,
+  "ara1": 5895513,
+  "ara2": 5895507,
+  "ara3": 5895504,
+  "ara4": 11583916,
+  "barco1": 2882405,
+  "barco2": 2882402,
+  "mar1": 1879456,
+  "mar2": 2802271,
+  "lluvia": 5192322,
+  "biblia1": 3987756,
+  "biblia2": 5199729,
+  "lab1": 4121618,
+  "lab2": 4121322,
+  "lab3": 5752729,
+  "fuego": 4362675,
+  "brasas": 854692,
+  "tierra_exc": 3886731,
+  "tib1": 5548408,
+  "tib2": 5548357,
+  "tib3": 5548360,
+  "tib4": 5548358,
+  "tib5": 5712941,
+  "bos1": 1437396,
+  "bos2": 3177845,
+  "bos3": 1168716,
+  "bos4": 856478,
+  "est1": 857136,
+  "est2": 852369,
+  "est3": 856077,
+  "pir1": 4174146,
+  "pir2": 4174152,
+  "pir3": 4174113,
+  "iph1": 2825517,
+  "iph2": 853987,
+  "del1": 5607986,
+  "del2": 5607990,
+  "del3": 4328539,
+  "del4": 5607988,
+  "buho1": 7131413,
+  "buho2": 7426347,
+  "buho3": 7638202,
+  "buho4": 8051173,
+  "mar_1": 1433307,
+  "mar_2": 856990,
+  "mar_3": 3877884,
+  "mar_4": 854286,
+  "bal1": 6625561,
+  "bal2": 4332083,
+  "bal3": 4332085,
+  "bal4": 5608046,
+  "ele1": 855538,
+  "ele2": 2835528,
+  "ele3": 3842814,
+  "ele4": 1171808,
+  "ele5": 3569572,
+  "mur1": 1193306,
+  "mur2": 2881976,
+  "mur3": 2881972,
+  "mur4": 2881966,
+  "tierra": 854518,
+  "tierra2": 2695085,
+  "sat": 854239,
+  "eve1": 1839364,
+  "eve2": 4802890,
+  "eve3": 2895749,
+  "eve4": 3329262,
+  "koa1": 9865138,
+  "koa2": 6200040
+ },
+ "videos_inicio": {
+  "r_man_tv": 3.5,
+  "r_shocked_woman": 0.3,
+  "r_man_phone": 2.5,
+  "est2": 4.0
+ },
+ "credito_videos": {},
+ "fotos": {
+  "durupinar": 0,
+  "durupinar_barco": 0
+ },
+ "credito_fotos": {
+  "durupinar": "Foto: Wikkiwooki · CC BY-SA 4.0",
+  "durupinar_barco": "Foto: Rudolf Pohl · CC BY-SA 3.0"
+ },
+ "bloques": [
+  {
+   "nombre": "Gancho",
+   "frases": [
+    {
+     "t": "¿Han encontrado el Arca de Noé… en una montaña de Turquía?",
+     "kw": "¿el Arca de Noé?",
+     "img": [
+      "durupinar_barco",
+      "durupinar"
+     ]
+    },
+    {
+     "t": "Unos investigadores acaban de enseñar lo que han sacado de allí. Al final te cuento qué es… y qué dicen los científicos.",
+     "vid": [
+      "ara4",
+      "lab1",
+      "ara3"
+     ],
+     "kw": "lo que han sacado"
+    },
+    {
+     "t": "Pero antes, once cosas reales… que parecen mentira.",
+     "vid": [
+      "r_shocked_woman"
+     ],
+     "kw": "11 cosas reales"
+    }
+   ]
+  },
+  {
+   "nombre": "Intro",
+   "intro": true
+  },
+  {
+   "nombre": "1 · Tiburones antes que árboles",
+   "frases": [
+    {
+     "t": "Número uno.",
+     "card": {
+      "tipo": "numero",
+      "n": 1,
+      "tema": "Animales"
+     }
+    },
+    {
+     "t": "Los tiburones son más antiguos que los árboles.",
+     "vid": [
+      "tib1",
+      "tib2"
+     ],
+     "kw": "más antiguos"
+    },
+    {
+     "t": "Las primeras huellas de tiburones tienen unos cuatrocientos cincuenta millones de años.",
+     "vid": [
+      "tib4",
+      "tib3"
+     ],
+     "rotulo": {
+      "arriba": "Tiburones",
+      "texto": "450 millones de años"
+     }
+    },
+    {
+     "t": "Los primeros árboles aparecieron mucho después: hace unos trescientos ochenta millones.",
+     "vid": [
+      "bos1",
+      "bos3"
+     ],
+     "rotulo": {
+      "arriba": "Primeros árboles",
+      "texto": "380 millones de años"
+     }
+    },
+    {
+     "t": "Cuando en la Tierra no había ni un solo bosque… ellos ya nadaban.",
+     "vid": [
+      "tib5",
+      "tib1"
+     ],
+     "kw": "ya nadaban"
+    }
+   ]
+  },
+  {
+   "nombre": "2 · Cleopatra y el iPhone",
+   "frases": [
+    {
+     "t": "Número dos.",
+     "card": {
+      "tipo": "numero",
+      "n": 2,
+      "tema": "Historia"
+     }
+    },
+    {
+     "t": "Cleopatra vivió más cerca del iPhone que de la construcción de la Gran Pirámide.",
+     "vid": [
+      "pir1",
+      "iph1",
+      "pir2"
+     ],
+     "kw": "¿cómo?"
+    },
+    {
+     "t": "La pirámide se levantó unos dos mil quinientos años antes de que ella naciera.",
+     "vid": [
+      "pir3",
+      "pir1"
+     ],
+     "rotulo": {
+      "arriba": "Gran Pirámide → Cleopatra",
+      "texto": "2.500 años"
+     }
+    },
+    {
+     "t": "Y entre Cleopatra y el primer iPhone hay… unos dos mil.",
+     "vid": [
+      "iph2",
+      "iph1"
+     ],
+     "rotulo": {
+      "arriba": "Cleopatra → iPhone",
+      "texto": "2.000 años"
+     }
+    },
+    {
+     "t": "Para ella, las pirámides ya eran una antigüedad.",
+     "vid": [
+      "pir2",
+      "pir3"
+     ],
+     "kw": "ya eran antiguas"
+    }
+   ]
+  },
+  {
+   "nombre": "3 · Más árboles que estrellas",
+   "frases": [
+    {
+     "t": "Número tres.",
+     "card": {
+      "tipo": "numero",
+      "n": 3,
+      "tema": "Planeta"
+     }
+    },
+    {
+     "t": "En la Tierra hay más árboles que estrellas en nuestra galaxia.",
+     "vid": [
+      "bos2",
+      "est1"
+     ],
+     "kw": "más árboles"
+    },
+    {
+     "t": "Un estudio publicado en la revista Nature calculó unos tres billones de árboles.",
+     "vid": [
+      "bos4",
+      "bos1",
+      "bos3"
+     ],
+     "rotulo": {
+      "arriba": "Revista Nature, 2015",
+      "texto": "3 billones de árboles"
+     }
+    },
+    {
+     "t": "En la Vía Láctea se calculan, como mucho, unos cuatrocientos mil millones de estrellas.",
+     "vid": [
+      "est3",
+      "est2"
+     ],
+     "rotulo": {
+      "arriba": "Vía Láctea",
+      "texto": "400.000 millones de estrellas"
+     }
+    },
+    {
+     "t": "Tocamos a unos cuatrocientos árboles por persona.",
+     "vid": [
+      "bos2",
+      "bos4"
+     ],
+     "kw": "400 por persona"
+    }
+   ]
+  },
+  {
+   "nombre": "4 · Los delfines duermen a medias",
+   "frases": [
+    {
+     "t": "Número cuatro.",
+     "card": {
+      "tipo": "numero",
+      "n": 4,
+      "tema": "Animales"
+     }
+    },
+    {
+     "t": "Los delfines duermen… con medio cerebro despierto.",
+     "vid": [
+      "del1",
+      "del4"
+     ],
+     "kw": "medio cerebro"
+    },
+    {
+     "t": "Apagan una mitad y dejan la otra alerta, con un ojo abierto.",
+     "vid": [
+      "del2",
+      "del1"
+     ],
+     "rotulo": {
+      "arriba": "Mientras duermen",
+      "texto": "Un ojo abierto"
+     }
+    },
+    {
+     "t": "Así pueden seguir subiendo a respirar y vigilar si se acerca un depredador.",
+     "vid": [
+      "del3",
+      "del4",
+      "del2"
+     ],
+     "kw": "sin dejar de nadar"
+    }
+   ]
+  },
+  {
+   "nombre": "5 · El cuello del búho",
+   "frases": [
+    {
+     "t": "Número cinco.",
+     "card": {
+      "tipo": "numero",
+      "n": 5,
+      "tema": "Animales"
+     }
+    },
+    {
+     "t": "Un búho puede girar la cabeza doscientos setenta grados.",
+     "vid": [
+      "buho1",
+      "buho2"
+     ],
+     "rotulo": {
+      "arriba": "Giro de la cabeza",
+      "texto": "270 grados"
+     }
+    },
+    {
+     "t": "Casi una vuelta completa, hacia cualquiera de los dos lados.",
+     "vid": [
+      "buho3",
+      "buho4"
+     ],
+     "kw": "casi una vuelta"
+    },
+    {
+     "t": "Lo necesita: sus ojos no se mueven. Para mirar a otro sitio, tiene que girar toda la cabeza.",
+     "vid": [
+      "buho2",
+      "buho1",
+      "buho3"
+     ],
+     "kw": "ojos fijos"
+    }
+   ]
+  },
+  {
+   "nombre": "6 · Las mariposas saborean con las patas",
+   "frases": [
+    {
+     "t": "Número seis.",
+     "card": {
+      "tipo": "numero",
+      "n": 6,
+      "tema": "Animales"
+     }
+    },
+    {
+     "t": "Las mariposas saborean… con las patas.",
+     "vid": [
+      "mar_1",
+      "mar_2"
+     ],
+     "kw": "con las patas"
+    },
+    {
+     "t": "Ahí tienen los sensores del gusto: les basta posarse en una planta para saber a qué sabe.",
+     "vid": [
+      "mar_3",
+      "mar_4",
+      "mar_1"
+     ],
+     "rotulo": {
+      "arriba": "Sensores del gusto",
+      "texto": "En las patas"
+     }
+    },
+    {
+     "t": "Así eligen dónde comer… y dónde poner sus huevos.",
+     "vid": [
+      "mar_2",
+      "mar_3"
+     ],
+     "kw": "así eligen"
+    }
+   ]
+  },
+  {
+   "nombre": "7 · La lengua de la ballena azul",
+   "frases": [
+    {
+     "t": "Número siete.",
+     "card": {
+      "tipo": "numero",
+      "n": 7,
+      "tema": "Animales"
+     }
+    },
+    {
+     "t": "La ballena azul es el animal más grande que ha existido.",
+     "vid": [
+      "bal1",
+      "bal3"
+     ],
+     "kw": "el más grande"
+    },
+    {
+     "t": "Solo su lengua puede pesar tanto como un elefante.",
+     "vid": [
+      "ele1",
+      "bal2",
+      "ele3"
+     ],
+     "rotulo": {
+      "arriba": "Solo la lengua",
+      "texto": "Como un elefante"
+     }
+    },
+    {
+     "t": "Y su corazón, tanto como un coche.",
+     "vid": [
+      "bal4",
+      "bal1"
+     ],
+     "rotulo": {
+      "arriba": "Su corazón",
+      "texto": "Como un coche"
+     }
+    }
+   ]
+  },
+  {
+   "nombre": "8 · La Gran Muralla desde el espacio",
+   "frases": [
+    {
+     "t": "Número ocho.",
+     "card": {
+      "tipo": "numero",
+      "n": 8,
+      "tema": "Mitos"
+     }
+    },
+    {
+     "t": "Seguro que lo has oído: la Gran Muralla china se ve desde el espacio.",
+     "vid": [
+      "mur1",
+      "mur2"
+     ],
+     "kw": "¿se ve?"
+    },
+    {
+     "t": "Pues no. Según la NASA, a simple vista no se distingue desde la órbita.",
+     "vid": [
+      "tierra",
+      "sat",
+      "tierra2"
+     ],
+     "rotulo": {
+      "arriba": "Según la NASA",
+      "texto": "No se ve a simple vista"
+     }
+    },
+    {
+     "t": "Es larguísima, sí… pero muy estrecha, y del mismo color que el paisaje.",
+     "vid": [
+      "mur3",
+      "mur4",
+      "mur1"
+     ],
+     "kw": "muy estrecha"
+    }
+   ]
+  },
+  {
+   "nombre": "9 · El Everest sigue creciendo",
+   "frases": [
+    {
+     "t": "Número nueve.",
+     "card": {
+      "tipo": "numero",
+      "n": 9,
+      "tema": "Planeta"
+     }
+    },
+    {
+     "t": "El Everest todavía está creciendo.",
+     "vid": [
+      "eve1",
+      "eve2"
+     ],
+     "kw": "sigue creciendo"
+    },
+    {
+     "t": "Sube hasta unos dos milímetros cada año, empujado por el choque de dos placas de la Tierra.",
+     "vid": [
+      "eve4",
+      "eve3",
+      "eve1"
+     ],
+     "rotulo": {
+      "arriba": "El Everest crece",
+      "texto": "Hasta 2 mm al año"
+     }
+    },
+    {
+     "t": "Y un estudio de 2024 encontró otra causa: un río cercano erosiona tanta roca que la montaña, más ligera, se eleva.",
+     "vid": [
+      "eve2",
+      "eve4",
+      "eve3"
+     ],
+     "rotulo": {
+      "arriba": "Nature Geoscience, 2024",
+      "texto": "Un río lo levanta"
+     }
+    }
+   ]
+  },
+  {
+   "nombre": "10 · Los elefantes no saltan",
+   "frases": [
+    {
+     "t": "Número diez.",
+     "card": {
+      "tipo": "numero",
+      "n": 10,
+      "tema": "Animales"
+     }
+    },
+    {
+     "t": "Los elefantes no pueden saltar.",
+     "vid": [
+      "ele2",
+      "ele4"
+     ],
+     "kw": "no saltan"
+    },
+    {
+     "t": "Pesan demasiado, y los huesos de sus patas no están hechos para impulsarse.",
+     "vid": [
+      "ele1",
+      "ele5",
+      "ele3"
+     ],
+     "rotulo": {
+      "arriba": "Un elefante adulto",
+      "texto": "Hasta 6 toneladas"
+     }
+    },
+    {
+     "t": "Ni siquiera al correr despegan las cuatro patas del suelo a la vez.",
+     "vid": [
+      "ele4",
+      "ele2"
+     ],
+     "kw": "siempre una pata en el suelo"
+    }
+   ]
+  },
+  {
+   "nombre": "11 · Las huellas del koala",
+   "frases": [
+    {
+     "t": "Número once.",
+     "card": {
+      "tipo": "numero",
+      "n": 11,
+      "tema": "Animales"
+     }
+    },
+    {
+     "t": "Los koalas tienen huellas dactilares.",
+     "vid": [
+      "koa1",
+      "koa2"
+     ],
+     "kw": "huellas dactilares"
+    },
+    {
+     "t": "Y son tan parecidas a las humanas que, incluso al microscopio, cuesta distinguirlas.",
+     "vid": [
+      "lab3",
+      "koa2",
+      "koa1"
+     ],
+     "rotulo": {
+      "arriba": "Al microscopio",
+      "texto": "Casi idénticas a las nuestras"
+     }
+    }
+   ]
+  },
+  {
+   "nombre": "12 · El Arca de Noé",
+   "frases": [
+    {
+     "t": "Número doce.",
+     "card": {
+      "tipo": "numero",
+      "n": 12,
+      "tema": "Actualidad"
+     }
+    },
+    {
+     "t": "Y ahora sí: el Arca de Noé.",
+     "vid": [
+      "ara1",
+      "barco1"
+     ],
+     "kw": "el Arca de Noé"
+    },
+    {
+     "t": "Cerca del monte Ararat, en Turquía, hay una formación con forma de barco de unos ciento cincuenta metros: Durupınar.",
+     "rotulo": {
+      "arriba": "Turquía, cerca del Ararat",
+      "texto": "Formación de Durupınar"
+     },
+     "img": [
+      "durupinar_barco",
+      "durupinar"
+     ]
+    },
+    {
+     "t": "Se conoce desde 1959, y hay quien cree que son los restos del arca.",
+     "kw": "desde 1959",
+     "img": [
+      "durupinar_barco"
+     ]
+    },
+    {
+     "t": "Este noviembre, un equipo ha presentado trozos de madera carbonizada, sacados de allí a unos nueve metros de profundidad.",
+     "vid": [
+      "fuego",
+      "tierra_exc",
+      "brasas",
+      "ara4"
+     ],
+     "rotulo": {
+      "arriba": "Noviembre de 2026",
+      "texto": "Madera a 9 metros"
+     }
+    },
+    {
+     "t": "Las muestras están ahora en laboratorios, para saber cuántos años tienen.",
+     "vid": [
+      "lab1",
+      "lab2"
+     ],
+     "kw": "en el laboratorio"
+    },
+    {
+     "t": "Pero ojo: todavía no hay resultados, y la mayoría de geólogos cree que esa forma es… natural.",
+     "vid": [
+      "r_man_tv",
+      "ara1"
+     ],
+     "rotulo": {
+      "arriba": "La mayoría de geólogos",
+      "texto": "Una formación natural"
+     }
+    },
+    {
+     "t": "¿Arca o roca? De momento, sigue siendo un misterio. Si se confirma algo, te lo cuento aquí.",
+     "vid": [
+      "barco2",
+      "ara2",
+      "barco1"
+     ],
+     "kw": "¿arca o roca?"
+    }
+   ]
+  },
+  {
+   "nombre": "Cierre",
+   "final": 6,
+   "frases": [
+    {
+     "t": "Y esta ha sido tu dosis de asombro de hoy.",
+     "card": {
+      "tipo": "final"
+     }
+    },
+    {
+     "t": "¿Cuál te ha dejado con la boca abierta? Te leo en los comentarios.",
+     "card": {
+      "tipo": "final"
+     }
+    },
+    {
+     "t": "Suscríbete a Shock Mental: cada semana, una nueva dosis. ¡Nos vemos en la próxima!",
+     "voz": "Suscríbete a Shock Mental: cada semana, una nueva dosis. ¡Nos vemos en la próxima!",
+     "card": {
+      "tipo": "final"
+     }
+    }
+   ]
+  }
+ ]
+}
