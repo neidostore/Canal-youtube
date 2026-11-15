@@ -1,0 +1,836 @@
+{
+ "tema": "shock",
+ "tarjetas": "tarjetas-shock.html",
+ "intro": {
+  "video": "marca/shockmental/intro/intro.mp4",
+  "audio": "marca/shockmental/intro/intro_audio.wav"
+ },
+ "musica": {
+  "archivo": "musica/wallpaper.mp3",
+  "volumen": 0.09,
+  "credito": "\"Wallpaper\" de Kevin MacLeod (incompetech.com)"
+ },
+ "estilo": {
+  "dinamico": true,
+  "plano": 1.6
+ },
+ "marco": {
+  "titulo": "SHOCK&nbsp;<i>MENTAL</i>",
+  "lema": "Tu dosis de asombro 🧠⚡",
+  "logo": "marca/shockmental/perfil-sin-eslogan.png"
+ },
+ "voz": {
+  "idioma": "es-US",
+  "nombre": "es-US-Chirp3-HD-Achird",
+  "velocidad": 1.15
+ },
+ "titulo": "EE. UU. abre sus archivos OVNI: qué hay dentro… y 11 cosas que parecen mentira",
+ "videos": {
+  "r_shocked_woman": 8626657,
+  "r_man_tv": 9883681,
+  "r_man_phone": 7534960,
+  "uap_atl": "uap_atlantico_2020",
+  "uap_gre": "uap_grecia_2023",
+  "uap_mo": "uap_medio_oriente_2020",
+  "uap_us": "uap_eeuu_2019",
+  "maq1": 2750157,
+  "maq2": 3945490,
+  "maq3": 2752546,
+  "capit": 6581274,
+  "radar1": 2954001,
+  "radar2": 6442793,
+  "cielo1": 857195,
+  "cielo2": 5380054,
+  "cielo3": 4911644,
+  "luna1": 4154903,
+  "luna2": 3579494,
+  "astro": 854255,
+  "vol1": 9320060,
+  "vol2": 3192197,
+  "vol3": 8334109,
+  "vol4": 4611811,
+  "tierra": 854518,
+  "aur1": 5700949,
+  "aur2": 5700806,
+  "aur3": 5700940,
+  "aur4": 3222269,
+  "saturno": 5428316,
+  "can1": 5739690,
+  "can2": 5739695,
+  "can3": 8206802,
+  "can4": 5739698,
+  "coc1": 5742215,
+  "coc2": 2885406,
+  "coc3": 5735992,
+  "coc4": 2910042,
+  "ara1": 5645576,
+  "ara2": 5235135,
+  "ara3": 3239871,
+  "ara4": 4787894,
+  "mm1": 5787553,
+  "mm2": 5787551,
+  "mm3": 6496485,
+  "mm4": 5787552,
+  "ice1": 8318379,
+  "ice2": 8318644,
+  "ice3": 8318380,
+  "ice4": 8318700,
+  "pay1": 5548246,
+  "pay2": 1534875,
+  "pay3": 4029955,
+  "pay4": 1536346,
+  "tor1": 5290324,
+  "tor2": 1151284,
+  "tor3": 1456996,
+  "tor4": 4195131,
+  "nut1": 2556428,
+  "nut2": 2554576,
+  "nut3": 2554522
+ },
+ "videos_inicio": {
+  "r_man_tv": 3.5,
+  "r_shocked_woman": 0.3,
+  "r_man_phone": 2.5,
+  "uap_atl": 12.0,
+  "uap_gre": 5.5,
+  "uap_mo": 3.0,
+  "uap_us": 2.0
+ },
+ "credito_videos": {
+  "uap_atl": "Vídeo oficial desclasificado · Gobierno de EE. UU.",
+  "uap_gre": "Vídeo oficial desclasificado · Gobierno de EE. UU.",
+  "uap_mo": "Vídeo oficial desclasificado · Gobierno de EE. UU.",
+  "uap_us": "Vídeo oficial desclasificado · Gobierno de EE. UU."
+ },
+ "fotos": {},
+ "credito_fotos": {},
+ "bloques": [
+  {
+   "nombre": "Gancho",
+   "frases": [
+    {
+     "t": "Estados Unidos ha abierto sus archivos secretos sobre ovnis.",
+     "vid": [
+      "uap_atl",
+      "uap_gre"
+     ],
+     "kw": "archivos ovni"
+    },
+    {
+     "t": "Informes, fotos y vídeos militares que nunca se habían visto. Al final te enseño qué hay dentro… y qué no.",
+     "vid": [
+      "uap_mo",
+      "maq1",
+      "uap_us",
+      "maq3"
+     ],
+     "kw": "¿qué hay dentro?",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🛸",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    },
+    {
+     "t": "Pero antes, once cosas reales… que parecen mentira.",
+     "vid": [
+      "r_shocked_woman"
+     ],
+     "kw": "11 cosas reales"
+    }
+   ]
+  },
+  {
+   "nombre": "Intro",
+   "intro": true
+  },
+  {
+   "nombre": "1 · El sonido más fuerte",
+   "frases": [
+    {
+     "t": "Número uno.",
+     "card": {
+      "tipo": "numero",
+      "n": 1,
+      "tema": "Planeta"
+     }
+    },
+    {
+     "t": "El sonido más fuerte del que hay registro… lo hizo un volcán.",
+     "vid": [
+      "vol1",
+      "vol2"
+     ],
+     "kw": "el más fuerte",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🌋",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    },
+    {
+     "t": "En 1883, la explosión del Krakatoa, en Indonesia, se oyó a casi cinco mil kilómetros de distancia.",
+     "vid": [
+      "vol2",
+      "vol4",
+      "vol3"
+     ],
+     "rotulo": {
+      "arriba": "Krakatoa, 1883",
+      "texto": "Se oyó a 4.800 km"
+     }
+    },
+    {
+     "t": "Y su onda de presión dio varias vueltas al planeta.",
+     "vid": [
+      "tierra",
+      "vol1"
+     ],
+     "kw": "varias vueltas"
+    }
+   ]
+  },
+  {
+   "nombre": "2 · Auroras en otros planetas",
+   "frases": [
+    {
+     "t": "Número dos.",
+     "card": {
+      "tipo": "numero",
+      "n": 2,
+      "tema": "Espacio"
+     }
+    },
+    {
+     "t": "Las auroras no son solo cosa de la Tierra.",
+     "vid": [
+      "aur1",
+      "aur2"
+     ],
+     "kw": "no solo aquí"
+    },
+    {
+     "t": "Júpiter y Saturno también las tienen. Y las de Júpiter son cientos de veces más brillantes que las nuestras.",
+     "vid": [
+      "saturno",
+      "aur3",
+      "aur4"
+     ],
+     "rotulo": {
+      "arriba": "Auroras de Júpiter",
+      "texto": "Cientos de veces más brillantes"
+     },
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🪐",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "nombre": "3 · Los canguros no retroceden",
+   "frases": [
+    {
+     "t": "Número tres.",
+     "card": {
+      "tipo": "numero",
+      "n": 3,
+      "tema": "Animales"
+     }
+    },
+    {
+     "t": "Los canguros no pueden caminar hacia atrás.",
+     "vid": [
+      "can1",
+      "can2"
+     ],
+     "kw": "ni un paso atrás",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🦘",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    },
+    {
+     "t": "Sus patas traseras se mueven juntas, y esa cola enorme les estorba.",
+     "vid": [
+      "can4",
+      "can3"
+     ],
+     "rotulo": {
+      "arriba": "El problema",
+      "texto": "Patas juntas y cola enorme"
+     }
+    },
+    {
+     "t": "Como mucho, dan saltitos hacia atrás para esquivar un golpe.",
+     "vid": [
+      "can2",
+      "can1"
+     ],
+     "kw": "solo saltitos"
+    }
+   ]
+  },
+  {
+   "nombre": "4 · La lengua del cocodrilo",
+   "frases": [
+    {
+     "t": "Número cuatro.",
+     "card": {
+      "tipo": "numero",
+      "n": 4,
+      "tema": "Animales"
+     }
+    },
+    {
+     "t": "Un cocodrilo no puede sacar la lengua.",
+     "vid": [
+      "coc1",
+      "coc2"
+     ],
+     "kw": "no puede",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "👅",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    },
+    {
+     "t": "La tiene sujeta al fondo de la boca por una membrana.",
+     "vid": [
+      "coc3",
+      "coc1"
+     ],
+     "rotulo": {
+      "arriba": "Su lengua",
+      "texto": "Sujeta por una membrana"
+     }
+    },
+    {
+     "t": "Así no se la muerde al cerrar las mandíbulas… de golpe.",
+     "vid": [
+      "coc4",
+      "coc2"
+     ],
+     "kw": "de golpe"
+    }
+   ]
+  },
+  {
+   "nombre": "5 · Más fuerte que el acero",
+   "frases": [
+    {
+     "t": "Número cinco.",
+     "card": {
+      "tipo": "numero",
+      "n": 5,
+      "tema": "Naturaleza"
+     }
+    },
+    {
+     "t": "A igualdad de peso, la seda de araña es unas cinco veces más resistente que el acero.",
+     "vid": [
+      "ara1",
+      "ara2",
+      "ara3"
+     ],
+     "rotulo": {
+      "arriba": "Seda de araña",
+      "texto": "5 veces más que el acero"
+     },
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🕸️",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    },
+    {
+     "t": "Y además es elástica: se estira muchísimo antes de romperse.",
+     "vid": [
+      "ara4",
+      "ara2"
+     ],
+     "kw": "y elástica"
+    }
+   ]
+  },
+  {
+   "nombre": "6 · La Luna se aleja",
+   "frases": [
+    {
+     "t": "Número seis.",
+     "card": {
+      "tipo": "numero",
+      "n": 6,
+      "tema": "Espacio"
+     }
+    },
+    {
+     "t": "La Luna se está alejando de nosotros.",
+     "vid": [
+      "luna1",
+      "luna2"
+     ],
+     "kw": "se aleja",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🌕",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    },
+    {
+     "t": "Unos tres coma ocho centímetros cada año: más o menos al ritmo al que crecen tus uñas.",
+     "vid": [
+      "luna2",
+      "tierra"
+     ],
+     "rotulo": {
+      "arriba": "Cada año se aleja",
+      "texto": "3,8 centímetros"
+     }
+    },
+    {
+     "t": "Lo sabemos gracias a unos espejos que dejaron allí los astronautas del Apolo, a los que se apunta con láser.",
+     "vid": [
+      "astro",
+      "luna1",
+      "cielo1"
+     ],
+     "kw": "espejos en la Luna"
+    }
+   ]
+  },
+  {
+   "nombre": "7 · El mar donde no te hundes",
+   "frases": [
+    {
+     "t": "Número siete.",
+     "card": {
+      "tipo": "numero",
+      "n": 7,
+      "tema": "Lugares"
+     }
+    },
+    {
+     "t": "En el Mar Muerto, no te puedes hundir.",
+     "vid": [
+      "mm1",
+      "mm2"
+     ],
+     "kw": "no te hundes"
+    },
+    {
+     "t": "Su agua es casi diez veces más salada que la del océano, y tan densa que flotas sin hacer nada.",
+     "vid": [
+      "mm3",
+      "mm4",
+      "mm1"
+     ],
+     "rotulo": {
+      "arriba": "Mar Muerto",
+      "texto": "10 veces más salado"
+     },
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🧂",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    },
+    {
+     "t": "Y está en el punto más bajo de la superficie terrestre: más de cuatrocientos metros bajo el nivel del mar.",
+     "vid": [
+      "mm2",
+      "mm4"
+     ],
+     "rotulo": {
+      "arriba": "Bajo el nivel del mar",
+      "texto": "Más de 400 metros"
+     }
+    }
+   ]
+  },
+  {
+   "nombre": "8 · La punta del iceberg",
+   "frases": [
+    {
+     "t": "Número ocho.",
+     "card": {
+      "tipo": "numero",
+      "n": 8,
+      "tema": "Planeta"
+     }
+    },
+    {
+     "t": "De un iceberg solo ves la punta.",
+     "vid": [
+      "ice1",
+      "ice2"
+     ],
+     "kw": "solo la punta",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🧊",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    },
+    {
+     "t": "Alrededor del noventa por ciento está escondido bajo el agua.",
+     "vid": [
+      "ice3",
+      "ice4"
+     ],
+     "rotulo": {
+      "arriba": "Bajo el agua",
+      "texto": "El 90 % del iceberg"
+     }
+    },
+    {
+     "t": "Porque el hielo es solo un poco menos denso que el agua del mar.",
+     "vid": [
+      "ice2",
+      "ice1"
+     ],
+     "kw": "un poco menos denso"
+    }
+   ]
+  },
+  {
+   "nombre": "9 · El pez que cambia de sexo",
+   "frases": [
+    {
+     "t": "Número nueve.",
+     "card": {
+      "tipo": "numero",
+      "n": 9,
+      "tema": "Animales"
+     }
+    },
+    {
+     "t": "Todos los peces payaso nacen machos.",
+     "vid": [
+      "pay1",
+      "pay2"
+     ],
+     "kw": "todos machos",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🐠",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    },
+    {
+     "t": "Cuando muere la hembra del grupo, el macho dominante cambia de sexo… y pasa a ser la nueva hembra.",
+     "vid": [
+      "pay3",
+      "pay4",
+      "pay1"
+     ],
+     "rotulo": {
+      "arriba": "Pez payaso",
+      "texto": "Cambia de sexo"
+     }
+    },
+    {
+     "t": "Sí: en la vida real, el padre de Nemo habría acabado siendo su madre.",
+     "vid": [
+      "r_man_phone",
+      "pay2"
+     ],
+     "kw": "el padre de Nemo"
+    }
+   ]
+  },
+  {
+   "nombre": "10 · Las tortugas vuelven a casa",
+   "frases": [
+    {
+     "t": "Número diez.",
+     "card": {
+      "tipo": "numero",
+      "n": 10,
+      "tema": "Animales"
+     }
+    },
+    {
+     "t": "Las tortugas marinas vuelven a poner sus huevos a la playa donde nacieron.",
+     "vid": [
+      "tor1",
+      "tor2"
+     ],
+     "kw": "vuelven a casa",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🐢",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    },
+    {
+     "t": "Aunque hayan pasado décadas… y miles de kilómetros.",
+     "vid": [
+      "tor3",
+      "tor4"
+     ],
+     "kw": "décadas después"
+    },
+    {
+     "t": "Los científicos creen que se orientan con el campo magnético de la Tierra, como si llevaran una brújula.",
+     "vid": [
+      "tierra",
+      "tor1",
+      "tor2"
+     ],
+     "rotulo": {
+      "arriba": "Su brújula",
+      "texto": "El campo magnético"
+     },
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🧭",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "nombre": "11 · Las nutrias duermen de la mano",
+   "frases": [
+    {
+     "t": "Número once.",
+     "card": {
+      "tipo": "numero",
+      "n": 11,
+      "tema": "Animales"
+     }
+    },
+    {
+     "t": "Las nutrias marinas duermen flotando boca arriba.",
+     "vid": [
+      "nut1",
+      "nut2"
+     ],
+     "kw": "flotando",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "😴",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    },
+    {
+     "t": "Y a veces se cogen de la mano… para que la corriente no las separe.",
+     "vid": [
+      "nut3",
+      "nut1"
+     ],
+     "kw": "de la mano"
+    }
+   ]
+  },
+  {
+   "nombre": "12 · Los archivos ovni",
+   "frases": [
+    {
+     "t": "Número doce.",
+     "card": {
+      "tipo": "numero",
+      "n": 12,
+      "tema": "Actualidad"
+     }
+    },
+    {
+     "t": "Y ahora sí: los archivos ovni.",
+     "vid": [
+      "uap_gre",
+      "cielo2"
+     ],
+     "kw": "archivos ovni"
+    },
+    {
+     "t": "En febrero de 2026, el presidente Trump ordenó publicar los archivos del Gobierno sobre ovnis.",
+     "vid": [
+      "capit",
+      "maq2",
+      "maq1"
+     ],
+     "rotulo": {
+      "arriba": "Febrero de 2026",
+      "texto": "La orden de desclasificar"
+     }
+    },
+    {
+     "t": "Desde mayo salen por tandas: informes, fotos y vídeos grabados por militares. Como este.",
+     "vid": [
+      "uap_atl"
+     ],
+     "rotulo": {
+      "arriba": "Vídeo oficial · sin resolver",
+      "texto": "Océano Atlántico, 2020"
+     }
+    },
+    {
+     "t": "O este otro, captado en Grecia en 2023.",
+     "vid": [
+      "uap_gre"
+     ],
+     "rotulo": {
+      "arriba": "Vídeo oficial · sin resolver",
+      "texto": "Grecia, 2023"
+     }
+    },
+    {
+     "t": "Hay objetos que los pilotos no supieron identificar, y hasta conversaciones de astronautas.",
+     "vid": [
+      "uap_mo",
+      "uap_us",
+      "radar2"
+     ],
+     "kw": "sin identificar"
+    },
+    {
+     "t": "Pero ojo: las propias autoridades dicen que nada de esto demuestra que existan extraterrestres. Son casos sin resolver.",
+     "vid": [
+      "r_man_tv",
+      "uap_us"
+     ],
+     "rotulo": {
+      "arriba": "Lo que NO demuestran",
+      "texto": "Vida extraterrestre"
+     }
+    },
+    {
+     "t": "Y varias fotos de las misiones a la Luna ya tenían explicación: impactos de micrometeoritos, restos flotando o defectos de la película.",
+     "vid": [
+      "luna1",
+      "astro",
+      "luna2"
+     ],
+     "kw": "ya explicadas"
+    },
+    {
+     "t": "¿Naves de otro mundo… o algo que todavía no sabemos explicar? Siguen saliendo archivos. Te lo iré contando aquí.",
+     "vid": [
+      "uap_atl",
+      "cielo3",
+      "uap_mo"
+     ],
+     "kw": "¿tú qué crees?",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🛸",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "nombre": "Cierre",
+   "final": 6,
+   "frases": [
+    {
+     "t": "Y esta ha sido tu dosis de asombro de hoy.",
+     "card": {
+      "tipo": "final"
+     }
+    },
+    {
+     "t": "¿Cuál te ha dejado con la boca abierta? Te leo en los comentarios.",
+     "card": {
+      "tipo": "final"
+     }
+    },
+    {
+     "t": "Suscríbete a Shock Mental: cada semana, una nueva dosis. ¡Nos vemos en la próxima!",
+     "voz": "Suscríbete a Shock Mental: cada semana, una nueva dosis. ¡Nos vemos en la próxima!",
+     "card": {
+      "tipo": "final"
+     }
+    }
+   ]
+  }
+ ]
+}
