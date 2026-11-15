@@ -81,20 +81,20 @@
   "plano": 1.4
  },
  "fotos": {
+  "rs_arte": 0,
   "rs_ciudad_dia": 0,
   "rs_ciudad_noche": 0,
   "rs_protas": 0,
   "rs_coche": 0,
-  "rs_protas2": 0,
-  "gta_ciudad": 0
+  "rs_protas2": 0
  },
  "credito_fotos": {
+  "rs_arte": "Imagen: Rockstar Games",
   "rs_ciudad_dia": "Imagen: Rockstar Games",
   "rs_ciudad_noche": "Imagen: Rockstar Games",
   "rs_protas": "Imagen: Rockstar Games",
   "rs_coche": "Imagen: Rockstar Games",
-  "rs_protas2": "Imagen: Rockstar Games",
-  "gta_ciudad": "Ilustración generada con IA (no es una imagen del juego)"
+  "rs_protas2": "Imagen: Rockstar Games"
  },
  "marca": {
   "logo": "marca/shockmental/perfil-sin-eslogan.png",
@@ -105,12 +105,12 @@
    "nombre": "12 · GTA 6",
    "frases": [
     {
-     "t": "GTA 6 sale el 19 de noviembre. Esto es lo que se sabe.",
-     "vid": [
-      "neon1",
-      "coche1"
-     ],
-     "kw": "GTA 6"
+     "t": "GTA VI sale el 19 de noviembre. Esto es lo que se sabe.",
+     "kw": "GTA VI",
+     "voz": "GTA 6 sale el 19 de noviembre. Esto es lo que se sabe.",
+     "img": [
+      "rs_arte"
+     ]
     },
     {
      "t": "Estará ambientado en Leonida, un estado inventado basado en Florida, con una ciudad, Vice City, inspirada en Miami.",
@@ -160,18 +160,22 @@
      "kw": "¿+1.000 millones?"
     },
     {
-     "t": "La fecha: 19 de noviembre de 2026. Trece años después de GTA cinco… la espera se acaba.",
+     "t": "La fecha: 19 de noviembre de 2026. Trece años después de GTA V… la espera se acaba.",
      "img": [
       "rs_protas2",
-      "gta_ciudad"
+      "rs_arte"
      ],
+     "voz": "La fecha: 19 de noviembre de 2026. Trece años después de GTA cinco… la espera se acaba.",
      "kw": "19 de noviembre de 2026"
     },
     {
      "t": "Tienes once curiosidades más en la dosis completa de Shock Mental.",
      "vid": [
-      "neon1",
-      "coche1"
+      "mia2",
+      "cai1",
+      "neon2",
+      "mia3",
+      "cai3"
      ]
     }
    ],

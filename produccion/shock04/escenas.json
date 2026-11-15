@@ -90,33 +90,33 @@
  },
  "credito_videos": {},
  "fotos": {
-  "gta_ciudad": 0,
-  "gta_aerea": 0,
   "rs_ciudad_dia": 0,
   "rs_ciudad_noche": 0,
   "rs_protas": 0,
   "rs_coche": 0,
-  "rs_protas2": 0
+  "rs_protas2": 0,
+  "rs_arte": 0
  },
  "credito_fotos": {
-  "gta_ciudad": "Ilustración generada con IA (no es una imagen del juego)",
-  "gta_aerea": "Ilustración generada con IA (no es una imagen del juego)",
   "rs_ciudad_dia": "Imagen: Rockstar Games",
   "rs_ciudad_noche": "Imagen: Rockstar Games",
   "rs_protas": "Imagen: Rockstar Games",
   "rs_coche": "Imagen: Rockstar Games",
-  "rs_protas2": "Imagen: Rockstar Games"
+  "rs_protas2": "Imagen: Rockstar Games",
+  "rs_arte": "Imagen: Rockstar Games"
  },
  "bloques": [
   {
    "nombre": "Gancho",
    "frases": [
     {
-     "t": "Faltan días para GTA 6: uno de los videojuegos más esperados de la historia sale este 19 de noviembre.",
-     "kw": "GTA 6",
+     "t": "Faltan días para GTA VI: uno de los videojuegos más esperados de la historia sale este 19 de noviembre.",
+     "kw": "GTA VI",
      "img": [
-      "gta_ciudad"
-     ]
+      "rs_arte",
+      "rs_ciudad_noche"
+     ],
+     "voz": "Faltan días para GTA 6: uno de los videojuegos más esperados de la historia sale este 19 de noviembre."
     },
     {
      "t": "Trece años de espera, dos retrasos y una filtración histórica. Al final te cuento todo lo que se sabe.",
@@ -682,7 +682,7 @@
      }
     },
     {
-     "t": "GTA cinco recaudó mil millones de dólares… en solo tres días.",
+     "t": "GTA V recaudó mil millones de dólares… en solo tres días.",
      "vid": [
       "dolar",
       "gam1"
@@ -701,7 +701,8 @@
        ],
        "tam": 200
       }
-     ]
+     ],
+     "voz": "GTA cinco recaudó mil millones de dólares… en solo tres días."
     },
     {
      "t": "Fue el producto de entretenimiento que más rápido se ha vendido de la historia: más que cualquier película.",
@@ -737,12 +738,13 @@
      }
     },
     {
-     "t": "Y ahora sí: GTA 6.",
+     "t": "Y ahora sí: GTA VI.",
      "vid": [
       "neon1",
       "coche1"
      ],
-     "kw": "GTA 6"
+     "kw": "GTA VI",
+     "voz": "Y ahora sí: GTA 6."
     },
     {
      "t": "Estará ambientado en Leonida, un estado inventado basado en Florida, con una ciudad, Vice City, inspirada en Miami.",
@@ -815,15 +817,16 @@
      }
     },
     {
-     "t": "La fecha: 19 de noviembre de 2026. Trece años después de GTA cinco… la espera se acaba.",
+     "t": "La fecha: 19 de noviembre de 2026. Trece años después de GTA V… la espera se acaba.",
      "rotulo": {
       "arriba": "Fecha de lanzamiento",
       "texto": "19 de noviembre de 2026"
      },
      "img": [
       "rs_protas2",
-      "gta_ciudad"
-     ]
+      "rs_arte"
+     ],
+     "voz": "La fecha: 19 de noviembre de 2026. Trece años después de GTA cinco… la espera se acaba."
     }
    ]
   },

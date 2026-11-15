@@ -1,6 +1,6 @@
 # Dosis de Asombro #4 · Publicación
 
-**Vídeo:** `produccion/shock04/salida/video.mp4` (4:10) · **Miniatura:** `miniaturas/shock04/miniatura-A.png`
+**Vídeo:** `produccion/shock04/salida/video.mp4` (4:10) · **Miniatura:** `miniaturas/shock04/miniatura-B.png` (arte oficial) o `miniatura-A.png` (ilustración de IA)
 
 ⚠️ **Publicar antes del 19 de noviembre de 2026** (día del lanzamiento de GTA 6).
 
@@ -41,7 +41,7 @@ GTA 6 sale el 19 de noviembre de 2026: trece años de espera, dos retrasos y una
 - Adventure y su sala secreta: https://en.wikipedia.org/wiki/Adventure_(1980_video_game)
 - Minecraft: https://en.wikipedia.org/wiki/Minecraft
 - Foldit: https://en.wikipedia.org/wiki/Foldit
-- Imágenes: capturas y arte oficial de GTA VI © Rockstar Games / Take-Two Interactive (rockstargames.com/VI), usadas con fines informativos. La ilustración de la ciudad del principio y del final está generada con IA y no es una imagen del juego. Vídeos: Pexels (pexels.com).
+- Imágenes: capturas y arte oficial de GTA VI © Rockstar Games / Take-Two Interactive (rockstargames.com/VI), usadas con fines informativos. Vídeos: Pexels (pexels.com).
 - Música: "Wallpaper" de Kevin MacLeod (incompetech.com), Licencia CC BY 4.0 http://creativecommons.org/licenses/by/4.0/
 
 Este canal no está afiliado a Rockstar Games ni a Take-Two Interactive. Grand Theft Auto es una marca de sus respectivos propietarios.
