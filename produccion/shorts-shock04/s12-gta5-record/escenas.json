@@ -1,0 +1,129 @@
+{
+ "tema": "shock",
+ "voz": {
+  "idioma": "es-US",
+  "nombre": "es-US-Chirp3-HD-Achird",
+  "velocidad": 1.15
+ },
+ "musica": {
+  "archivo": "musica/wallpaper.mp3",
+  "volumen": 0.09,
+  "credito": "\"Wallpaper\" de Kevin MacLeod (incompetech.com)"
+ },
+ "videos": {
+  "r_shocked_woman": 8626657,
+  "r_man_tv": 9883681,
+  "r_man_phone": 7534960,
+  "arc1": 1825255,
+  "arc2": 4842595,
+  "arc3": 4835519,
+  "arc4": 4835516,
+  "gam1": 7914851,
+  "gam2": 5377271,
+  "gam3": 4010132,
+  "gam4": 4010184,
+  "man1": 3946068,
+  "man2": 3946267,
+  "man3": 3946073,
+  "cartas1": 7683854,
+  "cartas2": 6206031,
+  "kioto": 7387627,
+  "pizza1": 3752508,
+  "pizza2": 4008531,
+  "mos1": 3923315,
+  "mos2": 5956456,
+  "basura1": 3186589,
+  "basura2": 5115945,
+  "desierto": 7895948,
+  "excav": 2711291,
+  "bloques": 3676973,
+  "adn1": 3191572,
+  "adn2": 9837842,
+  "mia1": 8524839,
+  "mia2": 11490725,
+  "mia3": 11243172,
+  "mia4": 9431937,
+  "neon1": 2964554,
+  "neon2": 6529560,
+  "neon3": 8058346,
+  "coche1": 5309381,
+  "coche2": 4634388,
+  "poli1": 7714379,
+  "poli2": 6581006,
+  "dolar": 1797247,
+  "palm1": 8214991,
+  "palm2": 4791868,
+  "cai1": 854156,
+  "cai2": 2910037,
+  "cai3": 7722932,
+  "lancha": 2867866,
+  "cod1": 6330779,
+  "cod2": 1992325,
+  "cod3": 5473798,
+  "espera": 854549,
+  "centro": 3243946,
+  "carp": 4480443,
+  "font1": 9890450,
+  "font2": 9890448,
+  "lab2": 4121322,
+  "lab3": 5752729
+ },
+ "videos_inicio": {
+  "r_man_tv": 3.5,
+  "r_shocked_woman": 0.3,
+  "r_man_phone": 2.5
+ },
+ "credito_videos": {},
+ "titulo": "GTA V: 1.000 millones en 3 días 💰",
+ "formato": "vertical",
+ "estilo": {
+  "dinamico": true,
+  "plano": 1.4
+ },
+ "fotos": {},
+ "credito_fotos": {},
+ "marca": {
+  "logo": "marca/shockmental/perfil-sin-eslogan.png",
+  "nombre": "SHOCK MENTAL"
+ },
+ "bloques": [
+  {
+   "nombre": "11 · El récord de GTA V",
+   "frases": [
+    {
+     "t": "GTA cinco recaudó mil millones de dólares… en solo tres días.",
+     "vid": [
+      "dolar",
+      "gam1"
+     ],
+     "kw": "1.000 millones en 3 días"
+    },
+    {
+     "t": "Fue el producto de entretenimiento que más rápido se ha vendido de la historia: más que cualquier película.",
+     "vid": [
+      "centro",
+      "gam4",
+      "espera"
+     ],
+     "kw": "récord histórico"
+    },
+    {
+     "t": "Y ya lleva casi doscientos treinta y cinco millones de copias.",
+     "vid": [
+      "man1",
+      "gam3"
+     ],
+     "kw": "Casi 235 millones"
+    },
+    {
+     "t": "Tienes once curiosidades más en la dosis completa de Shock Mental.",
+     "vid": [
+      "dolar",
+      "gam1"
+     ]
+    }
+   ],
+   "final": 0.4
+  }
+ ]
+}
