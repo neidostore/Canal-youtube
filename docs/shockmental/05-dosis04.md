@@ -41,7 +41,7 @@ GTA 6 sale el 19 de noviembre de 2026: trece años de espera, dos retrasos y una
 - Adventure y su sala secreta: https://en.wikipedia.org/wiki/Adventure_(1980_video_game)
 - Minecraft: https://en.wikipedia.org/wiki/Minecraft
 - Foldit: https://en.wikipedia.org/wiki/Foldit
-- Imágenes: las ilustraciones de la ciudad están generadas con IA y no son imágenes del juego. Vídeos: Pexels (pexels.com).
+- Imágenes: capturas y arte oficial de GTA VI © Rockstar Games / Take-Two Interactive (rockstargames.com/VI), usadas con fines informativos. La ilustración de la ciudad del principio y del final está generada con IA y no es una imagen del juego. Vídeos: Pexels (pexels.com).
 - Música: "Wallpaper" de Kevin MacLeod (incompetech.com), Licencia CC BY 4.0 http://creativecommons.org/licenses/by/4.0/
 
 Este canal no está afiliado a Rockstar Games ni a Take-Two Interactive. Grand Theft Auto es una marca de sus respectivos propietarios.
@@ -55,7 +55,7 @@ Este canal no está afiliado a Rockstar Games ni a Take-Two Interactive. Grand T
 **Comentario fijado:** `¿Vas a jugar a GTA 6 el día de salida? 🎮 ¿Y cuál de las 11 curiosidades no conocías? Te leo 👇`
 
 ## Notas
-- **Sin imágenes de Rockstar:** ni tráilers, ni capturas, ni logo. Las dos ilustraciones de ciudad son de Gemini (hechas por el dueño del canal) y llevan en pantalla "Ilustración generada con IA (no es una imagen del juego)".
+- **Imágenes de Rockstar:** 5 imágenes oficiales de su web (ciudad de día y de noche, los protagonistas, el coche), unos segundos cada una, con "Imagen: Rockstar Games" en pantalla. Sin tráilers, sin música del juego, sin logo y sin material filtrado. Según su política (10 ene 2025) el uso de fans no comercial se tolera, pero Take-Two puede pedir la retirada en cualquier momento; si el canal llega a monetizar, este vídeo conviene dejarlo sin anuncios o revisarlo.
 - **Datos comprobados en Wikipedia** el 14 nov 2026 (el buscador web estaba en su límite semanal). Coste de GTA 6: solo rumores, y así se dice.
 - **Pac-Man y la pizza:** el propio creador dijo que era cierto "solo en parte"; el vídeo lo cuenta.
 - **Adventure:** no fue el primer huevo de pascua de la historia, pero sí el más famoso; el vídeo dice "el más famoso".

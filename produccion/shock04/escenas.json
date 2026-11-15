@@ -91,11 +91,21 @@
  "credito_videos": {},
  "fotos": {
   "gta_ciudad": 0,
-  "gta_aerea": 0
+  "gta_aerea": 0,
+  "rs_ciudad_dia": 0,
+  "rs_ciudad_noche": 0,
+  "rs_protas": 0,
+  "rs_coche": 0,
+  "rs_protas2": 0
  },
  "credito_fotos": {
   "gta_ciudad": "Ilustración generada con IA (no es una imagen del juego)",
-  "gta_aerea": "Ilustración generada con IA (no es una imagen del juego)"
+  "gta_aerea": "Ilustración generada con IA (no es una imagen del juego)",
+  "rs_ciudad_dia": "Imagen: Rockstar Games",
+  "rs_ciudad_noche": "Imagen: Rockstar Games",
+  "rs_protas": "Imagen: Rockstar Games",
+  "rs_coche": "Imagen: Rockstar Games",
+  "rs_protas2": "Imagen: Rockstar Games"
  },
  "bloques": [
   {
@@ -741,7 +751,8 @@
       "texto": "Leonida = Florida"
      },
      "img": [
-      "gta_aerea"
+      "rs_ciudad_dia",
+      "rs_ciudad_noche"
      ]
     },
     {
@@ -768,15 +779,14 @@
     },
     {
      "t": "Tendrá dos protagonistas: Jason y Lucía, una pareja de delincuentes.",
-     "vid": [
-      "poli1",
-      "coche2",
-      "poli2"
-     ],
      "rotulo": {
       "arriba": "Protagonistas",
       "texto": "Jason y Lucía"
-     }
+     },
+     "img": [
+      "rs_protas",
+      "rs_coche"
+     ]
     },
     {
      "t": "El camino ha sido largo. En 2022 se filtraron vídeos del juego a medio hacer, y su primer tráiler superó los cien millones de visitas en dos días.",
@@ -811,6 +821,7 @@
       "texto": "19 de noviembre de 2026"
      },
      "img": [
+      "rs_protas2",
       "gta_ciudad"
      ]
     }
