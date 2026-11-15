@@ -1,0 +1,142 @@
+{
+ "tema": "shock",
+ "voz": {
+  "idioma": "es-US",
+  "nombre": "es-US-Chirp3-HD-Achird",
+  "velocidad": 1.15
+ },
+ "musica": {
+  "archivo": "musica/wallpaper.mp3",
+  "volumen": 0.09,
+  "credito": "\"Wallpaper\" de Kevin MacLeod (incompetech.com)"
+ },
+ "videos": {
+  "r_shocked_woman": 8626657,
+  "r_man_tv": 9883681,
+  "r_man_phone": 7534960,
+  "uap_atl": "uap_atlantico_2020",
+  "uap_gre": "uap_grecia_2023",
+  "uap_mo": "uap_medio_oriente_2020",
+  "uap_us": "uap_eeuu_2019",
+  "maq1": 2750157,
+  "maq2": 3945490,
+  "maq3": 2752546,
+  "capit": 6581274,
+  "radar1": 2954001,
+  "radar2": 6442793,
+  "cielo1": 857195,
+  "cielo2": 5380054,
+  "cielo3": 4911644,
+  "luna1": 4154903,
+  "luna2": 3579494,
+  "astro": 854255,
+  "vol1": 9320060,
+  "vol2": 3192197,
+  "vol3": 8334109,
+  "vol4": 4611811,
+  "tierra": 854518,
+  "aur1": 5700949,
+  "aur2": 5700806,
+  "aur3": 5700940,
+  "aur4": 3222269,
+  "saturno": 5428316,
+  "can1": 5739690,
+  "can2": 5739695,
+  "can3": 8206802,
+  "can4": 5739698,
+  "coc1": 5742215,
+  "coc2": 2885406,
+  "coc3": 5735992,
+  "coc4": 2910042,
+  "ara1": 5645576,
+  "ara2": 5235135,
+  "ara3": 3239871,
+  "ara4": 4787894,
+  "mm1": 5787553,
+  "mm2": 5787551,
+  "mm3": 6496485,
+  "mm4": 5787552,
+  "ice1": 8318379,
+  "ice2": 8318644,
+  "ice3": 8318380,
+  "ice4": 8318700,
+  "pay1": 5548246,
+  "pay2": 1534875,
+  "pay3": 4029955,
+  "pay4": 1536346,
+  "tor1": 5290324,
+  "tor2": 1151284,
+  "tor3": 1456996,
+  "tor4": 4195131,
+  "nut1": 2556428,
+  "nut2": 2554576,
+  "nut3": 2554522
+ },
+ "videos_inicio": {
+  "r_man_tv": 3.5,
+  "r_shocked_woman": 0.3,
+  "r_man_phone": 2.5,
+  "uap_atl": 12.0,
+  "uap_gre": 5.5,
+  "uap_mo": 3.0,
+  "uap_us": 2.0
+ },
+ "credito_videos": {
+  "uap_atl": "Vídeo oficial desclasificado · Gobierno de EE. UU.",
+  "uap_gre": "Vídeo oficial desclasificado · Gobierno de EE. UU.",
+  "uap_mo": "Vídeo oficial desclasificado · Gobierno de EE. UU.",
+  "uap_us": "Vídeo oficial desclasificado · Gobierno de EE. UU."
+ },
+ "titulo": "El pez que cambia de sexo 🐠",
+ "formato": "vertical",
+ "estilo": {
+  "dinamico": true,
+  "plano": 1.4
+ },
+ "fotos": {},
+ "credito_fotos": {},
+ "marca": {
+  "logo": "marca/shockmental/perfil-sin-eslogan.png",
+  "nombre": "SHOCK MENTAL"
+ },
+ "bloques": [
+  {
+   "nombre": "9 · El pez que cambia de sexo",
+   "frases": [
+    {
+     "t": "Todos los peces payaso nacen machos.",
+     "vid": [
+      "pay1",
+      "pay2"
+     ],
+     "kw": "todos machos"
+    },
+    {
+     "t": "Cuando muere la hembra del grupo, el macho dominante cambia de sexo… y pasa a ser la nueva hembra.",
+     "vid": [
+      "pay3",
+      "pay4",
+      "pay1"
+     ],
+     "kw": "Cambia de sexo"
+    },
+    {
+     "t": "Sí: en la vida real, el padre de Nemo habría acabado siendo su madre.",
+     "vid": [
+      "r_man_phone",
+      "pay2"
+     ],
+     "kw": "el padre de Nemo"
+    },
+    {
+     "t": "Tienes once curiosidades más en la dosis completa de Shock Mental.",
+     "vid": [
+      "pay1",
+      "pay2"
+     ]
+    }
+   ],
+   "final": 0.4
+  }
+ ]
+}
