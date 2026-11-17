@@ -1,0 +1,157 @@
+{
+ "tema": "shock",
+ "voz": {
+  "idioma": "es-US",
+  "nombre": "es-US-Chirp3-HD-Achird",
+  "velocidad": 1.15
+ },
+ "musica": {
+  "archivo": "musica/wallpaper.mp3",
+  "volumen": 0.09,
+  "credito": "\"Wallpaper\" de Kevin MacLeod (incompetech.com)"
+ },
+ "videos": {
+  "r_shocked_woman": 8626657,
+  "r_man_tv": 9883681,
+  "r_man_phone": 7534960,
+  "baile1": 854429,
+  "baile2": 3015527,
+  "calle1": 6434503,
+  "calle2": 4878124,
+  "musicos": 854170,
+  "gato1": 855402,
+  "gato2": 4013641,
+  "gato3": 855029,
+  "tarta": 3992463,
+  "tigre1": 7492891,
+  "tigre2": 7722973,
+  "guepardo": 2342260,
+  "voz1": 4540151,
+  "voz2": 6883830,
+  "micro": 6274529,
+  "con1": 4821658,
+  "con2": 857285,
+  "con3": 4308928,
+  "rana1": 854302,
+  "rana2": 855631,
+  "rana3": 854974,
+  "rana4": 2908582,
+  "hielo1": 1998210,
+  "hielo2": 7456768,
+  "hielo3": 6255487,
+  "est1": 857134,
+  "tierra": 854518,
+  "lluvia1": 5345430,
+  "lluvia2": 3638386,
+  "lluvia3": 3361960,
+  "lluvia4": 5112050,
+  "piscina": 854540,
+  "qui1": 3197622,
+  "qui2": 3197638,
+  "mri1": 6010766,
+  "mri2": 4316872,
+  "cabeza": 7297915,
+  "artico1": 6886137,
+  "artico2": 8318614,
+  "piram1": 4174113,
+  "piram2": 4174146,
+  "paris": 4979709,
+  "tel1": 2954003,
+  "tel2": 2954000,
+  "vin1": 3116513,
+  "vin2": 856231
+ },
+ "videos_inicio": {
+  "r_man_tv": 3.5,
+  "r_shocked_woman": 0.3,
+  "r_man_phone": 2.5
+ },
+ "credito_videos": {},
+ "titulo": "En 1518 bailaron hasta caer… y nadie sabe por qué 💃",
+ "formato": "vertical",
+ "estilo": {
+  "dinamico": true,
+  "plano": 1.4
+ },
+ "fotos": {
+  "baile_spindler": 0,
+  "baile_grabado": 0,
+  "baile_decreto": 0
+ },
+ "credito_fotos": {
+  "baile_spindler": "Ilustración de C. Spindler · dominio público",
+  "baile_grabado": "Grabado de H. Hondius según P. Brueghel (1642) · dominio público",
+  "baile_decreto": "Decreto de Estrasburgo, 1518 · dominio público"
+ },
+ "marca": {
+  "logo": "marca/shockmental/perfil-sin-eslogan.png",
+  "nombre": "SHOCK MENTAL"
+ },
+ "bloques": [
+  {
+   "nombre": "1 · La epidemia de baile de 1518",
+   "frases": [
+    {
+     "t": "En julio de 1518, en la ciudad de Estrasburgo, una mujer salió a la calle… y se puso a bailar.",
+     "vid": [
+      "calle2",
+      "baile2"
+     ],
+     "kw": "1518"
+    },
+    {
+     "t": "No había música. No había ninguna fiesta. Y no paró.",
+     "vid": [
+      "baile2",
+      "calle2"
+     ],
+     "kw": "no paró"
+    },
+    {
+     "t": "Bailó durante días, deteniéndose solo para dormir. En una semana, decenas de vecinos se habían unido.",
+     "img": [
+      "baile_spindler"
+     ],
+     "kw": "Decenas de vecinos"
+    },
+    {
+     "t": "Y en agosto, según las crónicas, ya eran entre cincuenta y cuatrocientas personas bailando sin control, empapadas en sudor, algunas desplomándose en plena calle.",
+     "img": [
+      "baile_grabado"
+     ],
+     "kw": "Entre 50 y 400 personas"
+    },
+    {
+     "t": "¿Y qué hicieron las autoridades? Los médicos recetaron… más baile. Prepararon salones y contrataron músicos, convencidos de que se curarían bailando.",
+     "vid": [
+      "musicos",
+      "baile1"
+     ],
+     "kw": "más baile"
+    },
+    {
+     "t": "Salió fatal. Al final tuvieron que prohibir bailar en público.",
+     "img": [
+      "baile_decreto"
+     ],
+     "kw": "Prohibido bailar"
+    },
+    {
+     "t": "Más de quinientos años después, nadie sabe con certeza qué pasó. La teoría más aceptada habla de una histeria colectiva, provocada por el hambre y el miedo.",
+     "vid": [
+      "calle2",
+      "r_man_tv"
+     ],
+     "kw": "histeria colectiva"
+    },
+    {
+     "t": "Tienes diez curiosidades más en la dosis completa de Shock Mental.",
+     "vid": [
+      "est1"
+     ]
+    }
+   ],
+   "final": 0.4
+  }
+ ]
+}
