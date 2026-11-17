@@ -85,7 +85,7 @@ def preparar_foto(nombre, pid, fotos_dir, trabajo, difuminar):
         bg.paste(fg, (0, (2880 - fg.height) // 2 - 90))
         bg.save(out, quality=92)
         return out
-    if MARCO and (im.width < 1500 or im.width / im.height < 1.45):
+    if MARCO and (im.width < 1500 or im.width / im.height < 1.45 or im.width / im.height > 2.0):
         ENCAJE.add(nombre)          # pequeña o poco apaisada: entera, con borde, sobre fondo animado
         k = min(H * 0.84 / im.height, W * 0.72 / im.width)
         im = im.resize((round(im.width * k / 2) * 2, round(im.height * k / 2) * 2), Image.LANCZOS)

@@ -1,0 +1,1038 @@
+{
+ "tema": "shock",
+ "tarjetas": "tarjetas-shock.html",
+ "intro": {
+  "video": "marca/shockmental/intro/intro.mp4",
+  "audio": "marca/shockmental/intro/intro_audio.wav"
+ },
+ "musica": {
+  "archivo": "musica/wallpaper.mp3",
+  "volumen": 0.09,
+  "credito": "\"Wallpaper\" de Kevin MacLeod (incompetech.com)"
+ },
+ "estilo": {
+  "dinamico": true,
+  "plano": 1.6
+ },
+ "marco": {
+  "titulo": "SHOCK&nbsp;<i>MENTAL</i>",
+  "lema": "Tu dosis de asombro 🧠⚡",
+  "logo": "marca/shockmental/perfil-sin-eslogan.png"
+ },
+ "voz": {
+  "idioma": "es-US",
+  "nombre": "es-US-Chirp3-HD-Achird",
+  "velocidad": 1.15
+ },
+ "titulo": "11 cosas que parecen mentira (la primera ocurrió de verdad en 1518)",
+ "videos": {
+  "r_shocked_woman": 8626657,
+  "r_man_tv": 9883681,
+  "r_man_phone": 7534960,
+  "baile1": 854429,
+  "baile2": 3015527,
+  "calle1": 6434503,
+  "calle2": 4878124,
+  "musicos": 854170,
+  "gato1": 855402,
+  "gato2": 4013641,
+  "gato3": 855029,
+  "tarta": 3992463,
+  "tigre1": 7492891,
+  "tigre2": 7722973,
+  "guepardo": 2342260,
+  "voz1": 4540151,
+  "voz2": 6883830,
+  "micro": 6274529,
+  "con1": 4821658,
+  "con2": 857285,
+  "con3": 4308928,
+  "rana1": 854302,
+  "rana2": 855631,
+  "rana3": 854974,
+  "rana4": 2908582,
+  "hielo1": 1998210,
+  "hielo2": 7456768,
+  "hielo3": 6255487,
+  "est1": 857134,
+  "tierra": 854518,
+  "lluvia1": 5345430,
+  "lluvia2": 3638386,
+  "lluvia3": 3361960,
+  "lluvia4": 5112050,
+  "piscina": 854540,
+  "qui1": 3197622,
+  "qui2": 3197638,
+  "mri1": 6010766,
+  "mri2": 4316872,
+  "cabeza": 7297915,
+  "artico1": 6886137,
+  "artico2": 8318614,
+  "piram1": 4174113,
+  "piram2": 4174146,
+  "paris": 4979709,
+  "tel1": 2954003,
+  "tel2": 2954000,
+  "vin1": 3116513,
+  "vin2": 856231
+ },
+ "videos_inicio": {
+  "r_man_tv": 3.5,
+  "r_shocked_woman": 0.3,
+  "r_man_phone": 2.5
+ },
+ "credito_videos": {},
+ "fotos": {
+  "baile_grabado": 0,
+  "baile_spindler": 0,
+  "baile_decreto": 0,
+  "foto_1838": 0,
+  "voyager_1": 0,
+  "voyager_2": 0,
+  "disco_oro": 0,
+  "venus_real": 0,
+  "venus_radar": 0,
+  "mamut_piramide": 0,
+  "mamut_solo": 0,
+  "piramide_ia": 0
+ },
+ "credito_fotos": {
+  "baile_grabado": "Grabado de H. Hondius según P. Brueghel (1642) · dominio público",
+  "baile_spindler": "Ilustración de C. Spindler · dominio público",
+  "baile_decreto": "Decreto de Estrasburgo, 1518 · dominio público",
+  "foto_1838": "Foto: Louis Daguerre, 1838 · dominio público",
+  "voyager_1": "Ilustración: NASA/JPL-Caltech",
+  "voyager_2": "Ilustración: NASA/JPL-Caltech",
+  "disco_oro": "Foto: NASA/JPL",
+  "venus_real": "Imagen: NASA/JPL-Caltech (Mariner 10)",
+  "venus_radar": "Imagen: NASA/JPL (radar de Magellan)",
+  "mamut_piramide": "Ilustración generada con IA",
+  "mamut_solo": "Ilustración generada con IA",
+  "piramide_ia": "Ilustración generada con IA"
+ },
+ "bloques": [
+  {
+   "nombre": "1 · La epidemia de baile de 1518",
+   "frases": [
+    {
+     "t": "En julio de 1518, en la ciudad de Estrasburgo, una mujer salió a la calle… y se puso a bailar.",
+     "vid": [
+      "calle2",
+      "baile2"
+     ],
+     "kw": "1518"
+    },
+    {
+     "t": "No había música. No había ninguna fiesta. Y no paró.",
+     "vid": [
+      "baile2",
+      "calle2"
+     ],
+     "kw": "no paró",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "💃",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    },
+    {
+     "t": "Bailó durante días, deteniéndose solo para dormir. En una semana, decenas de vecinos se habían unido.",
+     "rotulo": {
+      "arriba": "Estrasburgo, 1518",
+      "texto": "Decenas de vecinos"
+     },
+     "img": [
+      "baile_spindler"
+     ]
+    },
+    {
+     "t": "Y en agosto, según las crónicas, ya eran entre cincuenta y cuatrocientas personas bailando sin control, empapadas en sudor, algunas desplomándose en plena calle.",
+     "rotulo": {
+      "arriba": "Según las crónicas",
+      "texto": "Entre 50 y 400 personas"
+     },
+     "img": [
+      "baile_grabado"
+     ]
+    },
+    {
+     "t": "¿Y qué hicieron las autoridades? Los médicos recetaron… más baile. Prepararon salones y contrataron músicos, convencidos de que se curarían bailando.",
+     "vid": [
+      "musicos",
+      "baile1"
+     ],
+     "kw": "más baile",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🎻",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    },
+    {
+     "t": "Salió fatal. Al final tuvieron que prohibir bailar en público.",
+     "rotulo": {
+      "arriba": "Documento real de 1518",
+      "texto": "Prohibido bailar"
+     },
+     "img": [
+      "baile_decreto"
+     ]
+    },
+    {
+     "t": "Más de quinientos años después, nadie sabe con certeza qué pasó. La teoría más aceptada habla de una histeria colectiva, provocada por el hambre y el miedo.",
+     "vid": [
+      "calle2",
+      "r_man_tv"
+     ],
+     "kw": "histeria colectiva"
+    },
+    {
+     "t": "Y quédate hasta el final, porque lo que ha pasado este mes a veintiséis mil millones de kilómetros de aquí… es todavía más difícil de creer.",
+     "vid": [
+      "est1",
+      "tierra"
+     ],
+     "kw": "quédate hasta el final",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "👀",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "nombre": "Intro",
+   "intro": true
+  },
+  {
+   "nombre": "2 · Los gatos y el dulce",
+   "frases": [
+    {
+     "t": "Número dos.",
+     "card": {
+      "tipo": "numero",
+      "n": 2,
+      "tema": "Animales"
+     }
+    },
+    {
+     "t": "Ofrécele a tu gato un trozo de tarta. Le va a dar igual. Y no es por educación: todo indica que no puede saborear el dulce.",
+     "vid": [
+      "tarta",
+      "gato2",
+      "gato1"
+     ],
+     "kw": "no saborea el dulce",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🍰",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    },
+    {
+     "t": "En 2005, unos científicos descubrieron que el gen que fabrica el receptor del sabor dulce está roto en los gatos. Le falta un trozo, y no funciona.",
+     "vid": [
+      "gato3",
+      "gato1"
+     ],
+     "rotulo": {
+      "arriba": "Estudio de 2005",
+      "texto": "Gen del dulce, roto"
+     }
+    },
+    {
+     "t": "Y no solo en los gatos de casa: lo encontraron igual de estropeado en tigres y en guepardos.",
+     "vid": [
+      "tigre1",
+      "guepardo",
+      "tigre2"
+     ],
+     "kw": "tigres y guepardos"
+    },
+    {
+     "t": "Así que, para un gato, el azúcar… no sabe a nada especial.",
+     "vid": [
+      "gato2"
+     ],
+     "kw": "nada especial",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "😼",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "nombre": "3 · Tu voz grabada",
+   "frases": [
+    {
+     "t": "Número tres.",
+     "card": {
+      "tipo": "numero",
+      "n": 3,
+      "tema": "Cuerpo humano"
+     }
+    },
+    {
+     "t": "¿Odias cómo suena tu voz en un audio? Tranquilo: no es que hables raro. Es que nunca te has oído de verdad.",
+     "vid": [
+      "voz1",
+      "micro"
+     ],
+     "kw": "¿odias tu voz?",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "😖",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    },
+    {
+     "t": "Cuando hablas, tu voz te llega por dos caminos. Por el aire, como a todo el mundo… y a través de los huesos de tu cabeza, que vibran y le añaden graves.",
+     "vid": [
+      "voz2",
+      "voz1"
+     ],
+     "rotulo": {
+      "arriba": "Tu voz te llega por",
+      "texto": "El aire y los huesos"
+     }
+    },
+    {
+     "t": "Una grabación solo recoge el sonido del aire. Por eso, al escucharte, te suenas más agudo y más fino.",
+     "vid": [
+      "micro",
+      "voz2"
+     ],
+     "kw": "más agudo"
+    },
+    {
+     "t": "Y aquí viene lo peor: esa voz que tanto te molesta… es la que oyen todos los demás.",
+     "vid": [
+      "r_man_phone"
+     ],
+     "kw": "la que oyen todos"
+    }
+   ]
+  },
+  {
+   "nombre": "4 · La isla de los conejos",
+   "frases": [
+    {
+     "t": "Número cuatro.",
+     "card": {
+      "tipo": "numero",
+      "n": 4,
+      "tema": "Lugares"
+     }
+    },
+    {
+     "t": "En Japón hay una isla llena de conejos. Miles de ellos, sueltos. Se te acercan, te rodean y comen de tu mano. Se llama Ōkunoshima, y los turistas la adoran.",
+     "vid": [
+      "con1",
+      "con2",
+      "con3"
+     ],
+     "rotulo": {
+      "arriba": "Japón",
+      "texto": "Ōkunoshima, la isla de los conejos"
+     },
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🐰",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ],
+     "voz": "En Japón hay una isla llena de conejos. Miles de ellos, sueltos. Se te acercan, te rodean y comen de tu mano. Se llama Okunoshima, y los turistas la adoran."
+    },
+    {
+     "t": "Pero esta isla esconde un pasado muy oscuro.",
+     "vid": [
+      "con3"
+     ],
+     "kw": "un pasado oscuro"
+    },
+    {
+     "t": "Antes de la Segunda Guerra Mundial, el ejército japonés construyó allí una fábrica secreta de armas químicas. Produjo miles de toneladas de gas mostaza y gas lacrimógeno.",
+     "vid": [
+      "con3",
+      "con2"
+     ],
+     "rotulo": {
+      "arriba": "Fábrica secreta",
+      "texto": "Gas mostaza"
+     },
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "☠️",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    },
+    {
+     "t": "Después de la guerra, la isla se convirtió en un parque… y alguien soltó unos conejos.",
+     "vid": [
+      "con1",
+      "con3"
+     ],
+     "kw": "alguien soltó conejos"
+    },
+    {
+     "t": "Hoy, donde se fabricaba veneno… mandan los conejos.",
+     "vid": [
+      "con2"
+     ],
+     "kw": "mandan los conejos"
+    }
+   ]
+  },
+  {
+   "nombre": "5 · La rana que se congela",
+   "frases": [
+    {
+     "t": "Número cinco.",
+     "card": {
+      "tipo": "numero",
+      "n": 5,
+      "tema": "Animales"
+     }
+    },
+    {
+     "t": "En los bosques de Alaska y de Canadá vive una rana que, cuando llega el invierno… se congela.",
+     "vid": [
+      "rana1",
+      "hielo1"
+     ],
+     "kw": "se congela",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🥶",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    },
+    {
+     "t": "Su corazón deja de latir. Deja de respirar. Buena parte del agua de su cuerpo se convierte en hielo. A todos los efectos, parece muerta.",
+     "vid": [
+      "hielo2",
+      "rana4",
+      "hielo3"
+     ],
+     "rotulo": {
+      "arriba": "Su corazón",
+      "texto": "Deja de latir"
+     }
+    },
+    {
+     "t": "¿Su truco? Llena sus células de azúcar, que funciona como un anticongelante y las protege por dentro.",
+     "vid": [
+      "rana2",
+      "hielo3"
+     ],
+     "kw": "azúcar anticongelante"
+    },
+    {
+     "t": "Y cuando llega la primavera, se descongela, su corazón vuelve a latir… y se va saltando como si nada.",
+     "vid": [
+      "rana3",
+      "rana2"
+     ],
+     "kw": "vuelve a latir",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🐸",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    },
+    {
+     "t": "Se llama rana de bosque. Y puede pasar así meses.",
+     "vid": [
+      "rana1"
+     ],
+     "kw": "meses así"
+    }
+   ]
+  },
+  {
+   "nombre": "6 · En Venus un día dura más que un año",
+   "frases": [
+    {
+     "t": "Número seis.",
+     "card": {
+      "tipo": "numero",
+      "n": 6,
+      "tema": "Espacio"
+     }
+    },
+    {
+     "t": "En Venus, un día dura más que un año.",
+     "kw": "más que un año",
+     "img": [
+      "venus_real"
+     ]
+    },
+    {
+     "t": "Venus tarda doscientos veinticinco días terrestres en dar la vuelta al Sol. Pero para girar una sola vez sobre sí mismo, necesita doscientos cuarenta y tres.",
+     "rotulo": {
+      "arriba": "Año: 225 días",
+      "texto": "Giro sobre sí mismo: 243 días"
+     },
+     "img": [
+      "venus_radar"
+     ]
+    },
+    {
+     "t": "Es decir: termina una vuelta completa al Sol… antes de terminar de girar sobre sí mismo.",
+     "vid": [
+      "est1",
+      "tierra"
+     ],
+     "kw": "antes de girar"
+    },
+    {
+     "t": "Y por si fuera poco, gira al revés que casi todos los planetas. Allí, el Sol sale por el oeste.",
+     "kw": "sale por el oeste",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🌅",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ],
+     "img": [
+      "venus_real"
+     ]
+    }
+   ]
+  },
+  {
+   "nombre": "7 · El olor a lluvia",
+   "frases": [
+    {
+     "t": "Número siete.",
+     "card": {
+      "tipo": "numero",
+      "n": 7,
+      "tema": "Ciencia"
+     }
+    },
+    {
+     "t": "Ese olor a tierra mojada cuando empieza a llover… tiene nombre: petricor.",
+     "vid": [
+      "lluvia3",
+      "lluvia2"
+     ],
+     "kw": "petricor",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🌧️",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    },
+    {
+     "t": "Gran parte de ese olor viene de una sustancia, la geosmina, que fabrican unas bacterias del suelo. Cuando las gotas golpean la tierra seca, la lanzan al aire.",
+     "vid": [
+      "lluvia2",
+      "lluvia1",
+      "lluvia4"
+     ],
+     "rotulo": {
+      "arriba": "La culpable",
+      "texto": "Geosmina"
+     }
+    },
+    {
+     "t": "Y aquí viene lo increíble: algunas personas la detectan a solo unas pocas partes por billón.",
+     "vid": [
+      "lluvia1",
+      "lluvia3"
+     ],
+     "kw": "unas partes por billón",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "👃",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    },
+    {
+     "t": "Es como notar el olor de menos de una gota… disuelta en una piscina olímpica.",
+     "vid": [
+      "piscina"
+     ],
+     "rotulo": {
+      "arriba": "Como notar",
+      "texto": "Una gota en una piscina olímpica"
+     }
+    }
+   ]
+  },
+  {
+   "nombre": "8 · El cerebro no siente dolor",
+   "frases": [
+    {
+     "t": "Número ocho.",
+     "card": {
+      "tipo": "numero",
+      "n": 8,
+      "tema": "Cuerpo humano"
+     }
+    },
+    {
+     "t": "Tu cerebro siente todo tu cuerpo… pero él mismo no siente dolor.",
+     "vid": [
+      "mri1",
+      "mri2"
+     ],
+     "kw": "no siente dolor",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🧠",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    },
+    {
+     "t": "El tejido del cerebro no tiene receptores de dolor. Por eso existen operaciones en las que el paciente está despierto mientras le operan el cerebro.",
+     "vid": [
+      "qui1",
+      "qui2"
+     ],
+     "rotulo": {
+      "arriba": "Cirugía con el paciente",
+      "texto": "Despierto"
+     }
+    },
+    {
+     "t": "Le duermen la piel y el cráneo, que sí duelen, y después le despiertan para que hable, cuente o mueva una mano. Así los cirujanos comprueban en directo que no dañan zonas importantes.",
+     "vid": [
+      "qui2",
+      "mri2",
+      "qui1"
+     ],
+     "kw": "en directo"
+    },
+    {
+     "t": "Entonces, ¿por qué te duele la cabeza? Porque ese dolor no viene del cerebro, sino de lo que lo rodea: membranas, vasos sanguíneos y músculos.",
+     "vid": [
+      "cabeza",
+      "mri1"
+     ],
+     "kw": "¿y el dolor de cabeza?"
+    }
+   ]
+  },
+  {
+   "nombre": "9 · Mamuts y pirámides",
+   "frases": [
+    {
+     "t": "Número nueve.",
+     "card": {
+      "tipo": "numero",
+      "n": 9,
+      "tema": "Historia"
+     }
+    },
+    {
+     "t": "Cuando los egipcios ya habían construido la Gran Pirámide… todavía quedaban mamuts vivos.",
+     "kw": "a la vez",
+     "img": [
+      "mamut_piramide"
+     ]
+    },
+    {
+     "t": "La pirámide se levantó hace unos cuatro mil quinientos años.",
+     "vid": [
+      "piram1",
+      "piram2"
+     ],
+     "rotulo": {
+      "arriba": "Gran Pirámide",
+      "texto": "Hace 4.500 años"
+     }
+    },
+    {
+     "t": "Y en la isla de Wrangel, en el océano Ártico, un pequeño grupo de mamuts lanudos sobrevivió hasta hace unos cuatro mil.",
+     "rotulo": {
+      "arriba": "Isla de Wrangel",
+      "texto": "Mamuts hasta hace 4.000 años"
+     },
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🦣",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ],
+     "img": [
+      "mamut_solo"
+     ]
+    },
+    {
+     "t": "Llevaban miles de años aislados, mientras sus parientes desaparecían en el resto del mundo.",
+     "vid": [
+      "artico1",
+      "artico2"
+     ],
+     "kw": "aislados"
+    },
+    {
+     "t": "Así que, mientras alguien en Egipto contemplaba la pirámide… en el otro extremo del planeta aún caminaban mamuts.",
+     "kw": "aún caminaban mamuts",
+     "img": [
+      "mamut_piramide"
+     ]
+    }
+   ]
+  },
+  {
+   "nombre": "10 · La primera persona fotografiada",
+   "frases": [
+    {
+     "t": "Número diez.",
+     "card": {
+      "tipo": "numero",
+      "n": 10,
+      "tema": "Historia"
+     }
+    },
+    {
+     "t": "Esta es una de las primeras fotografías de la historia.",
+     "vid": [
+      "paris"
+     ],
+     "kw": "1838"
+    },
+    {
+     "t": "París, 1838. Una avenida que a esa hora estaba llena de gente, de carruajes y de caballos. Y sin embargo… parece vacía.",
+     "marcas": [
+      {
+       "tipo": "texto",
+       "pos": [
+        0.5,
+        0.12
+       ],
+       "texto": "¿VACÍA?",
+       "tam": 60,
+       "fondo": "#FFC400",
+       "tinta": "#130F0E",
+       "en": 2.6
+      }
+     ],
+     "img": [
+      "foto_1838"
+     ]
+    },
+    {
+     "t": "¿Por qué? Porque para hacer esta foto había que dejar la cámara abierta cuatro o cinco minutos. Todo lo que se movía… desaparecía.",
+     "marcas": [
+      {
+       "tipo": "texto",
+       "pos": [
+        0.5,
+        0.12
+       ],
+       "texto": "4-5 MINUTOS DE EXPOSICIÓN",
+       "tam": 50,
+       "en": 0.8
+      },
+      {
+       "tipo": "emoji",
+       "emoji": "⏱️",
+       "pos": [
+        0.88,
+        0.3
+       ],
+       "tam": 170,
+       "en": 1.5
+      }
+     ],
+     "img": [
+      "foto_1838"
+     ]
+    },
+    {
+     "t": "Pero fíjate aquí, abajo a la izquierda. Un hombre se quedó quieto mientras le limpiaban las botas.",
+     "marcas": [
+      {
+       "tipo": "circulo",
+       "c": [
+        0.212,
+        0.78
+       ],
+       "r": [
+        0.045,
+        0.06
+       ],
+       "en": 1.0
+      },
+      {
+       "tipo": "flecha",
+       "de": [
+        0.45,
+        0.55
+       ],
+       "a": [
+        0.245,
+        0.74
+       ],
+       "en": 1.0
+      },
+      {
+       "tipo": "texto",
+       "pos": [
+        0.52,
+        0.5
+       ],
+       "texto": "¡AQUÍ!",
+       "tam": 56,
+       "fondo": "#FFC400",
+       "tinta": "#130F0E",
+       "en": 1.0
+      }
+     ],
+     "img": [
+      "foto_1838"
+     ]
+    },
+    {
+     "t": "Y así, sin saberlo, se convirtió en la que se considera la primera persona que aparece en una fotografía.",
+     "marcas": [
+      {
+       "tipo": "circulo",
+       "c": [
+        0.212,
+        0.78
+       ],
+       "r": [
+        0.045,
+        0.06
+       ],
+       "en": 0.2
+      },
+      {
+       "tipo": "texto",
+       "pos": [
+        0.5,
+        0.12
+       ],
+       "texto": "LA PRIMERA PERSONA FOTOGRAFIADA",
+       "tam": 46,
+       "en": 0.8
+      }
+     ],
+     "img": [
+      "foto_1838"
+     ]
+    }
+   ]
+  },
+  {
+   "nombre": "11 · La Voyager 1",
+   "frases": [
+    {
+     "t": "Número once.",
+     "card": {
+      "tipo": "numero",
+      "n": 11,
+      "tema": "Espacio"
+     }
+    },
+    {
+     "t": "Y ahora sí, lo que te prometí.",
+     "vid": [
+      "est1"
+     ],
+     "kw": "lo prometido"
+    },
+    {
+     "t": "En 1977, la NASA lanzó una sonda: la Voyager 1. Su misión principal iba a durar unos pocos años.",
+     "rotulo": {
+      "arriba": "Lanzada en 1977",
+      "texto": "Voyager 1"
+     },
+     "img": [
+      "voyager_1"
+     ]
+    },
+    {
+     "t": "Casi cincuenta años después… sigue funcionando. Y sigue alejándose.",
+     "kw": "sigue funcionando",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🛰️",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ],
+     "img": [
+      "voyager_2"
+     ]
+    },
+    {
+     "t": "El 18 de noviembre de 2026 llegó a una distancia nunca vista: un día luz. Unos veintiséis mil millones de kilómetros.",
+     "vid": [
+      "est1",
+      "tierra"
+     ],
+     "rotulo": {
+      "arriba": "18 de noviembre de 2026",
+      "texto": "Un día luz: 26.000 millones de km"
+     }
+    },
+    {
+     "t": "Eso significa que un mensaje enviado desde la Tierra, viajando a la velocidad de la luz, tarda un día entero en llegar hasta ella. Y su respuesta, otro día en volver.",
+     "vid": [
+      "tel1",
+      "tel2",
+      "est1"
+     ],
+     "kw": "un día entero",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "📡",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    },
+    {
+     "t": "Ningún objeto fabricado por el ser humano ha llegado nunca tan lejos.",
+     "kw": "nunca tan lejos",
+     "img": [
+      "voyager_1"
+     ]
+    },
+    {
+     "t": "Y lleva a bordo un disco de oro con saludos en cincuenta y cinco idiomas… por si algún día, alguien lo encuentra.",
+     "rotulo": {
+      "arriba": "A bordo",
+      "texto": "Saludos en 55 idiomas"
+     },
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "👽",
+       "pos": [
+        0.12,
+        0.5
+       ],
+       "tam": 200
+      }
+     ],
+     "img": [
+      "disco_oro"
+     ]
+    }
+   ]
+  },
+  {
+   "nombre": "Cierre",
+   "frases": [
+    {
+     "t": "¿Cuál te ha dejado con la boca abierta? Te leo en los comentarios.",
+     "card": {
+      "tipo": "final"
+     }
+    },
+    {
+     "t": "Y si quieres tu próxima dosis de asombro, suscríbete a Shock Mental.",
+     "card": {
+      "tipo": "final"
+     }
+    }
+   ],
+   "final": 1.0
+  }
+ ]
+}
