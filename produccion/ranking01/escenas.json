@@ -1,0 +1,173 @@
+{
+ "tema": "shock",
+ "voz": {
+  "idioma": "es-US",
+  "nombre": "es-US-Chirp3-HD-Achird",
+  "velocidad": 1.15
+ },
+ "musica": {
+  "archivo": "musica/wallpaper.mp3",
+  "volumen": 0.09,
+  "credito": "\"Wallpaper\" de Kevin MacLeod (incompetech.com)"
+ },
+ "titulo": "Ranking de velocidad: ¿quién gana? 🏁",
+ "formato": "vertical",
+ "estilo": {
+  "dinamico": true,
+  "plano": 1.4
+ },
+ "fotos": {},
+ "credito_fotos": {},
+ "marca": {
+  "logo": "marca/shockmental/perfil-sin-eslogan.png",
+  "nombre": "SHOCK MENTAL"
+ },
+ "ranking": {
+  "titulo": "ANIMALES MÁS RÁPIDOS",
+  "puestos": [
+   5,
+   4,
+   3,
+   2,
+   1
+  ]
+ },
+ "videos": {
+  "ave1": 7723865,
+  "ave2": 7723867,
+  "leo1": 5607553,
+  "leo2": 853900,
+  "leo3": 7710516,
+  "gue1": 7638388,
+  "gue2": 8256952,
+  "agu1": 3635378,
+  "agu2": 3635378,
+  "agu3": 2927931,
+  "hal1": 7668765,
+  "hal2": 2910043,
+  "r_shocked_woman": 8626657
+ },
+ "videos_inicio": {
+  "r_shocked_woman": 0.3
+ },
+ "bloques": [
+  {
+   "nombre": "Ranking",
+   "frases": [
+    {
+     "t": "¿Cuál es el animal más rápido del mundo? Te doy una pista: no corre.",
+     "vid": [
+      "hal2",
+      "gue1"
+     ]
+    },
+    {
+     "t": "Número cinco: el avestruz. Hasta setenta kilómetros por hora. El ave más rápida… a pie.",
+     "vid": [
+      "ave2",
+      "ave1"
+     ],
+     "rank": {
+      "n": 5,
+      "texto": "Avestruz · 70",
+      "emoji": "🐦"
+     },
+     "sfx": {
+      "nombre": "ding",
+      "vol": 0.3,
+      "en": 0.1
+     }
+    },
+    {
+     "t": "Número cuatro: el león. Unos ochenta, pero solo en carreras cortas.",
+     "vid": [
+      "leo2",
+      "leo3"
+     ],
+     "rank": {
+      "n": 4,
+      "texto": "León · 80",
+      "emoji": "🦁"
+     },
+     "sfx": {
+      "nombre": "ding",
+      "vol": 0.3,
+      "en": 0.1
+     }
+    },
+    {
+     "t": "Número tres: el guepardo. Más de cien kilómetros por hora. El más rápido en tierra.",
+     "vid": [
+      "gue2",
+      "gue1"
+     ],
+     "rank": {
+      "n": 3,
+      "texto": "Guepardo · 110",
+      "emoji": "🐆"
+     },
+     "sfx": {
+      "nombre": "ding",
+      "vol": 0.3,
+      "en": 0.1
+     }
+    },
+    {
+     "t": "Número dos: el águila real. Cuando se lanza en picado, supera los doscientos cuarenta.",
+     "vid": [
+      "agu2",
+      "agu3",
+      "agu1"
+     ],
+     "rank": {
+      "n": 2,
+      "texto": "Águila · 240",
+      "emoji": "🦅"
+     },
+     "sfx": {
+      "nombre": "ding",
+      "vol": 0.3,
+      "en": 0.1
+     }
+    },
+    {
+     "t": "Y el número uno…",
+     "vid": [
+      "hal1"
+     ]
+    },
+    {
+     "t": "El halcón peregrino. En picado pasa de los trescientos veinte kilómetros por hora. Es el animal más rápido del planeta.",
+     "vid": [
+      "hal2",
+      "hal1"
+     ],
+     "rank": {
+      "n": 1,
+      "texto": "Halcón · 320",
+      "emoji": "🏆"
+     },
+     "sfx": {
+      "nombre": "subida",
+      "vol": 0.25,
+      "en": 0.0
+     }
+    },
+    {
+     "t": "Más rápido que un coche de Fórmula 1 en recta. ¿Tú cuál creías que ganaba?",
+     "vid": [
+      "r_shocked_woman",
+      "hal2"
+     ]
+    },
+    {
+     "t": "Sígueme para más rankings en Shock Mental.",
+     "vid": [
+      "hal1"
+     ]
+    }
+   ],
+   "final": 0.4
+  }
+ ]
+}

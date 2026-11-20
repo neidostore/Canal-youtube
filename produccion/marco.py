@@ -234,3 +234,21 @@ def marca(destino, m, a_px):
         g = g.resize((round(g.width * k), m.get("tam", 200)), Image.LANCZOS); x, y = a_px(*m["pos"])
         im.alpha_composite(g, (max(0, x - g.width // 2), max(0, y - g.height // 2)))
     im.save(destino)
+
+
+def ranking_png(destino, titulo, puestos, revelados):
+    """Shorts: lista de ranking a la izquierda (5, 4, 3, 2, 1). revelados = {n: (texto, emoji)} ya mostrados."""
+    im = Image.new("RGBA", (1080, 1920), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
+    ft = ImageFont.truetype(F_BLACK, 50); tw = d.textlength(titulo, font=ft)
+    d.rounded_rectangle((540 - tw / 2 - 26, 300, 540 + tw / 2 + 26, 376), 18, fill="#FFC400", outline="#FFFFFF", width=5)
+    d.text((540 - tw / 2, 309), titulo, font=ft, fill="#130F0E")
+    fn = ImageFont.truetype(F_BLACK, 92); fx = ImageFont.truetype(F_BLACK, 46)
+    for k, n in enumerate(puestos):
+        y = 560 + k * 150; col = "#FFC400" if n == 1 else "#FFFFFF"
+        d.text((44 + 5, y + 5), str(n), font=fn, fill=(0, 0, 0, 170)); d.text((44, y), str(n), font=fn, fill=col, stroke_width=5, stroke_fill="#130F0E")
+        if n in revelados:
+            txt, emo = revelados[n]; x = 120
+            d.text((x + 3, y + 26 + 3), txt, font=fx, fill=(0, 0, 0, 170)); d.text((x, y + 26), txt, font=fx, fill="#FFFFFF", stroke_width=4, stroke_fill="#130F0E")
+            if emo:
+                e = _emoji(emo, 64); im.alpha_composite(e, (int(x + d.textlength(txt, font=fx) + 16), y + 20)); d = ImageDraw.Draw(im)
+    im.save(destino)

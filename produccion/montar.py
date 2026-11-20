@@ -244,7 +244,7 @@ def main(carpeta):
             if i == len(fr) - 1 and b.get("final"):
                 e["pausa"] += b["final"]
             e["nb"] = nb
-            for extra in ("sfx", "rotulo", "recuadro", "marcas"):
+            for extra in ("sfx", "rotulo", "recuadro", "marcas", "rank"):
                 if f.get(extra):
                     e[extra] = f[extra]
             if "card" in f:
@@ -571,6 +571,26 @@ def main(carpeta):
         entradas += ["-i", str(mdir / "marca.png"), "-loop", "1", "-framerate", str(FPS), "-t", f"{d:.2f}", "-i", str(mdir / "cierre.png")]
         video_fc += (f";[{n_in + 1}:v]format=rgba,fade=t=in:st=0:d=0.25:alpha=1,setpts=PTS-STARTPTS+{ini:.3f}/TB[cz];"
                      f"[vv][cz]overlay=0:0:eof_action=pass[v1];[v1][{n_in}:v]overlay=0:0[vfin]")
+        rk = spec.get("ranking")
+        if rk:   # lista de ranking que se va rellenando (5, 4, 3, 2, 1), visible hasta el cierre
+            n_in += 2; revel = {}; tramos = []
+            for e in escenas:
+                if e.get("rank"):
+                    r = e["rank"]; revel = dict(revel); revel[r["n"]] = (r["texto"], r.get("emoji"))
+                    tramos.append((e["ini"] + r.get("en", 0.15), dict(revel)))
+            fin_r = ult_e["ini"] + 0.25
+            cad = "[vfin]"
+            for j, (a0, rv) in enumerate(tramos):
+                png = mdir / f"ranking_{j}.png"; MK.ranking_png(png, rk["titulo"], rk.get("puestos", [5, 4, 3, 2, 1]), rv)
+                a1 = tramos[j + 1][0] if j + 1 < len(tramos) else fin_r
+                entradas += ["-loop", "1", "-framerate", str(FPS), "-t", f"{max(0.1, a1 - a0):.2f}", "-i", str(png)]
+                video_fc = video_fc[:-len("[vfin]")] + f"[r{j}];[{n_in}:v]format=rgba,setpts=PTS-STARTPTS+{a0:.3f}/TB[rk{j}];[r{j}][rk{j}]overlay=0:0:eof_action=pass[vfin]"
+                n_in += 1
+            if tramos:   # lista vacía (solo números) desde el principio hasta el primer puesto
+                png = mdir / "ranking_vacio.png"; MK.ranking_png(png, rk["titulo"], rk.get("puestos", [5, 4, 3, 2, 1]), {})
+                entradas += ["-loop", "1", "-framerate", str(FPS), "-t", f"{tramos[0][0]:.2f}", "-i", str(png)]
+                video_fc = video_fc[:-len("[vfin]")] + f"[rv];[rv][{n_in}:v]overlay=0:0:eof_action=pass[vfin]"
+                n_in += 1
     sh("ffmpeg", "-y", *entradas,
        "-filter_complex", f"{video_fc};{mezcla}", "-map", "[vfin]" if (MARCO or marca_v) else "[vv]", "-map", "[a]",
        "-c:v", "libx264", "-preset", "medium", "-crf", "21", "-pix_fmt", "yuv420p", "-movflags", "+faststart",
