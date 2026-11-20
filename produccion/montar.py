@@ -308,8 +308,10 @@ def main(carpeta):
             e["img"] = str(rutas[e["foto"]] if e["tipo"] == "foto" else trabajo / f"card_{e['card']}.png")
         t += e["dur"]
     (trabajo / "audio.txt").write_text("".join(f"file '{p}'\n" for p in lista_audio))
-    sh("ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", str(trabajo / "audio.txt"), "-c:a", "pcm_s16le",
-       str(trabajo / "narracion.wav"))
+    # la voz de Google trae un ronroneo grave de fondo (se oye en las pausas como un motor): se limpia aquí
+    sh("ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", str(trabajo / "audio.txt"),
+       "-af", "afftdn=nr=24:nf=-42:tn=1,agate=threshold=0.015:ratio=6:attack=3:release=120:range=0.03",
+       "-c:a", "pcm_s16le", str(trabajo / "narracion.wav"))
 
     # 5) clips de vídeo (en paralelo). En modo dinámico, cada frase con foto se parte en tomas de ~2 s
     estilo = spec.get("estilo", {})
