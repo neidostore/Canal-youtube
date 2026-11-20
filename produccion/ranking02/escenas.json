@@ -1,0 +1,172 @@
+{
+ "tema": "shock",
+ "voz": {
+  "idioma": "es-US",
+  "nombre": "es-US-Chirp3-HD-Achird",
+  "velocidad": 1.15
+ },
+ "musica": {
+  "archivo": "musica/wallpaper.mp3",
+  "volumen": 0.09,
+  "credito": "\"Wallpaper\" de Kevin MacLeod (incompetech.com)"
+ },
+ "estilo": {
+  "dinamico": true,
+  "plano": 1.4
+ },
+ "formato": "vertical",
+ "marca": {
+  "logo": "marca/shockmental/perfil-sin-eslogan.png",
+  "nombre": "SHOCK MENTAL"
+ },
+ "titulo": "El animal más mortal del mundo 🦟 Ranking",
+ "fotos": {},
+ "credito_fotos": {},
+ "ranking": {
+  "titulo": "ANIMALES MÁS MORTALES",
+  "puestos": [
+   5,
+   4,
+   3,
+   2,
+   1
+  ]
+ },
+ "videos": {
+  "mos1": 5113062,
+  "mos2": 4151677,
+  "ser1": 855685,
+  "ser2": 4106826,
+  "ser3": 1631760,
+  "per1": 5496003,
+  "per2": 5981732,
+  "coc1": 2910037,
+  "coc2": 5742215,
+  "tib1": 5548358,
+  "tib2": 5548360,
+  "r_shocked_woman": 8626657
+ },
+ "videos_inicio": {
+  "r_shocked_woman": 0.3
+ },
+ "bloques": [
+  {
+   "nombre": "Ranking",
+   "frases": [
+    {
+     "t": "¿Cuál es el animal que más personas mata en el mundo? Pista: no es el tiburón.",
+     "vid": [
+      "tib1",
+      "mos1"
+     ]
+    },
+    {
+     "t": "Número cinco: el tiburón. Da mucho miedo… pero mata a unas seis personas al año en todo el planeta.",
+     "vid": [
+      "tib2",
+      "tib1"
+     ],
+     "rank": {
+      "n": 5,
+      "texto": "Tiburón · 6",
+      "emoji": "🦈"
+     },
+     "sfx": {
+      "nombre": "ding",
+      "vol": 0.25,
+      "en": 0.1
+     }
+    },
+    {
+     "t": "Número cuatro: el cocodrilo. Se calcula que causa cientos de muertes cada año.",
+     "vid": [
+      "coc1",
+      "coc2"
+     ],
+     "rank": {
+      "n": 4,
+      "texto": "Cocodrilo · cientos",
+      "emoji": "🐊"
+     },
+     "sfx": {
+      "nombre": "ding",
+      "vol": 0.25,
+      "en": 0.1
+     }
+    },
+    {
+     "t": "Número tres: el perro. No por sus mordiscos, sino por la rabia: unas cuarenta y cuatro mil muertes al año, casi todas transmitidas por perros.",
+     "vid": [
+      "per1",
+      "per2"
+     ],
+     "rank": {
+      "n": 3,
+      "texto": "Perro · 44.000",
+      "emoji": "🐕"
+     },
+     "sfx": {
+      "nombre": "ding",
+      "vol": 0.25,
+      "en": 0.1
+     }
+    },
+    {
+     "t": "Número dos: las serpientes. Su veneno mata cada año a entre ochenta mil y ciento treinta y ocho mil personas.",
+     "vid": [
+      "ser1",
+      "ser2",
+      "ser3"
+     ],
+     "rank": {
+      "n": 2,
+      "texto": "Serpientes · +80.000",
+      "emoji": "🐍"
+     },
+     "sfx": {
+      "nombre": "ding",
+      "vol": 0.25,
+      "en": 0.1
+     }
+    },
+    {
+     "t": "Y el número uno…",
+     "vid": [
+      "mos2"
+     ]
+    },
+    {
+     "t": "El mosquito. Solo la malaria que transmite mató a unas seiscientas mil personas en un año. Es, con diferencia, el animal más mortal del planeta.",
+     "vid": [
+      "mos1",
+      "mos2"
+     ],
+     "rank": {
+      "n": 1,
+      "texto": "Mosquito · 600.000",
+      "emoji": "🏆"
+     },
+     "sfx": {
+      "nombre": "ding",
+      "vol": 0.4,
+      "en": 0.1
+     }
+    },
+    {
+     "t": "Así que la próxima vez que oigas un zumbido por la noche… ya sabes a quién temer. ¿Lo sabías?",
+     "vid": [
+      "r_shocked_woman",
+      "mos1"
+     ]
+    },
+    {
+     "t": "Sígueme para más rankings en Shock Mental.",
+     "vid": [
+      "mos2"
+     ]
+    }
+   ],
+   "final": 0.4
+  }
+ ]
+}
