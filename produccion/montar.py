@@ -500,8 +500,9 @@ def main(carpeta):
                 continue
             tmp = trabajo / "clips" / f"amb_{i:03d}.wav"
             r = subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-stream_loop", "-1", "-ss", f"{p.get('offset', 0):.2f}",
-                                "-i", p["img"], "-vn", "-t", f"{p['dur']:.3f}", "-ac", "1", "-ar", str(SR),
-                                "-af", "afade=t=in:d=0.08,areverse,afade=t=in:d=0.12,areverse", str(tmp)])
+                                "-i", p["img"], "-vn", "-ac", "1", "-ar", str(SR),
+                                "-af", f"atrim=0:{p['dur']:.3f},afade=t=in:d=0.08,areverse,afade=t=in:d=0.12,areverse", str(tmp)],
+                               timeout=120)
             if r.returncode or not tmp.exists():
                 continue
             with wave.open(str(tmp)) as w:
