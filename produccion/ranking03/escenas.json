@@ -1,0 +1,188 @@
+{
+ "tema": "shock",
+ "voz": {
+  "idioma": "es-US",
+  "nombre": "es-US-Chirp3-HD-Achird",
+  "velocidad": 1.15
+ },
+ "musica": {
+  "archivo": "musica/wallpaper.mp3",
+  "volumen": 0.05,
+  "credito": "\"Wallpaper\" de Kevin MacLeod (incompetech.com)"
+ },
+ "estilo": {
+  "dinamico": true,
+  "plano": 1.4
+ },
+ "formato": "vertical",
+ "marca": {
+  "logo": "marca/shockmental/perfil-sin-eslogan.png",
+  "nombre": "SHOCK MENTAL"
+ },
+ "titulo": "El sonido más fuerte de la historia 🌋 Ranking",
+ "fotos": {},
+ "credito_fotos": {},
+ "ranking": {
+  "titulo": "FENÓMENOS MÁS EXTREMOS",
+  "puestos": [
+   5,
+   4,
+   3,
+   2,
+   1
+  ]
+ },
+ "videos": {
+  "gra1": 4059704,
+  "gra2": 6040646,
+  "ray1": 2657691,
+  "ray2": 6190836,
+  "llu": 3830902,
+  "ola1": 6510819,
+  "ola2": 5968014,
+  "mar": 5719249,
+  "tor1": 853833,
+  "vol1": 9320060,
+  "vol2": 3192166,
+  "vol3": 3192084,
+  "r_shocked_woman": 8626657
+ },
+ "videos_inicio": {
+  "ray1": 0.0,
+  "r_shocked_woman": 0.3
+ },
+ "bloques": [
+  {
+   "nombre": "Ranking",
+   "frases": [
+    {
+     "t": "¿Cuál fue el sonido más fuerte de la historia? Se oyó a casi cinco mil kilómetros.",
+     "vid": [
+      "vol1",
+      "ray1"
+     ],
+     "sonido": 0.8
+    },
+    {
+     "t": "Número cinco: el granizo. En 2010 cayó en Estados Unidos una piedra de hielo de veinte centímetros… y casi un kilo de peso.",
+     "vid": [
+      "gra1",
+      "gra2"
+     ],
+     "sonido": 1.0,
+     "respiro": 1.4,
+     "rank": {
+      "n": 5,
+      "texto": "Granizo · 20 cm",
+      "emoji": "🧊"
+     },
+     "sfx": {
+      "nombre": "ding",
+      "vol": 0.25,
+      "en": 0.1
+     }
+    },
+    {
+     "t": "Número cuatro: el rayo. El más largo jamás medido recorrió ochocientos veintinueve kilómetros de cielo, de Texas hasta Kansas City.",
+     "vid": [
+      "ray1",
+      "ray2",
+      "ray1"
+     ],
+     "sonido": 1.0,
+     "respiro": 1.4,
+     "rank": {
+      "n": 4,
+      "texto": "Rayo · 829 km",
+      "emoji": "⚡"
+     },
+     "sfx": {
+      "nombre": "ding",
+      "vol": 0.25,
+      "en": 0.1
+     }
+    },
+    {
+     "t": "Número tres: las olas gigantes. En Nazaré, Portugal, un surfista bajó una ola de veintiséis metros… tan alta como un edificio de ocho pisos.",
+     "vid": [
+      "ola1",
+      "ola2"
+     ],
+     "sonido": 1.0,
+     "sonido_de": "mar",
+     "respiro": 1.4,
+     "rank": {
+      "n": 3,
+      "texto": "Ola · 26 m",
+      "emoji": "🌊"
+     },
+     "sfx": {
+      "nombre": "ding",
+      "vol": 0.25,
+      "en": 0.1
+     }
+    },
+    {
+     "t": "Número dos: el tornado. En Oklahoma, un radar midió dentro de uno vientos de casi quinientos kilómetros por hora. Es el viento más rápido jamás registrado.",
+     "vid": [
+      "tor1"
+     ],
+     "sonido": 1.0,
+     "sonido_de": "llu",
+     "respiro": 1.4,
+     "rank": {
+      "n": 2,
+      "texto": "Tornado · 484 km/h",
+      "emoji": "🌪️"
+     },
+     "sfx": {
+      "nombre": "ding",
+      "vol": 0.25,
+      "en": 0.1
+     }
+    },
+    {
+     "t": "Y el número uno…",
+     "vid": [
+      "vol2"
+     ],
+     "sonido": 0.8
+    },
+    {
+     "t": "El volcán Krakatoa. En 1883 su explosión fue tan brutal que se oyó en una isla a casi cinco mil kilómetros. Es el sonido más fuerte de la historia.",
+     "vid": [
+      "vol1",
+      "vol3",
+      "vol2"
+     ],
+     "sonido": 1.0,
+     "respiro": 1.4,
+     "rank": {
+      "n": 1,
+      "texto": "Volcán · 4.800 km",
+      "emoji": "🏆"
+     },
+     "sfx": {
+      "nombre": "ding",
+      "vol": 0.4,
+      "en": 0.1
+     }
+    },
+    {
+     "t": "¿Cuál de estos te daría más miedo? Te leo en los comentarios.",
+     "vid": [
+      "r_shocked_woman",
+      "ray1"
+     ]
+    },
+    {
+     "t": "Sígueme para más rankings en Shock Mental.",
+     "vid": [
+      "vol1"
+     ]
+    }
+   ],
+   "final": 0.6
+  }
+ ]
+}
