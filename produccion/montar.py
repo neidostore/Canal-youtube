@@ -240,11 +240,11 @@ def main(carpeta):
             continue
         fr = b["frases"]
         for i, f in enumerate(fr):
-            e = {"texto": f["t"], "kw": f.get("kw"), "voz_texto": f.get("voz", f["t"]), "pausa": PAUSA_BLOQUE if i == len(fr) - 1 else PAUSA}
+            e = {"texto": f["t"], "kw": f.get("kw"), "voz_texto": f.get("voz", f["t"]), "pausa": (PAUSA_BLOQUE if i == len(fr) - 1 else PAUSA) + f.get("respiro", 0)}
             if i == len(fr) - 1 and b.get("final"):
                 e["pausa"] += b["final"]
             e["nb"] = nb
-            for extra in ("sfx", "rotulo", "recuadro", "marcas", "rank"):
+            for extra in ("sfx", "rotulo", "recuadro", "marcas", "rank", "sonido"):
                 if f.get(extra):
                     e[extra] = f[extra]
             if "card" in f:
@@ -493,6 +493,30 @@ def main(carpeta):
                 poner("click", e["ini"])
             else:
                 poner(elegir(["pop1", "pop2", "pop3"]), e["ini"])
+        # sonido real de los clips (frase con "sonido": volumen): se baja mientras habla la voz y sube en las pausas
+        amb = np.zeros(total_n, dtype=np.float32); hay_amb = False
+        for i, p in enumerate(planos):
+            if p["tipo"] != "video" or not p.get("sonido"):
+                continue
+            tmp = trabajo / "clips" / f"amb_{i:03d}.wav"
+            r = subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-stream_loop", "-1", "-ss", f"{p.get('offset', 0):.2f}",
+                                "-i", p["img"], "-vn", "-t", f"{p['dur']:.3f}", "-ac", "1", "-ar", str(SR),
+                                "-af", "afade=t=in:d=0.08,areverse,afade=t=in:d=0.12,areverse", str(tmp)])
+            if r.returncode or not tmp.exists():
+                continue
+            with wave.open(str(tmp)) as w:
+                x = np.frombuffer(w.readframes(w.getnframes()), dtype=np.int16).astype(np.float32) / 32767
+            i0 = int(p["ini"] * SR); i1 = min(total_n, i0 + len(x))
+            amb[i0:i1] += x[: i1 - i0] * float(p["sonido"]); hay_amb = True
+        if hay_amb:
+            with wave.open(str(trabajo / "narracion.wav")) as w:
+                v = np.frombuffer(w.readframes(w.getnframes()), dtype=np.int16).astype(np.float32) / 32767
+            hop = SR // 50; env = np.array([np.abs(v[k:k + hop]).mean() for k in range(0, len(v), hop)])
+            act = (env > 0.01).astype(np.float32)
+            act = np.convolve(act, np.ones(15) / 15, mode="same")            # suaviza (≈0,3 s)
+            g = 1 - 0.75 * np.clip(act * 2, 0, 1)                               # voz hablando → ambiente al 25 %
+            g = np.repeat(g, hop)[:total_n]; g = np.pad(g, (0, max(0, total_n - len(g))), constant_values=1)
+            fx_buf += amb * g
         with wave.open(str(trabajo / "efectos.wav"), "wb") as w:
             w.setnchannels(1); w.setsampwidth(2); w.setframerate(SR)
             w.writeframes((np.clip(fx_buf, -1, 1) * 32767).astype(np.int16).tobytes())
