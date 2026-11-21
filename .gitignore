@@ -3,3 +3,4 @@ miniaturas/shock01/fondo-tesla.jpg
 produccion/**/trabajo/
 produccion/**/salida/
 produccion/**/ejemplo/
+__pycache__/
