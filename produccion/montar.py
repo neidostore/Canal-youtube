@@ -244,7 +244,7 @@ def main(carpeta):
             if i == len(fr) - 1 and b.get("final"):
                 e["pausa"] += b["final"]
             e["nb"] = nb
-            for extra in ("sfx", "rotulo", "recuadro", "marcas", "rank", "sonido"):
+            for extra in ("sfx", "rotulo", "recuadro", "marcas", "rank", "sonido", "sonido_de"):
                 if f.get(extra):
                     e[extra] = f[extra]
             if "card" in f:
@@ -500,7 +500,7 @@ def main(carpeta):
                 continue
             tmp = trabajo / "clips" / f"amb_{i:03d}.wav"
             r = subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-stream_loop", "-1", "-ss", f"{p.get('offset', 0):.2f}",
-                                "-i", p["img"], "-vn", "-ac", "1", "-ar", str(SR),
+                                "-i", (str(CLIPS / f"{spec['videos'][p['sonido_de']]}.mp4") if p.get("sonido_de") else p["img"]), "-vn", "-ac", "1", "-ar", str(SR),
                                 "-af", f"atrim=0:{p['dur']:.3f},afade=t=in:d=0.08,areverse,afade=t=in:d=0.12,areverse", str(tmp)],
                                timeout=120)
             if r.returncode or not tmp.exists():
