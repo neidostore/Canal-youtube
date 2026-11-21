@@ -61,7 +61,9 @@
       "vol1",
       "ray1"
      ],
-     "sonido": 0.8
+     "sonido": 1.0,
+     "sonido_archivo": "snd_yasur.mp3",
+     "sonido_inicio": 27.5
     },
     {
      "t": "Número cinco: el granizo. En 2010 cayó en Estados Unidos una piedra de hielo de veinte centímetros… y casi un kilo de peso.",
@@ -146,7 +148,10 @@
      "vid": [
       "vol2"
      ],
-     "sonido": 0.8
+     "sonido": 1.0,
+     "sonido_archivo": "snd_yasur.mp3",
+     "sonido_inicio": 27.6,
+     "respiro": 0.8
     },
     {
      "t": "El volcán Krakatoa. En 1883 su explosión fue tan brutal que se oyó en una isla a casi cinco mil kilómetros. Es el sonido más fuerte de la historia.",
@@ -166,7 +171,9 @@
       "nombre": "ding",
       "vol": 0.4,
       "en": 0.1
-     }
+     },
+     "sonido_archivo": "snd_yasur.mp3",
+     "sonido_inicio": 30.5
     },
     {
      "t": "¿Cuál de estos te daría más miedo? Te leo en los comentarios.",
@@ -184,5 +191,6 @@
    ],
    "final": 0.6
   }
- ]
+ ],
+ "credito_sonidos": "Sonido del volcán Yasur: Hendrik (freesound.org, CC0)"
 }

@@ -244,7 +244,7 @@ def main(carpeta):
             if i == len(fr) - 1 and b.get("final"):
                 e["pausa"] += b["final"]
             e["nb"] = nb
-            for extra in ("sfx", "rotulo", "recuadro", "marcas", "rank", "sonido", "sonido_de"):
+            for extra in ("sfx", "rotulo", "recuadro", "marcas", "rank", "sonido", "sonido_de", "sonido_archivo", "sonido_inicio"):
                 if f.get(extra):
                     e[extra] = f[extra]
             if "card" in f:
@@ -322,7 +322,7 @@ def main(carpeta):
         if dinamico and e["tipo"] in ("foto", "video") and e["dur"] > plano * 1.4:
             k = max(2, round(e["dur"] / plano)); d = e["dur"] / k
             for j in range(k):
-                p = dict(e, ini=e["ini"] + j * d, dur=d, toma=j)
+                p = dict(e, ini=e["ini"] + j * d, dur=d, toma=j, ini0=e["ini"])
                 if e["tipo"] == "video" and len(e["vids"]) > 1:   # varios clips: uno por toma
                     p["vid"] = e["vids"][j % len(e["vids"])]
                     p["img"] = str(CLIPS / f"{spec['videos'][p['vid']]}.mp4")
@@ -499,8 +499,9 @@ def main(carpeta):
             if p["tipo"] != "video" or not p.get("sonido"):
                 continue
             tmp = trabajo / "clips" / f"amb_{i:03d}.wav"
-            r = subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-stream_loop", "-1", "-ss", f"{p.get('offset', 0):.2f}",
-                                "-i", (str(CLIPS / f"{spec['videos'][p['sonido_de']]}.mp4") if p.get("sonido_de") else p["img"]), "-vn", "-ac", "1", "-ar", str(SR),
+            r = subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-stream_loop", "-1", "-ss", f"{(p.get('sonido_inicio', 0) + p['ini'] - p.get('ini0', p['ini'])) if p.get('sonido_archivo') else p.get('offset', 0):.2f}",
+                                "-i", (str(CLIPS / p["sonido_archivo"]) if p.get("sonido_archivo") else
+                                       str(CLIPS / f"{spec['videos'][p['sonido_de']]}.mp4") if p.get("sonido_de") else p["img"]), "-vn", "-ac", "1", "-ar", str(SR),
                                 "-af", f"atrim=0:{p['dur']:.3f},afade=t=in:d=0.08,areverse,afade=t=in:d=0.12,areverse", str(tmp)],
                                timeout=120)
             if r.returncode or not tmp.exists():
