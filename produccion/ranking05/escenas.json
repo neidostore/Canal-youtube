@@ -19,7 +19,7 @@
   "volumen": 0.09,
   "credito": "\"Wallpaper\" de Kevin MacLeod (incompetech.com)"
  },
- "titulo": "Prueba: coches de policía más locos",
+ "titulo": "Coches de policía más locos del mundo 🚓 Ranking",
  "ranking": {
   "titulo": "COCHES DE POLICÍA MÁS LOCOS",
   "puestos": [
@@ -33,28 +33,39 @@
  "fotos": {
   "lam1": 0,
   "lam2": 0,
+  "lam6": 0,
   "dub11": 0,
   "dub17": 0,
   "dub8": 0,
   "dub13": 0,
-  "dub10": 0,
-  "lam6": 0
+  "fer3": 0,
+  "fer5": 0,
+  "fer6": 0,
+  "dp0": 0,
+  "flota_dubai": 0,
+  "bugatti_dubai": 0
  },
  "credito_fotos": {
   "lam1": "Foto: StartAgain, Flickr · BY-SA 2.0",
   "lam2": "Foto: crash71100, Flickr · CC0 1.0",
+  "lam6": "Foto: crash71100, Flickr · CC0 1.0",
   "dub11": "Foto: Felix Berndt Photography, Flickr · BY 2.0",
   "dub17": "Foto: Felix Berndt Photography, Flickr · BY 2.0",
   "dub8": "Foto: Felix Berndt Photography, Flickr · BY 2.0",
   "dub13": "Foto: Felix Berndt Photography, Flickr · BY 2.0",
-  "dub10": "Foto: Felix Berndt Photography, Flickr · BY 2.0",
-  "lam6": "Foto: crash71100, Flickr · CC0 1.0"
+  "fer3": "Foto: Policía Nacional de los colombianos, Flickr · BY-SA 2.0",
+  "fer5": "Foto: Policía Nacional de los colombianos, Flickr · BY-SA 2.0",
+  "fer6": "Foto: Policía Nacional de los colombianos, Flickr · BY-SA 2.0",
+  "dp0": "Foto: Pedronet, Flickr · BY 2.0",
+  "flota_dubai": "Foto: Pedronet, Flickr · BY 2.0",
+  "bugatti_dubai": "Foto: Pedronet, Flickr · BY 2.0"
  },
  "videos": {
   "luces": 7714378,
   "luces2": 6581394,
   "rapido": 5309395,
-  "diam": 7663572
+  "diam": 7663572,
+  "dubai": 5101347
  },
  "bloques": [
   {
@@ -114,14 +125,50 @@
      ]
     },
     {
-     "t": "Número cuatro: el Lykan HyperSport de la policía de Abu Dabi. Costó unos tres millones de dólares.",
+     "t": "Número cuatro: el Ferrari de la policía de Colombia. Antes era de un narcotraficante.",
+     "img": [
+      "fer5",
+      "fer3"
+     ],
+     "rank": {
+      "n": 4,
+      "texto": "Ferrari · Colombia",
+      "emoji": "🇨🇴"
+     },
+     "sfx": {
+      "nombre": "ding",
+      "vol": 0.25,
+      "en": 0.1
+     }
+    },
+    {
+     "t": "Se lo incautaron, nadie pagó lo suficiente en la subasta… y la policía lo pintó con sus colores.",
+     "img": [
+      "fer6"
+     ],
+     "marcas": [
+      {
+       "tipo": "texto",
+       "texto": "Incautado a un narco",
+       "pos": [
+        0.5,
+        0.78
+       ],
+       "tam": 54,
+       "en": 0.5,
+       "fondo": "#E53935"
+      }
+     ]
+    },
+    {
+     "t": "Número tres: el Lykan HyperSport de la policía de Abu Dabi. Costó unos tres millones y medio de dólares.",
      "img": [
       "dub11",
       "dub17",
       "dub8"
      ],
      "rank": {
-      "n": 4,
+      "n": 3,
       "texto": "Lykan · Abu Dabi",
       "emoji": "🇦🇪"
      },
@@ -139,15 +186,102 @@
         0.78
        ],
        "tam": 56,
-       "en": 3.0,
+       "en": 3.5,
        "fondo": "#2E7D32"
       }
      ]
     },
     {
      "t": "Y sus faros llevan cuatrocientos cuarenta diamantes incrustados.",
+     "img": [
+      "dub13"
+     ],
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "💎",
+       "pos": [
+        0.8,
+        0.4
+       ],
+       "tam": 170,
+       "en": 0.6
+      }
+     ]
+    },
+    {
+     "t": "Número dos: la flota de Dubái. Su policía tiene Bentley, Ferrari, Aston Martin, McLaren… aunque se usan sobre todo para lucirse ante los turistas.",
+     "img": [
+      "flota_dubai",
+      "dp0"
+     ],
+     "rank": {
+      "n": 2,
+      "texto": "Flota · Dubái",
+      "emoji": "🇦🇪"
+     },
+     "sfx": {
+      "nombre": "ding",
+      "vol": 0.25,
+      "en": 0.1
+     }
+    },
+    {
+     "t": "Y el número uno…",
      "vid": [
-      "diam"
+      "dubai"
+     ]
+    },
+    {
+     "t": "El Bugatti Veyron de la policía de Dubái. Alcanza cuatrocientos siete kilómetros por hora: el coche de policía más rápido del mundo, según el récord Guinness.",
+     "img": [
+      "bugatti_dubai"
+     ],
+     "rank": {
+      "n": 1,
+      "texto": "Bugatti · 407 km/h",
+      "emoji": "🏆"
+     },
+     "sfx": {
+      "nombre": "ding",
+      "vol": 0.4,
+      "en": 0.1
+     },
+     "marcas": [
+      {
+       "tipo": "texto",
+       "texto": "407 km/h",
+       "pos": [
+        0.5,
+        0.78
+       ],
+       "tam": 64,
+       "en": 3.5,
+       "fondo": "#E53935"
+      },
+      {
+       "tipo": "emoji",
+       "emoji": "🏎️",
+       "pos": [
+        0.8,
+        0.4
+       ],
+       "tam": 170,
+       "en": 1.0
+      }
+     ]
+    },
+    {
+     "t": "¿En cuál te gustaría que te llevaran detenido? Te leo en los comentarios.",
+     "vid": [
+      "luces",
+      "rapido"
+     ]
+    },
+    {
+     "t": "Sígueme para más rankings en Shock Mental.",
+     "img": [
+      "dp0"
      ]
     }
    ],
