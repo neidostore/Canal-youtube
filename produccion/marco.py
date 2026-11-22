@@ -199,10 +199,11 @@ def _emoji(txt, tam):
     return im.resize((max(1, round(im.width * k)), tam), Image.LANCZOS)
 
 
-def marca(destino, m, a_px):
+def marca(destino, m, a_px, tam_lienzo=None):
     """Una anotación (contorno, círculo, flecha, etiqueta o emoji) en un PNG transparente 1920x912.
     a_px convierte coordenadas relativas (0-1) en píxeles de la pantalla."""
-    im = Image.new("RGBA", (W, HC), (0, 0, 0, 0)); d = ImageDraw.Draw(im); t = m["tipo"]
+    LW, LH = tam_lienzo or (W, HC)
+    im = Image.new("RGBA", (LW, LH), (0, 0, 0, 0)); d = ImageDraw.Draw(im); t = m["tipo"]
     col = m.get("color", "#FFC400")
     if t == "contorno":
         pts = [a_px(*p) for p in m["puntos"]]; pts.append(pts[0])
@@ -227,7 +228,7 @@ def marca(destino, m, a_px):
         d.text((x - tw / 2, y - h / 2 - 4), m["texto"], font=f, fill=m.get("tinta", "#FFFFFF"))
     elif t == "emoji":
         e = _emoji(m["emoji"], m.get("tam", 190)); x, y = a_px(*m["pos"])
-        s = Image.new("RGBA", (W, HC), (0, 0, 0, 0)); s.paste((0, 0, 0, 150), (x - e.width // 2 + 6, y - e.height // 2 + 10), e)
+        s = Image.new("RGBA", (LW, LH), (0, 0, 0, 0)); s.paste((0, 0, 0, 150), (x - e.width // 2 + 6, y - e.height // 2 + 10), e)
         im = Image.alpha_composite(im, s.filter(ImageFilter.GaussianBlur(8))); im.alpha_composite(e, (x - e.width // 2, y - e.height // 2))
     if t == "imagen":      # dibujo propio (p. ej. iconos/arca.png)
         g = Image.open(Path(__file__).parent / m["archivo"]).convert("RGBA"); k = m.get("tam", 200) / g.height

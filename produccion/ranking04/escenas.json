@@ -1,0 +1,176 @@
+{
+ "tema": "shock",
+ "voz": {
+  "idioma": "es-US",
+  "nombre": "es-US-Chirp3-HD-Achird",
+  "velocidad": 1.15
+ },
+ "estilo": {
+  "dinamico": true,
+  "plano": 1.4
+ },
+ "formato": "vertical",
+ "marca": {
+  "logo": "marca/shockmental/perfil-sin-eslogan.png",
+  "nombre": "SHOCK MENTAL"
+ },
+ "musica": {
+  "archivo": "musica/wallpaper.mp3",
+  "volumen": 0.09,
+  "credito": "\"Wallpaper\" de Kevin MacLeod (incompetech.com)"
+ },
+ "titulo": "Prueba: objetos fuera de su tiempo",
+ "ranking": {
+  "titulo": "OBJETOS FUERA DE SU TIEMPO",
+  "puestos": [
+   5,
+   4,
+   3,
+   2,
+   1
+  ]
+ },
+ "fotos": {
+  "sal3": 0,
+  "sal1": 0,
+  "sal6": 0,
+  "cat0": 0,
+  "bag0": 0,
+  "bag2": 0,
+  "bag4": 0
+ },
+ "credito_fotos": {
+  "sal3": "Foto: dustpuppy, Flickr · BY-SA 2.0",
+  "sal1": "Foto: dr_zoidberg, Flickr · BY-SA 2.0",
+  "sal6": "Foto: transitpeople, Flickr · BY 2.0",
+  "cat0": "Foto: jiuguangw, Flickr · BY-SA 2.0",
+  "bag0": "Foto: Boynton Art Studio, Flickr · BY 2.0",
+  "bag2": "Foto: Boynton Art Studio, Flickr · BY 2.0",
+  "bag4": "Foto: Boynton Art Studio, Flickr · BY 2.0"
+ },
+ "videos": {
+  "ast": 7649283,
+  "ray": 6190836
+ },
+ "bloques": [
+  {
+   "nombre": "Ranking",
+   "frases": [
+    {
+     "t": "Estos objetos no deberían existir… al menos, no en su época.",
+     "vid": [
+      "ast"
+     ]
+    },
+    {
+     "t": "Número cinco: el astronauta de Salamanca. En una catedral de piedra empezada en el siglo dieciséis… hay un astronauta tallado.",
+     "img": [
+      "cat0",
+      "sal6",
+      "sal3"
+     ],
+     "rank": {
+      "n": 5,
+      "texto": "Astronauta · Salamanca",
+      "emoji": "🚀"
+     },
+     "sfx": {
+      "nombre": "ding",
+      "vol": 0.25,
+      "en": 0.1
+     },
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🤯",
+       "pos": [
+        0.8,
+        0.4
+       ],
+       "tam": 170,
+       "en": 3.0
+      }
+     ]
+    },
+    {
+     "t": "¿La explicación? Lo añadió un cantero en la restauración de 1992, como firma de su época.",
+     "img": [
+      "sal1"
+     ],
+     "marcas": [
+      {
+       "tipo": "texto",
+       "texto": "Tallado en 1992",
+       "pos": [
+        0.5,
+        0.78
+       ],
+       "tam": 60,
+       "en": 1.6
+      }
+     ]
+    },
+    {
+     "t": "Número cuatro: la pila de Bagdad. Una vasija de barro de unos dos mil años, con un tubo de cobre y una barra de hierro dentro.",
+     "img": [
+      "bag2",
+      "bag4"
+     ],
+     "rank": {
+      "n": 4,
+      "texto": "Pila de Bagdad",
+      "emoji": "🔋"
+     },
+     "sfx": {
+      "nombre": "ding",
+      "vol": 0.25,
+      "en": 0.1
+     },
+     "marcas": [
+      {
+       "tipo": "texto",
+       "texto": "Réplicas modernas",
+       "pos": [
+        0.5,
+        0.78
+       ],
+       "tam": 52,
+       "en": 0.3,
+       "fondo": "#E53935"
+      }
+     ]
+    },
+    {
+     "t": "Si la llenas de vinagre… da electricidad. Pero los arqueólogos creen que servía para guardar pergaminos.",
+     "img": [
+      "bag0"
+     ],
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "⚡",
+       "pos": [
+        0.8,
+        0.4
+       ],
+       "tam": 170,
+       "en": 0.8
+      },
+      {
+       "tipo": "texto",
+       "texto": "Réplica moderna",
+       "pos": [
+        0.5,
+        0.78
+       ],
+       "tam": 52,
+       "en": 0.3,
+       "fondo": "#E53935"
+      }
+     ]
+    }
+   ],
+   "final": 0.6
+  }
+ ]
+}

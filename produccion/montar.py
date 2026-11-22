@@ -619,6 +619,18 @@ def main(carpeta):
                 entradas += ["-loop", "1", "-framerate", str(FPS), "-t", f"{tramos[0][0]:.2f}", "-i", str(png)]
                 video_fc = video_fc[:-len("[vfin]")] + f"[rv];[rv][{n_in}:v]overlay=0:0:eof_action=pass[vfin]"
                 n_in += 1
+        nm = 0
+        for e in escenas:      # Shorts: anotaciones (emojis, etiquetas, flechas…) con coordenadas relativas a la pantalla
+            for j, m in enumerate(e.get("marcas", [])):
+                png = mdir / f"marca_v_{nm}.png"; nm += 1
+                MK.marca(png, m, lambda x, y: (round(x * W), round(y * H)), (W, H))
+                ini = e["ini"] + m.get("en", 0.4 + 0.45 * j); d = e["ini"] + e["dur"] - ini - 0.05
+                if d < 0.3:
+                    continue
+                entradas += ["-loop", "1", "-framerate", str(FPS), "-t", f"{d:.2f}", "-i", str(png)]
+                video_fc = video_fc[:-len("[vfin]")] + (f"[mv{nm}];[{n_in}:v]format=rgba,fade=t=in:st=0:d=0.15:alpha=1,fade=t=out:st={d - 0.12:.2f}:d=0.12:alpha=1,"
+                                                        f"setpts=PTS-STARTPTS+{ini:.3f}/TB[mk{nm}];[mv{nm}][mk{nm}]overlay=0:0:eof_action=pass[vfin]")
+                n_in += 1
     sh("ffmpeg", "-y", *entradas,
        "-filter_complex", f"{video_fc};{mezcla}", "-map", "[vfin]" if (MARCO or marca_v) else "[vv]", "-map", "[a]",
        "-c:v", "libx264", "-preset", "medium", "-crf", "21", "-pix_fmt", "yuv420p", "-movflags", "+faststart",
