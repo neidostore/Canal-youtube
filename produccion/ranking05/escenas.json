@@ -1,0 +1,157 @@
+{
+ "tema": "shock",
+ "voz": {
+  "idioma": "es-US",
+  "nombre": "es-US-Chirp3-HD-Achird",
+  "velocidad": 1.15
+ },
+ "estilo": {
+  "dinamico": true,
+  "plano": 1.4
+ },
+ "formato": "vertical",
+ "marca": {
+  "logo": "marca/shockmental/perfil-sin-eslogan.png",
+  "nombre": "SHOCK MENTAL"
+ },
+ "musica": {
+  "archivo": "musica/wallpaper.mp3",
+  "volumen": 0.09,
+  "credito": "\"Wallpaper\" de Kevin MacLeod (incompetech.com)"
+ },
+ "titulo": "Prueba: coches de policía más locos",
+ "ranking": {
+  "titulo": "COCHES DE POLICÍA MÁS LOCOS",
+  "puestos": [
+   5,
+   4,
+   3,
+   2,
+   1
+  ]
+ },
+ "fotos": {
+  "lam1": 0,
+  "lam2": 0,
+  "dub11": 0,
+  "dub17": 0,
+  "dub8": 0,
+  "dub13": 0,
+  "dub10": 0,
+  "lam6": 0
+ },
+ "credito_fotos": {
+  "lam1": "Foto: StartAgain, Flickr · BY-SA 2.0",
+  "lam2": "Foto: crash71100, Flickr · CC0 1.0",
+  "dub11": "Foto: Felix Berndt Photography, Flickr · BY 2.0",
+  "dub17": "Foto: Felix Berndt Photography, Flickr · BY 2.0",
+  "dub8": "Foto: Felix Berndt Photography, Flickr · BY 2.0",
+  "dub13": "Foto: Felix Berndt Photography, Flickr · BY 2.0",
+  "dub10": "Foto: Felix Berndt Photography, Flickr · BY 2.0",
+  "lam6": "Foto: crash71100, Flickr · CC0 1.0"
+ },
+ "videos": {
+  "luces": 7714378,
+  "luces2": 6581394,
+  "rapido": 5309395,
+  "diam": 7663572
+ },
+ "bloques": [
+  {
+   "nombre": "Ranking",
+   "frases": [
+    {
+     "t": "Si te para uno de estos coches de policía… no intentes escapar.",
+     "vid": [
+      "luces",
+      "rapido",
+      "luces2"
+     ]
+    },
+    {
+     "t": "Número cinco: el Lamborghini Huracán de la policía italiana. Y no es solo para lucirse…",
+     "img": [
+      "lam2",
+      "lam6"
+     ],
+     "rank": {
+      "n": 5,
+      "texto": "Lamborghini · Italia",
+      "emoji": "🇮🇹"
+     },
+     "sfx": {
+      "nombre": "ding",
+      "vol": 0.25,
+      "en": 0.1
+     }
+    },
+    {
+     "t": "Lleva una nevera para trasladar órganos de trasplante y un desfibrilador. Una vez llevó un riñón a quinientos kilómetros… en unas dos horas.",
+     "img": [
+      "lam1"
+     ],
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🫀",
+       "pos": [
+        0.8,
+        0.4
+       ],
+       "tam": 170,
+       "en": 0.8
+      },
+      {
+       "tipo": "texto",
+       "texto": "500 km en 2 horas",
+       "pos": [
+        0.5,
+        0.78
+       ],
+       "tam": 56,
+       "en": 4.5
+      }
+     ]
+    },
+    {
+     "t": "Número cuatro: el Lykan HyperSport de la policía de Abu Dabi. Costó unos tres millones de dólares.",
+     "img": [
+      "dub11",
+      "dub17",
+      "dub8"
+     ],
+     "rank": {
+      "n": 4,
+      "texto": "Lykan · Abu Dabi",
+      "emoji": "🇦🇪"
+     },
+     "sfx": {
+      "nombre": "ding",
+      "vol": 0.25,
+      "en": 0.1
+     },
+     "marcas": [
+      {
+       "tipo": "texto",
+       "texto": "3,4 millones $",
+       "pos": [
+        0.5,
+        0.78
+       ],
+       "tam": 56,
+       "en": 3.0,
+       "fondo": "#2E7D32"
+      }
+     ]
+    },
+    {
+     "t": "Y sus faros llevan cuatrocientos cuarenta diamantes incrustados.",
+     "vid": [
+      "diam"
+     ]
+    }
+   ],
+   "final": 0.6
+  }
+ ]
+}
