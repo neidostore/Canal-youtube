@@ -19,7 +19,7 @@
   "volumen": 0.09,
   "credito": "\"Wallpaper\" de Kevin MacLeod (incompetech.com)"
  },
- "titulo": "Prueba: objetos fuera de su tiempo",
+ "titulo": "Objetos que NO deberían existir 🤯 Ranking",
  "ranking": {
   "titulo": "OBJETOS FUERA DE SU TIEMPO",
   "puestos": [
@@ -37,7 +37,20 @@
   "cat0": 0,
   "bag0": 0,
   "bag2": 0,
-  "bag4": 0
+  "bag4": 0,
+  "den5": 0,
+  "den6": 0,
+  "den2": 0,
+  "den3": 0,
+  "lic0": 0,
+  "lic1": 0,
+  "lic4": 0,
+  "lic6": 0,
+  "ant2": 0,
+  "ant4": 0,
+  "ant7": 0,
+  "ant8": 0,
+  "ant3": 0
  },
  "credito_fotos": {
   "sal3": "Foto: dustpuppy, Flickr · BY-SA 2.0",
@@ -46,18 +59,34 @@
   "cat0": "Foto: jiuguangw, Flickr · BY-SA 2.0",
   "bag0": "Foto: Boynton Art Studio, Flickr · BY 2.0",
   "bag2": "Foto: Boynton Art Studio, Flickr · BY 2.0",
-  "bag4": "Foto: Boynton Art Studio, Flickr · BY 2.0"
+  "bag4": "Foto: Boynton Art Studio, Flickr · BY 2.0",
+  "den5": "Foto: KLGreenNYC, Flickr · BY-SA 2.0",
+  "den6": "Foto: a rancid amoeba, Flickr · BY-SA 2.0",
+  "den2": "Foto: isawnyu, Flickr · BY 2.0",
+  "den3": "Foto: isawnyu, Flickr · BY 2.0",
+  "lic0": "Foto: Following Hadrian, Flickr · BY-SA 2.0",
+  "lic1": "Foto: Following Hadrian, Flickr · BY-SA 2.0",
+  "lic4": "Foto: ancientartpodcast.org, Flickr · BY 2.0",
+  "lic6": "Foto: ancientartpodcast.org, Flickr · BY 2.0",
+  "ant2": "Foto: Tilemahos Efthimiadis, Flickr · BY 2.0",
+  "ant4": "Foto: Gary Lee Todd, Ph.D., Flickr · CC0 1.0",
+  "ant7": "Foto: Tilemahos Efthimiadis, Flickr · BY 2.0",
+  "ant8": "Foto: Tilemahos Efthimiadis, Flickr · BY 2.0",
+  "ant3": "Foto: Tilemahos Efthimiadis, Flickr · BY 2.0"
  },
  "videos": {
   "ast": 7649283,
-  "ray": 6190836
+  "ray": 6190836,
+  "buzo": 6430497,
+  "jero": 7492694,
+  "engr": 854415
  },
  "bloques": [
   {
    "nombre": "Ranking",
    "frases": [
     {
-     "t": "Estos objetos no deberían existir… al menos, no en su época.",
+     "t": "Estos objetos no deberían existir… al menos, no en su época. Y el número uno es una locura.",
      "vid": [
       "ast"
      ]
@@ -167,6 +196,159 @@
        "en": 0.3,
        "fondo": "#E53935"
       }
+     ]
+    },
+    {
+     "t": "Número tres: la bombilla de Dendera. En un templo egipcio de hace más de dos mil años, hay relieves que parecen lámparas gigantes.",
+     "img": [
+      "den5",
+      "den6"
+     ],
+     "rank": {
+      "n": 3,
+      "texto": "Bombilla de Dendera",
+      "emoji": "💡"
+     },
+     "sfx": {
+      "nombre": "ding",
+      "vol": 0.25,
+      "en": 0.1
+     },
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "💡",
+       "pos": [
+        0.8,
+        0.4
+       ],
+       "tam": 170,
+       "en": 3.5
+      }
+     ]
+    },
+    {
+     "t": "En realidad es una flor de loto de la que sale una serpiente: un mito egipcio sobre la creación.",
+     "img": [
+      "den2",
+      "den3"
+     ],
+     "marcas": [
+      {
+       "tipo": "texto",
+       "texto": "Flor de loto + serpiente",
+       "pos": [
+        0.5,
+        0.78
+       ],
+       "tam": 52,
+       "en": 0.8
+      }
+     ]
+    },
+    {
+     "t": "Número dos: el vaso de Licurgo. Es romano, del siglo cuarto… y cambia de color: verde con luz de frente, rojo con luz por detrás.",
+     "img": [
+      "lic0",
+      "lic4",
+      "lic1",
+      "lic6"
+     ],
+     "rank": {
+      "n": 2,
+      "texto": "Vaso de Licurgo",
+      "emoji": "🍷"
+     },
+     "sfx": {
+      "nombre": "ding",
+      "vol": 0.25,
+      "en": 0.1
+     },
+     "marcas": [
+      {
+       "tipo": "texto",
+       "texto": "De verde a rojo",
+       "pos": [
+        0.5,
+        0.78
+       ],
+       "tam": 56,
+       "en": 4.5,
+       "fondo": "#2E7D32"
+      }
+     ]
+    },
+    {
+     "t": "El truco: diminutas partículas de oro y plata dentro del cristal. Nanotecnología… hace mil seiscientos años.",
+     "img": [
+      "lic6"
+     ],
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🔬",
+       "pos": [
+        0.8,
+        0.4
+       ],
+       "tam": 170,
+       "en": 1.5
+      }
+     ]
+    },
+    {
+     "t": "Y el número uno…",
+     "vid": [
+      "buzo"
+     ]
+    },
+    {
+     "t": "El mecanismo de Anticitera. Lo sacaron de un naufragio griego en 1901: un amasijo de bronce con engranajes dentro.",
+     "img": [
+      "ant2",
+      "ant4",
+      "ant7"
+     ],
+     "rank": {
+      "n": 1,
+      "texto": "Mecanismo de Anticitera",
+      "emoji": "🏆"
+     },
+     "sfx": {
+      "nombre": "ding",
+      "vol": 0.4,
+      "en": 0.1
+     }
+    },
+    {
+     "t": "Tiene más de dos mil años, y predecía eclipses y el movimiento del Sol y la Luna. Es el ordenador más antiguo que se conoce.",
+     "img": [
+      "ant8",
+      "ant3"
+     ],
+     "marcas": [
+      {
+       "tipo": "texto",
+       "texto": "El primer «ordenador»",
+       "pos": [
+        0.5,
+        0.78
+       ],
+       "tam": 54,
+       "en": 3.5
+      }
+     ]
+    },
+    {
+     "t": "Algo tan complejo no volvió a fabricarse hasta mil cuatrocientos años después. ¿Cuál te parece más increíble?",
+     "vid": [
+      "engr"
+     ]
+    },
+    {
+     "t": "Sígueme para más rankings en Shock Mental.",
+     "img": [
+      "ant2"
      ]
     }
    ],
