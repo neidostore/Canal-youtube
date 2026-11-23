@@ -52,6 +52,18 @@ Léelo entero antes de hacer nada. Todo el trabajo está en la rama `ccr-19a9f89
 - El usuario quiere abrir más canales. Cada uno debe tener estilo y guiones propios: YouTube no monetiza el contenido repetitivo o «producido en masa».
 - Desde el 23-nov-2026 el trabajo sigue en la rama `ccr-927e3ba3-isn217`, que incluye todo lo de `ccr-19a9f894-tb9pz5`.
 
+## Modo automático (lo que pide el usuario)
+El usuario quiere que Claude lo haga todo solo y que él solo dé el OK a cada vídeo.
+- **Una tarea programada en el PC**, a primera hora del día anterior a cada publicación del calendario:
+  1. Elegir el tema siguiente de la lista de temas (si no hay lista, proponer 3 y esperar a que el usuario elija).
+  2. Buscar y comprobar los datos, escribir el guion y montar el vídeo.
+  3. Escribir la ficha de publicación.
+  4. Mandar el vídeo al móvil con un aviso: «Compruébalo y dime OK o qué cambiar».
+- **Con el OK**, subirlo programado a la hora del calendario con `subir_youtube.py ... --ok --programar`. Sin un OK explícito no se sube nada. Si pide cambios, rehacer y volver a mandar.
+- Si un tema es malo para la monetización o el copyright, no montarlo: avisar al usuario y proponer otro.
+- Hacer commit y push del guion, las escenas y la ficha de cada vídeo.
+- Es imprescindible tener una lista de temas: guardarla en `docs/shockmental/temas.md` y mantenerla con 4 o más temas por delante.
+
 ## Bloqueos que había en la conversación anterior
 - **Wikimedia (upload.wikimedia.org y la API de Commons):** devolvía 429 durante días por la conexión de aquella sesión. Comprobar si en esta ya va.
 - **usgs.gov:** bloquea con un 403 de su CDN. No intentar saltárselo.
