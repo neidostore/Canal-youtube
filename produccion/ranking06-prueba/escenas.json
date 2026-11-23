@@ -56,10 +56,6 @@
    "frases": [
     {
      "t": "Este videojuego ganó en un solo día más dinero que casi cualquier película en toda su historia.",
-     "vid": [
-      "deportivo",
-      "dolares"
-     ],
      "marcas": [
       {
        "tipo": "emoji",
@@ -71,22 +67,22 @@
        "tam": 170,
        "en": 1.0
       }
+     ],
+     "img": [
+      "gta6_tienda2",
+      "gta6_estante"
      ]
     },
     {
      "t": "Ranking: lo que más rápido ha llegado a mil millones de dólares.",
      "vid": [
       "lluvia_dinero",
-      "miami",
-      "palmeras"
+      "deportivo",
+      "dolares"
      ]
     },
     {
      "t": "Número cinco: Avatar, la película más taquillera de la historia. Tardó diecisiete días.",
-     "vid": [
-      "cascada",
-      "cine3d"
-     ],
      "rank": {
       "n": 5,
       "texto": "Avatar · 17 días",
@@ -109,14 +105,14 @@
        "en": 2.5,
        "fondo": "#E53935"
       }
+     ],
+     "img": [
+      "pandora_montana",
+      "pandora_atraccion"
      ]
     },
     {
      "t": "Número cuatro: Call of Duty Modern Warfare dos. Diez días.",
-     "vid": [
-      "esports",
-      "rgb"
-     ],
      "rank": {
       "n": 4,
       "texto": "Call of Duty · 10 días",
@@ -139,9 +135,31 @@
        "en": 2.5,
        "fondo": "#E53935"
       }
+     ],
+     "img": [
+      "cod_gamescom",
+      "cod_stand"
      ]
     }
    ]
   }
- ]
+ ],
+ "fotos": {
+  "gta6_tienda2": 0,
+  "gta6_tienda": 0,
+  "gta6_estante": 0,
+  "pandora_montana": 0,
+  "pandora_atraccion": 0,
+  "cod_gamescom": 0,
+  "cod_stand": 0
+ },
+ "credito_fotos": {
+  "gta6_tienda2": "Foto: AzimsV / CC BY 4.0",
+  "gta6_tienda": "Foto: AzimsV / CC BY 4.0",
+  "gta6_estante": "Foto: AzimsV / CC BY 4.0",
+  "pandora_montana": "Foto: elisfkc / CC BY-SA 2.0",
+  "pandora_atraccion": "Foto: Theme Park Tourist / CC BY 2.0",
+  "cod_gamescom": "Foto: dronepicr / CC BY 2.0",
+  "cod_stand": "Foto: Sergey Galyonkin / CC BY-SA 2.0"
+ }
 }

@@ -616,7 +616,7 @@ def main(carpeta):
         MK.marca_vertical(mdir / "marca.png", logo_r, marca_v.get("nombre", "SHOCK MENTAL"))
         MK.cierre_vertical(mdir / "cierre.png", logo_r)
         ult_e = [e for e in escenas if e.get("texto")][-1]; ini = ult_e["ini"] + 0.25; d = t - ini
-        entradas += ["-i", str(mdir / "marca.png"), "-loop", "1", "-framerate", str(FPS), "-t", f"{d:.2f}", "-i", str(mdir / "cierre.png")]
+        entradas += ["-loop", "1", "-framerate", str(FPS), "-t", f"{t:.2f}", "-i", str(mdir / "marca.png"), "-loop", "1", "-framerate", str(FPS), "-t", f"{d:.2f}", "-i", str(mdir / "cierre.png")]
         video_fc += (f";[{n_in + 1}:v]format=rgba,fade=t=in:st=0:d=0.25:alpha=1,setpts=PTS-STARTPTS+{ini:.3f}/TB[cz];"
                      f"[vv][cz]overlay=0:0:eof_action=pass[v1];[v1][{n_in}:v]overlay=0:0[vfin]")
         rk = spec.get("ranking")
