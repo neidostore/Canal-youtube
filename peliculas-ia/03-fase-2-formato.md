@@ -1,6 +1,6 @@
 # Neido Studio · Fase 2: formato de las películas
 
-> Estado: **en curso**. Se decide punto por punto, una pregunta cada vez.
+> Estado: ✅ **FASE 2 CERRADA**. Siguiente: Fase 3, sistema de producción → [04-fase-3-produccion.md](04-fase-3-produccion.md)
 
 ## Orden de decisiones
 1. ✅ Duración: **5-7 min, condicionada a coste 0 €**
@@ -12,7 +12,7 @@
 7. ✅ Finales (aprobados)
 8. ✅ Easter egg (aprobado: opción C)
 9. ✅ Shorts (aprobados)
-10. ⏳ **Frecuencia de publicación (orientativa)** ← estamos aquí
+10. ✅ Frecuencia: **1 película por semana + 3-4 Shorts**, a confirmar en la prueba técnica
 
 ---
 
@@ -256,7 +256,7 @@ Los Shorts se sacan **recortando el centro** de los planos horizontales; no se g
 
 ---
 
-## 10. Frecuencia de publicación (propuesta orientativa)
+## 10. Frecuencia de publicación ✅ APROBADA (a confirmar en la prueba técnica)
 
 La idea inicial era 2 películas por semana. **A coste 0 € no es realista:** cada película de 5-7 min necesitará varios días de créditos gratuitos, además de las horas de trabajo. La cifra definitiva saldrá de la prueba técnica de la Fase 3, cuando sepamos cuánto cuesta de verdad un minuto.
 
