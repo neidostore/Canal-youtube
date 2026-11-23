@@ -1,21 +1,15 @@
 <!doctype html><html><head><meta charset="utf-8"><style>
 /* Banner de YouTube 2560x1440. Zona segura (visible en todos los dispositivos): 1546x423 en el centro.
-   Fondo: negro con luz cálida (pasado) a la izquierda y fría (futuro) a la derecha.
-   Si más adelante hay un fondo de Gemini, se pone en .fondo con background-image. */
+   Fondo: banner-fondo.jpg (escenas de Gemini: pasado cálido a la izquierda, futuro frío a la derecha, centro fundido a negro).
+   El logo va centrado con la I-puerta justo en la frontera entre los dos mundos. */
 html,body{margin:0;background:#050608}
 .lienzo{width:2560px;height:1440px;position:relative;overflow:hidden;background:#050608}
-.fondo{position:absolute;inset:0;
- background:radial-gradient(ellipse 38% 22% at 8% 50%,rgba(255,150,50,.22),transparent 70%),
-            radial-gradient(ellipse 38% 22% at 92% 50%,rgba(60,170,230,.20),transparent 70%),
-            radial-gradient(ellipse 30% 14% at 96% 52%,rgba(130,100,255,.12),transparent 70%)}
-/* línea de horizonte muy tenue que cruza de lo cálido a lo frío */
-.horizonte{position:absolute;left:0;right:0;top:719px;height:2px;
- background:linear-gradient(90deg,rgba(255,170,80,0),rgba(255,170,80,.28) 18%,rgba(255,255,255,0) 38%,rgba(255,255,255,0) 62%,rgba(90,200,240,.28) 82%,rgba(90,200,240,0));filter:blur(1px)}
-.logo{position:absolute;left:800px;top:443px;width:1920px;height:1080px;border:0;transform:scale(.5);transform-origin:0 0;background:transparent}
+.fondo{position:absolute;inset:0;background:url(banner-fondo.jpg) center/cover no-repeat}
+.logo{position:absolute;left:812px;top:443px;width:1920px;height:1080px;border:0;transform:scale(.5);transform-origin:0 0;background:transparent}
 .seguro{position:absolute;left:507px;top:508px;width:1546px;height:423px;outline:3px dashed rgba(255,80,80,.8);display:none}
 body.guia .seguro{display:block}
 </style></head><body><div class="lienzo">
- <div class="fondo"></div><div class="horizonte"></div>
+ <div class="fondo"></div>
  <iframe class="logo" src="logo-transparente.html" scrolling="no"></iframe>
  <div class="seguro"></div>
 </div>
