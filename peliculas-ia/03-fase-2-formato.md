@@ -269,5 +269,26 @@ La idea inicial era 2 películas por semana. **A coste 0 € no es realista:** c
 - El canal arranca con varias películas, y quien llega por una puede ver otra.
 - Una semana mala (sin créditos, sin tiempo) no rompe el calendario.
 
-### Dato que falta
-Para calcular la frecuencia real hace falta saber **cuántas horas a la semana puede dedicar el usuario** al canal.
+### Dato del usuario: **2-3 horas a la semana**, y automatizar con Claude todo lo posible
+
+#### Qué puede hacer Claude (sin coste y sin tu tiempo)
+| Tarea | Cómo |
+|---|---|
+| Ideas, guion, diálogos con acentos verificados | Directamente |
+| Fichas de personajes y escenarios, guion técnico plano a plano | Directamente |
+| Todos los prompts de imagen, vídeo y voz, listos para copiar y pegar | Directamente |
+| **Montaje automático** | Tú dejas los clips numerados en una carpeta; Claude los monta con un programa (ffmpeg): orden, duración, bandas negras, grano, color común, movimiento de cámara en las imágenes fijas, sonido, música, cortinilla y sello final. Sustituye al editor y no depende de tu ordenador |
+| Cortinilla animada de la puerta | Se genera por código a partir del logo |
+| Subtítulos (.srt), título, descripción, etiquetas, capítulos | Directamente |
+| Recortes verticales para los Shorts, con subtítulos | Automático con ffmpeg |
+| Revisión de los clips que generes (continuidad, fallos) | Le subes las imágenes y las revisa |
+
+#### Qué tienes que hacer tú (no se puede automatizar gratis)
+- **Generar** imágenes, vídeos y voces en las herramientas web gratuitas: pegar el prompt, esperar, descargar y repetir los que fallen. Las herramientas que permitirían hacerlo por programa son de pago. *(Se confirma en la Fase 3.)*
+- Subir los archivos a la carpeta del proyecto.
+- Publicar en YouTube (o programar la publicación).
+
+**Ventaja:** la generación se puede hacer **desde el móvil**, en ratos muertos, porque las herramientas son web. No necesita las 2-3 horas de ordenador.
+
+#### Estimación honesta (a confirmar en la prueba técnica)
+Una película de 5 min son ~60-70 planos. Generar, revisar y descargar cada plano lleva unos 3-5 min de trabajo tuyo (sin contar las esperas) → **4-6 horas por película**, repartidas en varios días por los límites de créditos. Con 2-3 h/semana: **una película cada 2-3 semanas como mucho**.
