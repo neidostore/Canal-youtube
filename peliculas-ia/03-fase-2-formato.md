@@ -8,8 +8,8 @@
 3. ✅ Reglas de la anomalía (aprobadas)
 4. ✅ Planos: mezcla y proporción (aprobados)
 5. ✅ Diálogo, pensamientos y narrador (aprobados, idioma: opción A)
-6. ⏳ **Ritmo** ← estamos aquí
-7. Finales: tipos y reparto
+6. ✅ Ritmo (aprobado)
+7. ⏳ **Finales** ← estamos aquí
 8. Easter egg común
 9. Shorts: cómo se sacan de cada película
 10. Frecuencia de publicación (orientativa; se confirma tras la prueba técnica de la Fase 3)
@@ -158,7 +158,7 @@ En el Titanic, los pasajeros hablarían inglés. Hay dos formas de resolverlo:
 
 ---
 
-## 6. Ritmo (propuesta)
+## 6. Ritmo ✅ APROBADO
 
 ### Duración de los planos según la parte
 | Parte | Duración media del plano | Sensación |
@@ -187,3 +187,31 @@ En los primeros 60 segundos se plantea **una pregunta que solo se responde en el
 - **El tema de la puerta:** una firma sonora de 3-4 notas que suena siempre en la cortinilla y en el sello final. Es la versión sonora del logo.
 - **El sonido de ambiente nunca falta:** viento, mar, murmullo, pasos. Es la mitad del realismo y lo que más delata un vídeo de IA cuando falta.
 - Las fuentes de música y efectos gratuitas se eligen en la Fase 3.
+
+---
+
+## 7. Finales (propuesta)
+
+### Tipos y reparto orientativo (cada 10 películas)
+| Tipo | Nº | Ejemplo |
+|---|---|---|
+| **Agridulce** (comedia todo el rato, final que emociona) | 3 | El colombiano no salva el barco, pero salva a una niña que de mayor contará la historia del "hombre del futuro" |
+| **Giro inesperado** | 2 | Resulta que la anomalía no era él |
+| **Divertido** | 2 | La puerta se lo lleva justo cuando por fin había conseguido encajar |
+| **Épico** | 1 | El vikingo defiende el centro comercial |
+| **Reflexivo** | 1 | El astronauta decide quedarse en el pueblo |
+| **Trágico** | 1 | Con cuidado y solo cuando la historia lo pida |
+
+**El agridulce como especialidad de la casa:** te ríes durante 5 minutos y el último te toca. Es lo que más se comparte y se recuerda, y encaja con el tono "serios en la forma, gamberros en la premisa".
+
+### Reglas de los finales
+1. **Nunca dos películas seguidas con el mismo tipo de final.** Que el espectador no pueda adivinarlo. Se lleva un registro en la tabla de seguimiento.
+2. **El final responde a la pregunta abierta** planteada en el primer minuto.
+3. **El final usa la ventaja o la desventaja de la anomalía.** Lo que la hacía diferente es lo que decide cómo acaba.
+4. **La puerta vuelve en el final**, de una forma distinta cada vez: la anomalía se va por ella, se queda y la puerta se cierra para siempre, alguien de ese mundo la cruza, o la puerta se abre para otro… Es el ritual que cierra todas las películas.
+5. **Una última imagen que se recuerde.** El plano final tiene que poder funcionar solo, como miniatura de un Short.
+
+### Prohibido
+- ❌ "Todo fue un sueño."
+- ❌ Dejarlo en suspenso para forzar una segunda parte.
+- ❌ Explicar qué es la puerta o de dónde sale.
