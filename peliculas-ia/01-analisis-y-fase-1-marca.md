@@ -189,7 +189,10 @@ Frase secundaria opcional para la descripción del canal: *"Lo imposible, en ser
 2. ✅ Nombre: **Neido Studio** (descartados por el camino: Anomalía, cogido; Mil Puertas y Gaves TV, no convencieron).
 3. ⏳ Reservar `@neidostudio` en YouTube, TikTok e Instagram (lo hace el usuario).
 4. ✅ Personalidad de la marca: tono C (equilibrado) y lema "Películas imposibles".
-5. ⏳ **Identidad visual**: logo, colores, tipografía, sello del número de película, marca de agua ← estamos aquí.
+5. ⏳ **Identidad visual** ← estamos aquí.
+   - ✅ Dirección: **C, la grieta de luz** (rendija de luz cálida/fría; negro, ámbar-dorado y cian-violeta). Bocetos en `marca/bocetos/`.
+   - ✅ **Foto de perfil definitiva:** puerta entreabierta generada con Gemini, con recorte más cerrado → `marca/final/perfil.jpg`. Probada en círculo a 160, 88 y 40 px.
+   - ⏳ Logo con texto, banner, marca de agua, plantilla de miniatura. Prompts en `marca/prompts-gemini.md`.
 6. Dirección artística: el "look" común de todas las películas.
 
 > Nota: en tu mensaje mencionas una imagen de referencia, pero no me ha llegado. Cuando lleguemos a la identidad visual, súbela al chat.
