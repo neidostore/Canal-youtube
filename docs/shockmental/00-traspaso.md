@@ -45,7 +45,12 @@ Léelo entero antes de hacer nada. Todo el trabajo está en la rama `ccr-19a9f89
 
 ## Estado
 - Ya publicados o entregados: Dosis #1–#6, sus Shorts, y los rankings 01 (animales más rápidos), 02 (animales más mortales), 03 (fenómenos naturales con sonido real), 04 (objetos fuera de su tiempo) y 05 (coches de policía más locos).
-- **Siguiente tarea: ranking 06, «Youtubers más exitosos del mundo»**, con MrBeast como gancho. Datos de Wikipedia, «List of most-subscribed YouTube channels», noviembre de 2026, solo personas y no empresas:
+- **CAMBIO (23-nov-2026): el ranking 06 es ahora «GTA 6 y lo más rápido en llegar a 1.000 millones $».** El de youtubers se descartó: no se pueden usar fotos de personas reales y varios canales son de niños.
+  - Guion y escenas listos en `produccion/ranking06-prueba/` (gancho + puestos 5 y 4) y `produccion/ranking06/` (entero).
+  - Falta: rellenar `videos` con IDs de Pexels usando `videos_por_buscar` (sin imágenes del juego ni tráileres: copyright de Rockstar), montar la prueba y mandársela.
+  - Datos: GTA 6, 3.790 M$ el primer día (19-nov-2026) y 32,5 M de copias antes de salir (Take-Two, nota de prensa del 20-nov-2026; incluye reservas). GTA V 3 días, Endgame 5 días, CoD MWII 10 días (Guinness). Avatar 17 días (Statista).
+  - Créditos de la descripción: Guinness World Records, Take-Two Interactive, Statista.
+- (Descartado) ranking de youtubers:, con MrBeast como gancho. Datos de Wikipedia, «List of most-subscribed YouTube channels», noviembre de 2026, solo personas y no empresas:
   - 1 MrBeast, 527 M (el único por encima de 500 M)
   - 2 Vlad y Niki, 151 M
   - 3 Stokes Twins, 150 M
