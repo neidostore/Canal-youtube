@@ -27,6 +27,15 @@ Script: `produccion/herramientas/subir_youtube.py`. Sube un vídeo usando su fic
 
 Las autorizaciones se guardan en `~/.canales-youtube/tokens/`, fuera del repo. **Nunca subirlas a GitHub.**
 
+## Notas del PC con Windows
+- Instalado con winget: Git (en `%LOCALAPPDATA%\Programs\Git`), Python 3.12, FFmpeg (Gyan), Node LTS y GitHub CLI.
+  Playwright global (`npm i -g playwright` + `npx playwright install chromium`) y la variable de usuario `NODE_PATH` apuntando a `npm root -g`.
+- Fuentes Inter Display y NotoColorEmoji instaladas para el usuario en `%LOCALAPPDATA%\Microsoft\Windows\Fonts`;
+  `marco.py` las busca ahí si no están en `/usr/share/fonts`.
+- Variable de usuario `PYTHONUTF8=1`: los scripts escriben archivos sin indicar UTF-8.
+- `montar.py` usa el bash de Git for Windows para `clips/descargar.sh` y escapa las rutas `C:` en los filtros de ffmpeg.
+- En Windows se llama `python`, no `python3`.
+
 ## Uso
 ```
 python produccion/herramientas/subir_youtube.py prueba shockmental docs/shockmental/11-ranking05.md

@@ -10,8 +10,18 @@ from PIL import Image, ImageDraw, ImageFilter, ImageFont
 BARRA = 84                      # alto de cada barra (arriba y abajo)
 W, HC = 1920, 1080 - 2 * BARRA  # zona central donde va el vídeo: 1920x912
 COLORES = ["#1E8CFF", "#FF7A1A", "#8B3DFF", "#18B46B", "#FF3D7F", "#FFB800"]
-F_BLACK = "/usr/share/fonts/opentype/inter/InterDisplay-Black.otf"
-F_BOLD = "/usr/share/fonts/opentype/inter/InterDisplay-Bold.otf"
+def _fuente(nombre, carpeta_linux):
+    """Ruta de la fuente: Linux (/usr/share/fonts) o Windows (fuentes del usuario o del sistema)."""
+    import os
+    for d in (carpeta_linux, os.path.join(os.environ.get("LOCALAPPDATA", ""), "Microsoft", "Windows", "Fonts"),
+              os.path.join(os.environ.get("WINDIR", "C:/Windows"), "Fonts")):
+        if os.path.exists(os.path.join(d, nombre)):
+            return os.path.join(d, nombre)
+    return os.path.join(carpeta_linux, nombre)
+
+
+F_BLACK = _fuente("InterDisplay-Black.otf", "/usr/share/fonts/opentype/inter")
+F_BOLD = _fuente("InterDisplay-Bold.otf", "/usr/share/fonts/opentype/inter")
 
 
 def _rgb(h):
@@ -188,7 +198,7 @@ def cierre_vertical(destino, logo_ruta, texto="Suscríbete"):
     d.text((540 - tw / 2, 1028), texto, font=f, fill="#FFFFFF"); im.save(destino)
 
 
-F_EMOJI = "/usr/share/fonts/truetype/noto/NotoColorEmoji.ttf"
+F_EMOJI = _fuente("NotoColorEmoji.ttf", "/usr/share/fonts/truetype/noto")
 
 
 def _emoji(txt, tam):

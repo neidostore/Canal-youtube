@@ -21,6 +21,23 @@ INTRO_AUDIO = RAIZ.parent / "marca" / "intro" / "intro_audio.wav"
 CLIPS = RAIZ / "clips"
 
 
+def ruta_filtro(p):
+    """Ruta para usar dentro de un filtro de ffmpeg (en Windows, 'C:\\x' se escribe 'C\\:/x')."""
+    return "'" + str(p).replace("\\", "/").replace(":", "\\:") + "'"
+
+
+def bash():
+    """bash de Linux o el de Git for Windows (no el de WSL)."""
+    if os.name != "nt":
+        return "bash"
+    import shutil
+    git = shutil.which("git")
+    candidatos = [Path(git).resolve().parent.parent / "bin" / "bash.exe"] if git else []
+    candidatos += [Path(os.environ.get("ProgramFiles", r"C:\Program Files")) / "Git" / "bin" / "bash.exe",
+                   Path(os.environ.get("LOCALAPPDATA", "")) / "Programs" / "Git" / "bin" / "bash.exe"]
+    return next((str(b) for b in candidatos if b.exists()), "bash")
+
+
 def sh(*args):
     subprocess.run(args, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.PIPE)
 
@@ -271,7 +288,7 @@ def main(carpeta):
     vids = {v for e in escenas if e["tipo"] == "video" for v in e["vids"]}
     faltan = [str(spec["videos"][v]) for v in vids if not (CLIPS / f"{spec['videos'][v]}.mp4").exists()]
     if faltan:
-        subprocess.run(["bash", str(CLIPS / "descargar.sh"), *faltan], cwd=CLIPS, check=True)
+        subprocess.run([bash(), str(CLIPS / "descargar.sh"), *faltan], cwd=CLIPS, check=True)
     dur_clip = {v: duracion(CLIPS / f"{spec['videos'][v]}.mp4") for v in vids}
 
     # 3) voz
@@ -537,7 +554,10 @@ def main(carpeta):
         mezcla += f"[{k}:a]aformat=sample_rates=48000:channel_layouts=stereo,volume={vol},atrim=0:{t:.2f}{fade}[x{k}];"
         etiquetas.append(f"[x{k}]")
     mezcla += "".join(etiquetas) + f"amix=inputs={len(etiquetas)}:normalize=0:duration=first,loudnorm=I=-14:TP=-1.5:LRA=11[a]"
-    video_fc = f"[0:v]ass={trabajo / 'subs.ass'}[vv]"
+    video_fc = f"[0:v]ass={ruta_filtro(trabajo / 'subs.ass')}"
+    if os.name == "nt":   # en Windows, libass busca Inter Display en la carpeta de fuentes del usuario
+        video_fc += f":fontsdir={ruta_filtro(Path(os.environ['LOCALAPPDATA']) / 'Microsoft' / 'Windows' / 'Fonts')}"
+    video_fc += "[vv]"
     if MARCO:
         mdir = trabajo / "marco"; n_in = len(entradas) // 2 + sum(1 for x in entradas if x == "-stream_loop") * 0
         n_in = sum(1 for x in entradas if x == "-i")
@@ -578,7 +598,7 @@ def main(carpeta):
             MK.transicion(tdir, col, col2, RAIZ.parent / MARCO["logo"])
             entradas += ["-framerate", str(FPS), "-i", str(tdir / "%02d.png")]
             capas.append((n_in, max(0, tc - MK.MEDIO / FPS), "format=rgba")); n_in += 1
-        fuente = MK.F_BLACK
+        fuente = ruta_filtro(MK.F_BLACK)
         cuenta = (f"drawtext=fontfile={fuente}:fontsize=58:fontcolor=0x130F0E:x=1920-28-95-tw/2:y={B + 18 + 39}-th/2:"
                   f"text='%{{eif\\:max(0\\,trunc(({t:.2f}-t)/60))\\:d}}\\:%{{eif\\:max(0\\,mod(trunc({t:.2f}-t)\\,60))\\:d\\:2}}'")
         video_fc += f";[vv]pad={W}:1080:0:{B}:color=black[c0]"

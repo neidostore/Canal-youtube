@@ -48,7 +48,8 @@ Léelo entero antes de hacer nada. Todo el trabajo está en la rama `ccr-19a9f89
 - El usuario tiene Claude Desktop en su PC (`DESKTOP-KFA9GO8`, carpeta «Youtube») con Remote Control. Las sesiones de la nube no pueden usar esa carpeta (no se sabe por qué), así que el trabajo se hace en una sesión que corre **en el PC** y el usuario la sigue desde el móvil.
 - Flujo: Claude monta el vídeo → se lo manda al móvil para que lo compruebe → el usuario da el OK → Claude lo sube desde el PC.
 - Script: `produccion/herramientas/subir_youtube.py`; guía en `docs/subida-youtube.md`. Sin `--ok` no sube. Por defecto sube como privado o programado. Sirve para varios canales: las autorizaciones están en `~/.canales-youtube/` del PC, nunca en el repo.
-- Pendiente en el PC: instalar Python, ffmpeg y las librerías; poner la clave de Google TTS; crear el proyecto en Google Cloud y autorizar el canal (estos dos últimos pasos los hace el usuario con sus clics).
+- **Hecho en el PC (23-nov-2026):** repo clonado en `Desktop\Youtube\Canal-youtube`; instalados Git, Python 3.12, ffmpeg, Node, GitHub CLI, Playwright con Chromium, las librerías de Python y las fuentes Inter Display y Noto Color Emoji (para el usuario). Variables de usuario `PYTHONUTF8=1` y `NODE_PATH`. Detalles en `docs/subida-youtube.md`.
+- Pendiente en el PC: poner la clave de Google TTS; `gh auth login` para poder hacer push; crear el proyecto en Google Cloud y autorizar el canal (lo hace el usuario con sus clics).
 - El usuario quiere abrir más canales. Cada uno debe tener estilo y guiones propios: YouTube no monetiza el contenido repetitivo o «producido en masa».
 - Desde el 23-nov-2026 el trabajo sigue en la rama `ccr-927e3ba3-isn217`, que incluye todo lo de `ccr-19a9f894-tb9pz5`.
 
