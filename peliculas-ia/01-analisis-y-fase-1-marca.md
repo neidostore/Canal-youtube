@@ -126,27 +126,41 @@ Primero películas de **3-5 minutos**. Es más fácil retener a la gente y cuest
 
 | Nombre | A favor | En contra | Valoración |
 |---|---|---|---|
-| **ANOMALÍA** | Encaja con la regla de la marca. Se entiende igual en inglés (*Anomaly*). Permite "Anomalía Nº 001". Suena a cine | Es una palabra común (hay una película de 2019 con ese título), así que costará posicionar el nombre solo; necesitará apellido en el @ | ⭐ Mi favorita |
+| ~~ANOMALÍA~~ | Encajaba con la regla de la marca | **Ya está cogido en YouTube** (comprobado por el usuario) | Descartada |
 | **CINE IMPOSIBLE** | Dice exactamente lo que es el canal. Muy claro para el que llega por primera vez | Suena más a etiqueta que a marca. Recuerda a *Misión imposible* | Mejor como lema que como nombre |
 | **ERRATA** | Elegante y original: "un error en la historia del mundo". Corto, funciona en varios idiomas | Mucha gente no conoce la palabra. Explicarla cuesta | Buena, pero arriesgada |
 | **DESFASE** | Doble sentido en España ("¡qué desfase!" + desfase temporal) | En Latinoamérica pierde el doble sentido. Ya existe un colectivo de cine peruano llamado Desfase Films | Descartada |
 | **LA GRIETA** | Evoca el portal entre mundos | En Argentina "la grieta" es la polarización política: connotación negativa en un mercado clave | Descartada |
 | **VÓRTICE / PARADOJA** | Suenan potentes | Encasillan en ciencia ficción | Descartadas |
 
+### Segunda ronda (tras descartar Anomalía)
+Lección de la primera ronda: las palabras sueltas y comunes ya suelen estar cogidas. Funcionan mejor las combinaciones de dos palabras o los nombres con un concepto propio.
+
+| Nombre | A favor | En contra | Valoración |
+|---|---|---|---|
+| **MIL PUERTAS** | Cada película es una puerta a otro mundo, y conecta con el portal de la imagen de referencia. Permite numerar: "Puerta Nº 001". Logo sencillo (una puerta con luz). Fácil de decir en todo el mundo hispano. Combinación poco común, más fácil de registrar | No se traduce tan bien al inglés (*A Thousand Doors*). Puede sonar algo a fantasía si la identidad visual no es adulta | ⭐ Recomendada |
+| **QUIMERA** | Una quimera es un ser hecho de varios animales, como el canal mezcla géneros. También significa "sueño imposible". Funciona en inglés (*Chimera*) | Palabra común: hay muchas películas y una serie corta llamada así. Mismo riesgo que Anomalía | Buena, pero probablemente cogida |
+| **INTRUSO** | Cada película tiene un intruso (el elemento imposible). "Intruso Nº 001" | Suena a thriller o terror; encasilla | Regular |
+| **INSÓLITO** | Es exactamente el "¿qué estoy viendo?" | Suena a canal de curiosidades ("lo más insólito"), justo lo que no queremos ser | Descartada |
+| **FUERA DE LUGAR** | Describe la regla de la anomalía | Largo, suena a programa de tertulia, flojo como logo | Descartada |
+
 ### Recomendación
-**ANOMALÍA** como nombre y **"Películas imposibles"** como lema.
-- Ejemplo de canal: **Anomalía · Películas imposibles**
-- Ejemplos de @: `@anomaliafilms`, `@anomalia.films`, `@anomaliacine`
+**MIL PUERTAS** como nombre y **"Películas imposibles"** como lema.
+- Canal: **Mil Puertas · Películas imposibles**
+- Cada película es una "Puerta": *Puerta Nº 001 · El colombiano del Titanic*.
+- @ posibles: `@milpuertas`, `@milpuertasfilms`, `@milpuertas.cine`
+- La regla de la anomalía se mantiene: detrás de cada puerta hay algo que no debería estar ahí.
 
 ### Comprobación de disponibilidad (hasta donde he podido)
-- He buscado en la web "Anomalía Films", "Cine Imposible", "Errata Films", "Grieta Films" y "Desfase Films": **no he encontrado ningún canal de YouTube con esos nombres**. Solo aparecen la película *Anomalia* (2019), un corto argentino de 2018 y el colectivo peruano Desfase Films.
+- Primera ronda: búsquedas web de "Anomalía Films", "Cine Imposible", "Errata Films", "Grieta Films" y "Desfase Films". El usuario confirmó después que Anomalía está cogido.
+- Segunda ronda: búsquedas web de "Mil Puertas", "Quimera Films/Cine", "Insólito Films" y "Fuera de Lugar". **No aparece ningún canal de YouTube con esos nombres**, pero la búsqueda web no indexa todos los canales. Para Quimera aparecen varias películas y una serie corta llamada "Canal Quimera".
 - **Desde este entorno no puedo abrir youtube.com**, así que no puedo confirmar si los @ están libres. Eso lo tienes que comprobar tú (son 2 minutos, te lo explico cuando elijamos nombre).
 
 ---
 
 ## 8. Pendiente en la Fase 1 (en este orden)
 1. ✅ Análisis del concepto.
-2. ⏳ **Elegir el nombre** ← estamos aquí.
+2. ⏳ **Elegir el nombre** ← estamos aquí (Anomalía descartado por estar cogido).
 3. Comprobar los @ en YouTube, TikTok e Instagram.
 4. Personalidad de la marca (tono de los títulos, de las descripciones, de la comunidad).
 5. Identidad visual: logo, colores, tipografía, sello del número de película, marca de agua.
