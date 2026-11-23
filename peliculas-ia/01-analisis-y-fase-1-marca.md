@@ -167,7 +167,23 @@ Lección de la primera ronda: las palabras sueltas y comunes ya suelen estar cog
 
 ---
 
-## 8. Pendiente en la Fase 1 (en este orden)
+## 8. Personalidad de la marca
+
+### ✅ DECISIÓN: tono C, equilibrado
+**"Serios en la forma, gamberros en la premisa."** Producción de superproducción (imagen, sonido e interpretación creíbles); lo absurdo está en la situación, no en la forma de contarla. Cada película se inclina hacia lo épico o hacia la comedia según su historia.
+
+### Principios propuestos (sin objeciones del usuario de momento)
+1. **Reírnos con las culturas, nunca de ellas.** Acentos y expresiones con cariño; nada de estereotipos fáciles. El personaje "fuera de lugar" suele ser el más listo de la escena, no el payaso.
+2. **Vender la historia, no la IA.** Sin "hecho con IA" como reclamo en títulos ni miniaturas. Se declara donde YouTube lo exige (etiqueta de contenido sintético).
+3. **El público participa.** Encuestas en la pestaña Comunidad para elegir anomalías ("¿a quién metemos en la Antigua Roma?").
+4. **Un sello inmutable:** cortinilla "Neido Studio presenta", número de película, easter egg escondido en todas.
+
+### Pendiente
+- ⏳ Confirmar el lema.
+
+---
+
+## 9. Pendiente en la Fase 1 (en este orden)
 1. ✅ Análisis del concepto.
 2. ✅ Nombre: **Neido Studio** (descartados por el camino: Anomalía, cogido; Mil Puertas y Gaves TV, no convencieron).
 3. ⏳ Reservar `@neidostudio` en YouTube, TikTok e Instagram (lo hace el usuario).
