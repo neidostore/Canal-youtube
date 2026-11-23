@@ -1,6 +1,6 @@
 # Neido Studio · Dirección artística (propuesta)
 
-> Estado: **propuesta pendiente de aprobación**. Es el último punto de la Fase 1.
+> Estado: ✅ **aprobada**. Con ella se cierra la Fase 1.
 > Objetivo: que cualquiera reconozca una película de Neido Studio con ver un solo fotograma, sea de la época o el género que sea.
 
 ---

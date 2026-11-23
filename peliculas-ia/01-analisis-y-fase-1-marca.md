@@ -194,10 +194,12 @@ Frase secundaria opcional para la descripción del canal: *"Lo imposible, en ser
    - ✅ **Foto de perfil definitiva:** puerta entreabierta generada con Gemini, con recorte más cerrado → `marca/final/perfil.jpg`. Probada en círculo a 160, 88 y 40 px.
    - 💡 **Cortinilla (idea del usuario, aprobada como concepto):** la "I" de NEIDO es una puerta; se abre, la luz inunda la pantalla y de dentro sale el primer plano de la película. 3-4 s, personalizada en cada película. Va **después del gancho**, no al principio. Se hará con fotogramas clave en el editor (no con IA de vídeo, para que el texto no se deforme). Se define en Fase 2 (formato) y Fase 3 (montaje).
    - ✅ **Logo definitivo:** NEIDO en serifa (Cormorant Garamond) con la I como entrada de luz de una puerta (rendija vertical + luz por arriba y por abajo + reflejo en el suelo), STUDIO y PELÍCULAS IMPOSIBLES en Montserrat. Capas separadas para animar la cortinilla → `marca/final/logo.html` / `logo.png`.
-   - ✅ Banner: **versión con escenas** (pasado cálido a la izquierda, futuro frío a la derecha, logo en la frontera con la I-puerta en la línea que separa ambos mundos). ⏳ Falta el fondo de Gemini (el v1 se descartó por una franja oscura en la zona visible).
+   - ✅ Banner: **versión con escenas** (pasado cálido a la izquierda, futuro frío a la derecha, logo en la frontera con la I-puerta en la línea que separa ambos mundos). ⏳ Falta el fondo de Gemini (el v1 tiene una franja oscura; se montó esquivándola, ver línea siguiente).
    - ✅ Banner montado sobre el fondo v1 de Gemini → `marca/final/banner.png` (mejorable más adelante con un fondo nuevo).
    - ✅ **Marca de agua:** la I-puerta sola sobre un disco oscuro semitransparente, PNG 300×300 transparente → `marca/final/marca-agua.png`.
-   - ⏳ Plantilla de miniatura (se cierra con la primera película), dirección artística. Prompts en `marca/prompts-gemini.md`.
-6. Dirección artística: el "look" común de todas las películas.
+   - ✅ Dirección artística aprobada → [02-direccion-artistica.md](02-direccion-artistica.md).
+   - ⏳ Plantilla de miniatura: se cierra con la primera película.
 
-> Nota: en tu mensaje mencionas una imagen de referencia, pero no me ha llegado. Cuando lleguemos a la identidad visual, súbela al chat.
+## ✅ FASE 1 CERRADA. Siguiente: Fase 2, formato de las películas → [03-fase-2-formato.md](03-fase-2-formato.md)
+
+Prompts de Gemini en `marca/prompts-gemini.md`. Imagen de referencia del usuario en `marca/imagen-referencia.jpg`.
