@@ -10,8 +10,8 @@
 5. ✅ Diálogo, pensamientos y narrador (aprobados, idioma: opción A)
 6. ✅ Ritmo (aprobado)
 7. ✅ Finales (aprobados)
-8. ⏳ **Easter egg común** ← estamos aquí
-9. Shorts: cómo se sacan de cada película
+8. ✅ Easter egg (aprobado: opción C)
+9. ⏳ **Shorts** ← estamos aquí
 10. Frecuencia de publicación (orientativa; se confirma tras la prueba técnica de la Fase 3)
 
 ---
@@ -218,7 +218,7 @@ En los primeros 60 segundos se plantea **una pregunta que solo se responde en el
 
 ---
 
-## 8. Easter egg común (propuesta)
+## 8. Easter egg común ✅ APROBADO
 
 La puerta ya no sirve como easter egg: aparece a la vista en todas las películas (regla 5 de la anomalía). Necesitamos algo **escondido**, que la gente tenga que buscar.
 
@@ -228,5 +228,28 @@ La puerta ya no sirve como easter egg: aparece a la vista en todas las película
 | **B) El Portero** | El mismo desconocido (misma cara, mismo abrigo gris) aparece al fondo de todas las películas, en cualquier época, mirando a cámara un instante | Genera teorías y comentarios ("¿quién es?, ¿abre él las puertas?"). Muy potente para la comunidad | Exige mantener la misma cara entre películas: un riesgo de continuidad más, a coste 0 |
 | **C) Las dos, por etapas** | Empezar con el reloj y presentar al Portero cuando el sistema de continuidad esté probado | Lo barato ya, lo potente cuando sea fiable | El Portero tarda en llegar |
 
-### Recomendación: C
+### ✅ DECISIÓN: C
 Reloj de las 4:04 desde la Película Nº 001. El Portero entra cuando sepamos mantener caras de forma fiable (tras la Fase 3 y unas cuantas películas). Si alguien descubre el reloj en los comentarios, se le fija el comentario: premia a los que buscan.
+
+---
+
+## 9. Shorts (propuesta)
+
+### Cuántos y cuáles, por cada película
+| Short | Qué es | Cuándo se publica |
+|---|---|---|
+| **1. El avance** | El gancho de la película, adaptado a vertical | 1-2 días **antes** del estreno |
+| **2. El mejor momento cómico** | El intercambio más gracioso, completo | Día del estreno o día siguiente |
+| **3. El "¿pero qué…?"** | El mini-giro más sorprendente | 2-3 días después |
+| **4. (opcional) La pregunta** | Un momento que plantea la pregunta abierta, sin respuesta | Una semana después, para revivir la película |
+
+### Reglas
+1. **20-45 segundos**, en vertical (9:16), sin bandas negras.
+2. **Gancho en el primer segundo:** se empieza en mitad de la acción, nunca con la cortinilla.
+3. **Subtítulos grandes grabados en la imagen.**
+4. **Nunca se destripa el final.** El Short deja con ganas y enlaza a la película completa (YouTube permite vincular un vídeo relacionado a cada Short).
+5. **Título propio:** el Short no se titula igual que la película. Ejemplo: película *"Un colombiano en el Titanic"*; Short *"Le dijo al capitán lo del iceberg…"*.
+6. **Los mismos archivos para TikTok e Instagram Reels**, sin la marca de agua de YouTube.
+
+### Consecuencia para la producción ⚠️
+Los Shorts se sacan **recortando el centro** de los planos horizontales; no se generan planos aparte (gastaría créditos). Por eso, en los planos que vayan a ir a Shorts, **el personaje y la acción tienen que estar en el centro de la imagen**. Se marcará en el guion técnico qué planos son "aptos para vertical", y el bloque de ADN visual llevará esa instrucción en esos planos.
