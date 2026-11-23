@@ -117,7 +117,7 @@ Primero películas de **3-5 minutos**. Es más fácil retener a la gente y cuest
 
 ### ✅ DECISIÓN: **NEIDO STUDIO**
 - Propuesto por el usuario y aprobado. `@neidostudio` comprobado como libre en YouTube por el usuario.
-- Lema propuesto (pendiente de confirmar junto con la personalidad): **"Películas imposibles"**.
+- Lema: **"Películas imposibles"** (aprobado, ver sección 8).
 - Uso: *Neido Studio presenta · Película Nº 001 · [título]*.
 - Por qué funciona: "Studio" convierte el canal en una productora de cine; nombre inventado y propio (fácil de posicionar); no encasilla en un género.
 - Riesgos y solución: no explica el concepto (lo hace el lema + la regla de la anomalía); un "estudio" puede sonar frío (lo compensa un sello muy reconocible: cortinilla, numeración, easter egg).
@@ -178,8 +178,9 @@ Lección de la primera ronda: las palabras sueltas y comunes ya suelen estar cog
 3. **El público participa.** Encuestas en la pestaña Comunidad para elegir anomalías ("¿a quién metemos en la Antigua Roma?").
 4. **Un sello inmutable:** cortinilla "Neido Studio presenta", número de película, easter egg escondido en todas.
 
-### Pendiente
-- ⏳ Confirmar el lema.
+### ✅ DECISIÓN: lema
+**"Películas imposibles"** → marca completa: **Neido Studio · Películas imposibles**.
+Frase secundaria opcional para la descripción del canal: *"Lo imposible, en serio."*
 
 ---
 
@@ -187,8 +188,8 @@ Lección de la primera ronda: las palabras sueltas y comunes ya suelen estar cog
 1. ✅ Análisis del concepto.
 2. ✅ Nombre: **Neido Studio** (descartados por el camino: Anomalía, cogido; Mil Puertas y Gaves TV, no convencieron).
 3. ⏳ Reservar `@neidostudio` en YouTube, TikTok e Instagram (lo hace el usuario).
-4. ⏳ **Personalidad de la marca** (tono de los títulos, de las descripciones, de la comunidad) ← estamos aquí.
-5. Identidad visual: logo, colores, tipografía, sello del número de película, marca de agua.
+4. ✅ Personalidad de la marca: tono C (equilibrado) y lema "Películas imposibles".
+5. ⏳ **Identidad visual**: logo, colores, tipografía, sello del número de película, marca de agua ← estamos aquí.
 6. Dirección artística: el "look" común de todas las películas.
 
 > Nota: en tu mensaje mencionas una imagen de referencia, pero no me ha llegado. Cuando lleguemos a la identidad visual, súbela al chat.
