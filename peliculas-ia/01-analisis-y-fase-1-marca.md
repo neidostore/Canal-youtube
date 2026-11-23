@@ -1,4 +1,4 @@
-# Canal de mini películas con IA · Análisis inicial y Fase 1 (marca)
+# Neido Studio · Análisis inicial y Fase 1 (marca)
 
 > Estado: **Fase 1 en curso**. Ninguna decisión está aprobada todavía.
 > El prompt original del proyecto está en [00-prompt-original.md](00-prompt-original.md).
@@ -115,6 +115,15 @@ Primero películas de **3-5 minutos**. Es más fácil retener a la gente y cuest
 
 ## 7. Fase 1 · Nombre del canal
 
+### ✅ DECISIÓN: **NEIDO STUDIO**
+- Propuesto por el usuario y aprobado. `@neidostudio` comprobado como libre en YouTube por el usuario.
+- Lema propuesto (pendiente de confirmar junto con la personalidad): **"Películas imposibles"**.
+- Uso: *Neido Studio presenta · Película Nº 001 · [título]*.
+- Por qué funciona: "Studio" convierte el canal en una productora de cine; nombre inventado y propio (fácil de posicionar); no encasilla en un género.
+- Riesgos y solución: no explica el concepto (lo hace el lema + la regla de la anomalía); un "estudio" puede sonar frío (lo compensa un sello muy reconocible: cortinilla, numeración, easter egg).
+
+### Historial de la búsqueda de nombre
+
 ### Criterios
 - Corto, fácil de pronunciar y de escribir (también sin tilde en el @).
 - No limitado a un género.
@@ -160,9 +169,9 @@ Lección de la primera ronda: las palabras sueltas y comunes ya suelen estar cog
 
 ## 8. Pendiente en la Fase 1 (en este orden)
 1. ✅ Análisis del concepto.
-2. ⏳ **Elegir el nombre** ← estamos aquí (Anomalía descartado por estar cogido).
-3. Comprobar los @ en YouTube, TikTok e Instagram.
-4. Personalidad de la marca (tono de los títulos, de las descripciones, de la comunidad).
+2. ✅ Nombre: **Neido Studio** (descartados por el camino: Anomalía, cogido; Mil Puertas y Gaves TV, no convencieron).
+3. ⏳ Reservar `@neidostudio` en YouTube, TikTok e Instagram (lo hace el usuario).
+4. ⏳ **Personalidad** ← estamos aquí de la marca (tono de los títulos, de las descripciones, de la comunidad).
 5. Identidad visual: logo, colores, tipografía, sello del número de película, marca de agua.
 6. Dirección artística: el "look" común de todas las películas.
 
