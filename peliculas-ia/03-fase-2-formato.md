@@ -5,8 +5,8 @@
 ## Orden de decisiones
 1. ✅ Duración: **5-7 min, condicionada a coste 0 €**
 2. ✅ Estructura minuto a minuto (aprobada)
-3. ⏳ **Reglas de la anomalía** ← estamos aquí
-4. Planos: mezcla y proporción (POV, generales, primeros planos, acción)
+3. ✅ Reglas de la anomalía (aprobadas)
+4. ⏳ **Planos: mezcla y proporción** ← estamos aquí
 5. Diálogo, pensamientos y narrador: cuánto de cada uno
 6. Ritmo: duración de los planos, giros, silencios
 7. Finales: tipos y reparto
@@ -62,7 +62,7 @@ Proporciones si la película dura 5 o 7 minutos: se estiran o encogen sobre todo
 
 ---
 
-## 3. Reglas de la anomalía (propuesta)
+## 3. Reglas de la anomalía ✅ APROBADAS
 
 1. **Una sola anomalía por película.** Un personaje u objeto que no debería estar ahí. Todo lo demás es realista y coherente con su mundo.
 2. **La prueba de la frase.** La premisa se tiene que poder contar en menos de 12 palabras y provocar sonrisa o curiosidad al instante. *"Un colombiano aparece en el Titanic"* la pasa. Si hay que explicarla, no vale.
@@ -89,3 +89,27 @@ Proporciones si la película dura 5 o 7 minutos: se estiran o encogen sobre todo
 | Un repartidor con su bici eléctrica en la Roma de los gladiadores | Antigua Roma | Velocidad y un móvil con 3 % de batería / lo confunden con un dios o un demonio |
 | Un vikingo despierta en un centro comercial de hoy | Presente | Fuerza y valor / todo le parece brujería |
 | Un astronauta de 2150 aterriza en un pueblo andaluz en fiestas | Presente rural | Tecnología imposible / nadie se impresiona |
+
+---
+
+## 4. Planos: mezcla y proporción (propuesta)
+
+Una película de ~6 min tendrá **unos 70-90 planos** (media de 4-5 s por plano). Cada tipo de plano tiene un coste distinto en créditos:
+
+| Tipo de plano | % aprox. | Nº en 6 min | Cómo se hace | Coste |
+|---|---|---|---|---|
+| **General / de situación** (el barco entero, la ciudad) | 15 % | 10-14 | Imagen fija + movimiento de cámara en el editor | 💚 Solo imagen |
+| **Insertos** (el móvil, un reloj, una mano, un objeto) | 10 % | 7-9 | Imagen fija o vídeo muy corto | 💚 Bajo |
+| **Medio / de conjunto** (personajes en la escena) | 30 % | 21-27 | Vídeo IA corto (3-5 s) | 🟡 Medio |
+| **Primeros planos de reacción** (caras sin hablar) | 20 % | 14-18 | Vídeo IA corto (2-4 s) | 🟡 Medio |
+| **POV** (lo que ve el protagonista) | 10 % | 7-9 | Vídeo IA | 🟡 Medio |
+| **Acción** (persecución, pelea, caída) | 10 % | 7-9 | Vídeo IA, concentrado en el clímax | 🔴 Alto (falla mucho) |
+| **Diálogo con lip-sync** | 5 % | 3-6 | Vídeo IA + sincronización labial | 🔴 Alto |
+
+### Reglas de planificación
+1. **La firma del POV:** cuando la cortinilla abre la puerta, el primer plano de la película es **un POV del protagonista cruzando al otro mundo**. El espectador "entra por la puerta" con él. Siempre igual en todas las películas.
+2. **Escalera de planos en cada escena nueva:** general → medio → cercano. Primero se sitúa al espectador y después se acerca a las emociones.
+3. **Las reacciones son oro.** En la comedia, la cara del que escucha vale más que la del que habla. Además, son baratas y no necesitan lip-sync.
+4. **Nunca dos planos seguidos del mismo tipo y tamaño.** Es lo que evita que parezca una sucesión de imágenes.
+5. **Regla de los 180°:** si un personaje mira o camina hacia la derecha en un plano, lo sigue haciendo en el siguiente. Es la base de la continuidad espacial (se detallará en la Fase 3).
+6. **La acción se concentra en el clímax**, que es donde vale la pena gastar los créditos caros.
