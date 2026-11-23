@@ -104,7 +104,7 @@ def main():
     if con_cortinilla and CORTINILLA.exists():
         dc = duracion(CORTINILLA); fundido = 0.5
         ff("-i", CORTINILLA, "-i", cuerpo, "-filter_complex",
-           f"[0:v]fps={FPS},scale={W}:{H},setsar=1,format=yuv420p[a];[1:v]format=yuv420p[b];"
+           f"[0:v]fps={FPS},scale={W}:{H},setsar=1,format=yuv420p,settb=1/{FPS}[a];[1:v]fps={FPS},format=yuv420p,settb=1/{FPS}[b];"
            f"[a][b]xfade=transition=fade:duration={fundido}:offset={dc-fundido}",
            "-c:v", "libx264", "-crf", "16", "-pix_fmt", "yuv420p", union)
         desfase = dc - fundido
