@@ -1,0 +1,37 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Montserrat:wght@400;500&display=swap">
+<style>
+/* Logo de Neido Studio, versión vectorial a partir del logo generado con Gemini.
+   Las capas (letras, rendija, halo) van separadas para poder animar la cortinilla. */
+:root{--negro:#050608;--blanco:#EFEAE0;--oro:#C9A46A}
+html,body{margin:0;background:transparent}
+.lienzo{width:1920px;height:1080px;position:relative;overflow:hidden;background:transparent}
+.halo{position:absolute;left:50%;top:41%;width:900px;height:900px;transform:translate(-50%,-50%);
+ background:radial-gradient(ellipse 22% 40% at 47% 50%,rgba(255,165,60,.55),transparent 70%),
+            radial-gradient(ellipse 22% 40% at 53% 50%,rgba(50,190,225,.42),transparent 70%);filter:blur(30px)}
+.nombre{position:absolute;left:0;right:0;top:330px;display:flex;justify-content:center;align-items:center;
+ font-family:'Cormorant Garamond',serif;font-weight:600;font-size:260px;line-height:1;letter-spacing:10px;color:var(--blanco)}
+.nombre span{display:inline-block}
+.hueco{width:70px;height:200px;position:relative}
+.rendija{position:absolute;left:50%;top:-4px;width:8px;height:178px;transform:translateX(-50%);background:linear-gradient(180deg,#fff,#fff 92%,#fffbe8);border-radius:1px;
+ filter:drop-shadow(-3px 0 4px #FFB45A) drop-shadow(-12px 0 18px rgba(255,160,60,.85)) drop-shadow(-36px 0 50px rgba(255,140,40,.5))
+        drop-shadow(3px 0 4px #63D8FF) drop-shadow(12px 0 18px rgba(80,200,240,.8)) drop-shadow(36px 0 50px rgba(120,110,255,.45))}
+.studio{position:absolute;left:0;right:0;top:640px;text-align:center;font-family:Montserrat;font-weight:400;font-size:46px;letter-spacing:22px;padding-left:22px;color:var(--blanco);opacity:.92}
+.lema{position:absolute;left:0;right:0;top:740px;text-align:center;font-family:Montserrat;font-weight:500;font-size:34px;letter-spacing:8px;padding-left:8px;color:var(--oro)}
+.serifa{position:absolute;left:50%;transform:translateX(-50%);
+ background:linear-gradient(90deg,rgba(255,180,90,0),rgba(255,200,130,.95) 22%,#fff 50%,rgba(150,225,255,.95) 78%,rgba(99,216,255,0));
+ filter:drop-shadow(0 0 4px rgba(255,255,255,.8)) drop-shadow(-8px 0 10px rgba(255,160,60,.6)) drop-shadow(8px 0 10px rgba(80,200,240,.6))}
+/* arriba: la luz que se cuela por encima de la puerta */
+.serifa.arriba{top:-7px;width:74px;height:3px}
+/* abajo: la luz que se cuela por debajo de la puerta... */
+.serifa.abajo{top:172px;width:92px;height:4px}
+/* ...y se derrama por el suelo */
+.suelo{position:absolute;left:50%;top:176px;width:240px;height:70px;transform:translateX(-50%);
+ clip-path:polygon(38% 0,62% 0,100% 100%,0 100%);
+ background:linear-gradient(90deg,rgba(255,165,60,0) 8%,rgba(255,175,80,.75) 36%,rgba(255,250,235,.85) 50%,rgba(90,205,245,.75) 64%,rgba(80,200,240,0) 92%);
+ -webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.9),transparent 90%);mix-blend-mode:screen;filter:blur(3px)}
+.lienzo{width:600px;height:600px}
+.disco{position:absolute;left:30px;top:30px;width:540px;height:540px;border-radius:50%;background:radial-gradient(circle,rgba(5,6,8,.78) 55%,rgba(5,6,8,.0) 71%)}
+.solo .rendija{width:14px}.solo .serifa.arriba{height:6px;width:90px}.solo .serifa.abajo{height:7px;width:110px}
+.solo{position:absolute;left:265px;top:150px;transform:scale(1.45);transform-origin:35px 0}
+</style></head><body><div class="lienzo"><div class="disco"></div><div class="solo"><span class="hueco" style="display:block"><span class="rendija"></span><span class="serifa arriba"></span><span class="serifa abajo"></span><span class="suelo"></span></span></div></div></body></html>
