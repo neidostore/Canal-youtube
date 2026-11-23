@@ -1,0 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;800&display=swap');
+:root{--negro:#07080B;--ambar:#FFB047;--oro:#FFD58A;--cian:#5CD6FF;--violeta:#8C6BFF;--blanco:#F4F1EA}
+html,body{margin:0;background:var(--negro)}
+*{box-sizing:border-box}
+/* La "I" de luz: rendija con luz cálida (pasado) a la izquierda y fría (futuro) a la derecha */
+.rendija{position:relative;display:inline-block;background:linear-gradient(180deg,rgba(255,255,255,0),#fff 14%,#fff 86%,rgba(255,255,255,0));
+  filter:drop-shadow(-4px 0 6px rgba(255,176,71,1)) drop-shadow(-14px 0 22px rgba(255,160,60,.75)) drop-shadow(-40px 0 60px rgba(255,140,40,.45))
+         drop-shadow(4px 0 6px rgba(92,214,255,1)) drop-shadow(14px 0 22px rgba(92,214,255,.7)) drop-shadow(40px 0 60px rgba(140,107,255,.45))}

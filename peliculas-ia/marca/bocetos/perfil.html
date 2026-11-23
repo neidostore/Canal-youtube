@@ -1,0 +1,9 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="comun.css"><style>
+.wrap{width:800px;height:800px;position:relative;overflow:hidden;background:radial-gradient(circle at 50% 45%,#141720 0%,var(--negro) 70%)}
+.wrap .rendija{position:absolute;left:392px;top:170px;width:16px;height:380px}
+/* luz que se derrama por el suelo, como bajo una puerta entreabierta */
+.suelo{position:absolute;left:0;right:0;top:548px;height:252px;clip-path:polygon(392px 0,408px 0,640px 100%,160px 100%);
+ background:linear-gradient(90deg,rgba(255,176,71,.0) 20%,rgba(255,176,71,.45) 45%,rgba(255,255,255,.6) 50%,rgba(92,214,255,.45) 55%,rgba(140,107,255,0) 80%);
+ -webkit-mask-image:linear-gradient(180deg,#000,transparent 95%);filter:blur(3px)}
+.marco{position:absolute;left:300px;top:150px;width:200px;height:400px;border:2px solid rgba(244,241,234,.07);border-bottom:none}
+</style></head><body><div class="wrap"><div class="marco"></div><div class="suelo"></div><span class="rendija"></span></div></body></html>

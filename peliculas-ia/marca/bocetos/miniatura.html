@@ -1,0 +1,23 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="comun.css"><style>
+.wrap{width:1280px;height:720px;position:relative;overflow:hidden;background:#000}
+.mitad{position:absolute;top:0;bottom:0;background-image:url(../imagen-referencia.jpg);background-size:2560px auto}
+.izq{left:0;width:700px;background-position:-60px -40px;filter:saturate(.8) contrast(1.08)}
+.der{left:600px;right:0;background-position:-1640px -60px;filter:saturate(.75) contrast(1.08);clip-path:polygon(40px 0,100% 0,100% 100%,100px 100%)}
+/* la grieta separa el mundo normal del elemento imposible */
+.wrap .grieta{position:absolute;left:640px;top:-20px;width:12px;height:780px;transform:rotate(-4.8deg);transform-origin:top;background:#fff}
+.bandas:before,.bandas:after{content:"";position:absolute;left:0;right:0;height:58px;background:#000}
+.bandas:before{top:0}.bandas:after{bottom:0}
+.titulo{position:absolute;left:50px;bottom:92px;font-family:Montserrat;font-weight:800;font-size:92px;line-height:.95;color:#fff;text-transform:uppercase;
+ text-shadow:0 6px 24px rgba(0,0,0,.85),0 0 2px #000}
+.titulo em{font-style:normal;color:var(--oro)}
+.sello{position:absolute;right:40px;top:76px;font-family:Montserrat;font-weight:500;font-size:22px;letter-spacing:6px;color:var(--blanco);
+ border:1.5px solid rgba(244,241,234,.7);padding:8px 14px;background:rgba(0,0,0,.35)}
+.aviso{position:absolute;left:0;right:0;top:18px;text-align:center;font-family:Montserrat;font-size:16px;color:#aaa;letter-spacing:2px}
+</style></head><body><div class="wrap">
+ <div class="mitad izq"></div><div class="mitad der"></div>
+ <span class="grieta rendija"></span>
+ <div class="bandas"></div>
+ <div class="sello">Nº 001</div>
+ <div class="titulo">¿Qué pasa,<br><em>pues?</em></div>
+ <div class="aviso">BOCETO · fondo provisional recortado de la imagen de referencia</div>
+</div></body></html>
