@@ -38,6 +38,20 @@ Léelo entero antes de hacer nada. Todo el trabajo está en la rama `ccr-19a9f89
 - Sonidos libres: la API de Openverse (`/v1/audio/`) da sonidos CC0 de Freesound.
 - Commits en español, en la rama `ccr-19a9f894-tb9pz5`. `salida/` y `trabajo/` no se suben.
 
+## Calendario de publicación (acordado el 23-nov-2026)
+- **1 vídeo largo a la semana** («Dosis de Asombro»), siempre el mismo día y a la misma hora: el jueves.
+- **5 Shorts a la semana:** 2 rankings top 5 (martes y viernes) y 3 Shorts sacados de la Dosis (lunes, miércoles y sábado). El domingo, descanso.
+- Lo importante es la constancia, no el volumen. No subir la cantidad a costa de la calidad.
+- A finales de diciembre de 2026, mirar las estadísticas de YouTube Studio. Si los rankings siguen funcionando mucho mejor, pasar a 3 o 4 rankings y menos Shorts de la Dosis.
+
+## Trabajo desde el PC y subida automática (23-nov-2026)
+- El usuario tiene Claude Desktop en su PC (`DESKTOP-KFA9GO8`, carpeta «Youtube») con Remote Control. Las sesiones de la nube no pueden usar esa carpeta (no se sabe por qué), así que el trabajo se hace en una sesión que corre **en el PC** y el usuario la sigue desde el móvil.
+- Flujo: Claude monta el vídeo → se lo manda al móvil para que lo compruebe → el usuario da el OK → Claude lo sube desde el PC.
+- Script: `produccion/herramientas/subir_youtube.py`; guía en `docs/subida-youtube.md`. Sin `--ok` no sube. Por defecto sube como privado o programado. Sirve para varios canales: las autorizaciones están en `~/.canales-youtube/` del PC, nunca en el repo.
+- Pendiente en el PC: instalar Python, ffmpeg y las librerías; poner la clave de Google TTS; crear el proyecto en Google Cloud y autorizar el canal (estos dos últimos pasos los hace el usuario con sus clics).
+- El usuario quiere abrir más canales. Cada uno debe tener estilo y guiones propios: YouTube no monetiza el contenido repetitivo o «producido en masa».
+- Desde el 23-nov-2026 el trabajo sigue en la rama `ccr-927e3ba3-isn217`, que incluye todo lo de `ccr-19a9f894-tb9pz5`.
+
 ## Bloqueos que había en la conversación anterior
 - **Wikimedia (upload.wikimedia.org y la API de Commons):** devolvía 429 durante días por la conexión de aquella sesión. Comprobar si en esta ya va.
 - **usgs.gov:** bloquea con un 403 de su CDN. No intentar saltárselo.
