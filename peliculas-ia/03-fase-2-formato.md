@@ -7,8 +7,8 @@
 2. ✅ Estructura minuto a minuto (aprobada)
 3. ✅ Reglas de la anomalía (aprobadas)
 4. ✅ Planos: mezcla y proporción (aprobados)
-5. ⏳ **Diálogo, pensamientos y narrador** ← estamos aquí
-6. Ritmo: duración de los planos, giros, silencios
+5. ✅ Diálogo, pensamientos y narrador (aprobados, idioma: opción A)
+6. ⏳ **Ritmo** ← estamos aquí
 7. Finales: tipos y reparto
 8. Easter egg común
 9. Shorts: cómo se sacan de cada película
@@ -116,7 +116,7 @@ Una película de ~6 min tendrá **unos 70-90 planos** (media de 4-5 s por plano)
 
 ---
 
-## 5. Diálogo, pensamientos y narrador (propuesta)
+## 5. Diálogo, pensamientos y narrador ✅ APROBADOS
 
 ### Reparto aproximado del tiempo con voz
 | Voz | % del tiempo hablado | Para qué |
@@ -150,8 +150,40 @@ En el Titanic, los pasajeros hablarían inglés. Hay dos formas de resolverlo:
 - **A) Convención de cine: todos hablan español.** Los personajes de época hablan un español formal y neutro, y la anomalía habla con su acento de hoy. Es lo que hacen todas las películas dobladas y lo que permite la comedia del contraste. Se puede salpicar alguna palabra suelta en el idioma original para dar ambiente.
 - **B) Cada uno habla su idioma, con subtítulos.** Más realista, pero obliga a leer, cansa en el móvil y mata buena parte del humor.
 
-**Recomendación: A.**
+**✅ DECISIÓN: A, todos hablan español.**
 
 ### Subtítulos
 - **Películas:** subtítulos opcionales de YouTube (archivo .srt subido aparte, gratis). No se queman en la imagen, para no tapar el plano.
 - **Shorts:** subtítulos grabados en la imagen, grandes, porque mucha gente los ve sin sonido.
+
+---
+
+## 6. Ritmo (propuesta)
+
+### Duración de los planos según la parte
+| Parte | Duración media del plano | Sensación |
+|---|---|---|
+| Gancho | 1,5-3 s | Rápido, desconcertante |
+| Presentación | 4-6 s | Calma para situarse |
+| Desarrollo | 3-5 s | Ágil, con pausas para los chistes |
+| Conflicto | 3-4 s | Se acelera |
+| Clímax | 1,5-3 s, con **un plano largo de 6-8 s justo antes del momento clave** | Tensión y estallido |
+| Desenlace | 5-8 s | Respira, se asienta |
+
+### Los mini-giros (cada 40-60 s)
+Tipos para ir alternando: **una revelación** (algo que no sabíamos), **un malentendido**, **una amenaza nueva**, **un chiste que cambia la situación** y **una decisión** del protagonista.
+
+### La pregunta abierta
+En los primeros 60 segundos se plantea **una pregunta que solo se responde en el clímax**: *¿por qué tiene el móvil una foto del iceberg?*, *¿quién le está siguiendo?*. Es la técnica más eficaz para que la gente se quede hasta el final.
+
+### El ritmo de la comedia
+**Frase, pausa de medio segundo, plano de reacción.** El chiste no es la frase: es la cara del que la escucha.
+
+### Silencio
+**Un momento de silencio total** (sin música y casi sin sonido) justo antes del punto culminante del clímax. Después, todo vuelve de golpe.
+
+### Música y sonido
+- La música suena **alrededor del 60-70 % del tiempo**, no toda la película. Entra y sale con las emociones.
+- **El tema de la puerta:** una firma sonora de 3-4 notas que suena siempre en la cortinilla y en el sello final. Es la versión sonora del logo.
+- **El sonido de ambiente nunca falta:** viento, mar, murmullo, pasos. Es la mitad del realismo y lo que más delata un vídeo de IA cuando falta.
+- Las fuentes de música y efectos gratuitas se eligen en la Fase 3.
