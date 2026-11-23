@@ -5,4 +5,5 @@ Antología de cortometrajes "imposibles" creados con IA. Proyecto separado de *D
 | Documento | Estado |
 |---|---|
 | [00 · Prompt original](00-prompt-original.md) | — |
-| [01 · Análisis y Fase 1 (marca)](01-analisis-y-fase-1-marca.md) | Nombre elegido: Neido Studio. En curso: personalidad de marca |
+| [01 · Análisis y Fase 1 (marca)](01-analisis-y-fase-1-marca.md) | Nombre, tono, lema, logo, perfil, banner y marca de agua cerrados |
+| [02 · Dirección artística](02-direccion-artistica.md) | Propuesta pendiente de aprobación |
