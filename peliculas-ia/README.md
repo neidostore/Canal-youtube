@@ -8,4 +8,5 @@ Antología de cortometrajes "imposibles" creados con IA. Proyecto separado de *D
 | [01 · Análisis y Fase 1 (marca)](01-analisis-y-fase-1-marca.md) | Nombre, tono, lema, logo, perfil, banner y marca de agua cerrados |
 | [02 · Dirección artística](02-direccion-artistica.md) | ✅ Aprobada (Fase 1 cerrada) |
 | [03 · Fase 2: formato](03-fase-2-formato.md) | ✅ Cerrada |
-| [04 · Fase 3: producción](04-fase-3-produccion.md) | En curso: elegir camino |
+| [04 · Fase 3: producción](04-fase-3-produccion.md) | Camino C elegido; prueba técnica en preparación |
+| [05 · Prueba técnica](05-prueba-tecnica.md) | Prompts de Gemini listos |

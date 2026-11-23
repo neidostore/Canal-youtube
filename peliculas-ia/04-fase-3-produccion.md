@@ -55,3 +55,16 @@ Existen modelos de IA **de código abierto con licencia que permite uso comercia
 | **C) Híbrido**: imágenes con Gemini (a mano) + animación, voces y labios con modelos abiertos en Kaggle (lo lanza Claude) + montaje automático | Buena | ✅ / sin marca (a verificar Gemini) | Medio: solo las imágenes clave | Velocidad de Kaggle por confirmar |
 
 **Recomendación: C**, validado con la prueba técnica de 30-60 s.
+
+### ✅ DECISIÓN: camino C (híbrido)
+
+---
+
+## 4. Estado del acceso a Kaggle
+- Cuenta creada. Token guardado como secreto de red para `www.kaggle.com` y en `~/.kaggle/access_token` de esta sesión (archivo efímero, no está en el repositorio).
+- ⚠️ Los dos tokens que se escribieron en el chat están expuestos: **revocarlos** y crear uno nuevo fuera del chat.
+- ❌ Bloqueado: el programa oficial de Kaggle usa `api.kaggle.com`, que la red del entorno no permite. Desde el móvil la ventana de permiso solo ofrece "Denegar": hay que aprobarlo, o añadir `api.kaggle.com` en *Dominios permitidos* del entorno, **desde el ordenador o desde claude.ai/code en un navegador**.
+- Alternativa sin red: modo manual (el usuario ejecuta en Kaggle un cuaderno preparado por Claude).
+
+## 5. Prueba técnica
+Guion, fichas y prompts → [05-prueba-tecnica.md](05-prueba-tecnica.md).
