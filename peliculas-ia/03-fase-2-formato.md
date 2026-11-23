@@ -269,7 +269,8 @@ La idea inicial era 2 películas por semana. **A coste 0 € no es realista:** c
 - El canal arranca con varias películas, y quien llega por una puede ver otra.
 - Una semana mala (sin créditos, sin tiempo) no rompe el calendario.
 
-### Dato del usuario: **2-3 horas a la semana**, y automatizar con Claude todo lo posible
+### Dato del usuario: **unas 2 horas al día (~14 h/semana)**, y automatizar con Claude todo lo posible
+*(Corregido: en un primer momento se entendió 2-3 horas a la semana.)*
 
 #### Qué puede hacer Claude (sin coste y sin tu tiempo)
 | Tarea | Cómo |
@@ -291,4 +292,11 @@ La idea inicial era 2 películas por semana. **A coste 0 € no es realista:** c
 **Ventaja:** la generación se puede hacer **desde el móvil**, en ratos muertos, porque las herramientas son web. No necesita las 2-3 horas de ordenador.
 
 #### Estimación honesta (a confirmar en la prueba técnica)
-Una película de 5 min son ~60-70 planos. Generar, revisar y descargar cada plano lleva unos 3-5 min de trabajo tuyo (sin contar las esperas) → **4-6 horas por película**, repartidas en varios días por los límites de créditos. Con 2-3 h/semana: **una película cada 2-3 semanas como mucho**.
+Una película de 5 min son ~60-70 planos. Generar, revisar y descargar cada plano lleva unos 3-5 min de trabajo tuyo (sin contar las esperas) → **4-6 horas por película**, repartidas en varios días por los límites de créditos.
+Con ~14 h/semana, **el cuello de botella ya no es el tiempo sino los créditos gratuitos.**
+
+| Opción | Ritmo | Horas tuyas/semana | Créditos |
+|---|---|---|---|
+| **1 película/semana (5-7 min) + 3-4 Shorts** | Recomendado | ~6-9 h | Probablemente justo; hay que repartir entre varias herramientas |
+| 2 películas/semana | Idea original | ~10-14 h | Muy probablemente imposible a 0 € |
+
