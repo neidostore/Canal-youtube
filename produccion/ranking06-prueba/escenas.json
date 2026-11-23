@@ -31,13 +31,15 @@
   ]
  },
  "videos": {
-  "dinero": 855388,
-  "billetes": 855197,
-  "jugando": 4247319,
-  "mando": 4010132,
-  "cine": 7988162,
-  "cine2": 7988162,
-  "cola_tienda": 5332763
+  "deportivo": 5309381,
+  "dolares": 5466776,
+  "lluvia_dinero": 5912047,
+  "miami": 8524839,
+  "palmeras": 10867353,
+  "cascada": 6981404,
+  "cine3d": 7986788,
+  "esports": 7915032,
+  "rgb": 4810618
  },
  "videos_por_buscar": {
   "dinero": "money cash counting",
@@ -55,8 +57,8 @@
     {
      "t": "Este videojuego ganó en un solo día más dinero que casi cualquier película en toda su historia.",
      "vid": [
-      "dinero",
-      "jugando"
+      "deportivo",
+      "dolares"
      ],
      "marcas": [
       {
@@ -74,14 +76,16 @@
     {
      "t": "Ranking: lo que más rápido ha llegado a mil millones de dólares.",
      "vid": [
-      "billetes",
-      "mando"
+      "lluvia_dinero",
+      "miami",
+      "palmeras"
      ]
     },
     {
      "t": "Número cinco: Avatar, la película más taquillera de la historia. Tardó diecisiete días.",
      "vid": [
-      "cine"
+      "cascada",
+      "cine3d"
      ],
      "rank": {
       "n": 5,
@@ -110,8 +114,8 @@
     {
      "t": "Número cuatro: Call of Duty Modern Warfare dos. Diez días.",
      "vid": [
-      "mando",
-      "jugando"
+      "esports",
+      "rgb"
      ],
      "rank": {
       "n": 4,
