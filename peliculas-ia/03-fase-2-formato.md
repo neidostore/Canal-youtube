@@ -4,8 +4,8 @@
 
 ## Orden de decisiones
 1. ✅ Duración: **5-7 min, condicionada a coste 0 €**
-2. ⏳ **Estructura minuto a minuto** ← estamos aquí
-3. Reglas de la anomalía (qué vale como "película imposible" y qué no)
+2. ✅ Estructura minuto a minuto (aprobada)
+3. ⏳ **Reglas de la anomalía** ← estamos aquí
 4. Planos: mezcla y proporción (POV, generales, primeros planos, acción)
 5. Diálogo, pensamientos y narrador: cuánto de cada uno
 6. Ritmo: duración de los planos, giros, silencios
@@ -44,7 +44,7 @@
 
 ---
 
-## 2. Estructura minuto a minuto (propuesta para ~6 min)
+## 2. Estructura minuto a minuto ✅ APROBADA (referencia: ~6 min)
 
 | Tiempo | Parte | Qué pasa | Notas |
 |---|---|---|---|
@@ -59,3 +59,33 @@
 | 5:45-6:05 | **Sello final** | La puerta se cierra; "Película Nº 001"; pantalla final con la siguiente película | Los 20 últimos segundos sirven de pantalla final de YouTube |
 
 Proporciones si la película dura 5 o 7 minutos: se estiran o encogen sobre todo el desarrollo y el conflicto. El gancho, la cortinilla, el rótulo y el sello no cambian.
+
+---
+
+## 3. Reglas de la anomalía (propuesta)
+
+1. **Una sola anomalía por película.** Un personaje u objeto que no debería estar ahí. Todo lo demás es realista y coherente con su mundo.
+2. **La prueba de la frase.** La premisa se tiene que poder contar en menos de 12 palabras y provocar sonrisa o curiosidad al instante. *"Un colombiano aparece en el Titanic"* la pasa. Si hay que explicarla, no vale.
+3. **Mundos reconocibles al instante.** Escenarios icónicos que no necesitan explicación: el Titanic, la Roma de los gladiadores, el Egipto de las pirámides, la llegada a la Luna, los vikingos, el Lejano Oeste, el Japón de los samuráis, la Edad Media, el futuro lejano… Ahorran minutos de presentación y funcionan mejor en títulos y búsquedas.
+4. **La anomalía cambia la historia.** No es un chiste de fondo: tiene que mover la trama. Lleva **una ventaja y una desventaja** de su mundo. El colombiano sabe que el barco va a hundirse (ventaja), pero nadie le cree y no entiende las normas de 1912 (desventaja).
+5. **La puerta.** Nunca se explica del todo cómo llegó la anomalía. Solo se ve que **llega o se va a través de una puerta con luz cálida a un lado y fría al otro**, como la del logo. Es una mitología mínima que une todas las películas sin obligar a hacer segundas partes. El público teorizará en los comentarios.
+6. **Respeto.**
+   - Nada de personas reales como protagonistas ni poniéndoles palabras en la boca. En hechos reales, los personajes con los que habla la anomalía son inventados.
+   - Las tragedias reales (Titanic, guerras, catástrofes) se tratan con respeto: se puede reír en la película, pero nunca de las víctimas.
+   - Las culturas, con cariño: nos reímos con ellas, no de ellas.
+   - Ni política actual ni burla religiosa.
+7. **Que la IA pueda hacerlo.** Antes de aprobar una premisa se comprueba que no dependa de lo que la IA hace mal:
+   - Multitudes en acción.
+   - Manos manipulando objetos con precisión.
+   - Animales en movimiento complejo.
+   - Más de 3-4 personajes importantes.
+   - Textos legibles dentro de la imagen.
+
+### Ejemplos de premisas que cumplen las reglas
+| Premisa | Mundo | Ventaja / desventaja de la anomalía |
+|---|---|---|
+| Un colombiano aparece en el Titanic | 1912 | Sabe lo del iceberg / nadie le cree |
+| Una abuela gallega en la primera misión a Marte | Futuro | Nada la asusta y cocina con cualquier cosa / no entiende la tecnología |
+| Un repartidor con su bici eléctrica en la Roma de los gladiadores | Antigua Roma | Velocidad y un móvil con 3 % de batería / lo confunden con un dios o un demonio |
+| Un vikingo despierta en un centro comercial de hoy | Presente | Fuerza y valor / todo le parece brujería |
+| Un astronauta de 2150 aterriza en un pueblo andaluz en fiestas | Presente rural | Tecnología imposible / nadie se impresiona |
