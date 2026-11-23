@@ -43,9 +43,9 @@
 
 | Nº | Plano | Duración | Imagen | Sonido |
 |---|---|---|---|---|
-| 1 | General: el Titanic navegando de noche en mar en calma | 5 s | Imagen fija + acercamiento lento en el montaje. Rótulo: *Atlántico Norte · 14 de abril de 1912* | NARRADOR: *"14 de abril de 1912. Esta noche, en el barco más famoso del mundo, hay alguien que no debería estar aquí."* Mar, motores lejanos |
+| 1 | General: el Titanic navegando de noche en mar en calma | 8 s | Imagen fija + acercamiento lento en el montaje. Rótulo: *Atlántico Norte · 14 de abril de 1912* | NARRADOR: *"14 de abril de 1912. Esta noche, en el barco más famoso del mundo, hay alguien que no debería estar aquí."* Mar, motores lejanos |
 | 2 | POV: una puerta de servicio se abre a la cubierta; luz cálida delante, luz fría detrás | 3 s | Vídeo (Wan) | Puerta, viento |
-| 3 | Medio: Santi sale a la cubierta, mira alrededor, desconcertado | 4 s | Vídeo (Wan) | SANTI (pensamiento): *"Ush… esto no es el metro de Medellín."* |
+| 3 | Medio: Santi sale a la cubierta, mira alrededor, desconcertado | 4 s | Vídeo (Wan) | SANTI (pensamiento): *"Ave María… esto no es el metro de Medellín."* |
 | 4 | Inserto: su móvil en la mano, sin cobertura, 4:04 | 2 s | Imagen fija; la hora y "Sin servicio" se ponen en el montaje (easter egg) | Pitido de error suave |
 | 5 | Medio: Lady Margaret lo mira de arriba abajo desde la barandilla | 3 s | Vídeo (Wan), reacción sin hablar | Música de cuerda lejana del salón |
 | 6 | Medio-corto: Lady Margaret habla | 4 s | Vídeo + lip-sync | LADY MARGARET: *"¿Se ha perdido, caballero? Esta cubierta es de primera clase."* |
@@ -53,7 +53,7 @@
 | 8 | Medio: Lady Margaret, orgullosa, mirando al mar | 4 s | Vídeo (Wan); la voz va sobre el plano sin mover los labios en exceso (de perfil) | LADY MARGARET: *"El Titanic, por supuesto. El barco más seguro jamás construido."* |
 | 9 | Primer plano: la cara de Santi se descompone | 4 s | Vídeo (Wan), reacción | SANTI (pensamiento): *"Ay, no. No, no, no, no…"* Silencio total → corte a negro |
 
-Total con la cortinilla: ~45 s.
+Total con la cortinilla: ~48 s.
 
 ---
 

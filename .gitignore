@@ -4,3 +4,5 @@ produccion/**/trabajo/
 produccion/**/salida/
 produccion/**/ejemplo/
 __pycache__/
+peliculas-ia/producciones/**/salida/
+peliculas-ia/pipeline/cortinilla/frames/

@@ -1,0 +1,84 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Montserrat:wght@400;500&display=swap">
+<style>
+/* Cortinilla de Neido Studio: la I de NEIDO es una puerta que se abre y la luz inunda la pantalla.
+   Se anima fotograma a fotograma llamando a pintar(t), con t en segundos (0 a 4). */
+:root{--negro:#050608;--blanco:#EFEAE0;--oro:#C9A46A}
+html,body{margin:0;background:var(--negro);overflow:hidden}
+.lienzo{width:1920px;height:1080px;position:relative;overflow:hidden;background:var(--negro)}
+.escena{position:absolute;inset:0;transform-origin:961px 476px}
+.halo{position:absolute;left:50%;top:44%;width:900px;height:900px;transform:translate(-50%,-50%);
+ background:radial-gradient(ellipse 22% 40% at 47% 50%,rgba(255,165,60,.55),transparent 70%),
+            radial-gradient(ellipse 22% 40% at 53% 50%,rgba(50,190,225,.42),transparent 70%);filter:blur(30px)}
+.nombre{position:absolute;left:0;right:0;top:376px;display:flex;justify-content:center;align-items:center;
+ font-family:'Cormorant Garamond',serif;font-weight:600;font-size:260px;line-height:1;letter-spacing:10px;color:var(--blanco)}
+.nombre span{display:inline-block}
+.hueco{width:70px;height:200px;position:relative}
+.rendija{position:absolute;left:50%;top:-4px;width:8px;height:178px;transform:translateX(-50%);background:#fff;border-radius:1px;
+ filter:drop-shadow(-3px 0 4px #FFB45A) drop-shadow(-12px 0 18px rgba(255,160,60,.85)) drop-shadow(-36px 0 50px rgba(255,140,40,.5))
+        drop-shadow(3px 0 4px #63D8FF) drop-shadow(12px 0 18px rgba(80,200,240,.8)) drop-shadow(36px 0 50px rgba(120,110,255,.45))}
+.serifa{position:absolute;left:50%;transform:translateX(-50%);
+ background:linear-gradient(90deg,rgba(255,180,90,0),rgba(255,200,130,.95) 22%,#fff 50%,rgba(150,225,255,.95) 78%,rgba(99,216,255,0));
+ filter:drop-shadow(0 0 4px rgba(255,255,255,.8)) drop-shadow(-8px 0 10px rgba(255,160,60,.6)) drop-shadow(8px 0 10px rgba(80,200,240,.6))}
+.serifa.arriba{top:-7px;width:74px;height:3px}
+.serifa.abajo{top:172px;width:92px;height:4px}
+.presenta{position:absolute;left:0;right:0;top:690px;text-align:center;font-family:Montserrat;font-weight:400;font-size:40px;letter-spacing:20px;padding-left:20px;color:var(--blanco)}
+/* la luz que inunda la pantalla al abrirse la puerta */
+.inundacion{position:absolute;inset:0;opacity:0;
+ background:linear-gradient(90deg,#FFB45A 0%,#FFE7C2 30%,#FFFFFF 50%,#D6F4FF 70%,#63D8FF 100%)}
+.haz{position:absolute;top:0;bottom:0;left:50%;width:0;transform:translateX(-50%);opacity:0;
+ background:linear-gradient(90deg,rgba(255,180,90,0),#FFB45A 8%,#FFE7C2 30%,#fff 50%,#D6F4FF 70%,#63D8FF 92%,rgba(99,216,255,0))}
+.velo{position:absolute;inset:0;background:var(--negro);opacity:1}
+</style></head><body><div class="lienzo">
+ <div class="escena" id="escena">
+  <div class="halo" id="halo"></div>
+  <div class="nombre"><span class="letra">N</span><span class="letra">E</span><span class="hueco"><span class="rendija" id="rendija"></span><span class="serifa arriba" id="sa"></span><span class="serifa abajo" id="sb"></span></span><span class="letra">D</span><span class="letra">O</span></div>
+  <div class="presenta" id="presenta">STUDIO PRESENTA</div>
+ </div>
+ <div class="haz" id="haz"></div>
+ <div class="inundacion" id="inundacion"></div>
+ <div class="velo" id="velo"></div>
+</div>
+<script>
+const $=id=>document.getElementById(id);
+const clamp=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
+const tramo=(t,a,b)=>clamp((t-a)/(b-a));          // 0..1 entre a y b
+const suave=x=>x*x*(3-2*x);                       // ease in-out
+const acel=x=>x*x*x;                              // ease in
+var pintar=function(t){
+  // 0,0-0,7 s: aparece de la oscuridad
+  $('velo').style.opacity=1-suave(tramo(t,0,0.7));
+  // "STUDIO PRESENTA" entra y sale
+  $('presenta').style.opacity=suave(tramo(t,0.5,1.1))*(1-suave(tramo(t,1.9,2.3)));
+  // las letras se apagan cuando la puerta empieza a abrirse
+  const apagado=suave(tramo(t,1.9,2.6));
+  document.querySelectorAll('.letra').forEach(l=>l.style.opacity=1-apagado);
+  // la puerta se abre: la rendija se ensancha y las luces de arriba y abajo se alargan
+  const apertura=acel(tramo(t,1.8,3.0));
+  $('rendija').style.width=(8+apertura*220)+'px';
+  $('sa').style.width=(74+apertura*300)+'px';
+  $('sb').style.width=(92+apertura*360)+'px';
+  $('halo').style.transform=`translate(-50%,-50%) scale(${1+apertura*1.5})`;
+  // la cámara entra por la puerta
+  const zoom=1+acel(tramo(t,2.0,3.2))*1.6;
+  $('escena').style.transform=`scale(${zoom})`;
+  // la rendija se convierte en un haz de luz que se abre hasta llenar la pantalla
+  const haz=acel(tramo(t,2.5,3.4));
+  $('haz').style.opacity=suave(tramo(t,2.4,2.7));
+  $('haz').style.width=(40+haz*2400)+'px';
+  // la luz inunda la pantalla
+  $('inundacion').style.opacity=suave(tramo(t,2.8,3.5));
+};
+// centrar la cámara y el haz exactamente en la I (una vez cargadas las fuentes)
+let centrado=false;
+function centrar(){
+  const r=$('rendija').getBoundingClientRect();
+  const cx=r.left+r.width/2, cy=r.top+r.height/2;
+  $('escena').style.transformOrigin=cx+'px '+cy+'px';
+  $('haz').style.left=cx+'px'; centrado=true;
+}
+const pintarBase=pintar;
+pintar=function(t){ if(!centrado) centrar(); pintarBase(t); };
+document.fonts.ready.then(()=>{centrado=false;});
+pintar(0);
+</script></body></html>

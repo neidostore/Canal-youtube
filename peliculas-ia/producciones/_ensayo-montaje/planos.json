@@ -1,0 +1,180 @@
+{
+  "titulo": "Prueba técnica · Titanic",
+  "rotulo": "Atlántico Norte · 14 de abril de 1912",
+  "estilo": "Cinematic film still, photorealistic, shot on 35mm with a cinema camera, natural motivated lighting, realistic skin texture with pores and imperfections, subtle film grain, slightly muted natural colours, shallow depth of field, atmospheric haze, composed for a 2.39:1 widescreen crop with the important action in the central band",
+  "negativo": "text, watermark, logo, neon, oversaturated, plastic skin, cartoon, illustration, deformed hands, extra fingers, blurry face",
+  "personajes": {
+    "santi": {
+      "descripcion": "a 32-year-old Colombian man from Medellín, light brown skin, short black hair with shaved sides, short stubble beard, brown eyes, slim build, wearing a plain yellow t-shirt, an open blue denim jacket, dark jeans, white sneakers and a plain black cap with no logos",
+      "voz": {
+        "idioma": "es",
+        "acento": "colombiano de Medellín",
+        "tono": "masculina, 30-35 años, cálida, rápida, con humor"
+      }
+    },
+    "margaret": {
+      "descripcion": "a 55-year-old British aristocratic woman in 1912, fair skin, grey hair in a high bun, angular face with marked wrinkles, grey-blue eyes, wearing a dark burgundy Edwardian evening gown, a light fur stole, a pearl necklace and long ivory gloves",
+      "voz": {
+        "idioma": "es",
+        "acento": "español formal neutro",
+        "tono": "femenina, 55 años, aguda, altiva, pausada"
+      }
+    },
+    "narrador": {
+      "voz": {
+        "idioma": "es",
+        "acento": "español neutro",
+        "tono": "masculina, grave, serena, algo misteriosa"
+      }
+    }
+  },
+  "planos": [
+    {
+      "n": 1,
+      "duracion": 8.0,
+      "tipo": "imagen_fija",
+      "movimiento": "acercamiento",
+      "personajes": [],
+      "prompt": "Wide establishing shot of the RMS Titanic sailing at night on a perfectly calm, mirror-like North Atlantic, moonless sky full of stars, warm lights glowing from the portholes and decks, faint smoke from the funnels, cold atmosphere",
+      "audio": [
+        {
+          "quien": "narrador",
+          "texto": "Catorce de abril de mil novecientos doce. Esta noche, en el barco más famoso del mundo, hay alguien que no debería estar aquí."
+        }
+      ],
+      "rotulo": true,
+      "ambiente": "mar en calma, motores lejanos"
+    },
+    {
+      "n": 2,
+      "duracion": 3.0,
+      "tipo": "video",
+      "personajes": [],
+      "prompt": "Point-of-view shot from inside a dark narrow service corridor of a 1912 ocean liner, a wooden door opening onto the first-class promenade deck at night, warm golden light from the deck lamps spilling in, a faint cool cyan glow behind the viewer, wooden deck planks and a white railing visible through the door, starry sky",
+      "movimiento_video": "the door slowly swings open and the camera moves forward through it",
+      "audio": [],
+      "ambiente": "puerta, viento"
+    },
+    {
+      "n": 3,
+      "duracion": 4.0,
+      "tipo": "video",
+      "personajes": [
+        "santi"
+      ],
+      "vertical": true,
+      "prompt": "Medium shot of {santi} stepping out onto the first-class promenade deck of the Titanic at night in 1912, looking around confused and amazed, the bow to the right of the frame, wooden deck, white railing, lifeboats hanging above, warm electric wall lamps, breath visible in the cold air, starry sky",
+      "movimiento_video": "he takes a step forward and turns his head slowly, looking around",
+      "audio": [
+        {
+          "quien": "santi",
+          "tipo": "pensamiento",
+          "texto": "Ave María… esto no es el metro de Medellín."
+        }
+      ],
+      "ambiente": "viento, mar"
+    },
+    {
+      "n": 4,
+      "duracion": 2.0,
+      "tipo": "imagen_fija",
+      "movimiento": "leve",
+      "personajes": [
+        "santi"
+      ],
+      "prompt": "Close-up insert of a man's hand holding a modern smartphone with a black case, the screen glowing cool blue-white and blank, against the dark wooden deck of a 1912 ocean liner at night, warm lamp light in the background",
+      "superposicion": {
+        "texto": "4:04",
+        "subtexto": "Sin servicio"
+      },
+      "audio": [],
+      "ambiente": "pitido de error suave"
+    },
+    {
+      "n": 5,
+      "duracion": 3.0,
+      "tipo": "video",
+      "personajes": [
+        "margaret"
+      ],
+      "vertical": true,
+      "prompt": "Medium shot of {margaret} standing by the white railing of the Titanic's first-class promenade deck at night in 1912, looking at someone off-screen to the left with disdain and curiosity, one eyebrow raised, warm electric wall lamps, starry sky, calm black sea behind her, breath visible in the cold air",
+      "movimiento_video": "she slowly looks him up and down",
+      "audio": [],
+      "ambiente": "música de cuerda lejana"
+    },
+    {
+      "n": 6,
+      "duracion": 4.0,
+      "tipo": "lipsync",
+      "personajes": [
+        "margaret"
+      ],
+      "vertical": true,
+      "prompt": "Medium close-up of {margaret} on the Titanic's first-class deck at night in 1912, facing the camera slightly to the left, haughty expression, warm lamp light on her face, dark starry background softly blurred, face clearly visible and well lit",
+      "movimiento_video": "she speaks with a haughty expression, subtle head movement",
+      "audio": [
+        {
+          "quien": "margaret",
+          "texto": "¿Se ha perdido, caballero? Esta cubierta es de primera clase."
+        }
+      ],
+      "ambiente": "música de cuerda lejana"
+    },
+    {
+      "n": 7,
+      "duracion": 5.0,
+      "tipo": "lipsync",
+      "personajes": [
+        "santi"
+      ],
+      "vertical": true,
+      "prompt": "Medium close-up of {santi} on the Titanic's first-class deck at night in 1912, facing the camera slightly to the right, nervous friendly smile, warm lamp light on one side of his face, a faint cool blue glow from below from his phone, dark starry background softly blurred, face clearly visible and well lit",
+      "movimiento_video": "he speaks with a nervous friendly smile, small gestures",
+      "audio": [
+        {
+          "quien": "santi",
+          "texto": "¿Qué pasa, pues? Tranquila, mi señora… Oiga, una preguntica: ¿este barco cómo se llama?"
+        }
+      ],
+      "ambiente": "viento"
+    },
+    {
+      "n": 8,
+      "duracion": 4.0,
+      "tipo": "video",
+      "personajes": [
+        "margaret"
+      ],
+      "prompt": "Medium shot in profile of {margaret} looking proudly out at the calm black sea from the Titanic's railing at night in 1912, chin raised, warm lamp light outlining her profile, starry sky",
+      "movimiento_video": "she lifts her chin proudly, almost still",
+      "audio": [
+        {
+          "quien": "margaret",
+          "texto": "El Titanic, por supuesto. El barco más seguro jamás construido."
+        }
+      ],
+      "ambiente": "mar"
+    },
+    {
+      "n": 9,
+      "duracion": 4.0,
+      "tipo": "video",
+      "personajes": [
+        "santi"
+      ],
+      "vertical": true,
+      "prompt": "Close-up of the face of {santi} on the Titanic's deck at night in 1912, his expression collapsing into slowly dawning horror, eyes wide, the smile disappearing, warm lamp light from the side, dark background",
+      "movimiento_video": "his smile slowly fades into horror, eyes widening",
+      "audio": [
+        {
+          "quien": "santi",
+          "tipo": "pensamiento",
+          "texto": "Ay, no. No, no, no, no…"
+        }
+      ],
+      "ambiente": "silencio",
+      "final": "negro"
+    }
+  ]
+}

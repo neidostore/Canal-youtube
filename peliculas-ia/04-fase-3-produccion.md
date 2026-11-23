@@ -68,3 +68,9 @@ Existen modelos de IA **de código abierto con licencia que permite uso comercia
 
 ## 5. Prueba técnica
 Guion, fichas y prompts → [05-prueba-tecnica.md](05-prueba-tecnica.md).
+
+### Modo de trabajo: ✅ automático
+El usuario prefiere que Claude haga todo y él dé los ok. Por eso las imágenes también se generan con modelos abiertos en Kaggle (no con Gemini). Si la calidad no llega, plan B: el usuario hace en Gemini solo las hojas de personaje.
+
+## 6. Sistema de producción construido
+Ver [pipeline/README.md](pipeline/README.md). Cortinilla y montaje automático funcionando; etapas de Kaggle escritas, pendientes de acceso a `api.kaggle.com`.
