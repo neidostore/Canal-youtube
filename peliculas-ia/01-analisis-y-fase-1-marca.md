@@ -192,6 +192,7 @@ Frase secundaria opcional para la descripción del canal: *"Lo imposible, en ser
 5. ⏳ **Identidad visual** ← estamos aquí.
    - ✅ Dirección: **C, la grieta de luz** (rendija de luz cálida/fría; negro, ámbar-dorado y cian-violeta). Bocetos en `marca/bocetos/`.
    - ✅ **Foto de perfil definitiva:** puerta entreabierta generada con Gemini, con recorte más cerrado → `marca/final/perfil.jpg`. Probada en círculo a 160, 88 y 40 px.
+   - 💡 **Cortinilla (idea del usuario, aprobada como concepto):** la "I" de NEIDO es una puerta; se abre, la luz inunda la pantalla y de dentro sale el primer plano de la película. 3-4 s, personalizada en cada película. Va **después del gancho**, no al principio. Se hará con fotogramas clave en el editor (no con IA de vídeo, para que el texto no se deforme). Se define en Fase 2 (formato) y Fase 3 (montaje).
    - ⏳ Logo con texto, banner, marca de agua, plantilla de miniatura. Prompts en `marca/prompts-gemini.md`.
 6. Dirección artística: el "look" común de todas las películas.
 
