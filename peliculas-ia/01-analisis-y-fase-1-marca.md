@@ -171,7 +171,7 @@ Lección de la primera ronda: las palabras sueltas y comunes ya suelen estar cog
 1. ✅ Análisis del concepto.
 2. ✅ Nombre: **Neido Studio** (descartados por el camino: Anomalía, cogido; Mil Puertas y Gaves TV, no convencieron).
 3. ⏳ Reservar `@neidostudio` en YouTube, TikTok e Instagram (lo hace el usuario).
-4. ⏳ **Personalidad** ← estamos aquí de la marca (tono de los títulos, de las descripciones, de la comunidad).
+4. ⏳ **Personalidad de la marca** (tono de los títulos, de las descripciones, de la comunidad) ← estamos aquí.
 5. Identidad visual: logo, colores, tipografía, sello del número de película, marca de agua.
 6. Dirección artística: el "look" común de todas las películas.
 
