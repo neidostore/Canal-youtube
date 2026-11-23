@@ -9,8 +9,8 @@
 4. ✅ Planos: mezcla y proporción (aprobados)
 5. ✅ Diálogo, pensamientos y narrador (aprobados, idioma: opción A)
 6. ✅ Ritmo (aprobado)
-7. ⏳ **Finales** ← estamos aquí
-8. Easter egg común
+7. ✅ Finales (aprobados)
+8. ⏳ **Easter egg común** ← estamos aquí
 9. Shorts: cómo se sacan de cada película
 10. Frecuencia de publicación (orientativa; se confirma tras la prueba técnica de la Fase 3)
 
@@ -190,7 +190,7 @@ En los primeros 60 segundos se plantea **una pregunta que solo se responde en el
 
 ---
 
-## 7. Finales (propuesta)
+## 7. Finales ✅ APROBADOS
 
 ### Tipos y reparto orientativo (cada 10 películas)
 | Tipo | Nº | Ejemplo |
@@ -215,3 +215,18 @@ En los primeros 60 segundos se plantea **una pregunta que solo se responde en el
 - ❌ "Todo fue un sueño."
 - ❌ Dejarlo en suspenso para forzar una segunda parte.
 - ❌ Explicar qué es la puerta o de dónde sale.
+
+---
+
+## 8. Easter egg común (propuesta)
+
+La puerta ya no sirve como easter egg: aparece a la vista en todas las películas (regla 5 de la anomalía). Necesitamos algo **escondido**, que la gente tenga que buscar.
+
+| Opción | Qué es | A favor | En contra |
+|---|---|---|---|
+| **A) El reloj de las 4:04** | Un reloj (de bolsillo, de pared, digital, de sol…) siempre parado a las **4:04**, escondido en algún plano. 404 es el error de "no encontrado": algo que no debería estar ahí | Barato: un inserto o un detalle en el fondo. La hora se puede retocar en el editor si la IA la dibuja mal. Se adapta a cualquier época | Menos llamativo; hay que mirar con atención |
+| **B) El Portero** | El mismo desconocido (misma cara, mismo abrigo gris) aparece al fondo de todas las películas, en cualquier época, mirando a cámara un instante | Genera teorías y comentarios ("¿quién es?, ¿abre él las puertas?"). Muy potente para la comunidad | Exige mantener la misma cara entre películas: un riesgo de continuidad más, a coste 0 |
+| **C) Las dos, por etapas** | Empezar con el reloj y presentar al Portero cuando el sistema de continuidad esté probado | Lo barato ya, lo potente cuando sea fiable | El Portero tarda en llegar |
+
+### Recomendación: C
+Reloj de las 4:04 desde la Película Nº 001. El Portero entra cuando sepamos mantener caras de forma fiable (tras la Fase 3 y unas cuantas películas). Si alguien descubre el reloj en los comentarios, se le fija el comentario: premia a los que buscan.
