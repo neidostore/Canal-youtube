@@ -6,8 +6,8 @@
 1. ✅ Duración: **5-7 min, condicionada a coste 0 €**
 2. ✅ Estructura minuto a minuto (aprobada)
 3. ✅ Reglas de la anomalía (aprobadas)
-4. ⏳ **Planos: mezcla y proporción** ← estamos aquí
-5. Diálogo, pensamientos y narrador: cuánto de cada uno
+4. ✅ Planos: mezcla y proporción (aprobados)
+5. ⏳ **Diálogo, pensamientos y narrador** ← estamos aquí
 6. Ritmo: duración de los planos, giros, silencios
 7. Finales: tipos y reparto
 8. Easter egg común
@@ -92,7 +92,7 @@ Proporciones si la película dura 5 o 7 minutos: se estiran o encogen sobre todo
 
 ---
 
-## 4. Planos: mezcla y proporción (propuesta)
+## 4. Planos: mezcla y proporción ✅ APROBADOS
 
 Una película de ~6 min tendrá **unos 70-90 planos** (media de 4-5 s por plano). Cada tipo de plano tiene un coste distinto en créditos:
 
@@ -113,3 +113,45 @@ Una película de ~6 min tendrá **unos 70-90 planos** (media de 4-5 s por plano)
 4. **Nunca dos planos seguidos del mismo tipo y tamaño.** Es lo que evita que parezca una sucesión de imágenes.
 5. **Regla de los 180°:** si un personaje mira o camina hacia la derecha en un plano, lo sigue haciendo en el siguiente. Es la base de la continuidad espacial (se detallará en la Fase 3).
 6. **La acción se concentra en el clímax**, que es donde vale la pena gastar los créditos caros.
+
+---
+
+## 5. Diálogo, pensamientos y narrador (propuesta)
+
+### Reparto aproximado del tiempo con voz
+| Voz | % del tiempo hablado | Para qué |
+|---|---|---|
+| **Diálogos** entre personajes | ~60 % | La historia avanza a través de lo que se dicen |
+| **Pensamientos** del protagonista (voz en off) | ~30 % | Humor, ironía, miedo; lo que no puede decir en voz alta |
+| **Narrador** | ~10 % | Solo al principio y al final |
+
+Además, momentos sin voz: solo imagen, música y sonido. Son necesarios para que la película respire, sobre todo en el clímax.
+
+### El narrador: "la voz de Neido Studio"
+- **Una sola voz, la misma en todas las películas,** para siempre. Grave, serena, algo misteriosa. Es parte de la marca, como el logo.
+- Habla **solo dos veces**:
+  1. **Una frase de apertura**, sobre el rótulo de lugar y fecha: *"14 de abril de 1912. Esta noche, en el barco más famoso del mundo, hay alguien que no debería estar aquí."*
+  2. **Una o dos frases de cierre**, antes del sello final, con una reflexión o un guiño a la puerta.
+- Nunca explica lo que ya se ve.
+
+### Los pensamientos del protagonista
+- Voz en off con su acento y su forma de hablar. Es donde está gran parte del humor.
+- **Ahorran créditos:** no necesitan lip-sync y pueden ir sobre cualquier plano de reacción o POV.
+- **Romper la cuarta pared** (hablarle directamente al espectador): como mucho **2-3 veces por película**, para que no pierda la gracia.
+
+### Reglas de los diálogos
+1. **Frases cortas.** Nadie habla en párrafos. Si una frase no cabe en un plano de 4-5 s, se corta.
+2. **Acentos y expresiones reales, verificados**, no de chiste. Cada guion se revisa para que un colombiano, un andaluz o un mexicano se reconozca, no se sienta caricaturizado.
+3. **El contraste de registros es la comedia:** el lenguaje formal y antiguo de 1912 frente al *"¿Qué pasa, pues?"*.
+4. **Subtexto:** los personajes no dicen exactamente lo que sienten. Es lo que hace que suene a cine y no a teatro escolar.
+
+### La convención del idioma ⚠️ (decisión importante)
+En el Titanic, los pasajeros hablarían inglés. Hay dos formas de resolverlo:
+- **A) Convención de cine: todos hablan español.** Los personajes de época hablan un español formal y neutro, y la anomalía habla con su acento de hoy. Es lo que hacen todas las películas dobladas y lo que permite la comedia del contraste. Se puede salpicar alguna palabra suelta en el idioma original para dar ambiente.
+- **B) Cada uno habla su idioma, con subtítulos.** Más realista, pero obliga a leer, cansa en el móvil y mata buena parte del humor.
+
+**Recomendación: A.**
+
+### Subtítulos
+- **Películas:** subtítulos opcionales de YouTube (archivo .srt subido aparte, gratis). No se queman en la imagen, para no tapar el plano.
+- **Shorts:** subtítulos grabados en la imagen, grandes, porque mucha gente los ve sin sonido.
