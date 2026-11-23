@@ -11,8 +11,8 @@
 6. ✅ Ritmo (aprobado)
 7. ✅ Finales (aprobados)
 8. ✅ Easter egg (aprobado: opción C)
-9. ⏳ **Shorts** ← estamos aquí
-10. Frecuencia de publicación (orientativa; se confirma tras la prueba técnica de la Fase 3)
+9. ✅ Shorts (aprobados)
+10. ⏳ **Frecuencia de publicación (orientativa)** ← estamos aquí
 
 ---
 
@@ -233,7 +233,7 @@ Reloj de las 4:04 desde la Película Nº 001. El Portero entra cuando sepamos ma
 
 ---
 
-## 9. Shorts (propuesta)
+## 9. Shorts ✅ APROBADOS
 
 ### Cuántos y cuáles, por cada película
 | Short | Qué es | Cuándo se publica |
@@ -253,3 +253,21 @@ Reloj de las 4:04 desde la Película Nº 001. El Portero entra cuando sepamos ma
 
 ### Consecuencia para la producción ⚠️
 Los Shorts se sacan **recortando el centro** de los planos horizontales; no se generan planos aparte (gastaría créditos). Por eso, en los planos que vayan a ir a Shorts, **el personaje y la acción tienen que estar en el centro de la imagen**. Se marcará en el guion técnico qué planos son "aptos para vertical", y el bloque de ADN visual llevará esa instrucción en esos planos.
+
+---
+
+## 10. Frecuencia de publicación (propuesta orientativa)
+
+La idea inicial era 2 películas por semana. **A coste 0 € no es realista:** cada película de 5-7 min necesitará varios días de créditos gratuitos, además de las horas de trabajo. La cifra definitiva saldrá de la prueba técnica de la Fase 3, cuando sepamos cuánto cuesta de verdad un minuto.
+
+### Propuesta de partida
+- **1 película cada 2 semanas** + sus 4 Shorts (unos 2 Shorts por semana).
+- Si el sistema resulta más rápido de lo esperado, se sube a **1 película por semana**. Nunca más rápido de lo que se pueda mantener: la constancia pesa más que la cantidad.
+
+### Lanzamiento con colchón
+**No se publica nada hasta tener 2-3 películas terminadas.** Así:
+- El canal arranca con varias películas, y quien llega por una puede ver otra.
+- Una semana mala (sin créditos, sin tiempo) no rompe el calendario.
+
+### Dato que falta
+Para calcular la frecuencia real hace falta saber **cuántas horas a la semana puede dedicar el usuario** al canal.
