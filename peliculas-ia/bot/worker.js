@@ -297,14 +297,20 @@ async function configurarYouTube(url, req, env) {
   const redirect = `${url.protocol}//${url.host}/oauth/callback`;
   if (req.method === "POST") {
     const f = await req.formData();
-    const cid = String(f.get("client_id") || "").trim(), csec = String(f.get("client_secret") || "").trim();
+    const previo = (await env.KV.get("youtube", "json")) || {};
+    const cid = String(f.get("client_id") || "").trim() || previo.client_id || "", csec = String(f.get("client_secret") || "").trim() || previo.client_secret || "";
     if (!cid.endsWith(".apps.googleusercontent.com") || !csec) return pagina(`<h1 class="mal">Faltan datos</h1><p>El ID de cliente termina en <b>.apps.googleusercontent.com</b>. Vuelve atrás y revísalo.</p>`);
-    await env.KV.put("youtube", JSON.stringify({ client_id: cid, client_secret: csec }));
+    await env.KV.put("youtube", JSON.stringify({ ...previo, client_id: cid, client_secret: csec }));
     const auth = new URL("https://accounts.google.com/o/oauth2/v2/auth");
     auth.search = new URLSearchParams({ client_id: cid, redirect_uri: redirect, response_type: "code", scope: ALCANCES,
-      access_type: "offline", prompt: "consent", include_granted_scopes: "true", state: t }).toString();
+      access_type: "offline", prompt: "consent select_account", include_granted_scopes: "true", state: t }).toString();
     return Response.redirect(auth.toString(), 302);
   }
+  const previo = (await env.KV.get("youtube", "json")) || {};
+  if (previo.client_id) return pagina(`<h1>🎬 Reconectar Neido Studio con YouTube</h1>
+<p>Los datos de Google ya están guardados. Pulsa el botón y, cuando Google te pregunte, elige la cuenta <b>neidostore@gmail.com</b> (la del canal Neido Studio).</p>
+<form method="post"><button type="submit">Conectar con YouTube →</button></form>
+<p><small>Conectado ahora: ${esc(previo.canal || "ningún canal")}</small></p>`);
   return pagina(`<h1>🎬 Conectar Neido Studio con YouTube</h1>
 <p>Pega aquí los dos datos que te dio Google Cloud (pantalla "Cliente de OAuth creado").</p>
 <form method="post"><label>ID de cliente</label><input name="client_id" placeholder="123...-abc.apps.googleusercontent.com" required autocomplete="off">
