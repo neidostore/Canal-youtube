@@ -10,3 +10,4 @@ Antología de cortometrajes "imposibles" creados con IA. Proyecto separado de *D
 | [03 · Fase 2: formato](03-fase-2-formato.md) | ✅ Cerrada |
 | [04 · Fase 3: producción](04-fase-3-produccion.md) | Camino C elegido; prueba técnica en preparación |
 | [05 · Prueba técnica](05-prueba-tecnica.md) | Prompts de Gemini listos |
+| [06 · Bot de revisión por Telegram](06-bot-telegram.md) | Plan pendiente de aprobación |
