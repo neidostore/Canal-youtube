@@ -1,6 +1,12 @@
 # Neido Studio · Bot de revisión por Telegram (plan)
 
-> Estado: ✅ **plan aprobado**. Bot construido y probado en simulación; pendiente de instalar ([bot/GUIA-INSTALACION.md](bot/GUIA-INSTALACION.md)). Solo para Neido Studio (Shock Mental tendrá su propio bot en su conversación).
+> Estado: ✅ **bot instalado** (24/11/2026) en Cloudflare Workers por Claude a través de la API.
+> - Bot: **@NeidoStudioRevisionBot** · dirección: `https://neido-bot.neidostore.workers.dev`
+> - Almacenamiento: KV `neido-bot` (el token de Cloudflare no tiene permiso de D1; KV basta para un bot personal).
+> - Se activa solo (tarea cada 5 min que comprueba el webhook). El primero que escribe /start queda como dueño.
+> - Secretos en Cloudflare: TELEGRAM_TOKEN, WEBHOOK_SECRET, CLAUDE_KEY (nunca en el repositorio).
+> - Pendiente: dar a la sesión de Claude acceso al dominio del bot (formulario seguro con CLAUDE_KEY) y YouTube.
+> - La cuenta de Cloudflare tiene otros proyectos del usuario (diagnosticalo-ia, KV "DATOS"): no tocarlos. Solo para Neido Studio (Shock Mental tendrá su propio bot en su conversación).
 
 ## Cómo funciona (tres piezas)
 
@@ -49,7 +55,7 @@ Se ajustará con los datos reales de YouTube Studio (cuándo está conectada tu 
 | Qué | Dónde | Notas |
 |---|---|---|
 | 1. Crear el bot con BotFather | Móvil | Te da una clave (token). **No la escribas en el chat.** |
-| 2. Tu ID de Telegram | Móvil | No es secreto. El propio bot te lo dirá. |
+| 2. Tu ID de Telegram | — | Ya no hace falta: el primero que escribe /start queda como dueño. |
 | 3. Cuenta gratis de Cloudflare | PC o móvil | Sin tarjeta. |
 | 4. Pegar las claves en Cloudflare (Secrets) | Navegador | Así solo las conoce el bot. |
 | 5. Un permiso de Cloudflare para que Claude instale el bot | **PC** (formulario seguro) | |

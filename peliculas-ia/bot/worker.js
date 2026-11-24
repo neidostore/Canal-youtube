@@ -6,9 +6,12 @@
 //   Secretos:  TELEGRAM_TOKEN   clave del bot que da BotFather
 //              WEBHOOK_SECRET   una palabra secreta inventada (letras y números)
 //              CLAUDE_KEY       otra palabra secreta inventada, para que Claude hable con el bot
-//              OWNER_ID         tu ID de Telegram (el bot te lo dice con /id; mientras no esté puesto, responde a cualquiera solo con su ID)
+//              OWNER_ID         (opcional) tu ID de Telegram. Si no se pone, el PRIMERO que escriba /start queda como dueño
+//                               y nadie más puede usar el bot.
+//   Variable:  BASE_URL         dirección del bot (https://neido-bot.<subdominio>.workers.dev), para activar el webhook
+//   Tarea programada (cron) cada minuto: comprueba que el webhook esté activo y, si no, lo activa.
 //   Opcionales (YouTube, más adelante): YT_CLIENT_ID, YT_CLIENT_SECRET, YT_REFRESH_TOKEN
-//   Base de datos D1 enlazada con el nombre: DB
+//   Almacenamiento KV enlazado con el nombre: KV  (todo el estado se guarda en una sola clave JSON)
 //
 // Instalación del webhook: abrir en el navegador  https://<tu-worker>.workers.dev/instalar?clave=<WEBHOOK_SECRET>
 // =====================================================================================
@@ -26,7 +29,7 @@ export default {
   async fetch(req, env) {
     const url = new URL(req.url);
     try {
-      await prepararBD(env);
+      env.OWNER = env.OWNER_ID || (await leer(env)).ajustes.dueno || null;
       if (url.pathname === "/instalar") return instalar(url, env);
       if (url.pathname === `/telegram/${env.WEBHOOK_SECRET}` && req.method === "POST") {
         if (req.headers.get("X-Telegram-Bot-Api-Secret-Token") !== env.WEBHOOK_SECRET) return new Response("no", { status: 403 });
@@ -42,25 +45,22 @@ export default {
       return json({ error: String(e && e.stack || e) }, 500);
     }
   },
+  // Cada minuto: si el webhook no apunta a este bot, lo activa (así la instalación no necesita pasos manuales)
+  async scheduled(evento, env) {
+    if (!env.BASE_URL || !env.TELEGRAM_TOKEN) return;
+    const esperado = `${env.BASE_URL}/telegram/${env.WEBHOOK_SECRET}`;
+    const info = await tg(env, "getWebhookInfo", {});
+    if (info.ok && info.result.url === esperado) return;
+    await instalar(new URL(`${env.BASE_URL}/instalar?clave=${env.WEBHOOK_SECRET}`), env);
+  },
 };
 
-// ---------------------------------------------------------------- base de datos
-async function prepararBD(env) {
-  await env.DB.batch([
-    env.DB.prepare(`CREATE TABLE IF NOT EXISTS revisiones (
-      id INTEGER PRIMARY KEY AUTOINCREMENT, tipo TEXT, titulo TEXT, descripcion TEXT, etiquetas TEXT,
-      version INTEGER DEFAULT 1, estado TEXT DEFAULT 'pendiente', enlace TEXT, publicar_en TEXT, youtube_id TEXT,
-      creado TEXT DEFAULT (datetime('now')), actualizado TEXT DEFAULT (datetime('now')))`),
-    env.DB.prepare(`CREATE TABLE IF NOT EXISTS cambios (
-      id INTEGER PRIMARY KEY AUTOINCREMENT, revision_id INTEGER, texto TEXT, voz_file_id TEXT,
-      atendido INTEGER DEFAULT 0, creado TEXT DEFAULT (datetime('now')))`),
-    env.DB.prepare(`CREATE TABLE IF NOT EXISTS ideas (
-      id INTEGER PRIMARY KEY AUTOINCREMENT, texto TEXT, usada INTEGER DEFAULT 0, creado TEXT DEFAULT (datetime('now')))`),
-    env.DB.prepare(`CREATE TABLE IF NOT EXISTS ajustes (clave TEXT PRIMARY KEY, valor TEXT)`),
-  ]);
-}
-const ajuste = async (env, k) => (await env.DB.prepare("SELECT valor FROM ajustes WHERE clave=?").bind(k).first())?.valor ?? null;
-const fijar = (env, k, v) => env.DB.prepare("INSERT INTO ajustes(clave,valor) VALUES(?,?) ON CONFLICT(clave) DO UPDATE SET valor=excluded.valor").bind(k, v).run();
+// ---------------------------------------------------------------- almacenamiento (KV)
+// Un bot personal mueve muy pocos datos: se guarda todo en una sola clave JSON.
+const VACIO = () => ({ seq: { rev: 0, cambio: 0, idea: 0 }, revisiones: [], cambios: [], ideas: [], ajustes: {} });
+async function leer(env) { return (await env.KV.get("estado", "json")) || VACIO(); }
+async function guardar(env, e) { await env.KV.put("estado", JSON.stringify(e)); }
+const ahora = () => new Date().toISOString().slice(0, 16).replace("T", " ");
 
 // ---------------------------------------------------------------- Telegram
 async function tg(env, metodo, datos) {
@@ -69,7 +69,7 @@ async function tg(env, metodo, datos) {
   });
   return r.json();
 }
-const decir = (env, texto, extra = {}) => tg(env, "sendMessage", { chat_id: env.OWNER_ID, text: texto, parse_mode: "HTML", disable_web_page_preview: true, ...extra });
+const decir = (env, texto, extra = {}) => tg(env, "sendMessage", { chat_id: env.OWNER, text: texto, parse_mode: "HTML", disable_web_page_preview: true, ...extra });
 const esc = (t) => String(t ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 const botones = (id) => ({ inline_keyboard: [[
   { text: "✅ Aprobar", callback_data: `aprobar:${id}` },
@@ -111,12 +111,14 @@ Comandos:
 async function atenderTelegram(u, env) {
   const de = u.message?.from?.id ?? u.callback_query?.from?.id;
   const chat = u.message?.chat?.id ?? u.callback_query?.message?.chat?.id;
-  // Mientras no hay dueño configurado, el bot solo dice el ID a quien le escriba (para la instalación).
-  if (!env.OWNER_ID) {
-    if (chat) await tg(env, "sendMessage", { chat_id: chat, text: `Tu ID de Telegram es: ${de}\nCópialo en Cloudflare como OWNER_ID.` });
-    return;
+  // Sin dueño todavía: el primero que escriba se queda como dueño (el bot es nuevo y nadie más lo conoce).
+  if (!env.OWNER) {
+    if (!de || u.message?.chat?.type !== "private") return;
+    const e = await leer(env); e.ajustes.dueno = de; await guardar(env, e); env.OWNER = de;
+    await decir(env, `🔐 Listo: a partir de ahora este bot solo te responde a ti (ID ${de}).`);
+    return decir(env, AYUDA);
   }
-  if (String(de) !== String(env.OWNER_ID)) return; // cualquier otra persona: silencio total
+  if (String(de) !== String(env.OWNER)) return; // cualquier otra persona: silencio total
 
   if (u.callback_query) return botonPulsado(u.callback_query, env);
   const m = u.message; if (!m) return;
@@ -129,22 +131,24 @@ async function atenderTelegram(u, env) {
   if (cmd === "idea") {
     const idea = resto;
     if (!idea) return decir(env, "Escribe la idea detrás del comando, por ejemplo:\n<code>/idea Un vikingo en un centro comercial</code>");
-    const r = await env.DB.prepare("INSERT INTO ideas(texto) VALUES(?)").bind(idea).run();
-    return decir(env, `💡 Idea nº ${r.meta.last_row_id} guardada. La tendré en cuenta para los próximos vídeos.`);
+    const e = await leer(env); const n = ++e.seq.idea;
+    e.ideas.push({ id: n, texto: idea, usada: 0, creado: ahora() }); await guardar(env, e);
+    return decir(env, `💡 Idea nº ${n} guardada. La tendré en cuenta para los próximos vídeos.`);
   }
   if (cmd === "ideas") {
-    const { results } = await env.DB.prepare("SELECT id,texto,usada FROM ideas ORDER BY id DESC LIMIT 30").all();
+    const results = (await leer(env)).ideas.slice(-30).reverse();
     if (!results.length) return decir(env, "Todavía no hay ideas. Guarda una con /idea");
     return decir(env, "💡 <b>Ideas</b>\n" + results.map(i => `${i.usada ? "✔️" : "•"} ${i.id}. ${esc(i.texto)}`).join("\n"));
   }
   if (cmd === "pendientes") return listarPendientes(env);
 
   // Texto o audio: si se estaban pidiendo cambios, se guardan como cambios de esa revisión
-  const esperando = await ajuste(env, "esperando_cambios");
+  const e = await leer(env);
+  const esperando = e.ajustes.esperando_cambios;
   if (esperando && (texto || m.voice || m.audio)) {
     const voz = m.voice?.file_id || m.audio?.file_id || null;
-    await env.DB.prepare("INSERT INTO cambios(revision_id,texto,voz_file_id) VALUES(?,?,?)").bind(Number(esperando), texto || null, voz).run();
-    await fijar(env, "esperando_cambios", "");
+    e.cambios.push({ id: ++e.seq.cambio, revision_id: esperando, texto: texto || null, voz_file_id: voz, atendido: 0, creado: ahora() });
+    e.ajustes.esperando_cambios = null; await guardar(env, e);
     return decir(env, `📝 Anotado para la revisión nº ${esperando}${voz ? " (audio recibido)" : ""}. Lo aplicaré en la próxima pasada (como mucho, 1 hora) y te mandaré la versión nueva.\n\nSi quieres añadir algo más, vuelve a pulsar ✏️ Pedir cambios.`);
   }
   return decir(env, "No he entendido el mensaje. Usa /ayuda para ver lo que puedo hacer.\nSi quieres pedir cambios, pulsa primero ✏️ en el vídeo correspondiente.");
@@ -153,18 +157,19 @@ async function atenderTelegram(u, env) {
 async function botonPulsado(q, env) {
   const [accion, idTxt] = (q.data || "").split(":");
   const id = Number(idTxt);
-  const rev = await env.DB.prepare("SELECT * FROM revisiones WHERE id=?").bind(id).first();
+  const e = await leer(env);
+  const rev = e.revisiones.find(r => r.id === id);
   await tg(env, "answerCallbackQuery", { callback_query_id: q.id });
   if (!rev) return decir(env, "No encuentro esa revisión.");
   if (["programado", "publicado"].includes(rev.estado)) return decir(env, `La revisión nº ${id} ya está ${ESTADOS[rev.estado].toLowerCase()}.`);
-  const poner = (e) => env.DB.prepare("UPDATE revisiones SET estado=?, actualizado=datetime('now') WHERE id=?").bind(e, id).run();
+  const poner = async (est, extra = {}) => { rev.estado = est; rev.actualizado = ahora(); Object.assign(e.ajustes, extra); await guardar(env, e); };
 
   if (accion === "aprobar") {
     await poner("aprobado");
     return decir(env, `✅ <b>${esc(rev.titulo)}</b> aprobado. En la próxima pasada lo programo en YouTube y te confirmo el día y la hora.`);
   }
   if (accion === "cambios") {
-    await poner("cambios"); await fijar(env, "esperando_cambios", String(id));
+    await poner("cambios", { esperando_cambios: id });
     return decir(env, `✏️ ¿Qué quieres cambiar de <b>${esc(rev.titulo)}</b>?\nEscríbemelo o mándame un audio.`);
   }
   if (accion === "descartar") {
@@ -176,8 +181,7 @@ async function botonPulsado(q, env) {
 }
 
 async function listarPendientes(env) {
-  const { results } = await env.DB.prepare(
-    "SELECT id,tipo,titulo,estado,version,publicar_en FROM revisiones WHERE estado IN ('pendiente','cambios','aprobado','programado') ORDER BY id").all();
+  const results = (await leer(env)).revisiones.filter(r => ["pendiente", "cambios", "aprobado", "programado"].includes(r.estado));
   if (!results.length) return decir(env, "No hay nada pendiente. 🎉");
   const lineas = results.map(r => `<b>${r.id}.</b> ${r.tipo === "short" ? "📱" : "🎬"} ${esc(r.titulo)} (v${r.version})\n    ${ESTADOS[r.estado]}${r.publicar_en ? ` · ${esc(r.publicar_en)}` : ""}`);
   return decir(env, "📋 <b>Pendientes</b>\n\n" + lineas.join("\n\n"));
@@ -191,17 +195,19 @@ async function api(url, req, env) {
   if (ruta === "revision" && req.method === "POST") {
     const form = await req.formData();
     const d = JSON.parse(form.get("datos"));
-    let id = d.id;
-    if (id) await env.DB.prepare("UPDATE revisiones SET titulo=?,descripcion=?,etiquetas=?,version=version+1,estado='pendiente',enlace=?,actualizado=datetime('now') WHERE id=?")
-      .bind(d.titulo, d.descripcion, (d.etiquetas || []).join(", "), d.enlace || null, id).run();
-    else id = (await env.DB.prepare("INSERT INTO revisiones(tipo,titulo,descripcion,etiquetas,enlace) VALUES(?,?,?,?,?)")
-      .bind(d.tipo, d.titulo, d.descripcion, (d.etiquetas || []).join(", "), d.enlace || null).run()).meta.last_row_id;
-    const rev = await env.DB.prepare("SELECT * FROM revisiones WHERE id=?").bind(id).first();
+    const e = await leer(env);
+    let rev = d.id ? e.revisiones.find(r => r.id === d.id) : null;
+    const etiquetas = (d.etiquetas || []).join(", ");
+    if (rev) Object.assign(rev, { titulo: d.titulo, descripcion: d.descripcion, etiquetas, version: rev.version + 1, estado: "pendiente", enlace: d.enlace || null, actualizado: ahora() });
+    else { rev = { id: ++e.seq.rev, tipo: d.tipo, titulo: d.titulo, descripcion: d.descripcion, etiquetas, version: 1, estado: "pendiente",
+                   enlace: d.enlace || null, publicar_en: null, youtube_id: null, creado: ahora(), actualizado: ahora() }; e.revisiones.push(rev); }
+    await guardar(env, e);
+    const id = rev.id;
     const cabecera = `${rev.tipo === "short" ? "📱 SHORT" : "🎬 PELÍCULA"} · revisión nº ${id} · versión ${rev.version}`;
     const video = form.get("video");
     if (video && typeof video !== "string") {
       const f = new FormData();
-      f.append("chat_id", env.OWNER_ID); f.append("caption", `${cabecera}\n${rev.titulo}`.slice(0, 1000));
+      f.append("chat_id", env.OWNER); f.append("caption", `${cabecera}\n${rev.titulo}`.slice(0, 1000));
       f.append("supports_streaming", "true"); f.append("video", video, video.name || "video.mp4");
       const r = await (await fetch(`https://api.telegram.org/bot${env.TELEGRAM_TOKEN}/sendVideo`, { method: "POST", body: f })).json();
       if (!r.ok) return json({ error: "Telegram rechazó el vídeo", detalle: r }, 502);
@@ -214,10 +220,11 @@ async function api(url, req, env) {
 
   // Lo que Claude tiene que hacer: aprobados sin programar y cambios sin atender
   if (ruta === "tareas") {
-    const aprobados = (await env.DB.prepare("SELECT * FROM revisiones WHERE estado='aprobado' ORDER BY id").all()).results;
-    const cambios = (await env.DB.prepare(
-      "SELECT c.*, r.titulo, r.tipo, r.version FROM cambios c JOIN revisiones r ON r.id=c.revision_id WHERE c.atendido=0 ORDER BY c.id").all()).results;
-    const ideas = (await env.DB.prepare("SELECT * FROM ideas WHERE usada=0 ORDER BY id").all()).results;
+    const e = await leer(env);
+    const aprobados = e.revisiones.filter(r => r.estado === "aprobado");
+    const cambios = e.cambios.filter(c => !c.atendido).map(c => { const r = e.revisiones.find(x => x.id === c.revision_id) || {};
+      return { ...c, titulo: r.titulo, tipo: r.tipo, version: r.version }; });
+    const ideas = e.ideas.filter(i => !i.usada);
     return json({ aprobados, cambios, ideas });
   }
 
@@ -231,10 +238,12 @@ async function api(url, req, env) {
   // Marcar cambios como atendidos, actualizar estado de una revisión, ideas usadas
   if (ruta === "actualizar" && req.method === "POST") {
     const d = await req.json();
-    if (d.cambios_atendidos?.length) for (const c of d.cambios_atendidos) await env.DB.prepare("UPDATE cambios SET atendido=1 WHERE id=?").bind(c).run();
-    if (d.ideas_usadas?.length) for (const i of d.ideas_usadas) await env.DB.prepare("UPDATE ideas SET usada=1 WHERE id=?").bind(i).run();
-    if (d.id) await env.DB.prepare("UPDATE revisiones SET estado=COALESCE(?,estado), publicar_en=COALESCE(?,publicar_en), youtube_id=COALESCE(?,youtube_id), actualizado=datetime('now') WHERE id=?")
-      .bind(d.estado || null, d.publicar_en || null, d.youtube_id || null, d.id).run();
+    const e = await leer(env);
+    for (const c of e.cambios) if ((d.cambios_atendidos || []).includes(c.id)) c.atendido = 1;
+    for (const i of e.ideas) if ((d.ideas_usadas || []).includes(i.id)) i.usada = 1;
+    const rev = d.id ? e.revisiones.find(r => r.id === d.id) : null;
+    if (rev) { for (const k of ["estado", "publicar_en", "youtube_id"]) if (d[k]) rev[k] = d[k]; rev.actualizado = ahora(); }
+    await guardar(env, e);
     if (d.mensaje) await decir(env, d.mensaje);
     return json({ ok: true });
   }
