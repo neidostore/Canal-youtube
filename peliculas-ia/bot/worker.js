@@ -31,6 +31,8 @@ export default {
     try {
       env.OWNER = env.OWNER_ID || (await leer(env)).ajustes.dueno || null;
       if (url.pathname === "/instalar") return instalar(url, env);
+      if (url.pathname === "/configurar") return configurarYouTube(url, req, env);
+      if (url.pathname === "/oauth/callback") return callbackYouTube(url, env);
       if (url.pathname === `/telegram/${env.WEBHOOK_SECRET}` && req.method === "POST") {
         if (req.headers.get("X-Telegram-Bot-Api-Secret-Token") !== env.WEBHOOK_SECRET) return new Response("no", { status: 403 });
         await atenderTelegram(await req.json(), env);
@@ -259,14 +261,66 @@ async function api(url, req, env) {
 
   // Token de acceso de YouTube (lo genera el bot con los secretos; Claude nunca ve el refresh token)
   if (ruta === "youtube-token") {
-    if (!env.YT_REFRESH_TOKEN) return json({ error: "YouTube todavía no está configurado" }, 409);
+    const yt = (await env.KV.get("youtube", "json")) || {};
+    const cid = env.YT_CLIENT_ID || yt.client_id, csec = env.YT_CLIENT_SECRET || yt.client_secret, rt = env.YT_REFRESH_TOKEN || yt.refresh_token;
+    if (!rt) return json({ error: "YouTube todavía no está configurado" }, 409);
     const r = await fetch("https://oauth2.googleapis.com/token", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams({ client_id: env.YT_CLIENT_ID, client_secret: env.YT_CLIENT_SECRET, refresh_token: env.YT_REFRESH_TOKEN, grant_type: "refresh_token" }) });
+      body: new URLSearchParams({ client_id: cid, client_secret: csec, refresh_token: rt, grant_type: "refresh_token" }) });
     const t = await r.json();
     return json({ access_token: t.access_token, expires_in: t.expires_in, error: t.error });
   }
 
   return json({ error: "ruta desconocida" }, 404);
+}
+
+// ---------------------------------------------------------------- conexión con YouTube (OAuth)
+// Claude deja en KV una clave de un solo uso ("config_token"). El usuario abre /configurar?t=<clave>, pega el
+// ID y el secreto de cliente de Google, autoriza su canal y el bot guarda la autorización en KV. Nada pasa por el chat.
+const ALCANCES = "https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/youtube.readonly";
+const pagina = (cuerpo) => new Response(`<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Neido Studio · Conectar YouTube</title><style>body{font-family:system-ui,sans-serif;background:#07080B;color:#EFEAE0;max-width:560px;margin:0 auto;padding:24px 16px;line-height:1.5}
+h1{font-size:22px}label{display:block;margin:18px 0 6px}input{width:100%;box-sizing:border-box;padding:12px;border-radius:8px;border:1px solid #444;background:#15171c;color:#fff;font-size:16px}
+button{margin-top:24px;width:100%;padding:14px;border:0;border-radius:8px;background:#C9A46A;color:#07080B;font-size:17px;font-weight:600}.ok{color:#7ddc9b}.mal{color:#ff8a80}small{color:#aaa}</style></head><body>${cuerpo}</body></html>`,
+  { headers: { "Content-Type": "text/html; charset=utf-8" } });
+
+async function configurarYouTube(url, req, env) {
+  const t = url.searchParams.get("t"); const valido = t && t === (await env.KV.get("config_token"));
+  if (!valido) return pagina(`<h1 class="mal">Enlace caducado o no válido</h1><p>Pídele a Claude un enlace nuevo.</p>`);
+  const redirect = `${url.protocol}//${url.host}/oauth/callback`;
+  if (req.method === "POST") {
+    const f = await req.formData();
+    const cid = String(f.get("client_id") || "").trim(), csec = String(f.get("client_secret") || "").trim();
+    if (!cid.endsWith(".apps.googleusercontent.com") || !csec) return pagina(`<h1 class="mal">Faltan datos</h1><p>El ID de cliente termina en <b>.apps.googleusercontent.com</b>. Vuelve atrás y revísalo.</p>`);
+    await env.KV.put("youtube", JSON.stringify({ client_id: cid, client_secret: csec }));
+    const auth = new URL("https://accounts.google.com/o/oauth2/v2/auth");
+    auth.search = new URLSearchParams({ client_id: cid, redirect_uri: redirect, response_type: "code", scope: ALCANCES,
+      access_type: "offline", prompt: "consent", include_granted_scopes: "true", state: t }).toString();
+    return Response.redirect(auth.toString(), 302);
+  }
+  return pagina(`<h1>🎬 Conectar Neido Studio con YouTube</h1>
+<p>Pega aquí los dos datos que te dio Google Cloud (pantalla "Cliente de OAuth creado").</p>
+<form method="post"><label>ID de cliente</label><input name="client_id" placeholder="123...-abc.apps.googleusercontent.com" required autocomplete="off">
+<label>Secreto del cliente</label><input name="client_secret" placeholder="GOCSPX-..." required autocomplete="off">
+<button type="submit">Conectar con YouTube →</button></form>
+<p><small>Después Google te pedirá elegir la cuenta: elige la del canal <b>Neido Studio</b>. Si sale "Google no ha verificado esta aplicación", pulsa <b>Avanzado</b> → <b>Ir a … (no seguro)</b>: la aplicación es tuya.</small></p>`);
+}
+
+async function callbackYouTube(url, env) {
+  const t = url.searchParams.get("state");
+  if (!t || t !== (await env.KV.get("config_token"))) return pagina(`<h1 class="mal">Enlace caducado</h1><p>Pídele a Claude un enlace nuevo.</p>`);
+  if (url.searchParams.get("error")) return pagina(`<h1 class="mal">No se ha autorizado</h1><p>Google dice: ${esc(url.searchParams.get("error"))}. Puedes volver a intentarlo con el mismo enlace.</p>`);
+  const yt = (await env.KV.get("youtube", "json")) || {};
+  const r = await (await fetch("https://oauth2.googleapis.com/token", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams({ code: url.searchParams.get("code"), client_id: yt.client_id, client_secret: yt.client_secret,
+      redirect_uri: `${url.protocol}//${url.host}/oauth/callback`, grant_type: "authorization_code" }) })).json();
+  if (!r.refresh_token) return pagina(`<h1 class="mal">Google no ha devuelto la autorización</h1><p>${esc(r.error_description || r.error || "Sin detalle")}</p>`);
+  // canal autorizado
+  const c = await (await fetch("https://www.googleapis.com/youtube/v3/channels?part=snippet&mine=true", { headers: { Authorization: `Bearer ${r.access_token}` } })).json();
+  const canal = c.items?.[0]?.snippet?.title || "(sin canal)";
+  await env.KV.put("youtube", JSON.stringify({ ...yt, refresh_token: r.refresh_token, canal, canal_id: c.items?.[0]?.id || null, conectado: new Date().toISOString() }));
+  await env.KV.delete("config_token");
+  if (env.OWNER || (await leer(env)).ajustes.dueno) { env.OWNER = env.OWNER || (await leer(env)).ajustes.dueno; await decir(env, `📺 YouTube conectado al canal <b>${esc(canal)}</b>.`); }
+  return pagina(`<h1 class="ok">✅ YouTube conectado</h1><p>Canal autorizado: <b>${esc(canal)}</b></p><p>Ya puedes cerrar esta página y volver con Claude.</p>`);
 }
 
 function json(o, status = 200) {
