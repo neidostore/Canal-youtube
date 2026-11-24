@@ -545,15 +545,20 @@ def main(carpeta):
         pistas_extra.append((RAIZ / m["archivo"], m.get("volumen", 0.10)))
 
     # 7) montaje final: vídeo + subtítulos + voz (normalizada)
-    entradas, mezcla = ["-i", str(trabajo / "video_mudo.mp4"), "-i", str(trabajo / "narracion.wav")], "[1:a]aformat=sample_rates=48000:channel_layouts=stereo[v0];"
+    # El audio se mezcla APARTE (mezcla.wav): metido en el mismo filtro que las capas del vídeo, ffmpeg dejaba
+    # huecos de silencio en la voz (visto en el ranking 06, ffmpeg 9 en Windows).
+    ent_a, mezcla = ["-i", str(trabajo / "narracion.wav")], "[0:a]aformat=sample_rates=48000:channel_layouts=stereo[v0];"
     etiquetas = ["[v0]"]
-    for k, (f, vol) in enumerate(pistas_extra, start=2):
+    for k, (f, vol) in enumerate(pistas_extra, start=1):
         bucle = ["-stream_loop", "-1"] if "musica" in str(f) else []
-        entradas += [*bucle, "-i", str(f)]
+        ent_a += [*bucle, "-i", str(f)]
         fade = f",afade=t=in:d=2,afade=t=out:st={max(0, t-3):.2f}:d=3" if bucle else ""
         mezcla += f"[{k}:a]aformat=sample_rates=48000:channel_layouts=stereo,volume={vol},atrim=0:{t:.2f}{fade}[x{k}];"
         etiquetas.append(f"[x{k}]")
     mezcla += "".join(etiquetas) + f"amix=inputs={len(etiquetas)}:normalize=0:duration=first,loudnorm=I=-14:TP=-1.5:LRA=11[a]"
+    sh("ffmpeg", "-y", *ent_a, "-filter_complex", mezcla, "-map", "[a]", "-ar", "48000", "-c:a", "pcm_s16le",
+       str(trabajo / "mezcla.wav"))
+    entradas = ["-i", str(trabajo / "video_mudo.mp4"), "-i", str(trabajo / "mezcla.wav")]
     video_fc = f"[0:v]ass={ruta_filtro(trabajo / 'subs.ass')}"
     if os.name == "nt":   # en Windows, libass busca Inter Display en la carpeta de fuentes del usuario
         video_fc += f":fontsdir={ruta_filtro(Path(os.environ['LOCALAPPDATA']) / 'Microsoft' / 'Windows' / 'Fonts')}"
@@ -652,7 +657,7 @@ def main(carpeta):
                                                         f"setpts=PTS-STARTPTS+{ini:.3f}/TB[mk{nm}];[mv{nm}][mk{nm}]overlay=0:0:eof_action=pass[vfin]")
                 n_in += 1
     sh("ffmpeg", "-y", *entradas,
-       "-filter_complex", f"{video_fc};{mezcla}", "-map", "[vfin]" if (MARCO or marca_v) else "[vv]", "-map", "[a]",
+       "-filter_complex", video_fc, "-map", "[vfin]" if (MARCO or marca_v) else "[vv]", "-map", "1:a",
        "-c:v", "libx264", "-preset", "medium", "-crf", "21", "-pix_fmt", "yuv420p", "-movflags", "+faststart",
        "-c:a", "aac", "-b:a", "192k", "-shortest", str(salida / "video.mp4"))
     caps = [(e["ini"], e["bloque"]) for e in escenas if e.get("bloque")]
