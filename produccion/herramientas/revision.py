@@ -94,11 +94,13 @@ def enviar(a):
     print(f"Subiendo a YouTube como PRIVADO en «{SY.nombre_canal(yt)}» (no se publica)…")
     vid = SY.subir(yt, f, video, "private", None, None, False)
 
-    peq = para_telegram(video)
-    w, hh, dur = medidas(peq)
-    with open(peq, "rb") as fh:
-        tg(c, "sendVideo", data={"chat_id": c["dueno_id"], "caption": f"🎬 {f['titulo']}", "width": w, "height": hh,
-                                 "duration": dur, "supports_streaming": "true"}, files={"video": fh})
+    # El usuario prefiere ver los vídeos en la conversación de Claude; a Telegram solo va el aviso con los botones.
+    if a.video_telegram:
+        peq = para_telegram(video)
+        w, hh, dur = medidas(peq)
+        with open(peq, "rb") as fh:
+            tg(c, "sendVideo", data={"chat_id": c["dueno_id"], "caption": f"🎬 {f['titulo']}", "width": w, "height": hh,
+                                     "duration": dur, "supports_streaming": "true"}, files={"video": fh})
     r = bot(c, "revision", {"id": ident, "tipo": a.tipo, "titulo": f["titulo"], "descripcion": f["descripcion"],
                             "etiquetas": f["etiquetas"], "youtube_id": vid, "fecha_utc": h["fecha_utc"],
                             "para_ninos": f["para_ninos"], "sintetico": f["sintetico"], "comentario": f.get("comentario"),
@@ -159,6 +161,7 @@ def main():
     s = p.add_subparsers(dest="orden", required=True)
     e = s.add_parser("enviar"); e.add_argument("ficha"); e.add_argument("--tipo", required=True, choices=["ranking", "short", "dosis"])
     e.add_argument("--id"); e.add_argument("--video")
+    e.add_argument("--video-telegram", action="store_true", help="manda también el vídeo a Telegram (por defecto solo el aviso)")
     s.add_parser("tareas"); s.add_parser("quien")
     st = s.add_parser("estado"); st.add_argument("id"); st.add_argument("estado"); st.add_argument("--nota")
     i = s.add_parser("ideas"); i.add_argument("--usar", type=int, help="marca como usada la idea N (empieza en 1)")

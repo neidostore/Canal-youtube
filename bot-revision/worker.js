@@ -134,7 +134,7 @@ function botones(id) {
 function fichaTexto(it) {
   let desc = it.descripcion || "";
   if (desc.length > 2500) desc = desc.slice(0, 2500) + "…";
-  return `🎬 <b>Para revisar</b> · versión ${it.version}\n\n` +
+  return `🎬 <b>Para revisar</b> · versión ${it.version}\n📺 El vídeo te lo he dejado en la conversación de Claude.\n\n` +
     `<b>Título:</b> ${esc(it.titulo)}\n` +
     `<b>Se publicaría:</b> ${esc(fechaTexto(it.fecha_utc))}\n` +
     `<b>Etiquetas:</b> ${esc((it.etiquetas || []).map((e) => "#" + e).join(" "))}\n\n` +
