@@ -1,6 +1,6 @@
 # Neido Studio · Bot de revisión por Telegram (plan)
 
-> Estado: **plan pendiente de aprobación**. Solo para Neido Studio (Shock Mental tendrá su propio bot en su conversación).
+> Estado: ✅ **plan aprobado**. Bot construido y probado en simulación; pendiente de instalar ([bot/GUIA-INSTALACION.md](bot/GUIA-INSTALACION.md)). Solo para Neido Studio (Shock Mental tendrá su propio bot en su conversación).
 
 ## Cómo funciona (tres piezas)
 
@@ -68,3 +68,13 @@ Se ajustará con los datos reales de YouTube Studio (cuándo está conectada tu 
 4. Tarea programada de Claude (cambios y aprobaciones)
 5. YouTube: proyecto de Google, autorización, subida privada de prueba
 6. Calendario y publicación programada
+
+## Archivos
+| Archivo | Qué es |
+|---|---|
+| [bot/worker.js](bot/worker.js) | El bot (Cloudflare Worker): Telegram, botones, /idea, /ideas, /pendientes, /id, API para Claude, token de YouTube |
+| [bot/cliente.py](bot/cliente.py) | Lo que usa Claude: enviar a revisión (comprime si pasa de 48 MB), tareas, audios, transcripción, subida a YouTube |
+| [bot/PASADA-PROGRAMADA.md](bot/PASADA-PROGRAMADA.md) | Instrucciones de la tarea programada de cada hora (se crea solo con aprobación) |
+| [bot/GUIA-INSTALACION.md](bot/GUIA-INSTALACION.md) | Guía de instalación para el usuario |
+
+Pruebas hechas (simulación con base de datos real y Telegram falso): ayuda, ID, solo responde al dueño, ideas, pendientes, envío de vídeo, pedir cambios por texto, versión 2, aprobar, tareas para Claude, clave obligatoria en la API.
