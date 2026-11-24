@@ -23,7 +23,8 @@ AQUI = Path(__file__).resolve().parent
 CONFIG = json.loads((AQUI / "config.json").read_text()) if (AQUI / "config.json").exists() else {}
 URL = CONFIG.get("url", "").rstrip("/")
 LIMITE_TELEGRAM = 48 * 1024 * 1024          # Telegram admite 50 MB; dejamos margen
-CABECERA = {"Authorization": "Bearer proxy-injected"}  # el proxy la sustituye por la clave real
+CABECERA = {"Authorization": "Bearer proxy-injected",  # el proxy la sustituye por la clave real
+            "User-Agent": "neido-studio-claude/1.0"}  # Cloudflare bloquea el agente por defecto de Python (error 1010)
 
 
 def peticion(ruta, datos=None, metodo=None, crudo=False):
