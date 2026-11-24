@@ -30,15 +30,19 @@
    1
   ]
  },
- "videos": {},
- "videos_por_buscar": {
-  "dinero": "money cash counting",
-  "billetes": "falling dollar bills",
-  "jugando": "person playing video game console dark room",
-  "mando": "game controller close up",
-  "cine": "cinema audience watching",
-  "cine2": "movie theater popcorn",
-  "cola_tienda": "crowd waiting night store"
+ "videos": {
+  "deportivo": 5309381,
+  "dolares": 5466776,
+  "lluvia_dinero": 5912047,
+  "miami": 8524839,
+  "palmeras": 10867353,
+  "cascada": 6981404,
+  "cine3d": 7986788,
+  "esports": 7915032,
+  "rgb": 4810618,
+  "la_dron": 11553331,
+  "palmeras_noche": 5550287,
+  "fuegos": 854394
  },
  "bloques": [
   {
@@ -46,10 +50,6 @@
    "frases": [
     {
      "t": "Este videojuego ganó en un solo día más dinero que casi cualquier película en toda su historia.",
-     "vid": [
-      "dinero",
-      "jugando"
-     ],
      "marcas": [
       {
        "tipo": "emoji",
@@ -61,20 +61,22 @@
        "tam": 170,
        "en": 1.0
       }
+     ],
+     "img": [
+      "gta6_tienda2",
+      "gta6_estante"
      ]
     },
     {
      "t": "Ranking: lo que más rápido ha llegado a mil millones de dólares.",
      "vid": [
-      "billetes",
-      "mando"
+      "lluvia_dinero",
+      "deportivo",
+      "dolares"
      ]
     },
     {
      "t": "Número cinco: Avatar, la película más taquillera de la historia. Tardó diecisiete días.",
-     "vid": [
-      "cine"
-     ],
      "rank": {
       "n": 5,
       "texto": "Avatar · 17 días",
@@ -97,14 +99,14 @@
        "en": 2.5,
        "fondo": "#E53935"
       }
+     ],
+     "img": [
+      "pandora_montana",
+      "pandora_atraccion"
      ]
     },
     {
      "t": "Número cuatro: Call of Duty Modern Warfare dos. Diez días.",
-     "vid": [
-      "mando",
-      "jugando"
-     ],
      "rank": {
       "n": 4,
       "texto": "Call of Duty · 10 días",
@@ -127,13 +129,14 @@
        "en": 2.5,
        "fondo": "#E53935"
       }
+     ],
+     "img": [
+      "cod_gamescom",
+      "cod_stand"
      ]
     },
     {
      "t": "Número tres: Vengadores Endgame. Cinco días. Ninguna película lo ha hecho más rápido.",
-     "vid": [
-      "cine2"
-     ],
      "rank": {
       "n": 3,
       "texto": "Endgame · 5 días",
@@ -156,14 +159,14 @@
        "en": 2.5,
        "fondo": "#E53935"
       }
+     ],
+     "img": [
+      "endgame_tokio",
+      "endgame_metro"
      ]
     },
     {
      "t": "Número dos: GTA cinco, en 2013. Solo tres días. Récord Guinness durante trece años.",
-     "vid": [
-      "jugando",
-      "dinero"
-     ],
      "rank": {
       "n": 2,
       "texto": "GTA V · 3 días",
@@ -196,20 +199,21 @@
        "tam": 170,
        "en": 1.5
       }
+     ],
+     "img": [
+      "gta5_cola",
+      "gta5_cola2"
      ]
     },
     {
      "t": "Y el número uno…",
      "vid": [
-      "cola_tienda"
+      "palmeras_noche",
+      "miami"
      ]
     },
     {
      "t": "GTA seis. Salió el diecinueve de noviembre y en su primer día vendió tres mil setecientos noventa millones de dólares, según Take-Two.",
-     "vid": [
-      "billetes",
-      "dinero"
-     ],
      "rank": {
       "n": 1,
       "texto": "GTA 6 · 1 día",
@@ -242,13 +246,14 @@
        "tam": 170,
        "en": 1.0
       }
+     ],
+     "img": [
+      "gta6_tienda",
+      "gta6_tienda2"
      ]
     },
     {
      "t": "Ojo, esa cifra incluye las reservas: antes de salir ya había vendido treinta y dos millones y medio de copias.",
-     "vid": [
-      "mando"
-     ],
      "marcas": [
       {
        "tipo": "texto",
@@ -261,21 +266,55 @@
        "en": 0.8,
        "fondo": "#2E7D32"
       }
+     ],
+     "vid": [
+      "lluvia_dinero",
+      "dolares"
      ]
     },
     {
      "t": "¿Ya lo tienes o te lo vas a comprar? Te leo en los comentarios.",
      "vid": [
-      "jugando"
+      "esports",
+      "rgb"
      ]
     },
     {
      "t": "Sígueme para más rankings en Shock Mental.",
      "vid": [
-      "mando"
+      "deportivo",
+      "palmeras"
      ]
     }
    ]
   }
- ]
+ ],
+ "fotos": {
+  "gta6_tienda": 0,
+  "gta6_estante": 0,
+  "gta6_tienda2": 0,
+  "pandora_montana": 0,
+  "pandora": 0,
+  "pandora_atraccion": 0,
+  "cod_gamescom": 0,
+  "cod_stand": 0,
+  "endgame_tokio": 0,
+  "endgame_metro": 0,
+  "gta5_cola": 0,
+  "gta5_cola2": 0
+ },
+ "credito_fotos": {
+  "gta6_tienda": "Foto: AzimsV / CC BY 4.0",
+  "gta6_estante": "Foto: AzimsV / CC BY 4.0",
+  "gta6_tienda2": "Foto: AzimsV / CC BY 4.0",
+  "pandora_montana": "Foto: elisfkc / CC BY-SA 2.0",
+  "pandora": "Foto: Stevenliuyi / CC BY-SA 4.0",
+  "pandora_atraccion": "Foto: Theme Park Tourist / CC BY 2.0",
+  "cod_gamescom": "Foto: dronepicr / CC BY 2.0",
+  "cod_stand": "Foto: Sergey Galyonkin / CC BY-SA 2.0",
+  "endgame_tokio": "Foto: Dick Thomas Johnson / CC BY 2.0",
+  "endgame_metro": "Foto: LN9267 / CC BY-SA 3.0",
+  "gta5_cola": "Foto: OfficialFR / CC BY 2.0",
+  "gta5_cola2": "Foto: OfficialFR / CC BY 2.0"
+ }
 }
