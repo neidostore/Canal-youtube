@@ -4,3 +4,4 @@ produccion/**/trabajo/
 produccion/**/salida/
 produccion/**/ejemplo/
 __pycache__/
+bot-revision/.wrangler/

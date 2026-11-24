@@ -53,6 +53,13 @@ Léelo entero antes de hacer nada. Todo el trabajo está en la rama `ccr-19a9f89
 - El usuario quiere abrir más canales. Cada uno debe tener estilo y guiones propios: YouTube no monetiza el contenido repetitivo o «producido en masa».
 - Desde el 23-nov-2026 el trabajo sigue en la rama `ccr-927e3ba3-isn217`, que incluye todo lo de `ccr-19a9f894-tb9pz5`.
 
+## Bot de revisión por Telegram (24-nov-2026)
+- Bot «Shock Mental · Revisión», SOLO para este canal (Neido Studio tendrá el suyo en otra conversación). Código y guía en `bot-revision/` (`LEEME.md`).
+- El bot vive gratis en Cloudflare Workers; el PC sube el vídeo PRIVADO y lo manda con botones ✅ / ✏️ / ❌. Aprobar → el bot programa en YouTube según el calendario. Cambios por texto o audio (Whisper en el PC). `/idea`, `/ideas`, `/pendientes`, `/calendario`.
+- Calendario (hora de España): L y X 19:00 short de la Dosis · M y V 19:00 ranking · J 18:00 Dosis · S 12:00 short · D descanso.
+- PC: `produccion/herramientas/revision.py` (enviar, tareas, estado, ideas). Autorización de YouTube desde el móvil: `subir_youtube.py autorizar-movil`.
+- Faltan los datos del usuario: token de BotFather, token de API de Cloudflare, y en Google Cloud el ID y el secreto de cliente + autorizar el canal.
+
 ## Modo automático (lo que pide el usuario)
 El usuario quiere que Claude lo haga todo solo y que él solo dé el OK a cada vídeo.
 - **Una tarea programada en el PC**, a primera hora del día anterior a cada publicación del calendario:

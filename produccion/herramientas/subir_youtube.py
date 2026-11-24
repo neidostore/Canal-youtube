@@ -134,6 +134,36 @@ def credenciales(canal, crear=False):
     return cred
 
 
+def autorizar_movil(canal, vuelta=None):
+    """Autorización sin navegador en el PC: se abre el enlace en el móvil y se pega la dirección de vuelta.
+
+    Paso 1 (sin --vuelta): imprime el enlace. Paso 2: --vuelta "http://localhost:8765/?state=…&code=…"
+    (la página de vuelta no carga en el móvil; es normal: basta con copiar su dirección)."""
+    from google_auth_oauthlib.flow import Flow
+    from urllib.parse import urlparse, parse_qs
+    if not SECRETO.exists():
+        sys.exit(f"Falta {SECRETO}")
+    pendiente = BASE / f"autorizar-{canal}.json"
+    redirect = "http://localhost:8765/"
+    if not vuelta:
+        flow = Flow.from_client_secrets_file(str(SECRETO), SCOPES, redirect_uri=redirect)
+        url, state = flow.authorization_url(access_type="offline", prompt="consent", include_granted_scopes="true")
+        pendiente.write_text(json.dumps({"state": state, "verifier": flow.code_verifier}), encoding="utf-8")
+        print(url)
+        return None
+    d = json.loads(pendiente.read_text(encoding="utf-8"))
+    flow = Flow.from_client_secrets_file(str(SECRETO), SCOPES, redirect_uri=redirect, state=d["state"])
+    flow.code_verifier = d["verifier"]
+    q = parse_qs(urlparse(vuelta.strip()).query)
+    if "code" not in q:
+        sys.exit("En esa dirección no viene el código («code=»). Copia la dirección completa de la página de vuelta.")
+    flow.fetch_token(code=q["code"][0])
+    TOKENS.mkdir(parents=True, exist_ok=True)
+    (TOKENS / f"{canal}.json").write_text(flow.credentials.to_json(), encoding="utf-8")
+    pendiente.unlink(missing_ok=True)
+    return flow.credentials
+
+
 def servicio(canal, crear=False):
     from googleapiclient.discovery import build
     return build("youtube", "v3", credentials=credenciales(canal, crear), cache_discovery=False)
@@ -209,6 +239,8 @@ def main():
     p = argparse.ArgumentParser(description="Sube vídeos a YouTube desde la ficha de publicación")
     sub = p.add_subparsers(dest="orden", required=True)
     a = sub.add_parser("autorizar"); a.add_argument("canal")
+    am = sub.add_parser("autorizar-movil", help="autorizar desde el móvil copiando y pegando la dirección de vuelta")
+    am.add_argument("canal"); am.add_argument("--vuelta")
     for nombre in ("prueba", "subir"):
         s = sub.add_parser(nombre)
         s.add_argument("canal"); s.add_argument("ficha")
@@ -220,6 +252,10 @@ def main():
             s.add_argument("--ok", action="store_true", help="confirmación del usuario tras revisar el vídeo")
     args = p.parse_args()
 
+    if args.orden == "autorizar-movil":
+        if autorizar_movil(args.canal, args.vuelta):
+            print(f"Autorizado «{args.canal}» → canal de YouTube: {nombre_canal(servicio(args.canal))}")
+        return
     if args.orden == "autorizar":
         yt = servicio(args.canal, crear=True)
         print(f"Autorizado «{args.canal}» → canal de YouTube: {nombre_canal(yt)}")

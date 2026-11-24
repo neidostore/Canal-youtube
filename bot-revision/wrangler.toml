@@ -1,0 +1,16 @@
+# Bot de revisión de Shock Mental en Cloudflare Workers (plan gratuito).
+# Los secretos NO van aquí: los pone desplegar.py con «wrangler secret put».
+name = "shockmental-revision"
+main = "worker.js"
+compatibility_date = "2026-11-01"
+workers_dev = true
+
+[vars]
+AUDITADO = "no"   # cambiar a "si" cuando Google apruebe la auditoría de la API
+
+[triggers]
+crons = ["*/15 * * * *"]   # avisos de publicación cada 15 minutos
+
+[[kv_namespaces]]
+binding = "DATOS"
+id = "PENDIENTE"   # lo rellena desplegar.py la primera vez
