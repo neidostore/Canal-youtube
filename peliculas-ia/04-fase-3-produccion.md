@@ -74,3 +74,9 @@ El usuario prefiere que Claude haga todo y él dé los ok. Por eso las imágenes
 
 ## 6. Sistema de producción construido
 Ver [pipeline/README.md](pipeline/README.md). Cortinilla y montaje automático funcionando; etapas de Kaggle escritas, pendientes de acceso a `api.kaggle.com`.
+
+## 7. Problemas con las GPU gratuitas (24/11/2026)
+- **Kaggle:** cuenta, teléfono, cuota (0 de 30 h usadas) e internet correctos, pero la cola de GPU estaba en la **posición 1188**. Los trabajos lanzados por API se quedaron más de 2 h en cola. No es fiable a ciertas horas; queda por probar a primera hora de la mañana (Europa).
+- **Modal:** cuenta creada sin tarjeta (1 $ de crédito). **Las funciones con GPU exigen añadir un método de pago**, aunque el crédito sea gratuito ("Please add a payment method to use T4 GPU functions"). Sin tarjeta solo sirve para CPU. Descartado mientras la condición sea no poner tarjeta.
+- **Lightning AI:** según fuentes de septiembre de 2026, el plan gratuito pasó a ser un crédito único de 5 $ sin tarjeta (25 más con tarjeta). Daría para la prueba técnica, no para producir cada semana. ([usagepricing](https://www.usagepricing.com/blueprint/activity/lightning-ai-2026-09-21-gpu-rate-card-reprice), [aimultiple](https://aimultiple.com/free-cloud-gpu))
+- Conclusión provisional: **no hay GPU gratuita, fiable y automatizable sin tarjeta.** La opción sostenible a 0 € es Kaggle si la cola es razonable a otras horas.
