@@ -88,6 +88,7 @@ Pruebas hechas (simulación con base de datos real y Telegram falso): ayuda, ID,
 ## Estado de la conexión con YouTube (24/11/2026, noche)
 - ✅ Proyecto de Google Cloud `neido-studio` (cuenta del PC), YouTube Data API v3 habilitada.
 - ✅ Pantalla de consentimiento "Neido Studio Publicador", externa, **en producción** (página principal y privacidad servidas por el bot: `/` y `/privacidad`; dominio autorizado `neidostore.workers.dev`).
-- ⏳ Falta (en el PC, con la cuenta del proyecto): crear el cliente OAuth "Aplicación web" `neido-bot` con URI `https://neido-bot.neidostore.workers.dev/oauth/callback`, y abrir el enlace de configuración de un solo uso (`/configurar?t=...`, clave guardada en KV `config_token`) para pegar ID y secreto y autorizar el canal.
+- ✅ **YouTube conectado al canal "Neido Studio"** (cuenta neidostore@gmail.com, canal creado el 25/11/2026). Shock Mental está en otra cuenta (neidostorestudio@gmail.com): el bot no tiene acceso a ese canal.
+- (Hecho) crear el cliente OAuth "Aplicación web" `neido-bot` con URI `https://neido-bot.neidostore.workers.dev/oauth/callback`, y abrir el enlace de configuración de un solo uso (`/configurar?t=...`, clave guardada en KV `config_token`) para pegar ID y secreto y autorizar el canal.
 - Nota: el móvil del usuario abre Google Cloud con otra cuenta (proyectos "Neido" y "My First Project"); hacerlo en el PC.
 - Después: permitir `www.googleapis.com` en la red de la sesión (para la subida) y hacer una subida de prueba **privada**.
