@@ -42,7 +42,15 @@ export default {
         if (req.headers.get("Authorization") !== `Bearer ${env.CLAUDE_KEY}`) return json({ error: "no autorizado" }, 401);
         return await api(url, req, env);
       }
-      return new Response("Neido Studio · bot de revisión");
+      if (url.pathname === "/privacidad") return pagina(`<h1>Política de privacidad · Neido Studio Publicador</h1>
+<p><i>Última actualización: 24 de noviembre de 2026</i></p>
+<p>Neido Studio Publicador es una herramienta privada del canal de YouTube <b>Neido Studio</b>. La usa únicamente su propietario para revisar y programar la publicación de sus propios vídeos.</p>
+<h3>Qué datos usa</h3><p>Con el permiso del propietario, accede a su canal de YouTube solo para <b>subir vídeos</b> y <b>leer el nombre del canal</b>. No accede a datos de otras personas.</p>
+<h3>Dónde se guardan</h3><p>La autorización de YouTube se guarda cifrada en la cuenta de Cloudflare del propietario. No se vende, no se comparte con terceros y no se usa para publicidad.</p>
+<h3>Cómo revocarlo</h3><p>El propietario puede retirar el acceso en cualquier momento desde <a style="color:#C9A46A" href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</p>
+<p>El uso de los datos de las API de Google cumple la <a style="color:#C9A46A" href="https://developers.google.com/terms/api-services-user-data-policy">Política de datos de usuario de los servicios de API de Google</a>, incluidos los requisitos de uso limitado.</p>`);
+      return pagina(`<h1>🎬 Neido Studio</h1><p><b>Películas imposibles.</b></p><p>Herramienta privada de revisión y publicación del canal de YouTube Neido Studio.</p>
+<p><a style="color:#C9A46A" href="/privacidad">Política de privacidad</a></p>`);
     } catch (e) {
       return json({ error: String(e && e.stack || e) }, 500);
     }
