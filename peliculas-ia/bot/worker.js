@@ -50,8 +50,14 @@ export default {
     if (!env.BASE_URL || !env.TELEGRAM_TOKEN) return;
     const esperado = `${env.BASE_URL}/telegram/${env.WEBHOOK_SECRET}`;
     const info = await tg(env, "getWebhookInfo", {});
-    if (info.ok && info.result.url === esperado) return;
-    await instalar(new URL(`${env.BASE_URL}/instalar?clave=${env.WEBHOOK_SECRET}`), env);
+    const diag = { hora: new Date().toISOString(), getWebhookInfo: info.ok ? { url_ok: info.result.url === esperado,
+      pendientes: info.result.pending_update_count, ultimo_error: info.result.last_error_message || null } : info };
+    if (!(info.ok && info.result.url === esperado)) {
+      const r = await instalar(new URL(`${env.BASE_URL}/instalar?clave=${env.WEBHOOK_SECRET}`), env);
+      diag.instalar = await r.text();
+    }
+    // diagnóstico legible por Claude desde la API de Cloudflare (sin datos secretos)
+    await env.KV.put("diagnostico", JSON.stringify(diag));
   },
 };
 
