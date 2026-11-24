@@ -12,6 +12,10 @@ Guarda la configuración del PC en ~/.canales-youtube/shockmental-bot.json (fuer
   python desplegar.py --telegram-token 123:ABC [--dueno-id 111] [--solo-secretos]
 """
 import argparse, json, re, secrets, shutil, subprocess, sys
+try:  # usa los certificados de Windows (el antivirus puede inspeccionar las conexiones)
+    import truststore; truststore.inject_into_ssl()
+except ImportError:
+    pass
 from pathlib import Path
 
 import requests
@@ -42,7 +46,7 @@ def main():
     a = p.parse_args()
 
     BASE.mkdir(parents=True, exist_ok=True)
-    c = json.loads(CONF.read_text(encoding="utf-8")) if CONF.exists() else {}
+    c = json.loads(CONF.read_text(encoding="utf-8-sig")) if CONF.exists() else {}
     if a.telegram_token:
         c["telegram_token"] = a.telegram_token.strip()
     if not c.get("telegram_token"):

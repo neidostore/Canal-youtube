@@ -30,6 +30,10 @@ Notas:
   - Cuota gratis: 10.000 unidades/día; cada subida gasta 1.600 (≈6 vídeos al día).
 """
 import argparse, datetime, json, os, re, sys, time
+try:  # usa los certificados de Windows (el antivirus puede inspeccionar las conexiones)
+    import truststore; truststore.inject_into_ssl()
+except ImportError:
+    pass
 from pathlib import Path
 
 BASE = Path.home() / ".canales-youtube"

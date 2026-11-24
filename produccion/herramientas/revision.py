@@ -18,6 +18,10 @@ Uso:
   python revision.py avisar "texto"
 """
 import argparse, json, os, subprocess, sys, tempfile, urllib.parse
+try:  # usa los certificados de Windows (el antivirus puede inspeccionar las conexiones)
+    import truststore; truststore.inject_into_ssl()
+except ImportError:
+    pass
 from pathlib import Path
 
 import requests
@@ -33,7 +37,7 @@ LIMITE_TG = 49 * 1024 * 1024   # la API de bots de Telegram admite vídeos de ha
 def conf():
     if not CONF.exists():
         sys.exit(f"Falta {CONF}. Se crea al instalar el bot (bot-revision/desplegar.py).")
-    return json.loads(CONF.read_text(encoding="utf-8"))
+    return json.loads(CONF.read_text(encoding="utf-8-sig"))
 
 
 def tg(c, metodo, **kw):

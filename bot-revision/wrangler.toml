@@ -13,4 +13,4 @@ crons = ["*/15 * * * *"]   # avisos de publicación cada 15 minutos
 
 [[kv_namespaces]]
 binding = "DATOS"
-id = "PENDIENTE"   # lo rellena desplegar.py la primera vez
+id = "d7ea12fb9c2f486a8ef9519cee9b9b18"   # lo rellena desplegar.py la primera vez
