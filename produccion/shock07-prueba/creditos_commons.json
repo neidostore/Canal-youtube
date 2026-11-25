@@ -1,0 +1,38 @@
+{
+ "tiburon_okeanos": {
+  "titulo": "Somniosus microcephalus okeanos.jpg",
+  "autor": "NOAA Okeanos Explorer Program",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:Somniosus_microcephalus_okeanos.jpg"
+ },
+ "tiburon_perfil": {
+  "titulo": "Greenland shark profile.jpg",
+  "autor": "Hemming1952",
+  "licencia": "CC BY-SA 4.0",
+  "url": "https://commons.wikimedia.org/wiki/File:Greenland_shark_profile.jpg"
+ },
+ "medusa_inmortal": {
+  "titulo": "Turritopsisdohrnii.jpeg",
+  "autor": "Dr. Karen J. Osborn",
+  "licencia": "CC0",
+  "url": "https://commons.wikimedia.org/wiki/File:Turritopsisdohrnii.jpeg"
+ },
+ "medusa_kamo": {
+  "titulo": "Turritopsis nutricula Kamo.jpg",
+  "autor": "Totti",
+  "licencia": "CC BY-SA 4.0",
+  "url": "https://commons.wikimedia.org/wiki/File:Turritopsis_nutricula_Kamo.jpg"
+ },
+ "bonn_uni": {
+  "titulo": "Universität Bonn.jpg",
+  "autor": "Thomas Wolf (Der Wolf im Wald)\n\n\n\n\n   If you enjoy my work, and would like to see more, please visit my profile on Facebook.",
+  "licencia": "CC BY-SA 2.5",
+  "url": "https://commons.wikimedia.org/wiki/File:Universit%C3%A4t_Bonn.jpg"
+ },
+ "bonn_hauptgebaeude": {
+  "titulo": "Hauptgebaeude 15.jpg",
+  "autor": "University of Bonn",
+  "licencia": "FAL",
+  "url": "https://commons.wikimedia.org/wiki/File:Hauptgebaeude_15.jpg"
+ }
+}

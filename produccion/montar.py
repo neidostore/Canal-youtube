@@ -571,7 +571,8 @@ def main(carpeta):
         if not (mdir / "marco.png").exists():
             MK.marco_png(mdir / "marco.png", MARCO, RAIZ.parent, render_html)
         B = MK.BARRA; capas = []          # (entrada extra, inicio, expresión de overlay)
-        entradas += ["-i", str(mdir / "marco.png")]; i_marco = n_in; n_in += 1
+        # el marco se repite durante todo el vídeo (como imagen suelta, ffmpeg 9 la dejaba de pintar tras el primer fotograma)
+        entradas += ["-loop", "1", "-framerate", str(FPS), "-t", f"{t:.2f}", "-i", str(mdir / "marco.png")]; i_marco = n_in; n_in += 1
         for k, e in enumerate(x for x in escenas if x.get("recuadro")):
             r = e["recuadro"]; png = mdir / f"recuadro_{k}.png"
             MK.recuadro(png, fotos_dir / f"{r.get('img', e.get('foto'))}.jpg", r)
