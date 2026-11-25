@@ -5,7 +5,7 @@
   "negativo": "text, watermark, logo, neon, oversaturated, plastic skin, cartoon, illustration, deformed hands, extra fingers, blurry face, studio backdrop, plain grey wall, seamless paper background, daylight, sunny",
   "personajes": {
     "santi": {
-      "descripcion": "a 32-year-old Colombian man from Medellín, light brown skin, short black hair with shaved sides, short stubble beard, brown eyes, slim build, wearing a plain yellow t-shirt, an open blue denim jacket, dark jeans, white sneakers and a plain black cap with no logos",
+      "descripcion": "a 32-year-old Colombian man, light brown skin, short black hair with shaved sides, short stubble beard, brown eyes, slim build, wearing a plain yellow t-shirt, an open blue denim jacket, dark jeans, white sneakers and a plain black baseball cap",
       "voz": {
         "idioma": "es",
         "acento": "colombiano de Medellín",
@@ -35,7 +35,7 @@
       "tipo": "imagen_fija",
       "movimiento": "acercamiento",
       "personajes": [],
-      "prompt": "Wide establishing shot of the RMS Titanic sailing at night on a perfectly calm, mirror-like North Atlantic, moonless sky full of stars, warm lights glowing from the portholes and decks, faint smoke from the funnels, cold atmosphere",
+      "prompt": "Night scene. Wide establishing shot of the RMS Titanic sailing at night on a perfectly calm, mirror-like North Atlantic, moonless sky full of stars, warm lights glowing from the portholes and decks, faint smoke from the funnels, cold atmosphere",
       "audio": [
         {
           "quien": "narrador",
@@ -50,7 +50,7 @@
       "duracion": 3.0,
       "tipo": "video",
       "personajes": [],
-      "prompt": "Point-of-view shot from inside a dark narrow service corridor of a 1912 ocean liner, a wooden door opening onto the first-class promenade deck at night, warm golden light from the deck lamps spilling in, a faint cool cyan glow behind the viewer, wooden deck planks and a white railing visible through the door, starry sky",
+      "prompt": "Night scene. Point-of-view shot from inside a dark narrow service corridor of a 1912 ocean liner, a wooden door opening onto the first-class promenade deck at night, warm golden light from the deck lamps spilling in, a faint cool cyan glow behind the viewer, wooden deck planks and a white railing visible through the door, starry sky",
       "movimiento_video": "the door slowly swings open and the camera moves forward through it",
       "audio": [],
       "ambiente": "puerta, viento"
@@ -63,7 +63,7 @@
         "santi"
       ],
       "vertical": true,
-      "prompt": "Medium shot of {santi} stepping out onto the first-class promenade deck of the Titanic at night in 1912, looking around confused and amazed, the bow to the right of the frame, wooden deck, white railing, lifeboats hanging above, warm electric wall lamps, breath visible in the cold air, starry sky",
+      "prompt": "Night scene. Medium shot of {santi} stepping out onto the first-class promenade deck of the Titanic at night in 1912, looking around confused and amazed, the bow to the right of the frame, wooden deck, white railing, lifeboats hanging above, warm electric wall lamps, breath visible in the cold air, starry sky",
       "movimiento_video": "he takes a step forward and turns his head slowly, looking around",
       "audio": [
         {
@@ -82,7 +82,7 @@
       "personajes": [
         "santi"
       ],
-      "prompt": "Close-up insert of a man's hand holding a modern smartphone with a black case, the screen glowing cool blue-white and blank, against the dark wooden deck of a 1912 ocean liner at night, warm lamp light in the background",
+      "prompt": "Night scene. Close-up insert of a man's hand holding a modern smartphone with a black case, the screen glowing cool blue-white and blank, against the dark wooden deck of a 1912 ocean liner at night, warm lamp light in the background",
       "superposicion": {
         "texto": "4:04",
         "subtexto": "Sin servicio"
@@ -98,7 +98,7 @@
         "margaret"
       ],
       "vertical": true,
-      "prompt": "Medium shot of {margaret} standing by the white railing of the Titanic's first-class promenade deck at night in 1912, looking at someone off-screen to the left with disdain and curiosity, one eyebrow raised, warm electric wall lamps, starry sky, calm black sea behind her, breath visible in the cold air",
+      "prompt": "Night scene. Medium shot of {margaret} standing by the white railing of the Titanic's first-class promenade deck at night in 1912, looking at someone off-screen to the left with disdain and curiosity, one eyebrow raised, warm electric wall lamps, starry sky, calm black sea behind her, breath visible in the cold air",
       "movimiento_video": "she slowly looks him up and down",
       "audio": [],
       "ambiente": "música de cuerda lejana"
@@ -111,7 +111,7 @@
         "margaret"
       ],
       "vertical": true,
-      "prompt": "Medium close-up of {margaret} on the Titanic's first-class deck at night in 1912, facing the camera slightly to the left, haughty expression, warm lamp light on her face, dark starry background softly blurred, face clearly visible and well lit",
+      "prompt": "Night scene. Medium close-up of {margaret} on the Titanic's first-class deck at night in 1912, facing the camera slightly to the left, haughty expression, warm lamp light on her face, dark starry background softly blurred, face clearly visible and well lit",
       "movimiento_video": "she speaks with a haughty expression, subtle head movement",
       "audio": [
         {
@@ -129,7 +129,7 @@
         "santi"
       ],
       "vertical": true,
-      "prompt": "Medium close-up of {santi} on the Titanic's first-class deck at night in 1912, facing the camera slightly to the right, nervous friendly smile, warm lamp light on one side of his face, a faint cool blue glow from below from his phone, dark starry background softly blurred, face clearly visible and well lit",
+      "prompt": "Night scene. Medium close-up of {santi} on the Titanic's first-class deck at night in 1912, facing the camera slightly to the right, nervous friendly smile, warm lamp light on one side of his face, a faint cool blue glow from below from his phone, dark starry background softly blurred, face clearly visible and well lit",
       "movimiento_video": "he speaks with a nervous friendly smile, small gestures",
       "audio": [
         {
@@ -146,7 +146,7 @@
       "personajes": [
         "margaret"
       ],
-      "prompt": "Medium shot in profile of {margaret} looking proudly out at the calm black sea from the Titanic's railing at night in 1912, chin raised, warm lamp light outlining her profile, starry sky",
+      "prompt": "Night scene. Medium shot in profile of {margaret} looking proudly out at the calm black sea from the Titanic's railing at night in 1912, chin raised, warm lamp light outlining her profile, starry sky",
       "movimiento_video": "she lifts her chin proudly, almost still",
       "audio": [
         {
@@ -164,7 +164,7 @@
         "santi"
       ],
       "vertical": true,
-      "prompt": "Close-up of the face of {santi} on the Titanic's deck at night in 1912, his expression collapsing into slowly dawning horror, eyes wide, the smile disappearing, warm lamp light from the side, dark background",
+      "prompt": "Night scene. Close-up of the face of {santi} on the Titanic's deck at night in 1912, his expression collapsing into slowly dawning horror, eyes wide, the smile disappearing, warm lamp light from the side, dark background",
       "movimiento_video": "his smile slowly fades into horror, eyes widening",
       "audio": [
         {
