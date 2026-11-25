@@ -80,3 +80,8 @@ Ver [pipeline/README.md](pipeline/README.md). Cortinilla y montaje automático f
 - **Modal:** cuenta creada sin tarjeta (1 $ de crédito). **Las funciones con GPU exigen añadir un método de pago**, aunque el crédito sea gratuito ("Please add a payment method to use T4 GPU functions"). Sin tarjeta solo sirve para CPU. Descartado mientras la condición sea no poner tarjeta.
 - **Lightning AI:** según fuentes de septiembre de 2026, el plan gratuito pasó a ser un crédito único de 5 $ sin tarjeta (25 más con tarjeta). Daría para la prueba técnica, no para producir cada semana. ([usagepricing](https://www.usagepricing.com/blueprint/activity/lightning-ai-2026-09-21-gpu-rate-card-reprice), [aimultiple](https://aimultiple.com/free-cloud-gpu))
 - Conclusión provisional: **no hay GPU gratuita, fiable y automatizable sin tarjeta.** La opción sostenible a 0 € es Kaggle si la cola es razonable a otras horas.
+
+## 8. Estado 25/11/2026 (tarde)
+- `neido-imagenes` (versión 2, corregida) lleva desde las 03:00 UTC en cola sin arrancar; `neido-gpu` también. La P100 está retirada: la única GPU es la T4 x2. Desde la web no se puede cancelar ni acelerar.
+- Canal: banner, descripción y foto de perfil puestos a mano (la foto tarda en aparecer). Marca de agua pendiente de confirmar.
+- **Pendiente (otro día, en el PC):** revocar y cambiar las claves de Kaggle y Modal que se escribieron en el chat.
