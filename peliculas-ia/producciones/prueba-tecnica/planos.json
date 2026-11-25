@@ -2,7 +2,7 @@
   "titulo": "Prueba técnica · Titanic",
   "rotulo": "Atlántico Norte · 14 de abril de 1912",
   "estilo": "Cinematic film still, photorealistic, shot on 35mm with a cinema camera, natural motivated lighting, realistic skin texture with pores and imperfections, subtle film grain, slightly muted natural colours, shallow depth of field, atmospheric haze, composed for a 2.39:1 widescreen crop with the important action in the central band",
-  "negativo": "text, watermark, logo, neon, oversaturated, plastic skin, cartoon, illustration, deformed hands, extra fingers, blurry face",
+  "negativo": "text, watermark, logo, neon, oversaturated, plastic skin, cartoon, illustration, deformed hands, extra fingers, blurry face, studio backdrop, plain grey wall, seamless paper background, daylight, sunny",
   "personajes": {
     "santi": {
       "descripcion": "a 32-year-old Colombian man from Medellín, light brown skin, short black hair with shaved sides, short stubble beard, brown eyes, slim build, wearing a plain yellow t-shirt, an open blue denim jacket, dark jeans, white sneakers and a plain black cap with no logos",

@@ -46,13 +46,16 @@ for nombre, p in personajes.items():
         continue
     img = generar(f"Close-up portrait, front view, of {p['descripcion']}, neutral expression, soft even studio light, "
                   f"plain grey background. {estilo}", w=1024, h=1024)
-    img.save(f"{OUT}/ref_{nombre}.png"); refs[nombre] = img
+    img.save(f"{OUT}/ref_{nombre}.png")
+    # solo la cara (recorte central) para que IP-Adapter copie el rostro y no el fondo gris de estudio
+    refs[nombre] = img.crop((256, 128, 768, 640))
     print(f"referencia {nombre} · {time.time()-t0:.0f} s", flush=True)
 
 # 2) planos (con IP-Adapter de cara cuando hay personaje)
 pipe.load_ip_adapter("h94/IP-Adapter", subfolder="sdxl_models", weight_name="ip-adapter-plus-face_sdxl_vit-h.safetensors",
                      image_encoder_folder="models/image_encoder")
-pipe.set_ip_adapter_scale(0.6)
+ESCALA_CARA = 0.4   # con 0.6 copiaba también el fondo y la pose del retrato (prueba del 25/11)
+pipe.set_ip_adapter_scale(ESCALA_CARA)
 for pl in PLANOS["planos"]:
     texto = pl["prompt"]
     for nombre, p in personajes.items():
@@ -64,7 +67,7 @@ for pl in PLANOS["planos"]:
     else:
         pipe.set_ip_adapter_scale(0.0)
         img = generar(prompt, ip_imagen=Image.new("RGB", (224, 224)), semilla=SEMILLA + pl["n"])
-        pipe.set_ip_adapter_scale(0.6)
+        pipe.set_ip_adapter_scale(ESCALA_CARA)
     img.save(f"{OUT}/plano_{pl['n']:02d}.png")
     print(f"plano {pl['n']} · {time.time()-t0:.0f} s", flush=True)
 
