@@ -91,4 +91,5 @@ Pruebas hechas (simulación con base de datos real y Telegram falso): ayuda, ID,
 - ✅ **YouTube conectado al canal "Neido Studio"** (cuenta neidostore@gmail.com, canal creado el 25/11/2026). Shock Mental está en otra cuenta (neidostorestudio@gmail.com): el bot no tiene acceso a ese canal.
 - (Hecho) crear el cliente OAuth "Aplicación web" `neido-bot` con URI `https://neido-bot.neidostore.workers.dev/oauth/callback`, y abrir el enlace de configuración de un solo uso (`/configurar?t=...`, clave guardada en KV `config_token`) para pegar ID y secreto y autorizar el canal.
 - Nota: el móvil del usuario abre Google Cloud con otra cuenta (proyectos "Neido" y "My First Project"); hacerlo en el PC.
-- Después: permitir `www.googleapis.com` en la red de la sesión (para la subida) y hacer una subida de prueba **privada**.
+- ✅ 25/11/2026: `www.googleapis.com` permitido en la red de la sesión. **Subida de prueba privada correcta** por la API (vídeo `KfNKDKQWg-k`, privado, sin fecha). En YouTube Studio no aparece ningún aviso de bloqueo. Canal con subidas largas habilitadas (`longUploadsStatus: eligible`).
+- Pendiente de confirmar con el primer vídeo real: que la publicación programada (`publishAt`) se respeta.
