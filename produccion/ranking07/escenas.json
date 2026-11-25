@@ -1,0 +1,377 @@
+{
+ "tema": "shock",
+ "voz": {
+  "idioma": "es-US",
+  "nombre": "es-US-Chirp3-HD-Achird",
+  "velocidad": 1.15
+ },
+ "estilo": {
+  "dinamico": true,
+  "plano": 1.4
+ },
+ "formato": "vertical",
+ "marca": {
+  "logo": "marca/shockmental/perfil-sin-eslogan.png",
+  "nombre": "SHOCK MENTAL"
+ },
+ "musica": {
+  "archivo": "musica/wallpaper.mp3",
+  "volumen": 0.09,
+  "credito": "\"Wallpaper\" de Kevin MacLeod (incompetech.com)"
+ },
+ "titulo": "Pagó 6 millones por un plátano… y se lo comió 🍌 Ranking",
+ "ranking": {
+  "titulo": "LO MÁS LOCO VENDIDO POR MILLONES",
+  "puestos": [
+   5,
+   4,
+   3,
+   2,
+   1
+  ]
+ },
+ "videos": {
+  "lluvia_dinero": 5912047,
+  "dolares": 5466776,
+  "contar": 855388,
+  "contar2": 6700653,
+  "martillo": 6101343,
+  "subasta": 6664815,
+  "movil": 854321,
+  "cripto": 7578639,
+  "diamantes": 5084332,
+  "diamantes2": 5106444,
+  "museo": 8771643,
+  "museo2": 3960175,
+  "yates": 856856,
+  "sorpresa": 8626645,
+  "sorpresa2": 8626657
+ },
+ "fotos": {
+  "platano_cinta": 0,
+  "justin_sun": 0,
+  "banksy_globo": 0,
+  "banksy_madrid": 0,
+  "sothebys": 0,
+  "sothebys2": 0,
+  "logan_paul": 0,
+  "logan_paul2": 0,
+  "dorsey": 0,
+  "salvator": 0,
+  "louvre_ad": 0
+ },
+ "credito_fotos": {
+  "platano_cinta": "Foto: Jane023 / CC0",
+  "justin_sun": "Foto: MelfarraTron / CC BY-SA 4.0",
+  "banksy_globo": "Foto: Monoxyde / CC BY-SA 4.0",
+  "banksy_madrid": "Foto: Javier Perez Montes / CC BY-SA 4.0",
+  "sothebys": "Foto: Kwh1050 / CC BY-SA 4.0",
+  "sothebys2": "Foto: Dirk Ingo Franke / CC BY-SA 3.0",
+  "logan_paul": "Foto: diegofernandophotography / CC BY 2.0",
+  "logan_paul2": "Foto: Erik Drost / CC BY 2.0",
+  "dorsey": "Foto: cellanr / CC BY-SA 2.0",
+  "salvator": "Leonardo da Vinci (atribuido) / dominio público",
+  "louvre_ad": "Foto: Saschaporsche / CC BY-SA 4.0"
+ },
+ "bloques": [
+  {
+   "nombre": "Ranking",
+   "frases": [
+    {
+     "t": "Alguien pagó seis millones de dólares por un plátano pegado a la pared con cinta… y luego se lo comió.",
+     "img": [
+      "platano_cinta"
+     ],
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🍌",
+       "pos": [
+        0.8,
+        0.4
+       ],
+       "tam": 170,
+       "en": 1.0
+      }
+     ]
+    },
+    {
+     "t": "Ranking: las cosas más locas que se han vendido por millones.",
+     "vid": [
+      "lluvia_dinero",
+      "martillo"
+     ]
+    },
+    {
+     "t": "Número cinco: un tuit. El primero de la historia de Twitter, escrito por su creador, Jack Dorsey. Se vendió en 2021 por dos millones novecientos mil dólares.",
+     "rank": {
+      "n": 5,
+      "texto": "Un tuit · 2,9 M$",
+      "emoji": "📱"
+     },
+     "sfx": {
+      "nombre": "ding",
+      "vol": 0.25,
+      "en": 0.1
+     },
+     "img": [
+      "dorsey"
+     ],
+     "marcas": [
+      {
+       "tipo": "texto",
+       "texto": "2,9 M$",
+       "pos": [
+        0.5,
+        0.78
+       ],
+       "tam": 60,
+       "en": 4.0,
+       "fondo": "#E53935"
+      }
+     ]
+    },
+    {
+     "t": "Un año después, su dueño intentó revenderlo… y la mejor oferta fue de unos doscientos ochenta dólares.",
+     "vid": [
+      "movil",
+      "cripto"
+     ],
+     "marcas": [
+      {
+       "tipo": "texto",
+       "texto": "280 $",
+       "pos": [
+        0.5,
+        0.78
+       ],
+       "tam": 60,
+       "en": 2.5,
+       "fondo": "#2E7D32"
+      },
+      {
+       "tipo": "emoji",
+       "emoji": "😂",
+       "pos": [
+        0.8,
+        0.4
+       ],
+       "tam": 170,
+       "en": 3.0
+      }
+     ]
+    },
+    {
+     "t": "Número cuatro: el plátano. Es una obra de arte de Maurizio Cattelan, y en 2024 se subastó por seis millones doscientos mil dólares.",
+     "rank": {
+      "n": 4,
+      "texto": "Un plátano · 6,2 M$",
+      "emoji": "🍌"
+     },
+     "sfx": {
+      "nombre": "ding",
+      "vol": 0.25,
+      "en": 0.1
+     },
+     "img": [
+      "platano_cinta"
+     ],
+     "marcas": [
+      {
+       "tipo": "texto",
+       "texto": "6,2 M$",
+       "pos": [
+        0.5,
+        0.78
+       ],
+       "tam": 60,
+       "en": 4.0,
+       "fondo": "#E53935"
+      }
+     ]
+    },
+    {
+     "t": "Su comprador, el empresario de criptomonedas Justin Sun, se lo comió delante de la prensa. El plátano había costado menos de medio dólar.",
+     "img": [
+      "justin_sun"
+     ],
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "😋",
+       "pos": [
+        0.8,
+        0.4
+       ],
+       "tam": 170,
+       "en": 1.5
+      }
+     ]
+    },
+    {
+     "t": "Número tres: una carta de Pokémon. Logan Paul compró esta Pikachu Illustrator por más de cinco millones de dólares…",
+     "rank": {
+      "n": 3,
+      "texto": "Carta Pokémon · 16,5 M$",
+      "emoji": "🃏"
+     },
+     "sfx": {
+      "nombre": "ding",
+      "vol": 0.25,
+      "en": 0.1
+     },
+     "img": [
+      "logan_paul",
+      "logan_paul2"
+     ]
+    },
+    {
+     "t": "Y en febrero de 2026 la vendió por dieciséis millones y medio. Es la carta de Pokémon más cara de la historia.",
+     "vid": [
+      "diamantes",
+      "diamantes2"
+     ],
+     "marcas": [
+      {
+       "tipo": "texto",
+       "texto": "16,5 M$",
+       "pos": [
+        0.5,
+        0.78
+       ],
+       "tam": 60,
+       "en": 0.8,
+       "fondo": "#E53935"
+      },
+      {
+       "tipo": "emoji",
+       "emoji": "🏆",
+       "pos": [
+        0.8,
+        0.4
+       ],
+       "tam": 170,
+       "en": 2.0
+      }
+     ]
+    },
+    {
+     "t": "Número dos: un cuadro que se destruyó a sí mismo. En 2018, justo cuando se vendía este Banksy, una trituradora escondida en el marco lo hizo tiras.",
+     "rank": {
+      "n": 2,
+      "texto": "Banksy triturado · 25,4 M$",
+      "emoji": "🎨"
+     },
+     "sfx": {
+      "nombre": "ding",
+      "vol": 0.25,
+      "en": 0.1
+     },
+     "img": [
+      "banksy_globo",
+      "sothebys2"
+     ],
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "😱",
+       "pos": [
+        0.8,
+        0.4
+       ],
+       "tam": 170,
+       "en": 4.5
+      }
+     ]
+    },
+    {
+     "t": "Tres años después, medio triturado, se volvió a subastar… por veinticinco millones cuatrocientos mil dólares.",
+     "img": [
+      "banksy_madrid",
+      "banksy_globo"
+     ],
+     "marcas": [
+      {
+       "tipo": "texto",
+       "texto": "25,4 M$",
+       "pos": [
+        0.5,
+        0.78
+       ],
+       "tam": 60,
+       "en": 2.5,
+       "fondo": "#E53935"
+      }
+     ]
+    },
+    {
+     "t": "Y el número uno…",
+     "vid": [
+      "sorpresa",
+      "dolares"
+     ]
+    },
+    {
+     "t": "Salvator Mundi, atribuido a Leonardo da Vinci. Cuatrocientos cincuenta millones de dólares en 2017. El cuadro más caro jamás vendido.",
+     "rank": {
+      "n": 1,
+      "texto": "Salvator Mundi · 450 M$",
+      "emoji": "🏆"
+     },
+     "sfx": {
+      "nombre": "ding",
+      "vol": 0.4,
+      "en": 0.1
+     },
+     "img": [
+      "salvator"
+     ],
+     "marcas": [
+      {
+       "tipo": "texto",
+       "texto": "450 M$",
+       "pos": [
+        0.5,
+        0.78
+       ],
+       "tam": 60,
+       "en": 3.5,
+       "fondo": "#E53935"
+      },
+      {
+       "tipo": "emoji",
+       "emoji": "🤯",
+       "pos": [
+        0.8,
+        0.4
+       ],
+       "tam": 170,
+       "en": 1.0
+      }
+     ]
+    },
+    {
+     "t": "Y lo más loco: iba a exponerse en el Louvre de Abu Dabi, pero nunca llegó. Lleva años sin verse en público, y muchos expertos dudan de que lo pintara él.",
+     "img": [
+      "louvre_ad",
+      "salvator"
+     ]
+    },
+    {
+     "t": "¿Tú cuál habrías comprado? Te leo en los comentarios.",
+     "vid": [
+      "sorpresa2",
+      "contar"
+     ]
+    },
+    {
+     "t": "Sígueme para más rankings en Shock Mental.",
+     "vid": [
+      "lluvia_dinero",
+      "yates"
+     ]
+    }
+   ]
+  }
+ ]
+}
