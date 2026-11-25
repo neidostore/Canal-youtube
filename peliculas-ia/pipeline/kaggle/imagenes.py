@@ -20,8 +20,14 @@ W, H = 1344, 768                      # ~16:9, resolución nativa de SDXL
 PASOS, GUIA, SEMILLA = 30, 5.0, 404
 t0 = time.time()
 
-pipe = StableDiffusionXLPipeline.from_pretrained(MODELO, torch_dtype=torch.float16, variant=None).to("cuda")
-pipe.enable_vae_slicing()
+try:
+    pipe = StableDiffusionXLPipeline.from_pretrained(MODELO, dtype=torch.float16).to("cuda")
+except TypeError:
+    pipe = StableDiffusionXLPipeline.from_pretrained(MODELO, torch_dtype=torch.float16).to("cuda")
+# ahorro de memoria en la decodificación (el nombre de la función cambia según la versión de diffusers)
+for f in (getattr(pipe, "enable_vae_slicing", None), getattr(pipe.vae, "enable_slicing", None)):
+    if f:
+        f(); break
 estilo, negativo = PLANOS["estilo"], PLANOS["negativo"]
 personajes = PLANOS["personajes"]
 
