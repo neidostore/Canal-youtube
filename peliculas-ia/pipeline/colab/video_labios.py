@@ -13,8 +13,9 @@ T0 = time.time(); LIMITE = 2.6 * 3600          # Colab gratis corta sesiones lar
 OUT = "/content/entrega"; IN = "/content/entrada"; os.makedirs(OUT, exist_ok=True); os.makedirs(IN, exist_ok=True)
 DATOS = json.loads(base64.b64decode(__DATOS__))
 PLANOS = DATOS["planos"]
-for nombre, b64 in DATOS["archivos"].items():
-    open(f"{IN}/{nombre}", "wb").write(base64.b64decode(b64))
+import urllib.request
+for nombre, url in DATOS["archivos"].items():      # fotogramas y voces se bajan del repositorio
+    urllib.request.urlretrieve(url, f"{IN}/{nombre}")
 log = lambda *a: print(f"[{(time.time()-T0)/60:5.1f} min]", *a, flush=True)
 sh = lambda c: subprocess.run(c, shell=True, check=True)
 
