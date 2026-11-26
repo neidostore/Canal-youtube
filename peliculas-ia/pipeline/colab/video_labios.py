@@ -8,6 +8,7 @@
 #    Va en un entorno aparte (uv, Python 3.10) porque fija sus propias versiones de librerías.
 # Los fotogramas y las voces vienen incrustados en el cuaderno (__DATOS__). Salida: /content/entrega
 import base64, gc, json, os, subprocess, sys, time, traceback
+os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "expandable_segments:True"
 T0 = time.time(); LIMITE = 2.6 * 3600          # Colab gratis corta sesiones largas: paramos a tiempo
 OUT = "/content/entrega"; IN = "/content/entrada"; os.makedirs(OUT, exist_ok=True); os.makedirs(IN, exist_ok=True)
 DATOS = json.loads(base64.b64decode(__DATOS__))
@@ -40,17 +41,24 @@ for pl in PLANOS["planos"]:
         torchaudio.save(f"{OUT}/plano_{pl['n']:02d}_{i}.wav", wav.cpu(), tts.sr)
         print("voz", pl["n"], i, l["quien"], round(wav.shape[-1] / tts.sr, 1), "s", flush=True)
 """
+for nombre in list(DATOS["archivos"]):
+    if nombre.endswith(".wav"):
+        os.replace(f"{IN}/{nombre}", f"{VOCES}/{nombre}")
 try:
+    if any(f.endswith(".wav") for f in os.listdir(VOCES)):
+        raise StopIteration
     log("preparando voces")
     sh("apt-get -qq install -y espeak-ng > /dev/null")
     sh(f"{sys.executable} -m pip install -q uv")
     sh("uv venv -q -p 3.11 /content/vz && uv pip install -q -p /content/vz/bin/python 'chatterbox-tts>=0.1.4' 'kokoro>=0.9' soundfile")
     open("/content/voces.py", "w").write(SCRIPT_VOCES)
     json.dump(PLANOS, open("/content/planos.json", "w"))
-    sh(f"/content/vz/bin/python /content/voces.py /content/planos.json {VOCES}")
+    sh(f"/content/vz/bin/python /content/voces.py /content/planos.json {VOCES} > {OUT}/log_voces.txt 2>&1")
     log("voces listas")
+except StopIteration:
+    log("voces ya incluidas en el cuaderno")
 except Exception:
-    traceback.print_exc()
+    traceback.print_exc(); open(f"{OUT}/error_voces.txt", "w").write(traceback.format_exc())
 def dur_wav(f):
     import wave
     try:
@@ -66,7 +74,8 @@ from diffusers import WanImageToVideoPipeline, WanTransformer3DModel, Autoencode
 from diffusers.utils import export_to_video
 from PIL import Image
 M = "Wan-AI/Wan2.2-TI2V-5B-Diffusers"
-W, H, FPS = 1024, 576, 24
+RESOLUCIONES = [(896, 512), (768, 448), (640, 352)]   # si falta memoria, se baja
+FPS = 24
 NEG = ("static, frozen, blurry, distorted face, deformed hands, extra fingers, extra limbs, flicker, morphing, "
        "text, subtitles, watermark, logo, cartoon, low quality")
 trabajos = []
@@ -102,6 +111,10 @@ except Exception:
 vae = AutoencoderKLWan.from_pretrained(M, subfolder="vae", torch_dtype=torch.float32).to("cuda")
 try: vae.enable_tiling()
 except Exception: pass
+try:   # pesos guardados en fp8 y calculados en fp16: la mitad de memoria
+    tr.enable_layerwise_casting(storage_dtype=torch.float8_e4m3fn, compute_dtype=torch.float16); log("fp8 activado")
+except Exception:
+    traceback.print_exc()
 pipe = WanImageToVideoPipeline.from_pretrained(M, transformer=tr, vae=vae, text_encoder=None, tokenizer=None,
                                                torch_dtype=torch.float16).to("cuda")
 metricas = {}
@@ -110,23 +123,30 @@ for pl, p in trabajos:
     if time.time() - T0 > LIMITE:
         log("sin tiempo: me salto el plano", n); continue
     try:
-        img = Image.open(f"{IN}/plano_{n:02d}.jpg").convert("RGB")
-        s = max(W / img.width, H / img.height)
-        img = img.resize((round(img.width * s), round(img.height * s)), Image.LANCZOS)
-        l, t = (img.width - W) // 2, (img.height - H) // 2
-        img = img.crop((l, t, l + W, t + H))
         dur = max(float(pl["duracion"]), dur_wav(f"{VOCES}/plano_{n:02d}_1.wav") + 0.3 if pl["tipo"] == "lipsync" else 0)
         frames = int(min(dur, 5) * FPS) // 4 * 4 + 1
-        ti = time.time()
-        v = pipe(image=img, prompt_embeds=embs[n].cuda(), negative_prompt_embeds=neg.cuda(), height=H, width=W,
-                 num_frames=frames, num_inference_steps=25, guidance_scale=5.0,
-                 generator=torch.Generator("cuda").manual_seed(404 + n)).frames[0]
+        ti = time.time(); v = None
+        for W, H in RESOLUCIONES:
+            img = Image.open(f"{IN}/plano_{n:02d}.jpg").convert("RGB")
+            s_ = max(W / img.width, H / img.height)
+            img = img.resize((round(img.width * s_), round(img.height * s_)), Image.LANCZOS)
+            l, t = (img.width - W) // 2, (img.height - H) // 2
+            img = img.crop((l, t, l + W, t + H))
+            try:
+                v = pipe(image=img, prompt_embeds=embs[n].cuda(), negative_prompt_embeds=neg.cuda(), height=H, width=W,
+                         num_frames=frames, num_inference_steps=25, guidance_scale=5.0,
+                         generator=torch.Generator("cuda").manual_seed(404 + n)).frames[0]
+                break
+            except torch.OutOfMemoryError:
+                log(f"plano {n}: sin memoria a {W}x{H}, pruebo más pequeño"); gc.collect(); torch.cuda.empty_cache()
+        if v is None:
+            raise RuntimeError("sin memoria en todas las resoluciones")
         export_to_video(v, f"{OUT}/plano_{n:02d}.mp4", fps=FPS)
         brillo = float(sum(f.mean() for f in v[::8]) / len(v[::8]))
-        metricas[n] = {"segundos": round(time.time() - ti), "fotogramas": frames, "brillo_medio": round(brillo, 3)}
+        metricas[n] = {"segundos": round(time.time() - ti), "fotogramas": frames, "tam": f"{W}x{H}", "brillo_medio": round(brillo, 3)}
         log(f"plano {n} listo", metricas[n])
     except Exception:
-        traceback.print_exc(); metricas[n] = {"error": traceback.format_exc()[-800:]}
+        traceback.print_exc(); metricas[n] = {"error": traceback.format_exc()[-800:]}; gc.collect(); torch.cuda.empty_cache()
 json.dump(metricas, open(f"{OUT}/metricas_video.json", "w"), indent=1)
 del pipe, tr, vae; gc.collect(); torch.cuda.empty_cache()
 
@@ -150,10 +170,10 @@ try:
                 sh(f"cd {LS} && /content/lsenv/bin/python -m scripts.inference --unet_config_path configs/unet/stage2.yaml "
                    f"--inference_ckpt_path checkpoints/latentsync_unet.pt --inference_steps 20 --guidance_scale 1.5 "
                    f"--video_path {OUT}/plano_{n:02d}.mp4 --audio_path {VOCES}/plano_{n:02d}_1.wav "
-                   f"--video_out_path {OUT}/plano_{n:02d}_labios.mp4")
+                   f"--video_out_path {OUT}/plano_{n:02d}_labios.mp4 > {OUT}/log_labios_{n:02d}.txt 2>&1")
                 log(f"labios plano {n} · {time.time()-ti:.0f} s")
             except Exception:
                 traceback.print_exc()
 except Exception:
-    traceback.print_exc()
+    traceback.print_exc(); open(f"{OUT}/error_labios.txt", "w").write(traceback.format_exc())
 log("FIN")

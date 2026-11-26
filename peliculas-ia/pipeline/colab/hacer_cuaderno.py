@@ -4,17 +4,13 @@ import base64, json, subprocess, sys
 from pathlib import Path
 prod, imgs, voces, salida = map(Path, sys.argv[1:5])
 planos = json.loads((prod / "planos.json").read_text())
-archivos, dur_voz = {}, {}
+archivos, dur_voz = {}, {}  # dur_voz ya no se usa: se mide en Colab
 for pl in planos["planos"]:
     n = pl["n"]
     if pl["tipo"] in ("video", "lipsync"):
         archivos[f"plano_{n:02d}.jpg"] = base64.b64encode((imgs / f"plano_{n:02d}.jpg").read_bytes()).decode()
-    w = voces / f"plano_{n:02d}_1.wav"
-    if pl["tipo"] == "lipsync" and w.exists():
-        archivos[w.name] = base64.b64encode(w.read_bytes()).decode()
-        d = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(w)],
-                           capture_output=True, text=True).stdout
-        dur_voz[str(n)] = float(d)
+for w in sorted(voces.glob("plano_*_*.wav")) if voces.exists() else []:
+    archivos[w.name] = base64.b64encode(w.read_bytes()).decode()
 datos = base64.b64encode(json.dumps({"planos": planos, "archivos": archivos, "dur_voz": dur_voz}).encode()).decode()
 codigo = (Path(__file__).parent / "video_labios.py").read_text().replace("__DATOS__", repr(datos))
 celda = lambda t, s: {"cell_type": t, "metadata": {}, "source": s.splitlines(True), **({"outputs": [], "execution_count": None} if t == "code" else {})}
