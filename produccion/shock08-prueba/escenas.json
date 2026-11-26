@@ -1,0 +1,310 @@
+{
+ "tema": "shock",
+ "tarjetas": "tarjetas-shock.html",
+ "intro": {
+  "video": "marca/shockmental/intro/intro.mp4",
+  "audio": "marca/shockmental/intro/intro_audio.wav"
+ },
+ "musica": {
+  "archivo": "musica/wallpaper.mp3",
+  "volumen": 0.09,
+  "credito": "\"Wallpaper\" de Kevin MacLeod (incompetech.com)"
+ },
+ "estilo": {
+  "dinamico": true,
+  "plano": 1.6
+ },
+ "marco": {
+  "titulo": "SHOCK&nbsp;<i>MENTAL</i>",
+  "lema": "Tu dosis de asombro 🧠⚡",
+  "logo": "marca/shockmental/perfil-sin-eslogan.png"
+ },
+ "voz": {
+  "idioma": "es-US",
+  "nombre": "es-US-Chirp3-HD-Achird",
+  "velocidad": 1.15
+ },
+ "videos_inicio": {
+  "r_shocked_woman": 0.3,
+  "r_man_tv": 3.5
+ },
+ "titulo": "PRUEBA Dosis 8",
+ "videos": {
+  "r_shocked_woman": 8626657,
+  "r_man_tv": 9883681,
+  "vela": 3561988,
+  "dunas": 855673,
+  "desierto": 3018500,
+  "fuego": 2908575,
+  "fuego2": 4108548,
+  "biblia": 3987756,
+  "biblia2": 5199729,
+  "rayo": 2657691,
+  "tormenta": 3052162,
+  "tormenta2": 856429,
+  "rayo_color": 4073979,
+  "ruinas": 3015501,
+  "petra": 4253642,
+  "bandera_etiopia": 3845346
+ },
+ "fotos": {
+  "capilla": 0,
+  "iglesia_axum": 0,
+  "monje": 0,
+  "monje2": 0,
+  "timkat": 0,
+  "timkat2": 0,
+  "arca_replica": 0,
+  "arca_replica2": 0,
+  "arca_tissot": 0,
+  "arca_jordan": 0,
+  "uza": 0,
+  "dagon": 0,
+  "ashdod": 0,
+  "obelisco": 0,
+  "carro_vacas": 0
+ },
+ "credito_fotos": {
+  "capilla": "Foto: A. Davey · CC BY 2.0",
+  "iglesia_axum": "Foto: A.Savin · FAL",
+  "monje": "Foto: Rod Waddington · CC BY-SA 2.0",
+  "monje2": "Foto: A.Savin · FAL",
+  "timkat": "Foto: Joe Castleman · CC BY-SA 4.0",
+  "timkat2": "Foto: Brian Dell · CC0",
+  "arca_replica": "Foto: Ben P L · CC BY 2.0",
+  "arca_replica2": "Foto: Graph+sas · CC BY-SA 4.0",
+  "arca_tissot": "James Tissot · dominio público",
+  "arca_jordan": "James Tissot · dominio público",
+  "uza": "James Tissot · dominio público",
+  "dagon": "Foto: Battista Franco Veneziano · CC0",
+  "ashdod": "Nicolas Poussin · dominio público",
+  "obelisco": "Foto: Tesfawel · CC BY-SA 4.0",
+  "carro_vacas": "Erastus Salisbury Field · dominio público"
+ },
+ "bloques": [
+  {
+   "nombre": "El guardián del Arca",
+   "frases": [
+    {
+     "t": "En una pequeña capilla de Etiopía vive un monje que no puede salir nunca de allí. Nunca. Hasta el día de su muerte.",
+     "img": [
+      "capilla"
+     ],
+     "kw": "no puede salir nunca",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🔒",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    },
+    {
+     "t": "Su única misión es vigilar un objeto que, según dicen, solo él puede ver. Ni el patriarca de su iglesia, ni un presidente, ni ningún científico.",
+     "img": [
+      "monje2"
+     ],
+     "kw": "solo él puede ver"
+    },
+    {
+     "t": "Ese objeto sería… el Arca de la Alianza. El tesoro más buscado de la Biblia, desaparecido hace unos dos mil quinientos años.",
+     "img": [
+      "arca_jordan",
+      "arca_replica2"
+     ],
+     "kw": "el Arca de la Alianza",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "😱",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    },
+    {
+     "t": "Hoy te cuento las pistas reales de dónde podría estar. Y al final volvemos a esa capilla.",
+     "vid": [
+      "vela",
+      "desierto"
+     ],
+     "kw": "las pistas reales",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "👀",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "nombre": "Intro",
+   "intro": true
+  },
+  {
+   "nombre": "1 · Qué era el Arca",
+   "frases": [
+    {
+     "t": "Número uno.",
+     "card": {
+      "tipo": "numero",
+      "n": 1,
+      "tema": "La Biblia"
+     }
+    },
+    {
+     "t": "Según la Biblia, era un cofre de madera de acacia cubierto de oro, de algo más de un metro de largo, con dos querubines de oro en la tapa.",
+     "rotulo": {
+      "arriba": "Éxodo 25",
+      "texto": "Madera y oro · algo más de 1 metro"
+     },
+     "img": [
+      "arca_replica2"
+     ]
+    },
+    {
+     "t": "Dentro guardaba las tablas de piedra con los diez mandamientos.",
+     "vid": [
+      "biblia",
+      "biblia2"
+     ],
+     "kw": "los diez mandamientos"
+    },
+    {
+     "t": "Se transportaba con dos varas, porque no se podía tocar.",
+     "img": [
+      "arca_jordan"
+     ],
+     "kw": "no se podía tocar",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🚫",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    },
+    {
+     "t": "Y la Biblia cuenta que un hombre llamado Uzá la tocó para que no se cayera… y murió en el acto.",
+     "vid": [
+      "rayo",
+      "tormenta"
+     ],
+     "kw": "murió en el acto",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "⚡",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "nombre": "2 · Los filisteos la robaron",
+   "frases": [
+    {
+     "t": "Número dos.",
+     "card": {
+      "tipo": "numero",
+      "n": 2,
+      "tema": "La Biblia"
+     }
+    },
+    {
+     "t": "Los israelitas la llevaban a la guerra. Y en una batalla la perdieron: los filisteos se la llevaron como trofeo y la pusieron en el templo de su dios, Dagón.",
+     "img": [
+      "dagon"
+     ],
+     "kw": "su dios, Dagón"
+    },
+    {
+     "t": "A la mañana siguiente, la estatua de Dagón estaba tirada en el suelo, boca abajo, delante del Arca. La levantaron… y al día siguiente apareció otra vez en el suelo, rota.",
+     "img": [
+      "dagon"
+     ],
+     "kw": "otra vez en el suelo",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "😨",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    },
+    {
+     "t": "Después llegaron las plagas.",
+     "rotulo": {
+      "arriba": "Nicolas Poussin · 1630",
+      "texto": "La peste de Asdod"
+     },
+     "img": [
+      "ashdod"
+     ]
+    },
+    {
+     "t": "A los siete meses, los filisteos la devolvieron en un carro tirado por vacas, sin nadie que lo guiara.",
+     "img": [
+      "carro_vacas"
+     ],
+     "kw": "sin nadie que lo guiara",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🐄",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "nombre": "Cierre",
+   "frases": [
+    {
+     "t": "¿Tú qué crees: está en Etiopía, bajo Jerusalén… o ya no existe? Te leo en los comentarios.",
+     "card": {
+      "tipo": "final"
+     }
+    },
+    {
+     "t": "Y si te gustan los misterios de la Biblia, suscríbete a Shock Mental: el próximo es Sodoma y Gomorra.",
+     "card": {
+      "tipo": "final"
+     }
+    }
+   ],
+   "final": 1.0
+  }
+ ]
+}
