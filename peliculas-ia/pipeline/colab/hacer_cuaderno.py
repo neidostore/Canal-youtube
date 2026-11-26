@@ -1,0 +1,35 @@
+# Crea el cuaderno de Colab "video + labios" con los fotogramas y las voces incrustados.
+# Uso: python hacer_cuaderno.py <carpeta_produccion> <carpeta_imagenes> <carpeta_voces> <salida.ipynb>
+import base64, json, subprocess, sys
+from pathlib import Path
+prod, imgs, voces, salida = map(Path, sys.argv[1:5])
+planos = json.loads((prod / "planos.json").read_text())
+archivos, dur_voz = {}, {}
+for pl in planos["planos"]:
+    n = pl["n"]
+    if pl["tipo"] in ("video", "lipsync"):
+        archivos[f"plano_{n:02d}.jpg"] = base64.b64encode((imgs / f"plano_{n:02d}.jpg").read_bytes()).decode()
+    w = voces / f"plano_{n:02d}_1.wav"
+    if pl["tipo"] == "lipsync" and w.exists():
+        archivos[w.name] = base64.b64encode(w.read_bytes()).decode()
+        d = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(w)],
+                           capture_output=True, text=True).stdout
+        dur_voz[str(n)] = float(d)
+datos = base64.b64encode(json.dumps({"planos": planos, "archivos": archivos, "dur_voz": dur_voz}).encode()).decode()
+codigo = (Path(__file__).parent / "video_labios.py").read_text().replace("__DATOS__", repr(datos))
+celda = lambda t, s: {"cell_type": t, "metadata": {}, "source": s.splitlines(True), **({"outputs": [], "execution_count": None} if t == "code" else {})}
+nb = {"nbformat": 4, "nbformat_minor": 0,
+      "metadata": {"accelerator": "GPU", "colab": {"gpuType": "T4", "provenance": []},
+                   "kernelspec": {"name": "python3", "display_name": "Python 3"}},
+      "cells": [
+          celda("markdown", "# Neido Studio · Voces, movimiento y labios (prueba técnica)\n"
+                "1. Comprueba arriba a la derecha que pone **T4**.\n"
+                "2. **Entorno de ejecución → Ejecutar todo**.\n"
+                "3. Tarda entre 1 y 2 horas. No cierres la pestaña ni dejes que el PC se suspenda.\n"
+                "4. Al final se descarga **neido-video.zip**: mándaselo a Claude.\n"),
+          celda("code", codigo),
+          celda("code", "import shutil\nshutil.make_archive('/content/neido-video', 'zip', '/content/entrega')\n"
+                "from google.colab import files\nfiles.download('/content/neido-video.zip')\n"
+                "print('LISTO: se descarga neido-video.zip')\n")]}
+salida.write_text(json.dumps(nb, ensure_ascii=False))
+print(salida, round(salida.stat().st_size / 1e6, 1), "MB")
