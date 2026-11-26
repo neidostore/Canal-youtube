@@ -1,0 +1,731 @@
+{
+ "tema": "shock",
+ "tarjetas": "tarjetas-shock.html",
+ "intro": {
+  "video": "marca/shockmental/intro/intro.mp4",
+  "audio": "marca/shockmental/intro/intro_audio.wav"
+ },
+ "musica": {
+  "archivo": "musica/wallpaper.mp3",
+  "volumen": 0.09,
+  "credito": "\"Wallpaper\" de Kevin MacLeod (incompetech.com)"
+ },
+ "estilo": {
+  "dinamico": true,
+  "plano": 1.6
+ },
+ "marco": {
+  "titulo": "SHOCK&nbsp;<i>MENTAL</i>",
+  "lema": "Tu dosis de asombro 🧠⚡",
+  "logo": "marca/shockmental/perfil-sin-eslogan.png"
+ },
+ "voz": {
+  "idioma": "es-US",
+  "nombre": "es-US-Chirp3-HD-Achird",
+  "velocidad": 1.15
+ },
+ "videos_inicio": {
+  "r_shocked_woman": 0.3,
+  "r_man_tv": 3.5
+ },
+ "titulo": "El Arca de la Alianza",
+ "videos": {
+  "r_shocked_woman": 8626657,
+  "r_man_tv": 9883681,
+  "vela": 3561988,
+  "dunas": 855673,
+  "desierto": 3018500,
+  "fuego": 2908575,
+  "fuego2": 4108548,
+  "biblia": 3987756,
+  "biblia2": 5199729,
+  "rayo": 2657691,
+  "tormenta": 3052162,
+  "tormenta2": 856429,
+  "rayo_color": 4073979,
+  "ruinas": 3015501,
+  "petra": 4253642,
+  "bandera_etiopia": 3845346
+ },
+ "fotos": {
+  "capilla": 0,
+  "iglesia_axum": 0,
+  "monje": 0,
+  "monje2": 0,
+  "timkat": 0,
+  "timkat2": 0,
+  "arca_replica": 0,
+  "arca_replica2": 0,
+  "arca_tissot": 0,
+  "arca_jordan": 0,
+  "uza": 0,
+  "dagon": 0,
+  "ashdod": 0,
+  "obelisco": 0,
+  "carro_vacas": 0,
+  "kiryat": 0,
+  "maqueta_templo": 0,
+  "monte_templo": 0,
+  "jerusalen_arde": 0,
+  "ishtar": 0,
+  "bubastis": 0,
+  "tanis": 0,
+  "nebo": 0,
+  "nebo_vista": 0,
+  "jeremias": 0,
+  "tunel": 0,
+  "tunel2": 0,
+  "lemba": 0,
+  "lemba2": 0,
+  "saba": 0,
+  "menelik_arca": 0
+ },
+ "credito_fotos": {
+  "capilla": "Foto: A. Davey · CC BY 2.0",
+  "iglesia_axum": "Foto: A.Savin · FAL",
+  "monje": "Foto: Rod Waddington · CC BY-SA 2.0",
+  "monje2": "Foto: A.Savin · FAL",
+  "timkat": "Foto: Joe Castleman · CC BY-SA 4.0",
+  "timkat2": "Foto: Brian Dell · CC0",
+  "arca_replica": "Foto: Ben P L · CC BY 2.0",
+  "arca_replica2": "Foto: Graph+sas · CC BY-SA 4.0",
+  "arca_tissot": "James Tissot · dominio público",
+  "arca_jordan": "James Tissot · dominio público",
+  "uza": "James Tissot · dominio público",
+  "dagon": "Battista Franco · The Met (CC0)",
+  "ashdod": "Nicolas Poussin · dominio público",
+  "obelisco": "Foto: Tesfawel · CC BY-SA 4.0",
+  "carro_vacas": "Erastus Salisbury Field · dominio público",
+  "kiryat": "Foto: Hagai Agmon-Snir حچاي اچمون-سنير חגי אגמון-שניר · CC BY-SA 4.0",
+  "maqueta_templo": "Foto: Berthold Werner · dominio público",
+  "monte_templo": "Foto: Godot13 · CC BY-SA 4.0",
+  "jerusalen_arde": "Círculo de Juan de la Corte · dominio público",
+  "ishtar": "Foto: Kurt Kaiser · CC0",
+  "bubastis": "Foto: Olaf Tausch · CC BY 3.0",
+  "tanis": "Foto: Strassberger · CC BY-SA 2.5",
+  "nebo": "Foto: Faris El-Gwely · CC BY-SA 4.0",
+  "nebo_vista": "Foto: Paralingua · CC BY-SA 3.0",
+  "jeremias": "Rembrandt · dominio público",
+  "tunel": "Foto: איתי טיומקין · CC BY-SA 4.0",
+  "tunel2": "Foto: DGtal · CC BY-SA 4.0",
+  "lemba": "Foto: Sanali.SD · CC BY-SA 4.0",
+  "lemba2": "Foto: N.J. Van Warmelo · CC BY-SA 4.0",
+  "saba": "Foto: A. Davey · CC BY 2.0",
+  "menelik_arca": "Foto: Martijn.Munneke · CC BY 2.0"
+ },
+ "bloques": [
+  {
+   "nombre": "El guardián del Arca",
+   "frases": [
+    {
+     "t": "En una pequeña capilla de Etiopía vive un monje que no puede salir nunca de allí. Nunca. Hasta el día de su muerte.",
+     "img": [
+      "capilla"
+     ],
+     "kw": "no puede salir nunca",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🔒",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    },
+    {
+     "t": "Su única misión es vigilar un objeto que, según dicen, solo él puede ver. Ni el patriarca de su iglesia, ni un presidente, ni ningún científico.",
+     "img": [
+      "monje2"
+     ],
+     "kw": "solo él puede ver"
+    },
+    {
+     "t": "Ese objeto sería… el Arca de la Alianza. El tesoro más buscado de la Biblia, desaparecido hace unos dos mil quinientos años.",
+     "img": [
+      "arca_jordan",
+      "arca_replica2"
+     ],
+     "kw": "el Arca de la Alianza",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "😱",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    },
+    {
+     "t": "Hoy te cuento las pistas reales de dónde podría estar. Y al final volvemos a esa capilla.",
+     "vid": [
+      "vela",
+      "desierto"
+     ],
+     "kw": "las pistas reales",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "👀",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "nombre": "Intro",
+   "intro": true
+  },
+  {
+   "nombre": "1 · Qué era el Arca",
+   "frases": [
+    {
+     "t": "Número uno.",
+     "card": {
+      "tipo": "numero",
+      "n": 1,
+      "tema": "La Biblia"
+     }
+    },
+    {
+     "t": "Según la Biblia, era un cofre de madera de acacia cubierto de oro, de algo más de un metro de largo, con dos querubines de oro en la tapa.",
+     "rotulo": {
+      "arriba": "Éxodo 25",
+      "texto": "Madera y oro · algo más de 1 metro"
+     },
+     "img": [
+      "arca_replica2"
+     ]
+    },
+    {
+     "t": "Dentro guardaba las tablas de piedra con los diez mandamientos.",
+     "vid": [
+      "biblia",
+      "biblia2"
+     ],
+     "kw": "los diez mandamientos"
+    },
+    {
+     "t": "Se transportaba con dos varas, porque no se podía tocar.",
+     "img": [
+      "arca_jordan"
+     ],
+     "kw": "no se podía tocar",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🚫",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    },
+    {
+     "t": "Y la Biblia cuenta que un hombre llamado Uzá la tocó para que no se cayera… y murió en el acto.",
+     "vid": [
+      "rayo",
+      "tormenta"
+     ],
+     "kw": "murió en el acto",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "⚡",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "nombre": "2 · Los filisteos la robaron",
+   "frases": [
+    {
+     "t": "Número dos.",
+     "card": {
+      "tipo": "numero",
+      "n": 2,
+      "tema": "La Biblia"
+     }
+    },
+    {
+     "t": "Los israelitas la llevaban a la guerra. Y en una batalla la perdieron: los filisteos se la llevaron como trofeo y la pusieron en el templo de su dios, Dagón.",
+     "img": [
+      "dagon"
+     ],
+     "kw": "su dios, Dagón"
+    },
+    {
+     "t": "A la mañana siguiente, la estatua de Dagón estaba tirada en el suelo, boca abajo, delante del Arca. La levantaron… y al día siguiente apareció otra vez en el suelo, rota.",
+     "img": [
+      "dagon"
+     ],
+     "kw": "otra vez en el suelo",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "😨",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    },
+    {
+     "t": "Después llegaron las plagas.",
+     "rotulo": {
+      "arriba": "Nicolas Poussin · 1630",
+      "texto": "La peste de Asdod"
+     },
+     "img": [
+      "ashdod"
+     ]
+    },
+    {
+     "t": "A los siete meses, los filisteos la devolvieron en un carro tirado por vacas, sin nadie que lo guiara.",
+     "img": [
+      "carro_vacas"
+     ],
+     "kw": "sin nadie que lo guiara",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🐄",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "nombre": "3 · El lugar que han excavado",
+   "frases": [
+    {
+     "t": "Número tres.",
+     "card": {
+      "tipo": "numero",
+      "n": 3,
+      "tema": "Arqueología"
+     }
+    },
+    {
+     "t": "Tras volver, según la Biblia, el Arca pasó unos veinte años en un pueblo llamado Kiriath-Jearim, cerca de Jerusalén.",
+     "img": [
+      "kiryat"
+     ],
+     "kw": "unos veinte años"
+    },
+    {
+     "t": "Y ese lugar existe. En 2017, arqueólogos de la Universidad de Tel Aviv excavaron allí y encontraron una enorme plataforma de unos ciento cincuenta metros de largo, construida hacia el siglo octavo antes de Cristo.",
+     "rotulo": {
+      "arriba": "Kiriath-Jearim · 2017",
+      "texto": "Plataforma de unos 150 metros"
+     },
+     "img": [
+      "kiryat"
+     ]
+    },
+    {
+     "t": "El arqueólogo Israel Finkelstein cree que se levantó como santuario para recordar la historia del Arca.",
+     "vid": [
+      "ruinas",
+      "desierto"
+     ],
+     "kw": "santuario"
+    },
+    {
+     "t": "Ojo: él duda de que el Arca existiera. Pero la historia era tan importante que le construyeron un monumento.",
+     "img": [
+      "arca_replica"
+     ],
+     "kw": "un monumento",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🏛️",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "nombre": "4 · Desaparece sin dejar rastro",
+   "frases": [
+    {
+     "t": "Número cuatro.",
+     "card": {
+      "tipo": "numero",
+      "n": 4,
+      "tema": "Historia"
+     }
+    },
+    {
+     "t": "Después, el rey Salomón la colocó en el Templo de Jerusalén. Y la última vez que la Biblia la menciona es en tiempos del rey Josías, hacia el año seiscientos veinte antes de Cristo.",
+     "img": [
+      "monte_templo"
+     ],
+     "kw": "la última vez"
+    },
+    {
+     "t": "En el año 587 antes de Cristo, los babilonios arrasaron Jerusalén y saquearon el Templo.",
+     "rotulo": {
+      "arriba": "Jerusalén · 587 a. C.",
+      "texto": "Los babilonios arrasan la ciudad"
+     },
+     "img": [
+      "jerusalen_arde"
+     ]
+    },
+    {
+     "t": "La Biblia hace una lista de lo que se llevaron: objetos de oro, de plata, de bronce…",
+     "img": [
+      "ishtar"
+     ],
+     "kw": "de oro, de plata, de bronce"
+    },
+    {
+     "t": "Pero el Arca no aparece en esa lista. Simplemente, desaparece.",
+     "vid": [
+      "fuego",
+      "fuego2"
+     ],
+     "kw": "desaparece",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "❓",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "nombre": "5 · ¿Se la llevó Egipto?",
+   "frases": [
+    {
+     "t": "Número cinco.",
+     "card": {
+      "tipo": "numero",
+      "n": 5,
+      "tema": "Pista 1"
+     }
+    },
+    {
+     "t": "Primera pista. Unos trescientos años antes, el faraón Sisac atacó Jerusalén y, según la Biblia, se llevó los tesoros del Templo.",
+     "rotulo": {
+      "arriba": "Templo de Karnak · Egipto",
+      "texto": "La puerta del faraón Sisac"
+     },
+     "img": [
+      "bubastis"
+     ]
+    },
+    {
+     "t": "Esa es la teoría de una película muy famosa: En busca del arca perdida, de Indiana Jones, donde aparece enterrada en la ciudad egipcia de Tanis.",
+     "img": [
+      "tanis"
+     ],
+     "kw": "Indiana Jones",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🎬",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    },
+    {
+     "t": "El problema: la Biblia sigue hablando del Arca siglos después de Sisac.",
+     "vid": [
+      "dunas",
+      "desierto"
+     ],
+     "kw": "siglos después"
+    }
+   ]
+  },
+  {
+   "nombre": "6 · ¿En una cueva o bajo el Templo?",
+   "frases": [
+    {
+     "t": "Número seis.",
+     "card": {
+      "tipo": "numero",
+      "n": 6,
+      "tema": "Pistas 2 y 3"
+     }
+    },
+    {
+     "t": "Segunda pista. Un libro antiguo, el segundo de los Macabeos, cuenta que el profeta Jeremías la escondió en una cueva del monte Nebo, en la actual Jordania, antes de que llegaran los babilonios.",
+     "img": [
+      "jeremias",
+      "nebo"
+     ],
+     "kw": "monte Nebo"
+    },
+    {
+     "t": "Pero se escribió unos cuatrocientos años después.",
+     "img": [
+      "nebo_vista"
+     ],
+     "kw": "cuatrocientos años después"
+    },
+    {
+     "t": "Tercera pista. Una tradición judía dice que nunca salió de Jerusalén: que la escondieron en túneles bajo el Monte del Templo.",
+     "img": [
+      "tunel",
+      "tunel2"
+     ],
+     "kw": "túneles",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🕳️",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    },
+    {
+     "t": "Y ahí nadie puede excavar: es uno de los lugares más sagrados y vigilados del planeta.",
+     "img": [
+      "monte_templo"
+     ],
+     "kw": "nadie puede excavar",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🚫",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "nombre": "7 · El tambor de los lemba",
+   "frases": [
+    {
+     "t": "Número siete.",
+     "card": {
+      "tipo": "numero",
+      "n": 7,
+      "tema": "Pista 4"
+     }
+    },
+    {
+     "t": "Cuarta pista, y la más sorprendente. En Zimbabue y Sudáfrica viven los lemba, un pueblo que siempre ha dicho que sus antepasados eran judíos.",
+     "rotulo": {
+      "arriba": "Zimbabue y Sudáfrica",
+      "texto": "El pueblo lemba"
+     },
+     "img": [
+      "lemba"
+     ]
+    },
+    {
+     "t": "Y los análisis genéticos han encontrado en ellos un origen en Oriente Próximo.",
+     "img": [
+      "lemba2"
+     ],
+     "kw": "Oriente Próximo",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🧬",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    },
+    {
+     "t": "Su tradición cuenta que guardaban un objeto sagrado hecho con restos del Arca: un tambor llamado ngoma lungundu.",
+     "vid": [
+      "vela",
+      "fuego"
+     ],
+     "kw": "ngoma lungundu",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🥁",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    },
+    {
+     "t": "En 2007, el investigador Tudor Parfitt encontró ese tambor olvidado en el almacén de un museo de Harare. Las pruebas de carbono lo datan hacia el año 1350.",
+     "vid": [
+      "biblia2",
+      "vela"
+     ],
+     "kw": "hacia el año 1350"
+    },
+    {
+     "t": "No es el Arca… pero podría ser una réplica de una réplica.",
+     "img": [
+      "arca_replica2"
+     ],
+     "kw": "una réplica de una réplica",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🤔",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "nombre": "8 · Axum",
+   "frases": [
+    {
+     "t": "Número ocho.",
+     "card": {
+      "tipo": "numero",
+      "n": 8,
+      "tema": "Etiopía"
+     }
+    },
+    {
+     "t": "Y volvemos a Etiopía. Un libro sagrado etíope cuenta que Menelik, hijo del rey Salomón y la reina de Saba, se llevó el Arca de Jerusalén a Etiopía.",
+     "img": [
+      "saba",
+      "menelik_arca"
+     ],
+     "kw": "la reina de Saba"
+    },
+    {
+     "t": "Hoy, según la Iglesia ortodoxa etíope, está en la Capilla de la Tabla, en la ciudad de Axum.",
+     "rotulo": {
+      "arriba": "Axum · Etiopía",
+      "texto": "La Capilla de la Tabla"
+     },
+     "img": [
+      "capilla"
+     ]
+    },
+    {
+     "t": "Su guardián es un monje elegido de por vida por el anterior antes de morir. No puede salir del recinto. Y es el único que la puede ver.",
+     "img": [
+      "monje2",
+      "iglesia_axum"
+     ],
+     "kw": "el único que la puede ver",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "👁️",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    },
+    {
+     "t": "Por eso nadie ha podido comprobarlo: ni medirla, ni fecharla, ni compararla con lo que dice la Biblia. Muchos historiadores lo dudan.",
+     "img": [
+      "obelisco",
+      "capilla"
+     ],
+     "kw": "Muchos historiadores lo dudan"
+    },
+    {
+     "t": "Pero cada iglesia de Etiopía guarda una copia de las tablas, el tabot. Y una vez al año, en la fiesta de Timkat, salen en procesión, cubiertas con telas, ante miles de personas.",
+     "img": [
+      "timkat",
+      "timkat2"
+     ],
+     "kw": "Timkat",
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🙏",
+       "pos": [
+        0.86,
+        0.5
+       ],
+       "tam": 200
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "nombre": "Cierre",
+   "frases": [
+    {
+     "t": "¿Tú qué crees: está en Etiopía, bajo Jerusalén… o ya no existe? Te leo en los comentarios.",
+     "card": {
+      "tipo": "final"
+     }
+    },
+    {
+     "t": "Y si te gustan los misterios de la Biblia, suscríbete a Shock Mental: el próximo es Sodoma y Gomorra.",
+     "card": {
+      "tipo": "final"
+     }
+    }
+   ],
+   "final": 1.0
+  }
+ ]
+}
