@@ -3,12 +3,15 @@
 # - Parte 2: "Nearer, My God, to Thee" (melodía "Bethany", Lowell Mason, 1856: dominio público),
 #   el himno que la orquesta del Titanic tocó durante el hundimiento.
 # No usa ninguna melodía con derechos. Tempo 60 = 1 pulso por segundo, para cuadrar con los planos.
-# Uso: python componer.py salida.mid
+# Uso: python componer.py salida.mid [planos.json]
 import sys, mido
 
+import json
 INTRO = 3.5           # la cortinilla dura 3,5 s
-HIMNO = 32.5          # entra cuando Margaret dice "El Titanic"
-FIN = 40.5
+# los tiempos salen de planos.json: el himno entra en el plano 8 (cuando Margaret dice "El Titanic")
+_pl = json.load(open(sys.argv[2]))["planos"] if len(sys.argv) > 2 else None
+HIMNO = INTRO + sum(float(p["duracion"]) for p in _pl if p["n"] < 8) if _pl else 32.5
+FIN = INTRO + sum(float(p["duracion"]) for p in _pl) if _pl else 40.5
 TPB = 480
 N = {"A3": 57, "B3": 59, "C#4": 61, "D3": 50, "D4": 62, "E4": 64, "F#4": 66, "G3": 55, "G4": 67, "A4": 69,
      "B4": 71, "C#5": 73, "D5": 74, "E5": 76, "F#5": 78, "G5": 79, "A5": 81, "A2": 45, "B2": 47, "G2": 43, "D2": 38,

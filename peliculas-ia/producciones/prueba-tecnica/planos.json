@@ -31,7 +31,7 @@
   "planos": [
     {
       "n": 1,
-      "duracion": 8.0,
+      "duracion": 8.6,
       "tipo": "imagen_fija",
       "movimiento": "acercamiento",
       "personajes": [],
@@ -57,7 +57,7 @@
     },
     {
       "n": 3,
-      "duracion": 4.0,
+      "duracion": 4.3,
       "tipo": "video",
       "personajes": [
         "santi"
@@ -108,7 +108,7 @@
     },
     {
       "n": 6,
-      "duracion": 4.0,
+      "duracion": 5.6,
       "tipo": "lipsync",
       "personajes": [
         "margaret"
@@ -126,7 +126,7 @@
     },
     {
       "n": 7,
-      "duracion": 5.0,
+      "duracion": 6.6,
       "tipo": "lipsync",
       "personajes": [
         "santi"
@@ -144,7 +144,7 @@
     },
     {
       "n": 8,
-      "duracion": 4.0,
+      "duracion": 5.3,
       "tipo": "video",
       "personajes": [
         "margaret"

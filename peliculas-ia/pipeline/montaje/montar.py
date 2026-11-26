@@ -144,7 +144,7 @@ def main():
         filtros.append(f"[{j+1}:a]aresample=48000,adelay={r}|{r},volume=1.0[v{j}]"); etiquetas.append(f"[v{j}]")
     if musica.exists():
         entradas += ["-i", musica]; m = len(retardos) + 1
-        filtros.append(f"[{m}:a]aresample=48000,volume=0.18,afade=t=out:st={total-2}:d=2[mu]"); etiquetas.append("[mu]")
+        filtros.append(f"[{m}:a]aresample=48000,volume=0.3,afade=t=out:st={total-2}:d=2[mu]"); etiquetas.append("[mu]")
     salida = prod / "salida" / "pelicula.mp4"
     if etiquetas:
         filtros.append(f"{''.join(etiquetas)}amix=inputs={len(etiquetas)}:normalize=0,apad[aud]")
