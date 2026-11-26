@@ -50,7 +50,7 @@ try:
     log("preparando voces")
     sh("apt-get -qq install -y espeak-ng > /dev/null")
     sh(f"{sys.executable} -m pip install -q uv")
-    sh("uv venv -q -p 3.11 /content/vz && uv pip install -q -p /content/vz/bin/python 'chatterbox-tts>=0.1.4' 'kokoro>=0.9' soundfile")
+    sh("uv venv -q -p 3.11 /content/vz && uv pip install -q -p /content/vz/bin/python 'chatterbox-tts>=0.1.4' 'kokoro>=0.9' soundfile 'setuptools<81'")
     open("/content/voces.py", "w").write(SCRIPT_VOCES)
     json.dump(PLANOS, open("/content/planos.json", "w"))
     sh(f"/content/vz/bin/python /content/voces.py /content/planos.json {VOCES} > {OUT}/log_voces.txt 2>&1")
