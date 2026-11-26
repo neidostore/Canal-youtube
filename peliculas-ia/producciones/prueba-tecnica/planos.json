@@ -85,7 +85,10 @@
       "prompt": "Night scene. Close-up insert of a man's hand holding a modern smartphone with a black case, the screen glowing cool blue-white and blank, against the dark wooden deck of a 1912 ocean liner at night, warm lamp light in the background",
       "superposicion": {
         "texto": "4:04",
-        "subtexto": "Sin servicio"
+        "subtexto": "Sin servicio",
+        "x": 0.512,
+        "y": 0.42,
+        "tamano": 48
       },
       "audio": [],
       "ambiente": "pitido de error suave"

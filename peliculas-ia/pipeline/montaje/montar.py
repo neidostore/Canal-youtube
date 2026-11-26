@@ -71,9 +71,13 @@ def preparar_plano(p, prod, tmp):
                      f"x=120:y=h-{BANDA}-90:alpha='min(1,max(0,(t-0.6)/0.8))*min(1,max(0,({d}-0.4-t)/0.6))'")
     if p.get("superposicion"):
         s = p["superposicion"]
-        extra.append(f"drawtext=fontfile={F_TEXTO}:text='{esc(s['texto'])}':fontsize=96:fontcolor=white@0.92:x=(w-tw)/2:y=h/2-110")
+        # posición (centro, en fracción del cuadro) y tamaño opcionales, para encajar el texto en una pantalla
+        cx, cy, t = s.get("x", 0.5), s.get("y", 0.45), s.get("tamano", 96)
+        extra.append(f"drawtext=fontfile={F_TEXTO}:text='{esc(s['texto'])}':fontsize={t}:fontcolor=white@0.92:"
+                     f"x=w*{cx}-tw/2:y=h*{cy}-th")
         if s.get("subtexto"):
-            extra.append(f"drawtext=fontfile={F_TEXTO}:text='{esc(s['subtexto'])}':fontsize=34:fontcolor=white@0.8:x=(w-tw)/2:y=h/2+10")
+            extra.append(f"drawtext=fontfile={F_TEXTO}:text='{esc(s['subtexto'])}':fontsize={max(14, t*0.36):.0f}:"
+                         f"fontcolor=white@0.8:x=w*{cx}-tw/2:y=h*{cy}+{t*0.25:.0f}")
     if p.get("final") == "negro":
         extra.append(f"fade=t=out:st={d-0.8}:d=0.8")
     filtro = ",".join([filtro, *extra])
