@@ -9,6 +9,7 @@
 # Los fotogramas y las voces vienen incrustados en el cuaderno (__DATOS__). Salida: /content/entrega
 import base64, gc, json, os, subprocess, sys, time, traceback
 os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "expandable_segments:True"
+os.environ["HF_HUB_DISABLE_PROGRESS_BARS"] = "1"; os.environ["TQDM_DISABLE"] = "1"   # menos texto: el navegador no se atasca
 T0 = time.time(); LIMITE = 2.6 * 3600          # Colab gratis corta sesiones largas: paramos a tiempo
 OUT = "/content/entrega"; IN = "/content/entrada"; os.makedirs(OUT, exist_ok=True); os.makedirs(IN, exist_ok=True)
 DATOS = json.loads(base64.b64decode(__DATOS__))
@@ -17,7 +18,7 @@ import urllib.request
 for nombre, url in DATOS["archivos"].items():      # fotogramas y voces se bajan del repositorio
     urllib.request.urlretrieve(url, f"{IN}/{nombre}")
 log = lambda *a: print(f"[{(time.time()-T0)/60:5.1f} min]", *a, flush=True)
-sh = lambda c: subprocess.run(c, shell=True, check=True)
+sh = lambda c: subprocess.run(c + " > /content/log_comandos.txt 2>&1" if ">" not in c else c, shell=True, check=True)
 
 # ---------------- 0) voces ----------------
 VOCES = f"{OUT}/audio"; os.makedirs(VOCES, exist_ok=True)
@@ -118,6 +119,7 @@ except Exception:
     traceback.print_exc()
 pipe = WanImageToVideoPipeline.from_pretrained(M, transformer=tr, vae=vae, text_encoder=None, tokenizer=None,
                                                torch_dtype=torch.float16).to("cuda")
+pipe.set_progress_bar_config(disable=True)
 metricas = {}
 for pl, p in trabajos:
     n = pl["n"]
