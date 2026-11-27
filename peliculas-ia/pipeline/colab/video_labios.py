@@ -9,7 +9,7 @@
 # Los fotogramas y las voces vienen incrustados en el cuaderno (__DATOS__). Salida: /content/entrega
 import base64, gc, json, os, subprocess, sys, time, traceback
 os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "expandable_segments:True"
-os.environ["HF_HUB_DISABLE_PROGRESS_BARS"] = "1"; os.environ["TQDM_DISABLE"] = "1"   # menos texto: el navegador no se atasca
+os.environ["MPLBACKEND"] = "Agg"; os.environ["HF_HUB_DISABLE_PROGRESS_BARS"] = "1"; os.environ["TQDM_DISABLE"] = "1"   # menos texto: el navegador no se atasca
 T0 = time.time(); LIMITE = 2.6 * 3600          # Colab gratis corta sesiones largas: paramos a tiempo
 OUT = "/content/entrega"; IN = "/content/entrada"; os.makedirs(OUT, exist_ok=True); os.makedirs(IN, exist_ok=True)
 DATOS = json.loads(base64.b64decode(__DATOS__))
