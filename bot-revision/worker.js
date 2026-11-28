@@ -193,6 +193,18 @@ async function manejar(upd, env) {
   if (cb) {
     await tg(env, "answerCallbackQuery", { callback_query_id: cb.id });
     const [accion, id, extra] = (cb.data || "").split(":");
+    if (accion === "vz") {   // elección del perfil oficial de locución (A/B/C)
+      await guardar(env, "voz_elegida", { letra: id, fecha: new Date().toISOString() });
+      return decir(env, `🎙️ Elegida la interpretación <b>${esc(id)}</b>. La aplico como voz oficial en el próximo ciclo del PC.`);
+    }
+    if (accion === "mz") {   // elección de concepto de miniatura: mz:id:concepto
+      const it2 = await getItem(env, id);
+      if (!it2) return decir(env, "No encuentro ese vídeo.");
+      it2.miniatura_elegida = extra; it2.estado = "cambios";
+      it2.cambios = [{ texto: `[miniatura] Usa el concepto ${extra}`, fecha: new Date().toISOString() }];
+      await putItem(env, it2);
+      return decir(env, `🖼️ Vale, concepto <b>${esc(extra)}</b> para «${esc(it2.titulo)}». Te mando la versión nueva.`);
+    }
     const it = await getItem(env, id);
     if (!it) return decir(env, "No encuentro ese vídeo.");
     // Solo lectura: sirven en cualquier estado
@@ -417,6 +429,7 @@ async function pc(url, req, env) {
     for (const k of Object.keys(cuerpo)) if (!Array.isArray(cuerpo[k])) throw new Error("calendario mal formado");
     await guardar(env, "calendario", cuerpo); return { ok: true };
   }
+  if (ruta === "ajustes") return { ok: true, voz_elegida: await leer(env, "voz_elegida", null) };
   if (ruta === "panel") { await guardar(env, "panel", { texto: String(cuerpo.texto || ""), fecha: new Date().toISOString() }); return { ok: true }; }
   if (ruta === "programado") {   // el PC subió y programó en YouTube un vídeo ya aprobado
     const it = await getItem(env, cuerpo.id);

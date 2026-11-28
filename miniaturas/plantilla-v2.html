@@ -1,0 +1,54 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+/* SHOCK MENTAL · plantilla de miniaturas v2 (guía: docs/autopilot/guia-visual.md)
+   Firma reconocible sin ver el nombre: base casi negra, UNA imagen protagonista con grado cinematográfico,
+   texto de 1-3 palabras en Inter Display Black con UNA palabra en el color de acento,
+   y el «filo eléctrico» (línea cian → ámbar) bajo el texto. Sin logo, sin flechas, sin rayos encima del sujeto. */
+html,body{margin:0;background:#000}
+.t{width:1280px;height:720px;position:relative;overflow:hidden;background:#07080D;font-family:'Inter Display',Inter,sans-serif;--ac:#FFB020}
+.bg{position:absolute;inset:0;background-size:cover;background-repeat:no-repeat;filter:contrast(1.12) saturate(1.18) brightness(1.02)}
+.b2{position:absolute;top:0;bottom:0;width:50%;background-size:cover;background-position:center;filter:contrast(1.12) saturate(1.15)}
+.vig{position:absolute;inset:0;pointer-events:none}
+.txt{position:absolute;z-index:3}
+.w{font-weight:900;line-height:.92;letter-spacing:-3px;text-transform:uppercase;color:#fff;white-space:nowrap;
+   text-shadow:0 6px 0 rgba(0,0,0,.55),0 0 28px rgba(0,0,0,.85)}
+.w .a{color:var(--ac)}
+.filo{height:10px;border-radius:6px;margin-top:18px;background:linear-gradient(90deg,#22D3EE,#FFB020);box-shadow:0 0 22px rgba(34,211,238,.55)}
+.chip{display:inline-block;margin-top:16px;font-weight:800;font-size:38px;color:#0B0B10;background:var(--ac);padding:6px 18px;border-radius:10px}
+.num{position:absolute;z-index:2;font-weight:900;font-size:520px;line-height:1;color:transparent;-webkit-text-stroke:10px var(--ac);opacity:.9;
+     text-shadow:0 0 40px rgba(0,0,0,.6)}
+.vs{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:3;width:150px;height:150px;border-radius:50%;background:#07080D;
+    border:8px solid var(--ac);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:64px;color:#fff}
+.sep{position:absolute;left:calc(50% - 4px);top:0;bottom:0;width:8px;background:linear-gradient(#22D3EE,#FFB020);z-index:2}
+.foco{position:absolute;inset:0;background:radial-gradient(circle at var(--fx,70%) var(--fy,45%),rgba(0,0,0,0) 0,rgba(0,0,0,0) 18%,rgba(4,5,10,.92) 55%)}
+.cred{position:absolute;right:14px;bottom:10px;font-size:15px;color:#fff;opacity:.55;z-index:4}
+</style></head><body><div class="t" id="t"></div>
+<script>
+const q=JSON.parse(decodeURIComponent(location.hash.slice(1))), g=k=>q[k]??'';
+const ACENTO={ranking:'#FFB020',ciencia:'#22D3EE',historia:'#E8B04A',misterio:'#FF3B3B',tecnologia:'#A78BFA',datos:'#FFD21F'};
+const t=document.getElementById('t'); t.style.setProperty('--ac',q.acento||ACENTO[q.categoria]||'#FFB020');
+const pal=(s)=>s.replace(/\*(.+?)\*/g,'<span class="a">$1</span>');      // *palabra* = color de acento
+const lay=q.layout||'heroe', fs=q.fs||170;
+let h='';
+if(lay==='comparacion'){
+  h+=`<div class="b2" style="left:0;background-image:url('${g('fondo')}');background-position:${g('pos')||'center'}"></div>
+      <div class="b2" style="right:0;left:auto;background-image:url('${g('fondo2')}');background-position:${g('pos2')||'center'}"></div>
+      <div class="sep"></div><div class="vig" style="background:linear-gradient(0deg,rgba(4,5,10,.9),rgba(4,5,10,0) 45%)"></div>
+      <div class="vs">${g('vs')||'VS'}</div>`;
+}else{
+  h+=`<div class="bg" style="background-image:url('${g('fondo')}');background-position:${g('pos')||'center'};transform:scale(${q.zoom||1})"></div>`;
+  if(lay==='misterio') h+=`<div class="foco" style="--fx:${q.fx||'70%'};--fy:${q.fy||'45%'}"></div>`;
+  else if(lay==='centro') h+=`<div class="vig" style="background:linear-gradient(180deg,rgba(4,5,10,.88) 0%,rgba(4,5,10,.2) 42%,rgba(4,5,10,0) 60%),radial-gradient(ellipse at 50% 60%,rgba(0,0,0,0) 40%,rgba(0,0,0,.55) 100%)"></div>`;
+  else h+=`<div class="vig" style="background:linear-gradient(90deg,rgba(4,5,10,.94) 0%,rgba(4,5,10,.70) 34%,rgba(4,5,10,0) 62%),radial-gradient(ellipse at 75% 50%,rgba(0,0,0,0) 45%,rgba(0,0,0,.5) 100%)"></div>`;
+  if(lay==='numero') h+=`<div class="num" style="left:${q.nx||40}px;top:${q.ny||60}px">${g('numero')||'#1'}</div>`;
+}
+const pos = lay==='centro'?'left:0;right:0;top:44px;text-align:center':
+            lay==='comparacion'?'left:0;right:0;bottom:40px;text-align:center':
+            lay==='numero'?`left:${q.tx||430}px;bottom:70px`:'left:58px;top:50%;transform:translateY(-50%)';
+const lineas=(q.texto||'').split('|').filter(Boolean);
+h+=`<div class="txt" id="txt" style="${pos}">${lineas.map(l=>`<div class="w" style="font-size:${fs}px">${pal(l)}</div>`).join('')}`+
+   `${lay==='comparacion'||lay==='centro'?'':'<div class="filo" style="width:'+(q.filo||320)+'px"></div>'}`+
+   `${q.chip?`<div class="chip">${q.chip}</div>`:''}</div>`;
+if(q.credito) h+=`<div class="cred">${q.credito}</div>`;
+t.innerHTML=h;
+if(q.sin_texto){ document.getElementById('txt').style.visibility='hidden'; }
+</script></body></html>

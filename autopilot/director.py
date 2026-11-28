@@ -53,6 +53,12 @@ def sincronizar(con, cfg):
         c = RV.conf()
         RV.bot(c, "calendario", calendario_para_bot(cfg))
         items = {i["id"]: i for i in RV.bot(c, "items")["items"]}
+        from . import voz as VZ
+        elegida = (RV.bot(c, "ajustes").get("voz_elegida") or {}).get("letra")
+        if elegida in VZ.PERFILES and elegida != VZ.perfil_actual().get("letra"):
+            p = VZ.guardar_perfil(elegida)
+            log(con, f"nuevo perfil oficial de locución: {elegida} ({p['nombre_perfil']})", agente="voz")
+            avisar(f"🎙️ Perfil de voz oficial guardado: {elegida} · {p['nombre_perfil']}. Se usa desde el próximo vídeo.")
     except Exception as e:
         log(con, f"no puedo hablar con el bot: {e}", nivel="error")
         return {}

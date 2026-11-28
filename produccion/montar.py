@@ -60,9 +60,17 @@ def clave():
 def tts(texto, voz, destino, key):
     if destino.exists():
         return
-    body = {"input": {"text": texto}, "voice": {"languageCode": voz["idioma"], "name": voz["nombre"]},
-            "audioConfig": {"audioEncoding": "LINEAR16", "sampleRateHertz": 48000,
-                            "speakingRate": voz.get("velocidad", 1.0)}}
+    import re as _re
+    if voz.get("modelo"):   # Gemini-TTS (misma voz por nombre, estilo con instrucción). Solo si el dueño lo autoriza: tiene coste.
+        body = {"input": {"prompt": voz.get("instruccion", ""), "text": texto},
+                "voice": {"languageCode": voz["idioma"], "name": voz["nombre"], "modelName": voz["modelo"]},
+                "audioConfig": {"audioEncoding": "LINEAR16", "sampleRateHertz": 48000}}
+    else:                   # Chirp 3 HD: velocidad + pausas [pause short] / [pause] / [pause long] (campo «markup»)
+        limpio = _re.sub(r"\[(?!pause)[^\]]*\]\s*", "", texto).strip()   # quita acotaciones de dirección
+        campo = {"markup": limpio} if "[pause" in limpio else {"text": limpio}
+        body = {"input": campo, "voice": {"languageCode": voz["idioma"], "name": voz["nombre"]},
+                "audioConfig": {"audioEncoding": "LINEAR16", "sampleRateHertz": 48000,
+                                "speakingRate": voz.get("velocidad", 1.0)}}
     req = urllib.request.Request("https://texttospeech.googleapis.com/v1/text:synthesize",
                                  data=json.dumps(body).encode(),
                                  headers={"Content-Type": "application/json", "X-Goog-Api-Key": key})
@@ -295,7 +303,8 @@ def main(carpeta):
     def hacer_tts(e):
         if not e["texto"]:
             return
-        h = hashlib.md5((voz["nombre"] + str(voz.get("velocidad", 1.0)) + e["voz_texto"]).encode()).hexdigest()[:12]
+        clave_voz = voz["nombre"] + str(voz.get("velocidad", 1.0)) + (voz.get("modelo", "") + voz.get("instruccion", "") if voz.get("modelo") else "")
+        h = hashlib.md5((clave_voz + e["voz_texto"]).encode()).hexdigest()[:12]
         e["wav"] = trabajo / "tts" / f"{h}.wav"
         tts(e["voz_texto"], voz, e["wav"], key)
         e["voz_dur"] = duracion(e["wav"])
@@ -640,10 +649,14 @@ def main(carpeta):
                 entradas += ["-loop", "1", "-framerate", str(FPS), "-t", f"{max(0.1, a1 - a0):.2f}", "-i", str(png)]
                 video_fc = video_fc[:-len("[vfin]")] + f"[r{j}];[{n_in}:v]format=rgba,setpts=PTS-STARTPTS+{a0:.3f}/TB[rk{j}];[r{j}][rk{j}]overlay=0:0:eof_action=pass[vfin]"
                 n_in += 1
-            if tramos:   # lista vacía (solo números) desde el principio hasta el primer puesto
+            if tramos:   # lista vacía (solo números) hasta el primer puesto; con "desde_frase": 1 el gancho queda limpio (portada)
+                con_texto = [e for e in escenas if e.get("texto")]
+                d0 = rk.get("desde_frase", 0)
+                v0 = con_texto[d0]["ini"] if 0 < d0 < len(con_texto) else 0.0
                 png = mdir / "ranking_vacio.png"; MK.ranking_png(png, rk["titulo"], rk.get("puestos", [5, 4, 3, 2, 1]), {})
-                entradas += ["-loop", "1", "-framerate", str(FPS), "-t", f"{tramos[0][0]:.2f}", "-i", str(png)]
-                video_fc = video_fc[:-len("[vfin]")] + f"[rv];[rv][{n_in}:v]overlay=0:0:eof_action=pass[vfin]"
+                entradas += ["-loop", "1", "-framerate", str(FPS), "-t", f"{max(0.1, tramos[0][0] - v0):.2f}", "-i", str(png)]
+                video_fc = video_fc[:-len("[vfin]")] + (f"[rv];[{n_in}:v]format=rgba,setpts=PTS-STARTPTS+{v0:.3f}/TB[rvp];"
+                                                        f"[rv][rvp]overlay=0:0:eof_action=pass[vfin]")
                 n_in += 1
         nm = 0
         for e in escenas:      # Shorts: anotaciones (emojis, etiquetas, flechas…) con coordenadas relativas a la pantalla

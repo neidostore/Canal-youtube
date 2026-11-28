@@ -142,14 +142,35 @@ def a_escenas_largo(g: dict, cred: dict) -> dict:
     return d
 
 
+def _voz_oficial() -> dict:
+    from .voz import perfil_actual
+    p = perfil_actual()
+    return {"idioma": p["idioma"], "nombre": p["nombre"], "velocidad": p["velocidad"],
+            **({"modelo": p["modelo"], "instruccion": p.get("instruccion", "")} if p.get("modelo") else {})}
+
+
+def _texto_voz(frases_src: list[dict], frases_out: list[dict]):
+    """El guionista puede escribir en «voz» la versión hablada (con pausas y dirección); los subtítulos usan «t»."""
+    for s, o in zip(frases_src, frases_out):   # misma cantidad y orden (las tarjetas de número se excluyen antes)
+        if s.get("voz"):
+            o["voz"] = s["voz"]
+
+
 def a_escenas(g: dict, cred: dict) -> dict:
     """Convierte un guion validado en escenas.json para montar.py."""
     if g["formato"] == "largo":
-        return a_escenas_largo(g, cred)
+        d = a_escenas_largo(g, cred)
+        d["voz"] = _voz_oficial()
+        for b_src in g["bloques"]:
+            for b in d["bloques"]:
+                if b.get("nombre") == b_src["nombre"]:
+                    _texto_voz(b_src["frases"], [f for f in b["frases"] if "card" not in f])
+        return d
     d = copy.deepcopy(BASE_ESTILO)
+    d["voz"] = _voz_oficial()
     d["titulo"] = g["titulo"]
     if g["tipo"] == "ranking":
-        d["ranking"] = {"titulo": g["titulo_ranking"].upper(), "puestos": [5, 4, 3, 2, 1]}
+        d["ranking"] = {"titulo": g["titulo_ranking"].upper(), "puestos": [5, 4, 3, 2, 1], "desde_frase": 1}
     d["videos"] = dict(g.get("clips", {}))
     d["fotos"] = {n: 0 for n in g.get("fotos", {})}
     d["credito_fotos"] = {n: medios.credito_texto(cred[n]) for n in g.get("fotos", {})}
@@ -174,6 +195,10 @@ def a_escenas(g: dict, cred: dict) -> dict:
         if f.get("kw") and g["tipo"] != "ranking":
             x["kw"] = f["kw"]
         frases.append(x)
+    _texto_voz(g["frases"], frases)
+    if g.get("portada_texto"):   # titular grande sobre la imagen del gancho: sirve de portada del Short
+        frases[0].setdefault("marcas", []).insert(0, {"tipo": "texto", "texto": g["portada_texto"], "pos": [0.5, 0.30],
+                                                      "tam": 96, "en": 0.0, "fondo": "#FFD21F", "tinta": "#0B0B10"})
     bloque = {"nombre": "Ranking" if g["tipo"] == "ranking" else g["tema"], "frases": frases}
     if g["tipo"] != "ranking":
         bloque["final"] = 0.4
