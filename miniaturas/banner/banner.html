@@ -1,0 +1,38 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+/* Banner de YouTube 2560×1440. Zona segura (se ve en todos los dispositivos): 1546×423 en el centro.
+   Ordenador: franja de 2560×423 centrada en vertical. */
+html,body{margin:0;background:#000}
+.b{width:2560px;height:1440px;position:relative;overflow:hidden;font-family:'Inter Display',Inter,sans-serif;
+   background:radial-gradient(ellipse at 30% 50%,rgba(34,211,238,.18),transparent 45%),radial-gradient(ellipse at 75% 50%,rgba(255,176,32,.16),transparent 45%),#07080D}
+.puntos{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.07) 1.5px,transparent 1.5px);background-size:34px 34px}
+.filo{position:absolute;left:0;right:0;height:6px;background:linear-gradient(90deg,transparent,#22D3EE 25%,#FFB020 75%,transparent)}
+.seg{position:absolute;left:507px;top:508px;width:1546px;height:423px;display:flex;align-items:center;justify-content:center;gap:30px}
+.marca{display:flex;align-items:center;gap:20px;width:470px;flex:none}
+.logo{width:138px;height:138px;border-radius:50%;background:url('../../marca/shockmental/perfil-sin-eslogan.png') center/cover;box-shadow:0 0 40px rgba(34,211,238,.45)}
+.nombre{font-weight:900;font-size:80px;line-height:.9;color:#fff;letter-spacing:-2px}
+.nombre span{color:#FFB020}
+.lema{font-weight:700;font-size:30px;color:#cfd6e4;margin-top:12px}
+.lema b{color:#22D3EE}
+.minis{display:flex;gap:16px;flex:none}
+.mini{width:200px;height:113px;border-radius:12px;background-size:cover;background-position:center;box-shadow:0 10px 30px rgba(0,0,0,.6);outline:2px solid rgba(255,255,255,.08)}
+.mini:nth-child(2){transform:translateY(-18px)}
+.info{flex:none;width:250px;font-weight:800;color:#fff;font-size:30px;line-height:1.2}.info small{display:block;margin-top:8px;font-size:21px;font-weight:700;color:#cfd6e4;line-height:1.35}
+.info .c{display:block;font-size:20px;font-weight:700;color:#FFB020;letter-spacing:1px;margin-bottom:6px}
+.guia{position:absolute;left:507px;top:508px;width:1546px;height:423px;outline:4px dashed rgba(255,0,0,.8);display:none}
+</style></head><body><div class="b" id="b">
+<div class="puntos"></div>
+<div class="filo" style="top:500px;opacity:.55"></div><div class="filo" style="top:934px;opacity:.55"></div>
+<div class="seg">
+  <div class="marca"><div class="logo"></div>
+    <div><div class="nombre">SHOCK<br><span>MENTAL</span></div><div class="lema">Tu dosis de <b>asombro</b></div></div></div>
+  <div class="minis">
+    <div class="mini" style="background-image:url('m3.png')"></div>
+    <div class="mini" style="background-image:url('../../produccion/shock08/salida/miniatura_A.png')"></div>
+    <div class="mini" style="background-image:url('m2.png')"></div>
+  </div>
+  <div class="info"><span class="c">NUEVOS VÍDEOS</span>Shorts cada día<small>Rankings · Ciencia<br>Historia · Misterios</small></div>
+</div>
+<div class="guia" id="guia"></div>
+</div>
+<script>if(location.hash==='#guia')document.getElementById('guia').style.display='block';</script>
+</body></html>
