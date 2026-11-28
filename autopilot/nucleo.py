@@ -56,7 +56,34 @@ CREATE TABLE IF NOT EXISTS metricas (
 CREATE TABLE IF NOT EXISTS canal (
   fecha TEXT PRIMARY KEY, datos TEXT
 );
+CREATE TABLE IF NOT EXISTS publicaciones (      -- una fila por vídeo y plataforma: nunca se publica dos veces
+  video_id TEXT, plataforma TEXT, version INTEGER, estado TEXT DEFAULT 'pendiente', id_externo TEXT, url TEXT,
+  hora_prevista TEXT, hora_real TEXT, intentos INTEGER DEFAULT 0, error TEXT, actualizado TEXT,
+  PRIMARY KEY (video_id, plataforma)
+);
+CREATE TABLE IF NOT EXISTS decisiones (         -- registro del CEO
+  id INTEGER PRIMARY KEY, fecha TEXT, area TEXT, decision TEXT, motivo TEXT, requiere_gerente INTEGER DEFAULT 0, estado TEXT
+);
+CREATE TABLE IF NOT EXISTS comentarios (
+  id TEXT PRIMARY KEY, youtube_id TEXT, autor TEXT, texto TEXT, fecha TEXT, tipo TEXT, borrador TEXT, estado TEXT DEFAULT 'nuevo'
+);
+CREATE TABLE IF NOT EXISTS ajustes (
+  clave TEXT PRIMARY KEY, valor TEXT
+);
 """
+
+
+def decision(con, area: str, texto: str, motivo: str = "", requiere_gerente: bool = False):
+    """Registro de decisiones importantes del CEO (se resumen en los informes)."""
+    con.execute("INSERT INTO decisiones (fecha, area, decision, motivo, requiere_gerente, estado) VALUES (?,?,?,?,?,?)",
+                (ahora(), area, texto, motivo, int(requiere_gerente), "pendiente" if requiere_gerente else "tomada"))
+
+
+def ajuste(con, clave: str, valor=None):
+    if valor is None:
+        r = con.execute("SELECT valor FROM ajustes WHERE clave=?", (clave,)).fetchone()
+        return json.loads(r[0]) if r else None
+    con.execute("INSERT OR REPLACE INTO ajustes (clave, valor) VALUES (?,?)", (clave, json.dumps(valor, ensure_ascii=False)))
 
 
 def ahora() -> str:

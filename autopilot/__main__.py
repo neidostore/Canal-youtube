@@ -37,6 +37,10 @@ def main():
     s.add_parser("panel")
     pr = s.add_parser("probar"); pr.add_argument("guion"); pr.add_argument("--id")
     e = s.add_parser("enviar"); e.add_argument("id")
+    s.add_parser("distribuir")
+    inf = s.add_parser("informe"); inf.add_argument("tipo", choices=["diario", "semanal"], nargs="?", default="diario")
+    tk = s.add_parser("tiktok"); tk.add_argument("accion", choices=["conectar", "estado"])
+    vz = s.add_parser("voz"); vz.add_argument("accion", choices=["pruebas", "perfil"])
     a = p.parse_args()
 
     with db() as con:
@@ -84,6 +88,27 @@ def main():
             print(json.dumps({"id": vid, "estado": v["estado"], "calidad": v["calidad"]}, ensure_ascii=False, indent=1))
         elif a.orden == "enviar":
             director.enviar_revision(con, config(), a.id)
+        elif a.orden == "distribuir":     # cada 10 min (Programador de tareas): TikTok a su hora
+            from . import distribucion
+            distribucion.ejecutar(con, director.avisar)
+        elif a.orden == "informe":
+            from . import ceo
+            texto = ceo.informe(con, config(), a.tipo)
+            print(texto); director.avisar(texto)
+        elif a.orden == "tiktok":
+            from . import tiktok as TT
+            if a.accion == "estado":
+                c = TT.conf()
+                print({"conectado": TT.conectado(), "cuenta": c.get("cuenta"), "modo": c.get("modo", "inbox")})
+            else:
+                url_bot = director.RV.conf()["url"].rstrip("/") + "/tiktok/callback"
+                print("Abre este enlace OFICIAL de TikTok con la cuenta de Shock Mental y pulsa Autorizar:\n" + TT.url_autorizacion(url_bot))
+        elif a.orden == "voz":
+            from . import voz
+            if a.accion == "perfil":
+                print(voz.perfil_actual())
+            else:
+                voz.enviar_pruebas(voz.generar_pruebas(Path.home() / ".canales-youtube" / "pruebas_voz"))
 
 
 if __name__ == "__main__":

@@ -51,6 +51,48 @@ def negros(video: Path) -> list[tuple[float, float]]:
     return [(float(a), float(b)) for a, b in re.findall(r"black_start:([\d.]+) black_end:([\d.]+)", s)]
 
 
+# ---------- locución (Voice Director) ----------
+
+
+def _f0(x: np.ndarray, sr: int = 16000) -> np.ndarray:
+    """Tono fundamental por tramos de 40 ms (autocorrelación); 0 en tramos sin voz."""
+    n, out = int(0.04 * sr), []
+    lo, hi = int(sr / 300), int(sr / 70)   # voz masculina: 70-300 Hz
+    for i in range(0, len(x) - n, n):
+        f = x[i:i + n] - x[i:i + n].mean()
+        if np.sqrt((f ** 2).mean()) < 0.02:
+            out.append(0.0); continue
+        ac = np.correlate(f, f, "full")[n - 1:]
+        k = lo + int(np.argmax(ac[lo:hi]))
+        out.append(sr / k if ac[k] > 0.3 * ac[0] else 0.0)
+    return np.array(out)
+
+
+def locucion(narracion: Path, palabras: int) -> dict:
+    """Nota 0-100 de la voz: ritmo, variación de tono (no monótona) y pausas naturales."""
+    x = _pcm(narracion)
+    dur = len(x) / 16000
+    e = _env(x)
+    habla = (e > -40).mean() * dur
+    wps = palabras / max(1.0, habla)
+    f = _f0(x)
+    f = f[f > 0]
+    semitonos = float(np.std(12 * np.log2(f / np.median(f)))) if len(f) > 20 else 0.0
+    sil, pausas, run = e < -45, [], 0
+    for s in sil:
+        if s:
+            run += 1
+        elif run:
+            pausas.append(run * 0.02); run = 0
+    pausas = [p for p in pausas if p >= 0.12]
+    larga = sum(p > 1.2 for p in pausas)
+    # calibrado con la voz Achird (28-nov-2026): 3,7-4,0 palabras/s de habla real; 4,4 semitonos (A) a 5,2 (B)
+    c = {"ritmo": 3.2 <= wps <= 4.3, "variacion_tono": semitonos >= 3.5, "pausas_naturales": larga == 0 and len(pausas) >= 2}
+    nota = round(100 * (0.35 * c["ritmo"] + 0.4 * max(0.0, min(1.0, (semitonos - 3.0) / 2.5)) + 0.25 * c["pausas_naturales"]), 1)
+    return {"nota": float(nota), "palabras_por_segundo": round(float(wps), 2), "variacion_semitonos": round(semitonos, 2),
+            "pausas": len(pausas), "pausas_largas": int(larga), "checks": {k: bool(v) for k, v in c.items()}}
+
+
 # ---------- parecido con vídeos anteriores ----------
 VACIAS = set("el la los las un una de del y en que por para con es al lo se su sus más mas como o a no ya shorts ranking".split())
 
@@ -84,6 +126,10 @@ def revisar(video_id: str, carpeta: Path, guion: dict, anteriores: list[dict], c
 
     narr = carpeta / "trabajo" / "narracion.wav"
     if narr.exists():
+        from .guion import todas_frases
+        loc = medidas["locucion"] = locucion(narr, sum(len(f["t"].split()) for f in todas_frases(guion)))
+        if loc["nota"] < 45:
+            avisos.append(f"locución plana o irregular ({loc['nota']}/100): revisa la dirección de voz")
         c = cortes_audio(narr, video)
         medidas["cortes_audio"] = len(c)
         if c:

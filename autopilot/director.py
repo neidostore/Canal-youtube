@@ -54,7 +54,23 @@ def sincronizar(con, cfg):
         RV.bot(c, "calendario", calendario_para_bot(cfg))
         items = {i["id"]: i for i in RV.bot(c, "items")["items"]}
         from . import voz as VZ
-        elegida = (RV.bot(c, "ajustes").get("voz_elegida") or {}).get("letra")
+        aj = RV.bot(c, "ajustes")
+        elegida = (aj.get("voz_elegida") or {}).get("letra")
+        if aj.get("respuestas_ok"):
+            from .youtube import publicar_respuestas
+            try:
+                if publicar_respuestas(con, aj["respuestas_ok"], avisar):
+                    RV.bot(c, "respondidas", {})
+            except Exception as e:
+                log(con, f"no pude publicar respuestas: {e}", agente="community", nivel="error")
+        auth = RV.bot(c, "tiktok_code").get("auth")
+        if auth:
+            from . import tiktok as TT
+            try:
+                cc = TT.canjear_codigo(auth["code"], auth["state"])
+                avisar(f"🎵 TikTok conectado: cuenta «{cc.get('cuenta')}». Queda guardada; no te la volveré a pedir.")
+            except Exception as e:
+                avisar(f"⚠️ No pude terminar la conexión con TikTok: {e}")
         if elegida in VZ.PERFILES and elegida != VZ.perfil_actual().get("letra"):
             p = VZ.guardar_perfil(elegida)
             log(con, f"nuevo perfil oficial de locución: {elegida} ({p['nombre_perfil']})", agente="voz")
@@ -95,6 +111,22 @@ def sincronizar(con, cfg):
                         instr.append(f"(audio no transcrito: {ex})")
                 else:
                     instr.append(ch.get("texto", ""))
+            ajuste = [x for x in instr if x.startswith(("[voz]", "[miniatura]"))]
+            if ajuste and len(ajuste) == len(instr) and ajuste[0] != "[miniatura] regenerar":
+                # cambio de voz o de concepto de miniatura: se rehace el vídeo sin tocar el guion
+                g = v["guion"]
+                for x in ajuste:
+                    arg = x.split("] ", 1)[1].strip()
+                    if x.startswith("[voz]"):
+                        g["perfil_voz"] = None if arg == "regenerar" else arg
+                        g["regenerar_voz"] = g.get("regenerar_voz", 0) + (1 if arg == "regenerar" else 0)
+                    else:
+                        g["miniatura_elegida"] = arg
+                con.execute("UPDATE videos SET version = version + 1 WHERE id=?", (v["id"],))
+                estado_video(con, v["id"], "produccion", guion=g)
+                RV.bot(c, "estado", {"id": v["id"], "estado": "rehaciendo", "nota": f"🛠️ {', '.join(ajuste)} · «{v['titulo']}»"})
+                log(con, f"ajuste directo: {ajuste}", video_id=v["id"])
+                continue
             estado_video(con, v["id"], "cambios")
             nueva_tarea(con, "corrector", video_id=v["id"], datos={"instrucciones": instr, "version": v["version"]})
             RV.bot(c, "estado", {"id": v["id"], "estado": "rehaciendo", "nota": f"🛠️ Aplicando tus cambios a «{v['titulo']}»…"})
@@ -178,6 +210,15 @@ def producir(con, cfg, v: dict, enviar: bool = True):
 def miniatura(con, g: dict, carpeta: Path, vid: str):
     """Agente 7 · Diseñador: miniatura con la plantilla del canal. Fondo: miniatura_fondo.jpg si existe
     (por ejemplo, una ilustración que hagas con Gemini) o la foto de Commons indicada en guion.miniatura.fondo."""
+    if g.get("miniaturas"):   # Thumbnail Director (plantilla v2, 3 conceptos)
+        from . import miniaturas as MZ
+        try:
+            r = MZ.dirigir(g, carpeta)
+            (carpeta / "salida" / "miniaturas.json").write_text(json.dumps(r, ensure_ascii=False, indent=1), encoding="utf-8")
+            log(con, f"miniatura {r['elegida']} ({r.get('nota')}/100) de {len(r['conceptos'])} conceptos", agente="thumbnail", video_id=vid)
+        except Exception as e:
+            log(con, f"fallo del Thumbnail Director: {e}", agente="thumbnail", nivel="error", video_id=vid)
+        return
     m = g.get("miniatura") or {}
     propio = carpeta / "miniatura_fondo.jpg"
     fondo = propio if propio.exists() else carpeta / "fotos" / f"{m.get('fondo', '')}.jpg"
@@ -226,6 +267,37 @@ def enviar_revision(con, cfg, vid: str):
     with open(peq, "rb") as fh:
         RV.tg(c, "sendVideo", data={"chat_id": c["dueno_id"], "caption": f"{cab}🎬 {v['titulo']}", "width": w, "height": hh,
                                     "duration": dur, "supports_streaming": "true"}, files={"video": fh})
+    # Conceptos de miniatura (vídeos largos) y vista previa de la narración (primeros ~20 s)
+    mz_f = carpeta / "salida" / "miniaturas.json"
+    mz = json.loads(mz_f.read_text(encoding="utf-8")) if mz_f.exists() else {}
+    conceptos = [c for c in mz.get("conceptos", []) if c.get("png")]
+    if len(conceptos) >= 2:
+        media, archivos = [], {}
+        for cc in conceptos:
+            archivos[cc["id"]] = open(cc["png"], "rb")
+            media.append({"type": "photo", "media": f"attach://{cc['id']}",
+                          "caption": f"{cc['id']}{' ✅' if cc['id'] == mz.get('elegida') else ''} · {cc['idea'][:150]} · {cc['nota']}/100"})
+        try:
+            RV.tg(c, "sendMediaGroup", data={"chat_id": c["dueno_id"], "media": json.dumps(media)}, files=archivos)
+        finally:
+            for fh in archivos.values():
+                fh.close()
+    narr = carpeta / "trabajo" / "narracion.wav"
+    if narr.exists():
+        muestra = carpeta / "salida" / "voz_muestra.mp3"
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-t", "20", "-i", str(narr), "-c:a", "libmp3lame", "-b:a", "128k", str(muestra)])
+        with open(muestra, "rb") as fh:
+            RV.tg(c, "sendAudio", data={"chat_id": c["dueno_id"], "title": f"Voz · {v['titulo'][:40]}", "performer": "Shock Mental"},
+                  files={"audio": ("voz.mp3", fh, "audio/mpeg")})
+    cal = v["calidad"] or {}
+    loc = (cal.get("medidas") or {}).get("locucion", {})
+    from . import tiktok as TT
+    plataformas = (["YouTube Shorts", "TikTok" + ("" if TT.conectado() else " (pendiente de conectar)")]
+                   if v["formato"] == "short" else ["YouTube"])
+    avisos = cal.get("avisos", [])
+    recomendacion = ("Publicar: pasa todas las comprobaciones." if (v["puntuacion"] or 0) >= 85 and not avisos
+                     else "Revisar antes de aprobar: " + ("; ".join(avisos) if avisos else f"nota {v['puntuacion']}"))
+    from .voz import perfil_actual
     guion_txt = "\n".join(f["t"] for f in G.todas_frases(g))
     fuentes_txt = "\n".join(f"• {f.get('dato', '')[:80]} — {f.get('fuente', '')}: {f['url']}" for f in g["fuentes"])
     RV.bot(c, "revision", {
@@ -234,7 +306,10 @@ def enviar_revision(con, cfg, vid: str):
         "youtube_id": v.get("youtube_id"), "prueba": prueba, "duracion": round(v["duracion"] or dur),
         "puntuacion": v["puntuacion"], "coste": round(v["coste"] or 0, 2), "guion_texto": guion_txt[:3500],
         "fuentes_texto": fuentes_txt[:3500], "para_ninos": False, "sintetico": False,
-        "avisos_calidad": (v["calidad"] or {}).get("avisos", []),
+        "avisos_calidad": avisos, "nota_voz": loc.get("nota"), "nota_visual": mz.get("nota"),
+        "perfil_voz": g.get("perfil_voz") or perfil_actual().get("letra"), "plataformas": plataformas, "recomendacion": recomendacion,
+        "miniaturas": [{"id": x["id"], "idea": x.get("idea", ""), "nota": x.get("nota")} for x in conceptos],
+        "miniatura_elegida": mz.get("elegida"),
     })
     estado_video(con, vid, "revision", fecha_sugerida=h["fecha_utc"])
     log(con, f"enviado a Telegram (versión {v['version']}) para {h['fecha_texto']}", agente="publicador", video_id=vid)
@@ -257,6 +332,12 @@ def ciclo(con):
             paso()
         except Exception as e:
             log(con, f"YouTube: {e}", agente="publicador/analista", nivel="error")
+    from . import ceo, distribucion
+    for paso in (lambda: distribucion.ejecutar(con, avisar), lambda: ceo.vigilar(con, cfg, avisar)):
+        try:
+            paso()
+        except Exception as e:
+            log(con, f"CEO/distribución: {e}", agente="ceo", nivel="error")
     planificar(con, cfg)
     for v in map(fila, con.execute("SELECT * FROM videos WHERE estado='produccion' ORDER BY creado").fetchall()):
         producir(con, cfg, v)
@@ -266,6 +347,10 @@ def ciclo(con):
                            ((datetime.now(timezone.utc) - timedelta(days=1)).isoformat(),)).fetchone()[0]
     if falladas:
         avisar(f"⚠️ {falladas} tarea(s) han fallado en las últimas 24 h. Escribe /panel para ver el estado.")
+    try:
+        ceo.informes_programados(con, cfg, avisar)
+    except Exception as e:
+        log(con, f"informe: {e}", agente="ceo", nivel="error")
     try:
         from .panel import panel
         RV.bot(RV.conf(), "panel", {"texto": panel(con)})

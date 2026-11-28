@@ -39,6 +39,14 @@ export default {
         return json({ ok: false, error: String(e.message || e) }, 500);
       }
     }
+    if (url.pathname === "/tiktok/callback") {   // vuelta de la autorización oficial de TikTok (no guarda contraseñas)
+      const code = url.searchParams.get("code"), state = url.searchParams.get("state");
+      if (!code || !state) return new Response("Falta el código de TikTok.", { status: 400 });
+      await guardar(env, "tiktok_auth", { code, state, fecha: new Date().toISOString() });
+      ctx.waitUntil(decir(env, "🔗 TikTok ha autorizado la conexión. El PC la termina en su próximo ciclo (o ejecuta <code>python -m autopilot tiktok vuelta</code>)."));
+      return new Response("<meta charset=utf-8><h2>✅ Listo. Ya puedes cerrar esta página y volver a Telegram.</h2>",
+        { headers: { "content-type": "text/html; charset=utf-8" } });
+    }
     return new Response("Shock Mental · Revisión");
   },
   async scheduled(ev, env, ctx) {
@@ -145,10 +153,10 @@ async function hueco(env, tipo, excluirId, ademas = []) {
 function botones(id, version) {
   const v = version ? ":" + version : "";
   return { inline_keyboard: [
-    [{ text: "✅ APROBAR Y PROGRAMAR", callback_data: "ok:" + id + v }],
+    [{ text: "✅ APROBAR Y PUBLICAR", callback_data: "ok:" + id + v }],
     [{ text: "✏️ SOLICITAR CAMBIOS", callback_data: "cam:" + id + v }, { text: "❌ RECHAZAR", callback_data: "no:" + id + v }],
-    [{ text: "📜 VER GUION", callback_data: "g:" + id }, { text: "📚 VER FUENTES", callback_data: "f:" + id }],
-    [{ text: "📅 CAMBIAR FECHA", callback_data: "fe:" + id + v }],
+    [{ text: "📜 GUION", callback_data: "g:" + id }, { text: "📚 FUENTES", callback_data: "f:" + id }, { text: "📅 FECHA", callback_data: "fe:" + id + v }],
+    [{ text: "🖼️ MINIATURA", callback_data: "mi:" + id + v }, { text: "🎙️ VOZ", callback_data: "vo:" + id + v }],
   ] };
 }
 const TIPOS = { short: "Short", largo: "Vídeo largo", ranking: "Short de ranking", dosis: "Dosis (vídeo largo)" };
@@ -160,7 +168,12 @@ function fichaTexto(it) {
     `🎬 <b>Para revisar</b> · ${esc(it.id)} · versión ${it.version}\n\n` +
     `<b>Título:</b> ${esc(it.titulo)}\n` +
     `<b>Tipo:</b> ${esc(TIPOS[it.tipo] || it.tipo)}` + (it.duracion ? ` · ${mmss(it.duracion)}` : "") + "\n" +
-    (it.puntuacion != null ? `<b>Calidad:</b> ${it.puntuacion}/100\n` : "") +
+    (it.puntuacion != null || it.nota_visual != null || it.nota_voz != null ?
+      "<b>Calidad:</b> " + [it.puntuacion != null ? `${it.puntuacion}/100` : null, it.nota_visual != null ? `🖼️ visual ${it.nota_visual}` : null,
+        it.nota_voz != null ? `🎙️ locución ${it.nota_voz}` : null].filter(Boolean).join(" · ") + "\n" : "") +
+    (it.perfil_voz ? `<b>Voz:</b> perfil ${esc(it.perfil_voz)}\n` : "") +
+    (it.plataformas ? `<b>Se publicará en:</b> ${esc(it.plataformas.join(" + "))}\n` : "") +
+    (it.recomendacion ? `🤖 <b>Recomendación:</b> ${esc(it.recomendacion)}\n` : "") +
     `<b>Se publicaría:</b> ${esc(fechaTexto(it.fecha_utc))}\n` +
     (it.coste != null ? `<b>Coste de producción:</b> ${Number(it.coste).toFixed(2)} €\n` : "") +
     ((it.avisos_calidad || []).length ? `⚠️ ${esc(it.avisos_calidad.join(" · "))}\n` : "") +
@@ -193,17 +206,26 @@ async function manejar(upd, env) {
   if (cb) {
     await tg(env, "answerCallbackQuery", { callback_query_id: cb.id });
     const [accion, id, extra] = (cb.data || "").split(":");
+    if (accion === "cr") {   // el gerente aprueba publicar una respuesta del Community Manager
+      const ok = await leer(env, "respuestas_ok", []);
+      if (!ok.includes(id)) ok.push(id);
+      await guardar(env, "respuestas_ok", ok);
+      return decir(env, "💬 Respuesta aprobada. La publico en el próximo ciclo del PC.");
+    }
     if (accion === "vz") {   // elección del perfil oficial de locución (A/B/C)
       await guardar(env, "voz_elegida", { letra: id, fecha: new Date().toISOString() });
       return decir(env, `🎙️ Elegida la interpretación <b>${esc(id)}</b>. La aplico como voz oficial en el próximo ciclo del PC.`);
     }
-    if (accion === "mz") {   // elección de concepto de miniatura: mz:id:concepto
+    // Ajustes de miniatura y voz: generan una versión nueva sin pasar por el guionista
+    const ajustes = { mz: (x) => `[miniatura] ${x}`, mr: () => "[miniatura] regenerar", vp: (x) => `[voz] ${x}`, vr: () => "[voz] regenerar" };
+    if (ajustes[accion]) {
       const it2 = await getItem(env, id);
       if (!it2) return decir(env, "No encuentro ese vídeo.");
-      it2.miniatura_elegida = extra; it2.estado = "cambios";
-      it2.cambios = [{ texto: `[miniatura] Usa el concepto ${extra}`, fecha: new Date().toISOString() }];
+      if (!["revision", "esperando_cambios"].includes(it2.estado))
+        return decir(env, `«${esc(it2.titulo)}» ya está ${ESTADOS[it2.estado] || it2.estado}.`);
+      it2.estado = "cambios"; it2.cambios = [{ texto: ajustes[accion](extra), fecha: new Date().toISOString() }];
       await putItem(env, it2);
-      return decir(env, `🖼️ Vale, concepto <b>${esc(extra)}</b> para «${esc(it2.titulo)}». Te mando la versión nueva.`);
+      return decir(env, `🛠️ Apuntado (${esc(it2.cambios[0].texto)}) para «${esc(it2.titulo)}». Te llega la versión nueva en el próximo ciclo.`);
     }
     const it = await getItem(env, id);
     if (!it) return decir(env, "No encuentro ese vídeo.");
@@ -211,7 +233,7 @@ async function manejar(upd, env) {
     if (accion === "g") return decir(env, `📜 <b>Guion</b> · ${esc(it.titulo)} (v${it.version})\n\n${esc(it.guion_texto || "No tengo el guion guardado para este vídeo.")}`);
     if (accion === "f") return decir(env, `📚 <b>Fuentes</b> · ${esc(it.titulo)}\n\n${esc(it.fuentes_texto || "No tengo las fuentes guardadas para este vídeo.")}`);
     // Aprobación ligada a la versión: los botones de una versión anterior ya no valen
-    const version = ["ok", "cam", "no", "fe"].includes(accion) ? extra : null;
+    const version = ["ok", "cam", "no", "fe", "mi", "vo"].includes(accion) ? extra : null;
     if (version && String(version) !== String(it.version))
       return decir(env, `⚠️ Ese botón es de la versión ${version} de «${esc(it.titulo)}», pero la actual es la ${it.version}. Usa los botones del último mensaje.`);
     if (accion === "fs") {   // fecha elegida: fs:id:minutosUTC
@@ -223,6 +245,19 @@ async function manejar(upd, env) {
         try { await programarEnYouTube(env, it); } catch (e) { return decir(env, `⚠️ No he podido cambiar la fecha en YouTube: ${esc(e.message)}`); }
       }
       return decir(env, `📅 Nueva fecha para «${esc(it.titulo)}»: <b>${esc(fechaTexto(it.fecha_utc))}</b>`);
+    }
+    if (accion === "mi") {
+      const cs = it.miniaturas || [];
+      return decir(env, cs.length ? `🖼️ Conceptos de miniatura de «${esc(it.titulo)}» (te los mandé encima de la ficha):\n` +
+        cs.map((c) => `${c.id}${c.id === it.miniatura_elegida ? " ✅" : ""} · ${esc(c.idea)} (${c.nota}/100)`).join("\n") :
+        "🖼️ Este vídeo usa como portada un fotograma (Short). Puedes regenerarla:", { reply_markup: { inline_keyboard: [
+        cs.map((c) => ({ text: "Usar " + c.id, callback_data: `mz:${it.id}:${c.id}` })),
+        [{ text: "🔄 Regenerar miniatura", callback_data: `mr:${it.id}` }]].filter((f) => f.length) } });
+    }
+    if (accion === "vo") {
+      return decir(env, `🎙️ Voz de «${esc(it.titulo)}»: ahora perfil ${esc(it.perfil_voz || "oficial")}.`, { reply_markup: { inline_keyboard: [
+        ["A", "B", "C"].map((l) => ({ text: "Perfil " + l, callback_data: `vp:${it.id}:${l}` })),
+        [{ text: "🔄 Regenerar locución", callback_data: `vr:${it.id}` }]] } });
     }
     if (accion === "fe") {
       const libres = await huecosLibres(env, it.tipo, it.id, 4);
@@ -280,6 +315,17 @@ async function manejar(upd, env) {
     const p = await leer(env, "panel", null);
     if (!p) return decir(env, "📊 Todavía no tengo el panel. Se actualiza cada vez que el PC hace su ciclo diario.");
     return decir(env, `<pre>${esc(p.texto)}</pre>\n<i>Actualizado: ${esc(fechaTexto(p.fecha))}</i>`);
+  }
+  if (cmd === "/tiktok") {
+    return decir(env, "🎵 <b>Conectar TikTok</b>\n1. Crea la app gratuita en developers.tiktok.com (te guío paso a paso desde Claude).\n" +
+      "2. Yo te mando un enlace oficial de TikTok: entras con TU cuenta de Shock Mental y pulsas Autorizar.\n" +
+      "3. Nunca me des tu contraseña: TikTok solo me da un permiso para subir vídeos, que puedes retirar cuando quieras.\n" +
+      "Mientras la app no pase la auditoría de TikTok, los vídeos llegan a tus <b>borradores</b> y los publicas con 2 toques.");
+  }
+  if (cmd === "/organigrama") {
+    return decir(env, "🏢 <b>Shock Mental</b>\n👤 Gerente general: tú (aprobar contenido, gastos, cambios importantes)\n" +
+      "🤖 CEO: coordina todo y te informa\n• Contenido: investigador, verificador, guionistas\n• Producción: productor, Thumbnail Director, Voice Director, calidad\n" +
+      "• Distribución: YouTube, TikTok, Community Manager (borradores)\n• Analítica: crecimiento y monetización");
   }
   if (cmd === "/saltar") {
     if (await leer(env, "motivo")) await env.DATOS.delete("motivo");
@@ -429,7 +475,10 @@ async function pc(url, req, env) {
     for (const k of Object.keys(cuerpo)) if (!Array.isArray(cuerpo[k])) throw new Error("calendario mal formado");
     await guardar(env, "calendario", cuerpo); return { ok: true };
   }
-  if (ruta === "ajustes") return { ok: true, voz_elegida: await leer(env, "voz_elegida", null) };
+  if (ruta === "ajustes") return { ok: true, voz_elegida: await leer(env, "voz_elegida", null),
+    respuestas_ok: await leer(env, "respuestas_ok", []) };
+  if (ruta === "respondidas") { await guardar(env, "respuestas_ok", []); return { ok: true }; }
+  if (ruta === "tiktok_code") { const a = await leer(env, "tiktok_auth", null); if (a) await env.DATOS.delete("tiktok_auth"); return { ok: true, auth: a }; }
   if (ruta === "panel") { await guardar(env, "panel", { texto: String(cuerpo.texto || ""), fecha: new Date().toISOString() }); return { ok: true }; }
   if (ruta === "programado") {   // el PC subió y programó en YouTube un vídeo ya aprobado
     const it = await getItem(env, cuerpo.id);

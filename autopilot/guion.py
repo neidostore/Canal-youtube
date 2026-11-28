@@ -142,9 +142,14 @@ def a_escenas_largo(g: dict, cred: dict) -> dict:
     return d
 
 
-def _voz_oficial() -> dict:
-    from .voz import perfil_actual
-    p = perfil_actual()
+def _voz_oficial(g: dict | None = None) -> dict:
+    """Perfil oficial, o el elegido para este vídeo desde Telegram (🎙️ VOZ). «Regenerar» varía la velocidad un 1 %."""
+    from .voz import PERFILES, perfil_actual
+    p = dict(perfil_actual())
+    if g and g.get("perfil_voz") in PERFILES:
+        p["velocidad"] = PERFILES[g["perfil_voz"]]["velocidad"]
+    if g and g.get("regenerar_voz"):
+        p["velocidad"] = round(p["velocidad"] + (0.01 if g["regenerar_voz"] % 2 else -0.01), 2)
     return {"idioma": p["idioma"], "nombre": p["nombre"], "velocidad": p["velocidad"],
             **({"modelo": p["modelo"], "instruccion": p.get("instruccion", "")} if p.get("modelo") else {})}
 
@@ -160,14 +165,14 @@ def a_escenas(g: dict, cred: dict) -> dict:
     """Convierte un guion validado en escenas.json para montar.py."""
     if g["formato"] == "largo":
         d = a_escenas_largo(g, cred)
-        d["voz"] = _voz_oficial()
+        d["voz"] = _voz_oficial(g)
         for b_src in g["bloques"]:
             for b in d["bloques"]:
                 if b.get("nombre") == b_src["nombre"]:
                     _texto_voz(b_src["frases"], [f for f in b["frases"] if "card" not in f])
         return d
     d = copy.deepcopy(BASE_ESTILO)
-    d["voz"] = _voz_oficial()
+    d["voz"] = _voz_oficial(g)
     d["titulo"] = g["titulo"]
     if g["tipo"] == "ranking":
         d["ranking"] = {"titulo": g["titulo_ranking"].upper(), "puestos": [5, 4, 3, 2, 1], "desde_frase": 1}

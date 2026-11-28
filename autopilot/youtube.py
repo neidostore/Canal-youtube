@@ -58,6 +58,8 @@ def publicar_aprobados(con, cfg, items_bot: dict, avisar):
             avisar(f"⚠️ No subo «{g['titulo']}»: {e}. Pulsa 📅 Cambiar fecha.")
             continue
         estado_video(con, v["id"], "programado", youtube_id=vid)
+        from .distribucion import preparar
+        preparar(con, v, it["fecha_utc"], vid)   # misma aprobación → YouTube (programado) + TikTok (a su hora)
         con.commit()   # se guarda YA: así nunca se sube dos veces
         RV.bot(RV.conf(), "programado", {"id": v["id"], "version": v["version"], "youtube_id": vid})
         log(con, f"subido y programado https://youtu.be/{vid} para {local:%d/%m %H:%M}", agente="publicador", video_id=v["id"])
@@ -103,3 +105,38 @@ def analizar(con, cfg, avisar):
             con.execute("INSERT INTO lecciones (fecha, origen, texto) VALUES (?,?,?)",
                         (ahora(), "analista", f"ÉXITO: «{t[0] if t else r[0]}» hizo {r[1]} vistas ({r[3]:.0f} % visto). Repite tema, gancho y formato."))
     log(con, f"métricas: {datos}", agente="analista")
+    leer_comentarios(con, yt)
+
+
+# ---------- Community Manager (borradores; publicar requiere tu ✅) ----------
+def leer_comentarios(con, yt):
+    from .nucleo import nueva_tarea
+    canal_id = yt.channels().list(part="id", mine=True).execute()["items"][0]["id"]
+    r = yt.commentThreads().list(part="snippet", allThreadsRelatedToChannelId=canal_id, maxResults=50, order="time").execute()
+    nuevos = 0
+    for th in r.get("items", []):
+        s = th["snippet"]["topLevelComment"]["snippet"]
+        if th["snippet"].get("totalReplyCount", 0) or s.get("authorChannelId", {}).get("value") == canal_id:
+            continue
+        if con.execute("INSERT OR IGNORE INTO comentarios (id, youtube_id, autor, texto, fecha) VALUES (?,?,?,?,?)",
+                       (th["id"], s.get("videoId"), s.get("authorDisplayName"), s.get("textOriginal", "")[:1000], s.get("publishedAt"))).rowcount:
+            nuevos += 1
+    if nuevos:
+        nueva_tarea(con, "community", datos={"nuevos": nuevos})
+
+
+def publicar_respuestas(con, aprobadas: list[str], avisar):
+    if not aprobadas or not conectado():
+        return []
+    yt = SY.servicio("shockmental")
+    hechas = []
+    for cid in aprobadas:
+        c = fila(con.execute("SELECT * FROM comentarios WHERE id=? AND estado='enviado' AND tipo IN ('rutinario','idea')", (cid,)).fetchone())
+        if not c or not c["borrador"]:
+            continue
+        yt.comments().insert(part="snippet", body={"snippet": {"parentId": cid, "textOriginal": c["borrador"]}}).execute()
+        con.execute("UPDATE comentarios SET estado='respondido' WHERE id=?", (cid,))
+        hechas.append(cid)
+    if hechas:
+        avisar(f"💬 Publicadas {len(hechas)} respuestas que aprobaste.")
+    return hechas

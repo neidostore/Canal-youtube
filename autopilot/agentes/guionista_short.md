@@ -18,6 +18,20 @@
 - Cada frase lleva `img` o `vid` (listas de 1-2 nombres). Cambia de imagen como mucho cada 2 frases.
 - La frase 1 debe tener la imagen más llamativa, porque será la portada.
 
+## Escrito para hablarse (Voice Director)
+- `t` es el subtítulo. En `voz` puedes poner la versión hablada de esa misma frase, con las mismas palabras y mejor dirigida:
+  - `[pause short]` antes de una revelación (como mucho 1 por frase y 4-5 en todo el Short);
+  - preguntas retóricas («¿Y la mejor oferta?») para cambiar la entonación;
+  - «…» para el suspense y «!» solo en los momentos de sorpresa de verdad (máximo 2 por Short).
+- Las acotaciones `[tono de curiosidad]`, `[énfasis]`, `[remate final]` etc. se pueden poner como guía: se eliminan antes de sintetizar. Úsalas poco.
+- En los rankings, cada puesto debe sonar como una sorpresa nueva: varía cómo empiezan («Número cuatro…», «Y en el cuatro…», «Ojo al cuatro:»).
+- Que no parezca un artículo leído: frases de 6-14 palabras, sujeto-verbo-dato.
+
+## Portada del Short (Thumbnail Director)
+- La frase 1 es la portada: la imagen más potente, el sujeto grande y sin lista de ranking encima (el sistema la oculta en el gancho).
+- `portada_texto`: 1-3 palabras en mayúsculas que complementen el título sin repetirlo (por ejemplo «6 MILLONES», «¿REAL?»). Aparece sobre el gancho.
+- `portada_segundo`: normalmente 1. YouTube no permite poner la portada de un Short por la API: el dueño la elige en la app (toca el lápiz → elige el fotograma).
+
 ## Textos de publicación
 - `titulo`: ≤ 70 caracteres + « #shorts», con curiosidad y sin engañar. No repitas el patrón de los últimos títulos.
 - `descripcion`: dato gancho, los 5 puestos con cifra, una pregunta, las fuentes, los créditos de las fotos («Fotos (Wikimedia Commons): autor (licencia)…»), «Vídeos: Pexels», la música («"Wallpaper" de Kevin MacLeod (incompetech.com), licencia CC BY 4.0») y 4-6 hashtags.

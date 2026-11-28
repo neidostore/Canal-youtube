@@ -39,6 +39,13 @@ largo_min_segundos = 240
 fuentes_minimas = 1           # por dato con cifra
 similitud_maxima = 0.55       # parecido máximo con un vídeo anterior (0-1)
 
+[tiktok]
+activo = false                # se activa al conectar la cuenta (te lo pediré cuando haya el primer Short real que publicar)
+modo = "inbox"                # "inbox": llega a tus borradores de TikTok (sin auditoría) · "directo": solo tras la auditoría de TikTok
+
+[community]
+auto_responder = false        # el Community Manager solo prepara borradores; tú apruebas cada respuesta
+
 [objetivos]
 inicio = "2026-11-02"
 suscriptores_hoy = 30

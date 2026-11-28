@@ -50,7 +50,8 @@ await pc("revision", { id: "s1", tipo: "short", version: 1, titulo: "Título <b>
 await esperar();
 const f = ultimoB();
 const btn = f.reply_markup.inline_keyboard.flat().map((b) => b.callback_data);
-ok(btn.length === 6 && btn.includes("ok:s1:1") && btn.includes("g:s1") && btn.includes("f:s1") && btn.includes("fe:s1:1"), "6 botones con versión: " + btn.join(" "));
+ok(btn.length === 8 && btn.includes("ok:s1:1") && btn.includes("g:s1") && btn.includes("f:s1") && btn.includes("fe:s1:1") &&
+  btn.includes("mi:s1:1") && btn.includes("vo:s1:1"), "8 botones con versión: " + btn.join(" "));
 ok(f.text.includes("MODO PRUEBA") && f.text.includes("85.5/100") && f.text.includes("0:55") && f.text.includes("Título &lt;b&gt;") && f.text.includes("volumen bajo"),
   "la ficha lleva prueba, calidad, duración, título escapado y avisos");
 
@@ -100,6 +101,31 @@ await pc("panel", { texto: "📊 PANEL\nSuscriptores: 31" }); await msg("/panel"
 await pc("revision", { id: "viejo", tipo: "ranking", titulo: "Antiguo", descripcion: "d", youtube_id: "YTV", fecha_utc: hr.fecha_utc });
 await esperar();
 await boton("ok:viejo"); ok(youtube.length === 1 && youtube[0].id === "YTV", "los mensajes antiguos (sin versión) siguen funcionando");
+
+// --- mejoras de imagen y voz, empresa y TikTok ---
+await pc("revision", { id: "l9", tipo: "largo", version: 1, titulo: "Arca", descripcion: "d", fecha_utc: hl.fecha_utc, prueba: true,
+  nota_voz: 91.4, nota_visual: 100, perfil_voz: "C", plataformas: ["YouTube"], recomendacion: "Publicar",
+  miniaturas: [{ id: "A", idea: "Arca abriéndose", nota: 100 }, { id: "B", idea: "Capilla", nota: 98 }], miniatura_elegida: "A" });
+await esperar();
+const fl = ultimoB();
+ok(fl.text.includes("visual 100") && fl.text.includes("locución 91.4") && fl.text.includes("Recomendación") && fl.text.includes("perfil C"),
+  "la ficha del largo lleva notas visual y de locución, perfil de voz y recomendación");
+ok(fl.reply_markup.inline_keyboard.flat().some((b) => b.text.includes("APROBAR Y PUBLICAR")), "botón APROBAR Y PUBLICAR");
+await boton("mi:l9:1"); const mi = ultimoB().reply_markup.inline_keyboard.flat().map((b) => b.callback_data);
+ok(mi.includes("mz:l9:A") && mi.includes("mz:l9:B") && mi.includes("mr:l9"), "MINIATURA ofrece conceptos y regenerar");
+await boton("vo:l9:1"); const vo = ultimoB().reply_markup.inline_keyboard.flat().map((b) => b.callback_data);
+ok(vo.includes("vp:l9:B") && vo.includes("vr:l9"), "VOZ ofrece perfiles y regenerar");
+await boton("mz:l9:B");
+ok(JSON.parse(kv.get("item:l9")).cambios[0].texto === "[miniatura] B" && JSON.parse(kv.get("item:l9")).estado === "cambios", "elegir concepto B → versión nueva");
+ok((await pc("tareas")).tareas.some((t) => t.id === "l9"), "el PC lo ve como cambio");
+await boton("vz:B"); ok((await pc("ajustes")).voz_elegida.letra === "B", "elegir perfil oficial de voz B");
+await boton("cr:Ugx1"); ok((await pc("ajustes")).respuestas_ok.includes("Ugx1"), "aprobar respuesta del Community Manager");
+await pc("respondidas", {}); ok((await pc("ajustes")).respuestas_ok.length === 0, "respuestas publicadas se limpian");
+let rr = await worker.fetch(new Request("https://x/tiktok/callback?code=C1&state=S1"), env, ctx); await esperar();
+ok(rr.status === 200 && (await pc("tiktok_code")).auth.code === "C1", "vuelta de TikTok guardada para el PC");
+ok((await pc("tiktok_code")).auth === null, "el código de TikTok se entrega una sola vez");
+await msg("/tiktok"); ok(ultimo().includes("Nunca me des tu contraseña"), "/tiktok explica la conexión segura");
+await msg("/organigrama"); ok(ultimo().includes("CEO"), "/organigrama");
 
 console.log(fallos ? `\n${fallos} FALLOS` : "\nTODO OK");
 process.exitCode = fallos ? 1 : 0;

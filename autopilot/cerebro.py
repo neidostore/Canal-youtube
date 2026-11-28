@@ -15,7 +15,7 @@ from . import guion as G
 from .nucleo import ahora, cerrar_tarea, config, estado_video, fila, js, lecciones, log, nueva_tarea
 
 AGENTES = Path(__file__).with_name("agentes")
-ORDEN = ["corrector", "verificador", "guionista_short", "guionista_largo", "investigador"]   # prioridad
+ORDEN = ["corrector", "verificador", "guionista_short", "guionista_largo", "community", "investigador"]   # prioridad
 
 
 def contexto(con) -> dict:
@@ -46,6 +46,9 @@ def siguiente(con) -> dict | None:
             con.execute("UPDATE tareas SET estado='en_curso', actualizada=? WHERE id=?", (ahora(), t["id"]))
             v = fila(con.execute("SELECT * FROM videos WHERE id=?", (t["video_id"],)).fetchone()) if t["video_id"] else None
             idea = fila(con.execute("SELECT * FROM ideas WHERE id=?", (t["idea_id"],)).fetchone()) if t["idea_id"] else None
+            if agente == "community":
+                t["datos"] = {**(t["datos"] or {}), "comentarios": [fila(r) for r in con.execute(
+                    "SELECT id, autor, texto, youtube_id FROM comentarios WHERE estado='nuevo' LIMIT 40")]}
             return {"tarea_id": t["id"], "agente": agente,
                     "instrucciones": (AGENTES / f"{agente}.md").read_text(encoding="utf-8"),
                     "identidad": (AGENTES / "identidad.md").read_text(encoding="utf-8"),
@@ -75,6 +78,22 @@ def entregar(con, tarea_id: int, resultado: dict) -> str:
         log(con, f"{n} ideas nuevas", agente=a)
         return f"{n} ideas guardadas"
 
+    if a == "community":
+        for c in resultado.get("comentarios", []):
+            con.execute("UPDATE comentarios SET tipo=?, borrador=?, estado='borrador' WHERE id=?",
+                        (c.get("tipo"), c.get("borrador"), c["id"]))
+        n_ideas = 0
+        for i in resultado.get("ideas", []):
+            con.execute("INSERT INTO ideas (tema, formato, tipo, categoria, origen, puntos, puntuacion, creada) VALUES (?,?,?,?,?,?,?,?)",
+                        (i["tema"], i.get("formato", "short"), i.get("tipo", "ranking"), i.get("categoria"), "comentarios",
+                         js(i.get("puntos", {})), 75, ahora()))
+            n_ideas += 1
+        cerrar_tarea(con, tarea_id, {"comentarios": len(resultado.get("comentarios", [])), "ideas": n_ideas})
+        try:
+            enviar_borradores(con)
+        except Exception as e:
+            log(con, f"no pude mandar los borradores a Telegram: {e}", agente=a, nivel="error")
+        return "borradores guardados"
     v = fila(con.execute("SELECT * FROM videos WHERE id=?", (t["video_id"],)).fetchone())
     if a in ("guionista_short", "guionista_largo", "corrector"):
         g = resultado
@@ -112,6 +131,22 @@ def entregar(con, tarea_id: int, resultado: dict) -> str:
         log(con, f"{len(datos)} datos verificados", agente=a, video_id=v["id"])
         return "todo verificado; pasa a producción"
     raise ValueError(f"agente desconocido {a}")
+
+
+def enviar_borradores(con):
+    from .director import RV
+    c = RV.conf()
+    for r in map(fila, con.execute("SELECT * FROM comentarios WHERE estado='borrador' AND tipo IN ('rutinario','delicado','idea') LIMIT 15")):
+        txt = f"💬 <b>{r['autor']}</b>: {r['texto'][:300]}\n\n"
+        if r["tipo"] == "delicado":
+            txt += "⚠️ Comentario delicado: no propongo publicar nada. Decide tú si respondes (desde YouTube)."
+            kb = None
+        else:
+            txt += f"✍️ Propuesta: {r['borrador']}"
+            kb = {"inline_keyboard": [[{"text": "✅ Publicar esta respuesta", "callback_data": f"cr:{r['id']}"}]]}
+        RV.tg(c, "sendMessage", data={"chat_id": c["dueno_id"], "text": txt.replace("<b>", "").replace("</b>", ""),
+                                      **({"reply_markup": json.dumps(kb)} if kb else {})})
+        con.execute("UPDATE comentarios SET estado=? WHERE id=?", ("enviado" if kb else "revisado", r["id"]))
 
 
 def resolver_con_api(tarea: dict) -> dict:   # interfaz preparada para Gemini / Claude API

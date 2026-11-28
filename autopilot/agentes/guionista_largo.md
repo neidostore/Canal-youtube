@@ -23,10 +23,17 @@
  "autoevaluacion": {"interes": 8, "originalidad": 7, "gancho": 8, "retencion": 7, "valor": 9, "conversion": 8}}
 ```
 - El **primer bloque es el gancho** (sin número). La intro del canal se inserta sola después de él.
+- Igual que en los Shorts, cada frase puede llevar `voz` (versión hablada con `[pause short]` y preguntas retóricas). Varía el ritmo entre bloques: no todo al mismo tono.
 - Cada frase lleva `img` o `vid`. Usa `rotulo` para nombres, lugares y fechas, y `kw` para la palabra clave en pantalla.
 - **Retención:** deja un bucle abierto en el gancho («al final volvemos a…») y ciérralo en el último bloque. Ve de menos a más. Que no haya dos bloques seguidos con el mismo tipo de imagen.
 - **Sin relleno:** si no hay material para 5 minutos de calidad, propón convertirlo en Short (añade la `nota` «mejor como Short»).
-- `miniatura`: 2-4 palabras grandes en `l1` y `l2`, más una etiqueta corta. El fondo es la foto más potente. Si conviene una ilustración, añade `"prompt_gemini"` con un prompt (sin caras de personas reales) para que el dueño la genere.
+- **`miniaturas` (Thumbnail Director): 3 conceptos REALMENTE distintos** (otra idea visual, no otro color). Guía: `docs/autopilot/guia-visual.md`.
+  Formato: `{"id": "A", "idea", "emocion", "curiosidad" (la pregunta que despierta), "layout": "heroe|centro|numero|comparacion|misterio",
+  "categoria": "ranking|ciencia|historia|misterio|tecnologia|datos", "fondo": "nombre_foto" o "gemini", "fondo2", "texto": "¿ESTÁ|*AQUÍ*?"
+  (1-3 palabras; | = salto de línea; *palabra* = color de acento), "pos", "zoom", "prompt_gemini"}`.
+  - Un sujeto principal grande. El texto complementa el título, no lo repite. Nada de flechas ni círculos, y nunca algo que no salga en el vídeo.
+  - Si el mejor fondo es una ilustración, usa `"fondo": "gemini"` y escribe `prompt_gemini` (horizontal 16:9, sin texto, sin caras de personas reales, mitad izquierda oscura). El dueño la genera y la deja como `miniatura_fondo.jpg`.
+  - El sistema renderiza los 3, comprueba la legibilidad en móvil y el contraste, y elige el mejor. El dueño puede cambiarlo desde Telegram.
 - Las fotos y los clips se buscan igual que en los Shorts (`medios.buscar_commons` y `medios.buscar_pexels`).
 
 **Responde SOLO con el JSON del guion.**
