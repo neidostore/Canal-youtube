@@ -1,0 +1,326 @@
+{
+ "tema": "shock",
+ "voz": {
+  "idioma": "es-US",
+  "nombre": "es-US-Chirp3-HD-Achird",
+  "velocidad": 1.15
+ },
+ "estilo": {
+  "dinamico": true,
+  "plano": 1.4
+ },
+ "formato": "vertical",
+ "marca": {
+  "logo": "marca/shockmental/perfil-sin-eslogan.png",
+  "nombre": "SHOCK MENTAL"
+ },
+ "musica": {
+  "archivo": "musica/wallpaper.mp3",
+  "volumen": 0.09,
+  "credito": "\"Wallpaper\" de Kevin MacLeod (incompetech.com)"
+ },
+ "titulo": "El vídeo más visto de YouTube (no es Despacito) 🦈 Ranking",
+ "ranking": {
+  "titulo": "LOS VÍDEOS MÁS VISTOS DE YOUTUBE",
+  "puestos": [
+   5,
+   4,
+   3,
+   2,
+   1
+  ]
+ },
+ "videos": {
+  "ninos_tablet": 4961693,
+  "ninos_youtube": 4961698,
+  "bebe_dibujos": 4159203,
+  "tiburon": 5548408,
+  "tiburones": 5548357,
+  "autobus": 4208077,
+  "bano": 6975908,
+  "bano2": 6968111,
+  "ninos_baile": 8612634,
+  "concierto": 3941289,
+  "tierra": 7048711,
+  "facebook": 5201209,
+  "redes": 4232959
+ },
+ "fotos": {
+  "babyshark": 0,
+  "babyshark_gel": 0,
+  "fonsi": 0,
+  "fonsi2": 0,
+  "yankee": 0,
+  "youtube_hq": 0
+ },
+ "credito_fotos": {
+  "babyshark": "Foto: Foxy1219 / CC BY-SA 4.0",
+  "babyshark_gel": "Foto: Donald Trung / CC BY-SA 4.0",
+  "fonsi": "Foto: anokarina / CC BY-SA 2.0",
+  "fonsi2": "Foto: Nicolas Lacoste / CC BY-SA 4.0",
+  "yankee": "Foto: Apoxyomenus / CC BY-SA 4.0",
+  "youtube_hq": "Foto: BrokenSphere / CC BY 3.0"
+ },
+ "bloques": [
+  {
+   "nombre": "Ranking",
+   "frases": [
+    {
+     "t": "El vídeo más visto de YouTube tiene el doble de visitas que personas hay en la Tierra.",
+     "vid": [
+      "ninos_youtube",
+      "tierra"
+     ],
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🤯",
+       "pos": [
+        0.8,
+        0.4
+       ],
+       "tam": 170,
+       "en": 1.0
+      }
+     ]
+    },
+    {
+     "t": "Ranking: los vídeos más vistos de la historia de YouTube.",
+     "img": [
+      "youtube_hq"
+     ]
+    },
+    {
+     "t": "Número cinco: Bath Song, de Cocomelon. Una canción infantil sobre la hora del baño. Más de siete mil seiscientos millones de visitas.",
+     "rank": {
+      "n": 5,
+      "texto": "Bath Song · 7.600 M",
+      "emoji": "🛁"
+     },
+     "sfx": {
+      "nombre": "ding",
+      "vol": 0.25,
+      "en": 0.1
+     },
+     "vid": [
+      "bano",
+      "bano2"
+     ],
+     "marcas": [
+      {
+       "tipo": "texto",
+       "texto": "+7.600 M",
+       "pos": [
+        0.5,
+        0.78
+       ],
+       "tam": 60,
+       "en": 4.5,
+       "fondo": "#E53935"
+      }
+     ]
+    },
+    {
+     "t": "Número cuatro… un anuncio. Sí: un anuncio de Facebook, de 2022, que ya supera los ocho mil millones de visitas. Seguramente lo has visto sin darte cuenta.",
+     "rank": {
+      "n": 4,
+      "texto": "Anuncio de Facebook · 8.000 M",
+      "emoji": "📢"
+     },
+     "sfx": {
+      "nombre": "ding",
+      "vol": 0.25,
+      "en": 0.1
+     },
+     "vid": [
+      "facebook",
+      "redes"
+     ],
+     "marcas": [
+      {
+       "tipo": "texto",
+       "texto": "+8.000 M",
+       "pos": [
+        0.5,
+        0.78
+       ],
+       "tam": 60,
+       "en": 4.5,
+       "fondo": "#E53935"
+      },
+      {
+       "tipo": "emoji",
+       "emoji": "😅",
+       "pos": [
+        0.8,
+        0.4
+       ],
+       "tam": 170,
+       "en": 6.5
+      }
+     ]
+    },
+    {
+     "t": "Número tres: Despacito, de Luis Fonsi y Daddy Yankee. Más de nueve mil cien millones.",
+     "rank": {
+      "n": 3,
+      "texto": "Despacito · 9.100 M",
+      "emoji": "🎤"
+     },
+     "sfx": {
+      "nombre": "ding",
+      "vol": 0.25,
+      "en": 0.1
+     },
+     "img": [
+      "fonsi",
+      "yankee"
+     ],
+     "marcas": [
+      {
+       "tipo": "texto",
+       "texto": "+9.100 M",
+       "pos": [
+        0.5,
+        0.78
+       ],
+       "tam": 60,
+       "en": 3.0,
+       "fondo": "#E53935"
+      }
+     ]
+    },
+    {
+     "t": "Fue el vídeo más visto del mundo durante más de tres años… hasta que llegó un tiburón.",
+     "img": [
+      "fonsi2",
+      "yankee"
+     ],
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🦈",
+       "pos": [
+        0.8,
+        0.4
+       ],
+       "tam": 170,
+       "en": 3.0
+      }
+     ]
+    },
+    {
+     "t": "Número dos: Wheels on the Bus, otra vez de Cocomelon. Más de nueve mil trescientos millones.",
+     "rank": {
+      "n": 2,
+      "texto": "Wheels on the Bus · 9.300 M",
+      "emoji": "🚌"
+     },
+     "sfx": {
+      "nombre": "ding",
+      "vol": 0.25,
+      "en": 0.1
+     },
+     "vid": [
+      "autobus",
+      "bebe_dibujos"
+     ],
+     "marcas": [
+      {
+       "tipo": "texto",
+       "texto": "+9.300 M",
+       "pos": [
+        0.5,
+        0.78
+       ],
+       "tam": 60,
+       "en": 3.0,
+       "fondo": "#E53935"
+      }
+     ]
+    },
+    {
+     "t": "Y el número uno…",
+     "vid": [
+      "tiburon",
+      "tiburones"
+     ]
+    },
+    {
+     "t": "Baby Shark Dance. Más de diecisiete mil millones de visitas. Es el único vídeo de la historia que ha pasado de diez mil millones.",
+     "rank": {
+      "n": 1,
+      "texto": "Baby Shark · 17.000 M",
+      "emoji": "🏆"
+     },
+     "sfx": {
+      "nombre": "ding",
+      "vol": 0.4,
+      "en": 0.1
+     },
+     "img": [
+      "babyshark",
+      "babyshark_gel"
+     ],
+     "marcas": [
+      {
+       "tipo": "texto",
+       "texto": "+17.000 M",
+       "pos": [
+        0.5,
+        0.78
+       ],
+       "tam": 60,
+       "en": 2.5,
+       "fondo": "#E53935"
+      },
+      {
+       "tipo": "emoji",
+       "emoji": "🦈",
+       "pos": [
+        0.8,
+        0.4
+       ],
+       "tam": 170,
+       "en": 1.0
+      }
+     ]
+    },
+    {
+     "t": "En el planeta somos unos ocho mil millones de personas. Es como si cada una lo hubiera visto dos veces.",
+     "vid": [
+      "tierra",
+      "ninos_baile"
+     ],
+     "marcas": [
+      {
+       "tipo": "texto",
+       "texto": "x2",
+       "pos": [
+        0.5,
+        0.78
+       ],
+       "tam": 60,
+       "en": 3.0,
+       "fondo": "#2E7D32"
+      }
+     ]
+    },
+    {
+     "t": "¿Cuántas veces lo has visto tú? Te leo en los comentarios.",
+     "vid": [
+      "ninos_tablet",
+      "ninos_baile"
+     ]
+    },
+    {
+     "t": "Sígueme para más rankings en Shock Mental.",
+     "vid": [
+      "concierto",
+      "tiburones"
+     ]
+    }
+   ]
+  }
+ ]
+}
