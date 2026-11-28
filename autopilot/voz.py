@@ -31,6 +31,13 @@ PERFILES = {
     "C": {"nombre_perfil": "Equilibrada", "velocidad": 1.12, "estilo": "equilibrado",
           "explica": "Algo más pausada, con preguntas retóricas, pausas antes del dato y remate final."},
 }
+# Perfil expresivo con Gemini-TTS (misma voz «Achird»). Tiene coste: el gerente autorizó la PRUEBA el 28-nov-2026.
+GEMINI = {"nombre_perfil": "Gemini expresiva", "velocidad": 1.0, "estilo": "actual", "modelo": "gemini-2.5-flash-tts",
+          "idioma_gemini": "es-419",
+          "instruccion": ("Eres el narrador de un canal de curiosidades en español latinoamericano neutro. Habla con curiosidad y "
+                          "entusiasmo natural, como un comentarista agradable que disfruta contando cada dato; ritmo ágil pero "
+                          "claro, pequeña pausa antes de cada cifra sorprendente, sin gritar ni exagerar."),
+          "explica": "La misma voz Achird con Gemini-TTS e instrucción de estilo (curiosidad y entusiasmo natural). Tiene coste."}
 
 # Mismo contenido para las tres pruebas; cambia solo la DIRECCIÓN (puntuación, pausas y velocidad).
 MUESTRA = {
