@@ -1,0 +1,318 @@
+{
+ "tema": "shock",
+ "voz": {
+  "idioma": "es-US",
+  "nombre": "es-US-Chirp3-HD-Achird",
+  "velocidad": 1.15
+ },
+ "estilo": {
+  "dinamico": true,
+  "plano": 1.4
+ },
+ "formato": "vertical",
+ "marca": {
+  "logo": "marca/shockmental/perfil-sin-eslogan.png",
+  "nombre": "SHOCK MENTAL"
+ },
+ "musica": {
+  "archivo": "musica/wallpaper.mp3",
+  "volumen": 0.09,
+  "credito": "\"Wallpaper\" de Kevin MacLeod (incompetech.com)"
+ },
+ "titulo": "La perrita del meme que vale millones 🐕 Ranking",
+ "ranking": {
+  "titulo": "LOS MEMES MÁS FAMOSOS",
+  "puestos": [
+   5,
+   4,
+   3,
+   2,
+   1
+  ]
+ },
+ "videos": {
+  "movil": 4232959,
+  "facebook": 5201209,
+  "ninos_youtube": 4961698,
+  "concierto": 3941289,
+  "ninos_baile": 8612634
+ },
+ "fotos": {
+  "kabosu": 0,
+  "kabosu2": 0,
+  "kabosu_estatua": 0,
+  "kabosu_sentada": 0,
+  "dogecoin": 0,
+  "grumpy": 0,
+  "grumpy2": 0,
+  "harold": 0,
+  "laina": 0,
+  "laina_grumpy": 0,
+  "rick": 0,
+  "rick2": 0
+ },
+ "credito_fotos": {
+  "kabosu": "Foto: Asanagi / CC0",
+  "kabosu2": "Foto: Asanagi / CC0",
+  "kabosu_estatua": "Foto: Fred Cherrygarden / CC BY-SA 4.0",
+  "kabosu_sentada": "Foto: Asanagi / CC0",
+  "dogecoin": "Foto: Cyril Ernst / CC BY-SA 4.0",
+  "grumpy": "Foto: Gage Skidmore / CC BY-SA 2.0",
+  "grumpy2": "Foto: Gage Skidmore / CC BY-SA 3.0",
+  "harold": "Foto: Eifert János / CC BY-SA 4.0",
+  "laina": "Foto: Gage Skidmore / CC BY-SA 3.0",
+  "laina_grumpy": "Foto: Gage Skidmore / CC BY-SA 2.0",
+  "rick": "Foto: Wjack12 / CC BY-SA 4.0",
+  "rick2": "Foto: Andrew Hurley / CC BY-SA 2.0"
+ },
+ "bloques": [
+  {
+   "nombre": "Ranking",
+   "frases": [
+    {
+     "t": "Esta perrita inspiró una criptomoneda que llegó a valer más de ochenta mil millones de dólares.",
+     "img": [
+      "kabosu"
+     ],
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🤯",
+       "pos": [
+        0.8,
+        0.4
+       ],
+       "tam": 170,
+       "en": 0.3
+      },
+      {
+       "tipo": "texto",
+       "texto": "80.000 M$",
+       "pos": [
+        0.5,
+        0.78
+       ],
+       "tam": 60,
+       "en": 2.5,
+       "fondo": "#E53935"
+      }
+     ]
+    },
+    {
+     "t": "Los memes más famosos de internet… y quién hay detrás.",
+     "vid": [
+      "movil",
+      "facebook"
+     ]
+    },
+    {
+     "t": "Número cinco: Harold. Es András Arató, un ingeniero húngaro jubilado que posó para un banco de fotos.",
+     "rank": {
+      "n": 5,
+      "texto": "Harold · Hungría",
+      "emoji": "🙂"
+     },
+     "sfx": {
+      "nombre": "ding",
+      "vol": 0.25,
+      "en": 0.1
+     },
+     "img": [
+      "harold"
+     ]
+    },
+    {
+     "t": "Número cuatro: la novia obsesiva. Laina Morris vendió su meme en 2021 por más de cuatrocientos mil dólares.",
+     "rank": {
+      "n": 4,
+      "texto": "La novia obsesiva · 411.000 $",
+      "emoji": "👀"
+     },
+     "sfx": {
+      "nombre": "ding",
+      "vol": 0.25,
+      "en": 0.1
+     },
+     "img": [
+      "laina",
+      "laina_grumpy"
+     ],
+     "marcas": [
+      {
+       "tipo": "texto",
+       "texto": "411.000 $",
+       "pos": [
+        0.5,
+        0.78
+       ],
+       "tam": 60,
+       "en": 3.0,
+       "fondo": "#E53935"
+      }
+     ]
+    },
+    {
+     "t": "Número tres: el rickroll, la broma del enlace que acaba en esta canción de Rick Astley.",
+     "rank": {
+      "n": 3,
+      "texto": "Rickroll · Rick Astley",
+      "emoji": "🎤"
+     },
+     "sfx": {
+      "nombre": "ding",
+      "vol": 0.25,
+      "en": 0.1
+     },
+     "img": [
+      "rick",
+      "rick2"
+     ]
+    },
+    {
+     "t": "Gracias a ella, el vídeo pasó de mil millones de visitas.",
+     "img": [
+      "rick2"
+     ],
+     "marcas": [
+      {
+       "tipo": "texto",
+       "texto": "+1.000 M",
+       "pos": [
+        0.5,
+        0.78
+       ],
+       "tam": 60,
+       "en": 1.5,
+       "fondo": "#E53935"
+      }
+     ]
+    },
+    {
+     "t": "Número dos: Grumpy Cat. Su cara de enfado era real: tenía enanismo felino.",
+     "rank": {
+      "n": 2,
+      "texto": "Grumpy Cat · 710.000 $",
+      "emoji": "😾"
+     },
+     "sfx": {
+      "nombre": "ding",
+      "vol": 0.25,
+      "en": 0.1
+     },
+     "img": [
+      "grumpy",
+      "grumpy2"
+     ]
+    },
+    {
+     "t": "Y su dueña ganó un juicio de setecientos diez mil dólares a una marca de café.",
+     "img": [
+      "grumpy2",
+      "laina_grumpy"
+     ],
+     "marcas": [
+      {
+       "tipo": "texto",
+       "texto": "710.000 $",
+       "pos": [
+        0.5,
+        0.78
+       ],
+       "tam": 60,
+       "en": 2.0,
+       "fondo": "#E53935"
+      },
+      {
+       "tipo": "emoji",
+       "emoji": "☕",
+       "pos": [
+        0.8,
+        0.4
+       ],
+       "tam": 170,
+       "en": 1.0
+      }
+     ]
+    },
+    {
+     "t": "Y el número uno…",
+     "img": [
+      "kabosu2"
+     ]
+    },
+    {
+     "t": "Doge. Es Kabosu, una perrita de Japón. Su foto inspiró el Dogecoin, y se vendió como NFT por unos cuatro millones de dólares.",
+     "rank": {
+      "n": 1,
+      "texto": "Doge · Kabosu",
+      "emoji": "🏆"
+     },
+     "sfx": {
+      "nombre": "ding",
+      "vol": 0.4,
+      "en": 0.1
+     },
+     "img": [
+      "kabosu",
+      "dogecoin"
+     ],
+     "marcas": [
+      {
+       "tipo": "texto",
+       "texto": "4 M$",
+       "pos": [
+        0.5,
+        0.78
+       ],
+       "tam": 60,
+       "en": 4.5,
+       "fondo": "#E53935"
+      },
+      {
+       "tipo": "emoji",
+       "emoji": "🐕",
+       "pos": [
+        0.8,
+        0.4
+       ],
+       "tam": 170,
+       "en": 0.5
+      }
+     ]
+    },
+    {
+     "t": "Kabosu murió en 2024. Y en su ciudad, Sakura, tiene su propia estatua.",
+     "img": [
+      "kabosu_estatua",
+      "kabosu_sentada"
+     ],
+     "marcas": [
+      {
+       "tipo": "emoji",
+       "emoji": "🥹",
+       "pos": [
+        0.8,
+        0.4
+       ],
+       "tam": 170,
+       "en": 1.5
+      }
+     ]
+    },
+    {
+     "t": "¿Cuál es tu meme favorito? Te leo en los comentarios.",
+     "vid": [
+      "ninos_youtube",
+      "movil"
+     ]
+    },
+    {
+     "t": "Sígueme para más rankings en Shock Mental.",
+     "img": [
+      "kabosu_sentada"
+     ]
+    }
+   ]
+  }
+ ]
+}
