@@ -41,7 +41,16 @@ def main():
 
     with db() as con:
         if a.orden == "ciclo":
-            print(json.dumps({"tareas_pendientes": director.ciclo(con)}, ensure_ascii=False))
+            import os, time
+            from .nucleo import PRIVADO
+            candado = PRIVADO / "ciclo.lock"
+            if candado.exists() and time.time() - candado.stat().st_mtime < 2 * 3600:
+                print("otro ciclo está en marcha; no hago nada"); return
+            candado.write_text(str(os.getpid()))
+            try:
+                print(json.dumps({"tareas_pendientes": director.ciclo(con)}, ensure_ascii=False))
+            finally:
+                candado.unlink(missing_ok=True)
         elif a.orden == "cerebro":
             if a.accion == "siguiente":
                 t = cerebro.siguiente(con)

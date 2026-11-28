@@ -55,7 +55,7 @@ def sincronizar(con, cfg):
         items = {i["id"]: i for i in RV.bot(c, "items")["items"]}
     except Exception as e:
         log(con, f"no puedo hablar con el bot: {e}", nivel="error")
-        return
+        return {}
     for v in map(fila, con.execute("SELECT * FROM videos WHERE estado IN ('revision','cambios','aprobado','programado')")):
         it = items.get(v["id"])
         if not it or it.get("version") != v["version"]:
@@ -93,6 +93,7 @@ def sincronizar(con, cfg):
             nueva_tarea(con, "corrector", video_id=v["id"], datos={"instrucciones": instr, "version": v["version"]})
             RV.bot(c, "estado", {"id": v["id"], "estado": "rehaciendo", "nota": f"🛠️ Aplicando tus cambios a «{v['titulo']}»…"})
             log(con, f"cambios pedidos: {instr}", video_id=v["id"])
+    return items
 
 
 # ---------- planificar ----------
@@ -243,7 +244,13 @@ def avisar(texto: str):
 # ---------- ciclo completo ----------
 def ciclo(con):
     cfg = config()
-    sincronizar(con, cfg)
+    items = sincronizar(con, cfg) or {}
+    from . import youtube
+    for paso in (lambda: youtube.publicar_aprobados(con, cfg, items, avisar), lambda: youtube.analizar(con, cfg, avisar)):
+        try:
+            paso()
+        except Exception as e:
+            log(con, f"YouTube: {e}", agente="publicador/analista", nivel="error")
     planificar(con, cfg)
     for v in map(fila, con.execute("SELECT * FROM videos WHERE estado='produccion' ORDER BY creado").fetchall()):
         producir(con, cfg, v)
