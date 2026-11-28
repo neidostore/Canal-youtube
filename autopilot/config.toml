@@ -1,0 +1,52 @@
+# Shock Mental Autopilot · configuración (se puede editar sin tocar código)
+# Las claves NUNCA van aquí: viven en ~/.canales-youtube/ o en variables de entorno.
+
+[general]
+modo = "prueba"              # "prueba": produce y manda a Telegram marcado como PRUEBA, no sube a YouTube
+                             # "produccion": sube en privado y programa solo tras tu ✅
+zona = "Europe/Madrid"
+canal = "shockmental"
+
+[calendario]
+# Huecos de publicación (hora de España). dia: 0 = lunes … 6 = domingo.
+# Ritmo elegido: 2 Shorts al día + 2 vídeos largos a la semana.
+shorts = [
+  { dias = [0, 1, 2, 3, 4, 5, 6], hora = "13:00" },
+  { dias = [0, 1, 2, 3, 4, 5, 6], hora = "19:00" },
+]
+largos = [
+  { dias = [1], hora = "18:00" },   # martes
+  { dias = [4], hora = "18:00" },   # viernes
+]
+# Mezcla de tipos de Short (proporción aproximada por semana)
+mezcla_shorts = { ranking = 0.6, curiosidad = 0.25, historia = 0.15 }
+cola_minima_dias = 3          # avisa si quedan menos de 3 días de contenido aprobado
+separacion_temas = 3          # no repetir la misma categoría en los 3 vídeos seguidos
+
+[limites]
+euros_dia = 1.00              # gasto máximo en APIs de pago por día (hoy todo es gratis)
+euros_mes = 10.00
+reintentos = 2                # intentos extra por tarea antes de avisarte
+max_videos_dia = 4            # producción máxima diaria (evita bucles)
+max_versiones = 4             # cambios máximos por vídeo antes de pedirte decisión
+
+[calidad]
+nota_minima = 70              # por debajo no llega a Telegram
+short_max_segundos = 75
+largo_min_segundos = 240
+fuentes_minimas = 1           # por dato con cifra
+similitud_maxima = 0.55       # parecido máximo con un vídeo anterior (0-1)
+
+[objetivos]
+inicio = "2026-11-02"
+suscriptores_hoy = 30
+meta_90_dias = 200
+fecha_meta_90 = "2027-02-26"
+
+[costes]
+# Coste mensual fijo de herramientas (€). Todo gratis salvo que añadas algo.
+cloudflare = 0
+telegram = 0
+github = 0
+google_tts = 0                # dentro del tramo gratuito (confirmar en la consola de Google Cloud)
+claude = 0                    # suscripción que ya pagas; no se suma como coste por vídeo

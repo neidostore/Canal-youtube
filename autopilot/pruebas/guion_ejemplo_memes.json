@@ -1,0 +1,44 @@
+{
+ "formato": "short", "tipo": "ranking", "categoria": "internet",
+ "tema": "Los memes más famosos de internet y quién hay detrás",
+ "titulo_ranking": "LOS MEMES MÁS FAMOSOS",
+ "titulo": "La perrita del meme que vale millones 🐕 #shorts",
+ "descripcion": "Esta perrita inspiró una criptomoneda que llegó a valer más de 80.000 millones de dólares 🤯🐕\n\n5️⃣ Hide the Pain Harold: András Arató\n4️⃣ La novia obsesiva: 411.000 $\n3️⃣ El rickroll: más de 1.000 millones de visitas\n2️⃣ Grumpy Cat: juicio de 710.001 $\n1️⃣ Doge: Kabosu, unos 4 M$ como NFT\n\n¿Cuál es tu meme favorito? 👇\n\nFotos (Wikimedia Commons): Asanagi (CC0), Fred Cherrygarden (CC BY-SA 4.0), Gage Skidmore (CC BY-SA 2.0), Eifert János (CC BY-SA 4.0), Wjack12 (CC BY-SA 4.0). Vídeos: Pexels.\nMúsica: \"Wallpaper\" de Kevin MacLeod (incompetech.com), licencia CC BY 4.0.\n#shorts #memes #doge #ranking",
+ "comentario": "¿Qué meme debería estar en el top? 👇",
+ "etiquetas": ["memes", "doge", "ranking"],
+ "fotos": {
+  "kabosu": "Kabosu and Atsuko Sato 2023-11-02 (1).jpg",
+  "kabosu_estatua": "Kabosu the Doge Monument.jpg",
+  "grumpy": "Grumpy Cat (14351394877).jpg",
+  "harold": "Arató András.jpg",
+  "laina": "Laina Morris by Gage Skidmore.jpg",
+  "rick": "Rick Astley Dallas.jpg"
+ },
+ "clips": {"movil": 4232959, "ninos_youtube": 4961698},
+ "frases": [
+  {"t": "Esta perrita inspiró una criptomoneda que llegó a valer más de ochenta mil millones de dólares.", "img": ["kabosu"], "emoji": "🤯", "emoji_en": 0.3, "cifra": "80.000 M$", "cifra_en": 2.5},
+  {"t": "Los memes más famosos de internet… y quién hay detrás.", "vid": ["movil"]},
+  {"t": "Número cinco: Harold. Es András Arató, un ingeniero húngaro jubilado que posó para un banco de fotos.", "img": ["harold"], "rank": {"n": 5, "texto": "Harold · Hungría", "emoji": "🙂"}},
+  {"t": "Número cuatro: la novia obsesiva. Laina Morris vendió su meme en 2021 por más de cuatrocientos mil dólares.", "img": ["laina"], "rank": {"n": 4, "texto": "La novia obsesiva · 411.000 $", "emoji": "👀"}, "cifra": "411.000 $", "cifra_en": 3.0},
+  {"t": "Número tres: el rickroll, la broma del enlace que acaba en esta canción de Rick Astley. El vídeo pasó de mil millones de visitas.", "img": ["rick"], "rank": {"n": 3, "texto": "Rickroll · Rick Astley", "emoji": "🎤"}, "cifra": "+1.000 M", "cifra_en": 5.0},
+  {"t": "Número dos: Grumpy Cat. Su cara de enfado era real, y su dueña ganó un juicio de setecientos diez mil dólares.", "img": ["grumpy"], "rank": {"n": 2, "texto": "Grumpy Cat · 710.000 $", "emoji": "😾"}, "cifra": "710.000 $", "cifra_en": 4.0},
+  {"t": "Y el número uno…", "img": ["kabosu"]},
+  {"t": "Doge. Es Kabosu, una perrita de Japón. Su foto se vendió como NFT por unos cuatro millones de dólares.", "img": ["kabosu"], "rank": {"n": 1, "texto": "Doge · Kabosu", "emoji": "🏆"}, "cifra": "4 M$", "cifra_en": 4.0},
+  {"t": "Kabosu murió en 2024, y en su ciudad tiene su propia estatua.", "img": ["kabosu_estatua"], "emoji": "🥹", "emoji_en": 1.0},
+  {"t": "¿Cuál es tu meme favorito? Sígueme para más rankings en Shock Mental.", "vid": ["ninos_youtube"]}
+ ],
+ "fuentes": [
+  {"dato": "NFT de Doge por unos 4 M$ (2021)", "fuente": "Know Your Meme", "url": "https://amp.knowyourmeme.com/news/doge-nft-sells-for-over-4-million"},
+  {"dato": "NFT de la novia obsesiva, 411.000 $", "fuente": "Decrypt", "url": "https://decrypt.co/63891/overly-attached-girlfriend-nft-sells-for-411000"},
+  {"dato": "Grumpy Cat gana 710.001 $", "fuente": "NPR", "url": "https://www.npr.org/sections/thetwo-way/2018/01/25/580588088/grumpy-cat-awarded-710-000-in-copyright-infringement-suit"},
+  {"dato": "Harold es András Arató, ingeniero jubilado", "fuente": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Hide_the_Pain_Harold"}
+ ],
+ "verificacion": {"datos": [
+  {"dato": "NFT de Doge por unos 4 M$", "estado": "verificado", "fuentes": ["https://amp.knowyourmeme.com/news/doge-nft-sells-for-over-4-million"]},
+  {"dato": "411.000 $", "estado": "verificado", "fuentes": ["https://decrypt.co/63891/overly-attached-girlfriend-nft-sells-for-411000"]},
+  {"dato": "710.001 $", "estado": "verificado", "fuentes": ["https://www.npr.org/sections/thetwo-way/2018/01/25/580588088/grumpy-cat-awarded-710-000-in-copyright-infringement-suit"]},
+  {"dato": "András Arató", "estado": "verificado", "fuentes": ["https://en.wikipedia.org/wiki/Hide_the_Pain_Harold"]}
+ ]},
+ "portada_segundo": 2,
+ "autoevaluacion": {"interes": 8, "originalidad": 7, "gancho": 9, "retencion": 7, "valor": 7, "conversion": 6}
+}

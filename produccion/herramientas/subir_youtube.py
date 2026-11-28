@@ -40,7 +40,8 @@ BASE = Path.home() / ".canales-youtube"
 SECRETO = BASE / "client_secret.json"
 TOKENS = BASE / "tokens"
 SCOPES = ["https://www.googleapis.com/auth/youtube.upload",
-          "https://www.googleapis.com/auth/youtube.force-ssl"]  # force-ssl: para publicar el comentario
+          "https://www.googleapis.com/auth/youtube.force-ssl",  # force-ssl: para publicar el comentario
+          "https://www.googleapis.com/auth/yt-analytics.readonly"]  # solo lectura de estadísticas (Analista)
 REPO = Path(__file__).resolve().parents[2]
 
 CATEGORIAS = {  # nombre en la ficha → id de YouTube
