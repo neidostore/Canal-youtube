@@ -69,8 +69,11 @@ def main():
         assert calidad.parecido("La perrita del meme que vale millones", "La perrita del meme que vale millones 🐕 #shorts") > 0.9; ok += 1
         assert calidad.parecido("Fichajes más caros del fútbol", "El animal más rápido del mundo") < 0.2; ok += 1
         # 10) huecos del calendario: 14 Shorts y 2 largos por semana
-        hs = director.huecos(cfg, 7)
+        libre = {**cfg, "calendario": {**cfg["calendario"], "reservados": []}}
+        hs = director.huecos(libre, 7)
         assert sum(f == "short" for f, _ in hs) == 14 and sum(f == "largo" for f, _ in hs) == 2; ok += 1
+        res = {**cfg, "calendario": {**cfg["calendario"], "reservados": [hs[0][1].strftime("%Y-%m-%dT%H:%M:00.000Z")]}}
+        assert len(director.huecos(res, 7)) == len(hs) - 1; ok += 1   # una fecha reservada no se usa
     print(f"OK: {ok} comprobaciones superadas")
 
 

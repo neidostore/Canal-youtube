@@ -19,7 +19,7 @@ const MESES = ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "o
 const ESTADOS = {
   revision: "👀 esperando tu revisión", esperando_cambios: "✏️ esperando que me digas los cambios",
   cambios: "🛠️ cambios pedidos (los aplico cuando el PC esté encendido)", rehaciendo: "🛠️ rehaciendo",
-  programado: "📅 programado", descartado: "❌ descartado", publicado: "✅ publicado",
+  aprobado: "✅ aprobado (pendiente de subir)", programado: "📅 programado", descartado: "❌ descartado", publicado: "✅ publicado",
 };
 
 export default {
@@ -102,13 +102,29 @@ function fechaTexto(iso) {
   const p = partesMadrid(new Date(iso));
   return `${DIAS[p.dow]} ${p.d} ${MESES[p.m - 1]} · ${String(p.h).padStart(2, "0")}:${String(p.min).padStart(2, "0")}`;
 }
+// Calendario efectivo: el que manda el PC (autopilot/config.toml) para short/largo; el antiguo para ranking/dosis
+async function calendario(env) {
+  const delPc = await leer(env, "calendario", null);
+  return { ...CALENDARIO, ...(delPc || {}) };
+}
+// Próximos huecos libres (para «Cambiar fecha»)
+async function huecosLibres(env, tipo, excluirId, n = 4) {
+  const out = [];
+  for (let i = 0; i < n; i++) {
+    const f = await hueco(env, tipo, excluirId, out);
+    out.push(f);
+  }
+  return out;
+}
 // Siguiente hueco libre del calendario para un tipo de vídeo
-async function hueco(env, tipo, excluirId) {
-  const slots = CALENDARIO[tipo];
-  if (!slots) throw new Error(`tipo desconocido: ${tipo} (usa ranking, short o dosis)`);
+async function hueco(env, tipo, excluirId, ademas = []) {
+  const slots = (await calendario(env))[tipo];
+  if (!slots) throw new Error(`tipo desconocido: ${tipo} (usa short, largo, ranking o dosis)`);
   const ocupadas = new Set((await todos(env))
     .filter((i) => i.id !== excluirId && ["revision", "esperando_cambios", "cambios", "rehaciendo", "programado"].includes(i.estado))
     .map((i) => i.fecha_utc));
+  for (const f of ademas) ocupadas.add(f);
+  for (const f of (await leer(env, "calendario", {}))?.reservados || []) ocupadas.add(f);   // programados a mano
   const minimo = Date.now() + 60 * 60 * 1000;   // al menos 1 hora de margen
   const hoy = partesMadrid(new Date());
   for (let k = 0; k < 90; k++) {
@@ -125,29 +141,42 @@ async function hueco(env, tipo, excluirId) {
 }
 
 // ---------- mensajes al dueño ----------
-function botones(id) {
+// La aprobación va ligada al vídeo Y a su versión: un botón de una versión vieja no vale.
+function botones(id, version) {
+  const v = version ? ":" + version : "";
   return { inline_keyboard: [
-    [{ text: "✅ Aprobar", callback_data: "ok:" + id }],
-    [{ text: "✏️ Pedir cambios", callback_data: "cam:" + id }, { text: "❌ Descartar", callback_data: "no:" + id }],
+    [{ text: "✅ APROBAR Y PROGRAMAR", callback_data: "ok:" + id + v }],
+    [{ text: "✏️ SOLICITAR CAMBIOS", callback_data: "cam:" + id + v }, { text: "❌ RECHAZAR", callback_data: "no:" + id + v }],
+    [{ text: "📜 VER GUION", callback_data: "g:" + id }, { text: "📚 VER FUENTES", callback_data: "f:" + id }],
+    [{ text: "📅 CAMBIAR FECHA", callback_data: "fe:" + id + v }],
   ] };
 }
+const TIPOS = { short: "Short", largo: "Vídeo largo", ranking: "Short de ranking", dosis: "Dosis (vídeo largo)" };
 function fichaTexto(it) {
   let desc = it.descripcion || "";
-  if (desc.length > 2500) desc = desc.slice(0, 2500) + "…";
-  return `🎬 <b>Para revisar</b> · versión ${it.version}\n📺 El vídeo te lo he dejado en la conversación de Claude.\n\n` +
+  if (desc.length > 1800) desc = desc.slice(0, 1800) + "…";
+  const mmss = (s) => `${Math.floor(s / 60)}:${String(Math.round(s % 60)).padStart(2, "0")}`;
+  return (it.prueba ? "🧪 <b>MODO PRUEBA</b> (no se subirá a YouTube)\n" : "") +
+    `🎬 <b>Para revisar</b> · ${esc(it.id)} · versión ${it.version}\n\n` +
     `<b>Título:</b> ${esc(it.titulo)}\n` +
+    `<b>Tipo:</b> ${esc(TIPOS[it.tipo] || it.tipo)}` + (it.duracion ? ` · ${mmss(it.duracion)}` : "") + "\n" +
+    (it.puntuacion != null ? `<b>Calidad:</b> ${it.puntuacion}/100\n` : "") +
     `<b>Se publicaría:</b> ${esc(fechaTexto(it.fecha_utc))}\n` +
-    `<b>Etiquetas:</b> ${esc((it.etiquetas || []).map((e) => "#" + e).join(" "))}\n\n` +
-    `<b>Descripción:</b>\n${esc(desc)}\n\n` +
-    (it.youtube_id ? `▶️ Verlo en YouTube (privado, calidad completa): https://youtu.be/${it.youtube_id}` : "");
+    (it.coste != null ? `<b>Coste de producción:</b> ${Number(it.coste).toFixed(2)} €\n` : "") +
+    ((it.avisos_calidad || []).length ? `⚠️ ${esc(it.avisos_calidad.join(" · "))}\n` : "") +
+    `\n<b>Descripción:</b>\n${esc(desc)}\n\n` +
+    (it.comentario ? `📌 <b>Comentario fijado:</b> ${esc(it.comentario)}\n` : "") +
+    (it.youtube_id ? `▶️ En YouTube (privado): https://youtu.be/${it.youtube_id}` : "");
 }
 const AYUDA =
   "🤖 <b>Shock Mental · Revisión</b>\n\n" +
-  "Cuando termine un vídeo te lo mando aquí con tres botones:\n" +
-  "✅ <b>Aprobar</b>: lo programo en YouTube según el calendario.\n" +
-  "✏️ <b>Pedir cambios</b>: luego me escribes o me mandas un audio con lo que quieres cambiar.\n" +
-  "❌ <b>Descartar</b>: no se publica (se queda privado).\n\n" +
+  "Cuando los agentes terminan un vídeo y pasa el control de calidad, te llega aquí con su portada y estos botones:\n" +
+  "✅ <b>Aprobar y programar</b>: se programa en YouTube en la fecha indicada.\n" +
+  "✏️ <b>Solicitar cambios</b>: me escribes o me mandas un audio; los agentes hacen una versión nueva.\n" +
+  "❌ <b>Rechazar</b>: no se publica; te pregunto el motivo para que no se repita.\n" +
+  "📜 <b>Ver guion</b> · 📚 <b>Ver fuentes</b> · 📅 <b>Cambiar fecha</b>\n\n" +
   "<b>Órdenes:</b>\n" +
+  "/panel — progreso del canal, objetivos y monetización\n" +
   "/idea texto — guarda una idea para próximos vídeos\n" +
   "/ideas — ver la lista de ideas\n" +
   "/pendientes — lo que espera tu revisión\n" +
@@ -163,9 +192,31 @@ async function manejar(upd, env) {
 
   if (cb) {
     await tg(env, "answerCallbackQuery", { callback_query_id: cb.id });
-    const [accion, id] = (cb.data || "").split(":");
+    const [accion, id, extra] = (cb.data || "").split(":");
     const it = await getItem(env, id);
     if (!it) return decir(env, "No encuentro ese vídeo.");
+    // Solo lectura: sirven en cualquier estado
+    if (accion === "g") return decir(env, `📜 <b>Guion</b> · ${esc(it.titulo)} (v${it.version})\n\n${esc(it.guion_texto || "No tengo el guion guardado para este vídeo.")}`);
+    if (accion === "f") return decir(env, `📚 <b>Fuentes</b> · ${esc(it.titulo)}\n\n${esc(it.fuentes_texto || "No tengo las fuentes guardadas para este vídeo.")}`);
+    // Aprobación ligada a la versión: los botones de una versión anterior ya no valen
+    const version = ["ok", "cam", "no", "fe"].includes(accion) ? extra : null;
+    if (version && String(version) !== String(it.version))
+      return decir(env, `⚠️ Ese botón es de la versión ${version} de «${esc(it.titulo)}», pero la actual es la ${it.version}. Usa los botones del último mensaje.`);
+    if (accion === "fs") {   // fecha elegida: fs:id:minutosUTC
+      if (!["revision", "esperando_cambios", "programado", "aprobado"].includes(it.estado))
+        return decir(env, `«${esc(it.titulo)}» ya está ${ESTADOS[it.estado] || it.estado}.`);
+      it.fecha_utc = new Date(Number(extra) * 60000).toISOString().replace(/\.\d+Z$/, ".000Z");
+      await putItem(env, it);
+      if (it.estado === "programado" && it.youtube_id) {
+        try { await programarEnYouTube(env, it); } catch (e) { return decir(env, `⚠️ No he podido cambiar la fecha en YouTube: ${esc(e.message)}`); }
+      }
+      return decir(env, `📅 Nueva fecha para «${esc(it.titulo)}»: <b>${esc(fechaTexto(it.fecha_utc))}</b>`);
+    }
+    if (accion === "fe") {
+      const libres = await huecosLibres(env, it.tipo, it.id, 4);
+      return decir(env, `📅 ¿Cuándo publico «${esc(it.titulo)}»?`, { reply_markup: { inline_keyboard:
+        libres.map((f) => [{ text: fechaTexto(f), callback_data: `fs:${it.id}:${Math.round(Date.parse(f) / 60000)}` }]) } });
+    }
     if (!["revision", "esperando_cambios"].includes(it.estado))
       return decir(env, `«${esc(it.titulo)}» ya está ${ESTADOS[it.estado] || it.estado}.`);
     const quitarBotones = () => tg(env, "editMessageReplyMarkup", {
@@ -179,7 +230,9 @@ async function manejar(upd, env) {
     }
     if (accion === "no") {
       it.estado = "descartado"; await putItem(env, it); await quitarBotones();
-      return decir(env, `❌ Descartado «${esc(it.titulo)}». Se queda privado en YouTube y no se publica.`);
+      await guardar(env, "motivo", id);
+      return decir(env, `❌ Rechazado «${esc(it.titulo)}». No se publica.\n\n¿Por qué? Escríbeme el motivo en una frase (o un audio). ` +
+        "Lo apunto para que no se repita. Si no quieres decirlo, escribe /saltar.");
     }
     return;
   }
@@ -208,8 +261,17 @@ async function manejar(upd, env) {
     await decir(env, `📋 <b>Pendientes (${p.length})</b>\n\n` +
       p.map((i) => `• «${esc(i.titulo)}» — ${ESTADOS[i.estado]}\n   ${esc(fechaTexto(i.fecha_utc))}`).join("\n"));
     for (const i of p.filter((i) => i.estado === "revision"))
-      await decir(env, fichaTexto(i), { reply_markup: botones(i.id) });
+      await decir(env, fichaTexto(i), { reply_markup: botones(i.id, i.version) });
     return;
+  }
+  if (cmd === "/panel") {
+    const p = await leer(env, "panel", null);
+    if (!p) return decir(env, "📊 Todavía no tengo el panel. Se actualiza cada vez que el PC hace su ciclo diario.");
+    return decir(env, `<pre>${esc(p.texto)}</pre>\n<i>Actualizado: ${esc(fechaTexto(p.fecha))}</i>`);
+  }
+  if (cmd === "/saltar") {
+    if (await leer(env, "motivo")) await env.DATOS.delete("motivo");
+    return decir(env, "👍 Vale, sin motivo.");
   }
   if (cmd === "/calendario") {
     const p = (await todos(env)).filter((i) => i.estado === "programado").sort((a, b) => a.fecha_utc.localeCompare(b.fecha_utc));
@@ -225,7 +287,18 @@ async function manejar(upd, env) {
   }
   if (cmd) return decir(env, "No conozco esa orden. Escribe /ayuda para ver las que hay.");
 
-  // texto libre o audio: ¿son cambios de un vídeo?
+  // texto libre o audio: ¿es el motivo de un rechazo?
+  const idMotivo = await leer(env, "motivo");
+  if (idMotivo && (texto || msg.voice || msg.audio)) {
+    const r = await getItem(env, idMotivo);
+    if (r) {
+      r.motivo_rechazo = texto || "(audio)"; if (msg.voice || msg.audio) r.motivo_voz = (msg.voice || msg.audio).file_id;
+      await putItem(env, r);
+    }
+    await env.DATOS.delete("motivo");
+    return decir(env, "📝 Apuntado. Los agentes lo tendrán en cuenta para que no se repita.");
+  }
+  // ¿son cambios de un vídeo?
   const id = await leer(env, "esperando");
   const it = id && await getItem(env, id);
   const voz = msg.voice || msg.audio;
@@ -263,6 +336,15 @@ async function programarEnYouTube(env, it) {
 }
 async function aprobar(env, it, quitarBotones) {
   if (!it.fecha_utc || Date.parse(it.fecha_utc) < Date.now() + 20 * 60 * 1000) it.fecha_utc = await hueco(env, it.tipo, it.id);
+  if (it.prueba || !it.youtube_id) {
+    // Modo prueba, o el vídeo aún no está en YouTube: queda APROBADO (esta versión). El PC lo sube en privado
+    // y lo programa en su siguiente ciclo (solo en modo producción). Nunca se publica nada sin este ✅.
+    it.estado = "aprobado"; it.aprobado = new Date().toISOString(); it.version_aprobada = it.version;
+    await putItem(env, it); await quitarBotones();
+    return decir(env, (it.prueba ? "🧪 <b>Aprobado en modo prueba</b>: no se sube a YouTube.\n" :
+      "✅ <b>Aprobado</b>. Lo subo y lo programo en el próximo ciclo del PC.\n") +
+      `«${esc(it.titulo)}» · ${esc(fechaTexto(it.fecha_utc))}`);
+  }
   try {
     if (!it.youtube_id) throw new Error("no tengo el vídeo subido en YouTube");
     await programarEnYouTube(env, it);
@@ -305,11 +387,11 @@ async function pc(url, req, env) {
   if (ruta === "revision") {         // el PC ya mandó el vídeo; aquí va la ficha con los botones
     const previo = await getItem(env, cuerpo.id);
     const it = { ...(previo || {}), ...cuerpo, estado: "revision", cambios: [],
-      version: previo ? (previo.version || 1) + 1 : 1, enviado: new Date().toISOString() };
+      version: cuerpo.version || (previo ? (previo.version || 1) + 1 : 1), enviado: new Date().toISOString() };
     if (previo && previo.cambios && previo.cambios.length) it.cambios_anteriores = [...(previo.cambios_anteriores || []), ...previo.cambios];
     await putItem(env, it);
     if ((await leer(env, "esperando")) === it.id) await env.DATOS.delete("esperando");
-    await decir(env, fichaTexto(it), { reply_markup: botones(it.id) });
+    await decir(env, fichaTexto(it), { reply_markup: botones(it.id, it.version) });
     return { ok: true, version: it.version, fecha_texto: fechaTexto(it.fecha_utc) };
   }
   if (ruta === "tareas") return { ok: true, tareas: (await todos(env)).filter((i) => i.estado === "cambios") };
@@ -331,5 +413,20 @@ async function pc(url, req, env) {
     return { ok: true, ideas: ideas.filter((i) => !i.usada) };
   }
   if (ruta === "items") return { ok: true, items: await todos(env) };
+  if (ruta === "calendario") {   // el PC manda el calendario de autopilot/config.toml
+    for (const k of Object.keys(cuerpo)) if (!Array.isArray(cuerpo[k])) throw new Error("calendario mal formado");
+    await guardar(env, "calendario", cuerpo); return { ok: true };
+  }
+  if (ruta === "panel") { await guardar(env, "panel", { texto: String(cuerpo.texto || ""), fecha: new Date().toISOString() }); return { ok: true }; }
+  if (ruta === "programado") {   // el PC subió y programó en YouTube un vídeo ya aprobado
+    const it = await getItem(env, cuerpo.id);
+    if (!it) throw new Error("no existe " + cuerpo.id);
+    if (it.estado !== "aprobado" || String(it.version_aprobada) !== String(cuerpo.version))
+      throw new Error("ese vídeo/versión no está aprobado: no se programa");
+    it.youtube_id = cuerpo.youtube_id; it.estado = "programado"; it.avisado = false;
+    await putItem(env, it);
+    await decir(env, `📅 <b>Programado</b>: «${esc(it.titulo)}»\n🕒 ${esc(fechaTexto(it.fecha_utc))}\n▶️ https://youtu.be/${it.youtube_id}`);
+    return { ok: true };
+  }
   throw new Error("ruta desconocida: " + ruta);
 }

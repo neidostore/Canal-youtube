@@ -20,6 +20,8 @@ largos = [
 ]
 # Mezcla de tipos de Short (proporción aproximada por semana)
 mezcla_shorts = { ranking = 0.6, curiosidad = 0.25, historia = 0.15 }
+# Fechas ya ocupadas por vídeos programados a mano (UTC). El sistema no publica nada a esas horas.
+reservados = ["2026-12-01T18:00:00.000Z", "2026-12-03T17:00:00.000Z", "2026-12-04T18:00:00.000Z"]
 cola_minima_dias = 3          # avisa si quedan menos de 3 días de contenido aprobado
 separacion_temas = 3          # no repetir la misma categoría en los 3 vídeos seguidos
 

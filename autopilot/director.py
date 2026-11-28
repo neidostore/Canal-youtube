@@ -32,7 +32,9 @@ def huecos(cfg: dict, dias: int = 7) -> list[tuple[str, datetime]]:
             for h in cfg["calendario"][clave]:
                 if dia.weekday() in h["dias"]:
                     hh, mm = map(int, h["hora"].split(":"))
-                    out.append((formato, datetime(dia.year, dia.month, dia.day, hh, mm, tzinfo=zona).astimezone(timezone.utc)))
+                    f = datetime(dia.year, dia.month, dia.day, hh, mm, tzinfo=zona).astimezone(timezone.utc)
+                    if f.strftime("%Y-%m-%dT%H:%M:00.000Z") not in cfg["calendario"].get("reservados", []):
+                        out.append((formato, f))
     return out
 
 
@@ -41,6 +43,7 @@ def calendario_para_bot(cfg: dict) -> dict:
     out = {}
     for formato, clave in (("short", "shorts"), ("largo", "largos")):
         out[formato] = [[(d + 1) % 7, *map(int, h["hora"].split(":"))] for h in cfg["calendario"][clave] for d in h["dias"]]
+    out["reservados"] = cfg["calendario"].get("reservados", [])
     return out
 
 
@@ -250,4 +253,9 @@ def ciclo(con):
                            ((datetime.now(timezone.utc) - timedelta(days=1)).isoformat(),)).fetchone()[0]
     if falladas:
         avisar(f"⚠️ {falladas} tarea(s) han fallado en las últimas 24 h. Escribe /panel para ver el estado.")
+    try:
+        from .panel import panel
+        RV.bot(RV.conf(), "panel", {"texto": panel(con)})
+    except Exception as e:
+        log(con, f"no pude actualizar el panel del bot: {e}", nivel="aviso")
     return {a: n for a, n in pend}
