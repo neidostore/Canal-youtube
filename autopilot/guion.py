@@ -156,6 +156,9 @@ def _voz_oficial(g: dict | None = None) -> dict:
 
 def _texto_voz(frases_src: list[dict], frases_out: list[dict]):
     """El guionista puede escribir en «voz» la versión hablada (con pausas y dirección); los subtítulos usan «t»."""
+    from .voz import perfil_actual
+    if perfil_actual().get("estilo") == "actual":   # el gerente eligió la interpretación de siempre (A): sin dirección extra
+        return
     for s, o in zip(frases_src, frases_out):   # misma cantidad y orden (las tarjetas de número se excluyen antes)
         if s.get("voz"):
             o["voz"] = s["voz"]
